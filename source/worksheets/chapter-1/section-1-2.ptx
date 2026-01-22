@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<handout>
+<title>Worksheet 1.2 — Row Reduction and Echelon Forms</title>
+      <ol>
+        <li>
+          <p><em>Written Explanation Exercise.</em> Answer each of the following in one or two sentences.</p>
+          <ol label="(a)">
+            <li>
+              <p>What are some of the differences between echelon form and row reduced echelon form (RREF)? List at least three.</p>
+            </li>
+            <li>
+              <p>How can we use row reduction to determine whether an augmented matrix corresponds to a consistent system?</p>
+            </li>
+          </ol>
+        </li>
+
+        <li>
+          <p>Which matrices are in RREF? In echelon form?</p>
+          <p>
+            <m>
+              A = \begin{bmatrix}0 \amp 1 \amp 2\\ 3 \amp \, \amp \, \end{bmatrix},\quad
+              B = \begin{bmatrix}
+              1 \amp 0 \amp 0 \amp 2\\
+              0 \amp 1 \amp 4 \amp 0\\
+              0 \amp 0 \amp 0 \amp 1
+              \end{bmatrix},\quad
+              C = \begin{bmatrix}0 \amp 1 \amp 0\\ 1 \amp 0 \amp 0\\ 5 \amp 5 \amp \, \end{bmatrix}
+            </m>
+          </p>
+          <p><em>Note:</em> Any missing entries above are as printed in the original; interpret dimensions/context as appropriate for echelon/RREF classification.</p>
+        </li>
+
+        <li>
+          <p>List all <m>3\times 2</m> matrices in RREF. Use <m>\ast</m> for entries that can be arbitrary.</p>
+        </li>
+
+        <li>
+          <p>Indicate whether the statements are true or false.</p>
+          <ol label="(a)">
+            <li>
+              <p>A linear system whose <m>3\times 5</m> coefficient matrix has three pivotal columns must be consistent.</p>
+            </li>
+            <li>
+              <p>The echelon form of a coefficient matrix is unique.</p>
+            </li>
+          </ol>
+        </li>
+
+        <li>
+          <p>
+            For any three distinct points in the plane, no two on a vertical line, there is a second‑degree polynomial 
+            <m>p(t)=a_{0}+a_{1}t+a_{2}t^{2}</m> that passes through those three points. Construct the polynomial that passes through 
+            <m>(1,12)</m>, <m>(2,15)</m>, and <m>(3,16)</m>. That is, solve
+          </p>
+          <p>
+            <md>
+              \begin{aligned}
+              p(1)\amp=12=a_{0}+a_{1}+a_{2}\\
+              p(2)\amp=15=a_{0}+2a_{1}+4a_{2}\\
+              p(3)\amp=16=a_{0}+3a_{1}+9a_{2}
+              \end{aligned}
+            </md>
+          </p>
+          <p><em>(The coefficient matrix is an instance of the Vandermonde matrix.)</em></p>
+        </li>
+      </ol>
+</handout>
