@@ -59,27 +59,37 @@
         <p>
           The Studio Worksheets are meant to be used by all sections of MATH 1554. The exact pacing through the questions in the worksheets may vary from class to class.
         </p>
+        <!-- Code adapted from https://pretextbook.org/doc/guide/html/basics-ch-small-7.html-->
         <p>
-        <epigraph>
-          <quote>I never teach my pupils. I only attempt to provide the conditions in which they can learn.</quote>
-          <attribution>Albert Einstein</attribution>
-        </epigraph>
+          <blockquote>
+            <p>
+              <q>I never teach my pupils. I only attempt to provide the conditions in which they can learn.</q>
+            </p>
+            <attribution>Albert Einstein</attribution>
+          </blockquote>
       </p>
       <p>
-        <epigraph>
-          <quote>A problem isn't finished just because you've found the right answer.</quote>
+        <blockquote>
+          <p>
+            <q>A problem isn't finished just because you've found the right answer.</q>
+          </p>
           <attribution>Yōko Ogawa</attribution>
-        </epigraph>
+        </blockquote>
       </p>
 
         
-      <p><em>Worksheet Solutions:</em> A primary goal of this course is to prepare students for more advanced courses that
+      <p><em>A Word on Worksheet Solutions:</em></p>
+        
+      <p>
+        A primary goal of this course is to prepare students for more advanced courses that
           have this course as a pre-requisite. To help us meet this goal, solutions are not are
           provided for worksheets. This is intentional: most upper level courses do not have
           studios and solutions for everything. Students in this class are encouraged to ask
           questions they may have on Piazza, office hours, and with their peers. Calculators
           and software are also great ways to check your work. All of these methods develop
-        skills that are transferable to higher level courses, and beyond.</p>
+        skills that are transferable to higher level courses, and beyond.
+      
+      </p>
       
       </introduction>
       <!-- Include worksheets -->
