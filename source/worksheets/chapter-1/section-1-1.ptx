@@ -3,14 +3,11 @@
   <title>Worksheet 1.1, Systems of Linear Equations</title>
 
   <ul marker="">
-
     <li workspace="2in">
       <p>(1) &#160; Indicate whether the statements are true or false.</p>
       <ol marker="(a)">
-        <p>A linear system is a collection of one or more linear equations involving the same variables.</p>
-        <p>A solution of a linear system is a list of numbers that makes each equation in the system true when the values are substituted.</p>
-        <p>A linear system has infinitely many solutions only when it has free variables.</p>
-        <p>Two lines in the plane always intersect in exactly one point.</p>
+        <p>If a linear system has more equations than unknowns, then the system cannot have a unique solution.</p>
+        <p>If a linear system has more unknowns than equations, then the system cannot have a unique solution.</p>
       </ol>
     </li>
 
@@ -23,24 +20,23 @@
       </ol>
 
       <p>
-        <me>
+        <m>
         \begin{aligned}
           x_1 + 2x_2 \amp= 1 \\
           A x_1 + B x_2 \amp= 2
         \end{aligned}
-        </me>
+        </m>
       </p>
 
       <p>
         For the case where there are an infinite number of solutions, sketch the set of solutions.
-        The graph should have labeled axes, and the solution set should be drawn as a line without arrows.
+        The sketch must have labeled axes, and the solution set should be a line without arrows.
       </p>
     </li>
 
     <li workspace="2in">
       <p>(3) &#160; From your TA’s perspective, what strategies do they recommend to ensure success in a college‑level linear algebra course? What strategies worked for them?</p>
-      <p>This worksheet is intentionally shorter to allow time for course and studio discussion.</p>
+      <p>This worksheet is intentionally shorter to allow time for course and studio organization.</p>
     </li>
-
   </ul>
 </handout>
