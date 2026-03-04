@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="exam-problems" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>Sample Exam Problems</title>
+
+      <introduction>
+        <p>
+          The sections below contain exams from past semesters. They have been categorized by Exam Number and then by date.
+        </p>
+      </introduction>
+
+      <!-- Remove the example and replace with your own activities -->
+      <xi:include href="./exam1/exam1-main.ptx"/>
+
+      <!-- Add more xi:include files here to include them in the main course -->
+    </chapter>

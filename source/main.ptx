@@ -21,7 +21,7 @@
       <!-- Other documents could go here, like a schedule, project description, etc. -->
     </chapter>
 
-    <chapter xml:id="course-notes">
+    <!-- <chapter xml:id="course-notes">
       <title>Course Notes</title>
 
       <introduction>
@@ -33,26 +33,13 @@
 
       <xi:include href="./notes/week01.ptx"/>
       <xi:include href="./notes/week02.ptx"/>
-      <!-- etc. -->
+      
 
-    </chapter>
+    </chapter> -->
 
+    <xi:include href="./exam-problems/exam-main.ptx"/>
 
-    <chapter xml:id="activities">
-      <title>In-Class Activities</title>
-
-      <introduction>
-        <p>
-          These are copies of the in-class activities distributed during the semester.
-        </p>
-      </introduction>
-
-      <!-- Remove the example and replace with your own activities -->
-      <xi:include href="./activities/01-intro-activity.ptx"/>
-
-      <!-- Add more xi:include files here to include them in the main course -->
-    </chapter>
-
+    
     <chapter xml:id="worksheets">
       <title>Studio Worksheets for MATH 1554</title>
       <introduction>

@@ -111,6 +111,8 @@
 
   <!-- The embed-button makes it easy to copy the code for an iframe into your LMS -->
   <html embed-button="yes">
+    <platform host="web" portable="no">
+        </platform>
 
     <!-- A possible attribute for the html tag above is @short-answer-responses, with values either "always" or "graded".  As in: -->
     <!--<html short-answer-responses="always">-->
@@ -120,12 +122,13 @@
 
     <!-- Whether to knowl a particular elements is set here    -->
     <!-- Lots of elements have this possibility; see the guide -->
-      <!--<knowl
+      <knowl
         theorem="no"
         proof="yes"
         definition="no"
-        example="yes"
+        example="no"
         example-solution="yes"
+        problem="no"
         project="no"
         task="no"
         remark="no"
@@ -139,18 +142,18 @@
         exercise-divisional="no"
         exercise-worksheet="no"
         exercise-readingquestion="no"
-      />-->
+      />
 
     <!-- Specify the theme for the html by giving names to     -->
     <!-- override defaults.  Ex:<css theme="denver"/>          -->
     <!-- See also                                              -->
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
-    <css
+    <!-- <css
         theme="denver"
         primary-color="#386F94"
         primary-color-dark="#5192BD"
         provide-dark-mode="yes"
-    />
+    /> -->
 
     <!-- Search can be default or none, or you can use a Google-cx number to use google's search
     feature (but then variant should be set to none to avoid conflict) -->

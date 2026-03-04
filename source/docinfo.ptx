@@ -13,15 +13,43 @@
     \newcommand{\Z}{\mathbb Z}
     \newcommand{\Q}{\mathbb Q}
     \newcommand{\R}{\mathbb R}
+    \newcommand{\foo}{b^{ar}}
+    \newcommand{\aug}{\fboxsep=-\fboxrule\!\!\!\fbox{\strut}\!\!\!}
+    \newcommand{\Nul}{\operatorname{Nul}}
+    \newcommand{\Col}{\operatorname{Col}}
+    \newcommand{\Span}{\operatorname{Span}}
+    \renewcommand{\det}{\operatorname{det}}
+    \newcommand{\rank}{\operatorname{rank}}
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->
   <!-- for those in the next element. -->
   <latex-image-preamble>
-    \usepackage{tikz, pgfplots}
-    \usetikzlibrary{positioning,matrix,arrows}
-    \usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
-    \usetikzlibrary{decorations.markings}
+    \usepackage{amsmath} % allows for align env and other things
+    \usepackage{graphicx} % allows for graphics
+    \usepackage{textcomp} % allows for single apostrophe
+    %\usepackage{enumitem} % allows for alpha lettering in enumerated lists
+    \usepackage{amsfonts} % for real numbers symbol and other sets
+    \usepackage[mathscr]{euscript} % Euler script font
+    \usepackage{wrapfig} % to allow text wrapping
+    \usepackage{mathtools}
+    \usepackage{multirow}
+    \usepackage{pgfplots} % for surfaces (chapter 7), 2D graphics, etc
+    \usepackage{tikz-3dplot} 
+    \usepackage{tikz}
+    \usetikzlibrary{arrows.meta}
+    \usetikzlibrary{shapes,snakes}   
+    \usetikzlibrary{arrows,automata}
+    \pgfplotsset{compat=1.9}
+
+    \definecolor{Black}{rgb}{0.0,0.0,0.0} % 
+    \definecolor{Grey}{rgb}{0.4,0.4,0.4} % 
+    \definecolor{DarkBlue}{rgb}{0.0,0.0,0.6} % 
+    \definecolor{DarkGreen}{rgb}{0.0,0.3,0.0} % 
+    \definecolor{DarkRed}{rgb}{0.6,0.0,0.0} % 
+    \definecolor{LightBlue}{rgb}{0.0,0.5,1.0} % 
+    \definecolor{Orange}{rgb}{1.0,0.5,0.0} % 
+    \definecolor{LightGreen}{rgb}{0.3,0.9,0.3} %
   </latex-image-preamble>
 
   <!-- It is possible to rename elements: -->

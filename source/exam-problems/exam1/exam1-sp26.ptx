@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<handout>
+<title>Exam 1, Spring 2026</title>
+
+<page>
+<title>True / False</title>
+<problem>
+    <introduction>
+        <p>
+            (8 points) Suppose <m>A</m> is an <m>m \times n</m> matrix and <m>\vec b\in \mathbb R ^{m}</m> unless otherwise stated. Select <em>true</em> if the statement is true for all choices of <m>A</m> and <m>\vec b</m>.  Otherwise, select <em>false</em>.
+        </p>
+    </introduction>
+    <task workspace="true">
+    <statement>
+        <p>
+            If <m>\Span\left\{\vec v_1, \vec v_2, \vec v_3\right\} = \R^2</m>, then <m>\vec v_3 \in \Span\left\{\vec v_1, \vec v_2\right\}</m>.  
+        </p>
+    </statement>
+    <answer>
+        <p>
+            False.
+        </p>
+    </answer>
+    <solution>
+        <p>
+            It is true that the vectors are linearly dependent, so one of them belongs in the span of the other two, but it doesn't have to be <m>\vec v_3</m>.
+        </p>
+        <p>
+            Counterexample: Let <m>\vec v_1 = \vec v_2 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> and <m>\vec v_3 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>. Then <m>\Span\left\{\vec v_1, \vec v_2, \vec v_3\right\} = \R^2</m>, but it is not the case that <m>\vec v_3 \in \Span\left\{\vec v_1, \vec v_2\right\}</m>. Instead we have that <m>\vec v_2 \in \Span\left\{\vec v_1, \vec v_3\right\}</m>.
+        </p>
+    </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                If <m>A</m> is an <m>m \times n</m> matrix with a pivot in every column, then the linear transformation <m>T(\vec x) = A\vec x</m> is onto.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                False.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                The hypothesis guarantees that <m>T(\vec x) = A\vec x</m> is one-to-one, not onto.
+            </p>    
+            <p>    
+                Counterexample: Let <m>A = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m>. Then, <m>A</m> has a pivot in every column, but the transformation <m>T\begin{pmatrix} x_1 \end{pmatrix} = A\begin{pmatrix} x_1 \end{pmatrix} = \begin{bmatrix} x_1 \\ 0 \end{bmatrix}</m> is not an <em>onto</em> linear transformation.
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                The set of vectors in <m>\mathbb{R}^3</m> that satisfy <m>-5x_1+ 3x_2 + x_3 = 0</m> is a plane in <m>\mathbb{R}^3</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                True.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                This is a homogeneous system of <em>one</em> equation in <em>three</em> unknowns that can be represented with the matrix <m>A = \begin{bmatrix} -5 \amp 3 \amp 1\end{bmatrix}</m>. Since there are two free variables, the solution set is 2-dimensional, so a plane.
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                If <m>A</m> is an <m>n \times n</m> matrix, then the equation <m>A\vec x = \vec b</m> is always consistent. 
+            </p>
+        </statement>
+        <answer>
+            <p>
+                False.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                This can only be true if <m>A</m> has a pivot in every row, which is not guaranteed by the hypothesis.
+            </p>
+            <p>
+                Counterexample: Let <m>A = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix}</m>. Note that the system <m>A\vec x = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</m> has no solution.
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                If <m>A\vec{x}=\vec{b}</m> has at least two distinct solutions, then <m>A\vec{x}=\vec{0}</m> has a nontrivial solution.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                True.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Since <m>A\vec x = \vec b</m> has more than one solution, it must have infinitely many. Therefore, <m>A</m> has a free variable. So, there must be a nontrivial solution to <m>A\vec x = \vec 0</m>.
+            </p>
+            <p>
+                You can see this directly by letting <m>\vec v_1</m> and <m>\vec v_2</m> be two <em>distinct</em> solutions to <m>A\vec x = \vec b</m>. Then we have that <m>\vec v_1 - \vec v_2 \neq \vec 0</m> and <me>A(\vec v_1 - \vec v_2) = A\vec v_1 - A\vec v_2 = \vec b - \vec b = \vec 0</me>. Thus, <m>\vec v_1 - \vec v_2</m> is a nontrivial solution to <m>A\vec x = \vec 0</m>.
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                If <m>T:\R^n \rightarrow \R^m</m> is a one-to-one linear transformation and <m>\vec u,\vec v \in\mathbb{R}^n</m> such that <m>T(\vec u - \vec v) = \vec 0</m>, then <m>\vec u = \vec v</m>. 
+            </p>
+        </statement>
+        <answer>
+            <p>
+                True.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Approach 1: Since <m>T</m> is one-to-one, we know that the only solution to <m>T(\vec x) = \vec 0</m> is <m>\vec x = \vec 0</m>. Since <m>\vec u - \vec v</m> is a solution to <m>T(\vec x) = \vec 0</m>, we must have that <m>\vec u - \vec v = \vec 0</m> which implies that <m>\vec u = \vec v</m>.
+            </p>
+            <p>
+                Apporach 2: Since <m>T</m> is a linear transformation and since <m>T(\vec u - \vec v) = \vec 0</m>, we see that <m>T(\vec u) - T(\vec v) = \vec 0</m> which implies that <m>T(\vec u) = T(\vec v)</m>. Since <m>T</m> is one-to-one, we have by the function definition of one-to-one that if two outputs are equal, then their inputs must be equal. Therefore, <m>\vec u = \vec v</m>.
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                If <m>A</m> and <m>B</m> are <m>2\times 3</m> matrices with the same number of pivots, then <m>A</m> and <m>B</m> are row equivalent. 
+            </p>
+        </statement>
+        <answer>
+            <p>
+                False.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Row equivalent matrices do have the same number of pivots, but these pivots must occur in the same columns. 
+            </p>
+            <p>
+                Counterexample: Let <m>A = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \end{bmatrix}</m> and <m>B = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}</m>. Note that <m>A</m> and <m>B</m> both have 2 pivots, but they are not row equivalent since the pivots occur in different columns.
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                If <m>A\vec{x}=\vec{b}</m> has at most one solution for every <m>\vec{b}\in\mathbb{R}^m</m>, then the columns of <m>A</m> are linearly independent.  
+            </p>
+        </statement>
+        <answer>
+            <p>
+                True.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                If <m>A\vec x = \vec b</m> has at most one solution for every <m>\vec{b}\in\mathbb{R}^m</m>, then we know that the only solution to <m>A\vec x = \vec 0</m> is the trivial solution. Therefore, <m>A</m> has a pivot in every column. Thus, the columns of <m>A</m> must be linearly independent.
+            </p>
+        </solution>
+    </task>
+</problem>
+
+
+</page>
+
+
+<page>
+<problem>
+    <introduction>
+        <p>
+           (4 points) Indicate whether the following situations are possible or impossible. 
+        </p>
+    </introduction>
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                A system of linear equations with exactly two solutions.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Impossible.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                A system of linear equation can only have 0, 1, or infinitely many solutions, never exactly two. Suppose <m>\vec v_1</m> and <m>\vec v_2</m> are two distinct solutions to the system <m>A \vec x = \vec b</m>. Let <m>\vec w = r\vec v_1 + (1-r)\vec v_2</m> for <m>r\in\R</m> and note that <me>A\vec w = A(r\vec v_1 + (1-r)\vec v_2) = rA\vec v_1 + (1-r)A\vec v_2 = r\vec b + (1-r)\vec b = \vec b</me>. So, <m>\vec w</m> is a solution to <m>A\vec x = \vec b</m>, regardless of the choice of <m>r \in \R</m>. Hence, having more than one solution forces infinitely many solutions.
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                A linear transformation <m>T: \mathbb{R}^4 \rightarrow \mathbb{R}^4</m> which is one-to-one, but not onto.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Impossible.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Since <m>T</m> is one-to-one, we know that the standard matrix of <m>T</m>, <m>A</m>, has a pivot in every column. Since <m>A</m> is a square matrix, it must also have a pivot in every row. Therefore, <m>T</m> is onto.
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                A <m>3\times 3</m> matrix <m>A</m> such that <m>A\vec{x}=\vec{0}</m> has infinitely many solutions.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Possible.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Let <m>A = \begin{bmatrix} 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \end{bmatrix}</m>. Then every vector <m>\vec x \in \R^3</m> is a solution to <m>A\vec x = \vec 0</m>.
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                A matrix <m>A</m> and two vectors <m>\vec b</m> and <m>\vec c</m> so that both equations <m>A\vec x = \vec b</m> and <m>A\vec x = \vec c</m> have solutions, but <m>A\vec x = \vec b + \vec c</m> does not have a solution.
+
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Impossible.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Let <m>\vec v</m> be a solution to <m>A\vec x = \vec b</m> and let <m>\vec u</m> be a solution to <m>A\vec x = \vec v</m>. Then we have that <me>A(\vec v + u) = A\vec v + A\vec u = \vec b + \vec c</me>. Thus, the equation <m>A\vec x = \vec b + \vec c</m> must have a solution.
+            </p>
+        </solution>
+    </task>
+</problem>
+
+<p workspace="0.5in">
+    
+</p>
+
+<problem workspace="3in">
+    <statement>
+        <p>        
+            (2 points) Let <m>A</m> be an <m>m \times n</m> matrix. Which statement below is equivalent to “the columns of <m>A</m> are linearly independent”? <em>Select only one.</em>
+        </p>
+        
+        <ol marker="(a)">
+            <li><m>A\vec{x}=\vec{b}</m> is consistent for every <m>\vec{b}</m>.</li>
+            <li><m>A\vec{x}=\vec{0}</m> has only the trivial solution.</li>
+            <li><m>A</m> has a pivot in every row.</li>
+            <li>The columns of <m>A</m> span <m>\mathbb{R}^m</m>.</li>
+        </ol>
+
+    </statement>
+    <answer>
+        <p>
+            Option (b) is correct.
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Option (a) is not correct. Note the matrix <m>A = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m> has linearly independent columns, but it is not the case that <m>A\vec x = \vec b </m> is consistent for every <m>\vec b \in \R^2</m>.
+        </p>
+        <p>
+            Option (b) is correct. If the columns of <m>A</m> are linearly independent, then we know that <m>A</m> doesn't have any free variables. So, there can only be the trivial solution to <m>A\vec x = \vec 0</m>
+        </p>
+        <p>
+            Option (c) is not correct. The same counterexample from Option (a) gives a matrix that has linearly independent columns, but it does not have a pivot in every row.
+        </p>
+        <p>
+            Option (d) is not correct. The same counterexample from Option (a) gives a matrix that has linearly independent columns, but the columns do not span <m>\R^m</m>.
+        </p>
+    </solution>
+</problem>
+    
+</page>
+
+<page>
+    <problem workspace="true">
+        <statement>
+            <p>
+                (4 points) Let
+                    <me>
+                        A=\begin{bmatrix}
+                        1 \amp 0 \amp 2 \amp \rvert \amp 1\\
+                        0 \amp 2 \amp 4 \amp 0\\
+                        0 \amp 0 \amp 2 \amp 1
+                        \end{bmatrix}
+                    </me>
+
+                    Which of the following statements are true? <em>Select all that apply.</em>
+
+                    <ol marker="(a)">
+                        <li><m>A</m> is in echelon form (REF).</li>
+                        <li><m>A</m> is in reduced row echelon form (RREF).</li>
+                        <li><m>A</m> is an augmented matrix of a linear system with 3 equations and 4 variables.</li>
+                        <li><m>A</m> is an augmented matrix of a consistent linear system.</li>
+                    </ol>
+
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Option (a) and (d) are correct.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Option (a) is correct since <m>A</m> has its nonzero leading entries in each row to the left of the nonzero leading entries of the rows below them AND all rows of zeros are at the bottom (there are none) AND there are zeros below each pivot position.
+            </p>
+            <p>
+                Option (b) is not correct since there are not 1's in the pivot positions.
+            </p>
+            <p>
+                Option (c) is not correct since the system only has three variables because there are only three columns to the left of the augmentation line.
+            </p>
+            <p>
+                Option (d) is correct since we are in REF and we do not have a row of the form <m>\begin{bmatrix} 0 \amp \dots \amp 0 \amp \rvert \amp a \end{bmatrix}</m>, where <m>a \neq 0</m>.
+            </p>
+        </solution>
+    </problem>
+
+    <problem workspace="true">
+        <statement>
+            <p>    
+                (2 points) Consider the linear system in variables <m>x_1,x_2,x_3</m> with unknown constants below.
+                <me>
+                    \begin{array}{llr}
+                    a_1 x_1 + a_2 x_2 + a_3 x_3  \amp=\amp b_1\\
+                    a_1 x_1 + a_2 x_2 + a_3 x_3 \amp= \amp -b_1
+                    \end{array}
+                </me>
+                Which of the following statements about the solution set are possible? <em>Select all that apply.</em>
+
+                <ol marker="(a)">
+                    <li>The solution set is empty.</li>
+                    <li>The solution set is a single point.</li>
+                    <li>The solution set is a line.</li>
+                    <li>The solution set is a plane.</li>
+                </ol>
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Options (a) and (d) are possible.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Option (a) is possible. Let <m>a_1 = a_2 = a_3 = 0</m> and let <m>b_1 = 1</m>.
+            </p>
+            <p>
+                Option (b) is not possible. Notice that <me>\begin{bmatrix} a_1 \amp a_2 \amp a_3 \amp \rvert \amp b_1 \\ a_1 \amp a_2 \amp a_3 \amp \rvert \amp -b_1 \end{bmatrix} \sim \begin{bmatrix} a_1 \amp a_2 \amp a_3 \amp \rvert \amp b_1 \\ 0 \amp 0 \amp 0 \amp \rvert \amp -2b_1 \end{bmatrix}</me>. Thus, the system has at least two free variables. Therefore, there is no way to get a unique solution.
+            </p>
+            <p>
+                Option (c) is not possible. Notice that the system has at least two free variables. Therefore, there is no way to get a line's worth of solutions, which requires exactly one free variable.
+            </p>
+            <p>
+                Option (d) is possible. Let <m>a_1 = a_1 = a_3 = 1</m> and <m>b_1 = 0</m>.
+            </p>
+        </solution>
+    </problem>
+</page>
+
+<page>
+    <problem workspace="true">
+        <statement>
+            <p>
+                (3 points) Let <m>T: \mathbb{R}^2 \rightarrow \mathbb{R}^2</m> be the linear transformation which first reflects vectors about <m>x_1 = x_2</m>, and then rotates vectors 90<m>^\circ</m> clockwise about the origin. Determine the matrix <m>A</m> so that <m>T(\vec x)=A\vec x</m> for all <m>\vec x \in \mathbb{R}^2</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <m>A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}</m>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Recall that <m>A = \begin{bmatrix} T(\vec e_1) \amp T(vec e_2)\end{bmatrix}</m>. 
+            </p>
+            <p>
+                For <m>T(\vec e_1)</m>, first note that reflecting the vector <m>\vec e_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> about the line <m>x_1 = x_2</m> results in the vector <m>\begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>. Then, rotating this vector <m>90^\circ</m> clockwise about the origin yields the vector <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m>. (If you have a hard time seeing this, draw a picture.) Therefore, we have that <m>T(\vec e_1) = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m>.
+            </p>
+            <p>
+                For <m>T(\vec e_2)</m>, first note that reflecting the vector <m>\vec e_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</m> about the line <m>x_1 = x_2</m> results in the vector <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m>. Then, rotating this vector <m>90^\circ</m> clockwise about the origin yields the vector <m>\begin{bmatrix} 0 \\ -1 \end{bmatrix}</m>. (If you have a hard time seeing this, draw a picture.) Therefore, we have that <m>T(\vec e_2) = \begin{bmatrix} 0 \\ -1 \end{bmatrix}</m>.
+            </p>
+            <p>
+                It follows that <m>A = \begin{bmatrix} T(\vec e_1) \amp T(\vec e_2) \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}</m>.
+            </p>
+        </solution>
+    </problem>
+
+    <problem workspace="true">
+        <statement>
+            <p>
+                (3 points) List the values of <m>h</m> that make the vectors below linearly dependent. If no value of <m>h</m> makes the vectors linearly dependent, write DNE in the blank. If every value of <m>h</m> makes the vectors linearly dependent, write <m>\R</m> in the blank.
+                    <me>
+                        \vec v_1=\begin{bmatrix}1\\-2\\1\end{bmatrix},\quad
+                        \vec v_2=\begin{bmatrix}3\\h\\-1\end{bmatrix},\quad
+                        \vec v_3=\begin{bmatrix}2\\-4\\2\end{bmatrix}
+                    </me>
+                linearly dependent.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                All values of <m>h</m> make the vectors dependent, so <m>h = \R</m>.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Note that <me>A = \begin{bmatrix} \vec v_1 \amp \vec v_2 \amp \vec v_3 \end{bmatrix} = \begin{bmatrix} 1 \amp 3 \amp 2 \\ -2 \amp h \amp -4 \\ 1 \amp -1 \amp 2 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 3 \amp 2 \\ 0 \amp h+6 \amp 0 \\ 0 \amp -4 \amp 0 \end{bmatrix}</me>. It follows that the third column of <m>A</m> corresponds to a free variable regardless of the choice of <m>h</m>. This is because <m>\vec v_3 = 2\vec v_1</m>. Therefore, every value of <m>h</m> would make the three vectors linearly dependent. Hence, <m>h = \R</m>.
+            </p>
+        </solution>
+    </problem>
+</page>
+
+<page>
+    <problem workspace="true">
+        <statement>
+            <p>
+                (3 points) Find the values of <m>a, b, c</m> so that
+                    <m>\vec x=\begin{pmatrix}1\\-1\\2\end{pmatrix}</m>
+                    is a solution to <m>A\vec x = \vec b</m>.
+
+                    <me>
+                    A=\begin{pmatrix}
+                    2 \amp 0 \amp a \\
+                    4 \amp b \amp 1 \\
+                    -2 \amp 5 \amp 4
+                    \end{pmatrix},
+                    \quad
+                    \vec b = \begin{pmatrix}
+                    4 \\ 3 \\ c
+                    \end{pmatrix}
+                    </me>
+                </p>
+        </statement>
+        <answer>
+            <p>
+                We have <m>a = 1</m>, <m>b = 3</m>, and <m>c = 1</m>.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Note that <me>A\vec x = \vec b \quad \implies \quad \begin{bmatrix} 2 \amp 0 \amp a \\ 4 \amp c \amp 1 \\ -2 \amp 5 \amp 4 \end{bmatrix}\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} = \begin{bmatrix} 4 \\ 3 \\ c \end{bmatrix} \quad \implies \quad \begin{bmatrix}2 + 2a \\ 6 - b \\ 1 \end{bmatrix} = \begin{bmatrix} 4 \\ 3 \\ c \end{bmatrix}.</me> Setting corresponding entries equal, we find that <m>a = 1, b = 3</m> and <m>c = 1</m>.
+            </p>
+        </solution>
+    </problem>
+
+    <problem workspace="true">
+        <statement>
+            <p>
+                (4 points) Suppose <m>A=\begin{bmatrix} 2 \amp -1 \\ -4 \amp 2\end{bmatrix}</m>.
+                Sketch (a) a vector <m>\vec b</m> such that <m>A\vec x=\vec b</m> is consistent,
+                and (b) the set of solutions to <m>A\vec x=\vec 0</m>.
+            </p>
+            <image xml:id="img-grid-exam1sp26" width="70%">
+                <shortdescription>
+                Two square grids with horizontal and vertical axes spanning from -4 to 4.
+                </shortdescription>
+                <latex-image>
+                <preamble>
+                </preamble>
+                <tex>
+                    \begin{tikzpicture}[scale=.5]
+                    \draw[help lines] (-4, -4) grid (4, 4);
+                    \draw[thick, -&gt;] (-4, 0) -- (4, 0);
+                    \draw[thick, -&gt;] (0, -4) -- (0, 4);
+                    \node[overlay, above] at (0, 4) {(a) a vector $\vec b$};
+                    \node[right] at (4, 0) {$x_1$};
+                    \node[right] at (0, 4) {$x_2$};                
+                    \end{tikzpicture}\qquad
+                    \begin{tikzpicture}[scale=.5]
+                    \draw[help lines] (-4, -4) grid (4, 4);
+                    \draw[thick, -&gt;] (-4, 0) -- (4, 0);
+                    \draw[thick, -&gt;] (0, -4) -- (0, 4);
+                    \node[above] at (0, 4) {(b) set of solutions};
+                    \node[right] at (4, 0) {$x_1$};
+                    \node[right] at (0, 4) {$x_2$};  
+                    \end{tikzpicture}
+                </tex>
+                </latex-image>
+            </image>
+        </statement>
+        <answer>
+            <p>
+                Correct for (a) is a vector drawn in <m>\Span\left\{\begin{bmatrix} 1 \\ -2 \end{bmatrix}\right\}</m>. Correct for (b) is the entire line <m>\Span\left\{\begin{bmatrix} 1 \\ 2 \end{bmatrix}\right\}</m>.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                For (a), if <m>A\vec x = \vec b</m> has a solution, then <m>\vec b</m> must be a linear combination of the columns of <m>A</m>. Therefore, <m>\vec b \in \Span\left\{\begin{bmatrix} 2 \\ -4 \end{bmatrix}, \begin{bmatrix} -1 \\ 2 \end{bmatrix}\right\} = \Span\left\{\begin{bmatrix} 1 \\ -2 \end{bmatrix}\right\}</m>. Make sure you draw a single vector, and not the entire line.
+            </p>
+            <p>
+                For (b), note that <me>\begin{bmatrix} A \amp \rvert \amp \vec 0 \end{bmatrix} = \begin{bmatrix} 2 \amp -1 \amp \rvert \amp 0 \\ -4 \amp 2 \amp \rvert \amp 0 \end{bmatrix} \sim \begin{bmatrix} 2 \amp -1 \amp \rvert \amp 0 \\ 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</me>. It follows that <m>x_2 = t\in \R</m> is a free variable and that <m>x_1 = \frac{1}{2}t</m>. Therefore, we have that the solutions to <m>A\vec x = \vec 0</m> are <me>\vec x = \begin{bmatrix} \frac{1}{2}t \\ t\end{bmatrix} = \frac{t}{2}\begin{bmatrix} 1 \\ 2 \end{bmatrix} \in \Span\left\{\begin{bmatrix} 1 \\ 2 \end{bmatrix}\right\}.</me>
+            </p>
+        </solution>
+    </problem>
+
+</page>
+
+</handout>
