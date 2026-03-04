@@ -10,6 +10,7 @@
 
       <!-- Remove the example and replace with your own activities -->
       <xi:include href="./exam1/exam1-main.ptx"/>
-
+      <xi:include href="./exam2/exam2-main.ptx"/>
+      <xi:include href="./exam3/exam3-main.ptx"/>
       <!-- Add more xi:include files here to include them in the main course -->
     </chapter>
