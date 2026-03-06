@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xml:id="ex2-exams" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Problems from Exam 1</title>
+  <title>Problems from Exam 2</title>
   <introduction>
-    <p>Exam 1 typically covers content from Sections 1.1 - 1.5, 1.7 - 1.9, and 2.1.</p>
+    <p>Exam 2 typically covers content from Sections 2.2, 2.3, 2.5, 2.8, 2.9, 3.1 - 3.3, 4.9/5.9, 5.1, and 5.2. Recently, Section 2.4 (covering partioned matrices) has been removed. Note you are still responsible for all content covered in previous sections.</p>
   </introduction>
   
-  <xi:include href="./exam1-sp26.ptx" />
+  <!-- <xi:include href="./exam2-sp26.ptx" /> -->
 
 </section>

@@ -308,8 +308,8 @@
                     <me>
                         A=\begin{bmatrix}
                         1 \amp 0 \amp 2 \amp \rvert \amp 1\\
-                        0 \amp 2 \amp 4 \amp 0\\
-                        0 \amp 0 \amp 2 \amp 1
+                        0 \amp 2 \amp 4 \amp \rvert \amp 0\\
+                        0 \amp 0 \amp 2 \amp \rvert \amp 1
                         \end{bmatrix}
                     </me>
 
@@ -468,7 +468,7 @@
         </answer>
         <solution>
             <p>
-                Note that <me>A\vec x = \vec b \quad \implies \quad \begin{bmatrix} 2 \amp 0 \amp a \\ 4 \amp c \amp 1 \\ -2 \amp 5 \amp 4 \end{bmatrix}\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} = \begin{bmatrix} 4 \\ 3 \\ c \end{bmatrix} \quad \implies \quad \begin{bmatrix}2 + 2a \\ 6 - b \\ 1 \end{bmatrix} = \begin{bmatrix} 4 \\ 3 \\ c \end{bmatrix}.</me> Setting corresponding entries equal, we find that <m>a = 1, b = 3</m> and <m>c = 1</m>.
+                Note that <me>A\vec x = \vec b  \implies  \begin{bmatrix} 2 \amp 0 \amp a \\ 4 \amp c \amp 1 \\ -2 \amp 5 \amp 4 \end{bmatrix}\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} = \begin{bmatrix} 4 \\ 3 \\ c \end{bmatrix}  \implies  \begin{bmatrix}2 + 2a \\ 6 - b \\ 1 \end{bmatrix} = \begin{bmatrix} 4 \\ 3 \\ c \end{bmatrix}.</me> Setting corresponding entries equal, we find that <m>a = 1, b = 3</m> and <m>c = 1</m>.
             </p>
         </solution>
     </problem>
@@ -515,7 +515,7 @@
         </answer>
         <solution>
             <p>
-                For (a), if <m>A\vec x = \vec b</m> has a solution, then <m>\vec b</m> must be a linear combination of the columns of <m>A</m>. Therefore, <m>\vec b \in \Span\left\{\begin{bmatrix} 2 \\ -4 \end{bmatrix}, \begin{bmatrix} -1 \\ 2 \end{bmatrix}\right\} = \Span\left\{\begin{bmatrix} 1 \\ -2 \end{bmatrix}\right\}</m>. Make sure you draw a single vector, and not the entire line.
+                For (a), if <m>A\vec x = \vec b</m> has a solution, then <m>\vec b</m> must be a linear combination of the columns of <m>A</m>. Therefore, <me>\vec b \in \Span\left\{\begin{bmatrix} 2 \\ -4 \end{bmatrix}, \begin{bmatrix} -1 \\ 2 \end{bmatrix}\right\} = \Span\left\{\begin{bmatrix} 1 \\ -2 \end{bmatrix}\right\}</me>. Make sure you draw a single vector, and not the entire line.
             </p>
             <p>
                 For (b), note that <me>\begin{bmatrix} A \amp \rvert \amp \vec 0 \end{bmatrix} = \begin{bmatrix} 2 \amp -1 \amp \rvert \amp 0 \\ -4 \amp 2 \amp \rvert \amp 0 \end{bmatrix} \sim \begin{bmatrix} 2 \amp -1 \amp \rvert \amp 0 \\ 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</me>. It follows that <m>x_2 = t\in \R</m> is a free variable and that <m>x_1 = \frac{1}{2}t</m>. Therefore, we have that the solutions to <m>A\vec x = \vec 0</m> are <me>\vec x = \begin{bmatrix} \frac{1}{2}t \\ t\end{bmatrix} = \frac{t}{2}\begin{bmatrix} 1 \\ 2 \end{bmatrix} \in \Span\left\{\begin{bmatrix} 1 \\ 2 \end{bmatrix}\right\}.</me>
@@ -523,6 +523,12 @@
         </solution>
     </problem>
 
+</page>
+
+<page>
+    <problem>
+        
+    </problem>
 </page>
 
 </handout>
