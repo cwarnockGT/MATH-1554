@@ -1,0 +1,150 @@
+<problem>
+    <introduction>
+        <p>
+            (8 points) Suppose <m>A</m> is an <m>m \times n</m> matrix and <m>\vec b\in \mathbb R ^{m}</m> unless otherwise stated. Select <em>true</em> if the statement is true for all choices of <m>A</m> and <m>\vec b</m>.  Otherwise, select <em>false</em>.
+        </p>
+    </introduction>
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; TF 1
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Answer
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Detailed Solution. Maybe Short proof / Example / Counterexample
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; TF 2
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Answer
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Detailed Solution. Maybe Short proof / Example / Counterexample
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; TF 3
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Answer
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Detailed Solution. Maybe Short proof / Example / Counterexample
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; TF 4
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Answer
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Detailed Solution. Maybe Short proof / Example / Counterexample
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; TF 5
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Answer
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Detailed Solution. Maybe Short proof / Example / Counterexample
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; TF 6
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Answer
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Detailed Solution. Maybe Short proof / Example / Counterexample
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; TF 7
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Answer
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Detailed Solution. Maybe Short proof / Example / Counterexample
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; TF 8
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Answer
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Detailed Solution. Maybe Short proof / Example / Counterexample
+            </p>
+        </solution>
+    </task>
+</problem>

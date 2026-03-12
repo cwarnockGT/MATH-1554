@@ -1,0 +1,72 @@
+<!-- Select Only One -->
+<problem workspace="3in">
+    <statement>
+        <p>        
+            (2 points) MC 1 <em>Select only one.</em>
+        </p>
+        
+        <ol marker="(a)">
+            <li>Option A</li>
+            <li>Option B</li>
+            <li>Option C</li>
+            <li>Option D</li>
+        </ol>
+
+    </statement>
+    <answer>
+        <p>
+            Correct Option(s)
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Option (a) Correct or incorrect and why.
+        </p>
+        <p>
+            Option (b) Correct or incorrect and why.
+        </p>
+        <p>
+            Option (c) Correct or incorrect and why.
+        </p>
+        <p>
+            Option (d) Correct or incorrect and why.
+        </p>
+    </solution>
+</problem>
+    
+
+<!-- Select All That Apply-->
+<problem workspace="3in">
+    <statement>
+        <p>        
+            (2 points) MC 2 <em>Select all that apply.</em>
+        </p>
+        
+        <ol marker="(a)">
+            <li>Option A</li>
+            <li>Option B</li>
+            <li>Option C</li>
+            <li>Option D</li>
+        </ol>
+
+    </statement>
+    <answer>
+        <p>
+            Correct Option(s)
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Option (a) Correct or incorrect and why.
+        </p>
+        <p>
+            Option (b) Correct or incorrect and why.
+        </p>
+        <p>
+            Option (c) Correct or incorrect and why.
+        </p>
+        <p>
+            Option (d) Correct or incorrect and why.
+        </p>
+    </solution>
+</problem>

@@ -1,0 +1,90 @@
+<!-- Short Answer Seeking Real Number Answer(s) -->
+<problem workspace="1.5in">
+    <statement>
+        <p>
+            (3 points) Statement
+        </p>
+        <p>
+            <me>a = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \end{bmatrix}$}$ } \qquad b = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \end{bmatrix}$}$ } \qquad c = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \end{bmatrix}$}$ } </me>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            Answer
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Detailed Solution
+        </p>
+    </solution>
+</problem>
+
+
+<!-- Short Answer Matrix Answer-->
+ <problem workspace="2in">
+    <statement>
+        <p>
+            (3 points) Statement 
+        </p>
+        <p>
+            <me>A = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \\ b  \\ c \\d \\ d \\ d \end{bmatrix}$}$ } </me>
+        </p>
+    </statement>
+    <answer>
+        Answer
+    </answer>
+    <solution>
+        <p>
+            Detailed Solution
+        </p>
+    </solution>
+</problem>
+
+
+
+<!-- Short Answer with Graphing -->
+<problem workspace="true">
+    <statement>
+        <p>
+            (4 points) Drawing Problem. Uses Tikz.
+        </p>
+        <image xml:id="img-grid-exam1sp26" width="70%">
+            <shortdescription>
+                Two square grids with horizontal and vertical axes spanning from -4 to 4.
+            </shortdescription>
+            <latex-image>
+            <preamble>
+            </preamble>
+            <tex>
+                \begin{tikzpicture}[scale=.5]
+                \draw[help lines] (-4, -4) grid (4, 4);
+                \draw[thick, -&gt;] (-4, 0) -- (4, 0);
+                \draw[thick, -&gt;] (0, -4) -- (0, 4);
+                \node[overlay, above] at (0, 4) {(a) a vector $\vec b$};
+                \node[right] at (4, 0) {$x_1$};
+                \node[right] at (0, 4) {$x_2$};                
+                \end{tikzpicture}\qquad
+                \begin{tikzpicture}[scale=.5]
+                \draw[help lines] (-4, -4) grid (4, 4);
+                \draw[thick, -&gt;] (-4, 0) -- (4, 0);
+                \draw[thick, -&gt;] (0, -4) -- (0, 4);
+                \node[above] at (0, 4) {(b) set of solutions};
+                \node[right] at (4, 0) {$x_1$};
+                \node[right] at (0, 4) {$x_2$};  
+                \end{tikzpicture}
+            </tex>
+            </latex-image>
+        </image>
+    </statement>
+    <answer>
+        <p>
+            Could include drawing in solution or just describe.
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Description of Drawing or Picture in Tikz
+        </p>
+    </solution>
+</problem>

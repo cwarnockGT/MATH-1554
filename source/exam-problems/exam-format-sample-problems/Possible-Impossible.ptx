@@ -1,0 +1,78 @@
+<problem>
+    <introduction>
+        <p>
+           (4 points) Indicate whether the following situations are possible or impossible. 
+        </p>
+    </introduction>
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                <em>Possible &#160;  / &#160;  Impossible</em>: &#160; PI 1
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Answer
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Detailed Solution. Maybe Short proof / Example / Counterexample
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                <em>Possible &#160;  / &#160;  Impossible</em>: &#160; PI 2
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Answer
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Detailed Solution. Maybe Short proof / Example / Counterexample
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                <em>Possible &#160;  / &#160;  Impossible</em>: &#160; PI 3
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Answer
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Detailed Solution. Maybe Short proof / Example / Counterexample
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                <em>Possible &#160;  / &#160;  Impossible</em>: &#160; PI 4
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Answer
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Detailed Solution. Maybe Short proof / Example / Counterexample
+            </p>
+        </solution>
+    </task>
+</problem>

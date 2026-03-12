@@ -1,0 +1,108 @@
+<!-- Show Work Multiple Parts -->
+<problem>
+        <introduction>
+            <p>
+                (7 points) <em>Show your work in the space below and put your answer in the boxes.</em> 
+            </p>
+            <p>
+                Let <m>T</m> be the linear tranformation defined by <me>T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\right) = \begin{bmatrix} x_1 - 2x_2 + x_3 \\ x_1 - x_2 \\ -x_2 + x_3 \end{bmatrix}</me>.
+            </p>
+        </introduction>
+        <task>
+            <statement>
+                <p>
+                    What are the domain and codomain of <m>T</m>?
+                </p>
+                <p>
+                <me>\text{domain is } \framebox{$\phantom{$\begin{bmatrix} a \amp a  \end{bmatrix}$}$ } \quad \quad \text{codomain is } \framebox{$\phantom{$\begin{bmatrix} a \amp a  \end{bmatrix}$}$ } </me>
+                </p>
+            </statement>
+            <answer>
+                <p>
+                    The domain of <m>T</m> is <m>\mathbb{R}^3</m> and the codomain of <m>T</m> is <m>\mathbb{R}^3</m>.
+                </p>
+            </answer>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    What is the standard matrix of <m>T</m>?
+                </p>
+                <p>
+                <me>\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </me>
+                </p>
+            </statement>
+            <answer>
+                <p>
+                    <m>A = \begin{bmatrix} 1 \amp -2 \amp 1 \\ 1 \amp -1 \amp 0 \\ 0 \amp -1 \amp 1 \end{bmatrix}</m>
+                </p>
+            </answer>
+            <solution>
+                <p>
+                    Note that <me>T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\right) = \begin{bmatrix} x_1 - 2x_2 + x_3 \\ x_1 - x_2 \\ -x_2 + x_3 \end{bmatrix} = \begin{bmatrix} 1 \amp -2 \amp 1 \\ 1 \amp -1 \amp 0 \\ 0 \amp -1 \amp 1 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}</me>.
+                </p>
+            </solution>
+        </task>
+        <task workspace="1in">
+            <statement>
+                <p>
+                    Find a vector <m>\vec x</m> such that <m>T(\vec x) = \vec b</m>, where <m>\vec b = \begin{bmatrix} 4 \\ 2 \\ 2 \end{bmatrix}</m>.
+                </p>
+                <p>
+                <me>\vec b = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </me>
+                </p>
+            </statement>
+            <answer>
+                <p>
+                    Any particular vector of the form <m>\vec x = \begin{bmatrix} 0 \\ -2 \\ 0 \end{bmatrix} + t\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}</m>, where <m>t</m> can be any real number. For example, setting <m>t = 0</m>, we get <m>\vec x = \begin{bmatrix} 0 \\ -2 \\ 0 \end{bmatrix}</m>.
+                </p>
+            </answer>
+            <solution>
+                <p>
+                    Since <m>T(\vec x) = A\vec x</m>, we use row operations on the augmented matrix <m>\begin{bmatrix} A \amp \rvert \amp \vec b \end{bmatrix}</m> to solve the system. Note that <me> \begin{bmatrix} 1 \amp -2 \amp 1 \amp \rvert \amp 4 \\ 1 \amp -1 \amp 0 \amp \rvert \amp 2 \\ 0 \amp -1 \amp 1 \amp \rvert \amp 2 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp -1 \amp \rvert \amp 0 \\ 0 \amp 1 \amp -1 \amp \rvert \amp -2 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</me>. We have that <m>x_3 = t \in \mathbb{R}</m> is a free variable and <m>x_2 = -2 + t</m> and <m>x_1 = t</m>. Thus, all solutions to <m>T(\vec x) = \vec b</m> are <me>\vec x = \begin{bmatrix} t \\ -2 + t \\ t \end{bmatrix} = \begin{bmatrix} 0 \\ -2 \\ 0 \end{bmatrix} + t\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}</me>. Letting <m>t = 0</m>, we have that a particular solution is <m>\vec x = \begin{bmatrix} 0 \\ -2 \\ 0 \end{bmatrix}</m>.
+                </p>
+            </solution>
+        </task>
+        <task >
+            <statement>
+                <p>
+                    <em>Yes &#160;  / &#160;  No</em>: &#160;Is <m>T</m> one-to-one?
+                </p>
+            </statement>
+            <answer>
+                <p>
+                    No.
+                </p>
+            </answer>
+            <solution>
+                <p>
+                    Note that <m>A</m> does NOT have a pivot in every column. Thus, the transformation <m>T(\vec x) = A\vec x</m> is NOT one-to-one.
+                </p>
+            </solution>
+        </task>
+        <task workspace="1in">
+            <statement>
+                <p>
+                    <em>Yes &#160;  / &#160;  No</em>: &#160;Is <m>T</m> onto?
+                </p>
+            </statement>
+            <answer>
+                <p>
+                    No.
+                </p>
+            </answer>
+            <solution>
+                <p>
+                    Note that <m>A</m> does NOT have a pivot in every row. Thus, the transformation <m>T(\vec x) = A\vec x</m> is NOT onto.
+                </p>
+            </solution>
+        </task>
+    </problem>
+
+
+
+
+
+
+
+    
