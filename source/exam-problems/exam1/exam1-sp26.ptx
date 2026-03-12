@@ -4,7 +4,7 @@
 <title>Exam 1, Spring 2026</title>
 
 <!-- Include the Exam Instructions file as the first page -->
-<xi:include href="/workspaces/MATH-1554/source/exam-problems/exam-instructions.ptx" />
+<xi:include href="../exam-instructions.ptx" />
 
 <page>
 <title>True / False</title>
