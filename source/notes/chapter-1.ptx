@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="chapter-1-notes" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Linear Equations in Linear Algebra</title>
+  <!-- <introduction>
+    <p>Some words</p>
+  </introduction> -->
+  <section xml:id="Section-1-1">
+    <title>1.1 Systems of Linear Equations</title>
+      <xi:include href="./chapter-1-notes/section-1-1-sol.ptx" />
+  </section>
+  
+  <section xml:id="Section-1-2">
+    <title>1.2 Row Reduction and Echelon Forms</title>
+      <xi:include href="./chapter-1-notes/section-1-2-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-1-3">
+    <title>1.3 Vector Equations</title>
+      <xi:include href="./chapter-1-notes/section-1-3-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-1-4">
+    <title>1.4 The Matrix Equation <m>A \vec{x} = \vec{b}</m></title>
+      <xi:include href="./chapter-1-notes/section-1-4-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-1-5">
+    <title>1.5 Solution Sets of Linear Systems</title>
+      <xi:include href="./chapter-1-notes/section-1-5-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-1-7">
+    <title>1.7 Linear Independence</title>
+      <xi:include href="./chapter-1-notes/section-1-7-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-1-8">
+    <title>1.8 An Introduction to Linear Transformations</title>
+      <xi:include href="./chapter-1-notes/section-1-8-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-1-9">
+    <title>1.9 More on Linear Transformations</title>
+      <xi:include href="./chapter-1-notes/section-1-9-sol.ptx" />
+  </section>
+  
+  
+</chapter>

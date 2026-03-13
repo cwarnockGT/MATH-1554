@@ -1,0 +1,164 @@
+
+<worksheet xml:id="sec-1-5-homogeneous">
+  <title>1.5 Homogeneous Systems and Parametric Vector Forms</title>
+
+  <!-- Page 1 -->
+  <page>
+    <title>Overview</title>
+
+    <objectives workspace="0.5in">
+        <title>Topics</title>
+    <ul>
+      <li>Homogeneous systems</li>
+      <li>Parametric vector forms of solutions to linear systems</li>
+    </ul>
+    </objectives>
+
+    <objectives workspace="0.5in">
+        <title>Goals</title>
+    <ul>
+      <li>Express the solution set of a linear system in parametric vector form.</li>
+      <li>Provide a geometric interpretation of the solution set of a linear system.</li>
+      <li>Characterize homogeneous linear systems using free variables, span, pivots, linear combinations, and echelon forms.</li>
+    </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+
+    <title>Homogeneous Systems</title>
+
+    <definition xml:id="def-homogeneous" workspace=".3in">
+      <title>Homogeneous and inhomogeneous systems</title>
+      <statement>
+        <p>
+          Linear systems of the form <m>A\vec{x} = \vec{0}</m> are <term>homogeneous</term>.<linebreak/>
+          Linear systems of the form <m>A\vec{x} = \vec{b}</m> (with <m>\vec{b} \neq \vec{0}</m>) are <term>inhomogeneous</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <p workspace="1in">
+      Because homogeneous systems always have the <em>trivial solution</em> <m>\vec{x} = \vec{0}</m>,
+      the interesting question is whether they have any <em>nontrivial</em> solutions.
+    </p>
+
+    <p><nbsp/></p>
+
+
+  </page>
+
+  <!-- Page 3: Example 1 Homogeneous -->
+  <page>
+    <title>Example 1: Homogeneous System</title>
+
+    <example xml:id="ex-homogeneous-1">
+      <title>Identify free variables and solution set</title>
+      <statement>
+        <p>Identify the free variables and the solution set of the homogeneous system:</p>
+        <me>
+          \begin{aligned}
+          x_1 + 3x_2 + x_3 \amp= 0 \\
+          2x_1 - x_2 - 5x_3 \amp= 0 \\
+          x_1 \phantom{+3x_2} - 2x_3 \amp= 0
+          \end{aligned}
+        </me>
+      </statement>
+      <solution>
+        <p>
+            Since this is a homogeneous system, we know it has the trivial solution <m>\vec x = \vec 0</m> as a solution. However, we want to find <em>all</em> solutions. So, let's solve the system by simplifying the augmented matrix.
+        </p>
+        <p>
+             Note: you do not have to form the augmented matrix and can instead row reduce <m>A</m> since this is a homogeneous system and row operations will not affected the augmented <m>\vec 0</m>.
+        </p>
+        <p>
+            <me>\begin{bmatrix} 1 \amp 3 \amp 1 \amp \rvert \amp 0 \\ 2 \amp -1 \amp -5 \amp \rvert \amp 0 \\ 1 \amp 0 \amp -2 \amp \rvert \amp 0 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 3 \amp 1 \amp \rvert \amp 0 \\ 0 \amp -7 \amp -7 \amp \rvert \amp 0 \\ 0 \amp -3 \amp -3 \amp \rvert \amp 0 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp -2 \amp \rvert \amp 0 \\ 0 \amp 1 \amp 1 \amp \rvert \amp 0 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</me>
+        </p>
+        <p>
+            Since the third column does not contain a pivot, we have that <m>x_3</m> is a free variable, so we can set <m>x_3 = t \in \mathbb{R}</m>. Converting the second row of the RREF above into an equation and solving for <m>x_2</m> yields <md>x_2 + x_3 = 0 \quad \implies \quad x_2 = -x_3 \quad \implies \quad x_2 = -t</md> Similarly, we can use the first row of the RREF and solve for <m>x_1</m> to get <md>x_1 - 2x_3 = 0 \quad \implies \quad x_1 = 2x_3 \quad \implies \quad x_1 = 2t</md>
+        </p>
+            <p>Therefore, the solutions to the system are</p>
+            <p>
+                <me> \vec x = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 2t \\ -t \\ t \end{bmatrix} = t\begin{bmatrix} 2 \\ -1 \\ 1 \end{bmatrix}, t \in \mathbb{R}</me> 
+            </p>
+            <p> Writing the solution set in terms of the parameter <m>t</m> is what is known as <term>parametric vector form</term>. This form gives an explicit and convenient way of writing down the solution set. It also gives insight into what is happening geometrically. Note that the vectors which satisfy the system are precisely <md>\vec x \in \operatorname{Span}\left\{\begin{bmatrix} 2 \\ -1 \\ 1 \end{bmatrix}\right\}</md>. Since the solution set contains <m>\vec 0</m>, we see that the solution set is a line in <m>\mathbb{R}^3</m> which passes through the origin.
+            </p> 
+        </solution>
+    </example>
+
+    <p><nbsp/></p>
+
+  </page>
+
+  <!-- Page 4: Parametric Form (Homogeneous) -->
+  <page>
+    <title>Parametric Forms for Homogeneous Systems</title>
+
+    <p workspace="2in">
+      In the previous example, we expressed the solution to the system using a vector equation.
+      This is a <term>parametric vector form</term> of the solution.
+    </p>
+
+    <p>
+      In general, suppose the free variables for <m>A\vec{x} = \vec{0}</m> are
+      <m>x_k, \ldots, x_n</m>. Then all solutions can be written in the form
+    </p>
+
+    <me>
+      \vec{x} = x_k \vec{v}_k + x_{k+1} \vec{v}_{k+1} + \cdots + x_n \vec{v}_n,
+    </me>
+
+    <p workspace="2in">
+      for some vectors <m>\vec{v}_k, \ldots, \vec{v}_n</m>.
+      This representation is called the <term>parametric vector form</term> of the solution set.
+    </p>
+
+    <p><nbsp/></p>
+
+  </page>
+
+  <!-- Page 5: Non-Homogeneous System Example -->
+  <page>
+    <title>Example 2: Non-Homogeneous System</title>
+
+    <example xml:id="ex-nonhomogeneous-1">
+      <title>Parametric vector form and geometric interpretation</title>
+      <statement>
+        <p>
+          Write the parametric vector form of the solution and give a geometric interpretation.
+        </p>
+        <me>
+          \begin{aligned}
+          x_1 + 3x_2 + x_3 \amp= 9 \\
+          2x_1 - x_2 - 5x_3 \amp= 11 \\
+          x_1 \phantom{+3x_2} - 2x_3 \amp= 6
+          \end{aligned}
+        </me>
+        <p>(Note: the left-hand side is the same as in the homogeneous system example.)</p>
+      </statement>
+      <solution>
+        <p>
+            Again, we solve the system by simplifying the augmented matrix. This time we do need to keep track of the augmented column since it is not <m>\vec 0</m> and so row operations will affect the entries.
+        </p>
+        <p>
+            <m>\begin{eqnarray*}\begin{bmatrix} 1 \amp 3 \amp 1 \amp \rvert \amp 9 \\ 2 \amp -1 \amp -5 \amp \rvert \amp 11 \\ 1 \amp 0 \amp -2 \amp \rvert \amp 6 \end{bmatrix} \amp \sim \amp \begin{bmatrix} 1 \amp 3 \amp 1 \amp \rvert \amp 9 \\ 0 \amp -7 \amp -7 \amp \rvert \amp -7 \\ 0 \amp -3 \amp -3 \amp \rvert \amp -3 \end{bmatrix} \\ \amp \sim \amp \begin{bmatrix} 1 \amp 0 \amp -2 \amp \rvert \amp 6 \\ 0 \amp 1 \amp 1 \amp \rvert \amp 1 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}\end{eqnarray*}</m>
+        </p>
+        <p>
+            Thankfully, the third row had a zero in the augmented position, so our system is consistent and there is at least one solution. Notice that the entries to the left of the augmentation line are exactly the same as they were in <xref ref="ex-homogeneous-1"/>. Therefore, assigning free variables and solving for the pivot variables is almost exactly the same as in that example. The only difference, is now we have to keep track of the nonzero constants on the right side of the augmentation line. We have that <m>x_3</m> is a free variable, so we set <m>x_3 = t \in \mathbb{R}</m>. Solving for the pivot variables yields <md>x_2 + x_3 = 1 \quad \implies \quad x_2 = 1 -x_3 \quad \implies \quad x_2 = 1 -t</md> and <md>x_1 - 2x_3 = 6 \quad \implies \quad x_1 = 6 + 2x_3 \quad \implies \quad x_1 = 6 + 2t</md>
+        </p>
+            <p>Therefore, the solutions to the system are</p>
+            <p>
+                <me> \vec x = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 6 + 2t \\ 1 - t \\ t \end{bmatrix} = \begin{bmatrix} 6 \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} 2 \\ -1 \\ 1 \end{bmatrix}, t \in \mathbb{R}</me> 
+            </p>
+            <p> Again we have writen the solution set in parametric vector form. Note that the free part of the solution set, the part being scaled by <m>t</m>, is exactly the same as for the homogeneous system <m>A\vec x = \vec 0</m>. This is no coincidence. When you are working with a <em>consistent inhomogeneous</em> system <m>A\vec x = \vec b</m>, the solution set is exactly that of the homogenous system <m>A\vec x = \vec 0</m>, except translated by a vector which is a particular solution to <m>A\vec x = \vec b</m>. So, geometrically, this solution set is the same line as in <xref ref="ex-homogeneous-1"/>, except now the line passes through the point <m>(6,1,0)</m> instead of the origin.</p> 
+            <p> 
+                Note: if the inhomogeneous system <m>A\vec x = \vec b</m> is inconsistent, then there is still no solution no matter how many solutions there are to <m>A\vec x = \vec 0</m>. 
+            </p> 
+        </solution>
+    </example>
+
+  </page>
+
+</worksheet>

@@ -13,76 +13,30 @@
     <!-- Optional: include frontmatter with author info and date -->
     <!-- <xi:include href="./frontmatter.ptx" /> -->
 
-    <chapter xml:id="course-documents">
+    <part xml:id="course-documents">
       <title>Course Documents</title>
 
       <!-- Course syllabus -->
       <xi:include href="./syllabus/syllabus.ptx" />
       <!-- Other documents could go here, like a schedule, project description, etc. -->
-    </chapter>
+    </part>
 
-    <!-- <chapter xml:id="course-notes">
-      <title>Course Notes</title>
+    
 
-      <introduction>
-        <p>
-          The following notes are intended to remind you what we covered each week.
-          They are not a substitute for attending class and not a substitute for reading the textbook.
-        </p>
-      </introduction>
+    <!-- Notes Chapter -->
+     <xi:include href="./notes/notes-main.ptx" />
 
-      <xi:include href="./notes/week01.ptx"/>
-      <xi:include href="./notes/week02.ptx"/>
-      
 
-    </chapter> -->
 
+    <!-- Exam Chapter -->
     <xi:include href="./exam-problems/exam-main.ptx"/>
 
     
-    <chapter xml:id="worksheets">
-      <title>Studio Worksheets for MATH 1554</title>
-      <introduction>
-        <p>
-          The Studio Worksheets are meant to be used by all sections of MATH 1554. The exact pacing through the questions in the worksheets may vary from class to class.
-        </p>
-        <p>
-        <epigraph>
-          <quote>I never teach my pupils. I only attempt to provide the conditions in which they can learn.</quote>
-          <attribution>Albert Einstein</attribution>
-        </epigraph>
-      </p>
-      <p>
-        <epigraph>
-          <quote>A problem isn't finished just because you've found the right answer.</quote>
-          <attribution>Yōko Ogawa</attribution>
-        </epigraph>
-      </p>
 
-        
-      <p><em>Worksheet Solutions:</em> A primary goal of this course is to prepare students for more advanced courses that
-          have this course as a pre-requisite. To help us meet this goal, solutions are not are
-          provided for worksheets. This is intentional: most upper level courses do not have
-          studios and solutions for everything. Students in this class are encouraged to ask
-          questions they may have on Piazza, office hours, and with their peers. Calculators
-          and software are also great ways to check your work. All of these methods develop
-        skills that are transferable to higher level courses, and beyond.</p>
-      
-      </introduction>
-      <!-- Include worksheets -->
-      
-      <xi:include href="./worksheets/chapter-1/chapter-1-main.ptx"/>
+    <!-- Worksheets Chapter -->
+    <xi:include href="./worksheets/worksheets-main.ptx" />
 
 
-    </chapter>
-
-    <chapter xml:id="homework">
-      <title>Homework</title>
-
-      <!-- Include homework files -->
-      <!--<xi:include href="./homework/homework01.ptx"/>-->
-
-    </chapter>
 
     <!-- Include additional chapters for other categories -->
 

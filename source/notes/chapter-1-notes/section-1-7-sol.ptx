@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<worksheet>
+  <title>1.7 Linear Independence</title>
+
+  <!-- ===================== PAGE 1 ===================== -->
+  <page>
+    <title>Topics and Objectives</title>
+
+    <objectives>
+      <title>Topics</title>
+      <ul>
+        <li>Linear independence</li>
+        <li>Geometric interpretation of linearly independent vectors</li>
+      </ul>
+    </objectives>
+
+    <objectives workspace="0.5in">
+      <title>Goals</title>
+      <ul>
+        <li>Characterize a set of vectors and linear systems using the concept of linear independence.</li>
+        <li>Construct dependence relations between linearly dependent vectors.</li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+
+    <p workspace="0.5in">
+      <em>Motivating Question:</em> What is the smallest number of vectors needed in a parametric solution
+      to a linear system?
+    </p>
+
+    <p><nbsp/></p>
+
+    <definition>
+      <statement>
+        A set of vectors
+        <m>{\vec v_1, \ldots, \vec v_k}</m>
+        in
+        <m>\mathbb{R}^n</m>
+        is called <term>linearly independent</term> if the vector
+        equation
+        <md>
+          c_1 \vec v_1 + c_2 \vec v_2 + \cdots + c_k \vec v_k = \vec 0
+        </md>
+        has only the <em>trivial solution</em> <m>c_1 = c_2 = \cdots = c_k = 0</m>.
+
+        The set <m>{\vec v_1, \ldots, \vec v_k}</m> is said to be <term> linearly dependent</term> 
+        if there exist weights <m>c_1, c_2, \dots, c_k</m>, <em>not all zero</em>, such that 
+        <md>
+          c_1 \vec v_1 + c_2 \vec v_2 + \cdots + c_k \vec v_k = \vec 0
+        </md>
+      </statement>
+    </definition>
+
+
+    <p workspace="true"> Let <m>A = \begin{bmatrix} \vec v_1 \amp \cdots \amp \vec v_n \end{bmatrix}</m>. Then some equivalent definitions of linear independence are
+        <ul>
+            <li><m>A\vec x = \vec 0</m> only has the trivial solution.</li>
+            <li><m>A</m> has a pivot in every column.</li>
+        </ul>
+    </p>
+
+    <p><nbsp/></p>
+
+  </page>
+
+  <!-- ===================== PAGE 2 ===================== -->
+  <page>
+    <example>
+        <introduction>
+          <p>
+            For each of the following sets, determine if the set is linearly independent or linearly dependent.
+          </p>
+            </introduction>
+        <task workspace="true">
+          <statement >
+            <m>\left\{\begin{bmatrix}1 \\ 0 \\ 1\end{bmatrix}, \begin{bmatrix} 2 \\ 2 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 2 \\ 1 \end{bmatrix} \right\}</m>
+          </statement>
+          <solution>
+                <p>
+                    We will check if the matrix having these vectors as columns has a pivot in every column. Note that <me>A = \begin{bmatrix} 1 \amp 2 \amp 0 \\ 0 \amp 2 \amp 2 \\ 1 \amp 0 \amp 1 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 2 \amp 0 \\ 0 \amp 1 \amp 1 \\ 0 \amp -2 \amp 1 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 2 \amp 0 \\ 0 \amp 1 \amp 1 \\ 0 \amp 0 \amp 3 \end{bmatrix}</me> Since <m>A</m> has a pivot in every column, the system <m>A\vec x = \vec 0</m> has only the trivial solution. Therefore, there is no nontrivial linear combination of the vectors which results in <m>\vec 0</m>, so the vectors are <em>linearly independent</em>.
+                </p>
+            </solution>
+          </task>
+          <task workspace="true">
+            <statement>
+              <p>
+                <m>\left\{\begin{bmatrix}1 \\ 2 \\ 1\end{bmatrix}, \begin{bmatrix} 2 \\ 4 \\ 2 \end{bmatrix}\right\}</m>
+              </p>
+            </statement>
+            <solution>
+                <p>
+                    Note that <me>B = \begin{bmatrix} 1 \amp 2 \\ 2 \amp 4 \\ 1 \amp 2 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 2 \\ 0 \amp 0 \\ 0 \amp 0 \end{bmatrix}</me> Since <m>B</m> has a free column (column 2), there <em>must</em> be a nontrivial solution to <m>A\vec x = \vec 0</m>. Every one of these nontrivial solutions gives a nontrivial linear combination of the vectors which result in <m>\vec 0</m>. For example, we can write all solutions to <m>A\vec x = \vec 0</m> in parametric vector form as <m>\vec x = t\begin{bmatrix} -2 \\ 1 \end{bmatrix}</m>. Choosing <m>t = 1</m>, we see that 
+                    <md>
+                        \begin{bmatrix} 1 \amp 2 \\ 2 \amp 4 \\ 1 \amp 2 \end{bmatrix} \begin{bmatrix} -2 \\ 1 \end{bmatrix} = \vec 0 \quad \implies \quad -2\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix} + 1\begin{bmatrix} 2 \\ 4 \\ 2 \end{bmatrix} = \vec 0
+                    </md>
+                    Therefore, the vectors are <em>linearly dependent</em>. Note, we can solve for either of the two vectors above and rewrite it in terms of the other. For example, we have that <me>\begin{bmatrix} 2 \\ 4 \\ 2\end{bmatrix} = 2\begin{bmatrix} 1 \\ 2\\ 1\end{bmatrix}</me>. Rewriting one vector in terms of the others is <em>always</em> possible for any linearly dependent set. Now, for some linearly dependent set, you can rewrite any of the vectors in terms of the others, but for some sets, only certain vectors in the set can be rewritten in terms of the others. One thing that is true: You can <em>always</em> rewrite any vector that corresponds to a free column in terms of the other vectors.
+                </p>
+            </solution>
+          </task>
+          <task workspace="true">
+            <statement>
+              <p>
+                <m>\left\{\begin{bmatrix}1 \\ 0 \\ 1\end{bmatrix}, \begin{bmatrix} 2 \\ 1 \\ 3 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix} \right\}</m>
+              </p>
+            </statement>
+            <solution>
+                <p>
+                    Note that <me>C = \begin{bmatrix} 1 \amp 2 \amp 0 \\ 0 \amp 1 \amp 1 \\ 1 \amp 3 \amp 1 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 2 \amp 0 \\ 0 \amp 1 \amp 1 \\ 0 \amp 1 \amp 1 \end{bmatrix} \sim \begin{bmatrix}  1 \amp 0 \amp -2 \\ 0 \amp 1 \amp 1 \\ 0 \amp 0 \amp 0 \end{bmatrix}</me> Since <m>C</m> is missing a pivot in column 3, the vectors are <em>linearly dependent</em>. The solutions to <m>A\vec x = \vec 0</m> are <me>\vec x = t\begin{bmatrix} 2 \\ -1 \\ 1 \end{bmatrix}</me>. Choosing <m>t = 1</m>, we see that <me>\begin{bmatrix} 1 \amp 2 \amp 0 \\ 0 \amp 1 \amp 1 \\ 1 \amp 3 \amp 1 \end{bmatrix} \begin{bmatrix} 2 \amp -1 \amp 1 \end{bmatrix} = \vec 0 \quad \implies \quad 2\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} - 1\begin{bmatrix} 2 \\ 1 \\ 3 \end{bmatrix} + 1\begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix} = \vec 0</me>. We can solve this equation for any of the vectors, so let's solve it for the second vector and show that it can be expressed as a linear combination of the other two. <me> \begin{bmatrix}2 \\ 1 \\ 3 \end{bmatrix} = 2\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} + 1\begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}</me>
+                </p>
+            </solution>
+            
+          </task>
+    </example>
+
+    <p><nbsp/></p>
+
+  </page>
+
+  <page>
+    <title>Two Important Facts</title>
+
+    <theorem workspace="true">
+      <statement>
+        Any set containing the zero vector <m> \vec 0</m> is linearly dependent.
+      </statement>
+      <solution>
+        <p>
+            Consider the set <m>\{\vec 0, \vec v_1, \dots, \vec v_n\}</m>. Then the following is a nontrivial linear combination of these vector which results in <m>\vec 0</m>. <me>(1)\vec 0 + (0)\vec v_1 + \cdots + (0)\vec v_n = \vec 0</me>
+        </p>
+    </solution>
+    </theorem>
+
+    <p><nbsp/></p>
+    
+
+    <theorem workspace="true" xml:id="thm-lin-dep-too-many-vectors">
+      <statement>
+        Suppose <m>\vec v_1, \ldots, \vec v_n</m> are vectors in
+        <m>\mathbb{R}^m</m> with <m>n &gt; m</m>. Then the set
+        <m>\{\vec v_1, \ldots, \vec v_n\}</m>
+        is linearly dependent.
+      </statement>
+      <solution>
+        <p>
+            Note that the matrix <m>A = \begin{bmatrix} \vec v_1 \amp \cdots \amp \vec v_k \end{bmatrix}</m> is an <m>m \times n</m> matrix. Since <m>n &gt; m</m>, this matrix has more columns than rows. Therefore, there <em>must</em> be a column that doesn't contain a pivot. Thus, the vectors <em>must</em> be linearly dependent.
+        </p>
+      </solution>      
+    </theorem>
+
+    <p><nbsp/></p>
+
+
+    
+  </page>
+
+
+  <!-- ===================== PAGE 4 ===================== -->
+  <page>
+    <title>Example 1</title>
+
+    <example>
+      <statement>
+        For what values of <m>h</m> are the vectors
+        <displaymath>
+          <m>
+            \begin{bmatrix} 1 \\ 1 \\ h \end{bmatrix},
+            \begin{bmatrix} 1 \\ h \\ 1 \end{bmatrix},
+            \begin{bmatrix} h \\ 1 \\ 1 \end{bmatrix}
+          </m>
+        </displaymath>
+        linearly dependent?
+      </statement>
+      <solution>
+        <p>
+            Note that 
+        </p> 
+        <p> 
+            <m>\begin{eqnarray*} A = \begin{bmatrix} 1 \amp 1 \amp h \\ 1 \amp h \amp 1 \\ h \amp 1 \amp 1 \end{bmatrix} \amp {\Huge \sim} \amp \begin{bmatrix} 1 \amp 1 \amp h \\ 0 \amp h-1 \amp 1 - h \\ 0 \amp 1 - h \amp 1 - h^2 \end{bmatrix}\\ \amp \overset{R_3 + R_2 \rightarrow R_3}{\Huge \sim} \amp \begin{bmatrix} 1 \amp 1 \amp h \\ 0 \amp h-1 \amp 1-h \\ 0 \amp 0 \amp 2 - h - h^2 \end{bmatrix}\end{eqnarray*}</m> 
+        </p> 
+        <p>
+            We see that the second column of <m>A</m> will correspond to a free variable if <me>1 - h = 0 \quad \implies \quad h = 1</me> and the third column of <m>A</m> will corresponds to a free variable if <me>2 - h - h^2 = 0 \quad \implies \quad (2+h)(1-h) = 0 \quad \implies \quad h = -2,1</me> Therefore, the values of <m>h</m> which make the vectors linear dependent are <m>h = -2, 1</m>.
+        </p>
+        <p>
+            Let's check. If <m>h = -2</m>, the vectors are <m>\begin{bmatrix} 1 \\ 1\\ -2 \end{bmatrix}, \begin{bmatrix} 1 \\ -2 \\ 1 \end{bmatrix}, \begin{bmatrix} -2 \\ 1 \\ 1\end{bmatrix}</m> which are linearly dependent since <md>1 \begin{bmatrix} 1 \\ 1\\ -2 \end{bmatrix} + 1\begin{bmatrix} 1 \\ -2 \\ 1 \end{bmatrix}+ 1 \begin{bmatrix} -2 \\ 1 \\ 1\end{bmatrix} = \vec 0</md>
+            If <m>h = 1</m>, the vectors are <m>\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}</m> which are definitely linearly dependent since they are the same vector.            
+        </p>
+      </solution>
+    </example>
+  </page>
+
+
+  
+</worksheet>

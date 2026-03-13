@@ -1,0 +1,332 @@
+<handout xml:id="sec-1-3-vector-equations">
+  <title>1.3 Vector Equations</title>
+  <page>
+    <title>Introduction</title>
+  <objectives xml:id="obj-1-3-topics">
+      <title>Topics</title>
+      <ul>
+        <li>Vectors in <m>\mathbb{R}^n</m>, and their basic properties</li>
+        <li>Linear combinations of vectors</li>
+      </ul>
+    </objectives>
+
+  <!-- Learning Objectives -->
+    <objectives workspace="0.1in" xml:id="obj-1-3">
+      <title>Goals</title>
+      <ul>
+        <li>Apply geometric and algebraic properties of vectors in <m>\mathbb{R}^n</m> to compute vector additions and scalar multiplications.</li>
+        <li>Characterize a set of vectors in terms of <term>linear combinations</term>, their <term>span</term>, and how they are related to each other geometrically.</li>
+
+      </ul>
+    </objectives>
+
+
+    <p xml:id="motivation">
+      We want to think about the <em>algebra</em> in linear algebra (systems of equations and their solution sets) 
+      in terms of <em>geometry</em> (points, lines, planes, etc.).
+
+      Consider the following system.
+
+        <me>
+          \begin{aligned}
+          x - 3y \amp = -3\\
+          2x + y \amp = 8
+          \end{aligned}
+        </me>
+
+        We could solve this system by graphing the lines represented by each equation and determining where they interesect.
+      </p>
+        <figure xml:id="fig-motivation-lines">
+          <caption>Two lines in the plane with a single point of intersection.</caption>
+          <image xml:id="img-motivation-lines" width="30%" decorative="no">
+            <shortdescription>
+            Cartesian axes with two lines: one with positive slope (from the equation <m>x-3y=-3</m>) and one 
+            with negative slope (from <m>2x+y=8</m>), intersecting at a point.
+          </shortdescription>
+          <description> Test </description>
+            <latex-image>
+              <preamble>
+              </preamble>
+              <tex>
+\begin{tikzpicture}[scale=.08, baseline]
+  \draw (-20,-20) rectangle (20,20);
+  \clip (-20,-20) rectangle (20,20);
+  \draw[-{Stealth[length=4pt]}] (-20,0) -- (20,0);
+  \draw[-{Stealth[length=4pt]}] (0,-20) -- (0,20);
+  % x - 3y = -3  -> y = (x+3)/3
+  \draw[red, very thick] (-20,-20/3+1) -- (20,20/3+1);
+  % 2x + y = 8   -> y = -2x + 8
+  \draw[blue, very thick] (-20,40+8) -- (20,-40+8);
+\end{tikzpicture}
+              </tex>
+            </latex-image>
+          </image>
+        </figure>
+
+  <p>
+    This geometric perspective gives better insight into properties of systems and their solution sets.
+    To better see this, we introduce <m>n</m>-dimensional space <m>\mathbb{R}^n</m> and the vectors that live in it.
+    
+  </p>
+  </page>
+
+  <page xml:id="Rn">
+    <title><m>\mathbb{R}^n</m></title>
+    <definition workspace="0.1in">
+      <statement>
+        <p>
+          Recall that <m>\mathbb{R}</m> denotes the collection of all real numbers. For a positive integer <m>n</m>, define
+
+    <me>\mathbb{R}^n = \{\text{all ordered } n\text{-tuples of real numbers } (x_1,\,x_2,\,\ldots,\,x_n)\}.</me>
+        </p>
+      </statement>
+        </definition>
+
+    <p>
+      When <m>n=1</m>, we get <m>\mathbb{R}^1=\mathbb{R}</m>, the number line.
+      </p>
+
+    <figure xml:id="fig-number-line" workspace=".5in">
+      <caption>The number line for <m>\mathbb{R}</m>.</caption>
+      <image xml:id="img-number-line" width="70%" decorative="no">
+        <shortdescription>
+        A horizontal line with tick marks labeled from -3 to 3 representing the real numbers.
+      </shortdescription>
+        <latex-image>
+          <preamble>
+          </preamble>
+          <tex>
+\begin{tikzpicture}
+  \draw[&lt;-&gt;, thick] (-3.5,0) -- (3.5,0);
+  \foreach \x in {-3,...,3} {
+    \draw[thin] (\x,-.1) -- (\x,0.1) node[anchor=south] {\small$\x$};
+  }
+\end{tikzpicture}
+          </tex>
+        </latex-image>
+      </image>
+    </figure>
+  
+    <p>
+      When <m>n=2</m>, we can think of <m>\mathbb{R}^2</m> as a plane. Each point is an ordered pair of real numbers: its 
+      <m>x</m>- and <m>y</m>-coordinates. We could also view the elements of <m>\mathbb{R}^n</m> as <em>vectors</em> (arrows with length and direction). 
+      It turns out, viewing them as vector is a better approach.
+    </p>
+    <example workspace="1in">
+      <statement>
+        <p>
+          Sketch the point <m>(3,2)</m> and the vector <m>\begin{bmatrix}3\\ 2\end{bmatrix}</m>.
+        </p>    
+
+    <figure xml:id="fig-r2-grid">
+      <caption>Cartesian plane with grid, axes, and room to mark <m>(3,2)</m> and <m>\begin{bmatrix}3\\2\end{bmatrix}</m>.</caption>
+      <image xml:id="img-r2-grid" width="50%">
+        <shortdescription>
+        A square grid with horizontal and vertical axes spanning from -4 to 4.
+      </shortdescription>
+        <latex-image>
+          <preamble>
+          </preamble>
+          <tex>
+\begin{tikzpicture}[scale=.5]
+  \draw[help lines] (-4, -4) grid (4, 4);
+  \draw[-{Stealth[length=4pt]}, thick] (-4,0) -- (4,0);
+  \draw[-{Stealth[length=4pt]}, thick] (0,-4) -- (0,4);
+  % Instructor/reader can add a plotted point at (3,2) and a vector from (0,0) to (3,2)
+\end{tikzpicture}
+          </tex>
+        </latex-image>
+      </image>
+    </figure>
+    </statement>
+  </example>
+</page>
+
+  <page xml:id="vector-algebra">
+    <title>Vector Algebra</title>
+    <p>
+      When we think of an element of <m>\mathbb{R}^n</m> as a vector, we commonly write it as a column:
+    </p>
+    <me>
+      \vec v \;=\; \begin{bmatrix} 1\\ 2\\ 3 \end{bmatrix}.
+    </me>
+    <p>Suppose <m>c</m> is an arbitrary real number, written <m>c \in \mathbb{R}</m>, and let </p>
+    <me>
+      \vec u \;=\; \begin{bmatrix} u_1\\ u_2 \end{bmatrix}, 
+      \qquad
+      \vec v \;=\; \begin{bmatrix} v_1\\ v_2 \end{bmatrix}.
+    </me>
+    <p>Vectors have the following properties.</p>
+    <ol>
+      <li>
+        <term>Scalar Multiple:</term>
+        <me>c\,\vec u \;=\; \begin{bmatrix} c\,u_1\\ c\,u_2 \end{bmatrix}.</me>
+      </li>
+      <li>
+        <term>Vector Addition:</term>
+        <me>
+          \vec u + \vec v 
+          \;=\; \begin{bmatrix} u_1\\ u_2 \end{bmatrix} + \begin{bmatrix} v_1\\ v_2 \end{bmatrix}
+          \;=\; \begin{bmatrix} u_1 + v_1\\ u_2 + v_2 \end{bmatrix}.
+        </me>
+      </li>
+    </ol>
+    <p workspace="1.5in">
+      Vectors in higher dimensions satisfy the same operations componentwise.
+    </p>
+
+  </page>
+
+  <page xml:id="lin-comb-span">
+    <title>Linear Combinations and Span</title>
+
+    <definition xml:id="def-linear-combination-span" workspace="0.5in">
+      <statement>
+        <ol>
+          <li>
+            Given vectors <m>\vec v_1,\vec v_2,\dotsc,\vec v_p \in \mathbb{R}^n</m> and scalars <m>c_1,c_2,\dotsc,c_p</m>, 
+            the vector
+            <me>
+              \vec y \;=\; c_1 \vec v_1 + c_2 \vec v_2 + \cdots + c_p \vec v_p
+            </me>
+            is called a <term>linear combination</term> of <m>\vec v_1,\dotsc,\vec v_p</m> with weights <m>c_1,\dotsc,c_p</m>.
+          </li>
+          <li>
+            The set of all linear combinations of <m>\vec v_1,\dotsc,\vec v_p</m> is called the <term>span</term> of these vectors.
+          </li>
+        </ol>
+      </statement>
+    </definition>
+
+    <p>
+      Any two vectors in <m>\mathbb{R}^2</m> that are not scalar multiples of one another span <m>\mathbb{R}^2</m>. 
+      Thus, any vector in <m>\mathbb{R}^2</m> can be written as a linear combination of such a pair.
+    </p>
+
+    <figure xml:id="fig-grid-combos">
+      <caption>Linear combinations of two nonparallel vectors spanning the plane.</caption>
+      <image xml:id="img-grid-combos" width="60%">
+        <description>
+        A lightly rotated square grid with the origin and multiples/sums of two non-parallel vectors labeled, 
+        illustrating how combinations like <m>\vec v+\vec u</m>, <m>2\vec v+\vec u</m>, etc., tile the plane.
+      </description>
+        <latex-image>
+          <preamble>
+          </preamble>
+          <tex>
+\begin{tikzpicture}[scale=1.1]
+  \begin{scope}[rotate=5]
+    % light grid
+    \draw[gray, thin] (0,0)--(8,0) (0,1)--(8,1) (0,2)--(8,2) (0,3)--(8,3);
+    \draw[gray, thin] (1,0)--(1,3) (3,0)--(3,3) (5,0)--(5,3) (7,0)--(7,3);
+    % origin and vectors
+    \node[black] at (3,1) {$\vec 0$};
+    \draw[-{Stealth[length=4pt]}, green, very thick] (3,1) -- (5,1) node[anchor=north west] {$\vec u$};
+    \node[gray] at (7,1) {$2\vec u$};
+    \draw[-{Stealth[length=4pt]}, cyan, very thick] (3,1) -- (3,2) node[anchor=north west] {$\vec v$};
+    \draw[-{Stealth[length=4pt]}, blue, very thick] (3,1) -- (5,2) node[anchor=north west] {$\vec v+\vec u$};
+    \node[gray] at (7,2) {$\vec v+2\vec u$};
+    \node[gray] at (7,3) {$2\vec v+2\vec u$};
+    \node[gray] at (5,3) {$2\vec v+\vec u$};
+    \node[gray] at (3,3) {$2\vec v$};
+    \node[gray] at (1,3) {$2\vec v-\vec u$};
+    \node[gray] at (1,2) {$\vec v-\vec u$};
+    \node[gray] at (1,1) {$-\vec u$};
+    \draw[-{Stealth[length=4pt]}, red, very thick] (3,1) -- (2,2.5) node[anchor=north east] {$1.5\vec v-0.5\vec u$};
+  \end{scope}
+\end{tikzpicture}
+          </tex>
+        </latex-image>
+      </image>
+    </figure>
+
+  </page>
+
+  <page xml:id="examples">
+    <title>Examples of Linear Combinations and Span</title>
+    
+    <example workspace="2in">
+      <statement>
+        <p>
+          Let <m>\vec u=\begin{bmatrix} -1\\ 4\\ 2\end{bmatrix}</m> and <m>\vec v=\begin{bmatrix} 5\\ 0\\ -3\end{bmatrix}</m>. Determine three vectors which are linear combinations of <m>\vec u</m> and <m>\vec v</m>.
+        </p>
+      </statement>
+    </example>
+
+    <example workspace="2in">
+      <statement>
+        <p>
+          Let <m>\vec u=\begin{bmatrix} -1\\ 4\\ 2\end{bmatrix}</m> and <m>\vec v=\begin{bmatrix} 5\\ 0\\ -3\end{bmatrix}</m>. Determine if <m>\vec w = \begin{bmatrix} 2 \\ 12 \\ 3 \end{bmatrix}</m> is in <m>\textrm{Span}(\vec u, \vec v)</m>.
+        </p>
+      </statement>
+    </example>
+  </page>
+
+  <page xml:id="example-span">
+    <title>Example: Membership in a Span</title>
+  <p>
+      In general, any two non-parallel vectors in <m>\mathbb{R}^3</m> span a plane through the origin. 
+      Every vector in that plane is a linear combination of the two.
+    </p>
+
+    <figure xml:id="fig-plane-span">
+      <caption>Two nonparallel vectors in <m>\mathbb{R}^3</m> span a plane through the origin.</caption>
+      <image xml:id="img-plane-span" width="30%">
+        <description>
+        A translucent plane through the origin with two nonparallel vectors drawn from the origin; 
+        coordinate axes are shown for reference.
+      </description>
+        <latex-image>
+          <preamble>
+          </preamble>
+          <tex>
+\tdplotsetmaincoords{74}{100}
+\begin{tikzpicture}[scale=2.4,
+  axis/.style={-{Stealth[length=4pt]},black},
+  vectorC/.style={-{Stealth[length=4pt]},black,very thick},
+  vectorV/.style={-{Stealth[length=4pt]},blue,very thick},
+  tdplot_main_coords
+]
+  \coordinate (O) at (0,0,0);
+  \coordinate (X) at (2,0,0);
+  \coordinate (Y) at (0,1,0);
+  \coordinate (Z) at (0,0,1);
+  \coordinate (X1) at (1,1,0);
+  \coordinate (X2) at (1,0,1);
+  \coordinate (X3) at (2,1,1);
+
+  % plane spanned by X1 and X2
+  \filldraw[draw=blue!40,fill=blue!8]
+    (0,0,0) -- (1,1,0) -- (2,1,1) -- (1,0,1) -- cycle;
+
+  % axes
+  \draw[axis] (O) -- (X);
+  \draw[axis] (O) -- (Y);
+  \draw[axis] (O) -- (Z);
+
+  % spanning vectors
+  \draw[vectorV] (O) -- (X1);
+  \draw[vectorV] (O) -- (X2);
+
+  % origin label
+  \node[below] at (O) {$\vec 0$};
+\end{tikzpicture}
+          </tex>
+        </latex-image>
+      </image>
+    </figure>
+
+    <example xml:id="ex-span-membership">
+      <statement>
+        <p>Is <m>\vec y</m> in the span of <m>\vec v_1</m> and <m>\vec v_2</m>?</p>
+        <me>
+          \vec v_1 \;=\; \begin{bmatrix} 1\\ -2\\ -3 \end{bmatrix},\qquad
+          \vec v_2 \;=\; \begin{bmatrix} 2\\ 5\\ 6 \end{bmatrix},\qquad
+          \vec y   \;=\; \begin{bmatrix} 7\\ 4\\ 15 \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+  </page>
+
+
+</handout>

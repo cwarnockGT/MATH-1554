@@ -1,0 +1,552 @@
+<handout xml:id="handout-section-5-3-diagonalization">
+  <title>5.3 Diagonalization</title>
+
+  <page xml:id="p-5-3-overview">
+    <title>Overview</title>
+
+    <p>
+      <em>Motivation:</em> It can be useful to take large powers of matrices, for example <m>A^k</m> for large <m>k</m>.
+    </p>
+    <p>
+      <em>But:</em> Multiplying two <m>n\times n</m> matrices requires roughly <m>n^3</m> computations.
+    </p>
+    <p>
+      <em>Question:</em> Is there a more efficient way to compute <m>A^k</m>?
+    </p>
+
+    <p><nbsp/></p>
+
+    <objectives xml:id="obj-5-3-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>Similar matrices</li>
+        <li>Diagonal, similar, and diagonalizable matrices</li>
+        <li>Diagonalizing matrices</li>
+      </ul>
+    </objectives>
+
+    <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>Determine whether a matrix can be diagonalized, and if possible diagonalize a square matrix.</li>
+        <li>Apply diagonalization to compute matrix powers.</li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+
+    <definition xml:id="def-similar-matrices">
+      <title>Similarity</title>
+      <statement>
+        <p>
+          Two <m>n\times n</m> matrices <m>A</m> and <m>B</m> are <term>similar</term> if there exists an invertible matrix <m>P</m> such that <m>A=PBP^{-1}.</m></p>
+      </statement>
+    </definition>
+
+    <p>
+      Matrix similarity is an <em>equivalence relation</em> meaning:
+      <ul>
+        <li>
+          <p workspace="true">
+            <em>Reflexive Property</em>: Every matrix <m>A</m> is similar to itself.
+          </p>
+          <solution>
+            <p>
+                Proof: Let <m>A</m> be any <m>n\times n</m> matrix and let <m>P = I_n</m>. Then <me>A = I_nAI_n = I_nAI_n^{-1} = PAP^{-1}</me>. Thus, <m>A</m> is similar to <m>A</m>.
+            </p>
+            </solution> 
+        </li>
+        <li>
+          <p workspace="true">
+            <em>Symmetric Property</em>: If <m>A</m> is similar to <m>B</m>, then <m>B</m> is similar to <m>A</m>.
+          </p>
+          <solution>
+            <p>
+                Proof: Suppose <m>A = PBP^{-1}</m> for some invertible matrix <m>P</m>. By multiplying both sides of the equation by <m>P^{-1}</m> on the left and <m>P</m> on the right we get <m>P^{-1}AP = P^{-1}(PBP^{-1})P = B</m>. Letting <m>R = P^{-1}</m>, we have that <m>B = RAR^{-1}</m>, so <m>B</m> is similar to <m>A</m>. 
+            </p>
+          </solution>
+        </li>
+        <li>
+          <p workspace="true">
+            <em>Transitive Property</em>: If <m>A</m> is similar to <m>B</m> and <m>B</m> is similar to <m>C</m>, then <m>A</m> is similar to <m>C</m>.
+          </p>
+          <solution>
+            <p>
+                Proof: Suppose <m>A = PBP^{-1}</m> and <m>B = RCR^{-1}</m>. Then we have that <me>A = PBP^{-1} = P(RCR^{-1})P^{-1} = (PR)C(PR)^{-1}</me>, so <m>A</m> is similar to <m>C</m>.
+            </p>
+          </solution>
+        </li>
+      </ul>
+    </p>
+
+    <p><nbsp/></p>
+
+  </page>
+
+  <page>
+
+    <theorem xml:id="thm-similar-same-charpoly" workspace="true">
+      <title>Characteristic Polynomial of Similar Matrices</title>
+      <statement>
+        <p>
+          If <m>A</m> and <m>B</m> are similar, then they have the same characteristic polynomial.
+        </p>
+      </statement>
+      <solution>
+        <p>
+            Recall that <m>\det(A - \lambda I)</m> and <m>\det(B - \lambda I)</m> are the characteristic polynomials of <m>A</m> and <m>B</m>, respectively. Since <m>A</m> and <m>B</m> are similar, we have that <m>A = PBP^{-1}</m> for some invertible matrix <m>P</m>. Note the following:
+        </p>
+        <p>
+            <m>\begin{eqnarray*} \det(A - \lambda I) \amp = \amp \det (PBP^{-1} - \lambda I) \\ \amp = \amp \det(PBP^{-1}  - \lambda PP^{-1}) \\ \amp = \amp \det(PBP^{-1} - P \lambda I P^{-1}) \\ \amp = \amp \det(P(B - \lambda I)P^{-1}) \\ \amp = \amp \det(P)\det(B - \lambda I)\det(P^{-1}) \\ \amp = \amp \det(P)\det(P^{-1})\det(B - \lambda I) \\ \amp = \amp \det(PP^{-1})\det(B - \lambda I) \\ \amp = \amp \det(I)\det(B - \lambda I) \\ \amp = \amp \det(B - \lambda I)\end{eqnarray*}</m>
+        </p>
+        <p>
+            Thus, <m>\det(A - \lambda I) = \det(B - \lambda I)</m>, so <m>A</m> and <m>B</m> have the same characteristic polynomial.
+        </p>
+      </solution>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <p>
+      Notes: 
+      <ul>
+        <li>Similar matrices have exactly the same eigenvalues with exactly the same algebraic multiplicity for each eigenvalue and exactly the same geometric multiplicity for each eigenvalue.</li>
+        <li>The converse of <xref ref="thm-similar-same-charpoly"/> is not true; that is, just because two matrices have the same characterisitc polynomial, that does not mean that they are similar. For example,
+        <me>
+          \begin{bmatrix}
+            0 \amp 1\\
+            0 \amp 0
+          \end{bmatrix}
+          \quad\text{and}\quad
+          \begin{bmatrix}
+            0 \amp 0\\
+            0 \amp 0
+          \end{bmatrix}
+        </me>
+        have the same characteristic polynomial, but are not similar because the eigenvalue <m>\lambda = 0</m> does not have the same geometric multiplicty for each matrix.</li>
+      </ul>
+    </p>
+
+    <p><nbsp/></p>
+
+    <example workspace="true">
+      <statement>
+        <p>
+          True or false: If <m>A </m> is similar to the identity matrix, then <m>A</m> is equal to the identity matrix.
+        </p>
+      </statement>
+      <solution>
+        <p>
+            If <m>A </m> is similar to <m>I</m>, then there exists an invertible matrix <m>P</m> so that <m>A = PIP^{-1} = PP^{-1} = I</m>. Thus, <m>A</m> must be the identity matrix.
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+
+    
+  </page>
+
+
+  <page xml:id="p-5-3-diagonal-matrices">
+    <title>Diagonal Matrices</title>
+
+    <definition xml:id="def-diagonal-matrix">
+      <title>Diagonal Matrix</title>
+      <statement>
+        <p>
+          A matrix is <term>diagonal</term> if the only nonzero entries (if any) lie on the main diagonal.
+          In this course, we work only with square diagonal matrices.
+        </p>
+      </statement>
+    </definition>
+
+    <p>Examples of diagonal matrices:</p>
+    <me>
+      \begin{bmatrix}2 \amp 0\\ 0 \amp 2\end{bmatrix},\quad
+      \begin{bmatrix}2\end{bmatrix},\quad
+      I_n,\quad
+      \begin{bmatrix}0 \amp 0\\ 0 \amp 0\end{bmatrix}.
+    </me>
+
+    <p><nbsp/></p>
+
+
+
+    <p>
+      If <m>A</m> is diagonal, then <m>A^k</m> is easy to compute by raising diagonal entries to the <m>k</m>-th power.
+    </p>
+
+    <example xml:id="ex-5-3-powers-diagonal">
+      <title>Example: Powers of a Diagonal Matrix</title>
+        <task workspace="true">
+            <statement>
+                <p>Let <me> A=\begin{bmatrix} 3 \amp 0\\ 0 \amp 0.5 \end{bmatrix}</me>. Compute <m>A^2</m> and <m>A^k</m>.</p>
+            </statement>
+            <solution>
+            <p>
+                Note that <me>A^2 = \begin{bmatrix} 3 \amp 0 \\ 0 \amp 0.5 \end{bmatrix}\begin{bmatrix} 3 \amp 0 \\ 0 \amp 0.5 \end{bmatrix} = \begin{bmatrix} 3^2 \amp 0 \\ 0 \amp 0.5^2 \end{bmatrix}</me>. It follows that <me>A^k = \begin{bmatrix} 3^k \amp 0 \\ 0 \amp 0.5^k \end{bmatrix}.</me>
+            </p>
+            </solution>
+        </task>
+        <task workspace="1.5in">
+            <statement>
+                <p>
+                    Is this as easy to do if <m>A</m> is <em>not</em> diagonal?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Let <m>A = \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix}</m>. Then <me>A^2 = \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix}\begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} = \begin{bmatrix} 7 \amp 10 \\ 15 \amp 22 \end{bmatrix}</me>. There is no apparant pattern like there is when <m>A</m> is diagonal.
+                </p>
+            </solution>
+        </task>
+        <task workspace="1.5in">
+            <statement>
+                <p>
+                    What about if <m>A</m> is <em>similar</em> to a diagonal matrix?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Suppose <m>A = PDP^{-1}</m> for some invertible matrix <m>P</m> and some diagonal matrix <m>D</m>. Note that <me>A^2 = (PDP^{-1})^2 = (PDP^{-1})(PDP^{-1}) = PDIDP^{-1} = PD^2P^{-1}</me>. It follows that <m>A^k = PD^kP^{-1}</m>. Therefore, if we know that <m>A</m> is similar to a diagonal matrix, then we can calculate power of <m>A</m> much faster than expected.
+                </p>
+            </solution>
+        </task>
+    </example>
+
+    <p><nbsp/></p>
+
+  </page>
+
+
+  <page xml:id="p-5-3-diagonalization-definition">
+    <title>Diagonalization</title>
+
+    <definition xml:id="def-diagonalizable">
+      <title>Diagonalizable Matrix</title>
+      <statement>
+        <p>
+          A matrix <m>A\in\mathbb{R}^{n\times n}</m> is <term>diagonalizable</term> if it is similar to a diagonal matrix
+          <m>D</m>; that is, there exists an invertible matrix <m>P</m> such that
+        </p>
+        <me>
+          A=PDP^{-1}.
+        </me>
+      </statement>
+    </definition>
+    <solution>
+        <p>
+            First, let's identify <m>D</m>. Since <m>D</m> is diagonal, every entry not on the diagonal must be zero. Therefore, to identify <m>D</m>, we need to identify the <m>n</m> entries on the diagonal. By <xref ref="thm-similar-same-charpoly"/>, <m>A</m> and <m>D</m> must have the same characteristic polynomial. Thus, they must have the same eigenvalues. Since <m>D</m> is diagonal, it is both upper and lower triangular. Therefore, by <xref ref="thm-triangular-diagonal-are-eigs"/>, the eigenvalues of <m>D</m> are the entries on the diagonal. Hence, the eigenvalues of <m>A</m> must be the diagonal entries of <m>D</m>. So, if the eigenvalues of <m>A</m> are <m>\lambda_1, \lambda_2, \dots, \lambda_n</m> (listing repeated eigenvalues the appropriate number of times), then <me> D = \begin{bmatrix} \lambda_1 \amp  \amp  \amp \\ \amp \lambda_2 \amp  \amp \\ \amp  \amp \ddots \amp \\ \amp  \amp  \amp \lambda_n \end{bmatrix} </me>
+        </p>
+        <p>
+            <em>Caution 1</em>: The above reasoning assumes that the <m>n \times n</m> matrix <m>A</m> has <m>n</m> real eigenvalues (counting multiplicity). What if <m>A</m> has fewer than <m>n</m> eigenvalues. For example, if <m>A = \begin{bmatrix} 0 \amp 1 \\ -1 \amp 0 \end{bmatrix}</m>, then <m>A</m> has ZERO real eigenvalues (check this). If <m>A</m> has fewer than <m>n</m> eigenvalues, then we WILL NOT be able to fill all the missing entries of <m>D</m>. We couldn't just fill the gaps with 0's because that would imply that <m>D</m> had more 0 eigenvalues than <m>A</m>. Therefore, in the case where <m>A</m> has fewer than <m>n</m> eigenvalues; that is, when the algebraic multiplicities of the eigenvalues add up to less than <m>n</m>, then it is IMPOSSIBLE to form <m>D</m>. Thus, <m>A</m> would NOT be diagonalizable.  
+        </p>
+        <p><nbsp/></p>
+        <p>
+            Assuming we can find <m>D</m>, we now need to find <m>P</m>. Let <m>P = \begin{bmatrix} \vec v_1 \amp \cdots \amp \vec v_n \end{bmatrix}</m>. Then, we can rearrange the equation <m>A = PDP^{-1}</m> my multiplying by <m>P</m> on the right of both sides to get <m>AP = PD</m>. Note that <me>AP = A\begin{bmatrix} \vec v_1 \amp \cdots \amp \vec v_n\end{bmatrix} = \begin{bmatrix} A\vec v_1 \amp \cdots \amp A\vec v_n \end{bmatrix}</me> and <me>PD = \begin{bmatrix}\vec v_1 \amp \cdots \amp \vec v_n \end{bmatrix} \begin{bmatrix} \lambda_1 \amp  \amp  \amp \\ \amp \lambda_2 \amp  \amp \\ \amp  \amp \ddots \amp \\ \amp  \amp  \amp \lambda_n \end{bmatrix} = \begin{bmatrix} \lambda_1\vec v_1 \amp \cdots \amp \lambda_n\vec v_n \end{bmatrix}</me>. Since <m>AP = PD</m>, we can set corresponding columns equal to each other to find <m>A\vec v_i = \lambda_i\vec v_i</m>. Since <m>\vec v_i \neq \vec 0</m> (else <m>P</m> would not be invertible) we have that the columns <m>\vec v_i</m> must be eigenvectors of <m>A</m> corresponding to <m>\lambda_i</m>!
+        </p>
+        <p>
+            <em>Caution 2</em>: Note that <m>P</m> would fail to be invertible if the columns were linearly independent. Therefore, we must have that the vectors <m>\vec v_i</m> are linearly independent. Are we guaranteed to be able to find <m>n</m> linearly independent eigenvectors? This is only possible if every eigenspace is as big as it is supposed to be. For example, if the eigenvalue <m>\lambda = 2</m> has algebraic multiplicity 3, then we expect the <m>2</m>-eigenspace to be 3-dimensional. If it is not, then it is impossible for us to find 3 linearly independent eigenvectors corresponding to <m>\lambda = 2</m>. Therefore, it would be impossible to form <m>P</m> since <m>P</m> must contain <m>3</m> linearly independent vectors to match with the <m>3</m> <m>\lambda = 2</m>'s which are on the diagonal of <m>D</m>. Recall that the dimension of the eigenspace is the geometric multiplicity. Therefore, we are unable to find an invertible <m>P</m> when any eigenvalue has geometric multiplicity less than its algebraic multiplicity. If that happens for any of the eigenvalues, then <m>A</m> is NOT diagonalizable.
+        </p>
+    </solution>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-3-diagonalization-theorem">
+    <title>Characterizing Diagonalizability</title>
+
+    <theorem xml:id="thm-diagonalizable-iff-n-lin-ind-eigenvectors" workspace="true">
+      <title>Diagonalization Criterion</title>
+      <statement>
+        <p>
+          A matrix <m>A</m> is diagonalizable if and only if <m>A</m> has <m>n</m> linearly independent eigenvectors.
+          Equivalently,
+        </p>
+        <me>
+          A = \bigl[\vec v_1\ \vec v_2\ \cdots\ \vec v_n\bigr]\,
+          \begin{bmatrix}
+            \lambda_1 \amp  \amp  \amp \\
+             \amp \lambda_2 \amp  \amp \\
+             \amp  \amp \ddots \amp \\
+             \amp  \amp  \amp \lambda_n
+          \end{bmatrix}
+          \bigl[\vec v_1\ \vec v_2\ \cdots\ \vec v_n\bigr]^{-1},
+        </me>
+        <p>
+          where <m>\vec v_1,\dots,\vec v_n</m> are linearly independent eigenvectors and
+          <m>\lambda_1,\dots,\lambda_n</m> are the corresponding eigenvalues (in order).
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-diagonalizable-multiplicity-conditions" workspace="true">
+      <title>Algebraic vs. Geometric Multiplicity</title>
+      <statement>
+        <p>Suppose:</p>
+        <ul>
+          <li><m>A</m> is <m>n\times n</m>,</li>
+          <li><m>A</m> has distinct eigenvalues <m>\lambda_1,\ldots,\lambda_k</m> with <m>k\le n</m>,</li>
+          <li><m>a_i</m> is the algebraic multiplicity of <m>\lambda_i</m>,</li>
+          <li><m>d_i</m> is the geometric multiplicity (dimension of the <m>\lambda_i</m>-eigenspace).</li>
+        </ul>
+        <p>Then:</p>
+        <ol>
+          <li><m>d_i \le a_i</m> for all <m>i</m>.</li>
+          <li>
+            <m>A</m> is diagonalizable <m> \ \iff \ \sum_i d_i = n \ \iff \ d_i=a_i</m> for all <m>i</m>.
+          </li>
+          <li>
+            <m>A</m> is diagonalizable <m>\iff</m> the eigenvectors for all eigenvalues together form a basis of <m>\mathbb{R}^n</m>.
+          </li>
+        </ol>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-n-distinct-eigs-implies-diagonalizable" workspace="true">
+      <title>Diagonalization with Distinct Eigenvalues</title>
+      <statement>
+        <p>
+          If <m>A</m> is <m>n\times n</m> and has <m>n</m> distinct eigenvalues, then <m>A</m> is diagonalizable.
+        </p>
+      </statement>
+    </theorem>
+
+    
+
+    <p><nbsp/></p>
+
+  </page>
+
+  <page>
+
+
+        <example xml:id="ex-5-3-diagonalize-1" workspace="true">
+      <statement>
+        <p>Diagonalize if possible:</p>
+        <me>
+          A = \begin{bmatrix}
+            3 \amp 1\\
+            0 \amp 3
+          \end{bmatrix}.
+        </me>
+      </statement>
+      <solution>
+        <p>
+          First, note that by <xref ref="thm-triangular-diagonal-are-eigs"/> we have that the eigenvalues of <m>A</m> are <m>\lambda = 3</m> with algebraic multiplicity 2. Since we have two eigenvalues (counting algebraic multiplicity) and since <m>A</m> is a <m>2 \times 2</m> matrix, we know that we can form <m>D</m>.
+        </p>
+        <p>
+          Next, we need to check if we can form <m>P</m> which, by <xref ref="thm-diagonalizable-multiplicity-conditions"/>, requires that the geometric multiplicity of <m>\lambda = 3</m> is the same as the algebraic multiplicity, so 2. Note that <me>A - 3I = \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}</me> which only has a single free variable. It follows that the geometric multiplicity of <m>\lambda = 3</m> is only 1. More precisely, we have that <me>3\text{-eigenspace}(A) = \Nul(A - 3I) = \Span\left\{\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right\}</me>. Notice, this does not give enough linearly independent eigenvectors to form <m>P</m>. Therefore, <m>A</m> is not diagonalizable.
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+    
+  </page>
+
+
+  <page xml:id="p-5-3-example-2">
+    <title>Example 2: Diagonalize if Possible</title>
+
+    <example xml:id="ex-5-3-diagonalize-2" workspace="true">
+      <statement>
+        <p>Diagonalize if possible:</p>
+        <me>
+          A = \begin{bmatrix}
+            2 \amp 6\\
+            0 \amp -1
+          \end{bmatrix}.
+        </me>
+      </statement>
+      <solution>
+        <p>
+          Again, we can use <xref ref="thm-triangular-diagonal-are-eigs"/> to see that the eigenvalues of <m>A</m> are <m>\lambda_1 = 2</m> and <m>\lambda_2 = -1</m> with both having algebraic multiplicty of 1. By <xref ref="thm-distinct-eigenvalues-independent"/>, we know that <m>A</m> must be diagonalizable. Let's find linearly independent eigenvectors corresponding to each eigenvalue.
+        </p>
+        <p>
+          For <m>\lambda_1 = 2</m>, we see that <me>A - 2I = \begin{bmatrix} 0 \amp 6 \\ 0 \amp -3 \end{bmatrix} \sim \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}.</me> It follows that <me>2\text{-eigenspace}(A) = \Nul(A - 2I) = \Span\left\{\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right\}</me>.
+        </p>
+        <p>
+          For <m>\lambda_2 = -1</m>, we see that <me>A - (-1)I = \begin{bmatrix} 3 \amp 6 \\ 0 \amp 0 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 2 \\ 0 \amp 0 \end{bmatrix}.</me> It follows that <me>-1\text{-eigenspace}(A) = \Nul(A - (-1)I) = \Span\left\{\begin{bmatrix} 2 \\ -1 \end{bmatrix}\right\}</me>.
+        </p>
+        <p>
+          Since we have found 2 linearly independent eigenvectors, one corresponding to <m>\lambda_1 = 2</m> and one corresponding to <m>\lambda_2 = -1</m>, we can form <m>D</m> and <m>P</m>. Let <me>D = \begin{bmatrix} 2 \amp 0 \\ 0 \amp -1 \end{bmatrix} \quad \text{and} \quad P = \begin{bmatrix} 1 \amp 2 \\ 0 \amp -1 \end{bmatrix}</me>. Note that there are many correct choices for <m>P</m>. The only criteria for <m>P</m> is that the first column contains an eigenvector corresponding to the first eigenvalue listed in <m>D</m> and the second column contains an eigenvector corresponding to the second eigenvalue listed in <m>D</m>. You don't have to use the eigenvectors found above. Also, you are free to swap the order of the eigenvalues in <m>D</m>, this would just require that you also switch the columns of <m>P</m>.
+        </p>
+        <p>
+          We can check our solution by calculating <m>A = PDP^{-1}</m>. For a <m>2 \times 2</m> matrix, this isn't so bad. However, if the matrices were <m>3 \times 3</m> or higher, calculating <m>P^{-1}</m> could be annoying. So, instead of checking <m>A = PDP^{-1}</m>, it is equivalent to check <m>AP = PD</m> as long as <m>P</m> is invertible (which it better be). Note that <me>AP = \begin{bmatrix} 2 \amp 6 \\ 0 \amp -1 \end{bmatrix} \begin{bmatrix} 1 \amp 2 \\ 0 \amp -1 \end{bmatrix} = \begin{bmatrix} 2 \amp -2 \\ 0 \amp 1 \end{bmatrix}</me> and <me>PD = \begin{bmatrix} 1 \amp 2 \\ 0 \amp -1 \end{bmatrix} \begin{bmatrix} 2 \amp 0 \\ 0 \amp -1 \end{bmatrix} = \begin{bmatrix} 2 \amp -2 \\ 0 \amp 1 \end{bmatrix}</me>. Since <m>AP = PD</m> and since <m>D</m> is diagonal and <m>P</m> is invertible, our choice of <m>D</m> and <m>P</m> is a valid diagonalization of <m>A</m>.
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+
+  </page>
+
+
+
+  <page xml:id="p-5-3-example-3">
+    <title>Example 3: Build P and D</title>
+
+    <example xml:id="ex-5-3-construct-PD" workspace="true">
+      <statement>
+        <p>
+          The eigenvalues of <m>A</m> are <m>\lambda=3,1</m>. If possible, construct <m>P</m> and <m>D</m> such that
+          <m>A=PDP^{-1}</m>. Verify by checking that <m>AP = PD</m>.
+        </p>
+        <me>
+          A=\begin{bmatrix}
+            7 \amp 4 \amp 16\\
+            2 \amp 5 \amp 8\\
+            -2 \amp -2 \amp -5
+          \end{bmatrix}.
+        </me>
+      </statement>
+      <solution>
+        <p>
+          We are given that <m>\lambda_1 = 3</m> and <m>\lambda_2 = 1</m> are the eigenvalues of <m>A</m>. If both have algebraic multiplicity of 1, then <m>A</m> is NOT diagonalizable since <m>A</m> doesn't have enough eigenvalues. Let's calculate the geometric multiplicities of each eigenvalue and see if that sheds some light on the algebraic multiplicities.
+        </p>
+        <p>
+          For <m>\lambda_1 = 3</m>, note that <me>A - 3I = \begin{bmatrix} 4 \amp 4 \amp 16 \\ 2 \amp 2 \amp 8 \\ -2 \amp -2 \amp -8 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 1 \amp 4 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \end{bmatrix}</me> which has two free variables. It follows that <me>3\text{-eigenspace}(A) = \Nul(A - 3I) = \Span\left\{\begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix}, \begin{bmatrix} -4 \\ 0 \\ 1 \end{bmatrix}\right\}</me>. Thus, the geometric multiplicity of <m>\lambda_1 = 3</m> is 2, which means the algebraic multiplicity of <m>\lambda_1 = 3</m> is 2 as well.
+        </p>
+        <p>
+          For <m>\lambda_2 = 1</m>, note that <me>A - I = \begin{bmatrix} 6 \amp 4 \amp 16 \\ 2 \amp 4 \amp 8 \\ -2 \amp -2 \amp -6 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 1 \amp 3 \\ 1 \amp 2 \amp 4 \\ 3 \amp 2 \amp 8 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp 2 \\ 0 \amp 1 \amp 1 \\ 0 \amp 0 \amp 0 \end{bmatrix}</me>. It follows that <me>1\text{-eigenspace}(A) = \Nul(A - I) = \Span\left\{\begin{bmatrix} 2 \\ 1 \\ -1 \end{bmatrix}\right\}</me>.
+        </p>
+        <p>
+          Thus, we have that <me>D = \begin{bmatrix} 3 \amp 0 \amp 0 \\ 0 \amp 3 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \quad \text{and} \quad P = \begin{bmatrix} 1 \amp -4 \amp 2 \\ -1 \amp 0 \amp 1 \\ 0 \amp 1 \amp -1 \end{bmatrix}</me> is a possible diagonalization of <m>A</m>. As mentioned in previous examples, this is not the only possible diagonalization of <m>A</m>. You could swap around the eigenvalues on the diagonal of <m>D</m> and the corresponding eigenvectors in <m>P</m> or you could replace some of the eigenvectors in <m>P</m> with other eigenvectors corresponding to the same eigenvalue as the previous and still linearly independent to the other columns. For example, the following is another possible diagonalization of <m>A</m>: <me>D = \begin{bmatrix} 3 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 3 \end{bmatrix} \quad \text{and} \quad P = \begin{bmatrix} -3 \amp 6 \amp 2 \\ -1 \amp 3 \amp 2 \\ 1 \amp -3 \amp -1 \end{bmatrix}</me>. Checking, we see that <me>AP = \begin{bmatrix} 7 \amp 4 \amp 16 \\ 2 \amp 5 \amp 8 \\ -2 \amp -2 \amp -5 \end{bmatrix}\begin{bmatrix} -3 \amp 6 \amp 2 \\ -1 \amp 3 \amp 2 \\ 1 \amp -3 \amp -1 \end{bmatrix} = \begin{bmatrix} -9 \amp 6 \amp 6 \\ -3 \amp 3 \amp 6 \\ 3 \amp -3 \amp -3 \end{bmatrix}</me> and <me>PD = \begin{bmatrix} -3 \amp 6 \amp 2 \\ -1 \amp 3 \amp 2 \\ 1 \amp -3 \amp -1 \end{bmatrix}\begin{bmatrix} 3 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 3 \end{bmatrix} = \begin{bmatrix} -9 \amp 6 \amp 6 \\ -3 \amp 3 \amp 6 \\ 3 \amp -3 \amp -3 \end{bmatrix}</me>. Since <m>AP = PD</m>, this is a valid diagonalization of <m>A</m>.
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+
+  </page>
+
+   <page xml:id="p-5-3-example-4">
+    <title>Example 3: Build P and D</title>
+
+    <example xml:id="ex-5-3-diagonalize-3-by-3" workspace="true">
+      <statement>
+        <p>
+          Diagonalize the following matrix, if possible.
+        </p>
+        <me>
+          A=\begin{bmatrix}
+            2 \amp 4 \amp 3\\
+            -4 \amp -6 \amp -3\\
+            3 \amp 3 \amp 1
+          \end{bmatrix}.
+        </me>
+      </statement>
+      <solution>
+        <p>
+          First, we find the eigenvalues of <m>A</m>. Note that </p> 
+          <p>
+          <m>\begin{eqnarray*}\det(A - \lambda I) \amp = \amp \begin{vmatrix} 2 - \lambda \amp 4 \amp 3 \\ -4 \amp -6 - \lambda \amp -3 \\ 3 \amp 3 \amp 1 - \lambda \end{vmatrix} \\ \amp \overset{R_2 + R_1 \rightarrow R_2}{=} \amp \begin{vmatrix} 2 - \lambda \amp 4 \amp 3 \\ -2 - \lambda \amp -2 - \lambda \amp 0 \\ 3 \amp 3 \amp 1 - \lambda \end{vmatrix}\end{eqnarray*}</m>
+          </p> 
+          <p> Exanding across Row 2 yeilds:</p> 
+          <p>
+            <m>\begin{eqnarray*}\det(A -\lambda I) \amp = \amp -(-2-\lambda)\begin{vmatrix} 4 \amp 3 \\ 3 \amp 1-\lambda \end{vmatrix} + (-2-\lambda)\begin{vmatrix} 2-\lambda \amp 3 \\ 3 \amp 1-\lambda \end{vmatrix} \\ \amp = \amp (-2-\lambda)[-(4(1-\lambda) - 9) + ((2-\lambda)(1-\lambda) - 9)] \\ \amp = \amp (-2-\lambda)[\lambda^2 + \lambda -2] \\ \amp = \amp -(\lambda + 2)(\lambda + 2)(\lambda-1) \\ \amp = \amp -(\lambda + 2)^2(\lambda - 1)\end{eqnarray*}</m> 
+        </p>
+        <p>
+          It follows that the eigenvalues of <m>A</m> are <m>\lambda_1 = -2</m> with algebraic multiplicity of 2 and <m>\lambda_2 = 1</m> with algebraic multiplicity of 1. Since <m>A</m> is a <m>3 \times 3</m> matrix and we found <m>3</m> eigenvalues (counting multiplicites), we can form <m>D</m>. Now let's see if we can form <m>P</m>.
+        </p>
+        <p>
+          For <m>\lambda_1 = -2</m>, note that <me>A - (-2)I = \begin{bmatrix} 4 \amp 4 \amp 3 \\ -4 \amp -4 \amp -3 \\ 3 \amp 3 \amp 3 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 1 \amp 1 \\ 1 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 1 \amp 1 \\ 0 \amp 0 \amp -1 \\ 0 \amp 0 \amp 0 \end{bmatrix}</me> which only has a single free variable. Therefore, the eigenvalue <m>\lambda_1 = -2</m> has algebraic multiplicity of 2 but geometric multiplicity of 1. Thus, <m>A</m> is NOT diagonalizable.
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+    
+  </page>
+
+
+  <page xml:id="p-5-3-fibonacci-example">
+    <title>Additional Example (if time permits)</title>
+
+    <example xml:id="ex-5-3-fibonacci" workspace="true">
+      <title>Diagonalization and a Famous Sequence</title>
+      <statement>
+        <p>
+          Note that
+        </p>
+        <me>
+          \vec x_k=
+          \begin{bmatrix}
+            0 \amp 1\\
+            1 \amp 1
+          \end{bmatrix}\vec x_{k-1},\quad
+          \vec x_0=
+          \begin{bmatrix}
+            0\\
+            1
+          \end{bmatrix},\quad
+          k=1,2,3,\ldots
+        </me>
+        <p>
+          generates a well-known sequence of numbers. Use diagonalization to find a matrix expression that gives the
+          <m>n</m>-th number in this sequence.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First, let us generate several term so of the sequence <m>\vec x_0, \vec x_1, \vec x_2, \dots</m>. Let <m>A = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 1 \end{bmatrix}</m>. It follows that <m>\vec x_i = A\vec x_{i-1}</m> for all <m>i = 1,2,3,\dots</m>. Note the following:
+        </p>
+        <p>
+          <m>\begin{eqnarray*} \vec x_1 \amp = \amp A\vec x_0 = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 1 \end{bmatrix}\begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \\
+            \vec x_2 \amp = \amp A\vec x_1 = \begin{bmatrix} 0 \amp 1  \\ 1 \amp 1 \end{bmatrix}\begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 1 \\ 2 \end{bmatrix} \\
+            \vec x_3 \amp = \amp A\vec x_2 = \begin{bmatrix} 0 \amp 1  \\ 1 \amp 1 \end{bmatrix}\begin{bmatrix} 1 \\ 2 \end{bmatrix} = \begin{bmatrix} 2 \\ 3 \end{bmatrix} \\
+            \vec x_4 \amp = \amp A\vec x_3 = \begin{bmatrix} 0 \amp 1  \\ 1 \amp 1 \end{bmatrix}\begin{bmatrix} 2 \\ 3 \end{bmatrix} = \begin{bmatrix} 3 \\ 5 \end{bmatrix} \\
+            \vec x_5 \amp = \amp A\vec x_4 = \begin{bmatrix} 0 \amp 1  \\ 1 \amp 1 \end{bmatrix}\begin{bmatrix} 3 \\ 5 \end{bmatrix} = \begin{bmatrix} 5 \\ 8 \end{bmatrix} \end{eqnarray*}</m>
+        </p>
+        <p>
+          Notice that the top entry of <m>\vec x_i</m> is the bottom entry of <m>\vec x_{i-1}</m>. Writing down the entries, but removing that repetition, we obtain the sequence of integers <me>0, 1, 1, 2, 3, 5, 8, \dots</me>. This is a very famous sequence called the Fibonacci Sequence, which is defined as the recursive sequence <m>f_n = f_{n-1} + f_{n-2}</m> with <m>f_0 = 0</m> and <m>f_1 = 1</m>. We see that <me>\vec x_n = \begin{bmatrix} f_n \\ f_{n+1} \end{bmatrix}</me> and <me> \vec x_{n+1} = A\vec x_n = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 1 \end{bmatrix} \begin{bmatrix} f_n \\ f_{n+1} \end{bmatrix} = \begin{bmatrix} f_{n+1} \\ f_n + f_{n+1} \end{bmatrix} = \begin{bmatrix} f_{n+1} \\ f_{n+2}\end{bmatrix}</me> since <m>f_{n+2} = f_{n+1} + f_n</m> by definition.
+        </p>
+        <p><nbsp/></p>
+        <p>
+          Suppose we are interested in finding <m>f_{100}</m>. Using either the recursive definition or the formula <m>\vec x_n = A\vec x_{n-1}</m> would require first finding <m>f_{99}</m> and <m>f_{98}</m>, which would in turn require finding <m>f_{97}</m> and <m>f_{96}</m> and so on and so forth. This is not fast nor practical for <m>f_n</m> when n is large. What we would prefer is to find an explicit formula for <m>f_n</m> which only depends on <m>n</m>. Thankfully, we can use diagonalization to accomplish this since <me>\vec x_n = A\vec x_{n-1} = A(A\vec x_{n-2}) A^2\vec x_{n-2} = A^2 (A\vec x_{n-3}) = \cdots = A^n\vec x_0</me>. Note that if <m>A</m> is diagonalizable, then <m>A = PDP^{-1}</m> for some diagonal matrix <m>D</m> and invertible matrix <m>P</m>. Then we have that <me>\vec x_n = A^n\vec x_0 = PD^nP^{-1}\vec x_0</me>. Let's find <m>D</m> and <m>P</m>.
+        </p>
+        <p>
+          We start by finding the eigenvalues of <m>A</m>. Note that the characteristic polynomial of <m>A</m> is <me>\det(A - \lambda I) = \begin{vmatrix} -\lambda \amp 1 \\ 1 \amp 1 - \lambda\end{vmatrix} = -\lambda(1-\lambda) - 1 = \lambda^2 - \lambda - 1</me>. Using the quadratic formula, we see that the roots of this polynomial, and therefore the eigenvalues of <m>A</m>, are <me>\lambda_1 = \dfrac{1 + \sqrt{5}}{2} \quad \text{and} \quad \lambda_2 = \dfrac{1 - \sqrt{5}}{2}</me>. 
+        </p>
+        <p><nbsp/></p>
+        <p>
+          Next, we find eigenvectors corresponding to each eigenvalue. Note that <me>A - \lambda_1 I = \begin{bmatrix} -\dfrac{1+\sqrt{5}}{2} \amp 1 \\ 1 \amp 1 - \dfrac{1+\sqrt{5}}{2} \end{bmatrix} \sim \begin{bmatrix} 1 \amp \dfrac{1-\sqrt{5}}{2} \\ 0 \amp 0 \end{bmatrix}</me>. Therefore, we see that <m>\vec v_1 = \begin{bmatrix} 1 - \sqrt{5} \\ -2 \end{bmatrix}</m> is an eigenvector of <m>A</m> corresponding to <m>\lambda_1 = \dfrac{1+\sqrt{5}}{2}</m>. We can check this. Note that <me>A\vec v_1 = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 1 \end{bmatrix}\begin{bmatrix} 1-\sqrt{5} \\ -2 \end{bmatrix} = \begin{bmatrix} -2 \\ -1-\sqrt{5} \end{bmatrix} = \dfrac{1+\sqrt{5}}{2}\begin{bmatrix} 1-\sqrt{5} \\ -2 \end{bmatrix}</me>.
+        </p>
+        <p><nbsp/></p>
+        <p>
+          Now, we find an eigenvector for <m>\lambda_2 = \dfrac{1-\sqrt{5}}{2}</m>. Note that <me>A - \lambda_2 I = \begin{bmatrix} -\dfrac{1-\sqrt{5}}{2} \amp 1 \\ 1 \amp 1 - \dfrac{1-\sqrt{5}}{2} \end{bmatrix} \sim \begin{bmatrix} 1 \amp \dfrac{1+\sqrt{5}}{2} \\ 0 \amp 0 \end{bmatrix}</me>. It follows that <m>\vec v_2 = \begin{bmatrix} 1+\sqrt{5} \\ -2 \end{bmatrix}</m> is an eigenvector of <m>A</m> corresponding to <m>\lambda_2 = \dfrac{1-\sqrt{5}}{2}</m>. Feel free to check this.
+        </p>
+        <p><nbsp/></p>
+        <p>
+          It follows that <me>D = \begin{bmatrix} \dfrac{1+\sqrt{5}}{2} \amp 0 \\ 0 \amp \dfrac{1-\sqrt{5}}{2} \end{bmatrix} \qquad \text{and} \qquad P = \begin{bmatrix} 1 - \sqrt{5} \amp 1 + \sqrt{5} \\ -2 \amp -2 \end{bmatrix}</me> is a valid diagonalization of <m>A</m>. Before calculating <m>P^{-1}</m>, let's simplify a bit by replacing all references of <m>1 + \sqrt{5}</m> with <m>2\lambda_1</m> and all references of <m>1 - \sqrt{5}</m> with <m>2\lambda_2</m>. Then, we have that our diagonalization is <me>D = \begin{bmatrix} \lambda_1 \amp 0 \\ 0 \amp \lambda_2 \end{bmatrix} \qquad \text{and} \qquad P = \begin{bmatrix} 2\lambda_2 \amp 2\lambda_1 \\ -2 \amp -2 \end{bmatrix}</me>. It follows that <me>P^{-1} = \dfrac{1}{4\lambda_1 - 4\lambda_2}\begin{bmatrix} -2 \amp -2\lambda_1 \\ 2 \amp 2\lambda_2\end{bmatrix}</me>. We can check our diagonalization before moving on. Note that
+        </p>
+        <p>
+          <m>\begin{eqnarray*} PDP^{-1} \amp = \amp \begin{bmatrix} 2\lambda_2 \amp 2\lambda_1 \\ -2 \amp -2 \end{bmatrix}\begin{bmatrix} \lambda_1 \amp 0 \\ 0 \amp \lambda_2\end{bmatrix}\left(\dfrac{1}{4(\lambda_1 - \lambda_2)}\begin{bmatrix} -2 \amp -2\lambda_1 \\ 2 \amp 2\lambda_2\end{bmatrix}\right)\\ \amp = \amp \dfrac{1}{4(\lambda_1 - \lambda_2)}\begin{bmatrix} 2\lambda_1\lambda_2 \amp 2\lambda_1\lambda_2 \\ -2\lambda_1 \amp -2\lambda_2 \end{bmatrix}\begin{bmatrix} -2 \amp -2\lambda_1 \\ 2 \amp 2\lambda_2\end{bmatrix} \\ \amp = \amp \dfrac{1}{4(\lambda_1 - \lambda_2)}\begin{bmatrix} -4\lambda_1\lambda_2 + 4\lambda_1\lambda_2 \amp -4\lambda_1^2\lambda_2 + 4\lambda_1\lambda_2^2 \\ 4\lambda_1-4\lambda_2 \amp 4\lambda_1^2 - 4\lambda_2^2 \end{bmatrix} \\ \amp = \amp \begin{bmatrix} 0 \amp -4\lambda_1\lambda_2(\lambda_1 - \lambda_2) \\ 4(\lambda_1 - \lambda_2) \amp 4(\lambda_1 - \lambda_2)(\lambda_1 + \lambda_2) \end{bmatrix} \\ \amp = \amp \begin{bmatrix} 0 \amp -\lambda_1\lambda _2 \\ 1 \amp \lambda_1 + \lambda_2 \end{bmatrix} \\ \amp = \amp \begin{bmatrix} 0 \amp 1 \\ 1 \amp 1 \end{bmatrix} = A, \end{eqnarray*}</m>
+        </p>
+        <p>
+          since <m>-\lambda_1\lambda_2 = 1</m> and <m>\lambda_1 + \lambda_2 = 1</m>. 
+        </p> 
+        <p><nbsp/></p>
+        <p>
+          Now, we find a formula for <m>\vec x_n = A^n\vec x_0</m>. Note that
+        </p>
+        <p>
+          <m>\begin{eqnarray*} \begin{bmatrix} f_n \\ f_{n+1} \end{bmatrix} \amp = \amp A^n\begin{bmatrix} 0 \\ 1 \end{bmatrix} \\ \amp = \amp PD^nP^{-1}\begin{bmatrix} 0 \\ 1 \end{bmatrix} \\ \amp = \amp \begin{bmatrix} 2\lambda_2 \amp 2\lambda_1 \\ -2 \amp -2 \end{bmatrix}\left(\begin{bmatrix} \lambda_1 \amp 0 \\ 0 \amp \lambda_2\end{bmatrix}\right)^n\left(\dfrac{1}{4(\lambda_1 - \lambda_2)}\begin{bmatrix} -2 \amp -2\lambda_1 \\ 2 \amp 2\lambda_2\end{bmatrix}\right)\begin{bmatrix} 0 \\ 1 \end{bmatrix} \\ \amp = \amp \dfrac{1}{4(\lambda_1 - \lambda_2)}\begin{bmatrix} 2\lambda_2 \amp 2\lambda_1 \\ -2 \amp -2 \end{bmatrix}\begin{bmatrix} \lambda_1^n \amp 0 \\ 0 \amp \lambda_2^n\end{bmatrix}\begin{bmatrix}-2\lambda_1 \\ 2\lambda_2 \end{bmatrix} \\ \amp = \amp \dfrac{1}{4(\lambda_1 - \lambda_2)}\begin{bmatrix} 2\lambda_1^n\lambda_2 \amp 2\lambda_1\lambda_2^n \\ -2\lambda_1^n \amp -2\lambda_2^n \end{bmatrix} \begin{bmatrix} -2\lambda_1 \\ 2\lambda_2 \end{bmatrix} \\ \amp = \amp \dfrac{1}{4(\lambda_1 - \lambda_2)}\begin{bmatrix} -4\lambda_1^{n+1}\lambda_2 + 4\lambda_1\lambda_2^{n+1} \\ 4\lambda_1^{n+1} - 4\lambda_2^{n+1} \end{bmatrix}.\end{eqnarray*}</m>
+        </p>
+        <p><nbsp/></p>
+        <p>
+          By comparing the top entries, we see that <me>f_n = \dfrac{-4\lambda_1^{n+1}\lambda_2 + 4\lambda_1\lambda_2^{n+1}}{4(\lambda_1 - \lambda_2)} = \dfrac{-4\lambda_1\lambda_2(\lambda_1^n - \lambda_2^n)}{4(\lambda_1 - \lambda_2)}</me>. Since <m>-4\lambda_1\lambda_2 = 4</m> and <m>4(\lambda_1 - \lambda_2) = 4\sqrt{5}</m>, we find that <me>f_n = \dfrac{\lambda_1^n - \lambda_2^n}{\sqrt{5}} = \dfrac{1}{\sqrt{5}}\left(\left(\dfrac{1 + \sqrt{5}}{2}\right)^n - \left(\dfrac{1 - \sqrt{5}}{2}\right)^n\right)</me> is an explicit formula for <m>f_n</m>. Feel free to use Desmos and check this formula for various values of <m>n</m>.
+        </p>
+      </solution>
+    </example>
+  </page>
+
+</handout>

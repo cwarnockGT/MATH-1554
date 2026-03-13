@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="chapter-4" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vector Spaces</title>
+
+  <introduction>
+    <p>
+      There are three reasons for the double section reference:
+      <ol>
+        <li>
+          <p>
+            The section on Markov Chains appeared as Section 4.9 in older editions of the textbook and appears as Section 5.9 in the newest edition.
+          </p>
+        </li>
+        <li>
+          <p>
+            I like covering Markov Chains before beginning Chapter 5 as it offers a nice segue.
+          </p>
+        </li>
+        <li>
+          <p>
+            Pretext does not allow me to skip Chapter Numbers, so if I didn't include this section in Chapter 4 (even though it is in Chapter 5), we would have a blank Chapter 4 which would be weird.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </introduction>
+
+  <section xml:id="Section-4-9">
+    <title>4.9/5.9 Markov Chains</title>
+      <xi:include href="./chapter-4-notes/section-4-9-sol.ptx" />
+  </section>
+
+  
+  
+
+</chapter>

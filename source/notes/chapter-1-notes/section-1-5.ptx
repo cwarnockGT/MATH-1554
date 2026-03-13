@@ -1,0 +1,117 @@
+
+<worksheet xml:id="sec-1-5-homogeneous">
+  <title>1.5 Homogeneous Systems and Parametric Vector Forms</title>
+
+  <!-- Page 1 -->
+  <page>
+    <title>Overview</title>
+
+    <objectives workspace="0.5in">
+        <title>Topics</title>
+    <ul>
+      <li>Homogeneous systems</li>
+      <li>Parametric vector forms of solutions to linear systems</li>
+    </ul>
+    </objectives>
+
+    <objectives workspace="0.5in">
+        <title>Goals</title>
+    <ul>
+      <li>Express the solution set of a linear system in parametric vector form.</li>
+      <li>Provide a geometric interpretation of the solution set of a linear system.</li>
+      <li>Characterize homogeneous linear systems using free variables, span, pivots, linear combinations, and echelon forms.</li>
+    </ul>
+    </objectives>
+
+
+    <title>Homogeneous Systems</title>
+
+    <definition xml:id="def-homogeneous" workspace=".3in">
+      <title>Homogeneous and inhomogeneous systems</title>
+      <statement>
+        <p>
+          Linear systems of the form <m>A\vec{x} = \vec{0}</m> are <term>homogeneous</term>.<linebreak/>
+          Linear systems of the form <m>A\vec{x} = \vec{b}</m> (with <m>\vec{b} \neq \vec{0}</m>) are <term>inhomogeneous</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <p workspace="1in">
+      Because homogeneous systems always have the <em>trivial solution</em> <m>\vec{x} = \vec{0}</m>,
+      the interesting question is whether they have any <em>nontrivial</em> solutions.
+    </p>
+
+
+  </page>
+
+  <!-- Page 3: Example 1 Homogeneous -->
+  <page>
+    <title>Example 1: Homogeneous System</title>
+
+    <example xml:id="ex-homogeneous-1">
+      <title>Identify free variables and solution set</title>
+      <statement>
+        <p>Identify the free variables and the solution set of the homogeneous system:</p>
+        <me>
+          \begin{aligned}
+          x_1 + 3x_2 + x_3 \amp= 0 \\
+          2x_1 - x_2 - 5x_3 \amp= 0 \\
+          x_1 \phantom{+3x_2} - 2x_3 \amp= 0
+          \end{aligned}
+        </me>
+      </statement>
+      <workspace lines="12"/>
+    </example>
+
+  </page>
+
+  <!-- Page 4: Parametric Form (Homogeneous) -->
+  <page>
+    <title>Parametric Forms for Homogeneous Systems</title>
+
+    <p workspace="2in">
+      In the previous example, we expressed the solution to the system using a vector equation.
+      This is a <term>parametric vector form</term> of the solution.
+    </p>
+
+    <p>
+      In general, suppose the free variables for <m>A\vec{x} = \vec{0}</m> are
+      <m>x_k, \ldots, x_n</m>. Then all solutions can be written in the form
+    </p>
+
+    <me>
+      \vec{x} = x_k \vec{v}_k + x_{k+1} \vec{v}_{k+1} + \cdots + x_n \vec{v}_n,
+    </me>
+
+    <p workspace="2in">
+      for some vectors <m>\vec{v}_k, \ldots, \vec{v}_n</m>.
+      This representation is called the <term>parametric vector form</term> of the solution set.
+    </p>
+
+  </page>
+
+  <!-- Page 5: Non-Homogeneous System Example -->
+  <page>
+    <title>Example 2: Non-Homogeneous System</title>
+
+    <example xml:id="ex-nonhomogeneous-1">
+      <title>Parametric vector form and geometric interpretation</title>
+      <statement>
+        <p>
+          Write the parametric vector form of the solution and give a geometric interpretation.
+        </p>
+        <me>
+          \begin{aligned}
+          x_1 + 3x_2 + x_3 \amp= 9 \\
+          2x_1 - x_2 - 5x_3 \amp= 11 \\
+          x_1 \phantom{+3x_2} - 2x_3 \amp= 6
+          \end{aligned}
+        </me>
+        <p>(Note: the left-hand side is the same as in the homogeneous system example.)</p>
+      </statement>
+      <workspace lines="14"/>
+    </example>
+
+  </page>
+
+</worksheet>

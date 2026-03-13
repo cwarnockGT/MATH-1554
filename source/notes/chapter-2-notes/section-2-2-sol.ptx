@@ -1,0 +1,413 @@
+<handout xml:id="handout-section-2-2-matrix-inverses">
+  <title>2.2 Matrix Inverses</title>
+
+  <!-- Intro + Topics/Goals block requested inside <objectives> -->
+  <page xml:id="p-2-2-intro-objectives">
+    <title>Overview</title>
+
+    <blockquote xml:id="quote-jurassic-park">
+      <p>
+        Your scientists were so preoccupied with whether or not they could,
+        they didn't stop to think if they should.
+      </p>
+      <attribution>
+        <p>Spielberg and Crichton, <em>Jurassic Park</em>, 1993 film</p>
+      </attribution>
+    </blockquote>
+
+    <p>
+      The algorithm we introduce in this section <em>could</em> be used to compute the inverse of an
+      <m>n\times n</m> matrix. At the end of the lecture we'll discuss some of the problems with our
+      algorithm and why it can be difficult to compute a matrix inverse.
+    </p>
+
+    <objectives xml:id="obj-2-2-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>
+          Inverse of a matrix, its algebraic properties, and its relation to solving systems of linear equations.
+        </li>
+        <li>
+          Elementary matrices and their role in calculating the matrix inverse.
+        </li>
+      </ul>        
+    </objectives>
+      
+
+    <objectives>
+        <title>Goals</title>
+      <ul>
+        <li>
+          Apply the formal definition of an inverse, and its algebraic properties, to solve and analyze linear systems.
+        </li>
+        <li>
+          Compute the inverse of an <m>n\times n</m> matrix, and use it to solve linear systems.
+        </li>
+        <li>
+          Construct elementary matrices.
+        </li>
+      </ul>
+      </objectives>
+
+      <p><nbsp/></p>
+
+      <p><em>Motivating Question</em>: Is there a matrix <m>A</m> such that
+      </p>
+      <me>
+        \begin{bmatrix}
+          2 \amp -1 \amp 0\\
+          -1 \amp 2 \amp -1\\
+          0 \amp -1 \amp 2
+        \end{bmatrix}A = I_3\; ?
+      </me>
+
+      <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-2-definition-invertible">
+    <title>The Matrix Inverse</title>
+
+    <definition xml:id="def-invertible" workspace="0.2in">
+      <title>Invertible (Non-singular) Matrix</title>
+      <statement>
+        <p>
+          An <m>n \times n</m> matrix <m>A</m> is <term>invertible</term> (or <term>non-singular</term>)
+          if there exists a matrix <m>C\in\mathbb{R}^{n\times n}</m> such that
+        </p>
+        <me>AC = CA = I_n.</me>
+        <p>
+          If such a matrix exists, we write <m>C=A^{-1}</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-inverse-2x2-formula" workspace="0.2in">
+      <title>Inverse Formula for a <m>2\times 2</m> Matrix</title>
+      <statement>
+        <p>
+          The <m>2\times 2</m> matrix
+          <m>\begin{bmatrix} a \amp b\\ c \amp d \end{bmatrix}</m>
+          is invertible if and only if <m>ad-bc\neq 0</m>. In that case,
+        </p>
+        <me>
+          \begin{bmatrix}
+            a \amp b\\
+            c \amp d
+          \end{bmatrix}^{-1}
+          =
+          \frac{1}{ad-bc}
+          \begin{bmatrix}
+            d \amp -b\\
+            -c \amp a
+          \end{bmatrix}.
+        </me>
+      </statement>
+      <hint>
+        <p>
+            In the solution, I give a proof of this theorem. You may find it interesting to try it for yourself before looking at the full proof. The idea is to start with a matrix <m>A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}</m> for fixed <m>a,b,c,d \in \mathbb{R}</m> with <m>ad - bc \neq 0</m>. Now, let <m>A^{-1} = \begin{bmatrix} x_1 \amp x_2 \\ x_3 \amp x_4 \end{bmatrix}</m> for unknown <m>x_1,x_2,x_3,x_4\in \mathbb{R}</m>. Set <m>AA^{-1} = I_2</m> and determine what the unknowns <m>x_1,x_2,x_3,x_4</m> are in terms of the known <m>a,b,c,d</m>. You should end up solving a system of linear equations involving 4 equations in the 4 unknowns.
+        </p>
+      </hint>
+      <solution>
+        <p>
+            Here is a proof of the above formula. (Before reading, you may want to try it yourself. Look at the hint above.)
+        </p>
+        <p>
+            Let <m>A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}</m> for fixed <m>a,b,c,d \in \mathbb{R}</m> with <m>ad - bc \neq 0</m>. We are looking for a <m>2 \times 2</m> matrix <m>A^{-1}</m> so that <m>AA^{-1} = I_2</m>, if such a matrix exists. Since <m>A^{-1}</m> is a <m>2 \times 2</m> matrix, it has four unknown entries. Let's call them <m>x_1, x_2, x_3, x_4 \in \mathbb{R}</m>, so we have <m>A^{-1} = \begin{bmatrix} x_1 \amp x_2 \\ x_3 \amp x_4 \end{bmatrix}</m>. It follows that <me>AA^{-1} = \begin{bmatrix}a \amp b \\ c \amp d \end{bmatrix}\begin{bmatrix} x_1 \amp x_2 \\ x_3 \amp x_4 \end{bmatrix} = \begin{bmatrix} ax_1 + bx_3 \amp ax_2 + bx_4 \\ cx_1 + dx_3 \amp cx_2 + dx_4\end{bmatrix}</me>. Since we want <m>AA^{-1} = I_2</m>, we can set the corresponding entries equal to arrive at the following system of linear equation: <me>\left\{\begin{array}{ccccccccc} ax_1 \amp \amp \amp + \amp bx_3 \amp \amp \amp  = \amp 1 \\ \amp \amp ax_2 \amp \amp \amp + \amp bx_4 \amp = \amp 0 \\ cx_1 \amp \amp \amp + \amp dx_3 \amp \amp \amp = \amp 0 \\ \amp \amp cx_2 \amp \amp \amp + \amp dx_4 \amp = \amp 1 \end{array}\right .</me> Note that we cannot have both <m>a</m> and <m>c</m> be zero, or else <m>ad - bc = 0</m>. Therefore, we can assume that at least one of them is nonzero, so let's suppose <m>a \neq 0</m>. Converting this into an augmented matrix and performing some row operations, we obtain <me>\begin{bmatrix}a \amp 0 \amp b \amp 0 \amp \rvert \amp 1 \\ 0 \amp a \amp 0 \amp b \amp \rvert \amp 0 \\ c \amp 0 \amp d \amp 0 \amp \rvert \amp 0 \\ 0 \amp c \amp 0 \amp d \amp \rvert \amp 1 \end{bmatrix} \underset{R_4 - \frac{c}{a}R_2 \rightarrow R_4}{\overset{R_3 - \frac{c}{a}R_1 \rightarrow R_1}{\Huge \sim}} \begin{bmatrix} a \amp 0 \amp b \amp 0 \amp \rvert \amp 1 \\ 0 \amp a \amp 0 \amp b \amp \rvert \amp 0 \\ 0 \amp 0 \amp d - \frac{bc}{a} \amp 0 \amp \rvert \amp -\frac{c}{a} \\ 0 \amp 0 \amp 0 \amp d - \frac{bc}{a} \amp \rvert \amp 1 \end{bmatrix}</me> Solving for <m>x_4</m>, we see that <me>x_4 = \frac{1}{d-\frac{bc}{a}} = \frac{1}{\frac{ad - bc}{a}} = \frac{a}{ad - bc}</me>. Solving for <m>x_3</m>, we see that <me>x_3 = \frac{-\frac{c}{a}}{d - \frac{bc}{a}} = \frac{-\frac{c}{a}}{\frac{ad-bc}{a}} = -\frac{c}{a}\left(\frac{a}{ad-bc}\right) = \frac{-c}{ad-bc}</me> Solving for <m>x_2</m>, we see that <me>x_2 = \frac{-bx_4}{a} = \frac{-b\left(\frac{a}{ad-bc}\right)}{a} = \frac{-b}{ad-bc}</me> Lastly, solving for <m>x_1</m>, we see that <me>x_1 = \frac{1 - bx_3}{a} = \frac{1 - b\left(\frac{-c}{ad-bc}\right)}{a} = \frac{\frac{ad-bc}{ad-bc} + \frac{bc}{ad-bc}}{a} = \frac{\frac{ad}{ad-bc}}{a} = \frac{d}{ad-bc}</me>. It follows that <me>A^{-1} = \begin{bmatrix} x_1 \amp x_2 \\ x_3 \amp x_4 \end{bmatrix} = \begin{bmatrix} \frac{d}{ad-bc} \amp \frac{-b}{ad-bc} \\ \frac{-c}{ad-bc} \amp \frac{a}{ad-bc} \end{bmatrix} = \frac{1}{ad-bc}\begin{bmatrix} d \amp -b \\ -c \amp a \end{bmatrix}</me>.
+        </p>
+      </solution>
+    </theorem>
+
+    <p><nbsp/></p>
+
+
+    <example xml:id="ex-inverse-2x2" workspace="true">
+      <statement>
+        <p>Find the inverse of the matrix below. Check that it truly is the inverse.</p>
+        <me>
+          A = \begin{bmatrix}
+            2 \amp 5\\
+            -3 \amp -7
+          \end{bmatrix}.
+        </me>
+      </statement>
+      <solution>
+        <p>
+            First, note that <m>ad - bc = 2(-7) - (5)(-3) = -14 + 15 = 1 \neq 0</m>, so <m>A</m> is invertible. Using the formula, we have that <me>A^{-1} = \frac{1}{ad - bc}\begin{bmatrix}d \amp -b \\ -c \amp a \end{bmatrix} = \begin{bmatrix} -7 \amp -5 \\ 3 \amp 2 \end{bmatrix}</me>. We can check this by verifying that <m>AA^{-1} = I_2</m> or by verifying <m>A^{-1}A = I_2</m>. Note that <me>AA^{-1} = \begin{bmatrix} 2 \amp 5 \\ -3 \amp -7 \end{bmatrix}\begin{bmatrix} -7 \amp -5 \\ 3 \amp 2 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} = I_2</me>
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-2-inverse-unique-solution">
+    <title>Inverse and Solving Linear Systems</title>
+
+    <theorem xml:id="thm-inverse-iff-unique-solution" workspace="0.5in">
+      <title>Inverse and Unique Solutions</title>
+      <statement>
+        <p>
+          A matrix <m>A\in\mathbb{R}^{n\times n}</m> has an inverse if and only if for every
+          <m>\vec b\in\mathbb{R}^n</m>, the system <m>A\vec x=\vec b</m> has a <em>unique</em> solution.
+          In this case,
+        </p>
+        <me>\vec x = A^{-1}\vec b.</me>
+      </statement>
+      <solution>
+        <p>
+            Here is a proof of this theorem. If <m>A</m> is invertible, then we can multiply both sides of the matrix equation <m>A\vec x = \vec b</m> by <m>A^{-1}</m> on the left to obtain the following: </p> <p><m>\begin{eqnarray*}A^{-1}(A\vec x) = A^{-1}(\vec b) \amp \implies \amp (A^{-1}A)\vec x = A^{-1}\vec b\\ \amp \implies \amp I_n\vec x = A^{-1}\vec b \\ \amp \implies \amp \vec x = A^{-1}\vec b\end{eqnarray*}</m>
+        </p>
+      </solution>
+    </theorem>
+
+    <p><nbsp/></p>
+
+
+    <example xml:id="ex-solve-system-with-inverse" workspace="true">
+      <statement>
+        <p>Solve the linear system.
+        <me>
+          \begin{array}{ccc}
+          3x_1 + 4x_2 \amp= \amp 7 \\
+          5x_1 + 6x_2 \amp = \amp 7
+          \end{array}
+        </me>
+        </p>
+      </statement>
+      <solution>
+        <p>
+            We can write the system as the following matrix equation <me>\begin{bmatrix} 3 \amp 4 \\ 5 \amp 6 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 7 \\ 7 \end{bmatrix}</me>. Since <m>3(6) - 4(5) = 18 - 20 = -2 \neq 0</m>, the matrix is invertible. Using <xref ref="thm-inverse-2x2-formula"/>, we have <me>\begin{bmatrix} 3 \amp 4 \\ 5 \amp 6 \end{bmatrix}^{-1} = \frac{1}{-2}\begin{bmatrix} 6 \amp -4 \\ -5 \amp 3 \end{bmatrix}</me> Therefore, we find that the solution to the system is <me>\vec x = \frac{1}{-2}\begin{bmatrix}6 \amp -4 \\ -5 \amp 3 \end{bmatrix}\begin{bmatrix} 7 \\ 7 \end{bmatrix} = \frac{1}{-2}\begin{bmatrix} 42 - 35 \\ -28 + 21 \end{bmatrix} = \begin{bmatrix} -7 \\ 7 \end{bmatrix}</me>. Like always, it's a good idea to check that <m>\vec x</m> is a solution to the system.
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-2-properties-inverse">
+    <title>Properties of the Matrix Inverse</title>
+
+    <p workspace="true">
+      Let <m>A</m> and <m>B</m> be invertible <m>n\times n</m> matrices. Then
+    
+      <ul>
+      <li><m>(A^{-1})^{-1} = A</m></li>
+      <li><m>(AB)^{-1} = B^{-1}A^{-1}</m> (non-commutative!)</li>
+      <li><m>(A^T)^{-1} = (A^{-1})^T</m></li>
+    </ul>
+    </p>
+
+
+
+    <example xml:id="ex-abc-inverse-order" workspace="true">
+      <statement>
+        <p>
+          True or false:
+          <m>(ABC)^{-1} = C^{-1}B^{-1}A^{-1}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+            Note that <me>(ABC)^{-1} = (A (BC))^{-1} = (BC)^{-1}A^{-1} = (C^{-1}B^{-1})A^{-1} = C^{-1}B^{-1}A^{-1}</me>. Therefore, the statement is true.
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-2-algorithm-inverse">
+    <title>An Algorithm for Computing <m>A^{-1}</m></title>
+
+    <p workspace="0.5in">
+      If <m>A\in\mathbb{R}^{n\times n}</m> and <m>n&gt;2</m>, we can compute <m>A^{-1}</m> with the following algorithm:
+    
+
+    <ol>
+      <li>Row reduce the augmented matrix <m>\begin{bmatrix} A \ \rvert \ I_n\end{bmatrix}</m>.</li>
+      <li>
+        If the reduction has the form <m>\begin{bmatrix}I_n \ \rvert \ B\end{bmatrix}</m>, then <m>A</m> is invertible and <m>B=A^{-1}</m>.
+        Otherwise, <m>A</m> is not invertible.
+      </li>
+    </ol>
+    </p>
+
+    <example xml:id="ex-compute-inverse-3x3" workspace="true">
+      <statement>
+        <p>Compute the inverse of</p>
+        <me>
+          A=
+          \begin{bmatrix}
+            0 \amp 1 \amp 2\\
+            1 \amp 0 \amp 3\\
+            0 \amp 0 \amp 1
+          \end{bmatrix}.
+        </me>
+      </statement>
+      <solution>
+        <p>
+            Note the following: </p> 
+            <p><m>\begin{eqnarray*}\begin{bmatrix} A \amp \rvert \amp I_3\end{bmatrix} \amp = \amp \begin{bmatrix} 0 \amp 1 \amp 2 \amp \rvert \amp 1 \amp 0 \amp 0 \\ 1 \amp 0 \amp 3 \amp \rvert \amp 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \amp \rvert \amp 0 \amp 0 \amp 1 \end{bmatrix}\\
+                \amp \sim \amp \begin{bmatrix} 1 \amp 0 \amp 3 \amp \rvert \amp 0 \amp 1 \amp 0 \\ 0 \amp 1 \amp 2 \amp \rvert \amp 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \amp \rvert \amp 0 \amp 0 \amp 1 \end{bmatrix} \\
+                \amp \sim \amp \begin{bmatrix} 1 \amp 0 \amp 0 \amp \rvert \amp 0 \amp 1 \amp -3 \\ 0 \amp 1 \amp 0 \amp \rvert \amp 1 \amp 0 \amp -2 \\ 0 \amp 0 \amp 1 \amp \rvert \amp 0 \amp 0 \amp 1 \end{bmatrix} \\
+                \amp = \amp \begin{bmatrix} I_3 \amp \rvert \amp A^{-1}\end{bmatrix}\end{eqnarray*}</m></p> 
+            <p> Therefore, we have <m>A^{-1} = \begin{bmatrix} 0 \amp 1 \amp -3 \\ 1 \amp 0 \amp -2 \\ 0 \amp 0 \amp 1 \end{bmatrix}</m>. Let's check: <me>AA^{-1} = \begin{bmatrix}0 \amp 1 \amp 2 \\ 1 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \end{bmatrix}\begin{bmatrix}0 \amp 1 \amp -3 \\ 1 \amp 0 \amp -2 \\ 0 \amp 0 \amp 1 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} = I_3</me>.    
+
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-2-why-algorithm-works">
+    <title>Why Does This Work?</title>
+
+    <p>Why does the previous algorithm work? We can think of our algorithm as simultaneously solving <m>n</m> linear systems:</p>
+
+    <md>
+      \begin{array}{ccc}
+      A\vec x_1 \amp = \amp \vec e_1\\
+      A\vec x_2 \amp = \amp \vec e_2\\
+      \amp\vdots\\
+      A\vec x_n \amp = \amp \vec e_n
+      \end{array}
+    </md>
+
+    <p>
+      Each column of <m>A^{-1}</m> is <m>A^{-1}\vec e_i=\vec x_i</m>.
+    </p>
+
+    <p><nbsp/></p>
+
+  </page>
+
+
+  <page xml:id="p-2-2-elementary-matrices">
+    <title>Elementary Matrices</title>
+    <p> We can also justify the algorithm by using elementary matrices.</p>
+
+    <definition xml:id="def-elementary-matrix">
+      <title>Elementary Matrix</title>
+      <statement>
+        <p>
+          An <term>elementary matrix</term> <m>E</m> is one that differs from <m>I_n</m> by exactly one elementary row operation.
+        </p>
+      </statement>
+    </definition>
+    <p>Recall the elementary row operations:</p>
+    <ol>
+      <li>Swap rows</li>
+      <li>Multiply a row by a non-zero scalar</li>
+      <li>Add a multiple of one row to another</li>
+    </ol>
+
+    <p>
+      Each operation can be represented by matrix multiplication using an <term>elementary matrix</term>.
+    </p>
+    <solution>
+        <p>
+            Let <m>A = \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix}</m>. For (a), note that multiplication by <m>E_1 = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m> on the left swaps the rows of <m>A</m>: <me>E_1A = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} = \begin{bmatrix} 3 \amp 4 \\ 1 \amp 2 \end{bmatrix}</me>. For (b), consider the matrix <m>E_2 = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -2 \end{bmatrix}</m> which was chosen by performing the row operation <m>-2R_2 \rightarrow R_2</m> to the <m>2 \times 2</m> identity matrix. Note that multiplication by <m>E_2</m> to the left of <m>A</m> will accomplish the same row operation to <m>A</m>: <me>E_2A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -2 \end{bmatrix}\begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} = \begin{bmatrix} 1 \amp 2 \\ -6 \amp -8 \end{bmatrix}</me>. For (c), consider the matrix <m>E_3 = \begin{bmatrix} 1 \amp 0 \\ 3 \amp 1 \end{bmatrix}</m> which was chosen by performing the row operation <m>R_2 + 3R_1 \rightarrow R_2</m> to the <m>2 \times 2</m> identity matrix. Note that multiplication by <m>E_3</m> to the left of <m>A</m> will accomplish the same row operation to <m>A</m>: <me>E_3A = \begin{bmatrix} 1 \amp 0 \\ 3 \amp 1 \end{bmatrix}\begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} = \begin{bmatrix} 1 \amp 2 \\ 6 \amp 10 \end{bmatrix}</me>.
+        </p>
+    </solution>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-2-elementary-example">
+    <title>Example: Identify an Elementary Matrix</title>
+
+    <example xml:id="ex-find-E-by-inspection" workspace="true">
+      <statement>
+        <p>
+          Suppose
+        </p>
+        <me>
+          E
+          \begin{bmatrix}
+            1 \amp 1 \amp 1\\
+            -2 \amp 1 \amp 0\\
+            0 \amp 0 \amp 1
+          \end{bmatrix}
+          =
+          \begin{bmatrix}
+            1 \amp 1 \amp 1\\
+            0 \amp 3 \amp 2\\
+            0 \amp 0 \amp 1
+          \end{bmatrix}.
+        </me>
+        <p>
+          By inspection, what is <m>E</m>? How does it compare to <m>I_3</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+            Note that <me> \begin{bmatrix} 1 \amp 1 \amp 1 \\ -2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \overset{R_2 + 2R_1 \rightarrow R_2}{\Huge \sim} \begin{bmatrix} 1 \amp 1 \amp 1 \\ 0 \amp 3 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix}</me>. Therefore, we have that <me>\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \overset{R_2 + 2R_1 \rightarrow R_2}{\Huge \sim} \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} = E</me>.
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+
+    <p>
+      Returning to why the algorithm works, applying a sequence of row operations to <m>A</m> to obtain <m>I_n</m> can be written as:
+    </p>
+
+    <me>
+      (E_k \cdots E_3E_2E_1)A = I_n.
+    </me>
+
+    <p workspace="0.5in">
+      Thus, <m>E_k \cdots E_3E_2E_1</m> is the inverse matrix we seek.
+    </p>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-invertible-iff-row-equivalent-identity" workspace="true">
+      <title>Invertibility and Row Equivalence</title>
+      <statement>
+        <p>
+          A matrix <m>A</m> is invertible if and only if it is row equivalent to the identity matrix.
+          In this case, any sequence of elementary row operations that transforms <m>A</m> into <m>I</m>,
+          when applied to <m>I</m>, generates <m>A^{-1}</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+  </page>
+
+
+  <page xml:id="p-2-2-using-inverse-solve-system">
+    <title>Using the Inverse to Solve a Linear System</title>
+    <p>Some final thoughts:</p>
+    <ul>
+      <li>
+        We could use <m>A^{-1}</m> to solve a linear system <m>A\vec x=\vec b</m>.
+        We would compute <m>A^{-1}</m> and then solve by multiplying appropriately.
+      </li>
+      <li>
+        As many textbooks point out, <m>A^{-1}</m> is seldom used in practice:
+        computing it can take a long time and may be prone to numerical error.
+      </li>
+      <li>
+        So why did we learn how to compute <m>A^{-1}</m>?
+        Later in the course, we use elementary matrices and properties of <m>A^{-1}</m> to derive results.
+      </li>
+      <li>
+        A recurring theme: just because we <em>can</em> do something a certain way,
+        doesn't mean we <em>should</em>.
+      </li>
+    </ul>
+  </page>
+
+</handout>

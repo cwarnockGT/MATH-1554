@@ -1,0 +1,362 @@
+<handout xml:id="handout-section-5-5-complex-eigenvalues">
+  <title>5.5 Complex Eigenvalues</title>
+
+  <page xml:id="p-5-5-overview">
+    <title>Overview</title>
+
+    <objectives xml:id="obj-5-5-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>Complex numbers: addition, multiplication, complex conjugate</li>
+        <li>Complex eigenvalues and eigenvectors</li>
+        <li>Eigenvalue theorems</li>
+      </ul>
+      </objectives>
+
+      <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>Use eigenvalues to identify the rotation and dilation of a linear transform.</li>
+        <li>Recognize rotation–dilation matrices.</li>
+        <li>Find complex eigenvalues and eigenvectors of a real matrix.</li>
+        <li>Apply theorems to characterize matrices with complex eigenvalues.</li>
+      </ul>
+      </objectives>
+
+      <p><nbsp/></p>
+
+      <example>
+        <introduction>
+          <p>
+            Consider the linear transformation <m>T: \mathbb{R}^2 \rightarrow \mathbb{R}^2</m> which rotates vectors counterclockwise by 90<m>^\circ</m>. 
+          </p>
+        </introduction>
+        <task workspace="true">
+          <statement>
+            <p>
+              Find the matrix <m>A</m> so that <m>T(\vec x) = A\vec x</m>.
+            </p>
+          </statement>
+        </task>
+        <task workspace="true">
+          <statement>
+            <p>
+              Find the characteristic polynomial of <m>A</m>.
+            </p>
+          </statement>
+        </task>
+        <task workspace="true">
+          <statement>
+            <p>
+              What are the eigenvalues of <m>A</m>?
+            </p>
+          </statement>
+        </task>
+      </example>
+
+      <p><nbsp/></p>
+
+  </page>
+
+
+  <page xml:id="p-5-5-addition-multiplication">
+
+    <definition xml:id="def-complex-numbers" workspace="true">
+      <title>Complex Numbes</title>
+      <statement>
+        <p>
+           The <term>complex numbers</term> are denoted by <m>\mathbb{C}</m>, where
+        <me>
+          \mathbb{C}=\{\,a+bi \mid a,b\in\mathbb{R}\,\}.
+        </me>
+        </p>
+      </statement>
+    </definition>
+      
+
+    <p>We can identify <m>\mathbb{C}</m> with <m>\mathbb{R}^2</m> via <m>a+bi \leftrightarrow (a,b)</m>.</p>
+
+    <p><nbsp/></p>
+
+    <p>
+      We can add and multiply complex numbers by treating <m>i</m> as variable and simplifying powers of <m>i</m> appropriately.
+    </p>
+
+    <example xml:id="ex-5-5-add-mul">
+      <introduction>
+        <p>
+          Let <m>z_1 = 2 - 3i</m> and let <m>z_2 = -1 + i</m>. Calculate the following:
+        </p>
+      </introduction>
+      <task workspace="true">
+        <statement>
+          <p>
+            Sum of complex numbers: <m>z_1 + z_2</m>
+          </p>
+        </statement>
+      </task>
+      <task workspace="true">
+        <statement>
+          <p>
+            Product of complex numbers: <m>z_1z_2</m>
+          </p>
+        </statement>
+      </task>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-5-conjugate-abs-polar">
+    <title>Complex Conjugate, Absolute Value, and Polar Form</title>
+
+    <definition xml:id="def-conjugate" workspace="0.5in">
+      <title>Complex Conjugate</title>
+      <statement>
+        <p>The <term>conjugate</term> of <m>a+bi</m> is <m>\overline{a+bi}=a-bi</m>.</p>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <definition xml:id="def-abs" workspace="0.5in">
+      <title>Absolute Value (Modulus)</title>
+      <statement>
+        <p>The <term>absolute value (modulus)</term> of <m>a+bi</m> is <m>\lvert a+bi\rvert=\sqrt{a^2+b^2}</m>.</p>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <definition xml:id="def-polar-form" workspace="0.5in">
+      <statement>
+        <p>
+          The <term>polar form</term> of a complex number is <m>a+bi = r(\cos\phi + i\sin\phi) = re^{i\phi}</m>, where <m>r=\lvert a+bi\rvert</m> and <m>\phi</m> is the argument.
+        </p>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-5-5-conj-mod-polar" workspace="true">
+      <statement>
+        <p>Given <m>z=3-4i</m>, compute <m>\overline{z}</m>, <m>\lvert z\rvert</m>, and the polar form of <m>z</m>.</p>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-5-conjugate-properties">
+    
+
+    <theorem xml:id="thm-conjugate-properties" workspace="0.5in">
+      <title>Conjugate Properties</title>
+      <statement>
+        <p>
+          Let <m>x,y\in\mathbb{C}</m> and <m>\vec v\in\mathbb{C}^n</m>., Then we have the following properties:
+          <ul>
+            <li><m>\overline{(x+y)}=\overline{x}+\overline{y}</m></li>
+            <li><m>\overline{(xy)}=\overline{x}\overline{y}</m></li>
+            <li><m>\overline{A\vec v}=A\,\overline{\vec v}</m> (for a real matrix <m>A</m>)</li>
+            <li><m>\operatorname{Im}(x\overline{x})=0</m></li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    
+    <p><nbsp/></p>
+
+    <p>Conjugation reflects points across the real axis.</p>
+
+    <image xml:id="img-5-5-conjugate-reflection" workspace="true" width="60%">
+      <latex-image>
+        <latex>
+\begin{tikzpicture}[scale=0.9]
+  \coordinate (Origin)   at (0,0);
+  \coordinate (XAxisMin) at (-1,0);
+  \coordinate (XAxisMax) at (4,0);
+  \coordinate (YAxisMin) at (0,-2.5);
+  \coordinate (YAxisMax) at (0,2.5);
+  \draw [thin, black,-&gt;] (XAxisMin) -- (XAxisMax) node [below left] {Re$(z)$};
+  \draw [thin, black,-&gt;] (YAxisMin) -- (YAxisMax) node [below left] {Im$(z)$};
+  \coordinate (Vone) at (3,2);
+  \coordinate (Vtwo) at (3,-2);
+  \draw [very thick,-&gt;,DarkBlue] (Origin) -- (Vone) node [above left] {$z=x+iy$};
+  \draw [very thick,-&gt;,DarkRed] (Origin) -- (Vtwo) node [below left] {$\bar z=x-iy$};
+  \draw[DarkBlue,dashed] (1,0) arc (0:35:1);
+  \draw[DarkRed,dashed] (1,0) arc (0:-35:1);
+  \draw[DarkRed] (1.5,-0.4) node {$-\phi$};
+  \draw[DarkBlue] (1.5,0.4) node {$\phi$};
+  \draw[black] (-0.4,-0.4) node {O};
+\end{tikzpicture}
+        </latex>
+      </latex-image>
+      <shortdescription>Diagram showing complex conjugation as reflection over real axis.</shortdescription>
+      <description>
+        The point <m>z=x+iy</m> at angle <m>\phi</m> reflects to <m>\overline{z}=x-iy</m> at angle <m>-\phi</m> across the real axis.
+      </description>
+    </image>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-5-euler-formula">
+    <title>Euler’s Formula and Products in Polar Form</title>
+
+    <p>
+      Suppose <m>z_1</m> has angle <m>\phi_1</m> and <m>z_2</m> has angle <m>\phi_2</m>; that is, let <m>z_1 = |z_1|e^{i\phi_1}</m> and <m>z_2 = |z_2|e^{i\phi_2}</m>. Note that <me>
+      z_3=z_1z_2=(\lvert z_1\rvert e^{i\phi_1})(\lvert z_2\rvert e^{i\phi_2})
+      = \lvert z_1\rvert \lvert z_2\rvert e^{i(\phi_1+\phi_2)}.
+    </me>
+    Therefore, the product <m>z_1z_2</m> has modulus <m>|z_1||z_2|</m> and has angle <m>\phi_1 + \phi_2</m>.
+    </p>
+
+    <image xml:id="img-5-5-polar-angles" width="70%">
+      <latex-image>
+        <latex>
+\begin{tikzpicture}[scale=0.9]
+  \coordinate (Origin)   at (0,0);
+  \coordinate (XAxisMin) at (-2,0);
+  \coordinate (XAxisMax) at (4,0);
+  \coordinate (YAxisMin) at (0,-1);
+  \coordinate (YAxisMax) at (0,2.5);
+  \draw [thin, black,-&gt;] (XAxisMin) -- (XAxisMax) node [below left] {Re$(z)$};
+  \draw [thin, black,-&gt;] (YAxisMin) -- (YAxisMax) node [above right] {Im$(z)$};
+  \coordinate (Vone) at (2,1.3);
+  \coordinate (Vtwo) at (0.5,1.2);
+  \coordinate (Vthr) at (-0.56,3.05);
+  \draw [very thick,-&gt;,DarkBlue] (Origin) -- (Vone) node [above] {$z_1$};
+  \draw [very thick,-&gt;,red] (Origin) -- (Vtwo) node [above] {$z_2$};
+  \draw [very thick,-&gt;,DarkGreen] (Origin) -- (Vthr) node [left] {$z_3$};
+  \draw[DarkBlue] (1.2,0) arc (0:40:1);
+  \draw[red] (1.0,0) arc (0:70:1);
+  \draw[DarkGreen] (0.8,0) arc (0:90:1);
+  \draw[DarkBlue] (1.5,0.3) node {$\phi_1$};
+  \draw[red] (1,1) node {$\phi_2$};
+  \draw[black] (-0.4,-0.4) node {O};
+\end{tikzpicture}
+        </latex>
+      </latex-image>
+      <shortdescription>Angles in polar form for complex numbers and their product.</shortdescription>
+      <description>
+        Vectors representing <m>z_1</m>, <m>z_2</m>, and their product <m>z_3=z_1z_2</m> with angles adding: <m>\phi_3=\phi_1+\phi_2</m>.
+      </description>
+    </image>
+
+    
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-5-complex-and-polynomials">
+    <title>Complex Numbers and Polynomials</title>
+
+    <theorem xml:id="thm-fta" workspace="1in">
+      <title>Fundamental Theorem of Algebra</title>
+      <statement>
+        <p>Every polynomial of degree <m>n</m> has exactly <m>n</m> complex roots, counting multiplicity.</p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-conjugate-roots" workspace="1in">
+      <title>Conjugate Pairs for Real Coefficients</title>
+      <statement>
+        <ol>
+          <li>If <m>\lambda\in\mathbb{C}</m> is a root of a real polynomial <m>p(x)</m>, then the conjugate <m>\overline{\lambda}</m> is also a root of <m>p(x)</m>.</li>
+          <li>If <m>\lambda</m> is an eigenvalue of a real matrix <m>A</m> with eigenvector <m>\vec v</m>, then <m>\overline{\lambda}</m> is an eigenvalue of <m>A</m> with eigenvector <m>\overline{\vec v}</m>.</li>
+        </ol>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-5-5-complete-eigs" workspace="true">
+      <statement>
+        <p>
+          Four eigenvalues of a <m>7\times 7</m> real matrix are <m>-2</m>, <m>4+i</m>, <m>-4-i</m>, and <m>i</m>. What are the other eigenvalues?
+        </p>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-5-rotation-dilation">
+    <title>Rotation–Dilation Matrices and Eigenvalues</title>
+
+    <example xml:id="ex-5-5-rot-dil-eigs" workspace="true">
+      <statement>
+        <p>
+          The matrix that rotates vectors by <m>\phi=\pi/4</m> about the origin and then scales by <m>r=\sqrt{2}</m> is
+        </p>
+        <me>
+          A=
+          \begin{bmatrix}
+            r \amp 0\\
+            0 \amp r
+          \end{bmatrix}
+          \begin{bmatrix}
+            \cos\phi \amp -\sin\phi\\
+            \sin\phi \amp \cos\phi
+          \end{bmatrix}
+          =
+          \begin{bmatrix}
+            1 \amp -1\\
+            1 \amp 1
+          \end{bmatrix}.
+        </me>
+        <p>Find the eigenvalues of <m>A</m> and one eigenvector for each eigenvalue.</p>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-5-rotation-dilation-general">
+    <title>General Rotation–Dilation Form</title>
+
+    <p>
+      The previous example is a special case of the real <em>rotation–dilation</em> matrix
+      <m>C=\begin{bmatrix} a \amp -b\\ b \amp a \end{bmatrix}</m>.
+    </p>
+
+    <example xml:id="ex-5-5-C-eigs-polar-1" workspace="true">
+      <statement>
+        <p>Compute the eigenvalues of</p>
+        <me>
+          C=\begin{bmatrix} a \amp -b\\ b \amp a \end{bmatrix}
+        </me>
+        <p>and express them in the polar form <m>re^{i\phi}</m>.</p>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-5-complex-eigs-example">
+    <title>Finding Complex Eigenpairs</title>
+
+    <example xml:id="ex-5-5-complex-eigs" workspace="true">
+      <statement>
+        <p>Find the complex eigenvalues and an associated complex eigenvector for each eigenvalue of</p>
+        <me>
+          A=\begin{bmatrix}
+            1 \amp -2\\
+            1 \amp 3
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+  </page>
+
+</handout>

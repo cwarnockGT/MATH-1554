@@ -1,0 +1,397 @@
+<handout xml:id="handout-section-4-9-markov">
+  <title>4.9/5.9 Markov Chains</title>
+
+  <page xml:id="p-4-9-objectives">
+    <title>Overview</title>
+
+    <objectives xml:id="obj-4-9-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>Markov chains</li>
+        <li>Steady-state vectors</li>
+        <li>Convergence</li>
+      </ul>
+    </objectives>
+
+    <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>Construct stochastic matrices and probability vectors.</li>
+        <li>Model and solve real-world problems using Markov chains (e.g., compute steady-state vectors).</li>
+        <li>Determine whether a stochastic matrix is regular.</li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-4-9-libraries" workspace="true">
+      <statement>
+        <p>A small town has two libraries, <m>A</m> and <m>B</m>.</p>
+
+        <ul>
+          <li>
+            <p>After 1 month, among the books checked out from <m>A</m>:</p>
+            <ul>
+              <li>80% return to <m>A</m></li>
+              <li>20% return to <m>B</m></li>
+            </ul>
+          </li>
+          <li>
+            <p>After 1 month, among the books checked out from <m>B</m>:</p>
+            <ul>
+              <li>30% return to <m>A</m></li>
+              <li>70% return to <m>B</m></li>
+            </ul>
+          </li>
+        </ul>
+        <image xml:id="img-library-markov" width="40%">
+          <latex-image>
+            <latex>
+            \begin{tikzpicture}
+            \begin{scope}[-&gt;,&gt;=stealth',shorten &gt;=1pt,auto,node distance=3cm,
+              thick,main node/.style={circle,fill=blue!20,draw,font=\sffamily\Large\bfseries}]
+              \node[main node] (1) {A};
+              \node[main node] (2) [right of=1] {B};
+              \path[every node/.style={font=\sffamily\small}]
+                  (1) edge [bend right] node[below] {0.2} (2)
+                      edge [loop above] node {0.8} (1)
+                  (2) edge node [above] {0.3} (1)
+                      edge [loop above] node {0.7} (2);
+            \end{scope}
+            \end{tikzpicture}
+            </latex>
+          </latex-image>
+          <shortdescription>Two-state Markov chain diagram with transitions between libraries with probabilities 0.8, 0.2, 0.3, and 0.7 representing book returns.</shortdescription>
+        </image>
+
+        <p>
+          If both libraries start with 1000 books today, how many books does each library have after 1 month?
+        </p>
+
+      </statement>
+      <solution>
+        <p>
+          After 1 month, Library <m>A</m> will receive <m>80\%</m> of the books that were in Library <m>A</m> and <m>30\%</m> of the books that were in Library <m>B</m>. Therefore, we have that the number of books in Library <m>A</m> after 1 month is: <me>0.8(1000) + 0.3(1000) = 800 + 300 = 1100</me>. After 1 month, Library <m>B</m> will receive <m>20\%</m> of the books that were in Library <m>A</m> and <m>70\%</m> of the books that were in Library <m>B</m>. Therefore, we have that the number of books in Library <m>A</m> after 1 month is: <me>0.2(1000) + 0.7(1000) = 200 + 700 = 900</me>.
+        </p>
+      </solution>
+    </example>
+  </page>
+
+  <page>
+    <title>Example 1 continued</title> 
+    <example>
+      <introduction> 
+        <p>
+        Let <m>A</m> and <m>B</m> be the same libraries from <xref ref="ex-4-9-libraries"/>. 
+        </p>
+      </introduction>
+        <task workspace=".5in"> 
+            <statement>
+              <p>
+                Let <m>\vec x_i \in \mathbb{R}^2</m> be the vector which gives how many books are in libraries <m>A</m> and <m>B</m> after <m>i</m> months. What are <m>\vec x_0</m> and <m>\vec x_1</m>?
+              </p>
+            </statement>
+            <solution>
+              <p>
+                We have <m>\vec x_0 = \begin{bmatrix} 1000 \\ 1000 \end{bmatrix}</m> and <m>\vec x_1 = \begin{bmatrix} 1100 \\ 900 \end{bmatrix}</m>.
+              </p>
+            </solution>
+        </task>
+        <task workspace="1in">
+          <statement>
+            <p>
+              Find the <m>2 \times 2</m> matrix <m>P </m> so that <m>\vec x_1 = P\vec x_0</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Let <m>P</m> be the matrix with the distribution probabilities from Library <m>A</m> in column 1 and the distribution probabilities from Library <m>B</m> in column 2; that is, let <me> P = \begin{bmatrix} 0.8 \amp 0.3 \\ 0.2 \amp 0.7 \end{bmatrix}</me>. Then we have that <me>P\vec x_0 = \begin{bmatrix} 0.8 \amp 0.3 \\ 0.2 \amp 0.7 \end{bmatrix}\begin{bmatrix} 1000 \\ 1000 \end{bmatrix} = \begin{bmatrix} 0.8(1000) + 0.3(1000) \\ 0.2(1000) + 0.7(1000) \end{bmatrix} = \begin{bmatrix} 1100 \\ 900 \end{bmatrix} = \vec x_1</me>.
+            </p>
+          </solution>
+        </task>
+        <task workspace="2in">
+          <statement>
+            <p>
+              How many books does each library contain after <m>2</m> months; that is, what is <m>\vec x_2</m>?
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Since multiplication by <m>P</m> models the change from <m>\vec x_0</m> to <m>\vec x_1</m>, it follows that multiplication by <m>P</m> should model the change from <m>\vec x_1</m> to <m>\vec x_2</m>. Therfore, we have that <me>\vec x_2 = P\vec x_1 = \begin{bmatrix} 0.8 \amp 0.3 \\ 0.2 \amp 0.7 \end{bmatrix}\begin{bmatrix} 1100 \\ 900 \end{bmatrix} = \begin{bmatrix} 0.8(1100) + 0.3(900) \\ 0.2(1100) + 0.7(900) \end{bmatrix} = \begin{bmatrix} 1150 \\ 850 \end{bmatrix}</me>. Thus, after 2 months, Library <m>A</m> will contain 1150 books and Library <m>B</m> will contain 850 books.
+            </p>
+          </solution>
+        </task>
+        <task workspace="1in">
+          <statement>
+            <p>
+              How many books does each library contain after <m>n</m> months?
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Note that an alternative way to calculate <m>\vec x_2</m> is <me>\vec x_2 = P\vec x_1 = P(P\vec x_0) = P^2\vec x_0</me>. If we wanted to calculate <m>\vec x_3</m>, we could do something similar, like <me>\vec x_3 = P\vec x_2 = P(P^2\vec x_0) = P^3\vec x_0</me>. It follows that <me>\vec x_n = P^n\vec x_0</me>. In most examples, <m>P^n</m> will be difficult to calculate for large <m>n</m>. Usually, we are more interested in what happens in the long term, so we are interested in finding <me>\vec \ell = \lim_{n\rightarrow \infty} \vec x_n</me>.
+            </p>
+          </solution>
+        </task>
+        <task>
+          <statement>
+            <p>
+              What if each library had started with <m>100</m> books instead of <m>1000</m> books. Would <m>P</m> change? What would be the new <m>\vec x_0, \vec x_1, \vec x_2</m>? 
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Note that <m>P</m> models the distribution of books and has nothing to do with the specific number of books. Therefore, <m>P</m> would remain the same, regardless of how many books start off in Library <m>A</m> and Library <m>B</m>. 
+            </p> 
+              
+            <p>
+                Since <m>100</m> is one-tenth that of <m>1000</m>, the only change for <m>\vec x_i</m> would be scaling by a factor of <m>\frac{1}{10}</m>; that is, the new <m>\vec x_i</m> would be <me>\vec x_0 = \begin{bmatrix} 100 \\ 100 \end{bmatrix}, \quad \vec x_1 = \begin{bmatrix} 110 \\ 90 \end{bmatrix}, \quad \vec x_2 = \begin{bmatrix} 115 \\ 85 \end{bmatrix}</me>. Note that for either version of <m>\vec x_i</m>, the proportion of books in each library stays the same even if the actual number changes. Therefore, in general, it will be okay to simply determine how <m>P</m> acts on vectors which keep track of proportion of books between the libraries instead of specific numbers.
+            </p>
+          </solution>
+        </task>
+    </example>
+
+    <p><nbsp/></p>
+    
+  </page>
+
+
+  <page xml:id="p-4-9-markov-definitions">
+    <title>Markov Chains: Definitions</title>
+
+    <definition workspace="1in">
+      <statement> 
+        <p>A few important definitions:
+
+    <ul >
+      <li>
+        A <term>probability vector</term> is a vector <m>\vec x</m> whose entries are nonnegative and sum to 1.
+      </li>
+      <li>
+        A <term>stochastic matrix</term> is a square matrix whose columns are probability vectors.
+      </li>
+      <li>
+        A <term>Markov chain</term> is a sequence of probability vectors <m>\vec x_k</m> satisfying
+        <m>\vec x_{k+1}=P\vec x_k</m> for a stochastic matrix <m>P</m>.
+      </li>
+      <li>
+        A <term>steady-state vector</term> for <m>P</m> is a probability vector <m>\vec q</m> such that
+        <m>P\vec q=\vec q</m>.
+      </li>
+    </ul>
+
+    </p>
+    </statement>
+    </definition>
+    <solution>
+      <p>
+        Suppose the Markov chain <m>\vec x_0, \vec x_1, \vec x_2, \dots</m> converges to the vector <m>\vec \ell</m>. Then we have that <me>\vec \ell = \lim_{n\rightarrow \infty}\vec x_n = \lim_{n\rightarrow \infty}P^n\vec x_0</me>. Note that <me>P\vec \ell = P\left(\lim_{n\rightarrow \infty}P^n\vec x_0\right) = \lim_{n\rightarrow\infty}P^{n+1}\vec x_0 = \vec \ell</me>. Therefore, if the Markov chain converges to some vector <m>\vec \ell</m>, we have <m>P\vec \ell = \vec \ell</m>, so <m>\vec \ell</m> is a <em>steady-state vector</em> for <m>P</m>. 
+      </p>
+      <p>
+        As you might imagine, calculating the limit <m>\displaystyle \lim_{n\rightarrow\infty}P^n\vec x_0</m> might be quite difficult. However, if we know that the Markov chain converges <em>and</em> we find that there is only a single steady-state vector for <m>P</m>, then that unique steady-state vector <em>must</em> be the limit! This is how we will find the limit of a Markov chain.
+      </p>
+      <p>
+        One thing to note is that in the event where there is a unique steady-state vector (which will be most examples in MATH 1554), the choice of starting <em>probabiility</em> vector <m>\vec x_0</m> will NOT change the limit vector <m>\vec \ell</m>.
+      </p>
+    </solution>
+
+    <p><nbsp/></p>
+
+
+    <example xml:id="ex-4-9-steady" workspace="true">
+      <statement>
+        <p>Determine a steady-state vector for the stochastic matrix:</p>
+        <me>
+          P = \begin{bmatrix}
+            0.8 \amp 0.3\\
+            0.2 \amp 0.7
+          \end{bmatrix}
+        </me>
+      </statement>
+      <solution>
+        <p>
+          We want to find a probability vector <m>\vec q</m> so that <m>P\vec q = \vec q</m>. We can rearrage this equation by subtracting <m>\vec q</m> from both sides and factoring to obtain the following equation: <me>P\vec q = \vec q \quad \implies \quad P\vec q - I\vec q = \vec 0 \quad \implies \quad (P - I)\vec q = \vec 0</me>, where we rewrote <m>\vec q</m> as <m>I\vec q</m> to make clear what is left over after factoring out <m>\vec q</m>. It follows that <m>\vec q</m> should be a probability vector that lives in <m>\Nul(P - I)</m>. Note that <me>P - I = \begin{bmatrix} 0.8 - 1 \amp 0.3 \\ 0.2 \amp 0.7-1 \end{bmatrix} = \begin{bmatrix} -0.2 \amp 0.3 \\ 0.2 \amp -0.3 \end{bmatrix} \sim \begin{bmatrix} -2 \amp 3 \\ 0 \amp 0 \end{bmatrix}</me>. Since <m>P - I</m> has only <em>one</em> free variable, we know that <m>\dim(\Nul(P-I)) = 1</m>. Therefore, <m>\Nul(P-I)</m> is spanned by a single nonzero vector. By inspecting the REF of <m>P-I</m> given above, we see that <m>\vec v = \begin{bmatrix} 3 \\ 2 \end{bmatrix}</m> is a nonzero vector in <m>\Nul(P-I)</m>. Therefore, we have that <me>\Nul(P-I) = \Span\left\{\begin{bmatrix} 3 \\ 2 \end{bmatrix}\right\}</me>. Note that <m>\vec v</m> is not a probability vector since its entries add to 5. We can modify <m>\vec v</m> by scaling it by a factor of <m>\frac{1}{5}</m> which will result in a probability vector living in <m>\Nul(P - I)</m>. Since this is the only way to create a probability vector in <m>\Nul(P-I)</m>, we see that <me>\vec q = \frac{1}{5}\vec v = \begin{bmatrix} \frac{3}{5} \\ \frac{2}{5} \end{bmatrix} = \begin{bmatrix} 0.6 \\ 0.4 \end{bmatrix}</me> is the unique steady-state vector for <m>P</m>. We can check that <m>\vec q</m> is a steady-state vector. Note that <me>P\vec q = \begin{bmatrix} 0.8 \amp 0.3 \\ 0.2 \amp 0.7 \end{bmatrix} \begin{bmatrix} 0.6 \\ 0.4 \end{bmatrix} = \begin{bmatrix} 0.8(0.6) + 0.3(0.4) \\ 0.2(0.6) + (0.7)(0.4) \end{bmatrix} = \begin{bmatrix} 0.6 \\ 0.4 \end{bmatrix} = \vec q</me>. 
+        </p>
+        <p>
+          What does the steady-state vector <m>\vec q</m> tells us about the libraries in <xref ref="ex-4-9-libraries"/>? It tells us the proportional distribution of the books between the two libraries. Since the two libraries had a total of 2000 books between them, we see that the limit vector of the Markov chain is <me>\vec \ell = 2000 \vec q = 2000\begin{bmatrix} 0.6 \\ 0.4 \end{bmatrix} = \begin{bmatrix} 1200 \\ 800 \end{bmatrix}</me>. Thus, after many months, we should expect Library <m>A</m> to have 1200 books and Library <m>B</m> to have 800 books.  
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+
+  </page>
+
+
+  <page xml:id="p-4-9-regular-matrices">
+    <title>Convergence and Regular Matrices</title>
+
+
+    <definition xml:id="def-regular-stochastic">
+      <title>Regular Stochastic Matrix</title>
+      <statement>
+        <p>
+          A stochastic matrix <m>P</m> is <term>regular</term> if some power <m>P^k</m>
+          has all entries strictly positive.
+        </p>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-regular-converges" workspace="1in">
+      <title>Convergence Theorem</title>
+      <statement>
+        <p>
+          If <m>P</m> is a <em>regular</em> stochastic matrix, then <m>P</m> has a unique steady-state
+          vector <m>\vec q</m>, and the sequence <m>\vec x_{k+1}=P\vec x_k</m> converges to
+          <m>\vec q</m> as <m>k\to\infty</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <p>
+      In <m>\mathbb{R}^2</m>, the probability vectors form the line segment between
+      <m>(1,0)</m> and <m>(0,1)</m>.  
+      A stochastic matrix maps probability vectors to probability vectors, and the iterates
+      <m>P^k\vec x_0</m> converge to the steady state.
+    </p>
+
+    <image xml:id="img-4-9-planar-stochastic" width="50%">
+      <latex-image>
+        <latex>
+          \begin{tikzpicture}
+          \draw[-&gt;] (-0.5,0) -- (4,0);
+          \draw[-&gt;] (0,-0.5) -- (0,4);
+          \draw (3,0) node[below]{1} -- (0,3) node[left]{1};
+          \filldraw (2,1) circle(.1em) node[below left]{$\color{blue}\vec x_\infty$};
+          \foreach \x/\y/\k in {3/0/0, 1/2/1, 2.5/0.5/2, 1.5/1.5/3}
+            \filldraw (\x,\y) circle(0.1em) node[above]{$\vec x_{\k}$};
+          \end{tikzpicture}
+        </latex>
+      </latex-image>
+      <shortdescription>Diagram showing convergence of 2D stochastic vectors to a steady state.</shortdescription>
+      <description>
+        Illustration of several probability vectors in <m>\mathbb{R}^2</m>,
+        under repeated multiplication by a regular stochastic matrix,
+        converging to a steady-state vector.
+      </description>
+    </image>
+
+    <p workspace="1in"><nbsp/></p>
+    
+  </page>
+
+
+  <page xml:id="p-4-9-example3">
+    <title>Example 3: Car Rental Network</title>
+
+    <example xml:id="ex-4-9-cars" workspace="true">
+      <introduction>
+        <p>
+          A rental company has three locations A, B, and C. Cars may be returned to any location.
+          The table gives the weekly rental/return pattern:
+        
+
+        <!-- <table>
+          <tabular top="none" bottom="medium">
+            <row>
+              <cell ></cell><cell ></cell><cell right="none" colspan="3">rented from</cell>
+            </row>
+            <row>
+              <cell ></cell><cell></cell><cell>A</cell><cell>B</cell><cell>C</cell>
+            </row>
+            <row bottom="none">
+              <cell></cell><cell right="medium">A</cell><cell>.8</cell><cell>.1</cell><cell>.2</cell>
+            </row>
+            <row bottom="none">
+              <cell rowspan="3">returned to</cell><cell right="medium">B</cell><cell>.2</cell><cell>.6</cell><cell>.3</cell>
+            </row>
+            <row>
+              <cell></cell><cell right="medium">C</cell><cell>.0</cell><cell>.3</cell><cell>.5</cell>
+            </row>
+          </tabular>
+        </table> -->
+
+        <image xml:id="img-car-markov" width="50%">
+          <latex-image>
+            <latex>
+            \begin{tikzpicture}
+            \begin{scope}[-&gt;,&gt;=stealth',shorten &gt;=1pt,auto,node distance=3cm,
+              thick,main node/.style={circle,fill=blue!20,draw,font=\sffamily\Large\bfseries}]
+              \node[main node] (1) {A};
+              \node[main node] (2) [above right of=1] {B};
+              \node[main node] (3) [below right of=2] {C};
+              \path[every node/.style={font=\sffamily\small}]
+                  (1) edge [bend left] node[above left] {0.2} (2)
+                      edge [loop below] node {0.8} (1)
+                  (2) edge [bend left] node [above left] {0.1} (1)
+                      edge [loop above] node {0.6} (2)
+                      edge [bend left] node [above right] {0.3} (3)
+                  (3) edge node [above] {0.2} (1)
+                      edge [bend left] node[above right] {0.3} (2)
+                      edge [loop below] node {0.5} (3);
+            \end{scope}
+            \end{tikzpicture}
+            </latex>
+          </latex-image>
+          <shortdescription>Three-state Markov chain diagram with transitions between rental companies. The probabilities are as follows: A to A is 0.8, A to B is 0.2, A to C is 0, B to A is 0.1, B to B is 0.6, B to C is 0.3, C to A is 0.2, C to B is 0.3, C to C is 0.5.</shortdescription>
+        </image>
+
+        There are 18 cars at each location today.</p>
+      </introduction>
+        <task workspace="1in">
+          <statement>
+            <p>
+              Construct the stochastic matrix <m>P</m>. Is <m>P </m> regular?
+            </p>
+          </statement>
+          <solution>
+            <p>
+              We can build the following table describing how the cars move between the three rental companies.
+              <table>
+                  <tabular top="none" bottom="medium">
+                  <row>
+                    <cell ></cell><cell ></cell><cell right="none" colspan="3">rented from</cell>
+                  </row>
+                  <row>
+                    <cell ></cell><cell></cell><cell>A</cell><cell>B</cell><cell>C</cell>
+                  </row>
+                  <row bottom="none">
+                    <cell></cell><cell right="medium">A</cell><cell>.8</cell><cell>.1</cell><cell>.2</cell>
+                  </row>
+                  <row bottom="none">
+                    <cell rowspan="3">returned to</cell><cell right="medium">B</cell><cell>.2</cell><cell>.6</cell><cell>.3</cell>
+                  </row>
+                  <row>
+                    <cell></cell><cell right="medium">C</cell><cell>.0</cell><cell>.3</cell><cell>.5</cell>
+                  </row>
+                </tabular>
+              </table>
+              It follows that <me>P = \begin{bmatrix} 0.8 \amp 0.1 \amp 0.2 \\ 0.2 \amp 0.6 \amp 0.3 \\ 0 \amp 0.3 \amp 0.5 \end{bmatrix}</me>. Since <m>P</m> has at least one entry which is 0, it is not clear whether <m>P</m> is regular or not. By <xref ref="def-regular-stochastic"/>, in order to show <m>P</m> is regular, we need to show that some power of <m>P</m> has no entries which are 0. Note that <me>P^2 = \begin{bmatrix} 0.8 \amp 0.1 \amp 0.2 \\ 0.2 \amp 0.6 \amp 0.3 \\ 0 \amp 0.3 \amp 0.5 \end{bmatrix}\begin{bmatrix} 0.8 \amp 0.1 \amp 0.2 \\ 0.2 \amp 0.6 \amp 0.3 \\ 0 \amp 0.3 \amp 0.5 \end{bmatrix} = \begin{bmatrix} 0.66 \amp 0.2 \amp 0.29 \\ 0.28 \amp 0.47 \amp 0.37 \\ 0.06 \amp 0.33 \amp 0.34 \end{bmatrix}. </me> Since every entry of <m>P^2</m> is positive, we have that <m>P</m> is regular. Therefore, <xref ref="thm-regular-converges"/> guarantees that <m>P</m> has a unique steady-state vector.
+            </p>
+          </solution>
+          </task>
+          <task workspace="true">
+          <statement>
+            <p>
+              Determine what happens to the distribution of cars after a long time.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Again, we need to find a probability vector in <m>\Nul(P - I).</m> Note that
+            </p>
+            <p>
+            <m>\begin{eqnarray*} P - I \amp = \amp \begin{bmatrix} -0.2 \amp 0.1 \amp 0.2 \\ 0.2 \amp -0.4 \amp 0.3 \\ 0 \amp 0.3 \amp -0.5 \end{bmatrix} \\ \amp \sim \amp \begin{bmatrix} -2 \amp 1 \amp 2 \\ 2 \amp -4 \amp 3 \\ 0 \amp 3 \amp -5 \end{bmatrix} \\ \amp \sim \amp \begin{bmatrix} -2 \amp 1 \amp 2 \\ 0 \amp -3 \amp 5 \\ 0 \amp 3 \amp 5 \end{bmatrix} \\ \amp \sim \amp \begin{bmatrix} -2 \amp 1 \amp 2 \\ 0 \amp -3 \amp 5 \\ 0 \amp 0 \amp 0 \end{bmatrix}\end{eqnarray*}</m>
+            </p>
+            <p>Again, we have that <m>P - I</m> only has a single free variable, so <m>\dim(\Nul(P - I)) = 1</m> which means that <m>P</m> will have a unique steady-state vector. We start by finding some nonzero vector in <m>\Nul(P - I)</m>. Since <m>x_3</m> is a free variable, we set <m>x_3 = t \in\mathbb{R}</m>. Then the second row gives <me>-3x_2 + 5x_3 = 0 \quad \implies \quad -3x_2 = -5t \quad \implies \quad x_2 = \frac{5}{3}t</me>. The first row gives <me>-2x_1 + x_2 + 2x_3 = 0 \ \implies \ x_1 = -\frac{1}{2}\left(-\frac{5}{3}t - 2t\right) \ \implies \ x_1 = \frac{11}{6}t</me>. Letting <m>t = 6</m>, we see that <me>\vec v = \begin{bmatrix} \frac{11}{6}t \\ \frac{5}{3}t \\ t \end{bmatrix} = \begin{bmatrix} \frac{11}{6}(6) \\ \frac{5}{3}(6) \\ 6 \end{bmatrix} = \begin{bmatrix} 11 \\ 10 \\ 6 \end{bmatrix} \in \Nul(P - I)</me>. Since the entries of <m>\vec v</m> add to 27, we have that <me>\vec q = \frac{1}{27}\vec v = \begin{bmatrix}\frac{11}{27} \\ \frac{10}{27} \\ \frac{6}{27} \end{bmatrix}</me> is the unique steady-state vector of <m>P</m>. It follows that the limit vector <m>\vec \ell</m> is an appropriate multiple of <m>\vec q</m>. Since we started with a total of <m>3(18) = 54</m> cars, we have that <me>\vec \ell = 54\vec q = \begin{bmatrix} 22 \\ 20 \\ 12 \end{bmatrix}</me>. Therefore, after a long time, Location A will have 22 cars, Location B will have 20 cars, and Location C will have 12 cars.
+            </p>
+          </solution>
+        </task>
+    </example>
+  </page>
+
+</handout>

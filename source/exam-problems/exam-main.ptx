@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<chapter xml:id="exam-problems" xmlns:xi="http://www.w3.org/2001/XInclude">
+<part xml:id="exam-problems" xmlns:xi="http://www.w3.org/2001/XInclude">
       <title>Sample Exam Problems</title>
 
       <introduction>
@@ -13,4 +13,4 @@
       <xi:include href="./exam2/exam2-main.ptx"/>
       <xi:include href="./exam3/exam3-main.ptx"/>
       <!-- Add more xi:include files here to include them in the main course -->
-    </chapter>
+</part>

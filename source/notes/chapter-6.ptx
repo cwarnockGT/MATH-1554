@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="chapter-6" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Orthogonality and Least Squares</title>
+
+  <section xml:id="Section-6-1">
+    <title>6.1 Dot Product, Length, and Orthogonality</title>
+      <xi:include href="./chapter-6-notes/section-6-1.ptx" />
+  </section>
+
+  
+  
+
+</chapter>

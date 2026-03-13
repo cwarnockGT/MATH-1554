@@ -1,0 +1,441 @@
+<handout xml:id="handout-section-2-9-dimension">
+  <title>2.9 Dimension and Rank</title>
+
+  <page xml:id="p-2-9-intro-objectives">
+    <title>Overview</title>
+
+    <objectives xml:id="obj-2-9-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>Coordinates relative to a basis.</li>
+        <li>Dimension of a subspace.</li>
+        <li>The rank of a matrix.</li>
+      </ul>
+    </objectives>
+    <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>Calculate coordinates of a vector in a given basis.</li>
+        <li>Characterize subspaces using the concept of dimension.</li>
+        <li>Characterize matrices using rank, column space, and null space.</li>
+        <li>Apply the Rank, Basis, and Invertibility Theorems to describe matrices and subspaces.</li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+    <p>
+      <strong>Key idea:</strong> Many different bases may be chosen for a given subspace.
+      The choice can dramatically affect coordinate representations.
+    </p>
+
+    <p><nbsp/></p>
+ 
+
+    
+
+    <example>
+        <statement>
+            <p>
+                Sketch <m>\vec b_1 + \vec b_2</m> in each coordinate system below.
+            </p>
+        <image xml:id="img-coordinate-systems" width="70%">
+      <latex-image>
+        <latex>
+\begin{tikzpicture}
+  \usetikzlibrary{calc}
+
+    \begin{scope}[scale=1.1] 
+    
+    \coordinate (Origin)   at (0,0);
+    \coordinate (XAxisMin) at (-1,0);
+    \coordinate (XAxisMax) at (3,0);
+    \coordinate (YAxisMin) at (0,-1);
+    \coordinate (YAxisMax) at (0,3);
+    \draw [thin, gray,-latex] (XAxisMin) -- (XAxisMax);% Draw x axis
+    \draw [thin, gray,-latex] (YAxisMin) -- (YAxisMax);% Draw y axis
+
+   \clip (-1,-1) rectangle (3,3); % Clips the picture...
+%    \pgftransformcm{1}{0.6}{0.7}{1}{\pgfpoint{0cm}{0cm}}
+          % This is actually the transformation matrix entries that
+          % gives the slanted unit vectors. You might check it on
+           % MATLAB etc. . I got it by guessing.
+    \coordinate (Bone) at (0,1);
+    \coordinate (Btwo) at (1,-1);
+    \draw[style=help lines,dashed] (-14,-14) grid[step=1cm] (14,14);
+          % Draws a grid in the new coordinates.
+          %\filldraw[fill=gray, fill opacity=0.3, draw=black] (0,0) rectangle (2,2);
+              % Puts the shaded rectangle
+    \foreach \x in {-7,-6,...,7}{% Two indices running over each
+      \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn 
+        \node[draw,circle,inner sep=1pt,fill] at (\x,\y) {};
+            % Places a dot at those points
+      }
+    }
+    \draw [ultra thick,-latex,DarkRed] (Origin) -- (Bone) node [above left] {$\vec b_2$};
+%    \draw [ultra thick,-latex,red] (Origin) -- (Btwo) node [below right] {$2b_2$};
+   \draw [ultra thick,-latex,DarkRed] (Origin) -- ($(Bone)+(Btwo)$) node [below right] {$\vec b_1$};
+    %\draw [ultra thick,-latex,red] (Origin) -- ($2*(Bone)+(Btwo)$) node [above right] {$2\vec b_1+2\vec b_2$};
+%    \filldraw[fill=gray, fill opacity=0.3, draw=black] (Origin) rectangle ($2*(Bone)+(Btwo)$);
+    %\draw [thin,-latex,red, fill=gray, fill opacity=0.3] (0,0)
+        % -- ($2*(0,2)+(2,-2)$)
+        % -- ($3*(0,2)+2*(2,-2)$) -- ($(0,2)+(2,-2)$) -- cycle;
+    \end{scope}
+
+    \begin{scope}[xshift=6cm, scale=.75]
+    
+    \coordinate (Origin)   at (0,0);
+    \coordinate (XAxisMin) at (-1,0);
+    \coordinate (XAxisMax) at (4,0);
+    \coordinate (YAxisMin) at (0,-1);
+    \coordinate (YAxisMax) at (0,4);
+    \draw [thin, gray,-latex] (XAxisMin) -- (XAxisMax);% Draw x axis
+    \draw [thin, gray,-latex] (YAxisMin) -- (YAxisMax);% Draw y axis
+
+   \clip (-1,-1) rectangle (4,4); % Clips the picture...
+    \pgftransformcm{1}{0.6}{0.7}{1}{\pgfpoint{0cm}{0cm}}
+          % This is actually the transformation matrix entries that
+          % gives the slanted unit vectors. You might check it on
+           % MATLAB etc. . I got it by guessing.
+    \coordinate (Bone) at (0,2);
+    \coordinate (Btwo) at (2,-2);
+    \draw[style=help lines,dashed] (-14,-14) grid[step=2cm] (14,14);
+          % Draws a grid in the new coordinates.
+          %\filldraw[fill=gray, fill opacity=0.3, draw=black] (0,0) rectangle (2,2);
+              % Puts the shaded rectangle
+    \foreach \x in {-7,-6,...,7}{% Two indices running over each
+      \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn 
+        \node[draw,circle,inner sep=1pt,fill] at (2*\x,2*\y) {};
+            % Places a dot at those points
+      }
+    }
+    \draw [ultra thick,-latex,DarkRed] (Origin)
+        -- (Bone) node [above left] {$\vec b_2$};
+    %\draw [ultra thick,-latex,red] (Origin) -- (Btwo) node [below right] {$b_2$};
+    \draw [ultra thick,-latex,DarkRed] (Origin) -- ($(Bone)+(Btwo)$) node [below right] {$\vec b_1$};
+    %\draw [ultra thick,-latex,red] (Origin) -- ($2*(Bone)+(Btwo)$) node [above left] {$\vec b_1+ \vec b_2$};
+    %\filldraw[fill=gray, fill opacity=0.3, draw=black] (Origin) rectangle ($2*(Bone)+(Btwo)$);
+    %\draw [thin,-latex,red, fill=gray, fill opacity=0.3] (0,0)
+        % -- ($2*(0,2)+(2,-2)$)
+        % -- ($3*(0,2)+2*(2,-2)$) -- ($(0,2)+(2,-2)$) -- cycle;
+    \end{scope}
+\end{tikzpicture}
+        </latex>
+      </latex-image>
+      <shortdescription>Two coordinate systems showing different basis orientations.</shortdescription>
+      <description>
+        Two grids with different bases; vectors <m>\vec b_1</m> and <m>\vec b_2</m> are drawn.
+      </description>
+    </image>
+    </statement>
+</example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-9-coordinates-def">
+    <title>Coordinates Relative to a Basis</title>
+
+    <definition xml:id="def-coordinates" workspace="1in">
+      <title>Coordinates Relative to a Basis</title>
+      <statement>
+        <p>
+          Let <m>\mathcal{B}=\{\vec b_1,\dots,\vec b_p\}</m> be a basis for a subspace <m>H</m>.
+          For any <m>\vec x\in H</m>, the <term>coordinates of <m>\vec x</m> relative to <m>\mathcal B</m></term>
+          are the scalars <m>c_1,\dots,c_p</m> such that
+        </p>
+        <me>\vec x = c_1\vec b_1 + \cdots + c_p\vec b_p.</me>
+        <p>The <term>coordinate vector of <m>\vec x</m> relative to <m>\mathcal B</m></term> is:</p>
+        <me>
+          [\vec x]_{\mathcal B} =
+          \begin{bmatrix}
+            c_1\\ \vdots\\ c_p
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-coordinates" workspace="true">
+      <statement>
+        <p>Let:</p>
+        <me>
+          \vec v_1=\begin{bmatrix}1\\0\\1\end{bmatrix},\qquad
+          \vec v_2=\begin{bmatrix}1\\1\\1\end{bmatrix},\qquad
+          \vec x=\begin{bmatrix}5\\3\\5\end{bmatrix}.
+        </me>
+        <p>
+          Verify that <m>\vec x</m> is in the span of <m>\mathcal B=\{\vec v_1,\vec v_2\}</m>,
+          and compute <m>[\vec x]_{\mathcal B}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let <m>H = \Span\{\vec v_1, \vec v_2\}</m>. Note that <m>\mathcal{B}</m> is a basis for <m>H</m> since the vectors in <m>\mathcal{B}</m> both span <m>H </m> and are linearly independent.
+        </p>
+        <p>
+          We determine if <m>\vec x \in H</m> by seeing whether <m>\vec x</m> can be written as a linear combination of the basis vectors; that is, we need to find whether there exists <m>c_1, c_2 \in \mathbb{R}</m> so that <m>\vec x = c_1\vec v_1 + c_2 \vec v_2</m>. Note that <me>\begin{bmatrix} \vec v_1 \amp \vec v_2 \amp \rvert \amp \vec x\end{bmatrix} = \begin{bmatrix} 1 \amp 1 \amp \rvert \amp 5 \\ 0 \amp 1 \amp \rvert \amp 3 \\ 1 \amp 1 \amp \rvert \amp 5 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp \rvert \amp 2 \\ 0 \amp 1 \amp \rvert \amp 3 \\ 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</me> Therefore, we have that <m>\vec x = 2\vec v_1 +3\vec v_2 \in H</m>. Since there were no free variables, we see that this is the ONLY way of expressing <m>\vec x </m> as a linear combination of the basis vectors. Therefore, <me>[\vec x]_{\mathcal{B}} = \begin{bmatrix} 5 \\ 3 \\ 5 \end{bmatrix}_{\mathcal{B}} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}</me> The coordinate vector of <m>\vec x</m> relative to <m>\mathcal{B}</m> being a vector in <m>\mathbb{R}^2</m> is not a mistake. This must happen since the basis <m>\mathcal{B}</m> contains two vectors. If you chose a different basis for <m>H</m>, say <m>\mathcal{C} = \left\{2\vec v_1, \vec v_1 + \vec v_2\right\}</m>, then <m>[\vec x]_{\mathcal{C}}</m> would still be a vector in <m>\mathbb{R}^2</m>, but would most likely be different. 
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+  <page>
+    <title>Another Example of Coordinate Vector</title>
+    <example xml:id="ex-coordinates2">
+      <introduction>
+        <p>Let</p>
+        <me>
+          \vec v_1=\begin{bmatrix}-1\\0\\1\\0\end{bmatrix},\qquad
+          \vec v_2=\begin{bmatrix}0\\1\\3\\2\end{bmatrix},\qquad
+          \vec v_3=\begin{bmatrix}3\\6\\2\\-1\end{bmatrix},\qquad
+          \vec x=\begin{bmatrix}3\\11\\4\\-4\end{bmatrix},
+        </me>
+        <p>
+          and <m>H = \textrm{Span}\{\vec v_1, \vec v_2, \vec v_3\}</m>. 
+        </p>
+    </introduction>
+    <task workspace="2in">
+        <statement>
+            <p>
+                Verify that <m>\mathcal B=\{\vec v_1,\vec v_2,\vec v_3\}</m> is a basis for <m>H</m>.
+            </p>
+        </statement>
+        <solution>
+          <p>
+            Note that the matrix <me>\begin{bmatrix} \vec v_1 \amp \vec v_2 \amp \vec v_3 \end{bmatrix} = \begin{bmatrix} -1 \amp 0 \amp 3 \\ 0 \amp 1 \amp 6 \\ 1 \amp 3 \amp 2 \\ 0 \amp 2 \amp -1 \end{bmatrix} \sim \begin{bmatrix} -1 \amp 0 \amp 3 \\ 0 \amp 1 \amp 6 \\ 0 \amp 3 \amp 5 \\ 0 \amp 2 \amp -1 \end{bmatrix} \sim \begin{bmatrix} -1 \amp 0 \amp 3\\ 0 \amp 1 \amp 6 \\ 0 \amp 0 \amp -13 \\ 0 \amp 0 \amp -13 \end{bmatrix}</me> has a pivot in each column. Therefore, the columns are linearly independent. Since the vectors in <m>\mathcal{B}</m> span <m>H </m> and are linearly independent, <m>\mathcal{B}</m> is a basis for <m>H</m>.
+          </p>
+        </solution>
+    </task>
+    <task workspace="2in">
+        <statement>
+            <p>
+                Determine if <m>\vec x \in H</m>.
+            </p>
+        </statement>
+        <solution>
+          <p>
+            Note that <me>\begin{bmatrix} \vec v_1 \amp \vec v_2 \amp \vec v_3 \amp \rvert \amp \vec x \end{bmatrix} = \begin{bmatrix} -1 \amp 0 \amp 3 \amp \rvert \amp 3 \\ 0 \amp 1 \amp 6 \amp \rvert \amp 11 \\ 1 \amp 3 \amp 2 \amp \rvert \amp 4 \\ 0 \amp 2 \amp -1 \amp \rvert \amp -4 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp 0 \amp \rvert \amp 3 \\ 0 \amp 1 \amp 0 \amp \rvert \amp -1 \\ 0 \amp 0 \amp 1 \amp \rvert \amp 2 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</me>. So, <m>\vec x = 3\vec v_1 - 1\vec v_2 + 2\vec v_3 \in H</m>.
+          </p>
+        </solution>
+    </task>
+    <task workspace="1in">
+        <statement>
+            <p>
+                Compute <m>[\vec x]_{\mathcal B}</m>.
+            </p>
+        </statement>
+        <solution>
+          <p>
+            Since <m>\vec x = 3\vec v_1 - 1\vec v_2 + 2\vec v_3</m>, we have <me>[\vec x]_{\mathcal{B}} = \begin{bmatrix} 3 \\ 11 \\ 4 \\ -4 \end{bmatrix}_{\mathcal{B}} = \begin{bmatrix} 3 \\ -1 \\ 2 \end{bmatrix}</me>.
+          </p>
+        </solution>
+    </task>
+    </example>
+
+    <p><nbsp/></p>
+
+  </page>
+
+
+  <page xml:id="p-2-9-dimension-def">
+    <title>Dimension</title>
+
+    <definition xml:id="def-dimension" workspace="0.3in">
+      <title>Dimension</title>
+      <statement>
+        <p>
+          The <term>dimension</term> of a nonzero subspace <m>H</m>, written <m>\operatorname{dim}(H)</m>,
+          is the number of vectors in any basis of <m>H</m>. We define <m>\operatorname{dim}(\{0\})=0</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-dimension-basis" workspace="0.3in">
+      <title>Dimension Is Well-Defined</title>
+      <statement>
+        <p>
+          Any two bases <m>\mathcal B_1</m> and <m>\mathcal B_2</m> of a nonzero subspace <m>H</m>
+          have the same number of vectors.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <note workspace="true" xml:id="note-examples-dimension"><strong>Some Examples:</strong>
+    <ol>
+      <li><m>\operatorname{dim}(\mathbb{R}^n)=n</m>.</li>
+      <li>
+        <m>H=\{(x_1,\dots,x_n): x_1+\cdots+x_n=0\}</m> has dimension <m>n-1</m>.
+      </li>
+      <li><m>\operatorname{dim}(\operatorname{Nul}A)</m> is the number of free variables.</li>
+      <li><m>\operatorname{dim}(\operatorname{Col}A)</m> is the number of pivotal columns.</li>
+    </ol>
+  </note>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-9-rank-definition">
+    <title>Rank</title>
+
+    <definition xml:id="def-rank">
+      <title>Rank</title>
+      <statement>
+        <p>
+          The <term>rank</term> of a matrix <m>A</m> is the dimension of its column space.
+        </p>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-rank-computation" workspace="true">
+      <statement>
+        <p>Compute <m>\operatorname{rank}(A)</m> and <m>\operatorname{dim}(\operatorname{Nul}A)</m> and find a basis for <m>\Col(A)</m> and <m>\Nul(A)</m>, where</p>
+        <me>
+          A = \begin{bmatrix}
+            2 \amp -3 \amp -12 \amp 4 \amp -7\\
+            4 \amp -5 \amp -22 \amp 3 \amp 1\\
+            -5 \amp 2 \amp 19 \amp -10 \amp -10\\
+            0 \amp 2 \amp 4 \amp 7 \amp -4
+          \end{bmatrix}
+          \sim
+          \begin{bmatrix}
+            1 \amp 0 \amp -3 \amp 0 \amp 8\\
+            0 \amp 1 \amp 2 \amp 0 \amp 5\\
+            0 \amp 0 \amp 0 \amp 1 \amp -2\\
+            0 \amp 0 \amp 0 \amp 0 \amp 0
+          \end{bmatrix}.
+        </me>
+      </statement>
+      <solution>
+        <p>
+          First, note that we can express the column space as the span of the columns of <m>A </m>; that is, <me>\Col(A) = \Span\left\{\begin{bmatrix} 2 \\ 4 \\ -5 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ -5 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} -12 \\ -22 \\ 19 \\ 4 \end{bmatrix}, \begin{bmatrix} 4 \\ 3\\ -10 \\ 7 \end{bmatrix}, \begin{bmatrix} -7 \\ 1 \\ -10 \\ -4 \end{bmatrix}\right\}</me>. This <em>does not </em> mean that the set containing those five vectors forms a basis. In fact, we know from <xref ref="thm-lin-dep-too-many-vectors"/> that no set containing five vectors from <m>\mathbb{R}^4</m> can form a basis. Since Columns 3 and 5 of <m>A </m> do not correspond to pivot columns, they are linearly dependent on the other vectors and are not needed in the span. Therefore, we have that a basis for <m>\Col(A)</m> is <me>\mathcal{B} = \left\{\begin{bmatrix} 2 \\ 4 \\ -5 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ -5 \\ 2 \\ 2 \end{bmatrix}, \begin{bmatrix} 4 \\ 3\\ -10 \\ 7 \end{bmatrix}\right\}</me>. Thus, <m>\rank(A) = 3</m>.
+        </p>
+        <p>
+          From <xref ref="note-examples-dimension"/>, <m>\dim(\Nul(A))</m> is equal to the number of free variables. Therefore, <m>\dim(\Nul(A)) = 2</m>. We can find a basis for <m>\Nul(A)</m> by finding two vectors which are linearly independent satisfy <m>A\vec x = \vec 0</m>. You can attempt to find such vectors by guessing (strategically). If that fails, you can proceed to following our normal procedure. Note that we have already been given an echelon form of <m>A</m> and can see that Columns 3 and 5 correspond to free variables. Solving for the pivot varialbes in terms of <m>x_3</m> and <m>x_5</m> yields <m>x_1 = 3x_3 - 8x_5</m>, <m>x_2 = -2x_3 - 5x_5</m>, and <m>x_4 = 2x_5</m>. It follows that <me>\Nul(A) = \left\{\begin{bmatrix} 3x_3 - 8x_5 \\ -2x_3 - 5x_5 \\ x_3 \\ 2x_5 \\ x_5 \end{bmatrix} \ {\Large \rvert} \ x_3,x_5 \in \mathbb{R}\right\} = \Span\left\{\begin{bmatrix} 3 \\ -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -8 \\ -5 \\ 0 \\ 2 \\ 1 \end{bmatrix}\right\}</me>. Thus, a basis for <m>\Nul(A)</m> is <me>\mathcal{C} = \left\{\begin{bmatrix} 3 \\ -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -8 \\ -5 \\ 0 \\ 2 \\ 1 \end{bmatrix}\right\}</me>.
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-9-rank-basis-invertibility-theorems">
+    <title>Rank, Basis, and Invertibility Theorems</title>
+
+    <theorem xml:id="thm-rank-theorem" workspace="true">
+      <title>Rank Theorem</title>
+      <statement>
+        <p>
+          If a matrix <m>A</m> has <m>n</m> columns, then
+        </p>
+        <me>\operatorname{rank}(A)+\operatorname{dim}(\operatorname{Null}A)=n.</me>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-basis-theorem" workspace="true">
+      <title>Basis Theorem</title>
+      <statement>
+        <p>Any two bases for a subspace have the same number of vectors. That common number of vectors is the dimension of the subspace.</p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-IMT-Cont-1" workspace="true">
+      <title>The Invertible Matrix Theorem (Continued)</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n\times n</m> matrix. The following are equivalent:
+        </p>
+        <ul marker="">
+          <li>(a) &#160; <m>A</m> is invertible.</li>
+          <li>(m) &#160; The columns of <m>A</m> form a basis for <m>\mathbb{R}^n</m>.</li>
+          <li>(n) &#160; <m>\operatorname{Col}A=\mathbb{R}^n</m>.</li>
+          <li>(o) &#160; <m>\operatorname{dim}\operatorname{Col}A=n</m>.</li>
+          <li>(p) &#160; <m>\operatorname{rank}A=n</m>.</li>
+          <li>(q) &#160; <m>\operatorname{Nul}A=\{\vec 0\}</m>.</li>
+          <li>(r) &#160; <m>\operatorname{dim}\operatorname{Nul}A=0</m>.</li>
+        </ul>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-9-examples">
+    <title>Examples</title>
+
+    <example xml:id="ex-rref-rank-questions">
+      <introduction>
+        <p>
+          For each part below, give an example of a <m>2\times 3</m> matrix <m>A</m> in RREF
+          with the stated property, if possible.
+        </p>
+    </introduction>
+    <task workspace="true">
+        <statement>
+            <p>
+                <m>\operatorname{rank}(A)=3</m>
+            </p>
+        </statement>
+        <solution>
+          <p>
+            In order for <m>\rank(A) = 3</m>, <xref ref="note-examples-dimension"/> states that <m>A</m> must have 3 pivots. Since <m>A</m> only has two rows, it <em>cannot</em> have 3 pivots. Therefore, this is not possible.
+          </p>
+        </solution>
+    </task>
+    <task workspace="true">
+        <statement>
+            <p>
+                <m>\operatorname{rank}(A)=2</m>
+            </p>
+        </statement>
+        <solution>
+          <p>
+            In order for <m>\rank(A) = 2</m>, the matrix <m>A</m> must have 2 pivots. This is possible, for example <m>A = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \end{bmatrix}</m>. In this case, <me>\Col(A) = \Span\left\{\begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \end{bmatrix}\right\} = \mathbb{R}^2</me>.
+          </p>
+        </solution>
+    </task>
+    <task workspace="true">
+        <statement>
+            <p>
+                <m>\operatorname{dim}(\operatorname{Null}A)=2</m>
+            </p>
+        </statement>
+        <solution>
+          <p>
+            In order for <m>\dim(\Nul(A)) = 2</m>, <xref ref="note-examples-dimension"/> states that <m>A</m> must have two free variables. Therefore, <m>A = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \end{bmatrix}</m> works. In this case, <me>\Nul(A) = \Span\left\{\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\right\}</me>.
+          </p>
+        </solution>
+    </task>
+    <task workspace="true">
+        <statement>
+            <p>
+                <m>\operatorname{Nul}(A)=\{\vec 0\}</m>
+            </p>
+        </statement>
+        <solution>
+          <p>
+            Recall from <xref ref="def-dimension"/> that <m>\dim\left(\left\{\vec 0\right\}\right) = 0</m>. Therefore, <m>A</m> should have no free variables, or equivalently, <m>A </m> should have a pivot in every column. This is impossible for a matrix with more columns than rows. Therefore, there is no <m>2 \times 3</m> matrix <m>A</m> such that <m>\Nul(A) = \{\vec 0 \}</m>.
+          </p>
+        </solution>
+    </task>
+    </example>
+  </page>
+
+</handout>

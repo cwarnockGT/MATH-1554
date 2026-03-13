@@ -1,0 +1,323 @@
+<handout xml:id="handout-section-2-8-subspaces">
+  <title>2.8 Subspaces</title>
+
+  <page xml:id="p-2-8-objectives">
+    <title>Overview</title>
+
+    <objectives xml:id="obj-2-8-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>Subspaces, column space, and null space.</li>
+        <li>A basis for a subspace.</li>
+      </ul>
+    </objectives>
+    <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>Determine whether a set is a subspace.</li>
+        <li>Determine whether a vector is in a particular subspace, or find a vector in that subspace.</li>
+        <li>Construct a basis for a subspace (e.g., a basis for <m>\operatorname{Col}(A)</m>).</li>
+      </ul>
+    </objectives>
+
+      <p><em>Motivating Question</em>: Given a matrix <m>A</m>, what is the set of vectors <m>\vec b</m> for which we can solve
+        <m>A\vec x=\vec b</m>?
+      </p>
+
+      <p><nbsp/></p>
+
+    <definition xml:id="def-subset-rn">
+      <title>Subset of <m>\mathbb{R}^n</m></title>
+      <statement>
+        <p>
+          A <term>subset of <m>\mathbb{R}^n</m></term> is any collection of vectors contained in <m>\mathbb{R}^n</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <definition xml:id="def-subspace">
+      <title>Subspace</title>
+      <statement>
+        <p>
+          A subset <m>H</m> of <m>\mathbb{R}^n</m> is a <term>subspace</term> if:
+        </p>
+        <ul>
+          <li><m>c\vec u\in H</m> for any scalar <m>c\in\mathbb{R}</m> and any <m>\vec u\in H</m>.</li>
+          <li><m>\vec u+\vec v\in H</m> for all <m>\vec u,\vec v\in H</m>.</li>
+        </ul>
+      </statement>
+    </definition>
+
+    <p>
+      Note that scalar closure implies the zero vector must be in <m>H</m>.
+    </p>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-subspace-pictures" workspace="true">
+      <statement>
+        <p>Which of the following subsets could be subspaces of <m>\mathbb{R}^2</m>?</p>
+
+        <image xml:id="img-subspaces" source="./subspaces.png" width="80%">
+          <shortdescription>A graphic showing three subsets of <m>\mathbb{R}^2</m>. The first is the unit square. The second is a line through the origin. The third is a line that does not pass throught the origin.</shortdescription>
+        </image>
+      </statement>
+    </example> 
+    <p><nbsp/></p>
+  </page>
+
+  <page xml:id="p-2-8-subspace-examples">
+    <title>Examples of Subspaces</title>
+    <example>
+        <introduction>
+            <p>
+                For each subset of <m>\mathbb{R}^3</m> given below, determine if it is a subspace of <m>\mathbb{R}^3</m>.
+            </p>
+        </introduction>
+        <task workspace="0.8in">
+            <statement>
+                <p>
+                    <m>\left\{\vec 0\right\}</m>
+                </p>
+            </statement>
+        </task>
+        <task workspace="0.8in">
+            <statement>
+                <p>
+                    <m>\left\{\vec 0, \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix},\begin{bmatrix}-1 \\ 0 \\ -1\end{bmatrix} \right\}</m>
+                </p>
+            </statement>
+        </task>
+        <task workspace="0.8in">
+            <statement>
+                <p>
+                    <m>\left\{\begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\right\}</m>
+                </p>
+            </statement>
+        </task>
+        <task workspace="0.8in">
+            <statement>
+                <p>
+                    <m>\textrm{Span}\left\{\begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\right\}</m>
+                </p>
+            </statement>
+        </task>
+        <task workspace="true">
+            <statement>
+                <p>
+                    <m>\left\{\begin{bmatrix} x \\ -x \\ y \end{bmatrix}; x,y\in\mathbb{R}\right\}</m>
+                </p>
+            </statement>
+        </task>
+    </example>
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-8-col-null-definition">
+    <title>The Column Space and Null Space</title>
+
+    <p>
+      Recall that for vectors <m>\vec v_1,\dots,\vec v_p\in\mathbb{R}^n</m>,
+      <m>\operatorname{Span}\{\vec v_1,\dots,\vec v_p\}</m> is the subspace consisting of all linear combinations of these vectors. Not only is the span of vectors an example of a subspace of <m>\mathbb{R}^n</m>, they are the only examples of subspace of <m>\mathbb{R}^n</m>.
+    </p>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-subspace-are-span">
+        <statement>
+            <p>
+                Every subspace of <m>\mathbb{R}^n</m> can be written as the span of a finite number of vectors; that is, if <m>H</m> is a subspace of <m>\mathbb{R}^n</m>, then there exists vectors <m>\vec v_1, \dots, \vec v_k</m> so that <m>H = \textrm{Span}\left\{\vec v_1, \dots, \vec v_n\right\}</m>.
+            </p>
+        </statement>
+    </theorem>
+    
+
+    <p><nbsp/></p>
+
+    <definition xml:id="def-col-null">
+      <title>Column Space and Null Space</title>
+      <statement>
+        <p>
+          Let <m>A=\begin{bmatrix}\vec a_1 \amp \cdots \amp \vec a_n\end{bmatrix}</m> be
+          an <m>m\times n</m> matrix.
+        </p>
+
+        <ul>
+          <li>
+            The <term>column space</term> of <m>A</m>,
+            <m>\operatorname{Col}(A)</m>, is the subspace of <m>\mathbb{R}^m</m>
+            spanned by <m>\vec a_1,\dots,\vec a_n</m>.
+          </li>
+
+          <li>
+            The <term>null space</term> of <m>A</m>,
+            <m>\operatorname{Nul}(A)</m>, is the subspace of <m>\mathbb{R}^n</m>
+            consisting of all solutions to <m>A\vec x=\vec 0</m>.
+          </li>
+        </ul>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-colspace-membership" workspace="true">
+      <statement>
+        <p>Is <m>\vec b</m> in the column space of <m>A</m>?</p>
+
+        <me>
+          A=
+          \begin{bmatrix}
+            1 \amp -3 \amp -4\\
+            -4 \amp 6 \amp -2\\
+            -3 \amp 7 \amp 6
+          \end{bmatrix}
+          \sim
+          \begin{bmatrix}
+            1 \amp -3 \amp -4\\
+            0 \amp -6 \amp -18\\
+            0 \amp 0 \amp 0
+          \end{bmatrix},
+          \qquad
+          \vec b=
+          \begin{bmatrix}
+            3\\3\\-4
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-8-basis-definition">
+    <title>Basis</title>
+
+    <example xml:id="ex-nullspace-membership" workspace="true">
+      <statement>
+        <p>
+          Determine whether
+          <m>\vec v</m> is in <m>\operatorname{Nul}(A)</m>. 
+          <me>A = \begin{bmatrix}
+            1 \amp -3 \amp -4\\
+            -4 \amp 6 \amp -2\\
+            -3 \amp 7 \amp 6
+          \end{bmatrix} \sim
+          \begin{bmatrix}
+            1 \amp -3 \amp -4\\
+            0 \amp -6 \amp -18\\
+            0 \amp 0 \amp 0
+          \end{bmatrix}, 
+          \qquad          
+          \vec v=
+          \begin{bmatrix}
+            -5\lambda\\
+            -3\lambda\\
+            \lambda
+          \end{bmatrix},
+          \quad \lambda\in\mathbb{R}.
+        </me>
+    </p>
+      </statement>
+    </example>
+    <p><nbsp/></p>
+  </page>
+
+  <page>
+    <title>Definition of basis and Example</title>
+        <definition xml:id="def-basis" workspace="1in">
+      <title>Basis</title>
+      <statement>
+        <p>
+          A <em>basis</em> for a subspace <m>H</m> is a set of linearly independent vectors in
+          <m>H</m> that span <m>H</m>.
+        </p>
+      </statement>
+    </definition>    
+    <p><nbsp/></p>
+    
+<example xml:id="ex-basis-subspace" workspace="true">
+      <statement>
+        <p>
+          Let
+        </p>
+
+        <me>
+          H=\left\{
+          \begin{bmatrix}
+            x_1\\x_2\\x_3\\x_4
+          \end{bmatrix}
+          \in\mathbb{R}^4\;\middle|\;
+          x_1+2x_2+x_3+5x_4=0
+          \right\}.
+        </me>
+
+        <ol marker="a">
+          <li>Find a matrix <m>A</m> such that <m>H=\operatorname{Nul}(A)</m>.</li>
+          <li>Construct a basis for <m>H</m>.</li>
+        </ol>
+      </statement>
+    </example>
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-8-example-basis-col-null">
+    <title>Example: Basis for Column Space and Null Space</title>
+
+    <example xml:id="ex-basis-col-null" workspace="true">
+      <statement>
+        <p>Construct a basis for <m>\operatorname{Nul}(A)</m> and <m>\operatorname{Col}(A)</m>.</p>
+
+        <me>
+          A=
+          \begin{bmatrix}
+            -3 \amp 6 \amp -1 \amp 0\\
+            1 \amp -2 \amp 2 \amp 0\\
+            2 \amp -4 \amp 5 \amp 0
+          \end{bmatrix}
+          \sim
+          \begin{bmatrix}
+            1 \amp -2 \amp 0 \amp 0\\
+            0 \amp 0 \amp 1 \amp 0\\
+            0 \amp 0 \amp 0 \amp 0
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+    <p><nbsp/></p>
+
+    
+  </page>
+
+  <page>
+    <title>Another Example</title>
+    <example xml:id="ex-V-ab-equals-zero" workspace="true">
+      <statement>
+        <p>
+          Let
+        </p>
+
+        <me>
+          V=\left\{
+          \begin{bmatrix}
+            a\\b
+          \end{bmatrix}
+          \in\mathbb{R}^2\;\middle|\;ab=0
+          \right\}.
+        </me>
+
+        <ol>
+          <li>Give an example of a vector that is in <m>V</m>.</li>
+          <li>Give an example of a vector that is not in <m>V</m>.</li>
+          <li>Is the zero vector in <m>V</m>?</li>
+          <li>Is <m>V</m> a subspace?</li>
+        </ol>
+      </statement>
+    </example>
+    
+  </page>
+
+</handout>

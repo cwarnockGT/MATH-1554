@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<handout xml:lang="en" xml:id="section-1-1" toc="no" display="inline">
+  <title>1.1 Systems of Linear Equations</title>
+  <!-- Page 1: Section overview, topics and objectives -->
+  <page>
+    <title>Topics and Objectives</title>
+
+    <objectives>
+      <title>Topics</title>
+      <ul>
+        <li>Systems of Linear Equations</li>
+        <li>Matrix Notation</li>
+        <li>Elementary Row Operations</li>
+        <li>Existence and Uniqueness of Solutions</li>
+      </ul>
+    </objectives>
+
+    <objectives workspace="0.5in">
+      <title>Goals</title>
+      <ol>
+        <li>Characterize a linear system by the number of solutions and consistency.</li>
+        <li>Apply elementary row operations to solve linear systems.</li>
+        <li>Express a system as an augmented matrix.</li>
+      </ol>
+    </objectives>
+  
+    <definition>
+    <title>A Single Linear Equation</title>
+      <statement>A <term>linear equation</term> has the form:
+        <md>a_1 x_1 + a_2 x_2 + \cdots + a_n x_n = b</md>
+      where, <m>a_1,\dots,a_n</m> and <m>b</m> are the <em>coefficients</em>, <m>x_1,\dots,x_n</m> are the
+      <em>variables</em> (unknowns), and <m>n</m> is the <em>dimension</em> (number of variables).
+      </statement>
+      </definition>
+
+        <p workspace="true">Some Examples:
+      <ul>
+        <li><m>2x_1+4x_2=4</m> is a line in two dimensions.</li>
+        <li><m>3x_1+2x_2+x_3=6</m> is a plane in three dimensions.</li>
+        <li><m>x_1 + x_2 + x_3 = x_4 + x_5</m></li>
+        <li><m>x_1 + \sqrt{2}x_2 -\frac{1}{7}  = \pi x_3</m></li>
+      </ul>
+    </p>
+    <p workspace="true">Non Examples:
+    <ul>
+        <li><m>x_1 + x_2^3 = 3</m></li>
+        <li><m>2x_1 - 4x_2 - \sqrt{x_3} = 4</m></li>
+        <li><m>\dfrac{1}{x_1} + x_2 + x_3 = 4</m></li>
+      </ul>
+</p>
+</page>
+
+  <!-- Page 2: Systems of linear equations + definition -->
+  <page>
+    <title>Systems of Linear Equations</title>
+
+    <p>
+      When we have more than one linear equation, we have a <em>system of linear equations</em>. For example, a system of two linear equations is:
+    </p>
+
+    <p workspace="2.5in">
+      <md>\begin{aligned}
+        x_1 \amp\;+\; 1.5\,x_2 \;+\; \pi x_3 \;=\; 4 \\
+        5x_1 \amp\;+\; \phantom{1.5\,x_2}\;+\; 7x_3 \;=\; 5
+      \end{aligned}</md>
+    </p>
+
+    <p workspace="2.5in">
+    <definition>
+      <title>Solution to a Linear System</title>
+      <statement>
+        The set of all possible values of <m>x_1, x_2, \ldots, x_n</m> that satisfy <em>every</em> equation in the system is the <term>solution, or solution set,</term> to the system.
+      </statement
+      >
+    </definition>
+    </p>
+    
+    <p workspace="1.5in">
+      How many solutions can a system have?
+    </p>
+  </page>
+
+  <!-- Page 3: Two variables—guided sketches -->
+  <page>
+    <title>Two-Dimensional Case</title>
+    <example> 
+      <statement>
+      Consider the following systems of two linear equations in two variables and determine how many solutions there are for each.
+    <ol>
+     <!-- System A -->
+    <li workspace="2.1in">
+      <m>\begin{aligned}
+        x_1 - 2x_2 \amp= -1 \\
+        -x_1 + 3x_2 \amp= \phantom{-}3
+      \end{aligned}</m>
+      </li>
+
+
+    <!-- System B -->
+    <li workspace="2.1in">
+      <m>\begin{aligned}
+        x_1 - 2x_2 \amp= -1 \\
+        -x_1 + 2x_2 \amp= \phantom{-}3
+      \end{aligned}</m>
+      </li>
+
+    <!-- System C -->
+    <li workspace="2.1in">
+      <m>\begin{aligned}
+        x_1 - 2x_2 \amp= -1 \\
+        -x_1 + 2x_2 \amp= \phantom{-}1
+      \end{aligned}</m>
+      </li>
+    </ol>
+
+    <p workspace="0.3in">
+      <em>Conclusion:</em> A system of linear equations in two variables can have <m>\underline{\phantom{\,\,zero, one, or infinitely many zero, one, or infinitely many \,\,}}</m> solutions.
+    </p>
+  </statement>
+</example>
+  </page>
+
+  <!-- Page 4: Three-dimensional case -->
+  <page>
+    <title>Three-Dimensional Case</title>
+
+    <p>
+      An equation linear equation in three variables, <m>a_1x_1+a_2x_2+a_3x_3=b</m>, defines a plane in <m>\mathbb{R}^3</m>.
+    </p>
+
+    <example workspace = "2in">
+      <statement>
+        <p>
+          How many solutions can a system of <em>two</em> linear equations in three variables have?
+        </p>
+      </statement>
+    </example>
+
+    <example workspace = "3in">
+      <statement>
+        <p>
+          How many solutions can a system of <em>three</em> linear equations in three variables have?
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      <em>Conclusion:</em> Every system of linear equations, no matter the number of equations and number of variables has <m>\underline{\phantom{\,\,zero, one, or infinitely many zero, one, or infinitely many \,\,}}</m> solutions.
+    </p>
+
+    
+  </page>
+
+  <!-- Page 5: Row operations -->
+  <page>
+    <title>Row Reduction by Elementary Row Operations</title>
+
+    <p>
+      As we saw in the previous examples, one way to solve a system of linear equations is by graphing. This is not practical for most examples, especially if we are working with four or more varialbes.
+      A more useful approach to solving a linear system is to manipulate the equations through the use of <term>row operations</term>.
+    </p>
+    <p>
+      <ol>
+        <li workspace="2in"><term>Replacement/Addition:</term> add a multiple of one row to another.</li>
+        <li workspace="2in"><term>Interchange:</term> swap two rows.</li>
+        <li workspace="2in"><term>Scaling:</term> multiply a row by a nonzero scalar.</li>
+      </ol>
+    </p>
+  </page>
+
+  <!-- Page 6: Example -->
+  <page>
+    <title>Example of Row Reduction</title>
+    <example workspace="4in">
+      <statement> 
+        Apply row operations to systematically simplify the system below to an equivalent (easier to read) form in order to more easily identify the solution(s).
+      <md alignment="alignat">
+        <mrow> x_1  \amp {}-{} \amp 2x_2 \amp {}+{} \amp x_3 \amp {}={} \amp 0 </mrow>
+        <mrow>      \amp       \amp 2x_2 \amp {}-{} \amp 8x_3 \amp {}={} \amp 8 </mrow>
+        <mrow> 5x_1 \amp       \amp      \amp {}-{} \amp 5x_3 \amp {}={} \amp 10 </mrow>
+      </md>
+    </statement>
+    </example>
+  </page>
+
+  <!-- Page 7: Augmented matrices -->
+  <page>
+    <title>Augmented Matrices</title>
+
+    <p>
+      It’s redundant to write variables repeatedly, so we use a <term>augmented matrix</term> to simplify the notation for the system. 
+      For example, the previous system
+      
+      <md alignment="alignat">
+        <mrow> x_1  \amp {}-{} \amp 2x_2 \amp {}+{} \amp x_3 \amp {}={} \amp 0 </mrow>
+        <mrow>      \amp       \amp 2x_2 \amp {}-{} \amp 8x_3 \amp {}={} \amp 8 </mrow>
+        <mrow> 5x_1 \amp       \amp      \amp {}-{} \amp 5x_3 \amp {}={} \amp 10 </mrow>
+      </md>
+      
+      Can be writen as the augmented matrix
+        
+      <md>\left[\begin{array}{rrr|r} 
+                          1 \amp -2 \amp 1  \amp 0 \\ 
+                          0 \amp 2 \amp -8  \amp 8 \\ 
+                          5 \amp 0 \amp -5  \amp 10 
+                          \end{array}\right]</md>
+
+      The vertical bar separates the coefficient matrix (for <m>x_1,x_2,x_3</m>) from the constants.
+    </p>
+
+    <example workspace="4in">
+      <statement> 
+        Determine if the following system has a solution.
+      <md alignment="alignat">
+        <mrow>      \amp       \amp x_2  \amp {}-{} \amp 4x_3 \amp {}={} \amp 8 </mrow>
+        <mrow> 2x_1 \amp {}-{} \amp 3x_2 \amp {}+{} \amp 2x_3 \amp {}={} \amp 1 </mrow>
+        <mrow> 4x_1 \amp {}-{} \amp 8x_2 \amp {}+{} \amp 12x_3 \amp {}={} \amp 1 </mrow>
+      </md>
+    </statement>
+    </example>
+  </page>
+
+  <!-- Page 8: Consistency + Row equivalence (fill-in definitions) -->
+  <page>
+    <title>Consistent Systems and Row Equivalence</title>
+
+    <definition workspace="1.5in">
+      <title>Consistent</title>
+      <statement>
+        A linear system is <term>consistent</term> if it has at least one <em>solution</em>. Otherwise, it is <term>inconsistent</term>.
+      </statement>
+    </definition>
+
+    <definition workspace="1.5in">
+      <title>Row Equivalence</title>
+      <statement>
+        Two matrices are <term>row equivalent</term> if a sequence of <em>row operations</em> transforms one matrix into the other.
+      </statement>
+    </definition>
+
+    <p workspace="0.5in">
+      <em>Note</em>: If the augmented matrices of two linear systems are row equivalent, they have the same solution set.
+    </p>
+
+    <p workspace="2in">
+      <term>Fundamental Questions</term>: Two questions that we will revisit many times throughout the course:
+      <ol>
+        <li>Does a given linear system have a solution? In other words, is it consistent?</li>
+        <li>If it is consistent, is the solution unique?</li>
+      </ol>
+    </p>
+  </page>
+
+</handout>

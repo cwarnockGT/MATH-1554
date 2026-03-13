@@ -1,0 +1,256 @@
+<handout xml:id="sec-1-4-matrix-equation">
+  <title>1.4 The Matrix Equation <m>A \vec{x} = \vec{b}</m></title>
+
+  <!-- Epigraph / Intro -->
+  <page>
+    <title>Overview</title>
+
+    <epigraph>
+      <quote>“Mathematics is the art of giving the same name to different things.”</quote>
+      <attribution>H. Poincaré</attribution>
+    </epigraph>
+
+    <p>In this section we introduce another way of expressing a linear system that we will use throughout this course.</p>
+
+    <objectives workspace="0.5in">
+        <title>Topics</title>
+    <ul>
+      <li>Matrix notation for systems of equations.</li>
+      <li>The matrix product <m>A \vec{x}</m>.</li>
+    </ul>
+    </objectives>
+
+    <objectives workspace="0.5in">
+        <title>Goals</title>
+    <ul>
+      <li>Compute matrix–vector products.</li>
+      <li>Express linear systems as vector equations and matrix equations.</li>
+      <li>Characterize linear systems and sets of vectors using span, linear combinations, and pivots.</li>
+    </ul>
+    </objectives>
+  
+
+    
+    <p> Below is some math notation that will be used frequently throughout the course.</p>
+    <table>
+      <tabular>
+        <row>
+          <cell><em>symbol</em></cell>
+          <cell><em>meaning</em></cell>
+        </row>
+        <row>
+          <cell><m>\in</m></cell>
+          <cell>belongs to</cell>
+        </row>
+        <row>
+          <cell><m>\mathbb{R}^{n}</m></cell>
+          <cell>the set of vectors with <m>n</m> real-valued elements</cell>
+        </row>
+        <row>
+          <cell><m>\mathbb{R}^{m \times n}</m></cell>
+          <cell>the set of real-valued matrices with <m>m</m> rows and <m>n</m> columns</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p workspace="0.3in"><em>Example:</em> the notation <m>\vec{x} \in \mathbb{R}^{5}</m> means that <m>\vec{x}</m> is a vector with five real-valued elements.</p>
+  </page>
+
+  <!-- Linear Combinations / Definition -->
+  <page>
+    <title>Linear Combinations</title>
+
+    <definition xml:id="def-matrix-vector-product" workspace=".2in">
+      <title>Matrix Vector Product as a Linear Combination</title>
+      <statement>
+        <p>Let <m>A</m> be an <m>m \times n</m> matrix with columns <m>\vec{a}_1,\dotsc,\vec{a}_n</m> and let <m>\vec{x} \in \mathbb{R}^{n}</m>. The <term>matrix vector product</term> <m>A\vec{x}</m> is the following linear combination of the columns of <m>A</m>:
+        </p>
+        <me>
+          A \vec{x}
+          =
+          \begin{bmatrix}
+          \vert \ \amp \ \vert \ \amp \ \cdots \ \amp \ \vert \\
+          \vec{a}_1 \ \amp \ \vec{a}_2 \ \amp \ \cdots \ \amp \ \vec{a}_n \\
+          \vert \ \amp \ \vert \ \amp \ \cdots \ \amp \ \vert
+          \end{bmatrix}
+          \begin{bmatrix}
+          x_1 \\ x_2 \\ \vdots \\ x_n
+          \end{bmatrix}
+          =
+          x_1 \vec{a}_1 + x_2 \vec{a}_2 + \cdots + x_n \vec{a}_n.
+        </me>
+        <p>In particular, <m>A\vec{x}</m> lies in the span of the columns of <m>A</m>.</p>
+      </statement>
+    </definition>
+
+
+    <example workspace="2in">
+      <statement>
+        <p>Write the product below as a linear combination of column vectors.</p>
+        <p>
+            
+        </p>
+
+        <m>
+          \begin{bmatrix}
+          1 \ \amp \ 0 \ \amp \ -1 \\
+          0 \ \amp \ -3 \ \amp \ 3
+          \end{bmatrix}
+          \begin{bmatrix}
+          4 \\ 3 \\ 7
+          \end{bmatrix}
+          \;=\; 
+        </m>
+      </statement>
+    </example>
+
+        <example workspace="2in">
+      <statement>
+        <p>Simplify the product below. </p>
+        <p>
+            
+        </p>
+        <m>
+          \begin{bmatrix}
+          1 \ \amp \ 0 \ \amp \ 2 \ \amp \ 0 \ \amp \ 3 \\
+          0 \ \amp \ 1 \ \amp \ 0 \ \amp \ 2 \ \amp \ 0
+          \end{bmatrix}
+          \begin{bmatrix}
+          x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5
+          \end{bmatrix}
+          \;=\;
+        </m>
+      </statement>
+    </example>
+
+  </page>
+
+  <!-- Theorem: Existence (iff b in span), and Example -->
+  <page>
+    <theorem xml:id="thm-same-solutions" workspace="1in">
+      <title>Equivalent Formulations of a Linear System</title>
+      <statement>
+        <p>Let <m>A</m> be an <m>m \times n</m> matrix with columns <m>\vec{a}_1,\dotsc,\vec{a}_n</m>, let <m>\vec{x} \in \mathbb{R}^{n}</m>, and let <m>\vec{b} \in \mathbb{R}^{m}</m>. The solutions to
+        </p>
+        <me>A \vec{x} = \vec{b}</me>
+        <p>are the same as the solutions to the vector equation
+        </p>
+        <me>x_1 \vec{a}_1 + \cdots + x_n \vec{a}_n \;=\; \vec{b},</me>
+        <p>which are the same as the solutions to the linear system with augmented matrix</p>
+        <me>
+          \begin{bmatrix}
+          \vec{a}_1 \ \amp \ \vec{a}_2 \ \amp \ \cdots \ \amp \ \vec{a}_n \ \amp \vert \amp \ \vec{b}
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </theorem>
+
+    <theorem xml:id="thm-existence-span" workspace="1in">
+      <title>The Existence of Solutions for the Matrix Equation</title>
+      <statement>
+        <p>The equation <m>A \vec{x} = \vec{b}</m> has a solution if and only if <m>\vec{b}</m> is a linear combination of the columns of <m>A</m>.</p>
+      </statement>
+    </theorem>
+
+    <theorem xml:id="thm-consistency-rows-pivots" workspace="1in">
+      <title>Consistency for all <m>\vec{b}</m> and pivots</title>
+      <statement>
+        <p>The equation <m>A \vec{x} = \vec{b}</m> is consistent for every <m>\vec{b}</m> if and only if every row of <m>A</m> has a pivot.</p>
+      </statement>
+    </theorem>
+    </page>
+
+    <page>
+    <example workspace="5in">
+      <statement>
+        <p>For what vectors <m>\vec{b} = \begin{bmatrix} b_1 \\[2pt] b_2 \\[2pt] b_3 \end{bmatrix}</m> does the equation have a solution?</p>
+        <me>
+          \begin{bmatrix}
+          1 \ \amp \ 3 \ \amp \ 4 \\
+          2 \ \amp \ 8 \ \amp \ 4 \\
+          0 \ \amp \ 1 \ \amp \ -2
+          \end{bmatrix}
+          \vec{x} \;=\; \vec{b}
+        </me>
+      </statement>
+    </example>
+  </page>
+
+  <!-- Example (every b), and Theorem (pivots in every row) -->
+  <page>
+    <example>
+      <statement>
+        <p>For what values of <m>h</m> is the system <m>A\vec{x} = \vec{b}</m> consistent for every possible choice of vector <m>\vec{b}</m>?</p>
+        <me>
+          A \;=\; \begin{bmatrix}
+          1 \ \amp \ h \ \amp \ 2 \\
+          0 \ \amp \ 6 \ \amp \ 2 \\
+          -3 \ \amp \ 0 \ \amp \ -4
+          \end{bmatrix}
+        </me>
+      </statement>
+      <workspace lines="10"/>
+    </example>
+  </page>
+
+
+  <!-- Summary -->
+  <page>
+    <title>Summary: Four Equivalent Views of a Linear System</title>
+
+    <p>We now have four <em>equivalent</em> ways of expressing linear systems.</p>
+    <olist>
+      <item>
+        <p>A system of equations:</p>
+        <me>
+          \begin{aligned}
+          2x_1 + 3x_2 \ \amp=\ 7 \\
+          x_1 - x_2 \ \amp=\ 5
+          \end{aligned}
+        </me>
+      </item>
+
+      <item>
+        <p>An augmented matrix:</p>
+        <me>
+          \left[
+          \begin{array}{rr|r}
+          2 \ \amp \ 3 \ \amp \ 7 \\
+          1 \ \amp \ -1 \ \amp \ 5
+          \end{array}
+          \right]
+        </me>
+      </item>
+
+      <item>
+        <p>A vector equation:</p>
+        <me>
+          x_1 \begin{bmatrix} 2 \\[2pt] 1 \end{bmatrix}
+          \;+\;
+          x_2 \begin{bmatrix} 3 \\[2pt] -1 \end{bmatrix}
+          \;=\;
+          \begin{bmatrix} 7 \\[2pt] 5 \end{bmatrix}
+        </me>
+      </item>
+
+      <item>
+        <p>A matrix equation:</p>
+        <me>
+          \begin{bmatrix}
+          2 \ \amp \ 3 \\
+          1 \ \amp \ -1
+          \end{bmatrix}
+          \begin{bmatrix}
+          x_1 \\ x_2
+          \end{bmatrix}
+          \;=\;
+          \begin{bmatrix}
+          7 \\ 5
+          \end{bmatrix}
+        </me>
+      </item>
+    </olist>
+
+    <p>Each representation gives us a different way to think about linear systems.</p>
+  </page>
+</handout>

@@ -1,0 +1,468 @@
+
+<handout xml:id="handout-section-2-1-matrix-algebra">
+  <title>2.1 Matrix Operations</title>
+
+  <page xml:id="p-2-1-overview">
+    <title>Topics and Objectives</title>
+
+    <objectives>
+        <title>Topics</title>
+    <ul>
+      <li>Identity and zero matrices</li>
+      <li>Matrix algebra (sums and products, scalar multiplies, matrix powers)</li>
+      <li>Transpose of a matrix</li>
+    </ul>
+    </objectives>
+
+    <objectives workspace="true">
+        <title>Goals</title>
+    <ul>
+      <li>
+        <em>Apply</em> matrix algebra, the matrix transpose, and the zero and identity matrices,
+        to <em>solve</em> and <em>analyze</em> matrix equations.
+      </li>
+    </ul>
+    </objectives>
+
+
+    <definition xml:id="def-zero-matrix" workspace="true">
+      <title>Zero Matrix</title>
+      <statement>
+        <p>
+          A <term>zero matrix</term> is any matrix whose every entry is zero.
+        </p>
+        <me>
+          0_{2\times 3}=
+          \begin{bmatrix}
+            0 \amp 0 \amp 0\\
+            0 \amp 0 \amp 0
+          \end{bmatrix},
+          \qquad
+          0_{2\times 1}=
+          \begin{bmatrix}
+            0\\
+            0
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </definition>
+
+
+    <definition xml:id="def-identity-matrix" workspace="true">
+      <title>Identity Matrix</title>
+      <statement>
+        <p>
+          The <m>n\times n</m> <term>identity matrix</term> has ones on the main diagonal and zeros elsewhere.
+        </p>
+        <me>
+          I_2=
+          \begin{bmatrix}
+            1 \amp 0\\
+            0 \amp 1
+          \end{bmatrix},
+          \qquad
+          I_3=
+          \begin{bmatrix}
+            1 \amp 0 \amp 0\\
+            0 \amp 1 \amp 0\\
+            0 \amp 0 \amp 1
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <p>
+      Note: Any matrix with dimensions <m>n\times n</m> is <term>square</term>.
+      Zero matrices need not be square; identity matrices must be square.
+    </p>
+  </page>
+
+
+  <page xml:id="p-2-1-sums-scalars">
+    <title>Sums and Scalar Multiples</title>
+
+    <p>
+      Suppose <m>A\in\mathbb{R}^{m\times n}</m>, and <m>a_{i,j}</m> is the element of <m>A</m>
+      in row <m>i</m> and column <m>j</m>.
+    </p>
+
+    <ol>
+      <li>
+        <p>
+          If <m>A</m> and <m>B</m> are <m>m\times n</m> matrices, then the elements of <m>A+B</m>
+          are <m>a_{i,j}+b_{i,j}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>c\in\mathbb{R}</m>, then the elements of <m>cA</m> are <m>c\,a_{i,j}</m>.
+        </p>
+      </li>
+    </ol>
+
+    <example xml:id="ex-sum-scalar-find-c-k" workspace="true">
+      <statement>
+        <p>
+          If
+        </p>
+        <me>
+          \begin{bmatrix}
+            1 \amp 2 \amp 3\\
+            4 \amp 5 \amp 6
+          \end{bmatrix}
+          + c
+          \begin{bmatrix}
+            7 \amp 4 \amp 7\\
+            0 \amp 0 \amp k
+          \end{bmatrix}
+          =
+          \begin{bmatrix}
+            15 \amp 10 \amp 17\\
+            4 \amp 5 \amp 16
+          \end{bmatrix},
+        </me>
+        <p>
+          what are the values of <m>c</m> and <m>k</m>?
+        </p>
+      </statement>
+    </example>
+  </page>
+
+
+  <page xml:id="p-2-1-properties-addition-scalars">
+    <title>Properties of Sums and Scalar Multiples</title>
+
+    <p>
+      Scalar multiples and matrix addition have the expected properties.
+      If <m>r,s\in\mathbb{R}</m> are scalars and <m>A,B,C</m> are <m>m\times n</m> matrices, then:
+    </p>
+
+    <ol>
+      <li><m>A + 0_{m\times n} = A</m></li>
+      <li><m>(A+B)+C = A+(B+C)</m></li>
+      <li><m>r(A+B)=rA+rB</m></li>
+      <li><m>(r+s)A = rA + sA</m></li>
+      <li><m>r(sA) = (rs)A</m></li>
+    </ol>
+
+
+    <definition xml:id="def-matrix-multiplication-columns" workspace="true">
+      <title>Matrix Product via Columns</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m\times n</m> matrix and <m>B</m> be an <m>n\times p</m> matrix.
+          The product <m>AB</m> is an <m>m\times p</m> matrix, given by
+        </p>
+        <me>
+          AB
+          =
+          A
+          \begin{bmatrix}
+            \vec b_1 \amp \cdots \amp \vec b_p
+          \end{bmatrix}
+          =
+          \begin{bmatrix}
+            A\vec b_1 \amp \cdots \amp A\vec b_p
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </definition>
+
+    <p>
+      Note: The dimensions of <m>A</m> and <m>B</m> determine whether <m>AB</m> is defined,
+      and what its dimensions will be.
+    </p>
+
+    <image xml:id="img-matrix-multiplication-dimensions" source="./matrix_multi2.png" width="40%">
+      <shortdescription>Diagram showing how matrix dimensions match in a product.</shortdescription>
+      <description>
+        A visual guide to when <m>AB</m> is defined based on inner dimensions.
+      </description>
+    </image>
+  </page>
+
+
+  <page xml:id="p-2-1-row-column-rule">
+    <title>Row-Column Rule</title>
+
+    <theorem xml:id="thm-row-column-rule">
+      <title>Row-Column Rule for Matrix Multiplication</title>
+      <statement>
+        <p>
+          If <m>A\in\mathbb{R}^{m\times n}</m> has rows <m>\vec a_i</m> and
+          <m>B\in\mathbb{R}^{n\times p}</m> has columns <m>\vec b_j</m>, then each element of
+          <m>C=AB</m> is
+        </p>
+        <me>
+          c_{ij}=\vec a_i\cdot \vec b_j.
+        </me>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-row-column-compute" workspace="true">
+      <statement>
+        <p>Compute the following using the row-column method.</p>
+        <me>
+          C=AB=
+          \begin{bmatrix}
+            2 \amp 0\\
+            1 \amp -1
+          \end{bmatrix}
+          \begin{bmatrix}
+            3 \amp 0 \amp 1\\
+            4 \amp 5 \amp 6
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+  </page>
+
+
+  <page xml:id="p-2-1-properties-multiplication">
+    <title>Properties and Warnings</title>
+    <theorem workspace="true">
+        <title> Properties and Warnings</title>
+            <p>
+            Let <m>A,B,C</m> be matrices of sizes needed for the products to be defined,
+            and suppose <m>A</m> is <m>m\times n</m>.
+            </p>
+
+            <ol>
+            <li><p><em>Associative:</em> <m>(AB)C = A(BC)</m></p></li>
+            <li><p><em>Left distributive:</em> <m>A(B+C)=AB+AC</m></p></li>
+            <li><p><em>Right distributive:</em> <m>(A+B)C = AC + BC</m></p></li>
+            <li><p><em>Identity:</em> <m>I_m A = A I_n</m></p></li>
+            </ol>
+
+            <p><em>Warnings:</em></p>
+            <ol>
+            <li>
+                <p><em>Non-commutative:</em> In general, <m>AB\neq BA</m>.</p>
+            </li>
+            <li>
+                <p><em>Non-cancellation:</em> <m>AB=AC</m> does not imply <m>B=C</m>.</p>
+            </li>
+            <li>
+                <p><em>Zero divisors:</em> <m>AB=0</m> does not imply <m>A=0</m> or <m>B=0</m>.</p>
+            </li>
+            </ol>
+        </theorem>
+
+    <p>
+      The associative property is <m>(AB)C = A(BC)</m>. If <m>C=\vec x</m>, then:
+    </p>
+
+    <me>(AB)\vec x = A(B\vec x).</me>
+
+    <p>Schematically:</p>
+
+    <image xml:id="img-associative-flow" width="70%">
+      <latex-image>
+        <latex>
+% TikZ styles (as in the TeX source)
+\tikzstyle{startstop} =[trapezium, trapezium left angle=70, trapezium right angle=110,
+  minimum width=1cm, minimum height=1cm, text centered, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110,
+  minimum width=1cm, minimum height=1cm, text centered, fill=blue!30]
+\tikzstyle{process} = [trapezium, trapezium left angle=70, trapezium right angle=110,
+  minimum width=1cm, minimum height=1cm, text centered, fill=orange!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{tikzpicture}[node distance=2cm]
+  \node(x)  [startstop] {$\vec x$};
+  \node(bx) [io, below of=x] {$B\vec x$};
+  \node(abx)[process, right of=x,xshift=4cm]{$AB\vec x$};
+
+  \draw [arrow] (x) -- node[anchor=east] {\small Multiplication by $B$} (bx);
+  \draw [arrow] (bx) -- node[anchor=north,xshift=1cm] {\small Multiplication by $A$} (abx);
+  \draw [arrow] (x) -- node[anchor=south] {\small Multiplication by $AB$} (abx);
+\end{tikzpicture}
+        </latex>
+      </latex-image>
+      <shortdescription>Flow diagram comparing two ways to multiply matrices.</shortdescription>
+      <description>
+        Diagram showing two ways of getting from <m>\vec x</m> to <m>AB\vec x</m>, either by  <m>\vec x \mapsto B\vec x \mapsto AB\vec x</m> or by direct multiplication by <m>\vec x \mapsto AB\vec x</m>.
+      </description>
+    </image>
+
+    <p>
+      The product <m>AB\vec x</m> can be obtained either by multiplying by <m>AB</m>,
+      or by multiplying by <m>B</m> and then by <m>A</m>. This corresponds to
+      <em>composition of linear transformations</em>.
+    </p>
+  </page>
+
+
+
+  <page xml:id="p-2-1-noncomm-example">
+    <title>Example: Non-Commutativity</title>
+
+    <example xml:id="ex-noncomm-with-A" workspace="true">
+      <statement>
+        <p>Let</p>
+        <me>
+          A=
+          \begin{bmatrix}
+            1 \amp 1\\
+            0 \amp 0
+          \end{bmatrix}.
+        </me>
+        <p>
+          Give an example of a <m>2\times 2</m> matrix <m>B</m> such that <m>AB\neq BA</m>.
+        </p>
+      </statement>
+    </example>
+  </page>
+
+
+  <page xml:id="p-2-1-transpose">
+    <title>The Transpose of a Matrix</title>
+
+    <definition xml:id="def-transpose">
+      <title>Transpose</title>
+      <statement>
+        <p>
+          The transpose <m>A^T</m> is the matrix whose columns are the rows of <m>A</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-transpose-compute" workspace="true">
+      <statement>
+        <p>Compute:</p>
+        <me>
+          \begin{bmatrix}
+            1 \amp 2 \amp 3 \amp 4 \amp 5\\
+            0 \amp 1 \amp 0 \amp 2 \amp 0
+          \end{bmatrix}^T
+        </me>
+      </statement>
+    </example>
+
+    <theorem xml:id="ex-transpose-properties-fill" workspace="true">
+      <title>Properties of Matrix Transpose</title>
+      <statement>
+        <ol>
+          <li><m>(A^T)^T =</m> <m>A</m></li>
+          <li><m>(A+B)^T =</m> <m>A^T + B^T</m></li>
+          <li><m>(rA)^T =</m> <m>rA^T</m></li>
+          <li><m>(AB)^T =</m> <m>B^TA^T</m></li>
+        </ol>
+      </statement>
+    </theorem>
+  </page>
+
+  <page xml:id="p-2-1-which-defined">
+    <title>Example: Which Operations Are Defined?</title>
+
+    <example xml:id="ex-which-operations-defined" workspace="true">
+      <introduction>
+        <p>Define</p>
+        <me>
+          A=
+          \begin{bmatrix}
+            1 \amp 0\\
+            0 \amp 0
+          \end{bmatrix},
+          \qquad
+          B=
+          \begin{bmatrix}
+            1 \amp 0 \amp 0\\
+            0 \amp 0 \amp 8
+          \end{bmatrix},
+          \qquad
+          C=
+          \begin{bmatrix}
+            1 \amp 0 \amp 0\\
+            0 \amp 2 \amp 0\\
+            0 \amp 0 \amp 2
+          \end{bmatrix}.
+        </me>
+
+        <p>
+          Which of these operations are defined, and what are the dimensions of the result?
+        </p>
+    </introduction>
+        <task workspace="true">
+          <statement><p><m>A + 3C</m></p></statement>
+        </task>
+        <task workspace="true">
+          <statement><p><m>C(AB)^T</m></p></statement>
+          </task>
+        <task workspace="true">
+            <statement><p><m>A + ABCB^T</m></p></statement>
+        </task>
+    </example>
+  </page>
+
+  <page xml:id="p-2-1-matrix-powers">
+    <title>Matrix Powers</title>
+
+    <p>
+      For any <m>n\times n</m> matrix and positive integer <m>k</m>,
+      <m>A^k</m> is the product of <m>k</m> copies of <m>A</m>.
+    </p>
+
+    <me>A^k = AA\cdots A.</me>
+
+    <example workspace="true">
+        <statement>
+            <p>
+                Compute <m>A^2</m> for <me>A = \begin{bmatrix} 3 \amp -2 \\ 5 \amp 1 \end{bmatrix}</me>
+            </p>
+        </statement>
+    </example>
+
+    <example xml:id="ex-compute-c-power" workspace="true">
+      <statement>
+        <p>Compute <m>B^8</m> for</p>
+        <me>
+          B=
+          \begin{bmatrix}
+            1 \amp 0 \amp 0\\
+            0 \amp 2 \amp 0\\
+            0 \amp 0 \amp 2
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+  </page>
+
+
+  
+
+
+  <page xml:id="p-2-1-additional-examples">
+    <title>Additional Examples</title>
+    <example xml:id="ex-tf-identity-factorization">
+        <introduction>
+            <p>
+                <em>True or False.</em> If false, explain briefly.
+            </p>
+        </introduction>
+      <task workspace="true">
+        <statement>
+        <p>
+          For any <m>I_n</m> and any <m>A\in\mathbb{R}^{n\times n}</m>,
+          <m>(I_n + A)(I_n - A) = I_n - A^2</m>.
+        </p>
+        </statement>
+        </task>
+        <task workspace="true">
+            <statement>
+                <p>
+                    For any <m>A</m> and <m>B</m> in <m>\mathbb{R}^{n\times n}</m>,
+          <m>(A+B)^2 = A^2 + B^2 + 2AB</m>.
+                </p>
+            </statement>
+        </task>
+    </example>
+  </page>
+
+</handout>

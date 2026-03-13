@@ -1,0 +1,248 @@
+
+<handout xml:id="handout-section-2-3-imt">
+  <title>2.3 The Invertible Matrix Theorem</title>
+
+  <page xml:id="p-2-3-intro-objectives">
+    <title>Overview</title>
+
+    <blockquote xml:id="quote-synonym">
+      <p>
+        A synonym is a word you use when you can't spell the other one.
+      </p>
+      <attribution>
+        <p>Baltasar Gracián</p>
+      </attribution>
+    </blockquote>
+
+    <p>
+      The theorem introduced in this section provides many equivalent ways of describing the same idea.
+      Depending on the context, some formulations will be more convenient than others.
+    </p>
+
+    <objectives xml:id="obj-2-3-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>
+          The Invertible Matrix Theorem which is a synthesis of previously introduced concepts.
+        </li>
+      </ul>
+    </objectives>
+
+    <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>
+          Characterize the invertibility of a matrix using the Invertible Matrix Theorem.
+        </li>
+        <li>
+          Construct and give examples of matrices that are or are not invertible.
+        </li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+      <p><em>Motivating Question</em>: When is a square matrix invertible? Let me count the ways!
+      </p>
+
+      <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-3-imt-statement">
+    <title>The Invertible Matrix Theorem</title>
+
+    <p>
+      Invertible matrices enjoy a rich set of equivalent descriptions.
+    </p>
+
+    <theorem xml:id="thm-invertible-matrix-theorem">
+      <title>The Invertible Matrix Theorem (IMT)</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n\times n</m> matrix. The following statements are equivalent.
+        </p>
+
+        <ol marker="a)">
+          <li><m>A</m> is invertible.</li>
+          <li><m>A</m> is row equivalent to <m>I_n</m>.</li>
+          <li><m>A</m> has <m>n</m> pivotal columns.</li>
+          <li><m>A\vec x=\vec 0</m> has <em>only</em> the trivial solution.</li>
+          <li>The columns of <m>A</m> are linearly independent.</li>
+          <li>The linear transformation <m>\vec x \mapsto A\vec x</m> is one-to-one.</li>
+          <li>
+            The equation <m>A\vec x=\vec b</m> has a solution for all
+            <m>\vec b\in\mathbb{R}^n</m>.
+          </li>
+          <li>The columns of <m>A</m> span <m>\mathbb{R}^n</m>.</li>
+          <li>The linear transformation <m>\vec x \mapsto A\vec x</m> is onto.</li>
+          <li>
+            There is an <m>n\times n</m> matrix <m>C</m> such that <m>CA=I_n</m>. (<m>A</m> has a left inverse.)
+          </li>
+          <li>
+            There is an <m>n\times n</m> matrix <m>D</m> such that <m>AD=I_n</m>. (<m>A</m> has a right inverse.)
+          </li>
+          <li><m>A^T</m> is invertible.</li>
+        </ol>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+  </page>
+
+
+  <page xml:id="p-2-3-invertibility-composition">
+    <title>Invertibility and Composition</title>
+
+    <p>
+      The diagram below provides another perspective on the role of the inverse matrix.
+    </p>
+
+    <image xml:id="img-invertibility-composition" width="80%">
+      <latex-image >
+        <latex>
+\tikzstyle{startstop} =[trapezium, trapezium left angle=70, trapezium right angle=110,minimum width=1cm, minimum height=1cm, text centered, fill=DarkBlue!30]
+\tikzstyle{arrow} = [thick,&lt;-,&gt;=stealth]
+
+\begin{tikzpicture}[node distance=2cm]
+  \node (x) [startstop] {$\vec x$};
+  \node (ax) [startstop, right of=x, xshift=2cm, yshift=-2cm] {$A\vec x$};
+
+  \draw [arrow] (ax) |- node[anchor=west] {\small Multiplication by $A$} (x);
+  \draw [arrow] (x) |- node[anchor=east] {\small Multiplication by $A^{-1}$} (ax);
+\end{tikzpicture}
+        </latex>
+      </latex-image>
+      <shortdescription>Diagram showing a transformation undone by its inverse.</shortdescription>
+      <description>
+        Diagram shows <m>\vec x</m>, transformed by multiplication by <m>A</m>, and reversed by multiplication by <m>A^{-1}</m>.
+      </description>
+    </image>
+
+    <p workspace="0.5in">
+      The matrix inverse <m>A^{-1}</m> transforms <m>A\vec x</m> back to <m>\vec x</m>, because <me>
+      A^{-1}(A\vec x)=(A^{-1}A)\vec x=\vec x.
+    </me>
+    </p>
+
+    <p><nbsp/></p>
+
+    
+
+
+    <p> Some comments on IMT:
+    <ul>
+    <li>
+        The Invertible Matrix Theorem divides all square matrices into two classes: invertible and non-invertible.
+      </li>
+      <li>
+        As the course progresses, additional equivalent conditions involving determinants, eigenvalues, and other concepts will be added.
+      </li>
+        <li>Note that items (j) and (k) of the Invertible Matrix Theorem lead directly to the following result.</li>
+      </ul>
+
+    </p>
+
+    <p><nbsp/></p>
+    <theorem xml:id="thm-left-right-inverses" workspace="0.5in">
+      <title>Left and Right Inverses</title>
+      <statement>
+        <p>
+          If <m>A</m> and <m>B</m> are <m>n\times n</m> matrices and <m>AB=I</m>,
+          then both matrices are invertible, with
+          <m>B=A^{-1}</m> and <m>A=B^{-1}</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+
+ </page>
+
+
+  <page xml:id="p-2-3-example-completion">
+
+    <example xml:id="ex-check-invertible" workspace="1in">
+      <statement>
+        <p> Is <m>A</m> invertible?</p>
+        <me>
+          A = \begin{bmatrix}
+            1 \amp 0 \amp -2\\
+            3 \amp 1 \amp -2\\
+            -5 \amp -1 \amp 9
+          \end{bmatrix}
+        </me>
+      </statement>
+      <solution>
+        <p>
+            We can use IMT to determine if <m>A</m> is invertible by showing that <m>A</m> either makes at least one statement in the list true or makes at least one statement in the list false. Note that <me>A = \begin{bmatrix} 1 \amp 0 \amp -2 \\ 3 \amp 1 \amp -2 \\ -5 \amp -1 \amp 9 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp -2 \\ 0 \amp 1 \amp 4 \\ 0 \amp -1 \amp -1 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp -2 \\ 0 \amp 1 \amp 4 \\ 0 \amp 0 \amp 3 \end{bmatrix}</me>. We see that <m>A </m> has a pivot in every column. Therefore, by IMT, <m>A </m> must make every statment on the list true. In particular, we learn that <m>A </m> is invertible.
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+ 
+
+    <example xml:id="ex-matrix-completion-singular">
+      <introduction>
+        <p>
+          For each matrix below, determine all values of <m>h</m> so that the matrix is singular (not invertible).
+          If there are no values of <m>h </m>, explain why.
+        </p>
+    </introduction>
+    <task workspace=".3in">
+        <statement>
+            <p>
+                <m>A = \begin{bmatrix}
+            1 \amp 0 \amp 1\\
+            1 \amp  h \amp 1\\
+            0 \amp 0 \amp 1
+          \end{bmatrix}</m>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Note that <me>\begin{bmatrix} 1 \amp 0 \amp 1 \\ 1 \amp h \amp 1 \\ 0 \amp 0 \amp 1 \end{bmatrix} \sim \begin{bmatrix} 1\amp 0 \amp 1 \\ 0 \amp h \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}</me>. Thus, <m>A </m>is missing a pivot if and only if <m>h = 0</m>. Therefore, <m>h = 0</m> is the only value of <m>h </m> which makes <m>A </m> singular.
+            </p>
+        </solution>
+    </task>
+    <task workspace=".3in">
+        <statement>
+            <p>
+                <m>B = \begin{bmatrix}
+            1 \amp h \amp 1\\
+            0 \amp 1 \amp 1\\
+            0 \amp 0 \amp 1
+          \end{bmatrix}</m>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Note that regardless of the value of <m>h </m>, <m>B </m> will have a pivot in each column. Therefore, no value of <m>h </m> will make <m>B </m> singular.
+            </p>
+        </solution>
+    </task>
+    <task workspace=".3in">
+        <statement>
+            <p>
+                <m>C = \begin{bmatrix}
+            1 \amp 0 \amp 0\\
+            0 \amp 1 \amp 1\\
+            0 \amp h \amp 1
+          \end{bmatrix}</m>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Note that <me>\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 1 \\ 0 \amp h \amp 1 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 1 \\ 0 \amp h-1 \amp 0\end{bmatrix}</me>. Thus, <m>C </m> is missing a pivot in the third row if and only if <m>h = 1</m>. Therefore, <m>h = 1</m> is the only value of <m>h</m> which makes <m>C </m> singular.
+            </p>
+        </solution>
+    </task>
+    </example>
+    <p><nbsp/></p>
+    <p><nbsp/></p>
+  </page>
+
+</handout>

@@ -1,0 +1,232 @@
+<handout xml:id="handout-section-3-1-determinants">
+  <title>3.1 Introduction to Determinants</title>
+
+  <page xml:id="p-3-1-overview">
+    <title>Overview</title>
+
+    <objectives xml:id="obj-3-1-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>The definition and computation of a determinant.</li>
+        <li>The determinant of triangular matrices.</li>
+      </ul>
+    </objectives>
+    <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>Compute determinants of <m>n\times n</m> matrices using a cofactor expansion.</li>
+        <li>Apply theorems to compute determinants of matrices that have particular structures.</li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+    <definition xml:id="def-determinant">
+      <title>Determinant</title>
+      <statement>
+        <p>
+          Suppose <m>A</m> is <m>n\times n</m> with entries <m>a_{ij}</m>. Then the <term>determinant</term> of <m>A</m>, written <m>\det(A)</m> or <m>\det A</m>, is defined by the following recursive formula.
+        </p>
+        <ul>
+          <li>
+            If <m>n=1</m>, then <m>A=[a_{11}]</m> and <m>\operatorname{det}(A)=a_{11}</m>.
+          </li>
+          <li>
+            If <m>n&gt;1</m>, then
+          </li>
+        </ul>
+        <me>
+          \operatorname{det}(A)
+          =
+          a_{11}\operatorname{det}(A_{11})
+          - a_{12}\operatorname{det}(A_{12})
+          + \cdots
+          + (-1)^{1+n} a_{1n}\operatorname{det}(A_{1n}),
+        </me>
+        <p>
+          where <m>A_{ij}</m> is the submatrix obtained by deleting row <m>i</m> and column <m>j</m> of <m>A</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-det-2x2" workspace="true">
+      <statement>
+        <p>Compute <m>\operatorname{det}\!\begin{bmatrix} a \amp b\\ c \amp d \end{bmatrix}</m>.</p>
+      </statement>
+    </example>
+
+     <p><nbsp/></p>
+
+    </page>
+
+    <page>
+        <title>More examples</title>
+        
+        
+    <example xml:id="ex-det-3x3" workspace="true">
+      <statement>
+        <p>Use the <xref ref="def-determinant" text="custom">definition</xref> to compute</p>
+        <me>
+          \operatorname{det}
+          \begin{bmatrix}
+            1 \amp -5 \amp 2\\
+            2 \amp 4 \amp -1\\
+            0 \amp 3 \amp 0
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-det-3x3-2" workspace="true">
+      <statement>
+        <p>Use the <xref ref="def-determinant" text="custom">definition</xref> to compute</p>
+        <me>
+          \operatorname{det}
+          \begin{bmatrix}
+            0 \amp 3 \amp 0\\
+            2 \amp 4 \amp -1\\
+            1 \amp -5 \amp 2
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-3-1-cofactors">
+    <title>Cofactors and Expansion</title>
+
+    <definition xml:id="def-cofactor" workspace="true">
+      <title>Cofactor</title>
+      <statement>
+        <p>
+          For an <m>n\times n</m> matrix <m>A</m>, the <m>(i,j)</m> cofactor is
+        </p>
+        <me>
+          C_{ij} = (-1)^{i+j}\operatorname{det}(A_{ij}).
+        </me>
+        <p>
+          The sign pattern alternates in a checkerboard:
+        </p>
+        <me>
+          \begin{bmatrix}
+            + \amp - \amp + \amp - \amp \cdots\\
+            - \amp + \amp - \amp + \amp \cdots\\
+            + \amp - \amp + \amp - \amp \cdots\\
+            - \amp + \amp - \amp + \amp \cdots\\
+            \vdots \amp \vdots \amp \vdots \amp \vdots \amp \ddots
+          \end{bmatrix}
+        </me>
+      </statement>
+    </definition>
+
+
+    <theorem xml:id="thm-cofactor-expansion-any-row-col" workspace="true">
+      <title>Cofactor Expansion along Any Row or Column</title>
+      <statement>
+        <p>
+          The determinant of <m>A</m> can be computed by expanding along any row or any column.
+          For example, expanding down the <m>j</m>-th column:
+        </p>
+        <me>
+          \operatorname{det}(A) = a_{1j}C_{1j} + a_{2j}C_{2j} + \cdots + a_{nj}C_{nj}.
+        </me>
+      </statement>
+    </theorem>
+
+    <p>
+      This gives a practical way to compute determinants more efficiently by choosing rows or columns with many zeros.
+    </p>
+  </page>
+
+
+  <page xml:id="p-3-1-example-4x4">
+    <title>Example: A 4×4 Determinant</title>
+
+    <example xml:id="ex-det-4x4" workspace="true">
+      <statement>
+        <p>Use <xref ref="thm-cofactor-expansion-any-row-col"/> to compute the determinant of <m>A</m> in an efficient manner.
+        <me>
+          A = \begin{bmatrix}
+            5 \amp 4 \amp 3 \amp 2\\
+            0 \amp 1 \amp 2 \amp 0\\
+            0 \amp -1 \amp 1 \amp 0\\
+            0 \amp 1 \amp 1 \amp 3
+          \end{bmatrix}.
+        </me>
+    </p>
+      </statement>
+    </example>
+
+     <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-3-1-triangular">
+    <title>Triangular Matrices</title>
+
+    <theorem xml:id="thm-triangular-det">
+      <title>Determinant of a Triangular Matrix</title>
+      <statement>
+        <p>
+          If <m>A</m> is triangular (upper or lower), then
+        </p>
+        <me>
+          \operatorname{det}(A) = a_{11}a_{22}a_{33}\cdots a_{nn},
+        </me>
+        <p>
+          the product of its diagonal entries.
+        </p>
+      </statement>
+    </theorem>
+
+
+    <example xml:id="ex-triangular-large" workspace="true">
+      <statement>
+        <p>
+          Compute the determinant of the following triangular matrix.
+        </p>
+        <me>
+          \begin{bmatrix}
+            7 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+            \pi \amp 6 \amp 0 \amp 0 \amp 0  \amp 0 \amp 0 \\
+            \pi^2 \amp \pi \amp 5 \amp 0 \amp 0 \amp 0 \amp 0  \\
+            \pi^3 \amp \pi^2 \amp \pi \amp 4 \amp 0 \amp 0 \amp 0  \\
+            \pi^4 \amp \pi^3 \amp \pi^2 \amp \pi \amp 3 \amp 0 \amp 0 \\
+            \pi^5 \amp \pi^4 \amp \pi^3 \amp \pi^2 \amp \pi \amp 2 \amp 0\\
+            \pi^6 \amp \pi^5 \amp \pi^4 \amp \pi^3 \amp \pi^2 \amp \pi \amp 1
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+
+    <p>
+      A naive cofactor expansion for an <m>N\times N</m> matrix requires on the order of <m>N!</m> multiplications,
+      which grows very quickly:
+
+    <ul>
+      <li>A <m>10\times 10</m> matrix requires roughly <m>10! = 3{,}628{,}800</m> multiplications.</li>
+      <li>A <m>20\times 20</m> matrix requires approximately <m>20!\approx 2.4\times 10^{18}</m> multiplications.</li>
+    </ul>
+    </p>
+
+    <p>
+      This doesn't mean that determinants are not useful.
+
+    <ul>
+      <li>We will briefly study more efficient methods for computing determinants.</li>
+      <li>We will learn some application of determinants, such as solving linear systems and calculating area/volume of certain regions.</li>
+      <li>Determinants are used in multivariable calculus (e.g., Jacobians for change of variables in integrals).</li>
+    </ul>
+    </p>
+  </page>
+
+</handout>

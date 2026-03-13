@@ -1,0 +1,333 @@
+
+<handout xml:id="handout-section-2-2-matrix-inverses">
+  <title>2.2 Matrix Inverses</title>
+
+  <!-- Intro + Topics/Goals block requested inside <objectives> -->
+  <page xml:id="p-2-2-intro-objectives">
+    <title>Overview</title>
+
+    <blockquote xml:id="quote-jurassic-park">
+      <p>
+        Your scientists were so preoccupied with whether or not they could,
+        they didn't stop to think if they should.
+      </p>
+      <attribution>
+        <p>Spielberg and Crichton, <em>Jurassic Park</em>, 1993 film</p>
+      </attribution>
+    </blockquote>
+
+    <p>
+      The algorithm we introduce in this section <em>could</em> be used to compute the inverse of an
+      <m>n\times n</m> matrix. At the end of the lecture we'll discuss some of the problems with our
+      algorithm and why it can be difficult to compute a matrix inverse.
+    </p>
+
+    <objectives xml:id="obj-2-2-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>
+          Inverse of a matrix, its algebraic properties, and its relation to solving systems of linear equations.
+        </li>
+        <li>
+          Elementary matrices and their role in calculating the matrix inverse.
+        </li>
+      </ul>        
+    </objectives>
+      
+
+    <objectives>
+        <title>Goals</title>
+      <ul>
+        <li>
+          Apply the formal definition of an inverse, and its algebraic properties, to solve and analyze linear systems.
+        </li>
+        <li>
+          Compute the inverse of an <m>n\times n</m> matrix, and use it to solve linear systems.
+        </li>
+        <li>
+          Construct elementary matrices.
+        </li>
+      </ul>
+      </objectives>
+
+      <p><em>Motivating Question</em>: Is there a matrix <m>A</m> such that
+      </p>
+      <me>
+        \begin{bmatrix}
+          2 \amp -1 \amp 0\\
+          -1 \amp 2 \amp -1\\
+          0 \amp -1 \amp 2
+        \end{bmatrix}A = I_3\; ?
+      </me>
+  </page>
+
+
+  <page xml:id="p-2-2-definition-invertible">
+    <title>The Matrix Inverse</title>
+
+    <definition xml:id="def-invertible" workspace="0.2in">
+      <title>Invertible (Non-singular) Matrix</title>
+      <statement>
+        <p>
+          A matrix <m>A\in\mathbb{R}^{n\times n}</m> is <term>invertible</term> (or <term>non-singular</term>)
+          if there exists a matrix <m>C\in\mathbb{R}^{n\times n}</m> such that
+        </p>
+        <me>AC = CA = I_n.</me>
+        <p>
+          If such a matrix exists, we write <m>C=A^{-1}</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-inverse-2x2-formula" workspace="0.2in">
+      <title>Inverse Formula for a <m>2\times 2</m> Matrix</title>
+      <statement>
+        <p>
+          The <m>2\times 2</m> matrix
+          <m>\begin{bmatrix} a \amp b\\ c \amp d \end{bmatrix}</m>
+          is invertible if and only if <m>ad-bc\neq 0</m>. In that case,
+        </p>
+        <me>
+          \begin{bmatrix}
+            a \amp b\\
+            c \amp d
+          \end{bmatrix}^{-1}
+          =
+          \frac{1}{ad-bc}
+          \begin{bmatrix}
+            d \amp -b\\
+            -c \amp a
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </theorem>
+
+
+    <example xml:id="ex-inverse-2x2" workspace="true">
+      <statement>
+        <p>Find the inverse of the matrix below. Check that it truly is the inverse.</p>
+        <me>
+          \begin{bmatrix}
+            2 \amp 5\\
+            -3 \amp -7
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+  </page>
+
+
+  <page xml:id="p-2-2-inverse-unique-solution">
+    <title>Inverse and Solving Linear Systems</title>
+
+    <theorem xml:id="thm-inverse-iff-unique-solution" workspace="0.5in">
+      <title>Inverse and Unique Solutions</title>
+      <statement>
+        <p>
+          A matrix <m>A\in\mathbb{R}^{n\times n}</m> has an inverse if and only if for every
+          <m>\vec b\in\mathbb{R}^n</m>, the system <m>A\vec x=\vec b</m> has a <em>unique</em> solution.
+          In this case,
+        </p>
+        <me>\vec x = A^{-1}\vec b.</me>
+      </statement>
+    </theorem>
+
+
+    <example xml:id="ex-solve-system-with-inverse" workspace="true">
+      <statement>
+        <p>Solve the linear system.
+        <me>
+          \begin{array}{ccc}
+          3x_1 + 4x_2 \amp= \amp 7 \\
+          5x_1 + 6x_2 \amp = \amp 7
+          \end{array}
+        </me>
+        </p>
+      </statement>
+    </example>
+  </page>
+
+
+  <page xml:id="p-2-2-properties-inverse">
+    <title>Properties of the Matrix Inverse</title>
+
+    <p workspace="true">
+      Let <m>A</m> and <m>B</m> be invertible <m>n\times n</m> matrices.
+    
+      <ul>
+      <li><m>(A^{-1})^{-1} = A</m></li>
+      <li><m>(AB)^{-1} = B^{-1}A^{-1}</m> (non-commutative!)</li>
+      <li><m>(A^T)^{-1} = (A^{-1})^T</m></li>
+    </ul>
+    </p>
+
+    <example xml:id="ex-abc-inverse-order" workspace="true">
+      <title>Example</title>
+      <statement>
+        <p>
+          True or false:
+          <m>(ABC)^{-1} = C^{-1}B^{-1}A^{-1}</m>.
+        </p>
+      </statement>
+    </example>
+  </page>
+
+
+  <page xml:id="p-2-2-algorithm-inverse">
+    <title>An Algorithm for Computing <m>A^{-1}</m></title>
+
+    <p workspace="0.5in">
+      If <m>A\in\mathbb{R}^{n\times n}</m> and <m>n&gt;2</m>, we can compute <m>A^{-1}</m> with the following algorithm:
+    
+
+    <ol>
+      <li>Row reduce the augmented matrix <m>\begin{bmatrix} A \ \rvert \ I_n\end{bmatrix}</m>.</li>
+      <li>
+        If the reduction has the form <m>\begin{bmatrix}I_n \ \rvert \ B\end{bmatrix}</m>, then <m>A</m> is invertible and <m>B=A^{-1}</m>.
+        Otherwise, <m>A</m> is not invertible.
+      </li>
+    </ol>
+    </p>
+
+    <example xml:id="ex-compute-inverse-3x3" workspace="true">
+      <title>Example</title>
+      <statement>
+        <p>Compute the inverse of</p>
+        <me>
+          A=
+          \begin{bmatrix}
+            0 \amp 1 \amp 2\\
+            1 \amp 0 \amp 3\\
+            0 \amp 0 \amp 1
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+  </page>
+
+
+  <page xml:id="p-2-2-why-algorithm-works">
+    <title>Why Does This Work?</title>
+
+    <p>Why does the previous algorithm work? We can think of our algorithm as simultaneously solving <m>n</m> linear systems:</p>
+
+    <md>
+      \begin{array}{ccc}
+      A\vec x_1 \amp = \amp \vec e_1\\
+      A\vec x_2 \amp = \amp \vec e_2\\
+      \amp\vdots\\
+      A\vec x_n \amp = \amp \vec e_n
+      \end{array}
+    </md>
+
+    <p>
+      Each column of <m>A^{-1}</m> is <m>A^{-1}\vec e_i=\vec x_i</m>.
+    </p>
+
+  </page>
+
+
+  <page xml:id="p-2-2-elementary-matrices">
+    <title>Elementary Matrices</title>
+    <p> We can also justify the algorithm by using elementary matrices.</p>
+
+    <definition xml:id="def-elementary-matrix">
+      <title>Elementary Matrix</title>
+      <statement>
+        <p>
+          An <term>elementary matrix</term> <m>E</m> is one that differs from <m>I_n</m> by exactly one elementary row operation.
+        </p>
+      </statement>
+    </definition>
+    <p>Recall the elementary row operations:</p>
+    <ol>
+      <li>Swap rows</li>
+      <li>Multiply a row by a non-zero scalar</li>
+      <li>Add a multiple of one row to another</li>
+    </ol>
+
+    <p>
+      Each operation can be represented by matrix multiplication using an <term>elementary matrix</term>.
+    </p>
+  </page>
+
+
+  <page xml:id="p-2-2-elementary-example">
+    <title>Example: Identify an Elementary Matrix</title>
+
+    <example xml:id="ex-find-E-by-inspection" workspace="true">
+      <title>Example</title>
+      <statement>
+        <p>
+          Suppose
+        </p>
+        <me>
+          E
+          \begin{bmatrix}
+            1 \amp 1 \amp 1\\
+            -2 \amp 1 \amp 0\\
+            0 \amp 0 \amp 1
+          \end{bmatrix}
+          =
+          \begin{bmatrix}
+            1 \amp 1 \amp 1\\
+            0 \amp 3 \amp 2\\
+            0 \amp 0 \amp 1
+          \end{bmatrix}.
+        </me>
+        <p>
+          By inspection, what is <m>E</m>? How does it compare to <m>I_3</m>?
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      Returning to why the algorithm works, applying a sequence of row operations to <m>A</m> to obtain <m>I_n</m> can be written as:
+    </p>
+
+    <me>
+      (E_k \cdots E_3E_2E_1)A = I_n.
+    </me>
+
+    <p workspace="0.5in">
+      Thus, <m>E_k \cdots E_3E_2E_1</m> is the inverse matrix we seek.
+    </p>
+
+    <theorem xml:id="thm-invertible-iff-row-equivalent-identity" workspace="true">
+      <title>Invertibility and Row Equivalence</title>
+      <statement>
+        <p>
+          A matrix <m>A</m> is invertible if and only if it is row equivalent to the identity matrix.
+          In this case, any sequence of elementary row operations that transforms <m>A</m> into <m>I</m>,
+          when applied to <m>I</m>, generates <m>A^{-1}</m>.
+        </p>
+      </statement>
+    </theorem>
+
+  </page>
+
+
+  <page xml:id="p-2-2-using-inverse-solve-system">
+    <title>Using the Inverse to Solve a Linear System</title>
+    <p>Some final thoughts:</p>
+    <ul>
+      <li>
+        We could use <m>A^{-1}</m> to solve a linear system <m>A\vec x=\vec b</m>.
+        We would compute <m>A^{-1}</m> and then solve by multiplying appropriately.
+      </li>
+      <li>
+        As many textbooks point out, <m>A^{-1}</m> is seldom used in practice:
+        computing it can take a long time and may be prone to numerical error.
+      </li>
+      <li>
+        So why did we learn how to compute <m>A^{-1}</m>?
+        Later in the course, we use elementary matrices and properties of <m>A^{-1}</m> to derive results.
+      </li>
+      <li>
+        A recurring theme: just because we <em>can</em> do something a certain way,
+        doesn't mean we <em>should</em>.
+      </li>
+    </ul>
+  </page>
+
+</handout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="chapter-3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Determinants</title>
+
+  <section xml:id="Section-3-1">
+    <title>3.1 Introduction to Determinants</title>
+      <xi:include href="./chapter-3-notes/section-3-1-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-3-2">
+    <title>3.2 Properties of the Determinant</title>
+      <xi:include href="./chapter-3-notes/section-3-2-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-3-3">
+    <title>3.3 Applications of the Determinant</title>
+      <xi:include href="./chapter-3-notes/section-3-3-sol.ptx" />
+  </section>
+  
+  
+
+</chapter>

@@ -1,0 +1,271 @@
+<handout xml:id="handout-section-5-1-eigenvalues-eigenvectors">
+  <title>5.1 Eigenvectors, Eigenvalues, and Eigenspaces</title>
+
+  <page xml:id="p-5-1-overview">
+    <title>Overview</title>
+
+    <objectives xml:id="obj-5-1-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>Eigenvectors, eigenvalues, and eigenspaces.</li>
+        <li>Eigenvalue theorems.</li>
+      </ul>
+      </objectives>
+
+      <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>Verify that a given vector is an eigenvector of a matrix.</li>
+        <li>Verify that a given scalar is an eigenvalue of a matrix.</li>
+        <li>Construct the eigenspace for a given eigenvalue of a matrix.</li>
+        <li>Apply eigenvalue theorems (e.g., to characterize invertibility).</li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+    <definition xml:id="def-eigenvalue-eigenvector" workspace="0.5in">
+      <title>Eigenvector and Eigenvalue</title>
+      <statement>
+        <p>
+          Let <m>A\in\mathbb{R}^{n\times n}</m>. If there exists a <em>nonzero</em> vector <m>\vec v\in\mathbb{R}^n</m> and a scalar <m>\lambda\in\mathbb{C}</m> such that
+        </p>
+        <me>
+          A\vec v = \lambda \vec v,
+        </me>
+        <p>
+          then <m>\vec v</m> is an <term>eigenvector</term> of <m>A</m> and <m>\lambda</m> is the corresponding <term>eigenvalue</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Notes:
+    </p>
+    <ul>
+      <li>We consider only square matrices.</li>
+      <li>
+        <p>If <m>\lambda\in\mathbb{R}</m>, then:
+        <ul>
+          <li>for <m>\lambda&gt;0</m>, vectors <m>A\vec v</m> and <m>\vec v</m> point in the same direction;</li>
+          <li>for <m>\lambda&lt;0</m>, they point in opposite directions.</li>
+        </ul>
+        </p>
+      </li>
+      <li>
+        Even when entries of <m>A</m> and <m>\vec v</m> are real, <m>\lambda</m> can be complex (e.g., a rotation by <m>90^\circ</m> counterclockwise in <m>\mathbb{R}^2</m> has no real eigenvalues).
+      </li>
+      <li>Complex eigenvalues will be explored in Section 5.5.</li>
+    </ul>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-1-example1">
+    <title>Example 1</title>
+
+    <example xml:id="ex-5-1-check-eigenvectors" workspace="true">
+      <introduction>
+        <p>
+          Which of the following are eigenvectors of
+        </p>
+        <me>
+          A=\begin{bmatrix}
+            1 \amp 1\\
+            1 \amp 1
+          \end{bmatrix}?
+        </me>
+        <p>What are the corresponding eigenvalues?</p>
+      </introduction>
+      <task workspace="2in">
+        <statement>
+            <p>
+                <m>\vec v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>
+            </p>
+        </statement>
+      </task>
+      <task workspace="2in">
+        <statement>
+            <p>
+                <m>\vec v_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}</m>
+            </p>
+        </statement>
+      </task>
+      <task workspace="2in">
+        <statement>
+            <p>
+                <m>\vec v_3 = \begin{bmatrix} 0 \\ 0 \end{bmatrix}</m>
+            </p>
+        </statement>
+      </task>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-1-example2">
+    <title>Example 2</title>
+
+    <example xml:id="ex-5-1-confirm-eigenvalue" workspace="true">
+      <statement>
+        <p>
+          Confirm that <m>\lambda=3</m> is an eigenvalue of
+        </p>
+        <me>
+          A=\begin{bmatrix}
+            2 \amp -4\\
+            -1 \amp -1
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-1-eigenspace">
+    <title>Eigenspaces</title>
+
+    <definition xml:id="def-eigenspace">
+      <title>Eigenspace</title>
+      <statement>
+        <p>
+          Suppose <m>A\in\mathbb{R}^{n\times n}</m>. For an eigenvalue <m>\lambda</m> of <m>A</m>, the set of all eigenvectors associated with <m>\lambda</m> together with the zero vector forms a subspace of <m>\mathbb{R}^n</m> called the <term><m>\lambda</m>-eigenspace</term> of <m>A</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      <em>Note:</em> The <m>\lambda</m>-eigenspace is precisely <m>\operatorname{Null}(A-\lambda I)</m>.
+    </p>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-5-1-eigenspace-basis" workspace="true">
+      <statement>
+        <p>
+          Construct a basis for the eigenspaces of
+        </p>
+        <me>
+          A=\begin{bmatrix}
+            5 \amp -6\\
+            3 \amp -4
+          \end{bmatrix},
+          \qquad \lambda=-1,\;2.
+        </me>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-1-theorems">
+    <title>Eigenvalue Theorems</title>
+
+    <theorem xml:id="thm-triangular-diagonal-are-eigs" workspace="1in">
+      <title>Eigenvalues of Triangular Matrices</title>
+      <statement>
+        <p>
+          The eigenvalues of a triangular (upper or lower) matrix are its diagonal entries.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-invertible-iff-zero-not-eigenvalue" workspace="1in">
+      <title>Invertibility and the Eigenvalue 0</title>
+      <statement>
+        <p>
+          A matrix <m>A</m> is invertible if and only if <m>0</m> is not an eigenvalue of <m>A</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-stochastic-has-one" workspace="1in">
+      <title>Stochastic Matrices</title>
+      <statement>
+        <p>
+          A (column-)stochastic matrix always has an eigenvalue equal to <m>1</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-distinct-eigenvalues-independent" workspace="1in">
+      <title>Distinct Eigenvalues Give Independent Eigenvectors</title>
+      <statement>
+        <p>
+          If <m>\vec v_1,\vec v_2,\ldots,\vec v_k</m> are eigenvectors corresponding to distinct eigenvalues of <m>A</m>, then <m>\{\vec v_1,\ldots,\vec v_k\}</m> is linearly independent.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-1-warning">
+    <title>Warning: Row Reduction and Eigenvalues</title>
+
+    <note xml:id="warn-row-reduction-eigs">
+      <title>Warning</title>
+      <statement>
+        <p>
+          You cannot determine the eigenvalues of a matrix from its reduced row-echelon form.
+          Row operations generally change eigenvalues.
+        </p>
+      </statement>
+    </note>
+
+    <example>
+        <introduction>
+            <p>
+                Let
+                    <me>
+                    A=\begin{bmatrix}
+                        1 \amp 1\\
+                        1 \amp 1
+                    \end{bmatrix},
+                    </me>
+                which has eigenvalues <m>\lambda=2</m> and <m>\lambda=0</m>.
+            </p>
+        </introduction> 
+        <task workspace="2in">
+            <statement>
+                <p>
+                    Find eigenvectors for each eigenvalue of <m>A</m>.
+                </p>
+            </statement>
+        </task>
+        <task workspace="1in">
+            <statement>
+                <p>
+                    Find the RREF of <m>A</m>. What are it's eigenvalues?
+                </p>
+            </statement>
+        </task>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+  <page>
+    <title>One more Example</title> 
+    <example workspace="true">
+      <statement> 
+        <p>
+        Let <me>A = \begin{bmatrix} 4 \amp -1 \amp 6 \\ 2 \amp 1 \amp 5 \\ 2 \amp -1 \amp 8 \end{bmatrix}.</me> One of the eigenvalues of <m>A</m> is <m>\lambda = 2</m>. Find a basis for the <m>2</m>-eigenspace of <m>A</m>.
+        </p>
+        </statement>
+      </example>
+  </page>
+
+</handout>

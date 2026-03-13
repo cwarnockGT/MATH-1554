@@ -1,0 +1,395 @@
+<handout xml:id="handout-section-2-5-lu">
+  <title>2.5 <m>LU</m> Factorization</title>
+
+  <page xml:id="p-2-5-intro-objectives">
+    <title>Overview</title>
+
+
+
+    <objectives xml:id="obj-2-5-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>The <m>LU</m> factorization of a matrix.</li>
+        <li>Using <m>LU</m> factorization to solve a system.</li>
+        <li>Why the <m>LU</m> factorization works.</li>
+      </ul>
+    </objectives>
+    <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>Compute an <m>LU</m> factorization of a matrix.</li>
+        <li>Apply <m>LU</m> factorization to solve systems of equations.</li>
+        <li>Determine whether a matrix has an <m>LU</m> factorization.</li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+    <p workspace="0.1in"> We have learned several techniques for solving the equation <m>A\vec x = \vec b</m>. We <em>could</em> solve <m>A\vec x=\vec b</m> using <m>\vec x=A^{-1}\vec b</m>, but this requires computing the inverse of an <m>n\times n</m> matrix, which becomes difficult for large <m>n</m>. Gaussian elimination is better, but still inefficient for large systems.
+    </p>
+    <p workspace="0.1in">More efficient and numerically stable methods rely on matrix factorizations. A <term>matrix factorization</term> (or <term>matrix decomposition</term>) is a factorization of a matrix into a product of matrices. Such factorizations help solve <m>A\vec x=\vec b</m> and reveal matrix structure. Several matrix factorizations appear throughout this course. In this section, we factor a matrix into <em>lower</em> and <em>upper</em> triangular matrices.
+    </p>
+
+    <p>A rectangular matrix <m>A</m> is <term>upper triangular</term> if <m>a_{i,j}=0</m> whenever <m>i&gt;j</m>.
+    </p>
+
+    <me>
+      \begin{bmatrix}
+        1 \amp 5 \amp 0\\
+        0 \amp 2 \amp 4
+      \end{bmatrix},
+      \quad
+      \begin{bmatrix}
+        1 \amp 0 \amp 0 \amp 1\\
+        0 \amp 2 \amp 1 \amp 0\\
+        0 \amp 0 \amp 1 \amp 0\\
+        0 \amp 0 \amp 0 \amp 1
+      \end{bmatrix},
+      \quad
+      \begin{bmatrix}
+        2\\0\\0\\0
+      \end{bmatrix}
+    </me>
+
+    <p>
+        A rectangular matrix <m>A</m> is <term>lower triangular</term> if <m>a_{i,j}=0</m> whenever <m>i&lt;j</m>.
+    </p>
+
+    <me>
+      \begin{bmatrix}
+        1 \amp 0 \amp 0\\
+        3 \amp 2 \amp 0
+      \end{bmatrix},
+      \quad
+      \begin{bmatrix}
+        3 \amp 0 \amp 0 \amp 0\\
+        1 \amp 1 \amp 0 \amp 0\\
+        0 \amp 0 \amp 1 \amp 0\\
+        0 \amp 2 \amp 0 \amp 1
+      \end{bmatrix},
+      \quad
+      \begin{bmatrix}
+        1\\2\\1\\2
+      \end{bmatrix}
+    </me>
+
+    <p workspace="0.2in">Can you have a matrix that is both upper and lower triangular?</p>
+    <solution>
+        <p>
+            There are many matrices which are both, such as <me>\begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix} \quad \text{and} \quad  \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 2 \amp 0 \end{bmatrix}</me>
+        </p>
+    </solution>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-5-lu-definition">
+    <title>The <m>LU</m> Factorization</title>
+
+    <theorem xml:id="thm-lu-factorization">
+      <title><m>LU</m> Factorization</title>
+      <statement>
+        <p>
+          If <m>A</m> is an <m>m\times n</m> matrix that can be row reduced to echelon form without row exchanges, then there exists matrices <m>L</m> and <m>U</m> such that <m>A=LU</m>, where
+        </p>
+        <ul>
+          <li><m>L</m> is a lower triangular <m>m\times m</m> matrix with ones on the diagonal.</li>
+          <li><m>U</m> is an echelon form of <m>A</m>.</li>
+        </ul>
+      </statement>
+    </theorem>
+
+
+    <example xml:id="ex-lu-form" workspace="true">
+      <statement>
+        <p>
+          If <m>A</m> is a <m>3 \times 2</m> matrix, then its LU factorization has the form:
+        </p>
+        <me>
+          A=LU=
+          \begin{bmatrix}
+            1 \amp 0 \amp 0\\
+            \ast \amp 1 \amp 0\\
+            \ast \amp \ast \amp 1
+          \end{bmatrix}
+          \begin{bmatrix}
+            \ast \amp \ast\\
+            0 \amp \ast\\
+            0 \amp 0
+          \end{bmatrix}
+        </me>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+
+    <p>
+      How do we find <m>L </m> and <m>U</m>? Suppose <m>A</m> can be row reduced to echelon form <m>U</m> without interchanging rows. Then
+    </p>
+
+    <me>
+      E_p\cdots E_1A=U,
+    </me>
+
+    <p>
+      where the <m>E_j</m> are elementary row-operation matrices. These matrices are lower triangular and invertible. For example, 
+    </p>
+
+    <me>
+      \begin{bmatrix}
+        1 \amp 0 \amp 0\\
+        0 \amp 1 \amp 0\\
+        2 \amp 0 \amp 1
+      \end{bmatrix}^{-1}
+      =
+      \begin{bmatrix}
+        1 \amp 0 \amp 0\\
+        0 \amp 1 \amp 0\\
+        -2 \amp 0 \amp 1
+      \end{bmatrix}.
+    </me>
+
+    <p workspace="true">
+      Therefore:
+
+    <me>
+      A = E_1^{-1}\cdots E_p^{-1}U = LU.
+    </me>
+    </p>
+
+    <p><nbsp/></p>
+  </page>
+
+  <page xml:id="p-2-5-algorithm-computing-lu">
+    <title>Algorithm for Computing <m>LU</m></title>
+
+    <p>To compute an LU factorization:
+
+    <ol>
+      <li>
+        Reduce <m>A</m> to an echelon form <m>U</m> using only row replacement operations. So no row swapping or scaling.
+      </li>
+      <li>
+        Place entries in <m>L</m> so that the same sequence of row operations reduce <m>L</m> to <m>I</m>.
+      </li>
+    </ol>
+    </p>
+    <p>
+       Note, in MATH 1554, the only allowed row replacement operation can be written in the form <m>R_i - kR_j \rightarrow R_i</m>. The number <m>k</m> is what should go into the <m>i^\text{th}</m> row and <m>j^\text{th}</m> column of <m>L</m>, so <m>\ell_{i,j} = k</m>.
+    </p>   
+    <p> 
+        <em>Caution 1:</em> Note that <m>\ell_{i,j}</m> is the opposite of the scalar used in the row replacement. This is because the formula <m>R_i - kR_j \rightarrow R_i</m> has a negative sign built in.
+    </p>
+    <p xml:id="caution-row-replacement"> 
+        <em>Caution 2:</em> Note that you are only guaranteed to find the correct <m>\ell_{i,j}</m> if you are working from left to right and from top to bottom. So, start with the leftmost pivot column and use its pivot row to elimnate all nonzero entries below it. Then move to the next pivot column (from the left) and repeat.
+    </p>
+    
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-compute-lu" workspace="true">
+      <statement>
+        <p>Compute the LU factorization of:</p>
+        <me>
+          A=
+          \begin{bmatrix}
+            4 \amp -3 \amp -1 \amp 5\\
+            -16 \amp 12 \amp 2 \amp -17\\
+            8 \amp -6 \amp -12 \amp 22
+          \end{bmatrix}.
+        </me>
+      </statement>
+      <solution>
+        <p>
+            First, let's determine the sizes of <m>L</m> and <m>U</m>. Since <m>U</m> is an echelon form of <m>A</m>, we know that <m>U</m> has the same dimension as <m>A</m>. Thus, <m>U</m> is a <m>3 \times 4</m> matrix. Since <m>L</m> is a square matrix that multiplies <m>U</m> on the left, <m>L</m> must be a <m>3 \times 3</m> matrix.
+        </p>
+        <p>
+            Now, we determine <m>U</m> by row reducing <m>A</m> to echelon form only using row replacements of the form <m>R_i - kR_j \rightarrow R_i</m>. Each time we make one of these row replacements, we are finding an entry of <m>L</m>, specifically we are finding that <m>\ell_{i,j} = k</m>. 
+        </p> 
+        <p>
+            I tend to write down the form of <m>L</m> with blanks in the lower portion and fill them in after each row replacement. So, I start the problem with the following written towards the bottom of the page: <me>L = \begin{bmatrix} 1 \amp 0 \amp 0 \\ \amp 1 \amp 0 \\ \amp \amp 1 \end{bmatrix}</me>
+        </p>
+        <p><nbsp/></p>
+        <p>
+            Note the following row operations:
+            <ul>
+                <li>
+                    <p>
+                        <m>R_2 + 4R_1 \rightarrow R_2</m>: <me>A = \begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ -16 \amp 12 \amp 2 \amp -17 \\ 8 \amp -6 \amp -12 \amp 22 \end{bmatrix} \sim \begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 8 \amp -6 \amp -12 \amp 22 \end{bmatrix}</me> Note that the row replacement could be written as <m>R_2 - (-4)R_1 \rightarrow R_2</m>, so we have that <m>\ell_{2,1} = -4</m>.
+                    </p>
+                    <p><nbsp/></p>
+                </li>
+                <li>
+                    <p>
+                        <m>R_3 - 2R_1 \rightarrow R_3</m>: <me>\begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 8 \amp -6 \amp -12 \amp 22 \end{bmatrix}\sim \begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 0 \amp 0 \amp -10 \amp 12 \end{bmatrix}</me> Since we used the row operation <m>R_3 - 2R_1 \rightarrow R_3</m>, we have that <m>\ell_{3,1} = 2</m>.
+                    </p>
+                    <p><nbsp/></p>
+                </li>
+                <li>
+                    <p>
+                        <m>R_3 - 5R_2 \rightarrow R_3</m>: <me>\begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 0 \amp 0 \amp -10 \amp 12 \end{bmatrix} \sim \begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 0 \amp 0 \amp 0 \amp -3\end{bmatrix}</me> Since we used the row operation <m>R_3 - 5R_2 \rightarrow R_3</m>, we have that <m>\ell_{3,2} = 5</m>. Since the matrix is in echelon form, we have found <m>U</m>.
+                    </p>
+                </li>
+            </ul>
+        </p>
+        <p><nbsp/></p>
+        <p> Therefore, we have that <me>L = \begin{bmatrix} 1 \amp 0 \amp 0 \\ -4 \amp 1 \amp 0 \\ 2 \amp 5 \amp 1 \end{bmatrix} \quad \text{and} \quad U = \begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 0 \amp 0 \amp 0 \amp -3\end{bmatrix}</me>. We can check by verifying that <m>A = LU</m>.
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+  <page>
+    <example xml:id="ex-compute-lu2" workspace="true">
+      <statement>
+        <p>Compute the LU factorization of:</p>
+        <me>
+          A=
+          \begin{bmatrix}
+            3 \amp -1 \amp 4 \amp 5\\
+            6 \amp 0 \amp 10 \amp 12\\
+            3 \amp 3 \amp 8 \amp 10\\
+            6 \amp 2 \amp 12 \amp 15\\
+            3 \amp 3 \amp 8 \amp 9
+          \end{bmatrix}.
+        </me>
+      </statement>
+      <solution>
+        <p>
+            Note <m>U</m> will be a <m>5 \times 4</m> matrix and <m>L</m> will be a <m>5 \times 5</m> matrix. I start by writing the following near the bottom of the page: <me>L = \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \amp 0 \\ \amp 1 \amp 0 \amp 0 \amp 0 \\ \amp \amp 1 \amp 0 \amp 0 \\ \amp \amp \amp 1 \amp 0 \\ \amp \amp \amp \amp 1 \end{bmatrix}</me>
+        </p>
+        <p><nbsp/></p>
+        <p>
+            Note the following row operations:
+            <me>A = 
+                        \begin{bmatrix}
+                            3 \amp -1 \amp 4 \amp 5\\
+                            6 \amp 0 \amp 10 \amp 12\\
+                            3 \amp 3 \amp 8 \amp 10\\
+                            6 \amp 2 \amp 12 \amp 15\\
+                            3 \amp 3 \amp 8 \amp 9
+                        \end{bmatrix} 
+                            \overset{\begin{array}{rr} R_2 - 2R_1 \rightarrow R_2 \\ R_3 - R_1 \rightarrow R_3 \end{array}}{\underset{\begin{array}{rr} R_4 - 2R_1 \rightarrow R_4 \\ R_5 - R_1 \rightarrow R_5 \end{array}}{\Huge \sim}}
+                        \begin{bmatrix}
+                            3 \amp -1 \amp 4 \amp 5\\
+                            0 \amp 2 \amp 2 \amp 2\\
+                            0 \amp 4 \amp 4 \amp 5\\
+                            0 \amp 4 \amp 4 \amp 5\\
+                            0 \amp 4 \amp 4 \amp 4
+                        \end{bmatrix} </me> Therefore, we have that <m>\ell_{2,1} = 2, \ell_{3,1} = 1, \ell_{4,1} = 2,</m> and <m>\ell_{5,1} = 1</m>.
+        </p>
+        <p><nbsp/></p>
+        <p>
+            Note that if we were only interested getting to echelon form, then we could do <m>R_4 - R_3 \rightarrow R_4</m>; however, since we are interested in <m>LU</m>-factorization we must pay attention to <xref ref="caution-row-replacement" text="custom">Caution 2</xref>. Therefore, we must use Row 2 next since it is the next pivot column. Note the following:
+            <me>
+                \begin{bmatrix}
+                            3 \amp -1 \amp 4 \amp 5\\
+                            0 \amp 2 \amp 2 \amp 2\\
+                            0 \amp 4 \amp 4 \amp 5\\
+                            0 \amp 4 \amp 4 \amp 5\\
+                            0 \amp 4 \amp 4 \amp 4
+                        \end{bmatrix} 
+                            \overset{\begin{array}{r} R_3 - 2R_2 \rightarrow R_3 \end{array}}{\underset{\begin{array}{r} R_4 - 2R_2 \rightarrow R_4 \\ R_5 - 2R_2 \rightarrow R_5 \end{array}}{\Huge \sim}}
+                        \begin{bmatrix}
+                            3 \amp -1 \amp 4 \amp 5\\
+                            0 \amp 2 \amp 2 \amp 2\\
+                            0 \amp 0 \amp 0 \amp 1\\
+                            0 \amp 0 \amp 0 \amp 1\\
+                            0 \amp 0 \amp 0 \amp 0
+                        \end{bmatrix}
+            </me>
+            Thus, we have that <m>\ell_{3,2} = 2, \ell_{4,2} = 2,</m> and <m>\ell_{5,2} = 2</m>.
+        </p>
+        <p><nbsp/></p>
+        <p>
+            We are still not in echelon form, so we must do one more row operation. 
+            <me>
+                \begin{bmatrix}
+                            3 \amp -1 \amp 4 \amp 5\\
+                            0 \amp 2 \amp 2 \amp 2\\
+                            0 \amp 0 \amp 0 \amp 1\\
+                            0 \amp 0 \amp 0 \amp 1\\
+                            0 \amp 0 \amp 0 \amp 0
+                        \end{bmatrix} 
+                            \overset{R_4 - R_3 \rightarrow R_4}{\Huge \sim}
+                        \begin{bmatrix}
+                            3 \amp -1 \amp 4 \amp 5\\
+                            0 \amp 2 \amp 2 \amp 2\\
+                            0 \amp 0 \amp 0 \amp 1\\
+                            0 \amp 0 \amp 0 \amp 0\\
+                            0 \amp 0 \amp 0 \amp 0
+                        \end{bmatrix}
+            </me>
+            Therefore, <m>\ell_{4,3} = 1</m>. What about <m>\ell_{5,3}</m>? Well, we didn't need to do anything to Row 5, so can we put anything in that position? NO. Notice, that if you put a non-zero number in that position, say <m>\ell_{5,3} = 1</m>, then we are saying that we need to do the row replacement <m>R_5 - R_3 \rightarrow R_5</m> which would mess up our row of zeros at the bottom of the matrix, thus undoing our work in getting to echelon form. Therefore, we need to make NO change to Row 5, which is doing the row replacement <m>R_5 - 0R_3 \rightarrow R_5</m>, so <m>\ell_{5,3}</m> must be <m>0</m>. 
+        </p>
+        <p><nbsp/></p>
+        <p>Since the final matrix is in echelon form, we have found <m>U</m>. However, there is still one more entry of <m>L</m> to determine, <m>\ell_{5,4}</m>. Do we have to put a zero there? NO. Note that whatever number is in that position, say <m>\ell_{5,4} = 5</m>, would result in the row replacement <m>R_5 - 5R_4 \rightarrow R_5</m> which actually doesn't change anything since Row 4 is a row consisting entirely of <m>0</m>'s. Therefore, <m>\ell_{5,4} = t</m>, where <m>t \in \mathbb{R}</m> can be anything you wish. Thus, we have that <me>L = \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \amp 0 \amp 0 \\ 1 \amp 2 \amp 1 \amp 0 \amp 0 \\ 2 \amp 2 \amp 1 \amp 1 \amp 0 \\ 1 \amp 2 \amp 0 \amp t \amp 1 \end{bmatrix} \quad \text{and} \quad U = \begin{bmatrix}
+                            3 \amp -1 \amp 4 \amp 5\\
+                            0 \amp 2 \amp 2 \amp 2\\
+                            0 \amp 0 \amp 0 \amp 1\\
+                            0 \amp 0 \amp 0 \amp 0\\
+                            0 \amp 0 \amp 0 \amp 0
+                        \end{bmatrix}
+        </me>
+        One consequence of this is that the <m>LU</m> factorization of a matrix might not be unique. It is true that <m>U</m> is unique; however, there <em>could</em> be many possible <m>L</m>'s that work.
+    </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-5-using-lu">
+    <title>Using the <m>LU</m> Decomposition</title>
+
+    <p>How do we use <m>LU</m> factorization to help us solve <m>A\vec x=\vec b</m>?</p>
+
+    <p>If <m>A = LU</m>, then the equation <m>A \vec x = \vec b </m> can be written <m>LU \vec x = \vec b </m>, or equivalently, <m>L (U\vec x) = \vec b </m>. Setting <m>\vec y = U\vec x </m>, we do the following:
+    </p>
+
+    <ol>
+      <li>Forward substitution to solve for <m>\vec y</m> in <m>L\vec y=\vec b</m>.</li>
+      <li>Backward substitution to solve for <m>\vec x</m> in <m>U\vec x=\vec y</m>.</li>
+    </ol>
+    <p>Since <m>L</m> is an invertible matrix, the system <m>L\vec y = \vec b</m> will always be consistent and have a unique solution. The system <m>U\vec x = \vec y</m> may be inconsistent. Since <m>U</m> is in echelon form, we can quickly determine whether <m>U\vec x = \vec y</m> is inconsistent by checking if there is a nonzero entry in <m>\vec y</m> that corresponds to a row of zeros in <m>U</m>.</p>
+
+    <example xml:id="ex-solve-with-lu" workspace="true">
+      <statement>
+        <p>Solve the linear system with:</p>
+        <me>
+          A=LU=
+          \begin{bmatrix}
+            1 \amp 0 \amp 0 \amp 0\\
+            1 \amp 1 \amp 0 \amp 0\\
+            0 \amp 2 \amp 1 \amp 0\\
+            0 \amp 0 \amp 1 \amp 1
+          \end{bmatrix}
+          \begin{bmatrix}
+            1 \amp 0 \amp 0\\
+            0 \amp 2 \amp 1\\
+            0 \amp 0 \amp 2\\
+            0 \amp 0 \amp 0
+          \end{bmatrix},
+          \qquad
+          \vec b=
+          \begin{bmatrix}
+            2\\5\\8\\2
+          \end{bmatrix}.
+        </me>
+      </statement>
+      <solution>
+        <p>
+            We start with determining a vector <m>\vec y</m> so that <m>L\vec y = \vec b</m>. Note that <me>\begin{bmatrix} L \amp \rvert \amp \vec b \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \amp \rvert \amp 2 \\ 1 \amp 1 \amp 0 \amp 0 \amp \rvert \amp 5 \\ 0 \amp 2 \amp 1 \amp 0 \amp \rvert \amp 8 \\ 0 \amp 0 \amp 1 \amp 1 \amp \rvert \amp 2 \end{bmatrix} \sim \cdots \sim \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \amp \rvert \amp 2 \\ 0 \amp 1 \amp 0 \amp 0 \amp \rvert \amp 3 \\ 0 \amp 0 \amp 1 \amp 0 \amp \rvert \amp 2 \\ 0 \amp 0 \amp 0 \amp 1 \amp \rvert \amp 0 \end{bmatrix}</me> Therefore, we have that <m>\vec y = \begin{bmatrix} 2 \\ 3 \\ 2 \\ 0 \end{bmatrix}</m>. 
+        </p>
+        <p><nbsp/></p>
+        <p> Next, we determine <m>\vec x</m> so that <m>U\vec x = \vec y</m>. Note that <me>\begin{bmatrix} U \amp \rvert \amp \vec y \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \amp \rvert \amp 2 \\ 0 \amp 2 \amp 1 \amp \rvert \amp 3 \\ 0 \amp 0 \amp 2 \amp \rvert \amp 2 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix} \sim \cdots \sim  \begin{bmatrix} 1 \amp 0 \amp 0 \amp \rvert \amp 2 \\ 0 \amp 1 \amp 0 \amp \rvert \amp 1\\ 0 \amp 0 \amp 1 \amp \rvert \amp 1 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</me> Therefore, we have that <m>\vec x = \begin{bmatrix} 2 \\ 1 \\ 1 \end{bmatrix}</m> is the solution to the system <m>A \vec x = \vec b</m>.
+        </p>
+      </solution>
+    </example>
+  </page>
+
+</handout>

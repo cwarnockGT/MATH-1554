@@ -1,0 +1,530 @@
+<handout xml:id="handout-section-2-8-subspaces">
+  <title>2.8 Subspaces</title>
+
+  <page xml:id="p-2-8-objectives">
+    <title>Overview</title>
+
+    <objectives xml:id="obj-2-8-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>Subspaces, column space, and null space.</li>
+        <li>A basis for a subspace.</li>
+      </ul>
+    </objectives>
+    <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>Determine whether a set is a subspace.</li>
+        <li>Determine whether a vector is in a particular subspace, or find a vector in that subspace.</li>
+        <li>Construct a basis for a subspace (e.g., a basis for <m>\operatorname{Col}(A)</m>).</li>
+      </ul>
+    </objectives>
+
+      <p><em>Motivating Question</em>: Given a matrix <m>A</m>, what is the set of vectors <m>\vec b</m> for which we can solve
+        <m>A\vec x=\vec b</m>?
+      </p>
+
+      <p><nbsp/></p>
+
+    <definition xml:id="def-subset-rn">
+      <title>Subset of <m>\mathbb{R}^n</m></title>
+      <statement>
+        <p>
+          A <term>subset of <m>\mathbb{R}^n</m></term> is any collection of vectors contained in <m>\mathbb{R}^n</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <definition xml:id="def-subspace">
+      <title>Subspace</title>
+      <statement>
+        <p>
+          A subset <m>H</m> of <m>\mathbb{R}^n</m> is a <term>subspace</term> if:
+        </p>
+        <ul>
+          <li><m>\vec 0 \in H</m></li>
+          <li><m>\vec u+\vec v\in H</m> for all <m>\vec u,\vec v\in H</m>.</li>
+          <li><m>c\vec u\in H</m> for any scalar <m>c\in\mathbb{R}</m> and any <m>\vec u\in H</m>.</li>
+        </ul>
+      </statement>
+    </definition>
+
+    <p>
+      Note that scalar closure implies the zero vector must be in <m>H</m>.
+    </p>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-subspace-pictures" workspace="true">
+      <statement>
+        <p>Which of the following subsets could be subspaces of <m>\mathbb{R}^2</m>?</p>
+
+        <image xml:id="img-subspaces" source="./subspaces.png" width="80%">
+          <shortdescription>A graphic showing three subsets of <m>\mathbb{R}^2</m>. The first (a) is the unit square. The second (b) is a line through the origin. The third (c) is a line that does not pass throught the origin.</shortdescription>
+        </image>
+      </statement>
+      <solution>
+        <p>
+            For (a), note that the unit square contains the vector <m>\vec v = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>, but does not contain the vector <m>2\vec v = \begin{bmatrix} 2 \\ 2 \end{bmatrix}</m>. Therefore, the unit square is NOT a subspace of <m>\mathbb{R}^2</m>.
+        </p>
+        <p>
+            For (b), first note that the line passes throught the origin, so the subset contains <m>\vec 0</m>. Next, if <m>\vec v</m> is a nonzero vector on the line, we see that every vector on the line can be expressed as some multiple of <m>\vec v</m>. Therefore, the subset can be written as <m>\left\{t\vec v \ \rvert \ t\in\mathbb{R}\right\} = \operatorname{Span}\left\{\vec v\right\}</m>. It follows that the subset is closed under vector addition and scalar multiplication. Hence, a line passing throught the origin IS as subpace of <m>\mathbb{R}^2</m>.
+        </p>
+        <p>
+            For (c), note that the line does NOT pass through the origin. So the subset does NOT contain <m>\vec 0</m> and is NOT a subspace of <m>\mathbb{R}^2</m>.
+        </p>
+      </solution>
+    </example> 
+    <p><nbsp/></p>
+  </page>
+
+  <page xml:id="p-2-8-subspace-examples">
+    <title>Examples of Subspaces</title>
+    <example>
+        <introduction>
+            <p>
+                For each subset of <m>\mathbb{R}^3</m> given below, determine if it is a subspace of <m>\mathbb{R}^3</m>.
+            </p>
+        </introduction>
+        <task workspace="true">
+            <statement>
+                <p>
+                    <m>S_1 = \left\{\vec 0\right\}</m>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Note that <m>\vec 0 \in S_1</m>. Also, we have that <m>S_1</m> is closed under vector addition and scalar multiplication since every vector you choose in <m>S_1</m> has to be <m>\vec 0</m> since it is the only vector in <m>S_1</m>. Thus, <m>S_1</m> is a subspace of <m>\mathbb{R}^3</m>.
+                </p>
+            </solution>
+        </task>
+        <task workspace="true">
+            <statement>
+                <p>
+                    <m>S_2 = \left\{\vec 0, \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix},\begin{bmatrix}-1 \\ 0 \\ -1\end{bmatrix} \right\}</m>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Note that <m>\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \in S_2</m>, but <m>2\begin{bmatrix}1 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 2 \\ 0 \\ 2 \end{bmatrix} \not \in S_2</m>. Therefore, <m>S_2</m> is NOT closed under scalar multiplication, so <m>S_2</m> is NOT a subspace of <m>\mathbb{R}^3</m>.
+                </p>
+            </solution>
+        </task>
+        <task workspace="true">
+            <statement>
+                <p>
+                    <m>S_3 = \left\{\begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\right\}</m>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Note that <m>\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \in S_3</m>, but <m>\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} \not \in S_3</m>. Thus, <m>S_3</m> is not closed under vector addition, so <m>S_3</m> is NOT a subspace of <m>\mathbb{R}^3</m>.
+                </p>
+            </solution>
+        </task>
+        <task workspace="true">
+            <statement>
+                <p>
+                    <m>S_4 = \operatorname{Span}\left\{\begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\right\}</m>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Since <m>S_4</m> is the span of a set of vectors, we know that <m>S_4</m> contains every possible linear combination of its vectors. Therefore, <m>S_4</m> must contain <m>\vec 0</m> and must be closed under vector addition and scalar multiplication. Hence, <m>S_4</m> is a subspace of <m>\mathbb{R}^3</m>.
+                </p>
+            </solution>
+        </task>
+    </example>
+    <p><nbsp/></p>
+</page>
+<page>
+    <title>More Examples of Subspaces</title>
+    
+    
+    <example>
+        <introduction>
+            <p>
+                The following subsets of <m>\mathbb{R}^2</m> are written in set-builder notation. For each, determine if it is a subspace of <m>\mathbb{R}^2</m>. Note that <m>\mathbb{Z} = \{\dots, -2, -1, 0, 1 , 2, \dots\}</m> is the set of integers.
+            </p>
+        </introduction>
+        <task workspace="true">
+            <statement>
+                <p>
+                    <m>T_1 = \left\{\begin{bmatrix} x \\ -x \end{bmatrix} \in \mathbb{R}^2 \ \Big \rvert \ x\in\mathbb{Z}\right\}</m>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Note that <m>\begin{bmatrix} 1 \\ -1 \end{bmatrix} \in T_1</m>, but <m>\pi\begin{bmatrix}1 \\ -1 \end{bmatrix} = \begin{bmatrix} \pi \\ -\pi \end{bmatrix} \not \in T_1</m> since <m>\pi</m> is not an integer. Therefore, <m>T_1</m> is NOT closed under scalar multiplication, so <m>T_1</m> is NOT a subspace of <m>\mathbb{R}^2</m>.
+                </p>
+            </solution>
+        </task>
+        <task workspace="true">
+            <statement>
+                <p>
+                    <m>T_2 = \left\{\begin{bmatrix} x \\ -x \end{bmatrix} \in \mathbb{R}^2 \ \Big \rvert \ x\in\mathbb{R}\right\}</m>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Note that <m>T_2 = \operatorname{Span}\left\{\begin{bmatrix} 1 \\ -1 \end{bmatrix}\right\}</m>. It follows that <m>T_2</m> is a subspace of <m>\mathbb{R}^2</m>.
+                </p>
+            </solution>
+        </task>
+        <task workspace="true">
+            <statement>
+                <p>
+                    <m>T_3 = \left\{\vec x \in \mathbb{R}^2 \ \Big \rvert \ \begin{bmatrix} 1 \amp 2 \\ 2 \amp 4 \end{bmatrix}\vec x = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\right\}</m>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Note that <m>T_3 = \operatorname{Span}\left\{\begin{bmatrix} 2 \\ -1 \end{bmatrix}\right\}</m>. It follows that <m>T_3</m> is a subspace of <m>\mathbb{R}^2</m>. In fact, the solution set of any <em>homogeneous</em> system is a subspace of <m>\mathbb{R}^n</m>. This subspace is called the nullspace (see <xref ref="def-col-null"/>).
+                </p>
+            </solution>
+        </task>
+        <task workspace="true">
+            <statement>
+                <p>
+                    <m>T_4 = \left\{\vec x \in \mathbb{R}^2 \ \Big \rvert \ \begin{bmatrix} 1 \amp 2 \\ 2 \amp 4 \end{bmatrix}\vec x = \begin{bmatrix} 1 \\ 2 \end{bmatrix}\right\}</m>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Note that <m>\vec 0 \not \in T_4</m>, so <m>T_4</m> is NOT a subspace of <m>\mathbb{R}^2</m>. In fact, the solution set of any <em>inhomogeneous</em> system is NOT a subspace of <m>\mathbb{R}^n</m>.
+                </p>
+            </solution>
+        </task>
+    </example>
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-8-col-null-definition">
+    <title>The Column Space and Null Space</title>
+
+    <p>
+      Recall that for vectors <m>\vec v_1,\dots,\vec v_p\in\mathbb{R}^n</m>,
+      <m>\operatorname{Span}\{\vec v_1,\dots,\vec v_p\}</m> is the subspace consisting of all linear combinations of these vectors. Not only is the span of vectors an example of a subspace of <m>\mathbb{R}^n</m>, they are the only examples of subspace of <m>\mathbb{R}^n</m>.
+    </p>
+
+    <theorem xml:id="thm-subspace-are-span">
+        <statement>
+            <p>
+                Every subspace of <m>\mathbb{R}^n</m> can be written as the span of a finite number of vectors; that is, if <m>H</m> is a subspace of <m>\mathbb{R}^n</m>, then there exists vectors <m>\vec v_1, \dots, \vec v_k</m> so that <m>H = \operatorname{Span}\left\{\vec v_1, \dots, \vec v_n\right\}</m>.
+            </p>
+        </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <definition xml:id="def-col-null">
+      <title>Column Space and Null Space</title>
+      <statement>
+        <p>
+          Let <m>A=\begin{bmatrix}\vec a_1 \amp \cdots \amp \vec a_n\end{bmatrix}</m> be
+          an <m>m\times n</m> matrix.
+        </p>
+
+        <ul>
+          <li>
+            The <term>column space</term> of <m>A</m>,
+            <m>\operatorname{Col}(A)</m>, is the subspace of <m>\mathbb{R}^m</m>
+            spanned by <m>\vec a_1,\dots,\vec a_n</m>.
+          </li>
+
+          <li>
+            The <term>null space</term> of <m>A</m>,
+            <m>\operatorname{Nul}(A)</m>, is the subspace of <m>\mathbb{R}^n</m>
+            consisting of all solutions to <m>A\vec x=\vec 0</m>.
+          </li>
+        </ul>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-nul-same-col-dif">
+        <statement>
+            <p>
+                Let <m>A</m> be an <m>m \times n</m> matrix, and let <m>B</m> be any matrix which is <xref ref="def-row-equiv" text="custom">row equivalent</xref> to <m>A</m>. Then 
+                    <ul>
+                        <li>The subspaces <m>\operatorname{Col}(A)</m> and <m>\operatorname{Col}(B)</m> are <em>most likely</em> different. So, often, <m>\operatorname{Col}(A) \neq \operatorname{Col}(B)</m>.</li>
+                        <li>The subspaces <m>\operatorname{Nul}(A)</m> and <m>\operatorname{Nul}(B)</m> are <em>always</em> the same. So, it is always true that <m>\operatorname{Nul}(A) = \operatorname{Nul}(B)</m>.</li>
+                    </ul>
+                </p>
+            </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-colspace-membership" workspace="true">
+      <statement>
+        <p>Is <m>\vec b</m> in the column space of <m>A</m>?</p>
+
+        <me>
+          A=
+          \begin{bmatrix}
+            1 \amp -3 \amp -4\\
+            -4 \amp 6 \amp -2\\
+            -3 \amp 7 \amp 6
+          \end{bmatrix}
+          \sim
+          \begin{bmatrix}
+            1 \amp 0 \amp 5\\
+            0 \amp 1 \amp 3\\
+            0 \amp 0 \amp 0
+          \end{bmatrix} = B,
+          \qquad
+          \vec b=
+          \begin{bmatrix}
+            3\\3\\-4
+          \end{bmatrix}.
+        </me>
+      </statement>
+      <solution>
+        <p>
+            By <xref ref="thm-existence-span"/>, asking whether <m>\vec b \in \operatorname{Col}(A)</m> is equivalent to asking whether the matrix equation <m>A\vec x = \vec b</m> has a solution. By <xref ref="thm-nul-same-col-dif"/>, we must augment with the matrix <m>A </m> and cannot augment with <m>B</m>. Note that <me>\begin{bmatrix} A \amp \rvert \amp \vec b \end{bmatrix} = \begin{bmatrix} 1 \amp -3 \amp -4 \amp \rvert \amp 3 \\ -4 \amp 6 \amp -2 \amp \rvert \amp 3 \\ -3 \amp 7 \amp 6 \amp \rvert \amp -4 \end{bmatrix}  \sim \cdots \sim \begin{bmatrix} 1 \amp -3 \amp 4 \amp \rvert \amp 3 \\ 0 \amp 2 \amp 6 \amp \rvert \amp -5 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</me>. Since we do not have a pivot in the augmented column, the system <m>A\vec x = \vec b</m> is consistent. Hence, <m>\vec b \in \operatorname{Col}(A)</m>.
+        </p>
+        <p>
+            You can find a particular linear combination of the columns of <m>A</m> which produce <m>\vec b</m> by continuing to solve the system.
+        </p>
+    </solution>
+    </example>
+    
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-8-basis-definition">
+    <title>Basis</title>
+
+    <example xml:id="ex-nullspace-membership" workspace="true">
+      <statement>
+        <p>
+          Determine whether
+          <m>\vec v</m> is in <m>\operatorname{Nul}(A)</m>. 
+          <me>A = \begin{bmatrix}
+            1 \amp -3 \amp -4\\
+            -4 \amp 6 \amp -2\\
+            -3 \amp 7 \amp 6
+          \end{bmatrix} \sim
+          \begin{bmatrix}
+            1 \amp 0 \amp 5\\
+            0 \amp 1 \amp 2\\
+            0 \amp 0 \amp 0
+          \end{bmatrix} = B, 
+          \qquad          
+          \vec v=
+          \begin{bmatrix}
+            -5t\\
+            -3t\\
+            t
+          \end{bmatrix},
+          \quad t\in\mathbb{R}.
+        </me>
+    </p>
+      </statement>
+      <solution>
+        <p>
+            By <xref ref="thm-nul-same-col-dif"/>, we are free to check whether <m>A\vec v = \vec 0</m> or <m>B\vec v = \vec 0</m> since <m>\operatorname{Nul}(A) = \operatorname{Nul}(B)</m>. Note that <me>A\vec v = \begin{bmatrix}
+            1 \amp -3 \amp -4 \\ -4 \amp 6 \amp -2\\ -3 \amp 7 \amp 6 \end{bmatrix} \begin{bmatrix} -5t \\ -3t \\ t \end{bmatrix} = \begin{bmatrix} -5t + 9t - 4t \\ 20t - 18t - 2t \\ 15t - 21t + 6t \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}</me>. Thus, <m>\vec v \in \operatorname{Nul}(A)</m> for any value of <m>t</m>.
+        </p>
+        <p>
+            Let's determine if there are any other vectors in <m>\Nul(A)</m>. Since <m>\Nul(A) = \Nul(B),</m> we determine all solutions to <m>B\vec x = \vec 0</m>. Since <m>B</m> is already in RREF, we see that <m>x_3 = t \in \mathbb{R}</m> is a free variable and <m>x_2 = -3t</m> and <m>x_1 = -5t</m> are pivot variables. It follows that <me>\Nul(A) = \Nul(B) = \left\{\begin{bmatrix} -5t \\ 3t \\ t \end{bmatrix} \ \Big \rvert \ t \in \mathbb{R}\right\} = \Span\left\{\begin{bmatrix} -5 \\ -2 \\ 1 \end{bmatrix}\right\}.</me>
+        </p>
+      </solution>
+    </example>
+    <p><nbsp/></p>
+  </page>
+
+  <page>
+    <title>Definition of basis and Example</title>
+        <definition xml:id="def-basis" workspace="0.5in">
+      <title>Basis</title>
+      <statement>
+        <p>
+          A <em>basis</em> for a subspace <m>H</m> is a set of linearly independent vectors in
+          <m>H</m> that span <m>H</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+        In MATH 1554, each basis will be a <em>finite</em> set of vectors. For every subspace other than the trivial subspace <m>\left\{\vec 0\right\}</m>, there are infinitely many choices for the basis.
+    </p>    
+    <p>
+        Be careful to NEVER include <m>\Span</m> when writing your basis. Writing <m>\Span</m> of the basis gives the entire subspace. A basis is NOT the entire subspace, but a finite set of building blocks used to build the space.
+    </p>
+    <p><nbsp/></p>
+    
+<example xml:id="ex-basis-subspace" workspace="true">
+        <introduction>
+            <p>
+            Let
+            </p>
+
+            <me>
+            H=\left\{
+            \begin{bmatrix}
+                x_1\\x_2\\x_3\\x_4
+            \end{bmatrix}
+            \in\mathbb{R}^4\;\middle|\;
+            x_1+2x_2+x_3+5x_4=0
+            \right\}.
+            </me>
+        </introduction>
+        <task workspace="true">
+            <statement>
+                <p>
+                    Find at least three vectors which live in <m>H</m>.   
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    We have the following 
+                    <ul>
+                        <li><m>\vec 0 = \begin{bmatrix} 0 \\ 0 \\ 0 \\ 0 \end{bmatrix} \in H</m> since <m>0 + 2(0) + 0 + 5(0) = 0.</m></li>
+                        <li><m>\begin{bmatrix} 2 \\ -1 \\ 5 \\ -1 \end{bmatrix} \in H</m> since <m>2 + 2(-1) + 5 + 5(-1) = 0.</m></li>
+                        <li><m>\begin{bmatrix} 1 \\ 0 \\ -1 \\ 0 \end{bmatrix} \in H</m> since <m>1 + 2(0) + -1 + 5(0) = 0.</m></li>
+                    </ul>
+                </p>
+            </solution>
+        </task>    
+        <task workspace="true">
+            <statement>
+                <p>
+                    Find a matrix <m>A</m> such that <m>H=\operatorname{Nul}(A)</m>.  
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Note that if <m>A = \begin{bmatrix} 1 \amp 2 \amp 1 \amp 5 \end{bmatrix} </m>, then <me>A\vec x = \vec 0  \implies  \begin{bmatrix} 1 \amp 2 \amp 1 \amp 5 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \vec 0  \implies  \begin{bmatrix}x_1 + 2x_2 + x_3 + 5x_4\end{bmatrix} = \begin{bmatrix} 0 \end{bmatrix}</me>, which is the defining characteristic of the vectors in <m>H</m>. Therefore, <m>H = \Nul(A)</m>.
+                </p>
+            </solution>
+        </task>  
+        <task workspace="true">
+            <statement>
+                <p>
+                    Construct a basis for <m>H</m>. 
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Note that the second, third, and fourth columns of <m>A </m> correspond to free variables. Therefore, <m>x_4 = t \in \mathbb{R}, x_3 = r \in \mathbb{R},</m> and <m>x_2 = p\in\mathbb{R}</m> are the free variables and <m>x_1 = -2p - r - 5t</m> is the pivot variables. It follows that </p>
+                    <p><m>\begin{eqnarray*} \Nul(A) \amp = \amp \left\{\begin{bmatrix} -2p - r - 5t \\ p \\ r \\ t \end{bmatrix} \ \Big \rvert \ p,r,t\in\mathbb{R}\right\}\\ \amp = \amp \left\{p\begin{bmatrix}-2 \\ 1 \\ 0 \\ 0 \end{bmatrix} + r\begin{bmatrix} -1 \\ 0 \\ 1 \\ 0 \end{bmatrix} + t \begin{bmatrix} -5 \\ 0 \\ 0 \\ 1\end{bmatrix} \ \Big \rvert \ p,r,t\in\mathbb{R}\right\}\\ \amp = \amp \Span\left\{\begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -5 \\ 0 \\ 0 \\ 1 \end{bmatrix}\right\}\end{eqnarray*}</m></p> 
+                    <p>
+                         Therefore, we see that the three vectors <m>\begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -5 \\ 0 \\ 0 \\ 1 \end{bmatrix}</m> span <m>\Nul(A)</m>. Since they are linearly independent, they form a basis for <m>\Nul(A)</m>. Thus, a basis for <m>\Nul(A)</m> is the set of vectors <me>\left\{\begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -5 \\ 0 \\ 0 \\ 1 \end{bmatrix}\right\}</me>. This basis is NOT unique. Note you can replace any of the three vectors with a nonzero multiple of itself. Also, you could replace one of them with suitable linear combination. For example, you could replace the middle vector with the first place the second and that would still yield a valid basis since the resulting three vectors would be linearly independent and span the space.
+                </p>
+            </solution>
+        </task>  
+    </example>
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-8-example-basis-col-null">
+    <title>Example: Basis for Column Space and Null Space</title>
+
+    <example xml:id="ex-basis-col-null" workspace="true">
+      <statement>
+        <p>Construct a basis for <m>\operatorname{Nul}(A)</m> and <m>\operatorname{Col}(A)</m>.</p>
+
+        <me>
+          A=
+          \begin{bmatrix}
+            -3 \amp 6 \amp -1 \amp 0\\
+            1 \amp -2 \amp 2 \amp 0\\
+            2 \amp -4 \amp 5 \amp 0
+          \end{bmatrix}
+          \sim
+          \begin{bmatrix}
+            1 \amp -2 \amp 0 \amp 0\\
+            0 \amp 0 \amp 1 \amp 0\\
+            0 \amp 0 \amp 0 \amp 0
+          \end{bmatrix} = B.
+        </me>
+      </statement>
+      <solution>
+        <p>
+            First, note that we can express <m>\Nul(A)</m> as the span of some vectors by finding all solutions to <m>A\vec x = \vec 0</m>. It follows that <me>\Nul(A) = \Nul(B) = \Span\left\{\begin{bmatrix} 2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}\right\}.</me> Thus, a basis for <m>\Nul(A)</m> is <me>\mathcal{B} = \left\{\begin{bmatrix} 2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}\right\}.</me>
+        </p>
+        <p>
+            By the definition of <m>\Col(A)</m>, we see that <me>\Col(A) = \Span\left\{\begin{bmatrix} -3 \\ 1 \\ 2 \end{bmatrix}, \begin{bmatrix} 6 \\ -2 \\ -4 \end{bmatrix}, \begin{bmatrix} -1 \\ 2 \\ 5 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}\right\}.</me> Note that the set containing the four column vectors of <m>A </m> is NOT a basis since those vectors are NOT linearly independent. From <m>B</m>, we see that Column 2 and Column 4 of <m>A</m> are NOT pivot columns. Therefore, they are linearly dependent on the other columns of <m>A</m>. It follows that the following set containing Column 1 and Column 2 of <m>A</m> spans <m>\Col(A)</m> and is linearly independent, so it is a basis for <m>\Col(A)</m>. <me>\mathcal{C} = \left\{\begin{bmatrix} -3 \\ 1 \\ 2 \end{bmatrix}, \begin{bmatrix} -1 \\ 2 \\ 5 \end{bmatrix}\right\}</me>
+        </p>
+      </solution>
+    </example>
+    <p><nbsp/></p>
+
+    
+  </page>
+
+  <page>
+    <title>Another Example</title>
+    <example xml:id="ex-V-ab-equals-zero" workspace="true">
+      <introduction>
+        <p>
+          Let
+        </p>
+
+        <me>
+          V=\left\{
+          \begin{bmatrix}
+            a\\b
+          \end{bmatrix}
+          \in\mathbb{R}^2\;\middle|\;ab=0
+          \right\}.
+        </me>
+        </introduction>
+        <task workspace="1in">
+            <statement>
+                <p>
+                    Give an example of a vector that is in <m>V</m>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Note that <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix} \in V</m> since <m>1(0) = 0</m> and <m>\begin{bmatrix} 0 \\ 1 \end{bmatrix} \in V</m> since <m>0(1) = 0</m>.
+                </p>
+            </solution>
+        </task>
+        <task workspace="1in">
+            <statement>
+                <p>
+                    Give an example of a vector that is not in <m>V</m>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Note that <m>\begin{bmatrix} 1 \\ 1 \end{bmatrix} \not \in V</m> since <m>1(1) = 1 \neq 0.</m>
+                </p>
+            </solution>
+        </task>
+        <task workspace="1in">
+            <statement>
+                <p>
+                    Is the zero vector in <m>V</m>?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Yes, <m>\vec 0 = \begin{bmatrix} 0 \\ 0 \end{bmatrix} \in V</m> since <m>0(0) = 0</m>.
+                </p>
+            </solution>
+        </task>
+        <task workspace="1in">
+            <statement>
+                <p>
+                    Is <m>V</m> a subspace of <m>\mathbb{R}^2</m>?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    From (a) and (b), we see that <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \end{bmatrix} \in V</m>, but <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \not \in V</m>. Thus, <m>V </m> is not closed under vector addition. Hence, <m>V </m> is NOT a subspace of <m>\mathbb{R}^2</m>.
+                </p>
+            </solution>
+        </task>
+    </example>
+    
+  </page>
+
+</handout>

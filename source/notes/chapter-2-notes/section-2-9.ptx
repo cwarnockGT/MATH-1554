@@ -1,0 +1,390 @@
+<handout xml:id="handout-section-2-9-dimension">
+  <title>2.9 Dimension and Rank</title>
+
+  <page xml:id="p-2-9-intro-objectives">
+    <title>Overview</title>
+
+    <objectives xml:id="obj-2-9-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>Coordinates relative to a basis.</li>
+        <li>Dimension of a subspace.</li>
+        <li>The rank of a matrix.</li>
+      </ul>
+    </objectives>
+    <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>Calculate coordinates of a vector in a given basis.</li>
+        <li>Characterize subspaces using the concept of dimension.</li>
+        <li>Characterize matrices using rank, column space, and null space.</li>
+        <li>Apply the Rank, Basis, and Invertibility Theorems to describe matrices and subspaces.</li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+    <p>
+      <strong>Key idea:</strong> Many different bases may be chosen for a given subspace.
+      The choice can dramatically affect coordinate representations.
+    </p>
+
+    <p><nbsp/></p>
+ 
+
+    
+
+    <example>
+        <statement>
+            <p>
+                Sketch <m>\vec b_1 + \vec b_2</m> in each coordinate system below.
+            </p>
+        <image xml:id="img-coordinate-systems" width="70%">
+      <latex-image>
+        <latex>
+\begin{tikzpicture}
+  \usetikzlibrary{calc}
+
+    \begin{scope}[scale=1.1] 
+    
+    \coordinate (Origin)   at (0,0);
+    \coordinate (XAxisMin) at (-1,0);
+    \coordinate (XAxisMax) at (3,0);
+    \coordinate (YAxisMin) at (0,-1);
+    \coordinate (YAxisMax) at (0,3);
+    \draw [thin, gray,-latex] (XAxisMin) -- (XAxisMax);% Draw x axis
+    \draw [thin, gray,-latex] (YAxisMin) -- (YAxisMax);% Draw y axis
+
+   \clip (-1,-1) rectangle (3,3); % Clips the picture...
+%    \pgftransformcm{1}{0.6}{0.7}{1}{\pgfpoint{0cm}{0cm}}
+          % This is actually the transformation matrix entries that
+          % gives the slanted unit vectors. You might check it on
+           % MATLAB etc. . I got it by guessing.
+    \coordinate (Bone) at (0,1);
+    \coordinate (Btwo) at (1,-1);
+    \draw[style=help lines,dashed] (-14,-14) grid[step=1cm] (14,14);
+          % Draws a grid in the new coordinates.
+          %\filldraw[fill=gray, fill opacity=0.3, draw=black] (0,0) rectangle (2,2);
+              % Puts the shaded rectangle
+    \foreach \x in {-7,-6,...,7}{% Two indices running over each
+      \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn 
+        \node[draw,circle,inner sep=1pt,fill] at (\x,\y) {};
+            % Places a dot at those points
+      }
+    }
+    \draw [ultra thick,-latex,DarkRed] (Origin) -- (Bone) node [above left] {$\vec b_2$};
+%    \draw [ultra thick,-latex,red] (Origin) -- (Btwo) node [below right] {$2b_2$};
+   \draw [ultra thick,-latex,DarkRed] (Origin) -- ($(Bone)+(Btwo)$) node [below right] {$\vec b_1$};
+    %\draw [ultra thick,-latex,red] (Origin) -- ($2*(Bone)+(Btwo)$) node [above right] {$2\vec b_1+2\vec b_2$};
+%    \filldraw[fill=gray, fill opacity=0.3, draw=black] (Origin) rectangle ($2*(Bone)+(Btwo)$);
+    %\draw [thin,-latex,red, fill=gray, fill opacity=0.3] (0,0)
+        % -- ($2*(0,2)+(2,-2)$)
+        % -- ($3*(0,2)+2*(2,-2)$) -- ($(0,2)+(2,-2)$) -- cycle;
+    \end{scope}
+
+    \begin{scope}[xshift=6cm, scale=.75]
+    
+    \coordinate (Origin)   at (0,0);
+    \coordinate (XAxisMin) at (-1,0);
+    \coordinate (XAxisMax) at (4,0);
+    \coordinate (YAxisMin) at (0,-1);
+    \coordinate (YAxisMax) at (0,4);
+    \draw [thin, gray,-latex] (XAxisMin) -- (XAxisMax);% Draw x axis
+    \draw [thin, gray,-latex] (YAxisMin) -- (YAxisMax);% Draw y axis
+
+   \clip (-1,-1) rectangle (4,4); % Clips the picture...
+    \pgftransformcm{1}{0.6}{0.7}{1}{\pgfpoint{0cm}{0cm}}
+          % This is actually the transformation matrix entries that
+          % gives the slanted unit vectors. You might check it on
+           % MATLAB etc. . I got it by guessing.
+    \coordinate (Bone) at (0,2);
+    \coordinate (Btwo) at (2,-2);
+    \draw[style=help lines,dashed] (-14,-14) grid[step=2cm] (14,14);
+          % Draws a grid in the new coordinates.
+          %\filldraw[fill=gray, fill opacity=0.3, draw=black] (0,0) rectangle (2,2);
+              % Puts the shaded rectangle
+    \foreach \x in {-7,-6,...,7}{% Two indices running over each
+      \foreach \y in {-7,-6,...,7}{% node on the grid we have drawn 
+        \node[draw,circle,inner sep=1pt,fill] at (2*\x,2*\y) {};
+            % Places a dot at those points
+      }
+    }
+    \draw [ultra thick,-latex,DarkRed] (Origin)
+        -- (Bone) node [above left] {$\vec b_2$};
+    %\draw [ultra thick,-latex,red] (Origin) -- (Btwo) node [below right] {$b_2$};
+    \draw [ultra thick,-latex,DarkRed] (Origin) -- ($(Bone)+(Btwo)$) node [below right] {$\vec b_1$};
+    %\draw [ultra thick,-latex,red] (Origin) -- ($2*(Bone)+(Btwo)$) node [above left] {$\vec b_1+ \vec b_2$};
+    %\filldraw[fill=gray, fill opacity=0.3, draw=black] (Origin) rectangle ($2*(Bone)+(Btwo)$);
+    %\draw [thin,-latex,red, fill=gray, fill opacity=0.3] (0,0)
+        % -- ($2*(0,2)+(2,-2)$)
+        % -- ($3*(0,2)+2*(2,-2)$) -- ($(0,2)+(2,-2)$) -- cycle;
+    \end{scope}
+\end{tikzpicture}
+        </latex>
+      </latex-image>
+      <shortdescription>Two coordinate systems showing different basis orientations.</shortdescription>
+      <description>
+        Two grids with different bases; vectors <m>\vec b_1</m> and <m>\vec b_2</m> are drawn.
+      </description>
+    </image>
+    </statement>
+</example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-9-coordinates-def">
+    <title>Coordinates Relative to a Basis</title>
+
+    <definition xml:id="def-coordinates" workspace="1in">
+      <title>Coordinates Relative to a Basis</title>
+      <statement>
+        <p>
+          Let <m>\mathcal{B}=\{\vec b_1,\dots,\vec b_p\}</m> be a basis for a subspace <m>H</m>.
+          For any <m>\vec x\in H</m>, the <term>coordinates of <m>\vec x</m> relative to <m>\mathcal B</m></term>
+          are the scalars <m>c_1,\dots,c_p</m> such that
+        </p>
+        <me>\vec x = c_1\vec b_1 + \cdots + c_p\vec b_p.</me>
+        <p>The <term>coordinate vector of <m>\vec x</m> relative to <m>\mathcal B</m></term> is:</p>
+        <me>
+          [\vec x]_{\mathcal B} =
+          \begin{bmatrix}
+            c_1\\ \vdots\\ c_p
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-coordinates" workspace="true">
+      <statement>
+        <p>Let:</p>
+        <me>
+          \vec v_1=\begin{bmatrix}1\\0\\1\end{bmatrix},\qquad
+          \vec v_2=\begin{bmatrix}1\\1\\1\end{bmatrix},\qquad
+          \vec x=\begin{bmatrix}5\\3\\5\end{bmatrix}.
+        </me>
+        <p>
+          Verify that <m>\vec x</m> is in the span of <m>\mathcal B=\{\vec v_1,\vec v_2\}</m>,
+          and compute <m>[\vec x]_{\mathcal B}</m>.
+        </p>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+  <page>
+    <title>Another Example of Coordinate Vector</title>
+    <example xml:id="ex-coordinates2">
+      <introduction>
+        <p>Let</p>
+        <me>
+          \vec v_1=\begin{bmatrix}-1\\0\\1\\0\end{bmatrix},\qquad
+          \vec v_2=\begin{bmatrix}0\\1\\3\\2\end{bmatrix},\qquad
+          \vec v_3=\begin{bmatrix}3\\6\\2\\-1\end{bmatrix},\qquad
+          \vec x=\begin{bmatrix}3\\11\\4\\-4\end{bmatrix},
+        </me>
+        <p>
+          and <m>H = \textrm{Span}\{\vec v_1, \vec v_2, \vec v_3\}</m>. 
+        </p>
+    </introduction>
+    <task workspace="2in">
+        <statement>
+            <p>
+                Verify that <m>\mathcal B=\{\vec v_1,\vec v_2,\vec v_3\}</m> is a basis for <m>H</m>.
+            </p>
+        </statement>
+    </task>
+    <task workspace="2in">
+        <statement>
+            <p>
+                Determine if <m>\vec x \in H</m>.
+            </p>
+        </statement>
+    </task>
+    <task workspace="1in">
+        <statement>
+            <p>
+                Compute <m>[\vec x]_{\mathcal B}</m>.
+            </p>
+        </statement>
+    </task>
+    </example>
+
+    <p><nbsp/></p>
+
+  </page>
+
+
+  <page xml:id="p-2-9-dimension-def">
+    <title>Dimension</title>
+
+    <definition xml:id="def-dimension" workspace="0.3in">
+      <title>Dimension</title>
+      <statement>
+        <p>
+          The <term>dimension</term> of a nonzero subspace <m>H</m>, written <m>\operatorname{dim}(H)</m>,
+          is the number of vectors in any basis of <m>H</m>. We define <m>\operatorname{dim}(\{0\})=0</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-dimension-basis" workspace="0.3in">
+      <title>Dimension Is Well-Defined</title>
+      <statement>
+        <p>
+          Any two bases <m>\mathcal B_1</m> and <m>\mathcal B_2</m> of a nonzero subspace <m>H</m>
+          have the same number of vectors.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <p workspace="true"><strong>Some Examples:</strong>
+    <ol>
+      <li><m>\operatorname{dim}(\mathbb{R}^n)=n</m>.</li>
+      <li>
+        <m>H=\{(x_1,\dots,x_n): x_1+\cdots+x_n=0\}</m> has dimension <m>n-1</m>.
+      </li>
+      <li><m>\operatorname{dim}(\operatorname{Nul}A)</m> is the number of free variables.</li>
+      <li><m>\operatorname{dim}(\operatorname{Col}A)</m> is the number of pivotal columns.</li>
+    </ol>
+    </p>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-9-rank-definition">
+    <title>Rank</title>
+
+    <definition xml:id="def-rank">
+      <title>Rank</title>
+      <statement>
+        <p>
+          The <term>rank</term> of a matrix <m>A</m> is the dimension of its column space.
+        </p>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-rank-computation" workspace="true">
+      <statement>
+        <p>Compute <m>\operatorname{rank}(A)</m> and <m>\operatorname{dim}(\operatorname{Nul}A)</m>, where</p>
+        <me>
+          A = \begin{bmatrix}
+            2 \amp -3 \amp -12 \amp 4 \amp -7\\
+            4 \amp -5 \amp -22 \amp 3 \amp 1\\
+            -5 \amp 2 \amp 19 \amp -10 \amp -10\\
+            0 \amp 2 \amp 4 \amp 7 \amp -4
+          \end{bmatrix}
+          \sim
+          \begin{bmatrix}
+            1 \amp 0 \amp -3 \amp 0 \amp 8\\
+            0 \amp 1 \amp 2 \amp 0 \amp 5\\
+            0 \amp 0 \amp 0 \amp 1 \amp -2\\
+            0 \amp 0 \amp 0 \amp 0 \amp 0
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-9-rank-basis-invertibility-theorems">
+    <title>Rank, Basis, and Invertibility Theorems</title>
+
+    <theorem xml:id="thm-rank-theorem" workspace="true">
+      <title>Rank Theorem</title>
+      <statement>
+        <p>
+          If a matrix <m>A</m> has <m>n</m> columns, then
+        </p>
+        <me>\operatorname{rank}(A)+\operatorname{dim}(\operatorname{Null}A)=n.</me>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-basis-theorem" workspace="true">
+      <title>Basis Theorem</title>
+      <statement>
+        <p>Any two bases for a subspace have the same dimension.</p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-IMT-Cont-1" workspace="true">
+      <title>The Invertible Matrix Theorem (Continued) Theorem</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n\times n</m> matrix. The following are equivalent:
+        </p>
+        <ul marker="">
+          <li>(a) &#160; <m>A</m> is invertible.</li>
+          <li>(m) &#160; The columns of <m>A</m> form a basis for <m>\mathbb{R}^n</m>.</li>
+          <li>(n) &#160; <m>\operatorname{Col}A=\mathbb{R}^n</m>.</li>
+          <li>(o) &#160; <m>\operatorname{dim}\operatorname{Col}A=n</m>.</li>
+          <li>(p) &#160; <m>\operatorname{rank}A=n</m>.</li>
+          <li>(q) &#160; <m>\operatorname{Nul}A=\{\vec 0\}</m>.</li>
+          <li>(r) &#160; <m>\operatorname{dim}\operatorname{Nul}A=0</m>.</li>
+        </ul>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-2-9-examples">
+    <title>Examples</title>
+
+    <example xml:id="ex-rref-rank-questions">
+      <introduction>
+        <p>
+          For each part below, give an example of a <m>2\times 3</m> matrix <m>A</m> in RREF
+          with the stated property, if possible.
+        </p>
+    </introduction>
+    <task workspace="true">
+        <statement>
+            <p>
+                <m>\operatorname{rank}(A)=3</m>
+            </p>
+        </statement>
+    </task>
+    <task workspace="true">
+        <statement>
+            <p>
+                <m>\operatorname{rank}(A)=2</m>
+            </p>
+        </statement>
+    </task>
+    <task workspace="true">
+        <statement>
+            <p>
+                <m>\operatorname{dim}(\operatorname{Null}A)=2</m>
+            </p>
+        </statement>
+    </task>
+    <task workspace="true">
+        <statement>
+            <p>
+                <m>\operatorname{Null}(A)=\{\vec 0\}</m>
+            </p>
+        </statement>
+    </task>
+    </example>
+  </page>
+
+</handout>

@@ -1,0 +1,310 @@
+<handout xml:id="handout-section-3-3-area-volume-determinants">
+  <title>3.3 Applications of the Determinant</title>
+
+  <page xml:id="p-3-3-overview">
+    <title>Overview</title>
+
+    <objectives xml:id="obj-3-3-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>Relationships between area, volume, determinants, and linear transformations.</li>
+        <li>Cramer's Rule for linear systems.</li>
+      </ul>
+      </objectives>
+
+      <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>
+          Use determinants to compute the area of a parallelogram or the volume of a parallelepiped, possibly under a given linear transformation.
+        </li>
+        <li>Use determinants and Cramer's Rule to solve systems of linear equations.</li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+    <p>
+      In <m>\mathbb{R}^2</m>, determinants measure the (signed) area of the parallelogram
+      formed by two vectors.
+    </p>
+
+    <image xml:id="img-2by2-parallelogram" source="./2by2.png" width="40%">
+      <shortdescription>Parallelogram in the plane spanned by two vectors.</shortdescription>
+      <description>
+        Illustration of a parallelogram in <m>\mathbb{R}^2</m> spanned by two vectors forming a <m>2\times 2</m> matrix whose determinant gives the signed area.
+      </description>
+    </image>
+
+    <p>
+      Area of the parallelogram
+      <m>\;=\;\det\!\begin{bmatrix} a \amp c\\ b \amp d \end{bmatrix}\;=\;ad-bc</m>.
+    </p>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-area-abs-det">
+      <title>Area from the Determinant</title>
+      <statement>
+        <p>
+          The area of the parallelogram spanned by the columns of a <m>2\times 2</m> matrix <m>A</m> is <m>\lvert \operatorname{det}(A)\rvert</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <theorem xml:id="thm-volume-abs-det">
+      <title>Volume from the Determinant</title>
+      <statement>
+        <p>
+          The volume of the parallelepiped spanned by the columns of an <m>n\times n</m> matrix <m>A</m> is <m>\lvert \operatorname{det}(A)\rvert</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+</page>
+
+<page>
+    <title>Examples of Determinant giving Volume</title>
+    <example xml:id="ex-3-3-area-parallelogram" workspace="true">
+      <statement>
+        <p>
+          Calculate the area of the parallelogram determined by the points
+          <m>(-2,3)</m>, <m>(1,7)</m>, <m>(6,-3)</m>, and <m>(9,1)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+            Below is the graph of the parallelogram in <m>\mathbb{R}^2</m>.
+        </p>
+        <image width="50%">
+            <latex-image>
+                \begin{tikzpicture}[scale=0.5, baseline]
+                    % Axes
+                    \draw[&lt;-&gt;, thick] (-3.5,0) -- (10.5,0);
+                    \foreach \x in {-3,...,-1} {
+                        \draw[thin] (\x,-.1) -- (\x,0.1) node[anchor=south] {\small$\x$};
+                    }
+                    \foreach \x in {1,...,10} {
+                        \draw[thin] (\x,-.1) -- (\x,0.1) node[anchor=south] {\small$\x$};
+                    }
+                    \draw[&lt;-&gt;, thick] (0,-4.5) -- (0,9.5);
+                    \foreach \y in {-4,...,-1} {
+                        \draw[thin] (-0.1,\y) -- (0.1,\y) node[anchor=west] {\small$\y$};
+                    }
+                    \foreach \y in {1,...,9} {
+                        \draw[thin] (-0.1,\y) -- (0.1,\y) node[anchor=west] {\small$\y$};
+                    }
+
+                    % Parallelogram points
+                    \coordinate (A) at (-2,3);
+                    \coordinate (B) at (1,7);
+                    \coordinate (C) at (9,1);
+                    \coordinate (D) at (6,-3);
+
+                    % Draw parallelogram
+                    \draw[thick, fill=DarkBlue!30, fill opacity=0.5] (A) -- (B) -- (C) -- (D) -- cycle;
+
+                    % Mark points
+                    \fill (A) circle (3pt) node[left] {$(-2,3)$};
+                    \fill (B) circle (3pt) node[above right] {$(1,7)$};
+                    \fill (C) circle (3pt) node[above right] {$(9,1)$};
+                    \fill (D) circle (3pt) node[below] {$(6,-3)$};
+
+                \end{tikzpicture}
+            </latex-image>
+            <shortdescription>A drawing of the parallelogram in the plane.</shortdescription>
+        </image>
+        <p>
+                Notice that the vector <me>\vec v_1 = \begin{bmatrix} 1 - (-2) \\ 7 - 3 \end{bmatrix} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}</me> connects the point <m>(-2,3)</m> to the point <m>(1,7)</m>. Also, the vector <me>\vec v_2 = \begin{bmatrix} 6 - (-2) \\ -3 - 3 \end{bmatrix} = \begin{bmatrix} 8 \\ -6 \end{bmatrix}</me> connects the point <m>(-2,3)</m> to the point <m>(6,-3)</m>. Using <xref ref="thm-area-abs-det"/>, we have that the area of the parallelogram is <me>\left|\det\left(\begin{bmatrix} \vec v_1 \amp \vec v_2 \end{bmatrix}\right)\right| = \left|\det\left(\begin{bmatrix} 3 \amp 8 \\ 4 \amp -6 \end{bmatrix}\right)\right| = |-18 - 32| = 50.</me>
+            </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-3-3-area-triangle" workspace="true">
+      <statement>
+        <p>
+          Calculate the area of the triangle determined by the points
+          <m>(-3,-2)</m>, <m>(0,3)</m>, and <m>(4,-1)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+            Note that <xref ref="thm-area-abs-det"/> applies to parallelograms, not triangles. However, every triangle is half of some parallelogram. For example, notice in the graph below how the described triangle (in blue) can be extended by adjoining a copy of the triangle (in red) to one of the three edges and forming a parallelogram.
+        </p>
+        <image width="50%">
+            <latex-image>
+                \begin{tikzpicture}[scale=0.5, baseline]
+                    % Axes
+                    \draw[&lt;-&gt;, thick] (-4.5,0) -- (8.5,0);
+                    \foreach \x in {-4,...,-1} {
+                        \draw[thin] (\x,-.1) -- (\x,0.1) node[anchor=south] {\small$\x$};
+                    }
+                    \foreach \x in {1,...,8} {
+                        \draw[thin] (\x,-.1) -- (\x,0.1) node[anchor=south] {\small$\x$};
+                    }
+                    \draw[&lt;-&gt;, thick] (0,-3.5) -- (0,6.5);
+                    \foreach \y in {-3,...,-1} {
+                        \draw[thin] (-0.1,\y) -- (0.1,\y) node[anchor=west] {\small$\y$};
+                    }
+                    \foreach \y in {1,...,6} {
+                        \draw[thin] (-0.1,\y) -- (0.1,\y) node[anchor=west] {\small$\y$};
+                    }
+
+                    % Parallelogram points
+                    \coordinate (A) at (-3,-2);
+                    \coordinate (B) at (0,3);
+                    \coordinate (C) at (4,-1);
+                    \coordinate (D) at (7,4);
+
+                    % Draw parallelogram
+                    \draw[thick, fill=DarkBlue!30, fill opacity=0.5] (A) -- (B) -- (C) -- cycle;
+                    \draw[thick, fill=DarkRed!30, fill opacity=0.5] (B) -- (C) -- (D) -- cycle;
+
+                    % Mark points
+                    \fill (A) circle (3pt) node[left] {$(-3,-2)$};
+                    \fill (B) circle (3pt) node[above left] {$(0,3)$};
+                    \fill (C) circle (3pt) node[right] {$(4,-1)$};
+                    \fill (D) circle (3pt) node[above] {$(7,4)$};
+
+                \end{tikzpicture}
+            </latex-image>
+            <shortdescription>A drawing of the described triangle in the plane, adjoined with a copy of the triange with points (0,3), (4,-1), and (7,4), forming a parallelogram.</shortdescription>
+        </image>
+        <p>
+            It follows that the area of the triangle is half the area of the parallelogram. We see that vectors <me>\vec v_1 = \begin{bmatrix} 3 \\ 5 \end{bmatrix} \quad \text{and} \quad \vec v_2 = \begin{bmatrix} 7 \\ 1 \end{bmatrix}</me> describe adjacent sides of the parallelogram. Therefore, we have that the area of the triangle is <me>\dfrac{1}{2}\left|\det\left(\begin{bmatrix}3 \amp 7 \\ 5 \amp 1 \end{bmatrix}\right)\right| = \dfrac{1}{2}|3 - 35| = 16</me>.
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+
+  </page>
+
+
+  <page xml:id="p-3-3-linear-transformations">
+    <title>Linear Transformations and Volume Scaling</title>
+
+    <theorem xml:id="thm-linear-transform-volume-scale">
+      <title>Volume Scaling by a Linear Transformation</title>
+      <statement>
+        <p>
+          If <m>T_A:\mathbb{R}^n\to\mathbb{R}^n</m> is the linear transformation defined by
+          <m>T_A(\vec x)=A\vec x</m>, and <m>S</m> is any closed shape in
+          <m>\mathbb{R}^n</m>, then
+        </p>
+        <me>
+          \operatorname{volume}(T_A(S)) \;=\; \lvert \det(A)\rvert \cdot \operatorname{volume}(S).
+        </me>
+      </statement>
+    </theorem>
+
+    <p>
+        Some observations:
+        <ul>
+        <li>Recall from <xref ref="shearing-transformations" text="custom">Section 1.9</xref> that the matrix corresponding to a shearing linear transformation has the from <m>\begin{bmatrix} 1 \amp k \\ 0 \amp 1 \end{bmatrix}</m> or <m>\begin{bmatrix} 1 \amp 0 \\ k \amp 1 \end{bmatrix}</m>. Since each of these matrices has determinant 1, we see that shearing does not change the area of a shape.</li>
+        <li> Note that <m>S</m> can be <em>any</em> closed shape. This includes parallelograms, polygons, circles, or crazy blobs, as long as the edge of the shape is connected.</li>
+        </ul>
+    </p>
+
+    <p><nbsp/></p>
+
+    <example workspace="4in">
+        <statement>
+            <p>
+                Find the area of the interior <m>E</m> of the ellipse defined by the equation <me>\left(\dfrac{2x - y}{2}\right)^2 + \left(\dfrac{y + 3x}{3}\right)^2 = 1</me>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Below, we have included a graph of the ellipse <m>E</m> in the <m>xy</m>-plane.
+            </p>
+            <image width="50%">
+            <latex-image>
+                \begin{tikzpicture}[scale=1, baseline]
+                    % Axes
+                    \draw[&lt;-&gt;, thick] (-2.5,0) -- (2.5,0) node[right] {$x$};
+                    \foreach \x in {-2,...,-1} {
+                        \draw[thin] (\x,-.1) -- (\x,0.1) node[anchor=south] {\small$\x$};
+                    }
+                    \foreach \x in {1,...,2} {
+                        \draw[thin] (\x,-.1) -- (\x,0.1) node[anchor=south] {\small$\x$};
+                    }
+                    \draw[&lt;-&gt;, thick] (0,-2.5) -- (0,2.5) node[above] {$y$};
+                    \foreach \y in {-2,...,-1} {
+                        \draw[thin] (-0.1,\y) -- (0.1,\y) node[anchor=west] {\small$\y$};
+                    }
+                    \foreach \y in {1,...,2} {
+                        \draw[thin] (-0.1,\y) -- (0.1,\y) node[anchor=west] {\small$\y$};
+                    }
+
+                    \draw[thick, blue, domain=0:360, samples=200] plot ({(2*cos(\x) + 3*sin(\x))/5},{(6*sin(\x) - 6*cos(\x))/5});
+
+                \end{tikzpicture}
+            </latex-image>
+            <shortdescription>A drawing of the described ellipse in the standard coordinate system.</shortdescription>
+        </image>
+        <p>
+            It is difficult to find the area of this tilted ellipse using geometry. Instead, we will use <xref ref="thm-linear-transform-volume-scale"/>. We start with a change of variables. Let <m>u = \frac{2x - y}{2}</m> and <m>v = \frac{y + 3x}{3}</m>. Then, the equation for <m>E</m> in terms of <m>u</m> and <m>v</m> becomes <me>E: \left(\frac{2x - y}{2}\right)^2 + \left(\frac{y + 3x}{3}\right)^2 = 1 \quad \rightarrow \quad C: u^2 + v^2 = 1</me>. Note that <m>C</m> is the equation for the unit circle which has area <m>\pi</m>. 
+        </p>
+        <p><nbsp/></p>
+        <p>
+            In order to use <xref ref="thm-linear-transform-volume-scale"/>, we need to identify a linear transformation which maps the ellipse <m>E</m> in the <m>xy</m>-plane to the unit circle <m>C</m> in the <m>uv</m>-plane. Therefore, we need to find a linear transformation <m>T</m> which accepts a point <m>(x,y)</m> on <m>E</m> and returns a point <m>(u,v)</m> on <m>C</m>. Recalling the definition of <m>u</m> and <m>v</m> in terms of <m>x</m> and <m>y</m>, we see that <m>T</m> needs to do the following: <me>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} u \\ v \end{bmatrix} \quad \implies \quad T\left(\begin{bmatrix}x \\ y \end{bmatrix}\right) = \begin{bmatrix} \frac{2x - y}{2} \\ \frac{y + 3x}{3} \end{bmatrix}</me>. It follows that <me>T\left(\begin{bmatrix}x \\ y \end{bmatrix}\right) = \begin{bmatrix} \frac{2x - y}{2} \\ \frac{y + 3x}{3} \end{bmatrix} = \begin{bmatrix} x - \frac{1}{2}y \\ x + \frac{1}{3}y \end{bmatrix} = \begin{bmatrix} 1 \amp -\frac{1}{2} \\ 1 \amp \frac{1}{3}\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}</me>. Therefore, <me>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} 1 \amp -\frac{1}{2} \\ 1 \amp \frac{1}{3}\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}</me> is the linear transformation that maps <m>E</m> to <m>C = T(E)</m>.
+        </p>
+        <p><nbsp/></p>
+        <p>
+            By <xref ref="thm-linear-transform-volume-scale"/>, we have that <me>\operatorname{area}(T(E)) = \left|\det\left(\begin{bmatrix}1 \amp -\frac{1}{2} \\ 1 \amp \frac{1}{3}\end{bmatrix}\right)\right|\operatorname{area}(E)</me>. Since we know <m>T(E) = C</m> has area <m>\pi</m>, we find that <me>\operatorname{area}(E) = \dfrac{\pi}{1\left(\frac{1}{3}\right) - 1\left(-\frac{1}{2}\right)} = \frac{\pi}{\frac{5}{6}} = \frac{6\pi}{5}</me>. Thus, the area of the ellipse <m>E</m> is <m>\frac{6\pi}{5}</m>.
+        </p>
+        </solution>
+    </example>
+    <p><nbsp/></p>
+  </page>
+
+  <page>
+    <title>Cramer's Rule</title> 
+    <theorem xml:id="thm-cramers-rule">
+        <title>Cramer's Rule</title> 
+        <statement>
+            <p>
+                Let <m>A </m> be an invertible <m>n \times n</m> matrix and let <m>\vec b \in \mathbb{R}^n</m>. Then the system <m>A\vec x = \vec b</m> has the unique solution <m>\vec x</m> whose entires are given by <me>x_i = \dfrac{\det(A_i)}{\det(A)}</me>, where <m>A_i</m> is the matrix formed by replacing the <m>i^\text{th}</m> column of <m>A</m> by <m>\vec b</m>.
+            </p>
+        </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <example>
+        <statement>
+            <p>
+                Use <xref ref="thm-cramers-rule" text="custom"> Cramer's Rule</xref> to solve the system <me>\begin{bmatrix} 1 \amp 3 \amp 2 \\ -2 \amp 1 \amp 4 \\ 0 \amp 4 \amp 3 \end{bmatrix}\vec x = \begin{bmatrix} 1 \\ 9 \\ 0 \end{bmatrix}</me>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Let <me>A = \begin{bmatrix} \vec a_1 \amp \vec a_2 \amp \vec a_3 \end{bmatrix} = \begin{bmatrix} 1 \amp 3 \amp 2 \\ -2 \amp 1 \amp 4 \\ 0 \amp 4 \amp 3 \end{bmatrix} \quad \text{and} \quad \vec b = \begin{bmatrix} 1 \\ 9 \\ 0 \end{bmatrix}</me>. Expanding down the first column of <m>A</m>, we see that <me>\det(A) = 1\begin{vmatrix} 1 \amp 4 \\ 4 \amp 3 \end{vmatrix} - (-2)\begin{vmatrix} 3 \amp 2 \\ 4 \amp 3 \end{vmatrix} = (3-16) + 2(9-8) = -11 \neq 0</me>. Therefore, <m>A</m> is invertible matrix, so the system has a unique solution and we can use Cramer's Rule.
+            </p>
+            <p><nbsp/></p>
+            <p>
+                We find <m>A_1</m> by replacing the <em>first</em> column of <m>A</m> with <m>\vec b</m>: <me>A_1 = \begin{bmatrix} \vec b \amp \vec a_2 \amp \vec a_3 \end{bmatrix} = \begin{bmatrix} 1 \amp 3 \amp 2 \\ 9 \amp 1 \amp 4 \\ 0 \amp 4 \amp 3 \end{bmatrix}</me>. By expanding down the first column of <m>A_1</m>, we see that <me>\det(A_1) = 1\begin{vmatrix} 1 \amp 4 \\ 4 \amp 3 \end{vmatrix} - 9\begin{vmatrix} 3 \amp 2 \\ 4 \amp 3 \end{vmatrix} = (3 - 16) - 9(9-8) = -22</me>. It follows that <me>x_1 = \dfrac{\det(A_1)}{\det(A)} = \dfrac{-22}{-11} = 2</me>.
+            </p>
+            <p><nbsp/></p>
+            <p>
+                We find <m>A_2</m> by replacing the <em>second</em> column of <m>A</m> with <m>\vec b</m>: <me>A_2 = \begin{bmatrix} \vec a_1 \amp \vec b \amp \vec a_3 \end{bmatrix} = \begin{bmatrix} 1 \amp 1 \amp 2 \\ -2 \amp 9 \amp 4 \\ 0 \amp 0 \amp 3 \end{bmatrix}</me>. Expanding across the third row yields <me>\det(A_2) = 3\begin{vmatrix} 1 \amp 1 \\ -2 \amp 9 \end{vmatrix} = 3(9+2) = 33</me>. It follows that <me>x_2 = \dfrac{\det(A_2)}{\det(A)} = \dfrac{33}{-11} = -3</me>.
+            </p>
+            <p><nbsp/></p>
+            <p>
+                We find <m>A_3</m> by replacing the <em>third</em> column of <m>A</m> with <m>\vec b</m>: <me>A_3 = \begin{bmatrix} \vec a_1 \amp \vec a_2 \amp \vec b \end{bmatrix} = \begin{bmatrix} 1 \amp 3 \amp 1 \\ -2 \amp 1 \amp 9 \\ 0 \amp 4 \amp 0 \end{bmatrix}</me>. Expanding across the third row yields <me>\det(A_2) = -(4)\begin{vmatrix} 1 \amp 1 \\ -2 \amp 9 \end{vmatrix} = -4(9+2) = -44</me>. It follows that <me>x_3 = \dfrac{\det(A_3)}{\det(A)} = \dfrac{-44}{-11} = 4</me>.
+            </p>
+            <p><nbsp/></p>
+            <p>
+                Therefore, we have that the solution vector is <me>\vec x = \begin{bmatrix} 2 \\ -3 \\ 4 \end{bmatrix}</me>.
+            </p>
+        </solution>
+    </example>
+    
+  </page>
+
+</handout>

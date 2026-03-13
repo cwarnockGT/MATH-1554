@@ -1,0 +1,352 @@
+<handout xml:id="handout-section-5-1-eigenvalues-eigenvectors">
+  <title>5.1 Eigenvectors, Eigenvalues, and Eigenspaces</title>
+
+  <page xml:id="p-5-1-overview">
+    <title>Overview</title>
+
+    <objectives xml:id="obj-5-1-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>Eigenvectors, eigenvalues, and eigenspaces.</li>
+        <li>Eigenvalue theorems.</li>
+      </ul>
+      </objectives>
+
+      <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>Verify that a given vector is an eigenvector of a matrix.</li>
+        <li>Verify that a given scalar is an eigenvalue of a matrix.</li>
+        <li>Construct the eigenspace for a given eigenvalue of a matrix.</li>
+        <li>Apply eigenvalue theorems (e.g., to characterize invertibility).</li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+    <definition xml:id="def-eigenvalue-eigenvector" workspace="0.5in">
+      <title>Eigenvector and Eigenvalue</title>
+      <statement>
+        <p>
+          Let <m>A\in\mathbb{R}^{n\times n}</m>. If there exists a <em>nonzero</em> vector <m>\vec v\in\mathbb{R}^n</m> and a scalar <m>\lambda\in\mathbb{C}</m> such that
+        </p>
+        <me>
+          A\vec v = \lambda \vec v,
+        </me>
+        <p>
+          then <m>\vec v</m> is an <term>eigenvector</term> of <m>A</m> and <m>\lambda</m> is the corresponding <term>eigenvalue</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Notes:
+    </p>
+    <ul>
+      <li>We consider only square matrices.</li>
+      <li>
+        <p>If <m>\lambda\in\mathbb{R}</m>, then:
+        <ul>
+          <li>for <m>\lambda&gt;0</m>, vectors <m>A\vec v</m> and <m>\vec v</m> point in the same direction;</li>
+          <li>for <m>\lambda&lt;0</m>, they point in opposite directions.</li>
+        </ul>
+        </p>
+      </li>
+      <li>
+        Even when entries of <m>A</m> and <m>\vec v</m> are real, <m>\lambda</m> can be complex (e.g., a rotation by <m>90^\circ</m> counterclockwise in <m>\mathbb{R}^2</m> has no real eigenvalues).
+      </li>
+      <li>Complex eigenvalues will be explored in Section 5.5.</li>
+    </ul>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-1-example1">
+    <title>Example 1</title>
+
+    <example xml:id="ex-5-1-check-eigenvectors" workspace="true">
+      <introduction>
+        <p>
+          Which of the following are eigenvectors of
+        </p>
+        <me>
+          A=\begin{bmatrix}
+            1 \amp 1\\
+            1 \amp 1
+          \end{bmatrix}?
+        </me>
+        <p>What are the corresponding eigenvalues?</p>
+      </introduction>
+      <task workspace="2in">
+        <statement>
+            <p>
+                <m>\vec v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Note that <me>A\vec v_1 = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 1 \end{bmatrix}\begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 2 \\ 2 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ 1 \end{bmatrix} = 2\vec v_1</me>. Since <m>A \vec v_1 = 2 \vec v_1</m>, we have that <m>\vec v_1</m> is an eigenvector of <m>A</m> corresponding to an eigenvalue of <m>\lambda_1 = 2</m>.
+            </p>
+        </solution>
+      </task>
+      <task workspace="2in">
+        <statement>
+            <p>
+                <m>\vec v_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}</m>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Note that <me>A\vec v_2 = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 1 \end{bmatrix}\begin{bmatrix} 1 \\ -1 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix} = 0 \begin{bmatrix} 1 \\ -1 \end{bmatrix} = 0\vec v_2</me>. Since <m>A \vec v_2 = 0 \vec v_2</m>, we have that <m>\vec v_2</m> is an eigenvector of <m>A</m> corresponding to an eigenvalue of <m>\lambda_2 = 0</m>. Note that it is okay if the result of <m>A\vec v</m> is <m>\vec 0</m>. That does not break the definition of eigenvector. The problems is when <m>\vec v = \vec 0</m>.
+            </p>
+        </solution>
+      </task>
+      <task workspace="2in">
+        <statement>
+            <p>
+                <m>\vec v_3 = \begin{bmatrix} 0 \\ 0 \end{bmatrix}</m>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Since <m>\vec v_3 = \vec 0</m>, <xref ref="def-eigenvalue-eigenvector"/> forbids <m>\vec v_3</m> from being an eigenvector. The reason why is that <m>A\vec 0 = \lambda \vec 0</m> for every single <m>\lambda \in \mathbb{R}</m>, thus making every single real number an eigenvalue of <m>A</m> no matter the square matrix <m>A</m>. We don't want this to happen since we want eigenvalues to be rare. That is why we forbid <m>\vec 0</m> from being considered an eigenvector.
+            </p>
+        </solution>
+      </task>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-1-example2">
+    <title>Example 2</title>
+
+    <example xml:id="ex-5-1-confirm-eigenvalue" workspace="true">
+      <statement>
+        <p>
+          Confirm that <m>\lambda=3</m> is an eigenvalue of
+        </p>
+        <me>
+          A=\begin{bmatrix}
+            2 \amp -4\\
+            -1 \amp -1
+          \end{bmatrix}.
+        </me>
+      </statement>
+      <solution>
+        <p>
+            To show that <m>\lambda = 3</m> is an eigenvalue of <m>A</m>, we need to find a <em>nonzero</em> vector <m>\vec v</m> so that <m>A\vec v = 3\vec v</m>. Subtracting <m>3\vec v </m> from both sides and factoring yields <me>A\vec v = 3\vec v \quad \implies \quad A\vec v - 3I\vec v = \vec 0 \quad \implies \quad (A - 3I)\vec v = \vec 0</me>. Therefore, every <m>\vec v</m> which satisfies <m>A\vec v = 3\vec v</m> must live in <m>\Nul(A - 3I)</m>.
+        </p> 
+        <p>
+            Note: This should look very similar to the process for finding steady-state vectors for stochastic matrices. See <xref ref="ex-4-9-steady"/>. This is because steady-state vectors of a stochastic matrix <m>P</m> are actually just probability eigenvectors of <m>P</m> which correspond to an eigenvalue of <m>\lambda = 1</m>.
+        </p> 
+        <p>
+            Note that <me>A - 3I = \begin{bmatrix} 2 \amp -4 \\ -1 \amp -1 \end{bmatrix} - \begin{bmatrix} 3 \amp 0 \\ 0 \amp 3 \end{bmatrix} = \begin{bmatrix} -1 \amp -4 \\ -1 \amp -4 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 4 \\ 0 \amp 0 \end{bmatrix}</me>. By observation, we see that <m>\vec v = \begin{bmatrix} -4 \\ 1 \end{bmatrix}</m> is a nonzero vector in <m>\Nul(A - 3I).</m> Since <m>A - 3I</m> only had a single free varible, we know that <m>\Nul(A - 3I)</m> is 1-dimensional. Thus, we have that the eigenvectors of <m>A</m> which correspond to an eigenvalue of <m>\lambda = 3</m> are the nonzero vectors in <me>\Nul(A - 3I) = \Span\left\{\begin{bmatrix} -4 \\ 1 \end{bmatrix}\right\}</me>.
+        </p>
+        <p>
+            Let's check this for a particular nonzero vector in <me>\Nul(A - 3I) = \Span\left\{\begin{bmatrix} -4 \\ 1 \end{bmatrix}\right\}</me>. Let <m>\vec w = \begin{bmatrix} -8 \\ 2 \end{bmatrix} \in \Nul(A - 3I).</m> Note that <me>A\vec w = \begin{bmatrix}2 \amp -4 \\ -1 \amp -1 \end{bmatrix}\begin{bmatrix} -8 \\ 2 \end{bmatrix} = \begin{bmatrix} -24 \\ 6 \end{bmatrix} = 3\begin{bmatrix} -8 \\ 2 \end{bmatrix} = 3 \vec w</me>. Thus, <m>\vec w</m> is an eigenvector of <m>A</m> corresponding to an eigenvalue of <m>\lambda = 3</m>.
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-1-eigenspace">
+    <title>Eigenspaces</title>
+
+    <definition xml:id="def-eigenspace">
+      <title>Eigenspace</title>
+      <statement>
+        <p>
+          Suppose <m>A\in\mathbb{R}^{n\times n}</m>. For an eigenvalue <m>\lambda</m> of <m>A</m>, the set of all eigenvectors associated with <m>\lambda</m> together with the zero vector forms a subspace of <m>\mathbb{R}^n</m> called the <term><m>\lambda</m>-eigenspace</term> of <m>A</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      <em>Note:</em> The <m>\lambda</m>-eigenspace is precisely <m>\operatorname{Null}(A-\lambda I)</m>.
+    </p>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-5-1-eigenspace-basis" workspace="true">
+      <statement>
+        <p>
+          Construct a basis for the eigenspaces of
+        </p>
+        <me>
+          A=\begin{bmatrix}
+            5 \amp -6\\
+            3 \amp -4
+          \end{bmatrix},
+          \qquad \lambda=-1,\;2.
+        </me>
+      </statement>
+      <solution>
+        <p>
+            Similar to the solution of <xref ref="ex-5-1-confirm-eigenvalue"/>, for each suspected eigenvalue <m>\lambda</m>, we need to find a nonzero vector in <m>\Nul(A - \lambda I)</m>.
+        </p>
+        <p>
+            <m>\lambda_1 = -1:</m> Note that <me>A - \lambda I = A + I = \begin{bmatrix} 6 \amp -6 \\ 3 \amp -3 \end{bmatrix} \sim \begin{bmatrix} 1 \amp -1 \\ 0 \amp 0 \end{bmatrix}</me>. By observation, we see that <m>\vec v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \in \Nul(A + I)</m>. Since <m>A + I</m> had a single free variable, we have that <m>\dim(\Nul(A+I)) = 1</m>. Therefore, the <m>-1\text{-eigenspace}(A)</m> is 1-dimensional, so <m>\mathcal{B}_1 = \left\{\vec v_1 \right\}</m> is a basis for <m>-1\text{-eigenspace}(A)</m>. Furthermore, <me>-1\text{-eigenspace}(A) = \Nul(A + I) = \Span\left\{\begin{bmatrix} 1 \\ 1 \end{bmatrix}\right\}</me>.
+        </p>
+        <p>
+            Before moving on to the next eigenvalue, it is always a good idea to double-check that <m>\vec v_1</m> really is an eigenvector of <m>A</m> corresponding to <m>\lambda_1 = -1</m>. Note that <me>A\vec v_1 = \begin{bmatrix} 5 \amp -6 \\ 3 \amp -4 \end{bmatrix}\begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} -1 \\ -1 \end{bmatrix} = -1\begin{bmatrix} 1 \\ 1 \end{bmatrix} = -1\vec v_1</me>, which confirms that <m>\vec v_1</m> is an eigenvector of <m>A</m> corresponding to an eigenvalue of <m>\lambda_1 = -1</m>.
+        </p>
+        <p>
+            <m>\lambda_2 = 2:</m> Note that <me>A - \lambda I = A - 2I = \begin{bmatrix} 3 \amp -6 \\ 3 \amp -6 \end{bmatrix} \sim \begin{bmatrix} 1 \amp -2 \\ 0 \amp 0 \end{bmatrix}</me>. By observation, we see that <m>\vec v_2 = \begin{bmatrix} 2 \\ 1 \end{bmatrix} \in \Nul(A - 2I)</m>. Since <m>A - 2I</m> had a single free variable, we have that <m>\dim(\Nul(A- 2I)) = 1</m>. Therefore, the <m>2\text{-eigenspace}(A)</m> is 1-dimensional, so <m>\mathcal{B}_2 = \left\{\vec v_2 \right\}</m> is a basis for <m>2\text{-eigenspace}(A)</m>. Furthermore, <me>2\text{-eigenspace}(A) = \Nul(A - 2I) = \Span\left\{\begin{bmatrix} 2 \\ 1 \end{bmatrix}\right\}</me>.
+        </p>
+        <p>
+            Again, it is wise to double check that <m>\vec v_2</m> is an eigenvector for <m>A</m> corresponding to <m>\lambda_2 = 2</m>. Note that <me>A \vec v_2 = \begin{bmatrix} 5 \amp -6 \\ 3 \amp -4 \end{bmatrix}\begin{bmatrix} 2 \\ 1 \end{bmatrix} = \begin{bmatrix} 4 \\ 2 \end{bmatrix} = 2 \begin{bmatrix} 2 \\ 1 \end{bmatrix} = 2 \vec v_2</me>, which confirms that <m>\vec v_2</m> is an eigenvector for <m>A</m> corresponding to an eigenvalue of <m>\lambda_2 = 2</m>.
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-1-theorems">
+    <title>Eigenvalue Theorems</title>
+
+    <theorem xml:id="thm-triangular-diagonal-are-eigs" workspace="1in">
+      <title>Eigenvalues of Triangular Matrices</title>
+      <statement>
+        <p>
+          The eigenvalues of a triangular (upper or lower) matrix are its diagonal entries.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-invertible-iff-zero-not-eigenvalue" workspace="1in">
+      <title>Invertibility and the Eigenvalue 0</title>
+      <statement>
+        <p>
+          A matrix <m>A</m> is invertible if and only if <m>0</m> is not an eigenvalue of <m>A</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-stochastic-has-one" workspace="1in">
+      <title>Stochastic Matrices</title>
+      <statement>
+        <p>
+          A (column-)stochastic matrix always has an eigenvalue equal to <m>1</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-distinct-eigenvalues-independent" workspace="1in">
+      <title>Distinct Eigenvalues Give Independent Eigenvectors</title>
+      <statement>
+        <p>
+          If <m>\vec v_1,\vec v_2,\ldots,\vec v_k</m> are eigenvectors corresponding to distinct eigenvalues of <m>A</m>, then <m>\{\vec v_1,\ldots,\vec v_k\}</m> is linearly independent.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-1-warning">
+    <title>Warning: Row Reduction and Eigenvalues</title>
+
+    <note xml:id="warn-row-reduction-eigs">
+      <title>Warning</title>
+      <statement>
+        <p>
+          You cannot determine the eigenvalues of a matrix from its reduced row-echelon form.
+          Row operations generally change eigenvalues.
+        </p>
+      </statement>
+    </note>
+
+    <example>
+        <introduction>
+            <p>
+                Let
+                    <me>
+                    A=\begin{bmatrix}
+                        1 \amp 1\\
+                        1 \amp 1
+                    \end{bmatrix},
+                    </me>
+                which has eigenvalues <m>\lambda_1=2</m> and <m>\lambda_2=0</m>.
+            </p>
+        </introduction> 
+        <task workspace="2in">
+            <statement>
+                <p>
+                    Find eigenvectors for each eigenvalue of <m>A</m>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <m>\lambda_1 = 2:</m> Note that <me>A - \lambda_1 I = A - 2I = \begin{bmatrix} -1 \amp 1 \\ 1 \amp -1 \end{bmatrix} \sim \begin{bmatrix} 1 \amp -1 \\ 0 \amp 0 \end{bmatrix}</me>. By inspection, we see that <m>\vec v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m> is an eigenvector of <m>A</m> corresponding to an eigenvalue of <m>\lambda_1 = 2</m>. Furthermore, we have that <me>2\text{-eigenspace}(A) = \Nul(A-2I) = \Span\left\{\begin{bmatrix} 1 \\ 1 \end{bmatrix}\right\}.</me>
+                </p>
+                <p>
+                    <m>\lambda_2 = 0:</m> Note that <me>A - \lambda_2 I = A - 0I = A = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 1 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix}</me>. By inspection, we see that <m>\vec v_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}</m> is an eigenvector of <m>A</m> corresponding to an eigenvalue of <m>\lambda_2 = 0</m>. Furthermore, we have that <me>0\text{-eigenspace}(A) = \Nul(A) = \Span\left\{\begin{bmatrix} 1 \\ -1 \end{bmatrix}\right\}.</me>
+                </p>
+                <p>
+                    These calculations confirm what we saw in <xref ref="ex-5-1-check-eigenvectors"/>.
+                </p>
+            </solution>
+        </task>
+        <task workspace="1in">
+            <statement>
+                <p>
+                    Find the RREF of <m>A</m>. What are it's eigenvalues?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Note that <me>A = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 1 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix} = \text{RREF}(A)</me>. From <xref ref="thm-triangular-diagonal-are-eigs"/>, we see that the eigenalues of <m>\text{RREF}(A)</m> are <m>\lambda = 1,0</m>. Note that <m>\lambda_1 = 2</m> is an eigenvalue of <m>A</m>, but is <em>not</em> an eigenvalue of <m>\text{RREF}(A)</m>.
+                </p>
+            </solution>
+        </task>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+  <page>
+    <title>One more Example</title> 
+    <note xml:id="note-conv-lin-ind-eigs">
+      <title>Converse of <xref ref="thm-distinct-eigenvalues-independent"/></title>
+      <statement>
+        <p>
+          The converse of <xref ref="thm-distinct-eigenvalues-independent"/> is the following:
+        </p> 
+        <p> If <m>\{\vec v_1, \vec v_2, \dots, \vec v_k\}</m> are linearly independent eigenvectors of <m>A</m>, then <m>\vec v_1, \vec v_2, \dots, \vec v_k</m> must correspond to different eigenvalues.
+        </p>
+        <p>
+          This statement is <em>false</em>. See <xref ref="ex-2-dim-eigenspace"/> below.
+        </p>
+      </statement>
+    </note>
+
+    <example workspace="true" xml:id="ex-2-dim-eigenspace">
+      <statement> 
+        <p>
+        Let <me>A = \begin{bmatrix} 4 \amp -1 \amp 6 \\ 2 \amp 1 \amp 6 \\ 2 \amp -1 \amp 8 \end{bmatrix}.</me> One of the eigenvalues of <m>A</m> is <m>\lambda = 2</m>. Find a basis for the <m>2</m>-eigenspace of <m>A</m>.
+        </p>
+        </statement>
+        <solution>
+            <p>
+                Note that <me>A - 2I = \begin{bmatrix} 2 \amp -1 \amp 6 \\ 2 \amp -1 \amp 6 \\ 2 \amp -1 \amp 6 \end{bmatrix} \sim \begin{bmatrix} 2 \amp -1 \amp 6 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \end{bmatrix}</me>. Since <m>A - 2I</m> has two free variables, we have that <me>\dim(\Nul(A - 2I)) = 2</me>. Therefore, <m>2\text{-eigenspace}(A)</m> is two-dimensional, so we need to find two linearly independent vectors in <m>\Nul(A - 2I)</m> in order to find a basis for the eigenspace. You could find two such vectors by guessing, which isn't necessarily easy but does become easier with time. Or, you could find two vectors by using our typical process of setting <m>x_3 = t \in \mathbb{R}</m> and <m>x_2 = r \in \mathbb{R}</m> which yield <m>x_1 = \frac{1}{2}r - 3t</m> and <me>\vec x = \begin{bmatrix} \frac{1}{2}r - 3t \\ r \\ t \end{bmatrix} = r\begin{bmatrix} \frac{1}{2} \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} -3 \\ 0 \\ 1 \end{bmatrix} = \frac{r}{2} \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix} + t\begin{bmatrix} -3 \\ 0 \\ 1 \end{bmatrix}</me>. Either way, we find that a basis for <m>2\text{-eigenspace}(A)</m> is <me>\mathcal{B} = \left\{\begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ 0 \\ 1\end{bmatrix}\right\}</me>. You should double-check that these two vectors are linearly independent and belong to <m>2\text{-eigenspace}(A) = \Nul(A - 2I)</m>. It follows that <me>2\text{-eigenspace}(A) = \Nul(A - 2I) = \Span\left\{\begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ 0 \\ 1\end{bmatrix}\right\}.</me>
+            </p>
+        </solution>
+      </example>
+  </page>
+
+</handout>

@@ -1,0 +1,374 @@
+<handout xml:id="handout-section-5-3-diagonalization">
+  <!-- <title>Section 5.3: Diagonalization and Computing Matrix Powers</title> -->
+
+  <page xml:id="p-5-3-overview">
+    <title>Overview</title>
+
+    <p>
+      <em>Motivation:</em> It can be useful to take large powers of matrices, for example <m>A^k</m> for large <m>k</m>.
+    </p>
+    <p>
+      <em>But:</em> Multiplying two <m>n\times n</m> matrices requires roughly <m>n^3</m> computations.
+    </p>
+    <p>
+      <em>Question:</em> Is there a more efficient way to compute <m>A^k</m>?
+    </p>
+
+    <p><nbsp/></p>
+
+    <objectives xml:id="obj-5-3-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>Similar matrices</li>
+        <li>Diagonal, similar, and diagonalizable matrices</li>
+        <li>Diagonalizing matrices</li>
+      </ul>
+    </objectives>
+
+    <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>Determine whether a matrix can be diagonalized, and if possible diagonalize a square matrix.</li>
+        <li>Apply diagonalization to compute matrix powers.</li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+
+    <definition xml:id="def-similar-matrices">
+      <title>Similarity</title>
+      <statement>
+        <p>
+          Two <m>n\times n</m> matrices <m>A</m> and <m>B</m> are <term>similar</term> if there exists an invertible matrix <m>P</m> such that <m>A=PBP^{-1}.</m></p>
+      </statement>
+    </definition>
+
+    <p>
+      Matrix similarity is an <em>equivalence relation</em> meaning:
+      <ul>
+        <li>
+          <p workspace="true">
+            <em>Reflexive Property</em>: Every matrix <m>A</m> is similar to itself.
+          </p>
+        </li>
+        <li>
+          <p workspace="true">
+            <em>Symmetric Property</em>: If <m>A</m> is similar to <m>B</m>, then <m>B</m> is similar to <m>A</m>.
+          </p>
+        </li>
+        <li>
+          <p workspace="true">
+            <em>Transitive Property</em>: If <m>A</m> is similar to <m>B</m> and <m>B</m> is similar to <m>C</m>, then <m>A</m> is similar to <m>C</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p><nbsp/></p>
+
+  </page>
+
+  <page>
+
+    <theorem xml:id="thm-similar-same-charpoly" workspace="true">
+      <title>Characteristic Polynomial of Similar Matrices</title>
+      <statement>
+        <p>
+          If <m>A</m> and <m>B</m> are similar, then they have the same characteristic polynomial.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <p>
+      Notes: 
+      <ul>
+        <li>Similar matrices have exactly the same eigenvalues with exactly the same algebraic multiplicity for each eigenvalue and exactly the same geometric multiplicity for each eigenvalue.</li>
+        <li>The converse of <xref ref="thm-similar-same-charpoly"/> is not true; that is, just because two matrices have the same characterisitc polynomial, that does not mean that they are similar. For example,
+        <me>
+          \begin{bmatrix}
+            0 \amp 1\\
+            0 \amp 0
+          \end{bmatrix}
+          \quad\text{and}\quad
+          \begin{bmatrix}
+            0 \amp 0\\
+            0 \amp 0
+          \end{bmatrix}
+        </me>
+        have the same characteristic polynomial, but are not similar because the eigenvalue <m>\lambda = 0</m> does not have the same geometric multiplicty for each matrix.</li>
+      </ul>
+    </p>
+
+    <p><nbsp/></p>
+
+    <example workspace="true">
+      <statement>
+        <p>
+          True or false: If <m>A </m> is similar to the identity matrix, then <m>A</m> is equal to the identity matrix.
+        </p>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+
+    
+  </page>
+
+
+  <page xml:id="p-5-3-diagonal-matrices">
+    <title>Diagonal Matrices</title>
+
+    <definition xml:id="def-diagonal-matrix">
+      <title>Diagonal Matrix</title>
+      <statement>
+        <p>
+          A matrix is <term>diagonal</term> if the only nonzero entries (if any) lie on the main diagonal.
+          In this course, we work only with square diagonal matrices.
+        </p>
+      </statement>
+    </definition>
+
+    <p>Examples of diagonal matrices:</p>
+    <me>
+      \begin{bmatrix}2 \amp 0\\ 0 \amp 2\end{bmatrix},\quad
+      \begin{bmatrix}2\end{bmatrix},\quad
+      I_n,\quad
+      \begin{bmatrix}0 \amp 0\\ 0 \amp 0\end{bmatrix}.
+    </me>
+
+    <p><nbsp/></p>
+
+
+
+    <p>
+      If <m>A</m> is diagonal, then <m>A^k</m> is easy to compute by raising diagonal entries to the <m>k</m>-th power.
+    </p>
+
+    <example xml:id="ex-5-3-powers-diagonal" workspace="true">
+      <title>Example: Powers of a Diagonal Matrix</title>
+      <statement>
+        <p>Let <me> A=\begin{bmatrix} 3 \amp 0\\ 0 \amp 0.5 \end{bmatrix}</me>. Compute <m>A^2</m> and <m>A^k</m>.</p>
+      </statement>
+    </example>
+
+    <p workspace="1.5in">
+      Is this as easy to do if <m>A</m> is <em>not</em> diagonal?
+    </p>
+
+    <p workspace="1.5in">
+      What about if <m>A</m> is <em>similar</em> to a diagonal matrix?
+    </p>
+
+  </page>
+
+
+  <page xml:id="p-5-3-diagonalization-definition">
+    <title>Diagonalization</title>
+
+    <definition xml:id="def-diagonalizable">
+      <title>Diagonalizable Matrix</title>
+      <statement>
+        <p>
+          A matrix <m>A\in\mathbb{R}^{n\times n}</m> is <term>diagonalizable</term> if it is similar to a diagonal matrix
+          <m>D</m>; that is, there exists an invertible matrix <m>P</m> such that
+        </p>
+        <me>
+          A=PDP^{-1}.
+        </me>
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-3-diagonalization-theorem">
+    <title>Characterizing Diagonalizability</title>
+
+    <theorem xml:id="thm-diagonalizable-iff-n-lin-ind-eigenvectors" workspace="true">
+      <title>Diagonalization Criterion</title>
+      <statement>
+        <p>
+          A matrix <m>A</m> is diagonalizable if and only if <m>A</m> has <m>n</m> linearly independent eigenvectors.
+          Equivalently,
+        </p>
+        <me>
+          A = \bigl[\vec v_1\ \vec v_2\ \cdots\ \vec v_n\bigr]\,
+          \begin{bmatrix}
+            \lambda_1 \amp  \amp  \amp \\
+             \amp \lambda_2 \amp  \amp \\
+             \amp  \amp \ddots \amp \\
+             \amp  \amp  \amp \lambda_n
+          \end{bmatrix}
+          \bigl[\vec v_1\ \vec v_2\ \cdots\ \vec v_n\bigr]^{-1},
+        </me>
+        <p>
+          where <m>\vec v_1,\dots,\vec v_n</m> are linearly independent eigenvectors and
+          <m>\lambda_1,\dots,\lambda_n</m> are the corresponding eigenvalues (in order).
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-diagonalizable-multiplicity-conditions" workspace="true">
+      <title>Algebraic vs. Geometric Multiplicity</title>
+      <statement>
+        <p>Suppose:</p>
+        <ul>
+          <li><m>A</m> is <m>n\times n</m>,</li>
+          <li><m>A</m> has distinct eigenvalues <m>\lambda_1,\ldots,\lambda_k</m> with <m>k\le n</m>,</li>
+          <li><m>a_i</m> is the algebraic multiplicity of <m>\lambda_i</m>,</li>
+          <li><m>d_i</m> is the geometric multiplicity (dimension of the <m>\lambda_i</m>-eigenspace).</li>
+        </ul>
+        <p>Then:</p>
+        <ol>
+          <li><m>d_i \le a_i</m> for all <m>i</m>.</li>
+          <li>
+            <m>A</m> is diagonalizable <m> \ \iff \ \sum_i d_i = n \ \iff \ d_i=a_i</m> for all <m>i</m>.
+          </li>
+          <li>
+            <m>A</m> is diagonalizable <m>\iff</m> the eigenvectors for all eigenvalues together form a basis of <m>\mathbb{R}^n</m>.
+          </li>
+        </ol>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-n-distinct-eigs-implies-diagonalizable" workspace="true">
+      <title>Diagonalization with Distinct Eigenvalues</title>
+      <statement>
+        <p>
+          If <m>A</m> is <m>n\times n</m> and has <m>n</m> distinct eigenvalues, then <m>A</m> is diagonalizable.
+        </p>
+      </statement>
+    </theorem>
+
+    
+
+    <p><nbsp/></p>
+
+  </page>
+
+  <page>
+
+
+        <example xml:id="ex-5-3-diagonalize-1" workspace="true">
+      <statement>
+        <p>Diagonalize if possible:</p>
+        <me>
+          \begin{bmatrix}
+            3 \amp 1\\
+            0 \amp 3
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+    
+  </page>
+
+
+  <page xml:id="p-5-3-example-2">
+    <title>Example 2: Diagonalize if Possible</title>
+
+    <example xml:id="ex-5-3-diagonalize-2" workspace="true">
+      <statement>
+        <p>Diagonalize if possible:</p>
+        <me>
+          \begin{bmatrix}
+            2 \amp 6\\
+            0 \amp -1
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+
+  </page>
+
+
+
+  <page xml:id="p-5-3-example-3">
+    <title>Example 3: Build P and D</title>
+
+    <example xml:id="ex-5-3-construct-PD" workspace="true">
+      <statement>
+        <p>
+          The eigenvalues of <m>A</m> are <m>\lambda=3,1</m>. If possible, construct <m>P</m> and <m>D</m> such that
+          <m>A=PDP^{-1}</m>. Verify by checking that <m>AP = PD</m>.
+        </p>
+        <me>
+          A=\begin{bmatrix}
+            7 \amp 4 \amp 16\\
+            2 \amp 5 \amp 8\\
+            -2 \amp -2 \amp -5
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+
+  </page>
+
+   <page xml:id="p-5-3-example-4">
+    <title>Example 3: Build P and D</title>
+
+    <example xml:id="ex-5-3-diagonalize-3-by-3" workspace="true">
+      <statement>
+        <p>
+          Diagonalize the following matrix, if possible.
+        </p>
+        <me>
+          A=\begin{bmatrix}
+            2 \amp 4 \amp 3\\
+            -4 \amp -6 \amp -3\\
+            3 \amp 3 \amp 1
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+    
+  </page>
+
+
+  <page xml:id="p-5-3-fibonacci-example">
+    <title>Additional Example (if time permits)</title>
+
+    <example xml:id="ex-5-3-fibonacci" workspace="true">
+      <title>Diagonalization and a Famous Sequence</title>
+      <statement>
+        <p>
+          Note that
+        </p>
+        <me>
+          \vec x_k=
+          \begin{bmatrix}
+            0 \amp 1\\
+            1 \amp 1
+          \end{bmatrix}\vec x_{k-1},\quad
+          \vec x_0=
+          \begin{bmatrix}
+            1\\
+            1
+          \end{bmatrix},\quad
+          k=1,2,3,\ldots
+        </me>
+        <p>
+          generates a well-known sequence of numbers. Use diagonalization to find a matrix expression that gives the
+          <m>n</m>-th number in this sequence.
+        </p>
+      </statement>
+    </example>
+  </page>
+
+</handout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="chapter-5" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Eigenvectors and Eigenvalues</title>
+
+  <section xml:id="Section-5-1">
+    <title>5.1 Eigenvectors, Eigenvalues, and Eigenspaces</title>
+      <xi:include href="./chapter-5-notes/section-5-1-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-5-2">
+    <title>5.2 The Characteristic Equation</title>
+      <xi:include href="./chapter-5-notes/section-5-2-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-5-3">
+    <title>5.3 Diagonalization</title>
+      <xi:include href="./chapter-5-notes/section-5-3-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-5-5">
+    <title>5.5 Complex Eigenvalues</title>
+      <xi:include href="./chapter-5-notes/section-5-5.ptx" />
+  </section>
+
+
+  
+  
+
+</chapter>

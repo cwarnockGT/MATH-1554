@@ -1,0 +1,155 @@
+<handout xml:id="handout-section-3-3-area-volume-determinants">
+  <title>3.3 Applications of the Determinant</title>
+
+  <page xml:id="p-3-3-overview">
+    <title>Overview</title>
+
+    <objectives xml:id="obj-3-3-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>Relationships between area, volume, determinants, and linear transformations.</li>
+        <li>Cramer's Rule for linear systems.</li>
+      </ul>
+      </objectives>
+
+      <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>
+          Use determinants to compute the area of a parallelogram or the volume of a parallelepiped, possibly under a given linear transformation.
+        </li>
+        <li>Use determinants and Cramer's Rule to solve systems of linear equations.</li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+    <p>
+      In <m>\mathbb{R}^2</m>, determinants measure the (signed) area of the parallelogram
+      formed by two vectors.
+    </p>
+
+    <image xml:id="img-2by2-parallelogram" source="./2by2.png" width="40%">
+      <shortdescription>Parallelogram in the plane spanned by two vectors.</shortdescription>
+      <description>
+        Illustration of a parallelogram in <m>\mathbb{R}^2</m> spanned by two vectors forming a <m>2\times 2</m> matrix whose determinant gives the signed area.
+      </description>
+    </image>
+
+    <p>
+      Area of the parallelogram
+      <m>\;=\;\det\!\begin{bmatrix} a \amp c\\ b \amp d \end{bmatrix}\;=\;ad-bc</m>.
+    </p>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-area-abs-det">
+      <title>Area from the Determinant</title>
+      <statement>
+        <p>
+          The area of the parallelogram spanned by the columns of a <m>2\times 2</m> matrix <m>A</m> is <m>\lvert \operatorname{det}(A)\rvert</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <theorem xml:id="thm-volume-abs-det">
+      <title>Volume from the Determinant</title>
+      <statement>
+        <p>
+          The volume of the parallelepiped spanned by the columns of an <m>n\times n</m> matrix <m>A</m> is <m>\lvert \operatorname{det}(A)\rvert</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+</page>
+
+<page>
+    <title>Examples of Determinant giving Volume</title>
+    <example xml:id="ex-3-3-area-parallelogram" workspace="true">
+      <statement>
+        <p>
+          Calculate the area of the parallelogram determined by the points
+          <m>(-2,3)</m>, <m>(1,7)</m>, <m>(6,-3)</m>, and <m>(9,1)</m>.
+        </p>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-3-3-area-triangle" workspace="true">
+      <statement>
+        <p>
+          Calculate the area of the triangle determined by the points
+          <m>(-3,-2)</m>, <m>(0,3)</m>, and <m>(4,-1)</m>.
+        </p>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+
+  </page>
+
+
+  <page xml:id="p-3-3-linear-transformations">
+    <title>Linear Transformations and Volume Scaling</title>
+
+    <theorem xml:id="thm-linear-transform-volume-scale">
+      <title>Volume Scaling by a Linear Transformation</title>
+      <statement>
+        <p>
+          If <m>T_A:\mathbb{R}^n\to\mathbb{R}^n</m> is the linear transformation defined by
+          <m>T_A(\vec x)=A\vec x</m>, and <m>S</m> is any closed shape in
+          <m>\mathbb{R}^n</m>, then
+        </p>
+        <me>
+          \operatorname{volume}(T_A(S)) \;=\; \lvert \det(A)\rvert \cdot \operatorname{volume}(S).
+        </me>
+      </statement>
+    </theorem>
+
+    <p>
+        Some observations:
+        <ul>
+        <li>Recall from <xref ref="shearing-transformations" text="custom">Section 1.9</xref> that the matrix corresponding to a shearing linear transformation has the from <m>\begin{bmatrix} 1 \amp k \\ 0 \amp 1 \end{bmatrix}</m> or <m>\begin{bmatrix} 1 \amp 0 \\ k \amp 1 \end{bmatrix}</m>. Since each of these matrices has determinant 1, we see that shearing does not change the area of a shape.</li>
+        <li> Note that <m>S</m> can be <em>any</em> closed shape. This includes parallelograms, polygons, circles, or crazy blobs, as long as the edge of the shape is connected.</li>
+        </ul>
+    </p>
+
+    <p><nbsp/></p>
+
+    <example workspace="4in">
+        <statement>
+            <p>
+                Find the area of the interior <m>E</m> of the ellipse defined by the equation <me>\left(\dfrac{2x - y}{2}\right)^2 + \left(\dfrac{y + 3x}{3}\right)^2 = 1</me>.
+            </p>
+        </statement>
+    </example>
+    <p><nbsp/></p>
+  </page>
+
+  <page>
+    <title>Cramer's Rule</title> 
+    <theorem xml:id="thm-cramers-rule">
+        <title>Cramer's Rule</title> 
+        <statement>
+            <p>
+                Let <m>A </m> be an invertible <m>n \times n</m> matrix and let <m>\vec b \in \mathbb{R}^n</m>. Then the system <m>A\vec x = \vec b</m> has the unique solution <m>\vec x</m> whose entires are given by <me>x_i = \dfrac{\det(A_i)}{\det(A)}</me>, where <m>A_i</m> is the matrix formed by replacing the <m>i^\text{th}</m> column of <m>A</m> by <m>\vec b</m>.
+            </p>
+        </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+
+    <example>
+        <statement>
+            <p>
+                Use <xref ref="thm-cramers-rule" text="custom"> Cramer's Rule</xref> to solve the system <me>\begin{bmatrix} 1 \amp 3 \amp 2 \\ -2 \amp 1 \amp 4 \\ 0 \amp 4 \amp 3 \end{bmatrix}\vec x = \begin{bmatrix} 1 \\ 9 \\ 0 \end{bmatrix}</me>.
+            </p>
+        </statement>
+    </example>
+    
+  </page>
+
+</handout>

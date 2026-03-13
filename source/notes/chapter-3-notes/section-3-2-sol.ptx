@@ -1,0 +1,227 @@
+<handout xml:id="handout-section-3-2-determinant-properties">
+  <title>3.2 Properties of the Determinant</title>
+
+  <page xml:id="p-3-2-overview">
+    <title>Overview</title>
+
+    <objectives xml:id="obj-3-2-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>The relationships between row reductions, invertibility, and determinants.</li>
+      </ul>
+      </objectives>
+
+      <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>
+          Apply determinant properties (related to row reductions, transpose, and matrix products)
+          to compute determinants efficiently.
+        </li>
+        <li>
+          Use determinants to determine whether a square matrix is invertible.
+        </li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+    <p>
+      We have a method for computing determinants, but without the strategies in this section,
+      the cofactor-expansion algorithm can be very inefficient. Row operations provide a more efficient method.
+    </p>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-det-row-operations" workspace="true">
+      <title>Row Operations and the Determinant</title>
+      <statement>
+        <p>Let <m>A</m> be a square matrix.</p>
+        <ol>
+          <li>
+            If a multiple of one row of <m>A</m> is added to another to produce <m>B</m>,
+            then <m>\operatorname{det}(B)=\operatorname{det}(A)</m>.
+          </li>
+
+          <li>
+            If two rows of <m>A</m> are interchanged to produce <m>B</m>,
+            then <m>\operatorname{det}(B)=-\operatorname{det}(A)</m>.
+          </li>
+
+          <li>
+            If a row of <m>A</m> is multiplied by a scalar <m>k</m> to produce <m>B</m>,
+            then <m>\operatorname{det}(B)=k\operatorname{det}(A)</m>.
+          </li>
+        </ol>
+      </statement>
+    </theorem>
+    <solution>
+        <p>
+            Let <m>A = \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix}</m>. Note that <m>\det(A) = 1(4) - 2(3) = -2.</m> Below, we will use an example of each type of row operation to show how the determinant changes according to <xref ref="thm-det-row-operations"/>.
+            <ol>
+                <li>
+                    <p>
+                        Consider the row replacement operation <m>R_1 + 7R_2 \rightarrow R_1</m>: <me>A \sim \begin{bmatrix} 22 \amp 30 \\ 3 \amp 4 \end{bmatrix} = B</me>. Note that <m>\det(B) = 22(4) - 30(3) = 88 - 90 = -2 = \det(A).</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Consider swapping Row 1 and Row 2: <me> A \sim \begin{bmatrix} 3 \amp 4 \\ 1 \amp 2 \end{bmatrix} = C</me>. Note that <m>\det(C) = 3(2) - 4(1) = 2 = -\det(A)</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Consider the row scaling operation <m>3R_1 \rightarrow R_1</m>: <me>A \sim \begin{bmatrix} 3 \amp 6 \\ 3 \amp 4 \end{bmatrix} = D</me>. Note that <m>\det(D) = 3(4) - 6(3) = 12 - 18 = -6 = 3\det(A).</m>
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </solution>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-3-2-example1">
+    <title>Example 1</title>
+
+    <example xml:id="ex-3-2-rowops-example1" workspace="1.5in">
+      <statement>
+        <p>Compute:</p>
+        <me>
+          \begin{vmatrix}
+            1 \amp -4 \amp 2\\
+            -2 \amp 8 \amp -9\\
+            -1 \amp 7 \amp 3
+          \end{vmatrix}
+        </me>
+      </statement>
+      <solution>
+        <p>
+            Since the matrix does not have any zeros, we start by performing row operations to create some zeros below the pivots. Then we use cofactor expansion. Feel free to go all the way to echelon form if you want. <me>\begin{vmatrix} 1 \amp -4 \amp 2 \\ -2 \amp 8 \amp -9 \\ -1 \amp 7 \amp 3 \end{vmatrix} \overset{R_2 + 2R_1 \rightarrow R_2}{\underset{R_3 + R_1 \rightarrow R_3}{=}} \begin{vmatrix} 1 \amp -4 \amp 2 \\ 0 \amp 0 \amp -5 \\ 0 \amp 3 \amp 5 \end{vmatrix} = 1\begin{vmatrix} 0 \amp -5 \\ 3 \amp 5 \end{vmatrix}  = 15</me>. Instead of expanding over the first column, we could have expanded over the second row, which would have resulted in <me>\begin{vmatrix} 1 \amp -4 \amp 2 \\ 0 \amp 0 \amp -5 \\ 0 \amp 3 \amp 5 \end{vmatrix} = -(-5)\begin{vmatrix} 1 \amp -4 \\ 0 \amp 3 \end{vmatrix} = 5(3) = 15.</me> Instead of using cofactor expansion, we could have swapped Row 2 and Row 3, which would negate my determinant by <xref ref="thm-det-row-operations"/>, and then used <xref ref="thm-triangular-det"/>. This would result in <me>\begin{vmatrix} 1 \amp -4 \amp 2 \\ 0 \amp 0 \amp -5 \\ 0 \amp 3 \amp 5 \end{vmatrix} \overset{\text{Swap $R_2$ and $R_3$}}{=} -\begin{vmatrix} 1 \amp -4 \amp 2 \\ 0 \amp 3 \amp 5 \\ 0 \amp 0 \amp -5  \end{vmatrix} = -1(3)(-5) = 15</me>. Regardless of the path chosen to evaluate the determinant, we get the same answer.
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-3-2-rowops-example2" workspace="true">
+      <statement>
+        <p>Compute:</p>
+        <me>
+          \begin{vmatrix}
+            2 \amp 6 \amp -5 \amp 2\\
+            2 \amp 5 \amp -7 \amp 3\\
+            4 \amp 15 \amp -4 \amp 6\\
+            -2 \amp -5 \amp 4 \amp 2
+          \end{vmatrix}
+        </me>
+      </statement>
+      <solution>
+        <p>
+            In this example, we will reduce the matrix all the way down to REF and then apply <xref ref="thm-triangular-det"/>. Note that 
+        </p>
+        <m>\begin{eqnarray*} \begin{vmatrix} 2 \amp 6 \amp -5 \amp 2 \\ 2 \amp 5 \amp -7 \amp 3 \\ 4 \amp 15 \amp -4 \amp 6 \\ -2 \amp -5 \amp 4 \amp 2 \end{vmatrix} \amp \overset{R_2 - R_1 \rightarrow R_2}{\underset{\begin{array}{c} R_3 - 2R_2 \rightarrow R_3 \\ R_4 + R_1 \rightarrow R_4 \end{array}}{=}} \amp \begin{vmatrix} 2 \amp 6 \amp -5 \amp 2 \\ 0 \amp -1 \amp -2 \amp 1 \\ 0 \amp 3 \amp 6 \amp 2 \\ 0 \amp 1 \amp -1 \amp 4 \end{vmatrix} \\ \amp \overset{R_3 + 3R_2 \rightarrow R_3}{\underset{R_4 + R_2 \rightarrow R_4}{=}} \amp \begin{vmatrix} 2 \amp 6 \amp -5 \amp 2 \\ 0 \amp -1 \amp -2 \amp 1 \\ 0 \amp 0 \amp 0 \amp 5 \\ 0 \amp 0 \amp -3 \amp 5 \end{vmatrix} \\ \amp \overset{\text{Swap $R_3$ and $R_4$}}{=} \amp  -\begin{vmatrix} 2 \amp 6 \amp -5 \amp 2 \\ 0 \amp -1 \amp -2 \amp 1 \\ 0 \amp 0 \amp -3 \amp 5 \\ 0 \amp 0 \amp 0 \amp 5 \end{vmatrix} \\ \amp = \amp -(2)(-1)(-3)(5) \\ \amp = \amp -30 \end{eqnarray*}</m>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-3-2-invertibility">
+    <title>Determinants and Invertibility</title>
+
+    <theorem xml:id="thm-det-prod-pivots" workspace="true">
+        <statement>
+            <p>
+                If <m>A</m> is reduced to echelon form using <m>r</m> row interchanges, then
+            </p>
+            <me>
+            |A|=
+            \begin{cases}
+                (-1)^r \times \text{(product of pivots)}, \amp \text{if $A$ is invertible},\\[4pt]
+                0, \amp \text{if $A$ is singular}.
+            \end{cases}
+            </me>
+        </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+    
+    
+    <theorem xml:id="thm-det-props" workspace="true">
+        <statement>
+            <p>
+                For any <m>n \times n</m> matrices <m>A</m> and <m>B</m>, the following properties hold:
+            </p>
+            <ol>
+
+            <li><m>A</m> is invertible if and only if <m>\operatorname{det}(A)\neq 0</m>.</li>
+
+            <li><m>\operatorname{det}(AB)=\operatorname{det}(A)\operatorname{det}(B)</m>.</li>
+            
+            <li><m>\operatorname{det}(A)=\operatorname{det}(A^T)</m>.</li>
+        </ol>
+        </statement>
+    </theorem>
+    <p><nbsp/></p>
+    
+  </page>
+
+
+  <page xml:id="p-3-2-additional-example-lambda">
+    <title>Additional Example</title>
+
+    <example xml:id="ex-3-2-det-power" workspace="1.5in">
+      <statement>
+        <p>Determine the value of:</p>
+        <me>
+          \operatorname{det}(A)
+          =
+          \operatorname{det}
+          \left(
+            \begin{bmatrix}
+              0 \amp 2 \amp 0\\
+              1 \amp 1 \amp 2\\
+              1 \amp 1 \amp 3
+            \end{bmatrix}^8
+          \right).
+        </me>
+      </statement>
+      <solution>
+        <p>
+            Since the determinant is multiplicative (<xref ref="thm-det-props"/> part (b)), we have the following: <me>\det\left(\begin{bmatrix} 0 \amp 2 \amp 0 \\ 1 \amp 1 \amp 2 \\ 1 \amp 1 \amp 3 \end{bmatrix}^8\right) = \det\left(\begin{bmatrix} 0 \amp 2 \amp 0 \\ 1 \amp 1 \amp 2 \\ 1 \amp 1 \amp 3 \end{bmatrix}\right)^8 = \left(-2\begin{vmatrix} 1 \amp 2 \\ 1 \amp 3 \end{vmatrix}\right)^8 = 256.</me>
+        </p>
+      </solution>
+    </example>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-3-2-lambda" workspace="true">
+      <statement>
+        <p>
+          Use the determinant to find all values of <m>\lambda</m> for which the matrix <m>C</m> is not invertible.
+        </p>
+        <me>
+          C=
+          \begin{bmatrix}
+            5 \amp 0 \amp 0\\
+            0 \amp 0 \amp 1\\
+            1 \amp 1 \amp 0
+          \end{bmatrix}
+          -
+          \lambda I_3.
+        </me>
+      </statement>
+      <solution>
+        <p>
+            First, note that <m>C </m> can be written as <me>C = \begin{bmatrix} 5 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \\ 1 \amp 1 \amp 0 \end{bmatrix} - \lambda\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} = \begin{bmatrix} 5 - \lambda \amp 0 \amp 0 \\ 0 \amp -\lambda \amp 1 \\ 1 \amp 1 \amp -\lambda \end{bmatrix}.</me> We know from <xref ref="thm-det-props"/> part (a) that <m>C </m> is not invertible if and only if <m>\det(C) = 0</m>. Note that <me>\det(C) = \begin{vmatrix} 5 - \lambda \amp 0 \amp 0 \\ 0 \amp -\lambda \amp 1 \\ 1 \amp 1 \amp -\lambda \end{vmatrix} = (5-\lambda)\begin{vmatrix} -\lambda \amp 1 \\ 1 \amp -\lambda \end{vmatrix} = (5-\lambda)(\lambda^2 - 1)</me>. Therefore, we have that the <m>\lambda</m> which make <m>C </m> not invertible are precisely those which make <m>(5-\lambda)(\lambda^2 - 1) = 0</m>, or equivalently, which make <m>(5 - \lambda)(\lambda - 1)(\lambda + 1) = 0</m>. Thus, the <m>\lambda</m> which make <m>C</m> not invertible are <m>\lambda = 5, 1, -1</m>.
+        </p>
+      </solution>
+    </example>
+
+    
+  </page>
+
+</handout>

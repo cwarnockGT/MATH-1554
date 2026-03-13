@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>1.8 An Introduction to Linear Transformations</title>
+
+  <!-- ==================== PAGE 1 ==================== -->
+  <page>
+    <title>Topics and Objectives</title>
+
+    <objectives>
+      <title>Topics</title>
+      <ul>
+        <li>The definition of a linear transformation.</li>
+      <li>Interpreting matrix multiplication as a linear transformation.</li>
+      </ul>
+    </objectives>
+
+    <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>Construct and interpret linear transformations in <m>\mathbb{R}^n</m> (e.g., view a linear transformation as a projection or a shear).</li>
+      <li><p>Characterize linear transformations using:
+        <ul>
+          <li>existence and uniqueness,</li>
+          <li>domain, codomain, and range.</li>
+        </ul>
+        </p>
+        </li>
+      </ul>
+    </objectives>
+
+    <definition workspace="true">
+    <statement>
+        <p>Let <m>A</m> be an <m>m\times n</m> matrix. Define a function</p>
+    <me>
+      T:\mathbb{R}^n \to \mathbb{R}^m, \qquad T(\vec v) = A\vec v .
+    </me>
+    
+      <p>A function of this form is called a <term>matrix transformation</term>.</p>
+    <ul workspace="true">
+      <li>The <term>domain</term> of <m>T</m> is <m>\mathbb{R}^n</m>.</li>
+      <li>The <term>codomain</term> (or <term>target</term>) of <m>T</m> is <m>\mathbb{R}^m</m>.</li>
+      <li>The vector <m>T(\vec x)</m> is the <term>image</term> of <m>\vec x</m> under <m>T</m>.</li>
+      <li>The set of all possible images <m>T(\vec x)</m> is the <term>range</term> of <m>T</m>.</li>
+    </ul>
+</statement>
+    </definition>
+
+    <p>This yields another interpretation of the equation <m>A\vec x=\vec b</m>:</p>
+    <ul>
+      <li>as a system of linear equations,</li>
+      <li>as an augmented matrix,</li>
+      <li>as a vector equation,</li>
+      <li>as a matrix equation,</li>
+      <li>as a linear transformation equation.</li>
+    </ul>
+  </page>
+
+  <!-- ==================== PAGE 3 ==================== -->
+  <page>
+    <title>Functions from Calculus (and their graphs)</title>
+
+    <p>Many familiar functions have domain and codomain <m>\mathbb{R}</m>. For example, the sine function can be described by the rule</p>
+    <me>
+      f\colon \mathbb{R}\to\mathbb{R}, \qquad f(x)=\sin(x).
+    </me>
+
+    <p>In calculus we often visualize a function via its graph: the horizontal axis represents the domain and the vertical axis the codomain.</p>
+
+    <image xml:id="img-sine-graph" width="80%">
+        <shortdescription> Graph of function on the Cartesian plane.</shortdescription>
+      <description>Graph of <m>y = sin(x)</m> on the interval <m>[-2\pi, 2\pi]</m> with axes labeled <m>x</m> and <m>y</m> and a light grid.</description>
+      <latex-image>
+        <preamble>
+              </preamble>
+              <tex>
+        \begin{tikzpicture}[domain=-8:7]
+  \begin{axis}[
+    width=3in,
+    height=1.5in,
+    grid=both,
+    grid style={line width=.2pt, draw=gray!30},
+    clip=false,
+    axis lines=middle,
+    xmin=-7.1,xmax=7.1,
+    ymin=-1.1,ymax=1.1,
+    restrict y to domain=-2:4,
+    xtick={-6.28,-3.14,0,3.14,6.28},
+    xticklabels={, , , , , , , , , ,},
+    ytick={-1,-0.5,0,0.5,1},
+    yticklabels={, , , , , , , , , ,},
+    extra x ticks={-3.14,0,3.14,6.28},
+    extra y ticks={1},
+    extra x tick style={xticklabel style={fill=white, circle, inner sep=1.5pt}},
+    extra y tick style={xticklabel style={fill=white, circle, inner sep=1.5pt}},
+    extra x tick labels={$-\pi$,$0$, $\pi$,$2\pi$},
+    extra y tick labels={1},
+    axis line style={shorten &gt;=-7.5pt, shorten &lt;=-7.5pt},
+    xlabel=$x$,
+    ylabel=$y$,
+    xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+    ylabel style={at={(ticklabel* cs:1)},anchor=south east}
+  ]
+    \addplot[samples=100,domain=-8:7,smooth, thick] {sin(deg(x))} node[pos=1] (endofplotsquare) {};
+    \node [right] at (endofplotsquare) {$\sin(x)$};
+  \end{axis}
+\end{tikzpicture}
+        </tex>
+      </latex-image>
+    </image>
+
+    <p>This is fine when both domain and codomain are <m>\mathbb{R}</m>. If the domain is <m>\mathbb{R}^2</m> and the codomain is <m>\mathbb{R}^3</m>, we would need five dimensions to draw the full graph—so a geometric graph is not possible.</p>
+  </page>
+
+  <!-- ==================== PAGE 4 ==================== -->
+  <page>
+    <title>Example 1: Working with a Matrix Transformation</title>
+
+    <example xml:id="ex-1">
+      <introduction>
+        <p>Let
+          <m>
+            A=\begin{bmatrix} 1\amp 1\\[2pt] 0\amp 1\\[2pt] 1\amp 1 \end{bmatrix},\qquad
+            \vec u=\begin{bmatrix} 3\\[2pt] 4 \end{bmatrix},\qquad
+            \vec b=\begin{bmatrix} 7\\[2pt] 5\\[2pt] 7 \end{bmatrix}.
+          </m>
+        </p>
+        <p>Consider the matrix transformation <m>T(\vec v)=A\vec v</m>.</p>
+    </introduction>
+        <task workspace="1in">
+          <statement><p>Compute <m>T(\vec u)</m>.</p></statement>
+        </task>
+
+        <task workspace="true">
+          <statement><p>Find <m>\vec v\in\mathbb{R}^2</m> so that <m>T(\vec v)=\vec b</m>.</p></statement>
+        </task>
+
+        <task workspace="true">
+          <statement>
+            <p>Give a vector <m>\vec c\in\mathbb{R}^3</m> for which there is no <m>\vec v</m> with <m>T(\vec v)=\vec c</m>.</p>
+            <p><em>Equivalently:</em> Give a <m>\vec c</m> not in the range of <m>T</m>, i.e., not in the span of the columns of <m>A</m>.</p>
+          </statement>
+        </task>
+    </example>
+  </page>
+
+  <!-- ==================== PAGE 5 ==================== -->
+  <page>
+    <title>Linear Transformations and Superposition</title>
+
+    <definition workspace="1in">
+      <p>A function <m>T:\mathbb{R}^n\to\mathbb{R}^m</m> is <term>linear</term> if for all <m>\vec u,\vec v\in\mathbb{R}^n</m> and all scalars <m>c\in\mathbb{R}</m>:
+      <ul>
+        <li><m>T(\vec u+\vec v)=T(\vec u)+T(\vec v)</m>,</li>
+        <li><m>T(c\,\vec v)=c\,T(\vec v)</m>.</li>
+      </ul>
+    </p>
+    </definition>
+
+    <p workspace="1in"> By linearity, for any scalars <m>c_1,\dots,c_k</m> and vectors <m>\vec v_1,\dots,\vec v_k</m>,
+    <me>
+      T\!\big(c_1\vec v_1+\cdots+c_k\vec v_k\big)
+      \;=\;
+      c_1\,T(\vec v_1)+\cdots+c_k\,T(\vec v_k).
+    </me>
+    </p>
+
+    <p workspace="0.5in">This is the <term>principle of superposition</term>. In particular, once we know <m>T(\vec e_1),\dots,T(\vec e_n)</m>, we can compute <m>T(\vec v)</m> for any <m>\vec v \in \mathbb{R}^n</m>.</p>
+
+    <fact>
+      <p>Every matrix transformation <m>T_A(\vec v)=A\vec v</m> is linear.</p>
+    </fact>
+  </page>
+
+  <!-- ==================== PAGE 6 ==================== -->
+  <page>
+    <title>Example 2: Geometric Actions in \m{\mathbb{R}^2}</title>
+
+    <example xml:id="ex-2">
+      <introduction>
+        <p>Suppose <m>T(\vec x)=A\vec x</m>. Give a brief geometric description of the action of <m>T</m> in <m>\mathbb{R}^2</m> for each matrix.</p>
+      </introduction>
+        <task workspace="true">
+            <statement>
+          <p><m>A=\begin{bmatrix} 0\amp 1\\[2pt] 1\amp 0 \end{bmatrix}</m></p>
+            </statement>
+        </task>
+        <task workspace="true">
+            <statement>
+          <p><m>A=\begin{bmatrix} 1\amp 0\\[2pt] 0\amp 0 \end{bmatrix}</m></p>
+            </statement>
+        </task>
+        <task workspace="true">
+          <statement>
+            <p><m>A=\begin{bmatrix} k\amp 0\\[2pt] 0\amp k \end{bmatrix}</m> for <m>k\in\mathbb{R}</m></p>
+          </statement>
+        </task>
+    </example>
+  </page>
+
+  <!-- ==================== PAGE 7 ==================== -->
+  <page>
+    <title>Example 3: Geometric Actions in \m{\mathbb{R}^3}</title>
+    <example xml:id="ex-3">
+      <introduction><p>Describe the effect of <m>T_A</m> on vectors in <m>\mathbb{R}^3</m>.</p></introduction>
+        <task workspace="true">
+          <statement>
+            <p><m>A=\begin{bmatrix} 1\amp 0\amp 0\\[2pt] 0\amp 1\amp 0\\[2pt] 0\amp 0\amp 0 \end{bmatrix}</m></p>
+          </statement>
+        </task>
+        <task workspace="true">
+            <statement>
+          <p><m>A=\begin{bmatrix} 1\amp 0\amp 0\\[2pt] 0\amp -1\amp 0\\[2pt] 0\amp 0\amp 1 \end{bmatrix}</m></p>
+            </statement>
+        </task>
+    </example>
+  </page>
+
+  <!-- ==================== PAGE 8 ==================== -->
+  <page>
+    <title>Example 4: Building the Matrix from Basis Images</title>
+
+    <example xml:id="ex-4">
+      <statement>
+        <p>A linear transformation <m>T:\mathbb{R}^2\to\mathbb{R}^3</m> satisfies</p>
+        <me>
+          T\!\left(\begin{bmatrix}1\\[2pt]0\end{bmatrix}\right)
+          =
+          \begin{bmatrix}5\\[2pt]-7\\[2pt]2\end{bmatrix},
+          \qquad
+          T\!\left(\begin{bmatrix}0\\[2pt]1\end{bmatrix}\right)
+          =
+          \begin{bmatrix}-3\\[2pt]8\\[2pt]0\end{bmatrix}.
+        </me>
+        <p>What is the matrix that represents <m>T</m>?</p>
+      </statement>
+    </example>
+  </page>
+
+</handout>

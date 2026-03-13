@@ -1,0 +1,959 @@
+
+<handout xml:id="handout-section-1-9-matrix-linear-transformation" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>1.9 More on Linear Transformation</title>
+
+  <page xml:id="p-1-9-title-topics-objectives">
+    <title>Topics and Objectives</title>
+
+
+    <image source="./XKCDmatrix_transform.png" xml:id="img-xkcd-matrix-transform" width="50%">
+      <shortdescription>Comic showing a humorous matrix transformation.</shortdescription>
+      <caption>
+        <p>
+          Image credit: <url href="https://xkcd.com/184">https://xkcd.com/184</url>
+        </p>
+      </caption>
+    </image>
+
+    <objectives>
+      <title>Topics</title>
+      <ul>
+        <li>The <em>standard vectors</em> and the <em>standard matrix</em>.</li>
+      <li>Two and three dimensional transformations in more detail.</li>
+      <li><em>Onto</em> and <em>one-to-one</em> transformations.</li>
+      </ul>
+    </objectives>
+
+    <objectives workspace="0.5in">
+      <title>Goals</title>
+      <ul>
+        <li>Identify and construct linear transformations of a matrix.</li>
+      <li>Characterize linear transformations as onto and/or one-to-one.</li>
+      <li>Solve linear systems represented as linear transformations.</li>
+      <li>
+        Express linear transformations in other forms, such as matrix equations or vector equations.
+      </li>
+      </ul>
+    </objectives>
+
+    <definition xml:id="def-standard-vectors" workspace="0.5in">
+      <title>The Standard Vectors</title>
+      <statement>
+        <p>
+          The <em>standard vectors</em> in <m>\mathbb{R}^n</m> are the vectors
+          <m>\vec e_1, \vec e_2, \ldots, \vec e_n</m>.
+        </p>
+
+        <p>They are:</p>
+        <me>
+          \vec e_1 =
+          \begin{bmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{bmatrix},
+          \qquad
+          \vec e_2 =
+          \begin{bmatrix} 0 \\ 1 \\ \vdots \\ 0 \end{bmatrix},
+          \qquad
+          \ldots,
+          \qquad
+          \vec e_n =
+          \begin{bmatrix} 0 \\ 0 \\ \vdots \\ 1 \end{bmatrix}.
+        </me>
+
+        <p>
+          For example, in <m>\mathbb{R}^3</m>:
+        </p>
+        <me>
+          \vec e_1=\begin{bmatrix}1\\0\\0\end{bmatrix},
+          \qquad
+          \vec e_2=\begin{bmatrix}0\\1\\0\end{bmatrix},
+          \qquad
+          \vec e_3=\begin{bmatrix}0\\0\\1\end{bmatrix}.
+        </me>
+      </statement>
+    </definition>
+
+  </page>
+
+  <page>
+    <title> Properties of Standard Vectors</title>
+      <p>
+        <em>Note:</em> If <m>A</m> is an <m>m\times n</m> matrix with columns
+        <m>\vec v_1,\vec v_2,\ldots,\vec v_n</m>, then
+      </p>
+
+      <me>
+        A\vec e_i = \vec v_i, \text{ for } i=1,2,\ldots,n.
+      </me>
+
+      <p>
+        So multiplying a matrix by <m>\vec e_i</m> gives column <m>i</m> of <m>A</m>.
+      </p>
+
+      <example xml:id="ex-aei-column" workspace="true">
+        <title>Example</title>
+        <statement>
+          <p>Compute:</p>
+          <me>
+            \begin{bmatrix}
+              1 \amp 2 \amp 3\\
+              4 \amp 5 \amp 6\\
+              7 \amp 8 \amp 9
+            \end{bmatrix}\vec e_2.
+          </me>
+        </statement>
+      </example>
+
+    <theorem xml:id="thm-standard-matrix">
+      <title>The Standard Matrix of a Linear Transformation</title>
+      <statement>
+        <p>
+          Let <m>T:\mathbb{R}^n \to \mathbb{R}^m</m> be a linear transformation.
+          Then there is a unique matrix <m>A</m> such that
+        </p>
+
+        <me>
+          T(\vec x)=A\vec x,
+          \qquad
+          \vec x\in \mathbb{R}^n.
+        </me>
+
+        <p>
+          In fact, <m>A</m> is an <m>m\times n</m> matrix, and its <m>j</m>th column is
+          <m>T(\vec e_j)</m>. That is,
+        </p>
+
+        <me>
+          A=
+          \begin{bmatrix}
+            T(\vec e_1) \amp T(\vec e_2) \amp \cdots \amp T(\vec e_n)
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </theorem>
+
+    <p>
+      The matrix <m>A</m> is the <term>standard matrix</term> for the linear transformation <m>T</m>.
+    </p>
+  </page>
+
+
+  <page xml:id="p-1-9-rotation-example">
+    <title>Rotations</title>
+
+    <example xml:id="ex-rotation-theta" workspace="true">
+      <statement>
+        <p>
+          What is the linear transformation <m>T:\mathbb{R}^2 \to \mathbb{R}^2</m> defined by
+          <q>rotates vectors counterclockwise by angle <m>\theta</m></q>?
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      There is a long list of geometric transformations of <m>\mathbb{R}^2</m> in many linear algebra texts
+      (reflections, rotations, contractions and expansions, shears, projections, and more). Several are included at the end of this section.
+    </p>
+
+  </page>
+
+  <page xml:id="onto">
+    <title>Onto Linear Transformations</title>
+
+    <definition xml:id="def-onto">
+      <title>Onto</title>
+      <statement>
+        <p>
+          A linear transformation <m>T:\mathbb{R}^n \to \mathbb{R}^m</m> is <em>onto</em> if for every
+          <m>\vec b\in \mathbb{R}^m</m> there exists <m>\vec x\in \mathbb{R}^n</m> such that
+          <m>T(\vec x)=\vec b</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Onto is an <em>existence property</em>: for any <m>\vec b\in\mathbb{R}^m</m>, the system
+      <m>A\vec x=\vec b</m> has a solution (where <m>A</m> is the standard matrix of <m>T</m>).
+    </p>
+
+    <p><em>Examples</em></p>
+    <ul>
+      <li>A rotation on the plane is onto.</li>
+      <li>A projection in the plane is not onto.</li>
+    </ul>
+
+    <theorem xml:id="thm-onto-equivalences" >
+      <title>Onto: Equivalent Statements</title>
+      <statement>
+        <p>
+          For a linear transformation <m>T:\mathbb{R}^n \to \mathbb{R}^m</m> with standard matrix <m>A</m>,
+          the following are equivalent:
+        </p>
+        <ol>
+          <li><m>T</m> is onto.</li>
+          <li>The columns of <m>A</m> span <m>\mathbb{R}^m</m>.</li>
+          <li>The matrix <m>A</m> has a pivot in every row (equivalently, <m>m</m> pivotal columns).</li>
+        </ol>
+      </statement>
+    </theorem>
+  </page>
+
+  <page xml:id="one-to-one">
+    <title>One-to-One Linear Transformations</title>
+    <definition xml:id="def-one-to-one" >
+      <title>One-to-One</title>
+      <statement>
+        <p>
+          A linear transformation <m>T:\mathbb{R}^n \to \mathbb{R}^m</m> is <em>one-to-one</em>
+          if for every <m>\vec b\in\mathbb{R}^m</m> there is at most one (possibly none)
+          <m>\vec x\in\mathbb{R}^n</m> such that <m>T(\vec x)=\vec b</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      One-to-one is a <em>uniqueness</em> property; it does not assert existence for all <m>\vec b</m>.
+    </p>
+
+    <p><em>Examples</em></p>
+    <ul>
+      <li>A rotation on the plane is one-to-one.</li>
+      <li>A projection in the plane is not one-to-one.</li>
+    </ul>
+
+    <theorem xml:id="thm-one-to-one-equivalences">
+      <title>One-to-One: Equivalent Statements</title>
+      <statement>
+        <p>
+          For a linear transformation <m>T:\mathbb{R}^n \to \mathbb{R}^m</m> with standard matrix <m>A</m>,
+          the following are equivalent:
+        </p>
+        <ol>
+          <li><m>T</m> is one-to-one.</li>
+          <li>The unique solution to <m>T(\vec x)=\vec 0</m> is <m>\vec x=\vec 0</m>.</li>
+          <li>The columns of <m>A</m> are linearly independent.</li>
+          <li>Every column of <m>A</m> is pivotal (equivalently, <m>A</m> has no free variables).</li>
+        </ol>
+      </statement>
+    </theorem>
+  </page>
+
+
+
+  <page xml:id="p-1-9-fill-in-matrices">
+    <title>Example: Complete the Matrices</title>
+
+
+    <example>
+      <introduction>
+        <p>
+          Complete the matrices below by entering numbers into the missing entries so that the stated properties are satisfied. <em>If it isn't possible, state why.</em>
+        </p>
+      </introduction>
+        <task workspace="0.1in">
+            <statement>
+              <m>A</m> is a <m>2\times 3</m> standard matrix for a one-to-one linear transformation.
+            <me>
+              A=
+              \begin{bmatrix}
+                1 \amp 0 \amp \\
+                0 \amp  \amp 1
+              \end{bmatrix}.
+            </me>
+            </statement>
+          </task>
+
+          <task workspace="0.1in">
+            <statement>
+              <m>B</m> is a <m>3\times 2</m> standard matrix for an onto linear transformation.
+            <me>
+              B=
+              \begin{bmatrix}
+                1 \amp \\
+                 \amp \\
+                 \amp 
+              \end{bmatrix}.
+            </me>
+            </statement>
+          </task>
+
+          <task workspace="0.1in">
+            <statement>
+              <m>C</m> is a <m>3\times 3</m> standard matrix of a linear transformation that is one-to-one and onto.
+            <me>
+              C=
+              \begin{bmatrix}
+                1 \amp 1 \amp 1\\
+                 \amp  \amp \\
+                 \amp  \amp 
+              \end{bmatrix}.
+            </me>
+            </statement>
+          </task>
+        </example>
+
+    <example xml:id="ex-linear-transform-3d-onto-oto" workspace="true">
+      <statement>
+        <p>Define a linear transformation by</p>
+        <me>
+          T(x_1,x_2)=(3x_1+x_2,\; 5x_1+7x_2,\; x_1+3x_2).
+        </me>
+        <p>
+          Is <m>T</m> one-to-one? Is <m>T</m> onto?
+        </p>
+      </statement>
+    </example>
+  </page>
+
+
+  <page xml:id="reflections-transformations">
+    <title>Two Dimensional Examples: Reflections</title>
+      <p>Below are many examples of linear transformations from <m>\mathbb{R}^2</m> to <m>\mathbb{R}^2</m>.</p>    
+
+    <tabular xml:id="tab-reflections">
+      <title>Reflections Through Coordinate Axes</title>
+      <row header="yes">
+        <cell><em>transformation</em></cell>
+        <cell><em>image of unit square</em></cell>
+        <cell><em>standard matrix</em></cell>
+      </row>
+
+      <row>
+        <cell>reflection through <m>x_1</m>-axis</cell>
+        <cell>
+          <image xml:id="img-reflect-x1">
+            <shortdescription>Unit square reflected across the horizontal axis.</shortdescription>
+            <description>Relection across <m>x_2 = 0</m></description>
+            <latex-image>
+              <xi:include href="./tikz-graphs/TransformReflectionX1.tex" parse="text"/>
+            </latex-image>
+          </image>
+        </cell>
+        <cell><m>\begin{bmatrix}1\amp 0\\0\amp -1\end{bmatrix}</m></cell>
+      </row>
+
+      <row>
+        <cell>reflection through <m>x_2</m>-axis</cell>
+        <cell>
+          <image xml:id="img-reflect-x2">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.8]
+
+    \coordinate (O) at (0,0);  % variable for origin
+       
+    % grey box
+        \filldraw[
+        draw=black!30,fill=black!10]          
+            (0,1) 
+            -- (1,1)
+            -- (1,0)
+            -- (O)
+            -- cycle;
+            
+    % blue box
+        \filldraw[
+        draw=DarkBlue!30,fill=DarkBlue!10]          
+            (-1,0) 
+            -- (-1,1)
+            -- (0,1)
+            -- (O)
+            -- cycle;            
+    % axes
+    \draw[-, thin,black] (-1.25,0) -- (1.5,0) node[anchor=west] {$x_1$};
+    \draw[-, thin,black] (0,-0.5) -- (0.0,1.75) node[anchor=east] {$x_2$};
+    
+    % coordinate vectors            
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (0,1) node[anchor=north east] {$\vec e_2$}; 
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (1,0) node[anchor=north] {$\vec e_1$}; 
+    
+\end{tikzpicture}
+            </latex-image>
+            <shortdescription>Unit square reflected across the vertical axis.</shortdescription>
+            <description>Relection across <m>x_1 = 0</m></description>
+          </image>
+        </cell>
+        <cell><m>\begin{bmatrix}-1\amp 0\\0\amp 1\end{bmatrix}</m></cell>
+      </row>
+      <row>
+        <cell>reflection through <m>x_2=x_1</m></cell>
+        <cell>
+          <image xml:id="img-reflect-x2eqx1">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.8]
+
+    \coordinate (O) at (0,0);  % variable for origin
+       
+    % grey and blue box
+        \filldraw[
+        draw=DarkBlue!30,fill=DarkBlue!10]          
+            (1,0) 
+            -- (1,1)
+            -- (0,1)
+            -- (O)
+            -- cycle;
+            
+          
+    % axes
+    \draw[-, thin,black] (-1.25,0) -- (1.5,0) node[anchor=west] {$x_1$};
+    \draw[-, thin,black] (0,-0.5) -- (0.0,1.75) node[anchor=east] {$x_2$};
+    
+    % reflection line
+    \draw[-,thin,blue](-1,-1)--(1.2,1.2) node[anchor=south] {$x_2=x_1$};
+    
+    % coordinate vectors            
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (0,1) node[anchor=north east] {$\vec e_2$}; 
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (1,0) node[anchor=north] {$\vec e_1$}; 
+    
+\end{tikzpicture}
+            </latex-image>
+            <shortdescription>Unit square reflected across diagonal line passing through (0,0) and (1,1).</shortdescription>
+            <description>
+              Reflection across <m>x_2=x_1</m>.
+            </description>
+          </image>
+        </cell>
+        <cell><m>\begin{bmatrix}0\amp 1\\1\amp 0\end{bmatrix}</m></cell>
+      </row>
+      <row>
+        <cell>reflection through <m>x_2=-x_1</m></cell>
+        <cell>
+          <image xml:id="img-reflect-x2eqnegx1">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.8]
+
+    \coordinate (O) at (0,0);  % variable for origin
+       
+    % grey box
+        \filldraw[
+        draw=black!30,fill=black!10]          
+            (1,0) 
+            -- (1,1)
+            -- (0,1)
+            -- (O)
+            -- cycle;
+            
+    % blue box
+        \filldraw[
+        draw=DarkBlue!30,fill=DarkBlue!10]          
+            (-1,0) 
+            -- (-1,-1)
+            -- (0,-1)
+            -- (O)
+            -- cycle;            
+    % axes
+    \draw[-, thin,black] (-1.25,0) -- (1.5,0) node[anchor=west] {$x_1$};
+    \draw[-, thin,black] (0,-0.5) -- (0.0,1.75) node[anchor=east] {$x_2$};
+     \draw[-,thin,blue](1,-1)--(-1,1)
+    node[anchor=south] {$x_2=-x_1$};
+    % coordinate vectors            
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (0,1) node[anchor=north east] {$\vec e_2$}; 
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (1,0) node[anchor=north] {$\vec e_1$}; 
+    
+\end{tikzpicture}
+            </latex-image>
+            <shortdescription>Unit square reflected across the diagonal line 
+              passing through (0,0) and (1,-1).
+            </shortdescription>
+            <description>
+              Reflection across <m>x_2=-x_1</m>.
+            </description>
+          </image>
+        </cell>
+        <cell><m>\begin{bmatrix}0\amp -1\\-1\amp 0\end{bmatrix}</m></cell>
+      </row>
+    </tabular>
+  </page>
+
+
+  <page xml:id="contractions-and-expansions-transformations">
+    <title>Two Dimensional Examples: Contractions and Expansions</title>
+
+    <tabular xml:id="tab-cont-exp">
+      <title>Horizontal Scaling</title>
+      <row header="yes">
+        <cell><em>transformation</em></cell>
+        <cell><em>image of unit square</em></cell>
+        <cell><em>standard matrix</em></cell>
+      </row>
+
+      <row>
+        <cell>Horizontal contraction</cell>
+        <cell>
+          <image xml:id="img-horizontal-contraction">
+            <latex-image>
+\begin{tikzpicture}[scale=0.8]
+
+    \coordinate (O) at (0,0);  % variable for origin
+
+    % grey box
+        \filldraw[
+        draw=black!30,fill=black!10]          
+            (0,1) 
+            -- (1,1)
+            -- (1,0)
+            -- (O)
+            -- cycle;
+            
+    % blue box
+        \filldraw[
+        draw=DarkBlue!30,fill=DarkBlue!10]          
+            (0.5,0) 
+            -- (0.5,1)
+            -- (0,1)
+            -- (O)
+            -- cycle;            
+    % axes
+    \draw[-, thin,black] (-1.25,0) -- (1.5,0) node[anchor=west] {$x_1$};
+    \draw[-, thin,black] (0,-0.5) -- (0.0,1.75) node[anchor=east] {$x_2$};
+
+    % coordinate vectors                
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (0,1) node[anchor=north east] {$\vec e_2$}; 
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (1,0) node[anchor=north west] {$\vec e_1$}; 
+    
+        
+\end{tikzpicture}
+            </latex-image>
+            <shortdescription>Unit square compressed horizontally toward the vertical axis.</shortdescription>
+            <description>
+              Horizontal contraction by factor <m>k</m> with <m>|k|&lt;1</m>.
+            </description>
+          </image>
+        </cell>
+        <cell>
+          <m>\begin{bmatrix}k\amp 0\\0\amp 1\end{bmatrix}</m>, <m>|k|&lt;1</m>
+        </cell>
+      </row>
+
+      <row>
+        <cell>Horizontal expansion</cell>
+        <cell>
+          <image xml:id="img-horizontal-expansion">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.8]
+
+    \coordinate (O) at (0,0);  % variable for origin
+            
+    % blue box
+        \filldraw[
+        draw=DarkBlue!30,fill=DarkBlue!10]          
+            (1.4,0) 
+            -- (1.4,1)
+            -- (0,1)
+            -- (O)
+            -- cycle;            
+    % axes
+    \draw[-, thin,black] (-1.25,0) -- (1.5,0) node[anchor=west] {$x_1$};
+    %\draw[.,thin,black] (1,0) node[anchor=north]{$k>1$};
+    \draw[-, thin,black] (0,-0.5) -- (0.0,1.75) node[anchor=east] {$x_2$};
+    
+    % coordinate vectors                
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (0,1) node[anchor=north east] {$\vec e_2$}; 
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (1,0) node[anchor=north west] {$\vec e_1$}; 
+        
+\end{tikzpicture}
+            </latex-image>
+            <shortdescription>Unit square stretched horizontally away from the vertical axis.</shortdescription>
+            <description>
+              Horizontal expansion by factor <m>k</m> with <m>k&gt;1</m>.
+            </description>
+          </image>
+        </cell>
+        <cell>
+          <m>\begin{bmatrix}k\amp 0\\0\amp 1\end{bmatrix}</m>, <m>k&gt;1</m>
+        </cell>
+      </row>
+      <row>
+        <cell>Vertical contraction</cell>
+        <cell>
+          <image xml:id="img-vertical-contraction">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.8]
+
+    \coordinate (O) at (0,0);  % variable for origin
+
+    % grey box
+        \filldraw[
+        draw=black!30,fill=black!10]          
+            (0,1) 
+            -- (1,1)
+            -- (1,0)
+            -- (O)
+            -- cycle;
+         
+    % blue box
+        \filldraw[
+        draw=DarkBlue!30,fill=DarkBlue!10]          
+            (1,0) 
+            -- (1,0.5)
+            -- (0,0.5)
+            -- (O)
+            -- cycle;            
+    % axes
+    \draw[-, thin,black] (-1.25,0) -- (1.5,0) node[anchor=west] {$x_1$};
+    \draw[-, thin,black] (0,-0.5) -- (0.0,1.75) node[anchor=east] {$x_2$};
+
+    % coordinate vectors                
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (0,1) node[anchor=north east] {$\vec e_2$}; 
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (1,0) node[anchor=north west] {$\vec e_1$}; 
+    
+        
+\end{tikzpicture}
+            </latex-image>
+            <shortdescription>Unit square compressed vertically toward the horizontal axis.</shortdescription>
+            <description>
+              Vertical contraction by factor <m>k</m> with <m>|k|&lt;1</m>.
+            </description>
+          </image>
+        </cell>
+        <cell>
+          <m>\begin{bmatrix}1\amp 0\\0\amp k\end{bmatrix}</m>, <m>|k|&lt;1</m>
+        </cell>
+      </row>
+
+      <row>
+        <cell>Vertical expansion</cell>
+        <cell>
+          <image xml:id="img-vertical-expansion">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.8]
+
+    \coordinate (O) at (0,0);  % variable for origin
+            
+    % grey box
+        \filldraw[
+        draw=black!30,fill=black!10]          
+            (0,1) 
+            -- (1,1)
+            -- (1,0)
+            -- (O)
+            -- cycle;
+            
+    % blue box
+        \filldraw[
+        draw=DarkBlue!30,fill=DarkBlue!10]          
+            (1,0) 
+            -- (1,1.4)
+            -- (0,1.4)
+            -- (O)
+            -- cycle;            
+    % axes
+    \draw[-, thin,black] (-1.25,0) -- (1.5,0) node[anchor=west] {$x_1$};
+    \draw[-, thin,black] (0,-0.5) -- (0.0,1.75) node[anchor=east] {$x_2$};
+    
+    % coordinate vectors                
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (0,1) node[anchor=north east] {$\vec e_2$}; 
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (1,0) node[anchor=north west] {$\vec e_1$}; 
+    
+        
+\end{tikzpicture}
+            </latex-image>
+            <shortdescription>Unit square stretched vertically away from the horizontal axis.</shortdescription>
+            <description>
+              Vertical expansion by factor <m>k</m> with <m>k&gt;1</m>.
+            </description>
+          </image>
+        </cell>
+        <cell>
+          <m>\begin{bmatrix}1\amp 0\\0\amp k\end{bmatrix}</m>, <m>k&gt;1</m>
+        </cell>
+      </row>
+    </tabular>
+  </page>
+
+  <page xml:id="shearing-transformations">
+    <title>Two Dimensional Examples: Shearing</title>
+
+    <tabular xml:id="tab-shear">
+      <title>Horizontal Scaling</title>
+      <row header="yes">
+        <cell><em>transformation</em></cell>
+        <cell><em>image of unit square</em></cell>
+        <cell><em>standard matrix</em></cell>
+      </row>
+      <row>
+        <cell>Horizontal shear (left)</cell>
+        <cell>
+          <image xml:id="img-hshear-left">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.8]
+
+    \coordinate (O) at (0,0);  % variable for origin
+
+    % grey box
+        \filldraw[
+        draw=black!30,fill=black!10]          
+            (0,1) 
+            -- (1,1)
+            -- (1,0)
+            -- (O)
+            -- cycle;
+            
+    % blue box
+        \filldraw[
+        draw=DarkBlue!30,fill=DarkBlue!10]          
+            (-0.5,1) 
+            -- (0.5,1)
+            -- (1,0)
+            -- (O)
+            -- cycle;            
+    % axes
+    \draw[-, thin,black] (-1.25,0) -- (1.5,0) node[anchor=west] {$x_1$};
+    \draw[., thin,black] (1,0) node[anchor=north]{$k&lt;0$};
+    \draw[-, thin,black] (0,-0.5) -- (0.0,1.75) node[anchor=east] {$x_2$};
+\end{tikzpicture}
+            </latex-image>
+            <shortdescription>Unit square sheared left by a horizontal shift.</shortdescription>
+            <description>
+              Horizontal shear with parameter <m>k&lt;0</m>.
+            </description>
+          </image>
+        </cell>
+        <cell><m>\begin{bmatrix}1\amp k\\0\amp 1\end{bmatrix}</m>, <m>k&lt;0</m></cell>
+      </row>
+
+      <row>
+        <cell>Horizontal shear (right)</cell>
+        <cell>
+          <image xml:id="img-hshear-right">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.8]
+
+    \coordinate (O) at (0,0);  % variable for origin
+
+    % grey box
+        \filldraw[
+        draw=black!30,fill=black!10]          
+            (0,1) 
+            -- (1,1)
+            -- (1,0)
+            -- (O)
+            -- cycle;
+            
+    % blue box
+        \filldraw[
+        draw=DarkBlue!30,fill=DarkBlue!10]          
+            (0.5,1) 
+            -- (1.5,1)
+            -- (1,0)
+            -- (O)
+            -- cycle;            
+    % axes
+    \draw[-, thin,black] (-1.25,0) -- (1.5,0) node[anchor=west] {$x_1$};
+    \draw[., thin,black] (1,0) node[anchor=north]{$k&gt;0$};
+    \draw[-, thin,black] (0,-0.5) -- (0.0,1.75) node[anchor=east] {$x_2$};
+\end{tikzpicture}
+            </latex-image>
+            <shortdescription>Unit square sheared right by a horizontal shift.</shortdescription>
+            <description>
+              Horizontal shear with parameter <m>k&gt;0</m>.
+            </description>
+          </image>
+        </cell>
+        <cell><m>\begin{bmatrix}1\amp k\\0\amp 1\end{bmatrix}</m>, <m>k&gt;0</m></cell>
+      </row>
+
+      <row>
+        <cell>Vertical shear (down)</cell>
+        <cell>
+          <image xml:id="img-vshear-down">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.8]
+
+    \coordinate (O) at (0,0);  % variable for origin
+    % grey box
+        \filldraw[
+        draw=black!30,fill=black!10]          
+            (0,1) 
+            -- (1,1)
+            -- (1,0)
+            -- (O)
+            -- cycle;
+            
+    % blue box
+        \filldraw[
+        draw=DarkBlue!30,fill=DarkBlue!10]          
+            (0,1) 
+            -- (1,0.5)
+            -- (1,-0.5)
+            -- (0,0)
+            -- cycle;            
+    % axes
+    \draw[-, thin,black] (-1.25,0) -- (1.5,0) node[anchor=west] {$x_1$};
+    %\draw[., thin,black] (1,-0.5) node[anchor=north]{$k&lt;0$};
+    \draw[-, thin,black] (0,-0.5) -- (0.0,1.75) node[anchor=east] {$x_2$};
+    
+    % coordinate vectors                
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (0,1) node[anchor=north east] {$\vec e_2$}; 
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (1,0) node[anchor=north west] {$\vec e_1$}; 
+    
+        
+\end{tikzpicture}
+            </latex-image>
+            <shortdescription>Unit square sheared downward by a vertical shift.</shortdescription>
+            <description>
+              Vertical shear with parameter <m>k&lt;0</m>.
+            </description>
+          </image>
+        </cell>
+        <cell><m>\begin{bmatrix}1\amp 0\\k\amp 1\end{bmatrix}</m>, <m>k&lt;0</m></cell>
+      </row>
+
+      <row>
+        <cell>Vertical shear (up)</cell>
+        <cell>
+          <image xml:id="img-vshear-up">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.8]
+
+    \coordinate (O) at (0,0);  % variable for origin
+
+    % grey box
+        \filldraw[
+        draw=black!30,fill=black!10]          
+            (0,1) 
+            -- (1,1)
+            -- (1,0)
+            -- (O)
+            -- cycle;
+            
+    % blue box
+        \filldraw[
+        draw=DarkBlue!30,fill=DarkBlue!10]          
+            (0,1) 
+            -- (1,1.5)
+            -- (1,0.5)
+            -- (0,0)
+            -- cycle;            
+    % axes
+    \draw[-, thin,black] (-1.25,0) -- (1.5,0) node[anchor=west] {$x_1$};
+    %\draw[., thin,black] (1,0) node[anchor=north]{$k&gt;0$};
+    \draw[-, thin,black] (0,-0.5) -- (0.0,1.75) node[anchor=east] {$x_2$};
+    
+    % coordinate vectors                
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (0,1) node[anchor=north east] {$\vec e_2$}; 
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (1,0) node[anchor=north west] {$\vec e_1$}; 
+    
+        
+\end{tikzpicture}
+            </latex-image>
+            <shortdescription>Unit square sheared upward by a vertical shift.</shortdescription>
+            <description>
+              Vertical shear with parameter <m>k&gt;0</m>.
+            </description>
+          </image>
+        </cell>
+        <cell><m>\begin{bmatrix}1\amp 0\\k\amp 1\end{bmatrix}</m>, <m>k&gt;0</m></cell>
+      </row>
+    </tabular>
+  </page>
+
+
+  <page xml:id="p-1-9-r2-projections">
+    <title>Two Dimensional Examples: Projections</title>
+
+    <tabular xml:id="tab-projections">
+      <title>Projections in the Plane</title>
+      <row header="yes">
+        <cell><em>transformation</em></cell>
+        <cell><em>image of unit square</em></cell>
+        <cell><em>standard matrix</em></cell>
+      </row>
+
+      <row>
+        <cell>Projection onto the <m>x_1</m>-axis</cell>
+        <cell>
+          <image xml:id="img-proj-x1">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.8]
+
+    \coordinate (O) at (0,0);  % variable for origin
+    
+    % grey box
+        \filldraw[
+        draw=black!30,fill=black!10]          
+            (0,1) 
+            -- (1,1)
+            -- (1,0)
+            -- (O)
+            -- cycle;
+    
+    % blue box
+        \filldraw[
+        draw=DarkBlue!40,fill=DarkBlue!40]          
+            (0,.05) 
+            -- (1,.05)
+            -- (1,-.05)
+            -- (0,-.05)
+            -- cycle;            
+            
+  %\draw[-,yellow] (0,0.02) -- (1,0.02); 
+  
+    % axes
+    \draw[-, thin,black] (-1.25,0) -- (1.5,0) node[anchor=west] {$x_1$};
+    \draw[-, thin,black] (0,-0.5) -- (0.0,1.75) node[anchor=east] {$x_2$};
+    
+    % coordinate vectors                
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (0,1) node[anchor=north east] {$\vec e_2$}; 
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (1,0) node[anchor=north west] {$\vec e_1$}; 
+        
+\end{tikzpicture}
+            </latex-image>
+            <shortdescription>Unit square flattened onto the horizontal axis.</shortdescription>
+            <description>
+              Projection onto <m>x_1</m>-axis.
+            </description>
+          </image>
+        </cell>
+        <cell><m>\begin{bmatrix}1\amp 0\\0\amp 0\end{bmatrix}</m></cell>
+      </row>
+
+      <row>
+        <cell>Projection onto the <m>x_2</m>-axis</cell>
+        <cell>
+          <image xml:id="img-proj-x2">
+            <latex-image>
+              \begin{tikzpicture}[scale=0.8]
+
+    \coordinate (O) at (0,0);  % variable for origin
+            
+    % grey box
+        \filldraw[
+        draw=black!30,fill=black!10]          
+            (0,1) 
+            -- (1,1)
+            -- (1,0)
+            -- (O)
+            -- cycle;
+
+    % blue box
+        \filldraw[
+        draw=DarkBlue!40,fill=DarkBlue!40]          
+            (0.05,0.00) 
+            -- (0.05,1.00)
+            -- (-0.05,1.00)
+            -- (-0.05,0.00)
+            -- cycle;      
+            
+  \draw[-,red] (0,0) -- (0,1);         
+    % axes
+    \draw[-, thin,black] (-1.25,0) -- (1.5,0) node[anchor=west] {$x_1$};
+    \draw[-, thin,black] (0,-0.5) -- (0.0,1.75) node[anchor=east] {$x_2$};
+    
+    % coordinate vectors                
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (0,1) node[anchor=north east] {$\vec e_2$}; 
+    \draw[->,Black,very thick,-stealth,rotate=0] (O) -- (1,0) node[anchor=north west] {$\vec e_1$}; 
+    
+        
+\end{tikzpicture}
+            </latex-image>
+            <shortdescription>Unit square flattened onto the vertical axis.</shortdescription>
+            <description>
+              Projection onto <m>x_2</m>-axis.
+            </description>
+          </image>
+        </cell>
+        <cell><m>\begin{bmatrix}0\amp 0\\0\amp 1\end{bmatrix}</m></cell>
+      </row>
+    </tabular>
+  </page>
+
+
+</handout>

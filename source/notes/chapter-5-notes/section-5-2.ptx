@@ -1,0 +1,302 @@
+<handout xml:id="handout-section-5-2-characteristic-similar">
+  <title>5.2 The Characteristic Equation</title>
+
+  <page xml:id="p-5-2-overview">
+    <title>Overview</title>
+
+    <objectives xml:id="obj-5-2-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>The characteristic polynomial of a matrix</li>
+        <li>Algebraic and geometric multiplicity of eigenvalues</li>
+        <li>Similar matrices</li>
+      </ul>
+      </objectives>
+
+      <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>Construct the characteristic polynomial of a matrix and use it to identify eigenvalues and their multiplicities.</li>
+        <li>Characterize the long-term behaviour of dynamical systems using eigenvalue decompositions.</li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+    <p><em>Recall:</em></p>
+    <p>
+      <m>\lambda</m> is an eigenvalue of <m>A</m> if and only if <m>(A-\lambda I)</m> is not <em>invertible</em>.
+    </p>
+
+    <p>
+      Therefore, to calculate the eigenvalues of <m>A</m>, we can need to find all <m>\lambda</m> so that
+    </p>
+    <me>
+      \det(A-\lambda I)=0.
+    </me>
+    <definition xml:id="def-characteristic">
+        <p>
+        The quantity <m>\det(A-\lambda I)</m> is the <term>characteristic polynomial</term> of <m>A</m>.
+        </p>
+        <p>
+            The equation <m>\det(A - \lambda I) = 0</m> is the <term>characterisitc equation</term> of <m>A</m>.
+        </p>
+        <p>
+        The roots of the characteristic polynomial are the <term>eigenvalues</term> of <m>A</m>.
+        </p>
+    </definition>
+    <p><nbsp/></p>
+
+</page>
+
+<page xml:id="p-5-2-charpoly-2x2-general">
+    <title>Characteristic Polynomial of a 2×2 Matrix</title>
+
+    <example xml:id="ex-5-2-charpoly-specific" workspace="true">
+      <statement>
+        <p>
+          Find the characteristic polynomial of
+        </p>
+        <me>
+          A=\begin{bmatrix}
+            5 \amp 2\\
+            2 \amp 1
+          \end{bmatrix}.
+        </me>
+        <p>Then determine the eigenvalues of <m>A</m>.</p>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-5-2-charpoly-2x2-general" workspace="true">
+      <statement>
+        <p>
+          Let
+        </p>
+        <me>
+          M=\begin{bmatrix}
+            a \amp b\\
+            c \amp d
+          \end{bmatrix}.
+        </me>
+        <p>
+          Express the characteristic equation of <m>M</m> in terms of <m>\det(M)</m>.
+          What is the equation when <m>M</m> is singular?
+        </p>
+      </statement>
+    </example>
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-2-algebraic-multiplicity">
+    <title>Algebraic Multiplicity</title>
+
+    <definition xml:id="def-algebraic-multiplicity" workspace=".3in">
+      <title>Algebraic Multiplicity</title>
+      <statement>
+        <p>
+          The <term>algebraic multiplicity</term> of an eigenvalue is its multiplicity as a root of the characteristic polynomial.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="ex-5-2-alg-mult-compute" workspace="true">
+      <statement>
+        <p>Compute the algebraic multiplicities of the eigenvalues for</p>
+        <me>
+          A = \begin{bmatrix}
+            1 \amp 0 \amp 0 \amp 0\\
+            0 \amp 2 \amp 0 \amp 0\\
+            0 \amp 0 \amp -1 \amp 1\\
+            0 \amp 0 \amp 0 \amp -1
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-5-2-geometric-multiplicity">
+    <title>Geometric Multiplicity</title>
+
+    <definition xml:id="def-geometric-multiplicity">
+      <title>Geometric Multiplicity</title>
+      <statement>
+        <p>
+          The <term>geometric multiplicity</term> of an eigenvalue <m>\lambda</m> is the dimension of <m>\operatorname{Null}(A-\lambda I)</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p workspace="0.3in">
+      <ol>
+        <li>The geometric multiplicity of an eigenvalue <m>\lambda</m> is always between 1 and the algebraic multiplicity of <m>\lambda</m>. It can <em>never</em> be 0 nor be greater than the algebraic mutliplicy.</li>
+        <li>
+          Basic example:
+          <me>
+            \begin{bmatrix}
+              0 \amp 1\\
+              0 \amp 0
+            \end{bmatrix}
+          </me>
+          has only eigenvalue <m>\lambda=0</m>. Its algebraic multiplicity is 2, but its geometric multiplicity is 1.
+        </li>
+      </ol>
+    </p>
+
+
+    <example xml:id="ex-5-2-geom-mult-compute" workspace="true">
+      <statement>
+        <p>Compute the geometric multiplicities of the eigenvalues for</p>
+        <me>
+          A = \begin{bmatrix}
+            1 \amp 0 \amp 0 \amp 0\\
+            0 \amp 2 \amp 0 \amp 0\\
+            0 \amp 0 \amp -1 \amp 1\\
+            0 \amp 0 \amp 0 \amp -1
+          \end{bmatrix}.
+        </me>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+    
+  </page>
+
+
+  <page xml:id="p-5-2-recall-markov">
+
+    <example xml:id="ex-5-2-only-zero-eig-gm1" workspace="true">
+      <introduction>
+        <p>
+          For each part below, give an example of a <m>5\times 5</m> matrix withe the stated properties, if possible. 
+        </p>
+    </introduction>
+    <task workspace="true">
+        <statement>
+            <p>
+                The only eigenvalue is <m>\lambda=0</m>, but the geometric multiplicity of <m>\lambda=0</m> is one.
+            </p>
+        </statement>
+    </task>
+    <task workspace="true">
+        <statement>
+            <p>
+                The only eigenvalues are <m>\lambda_1=0</m> and <m>\lambda_2 = 1</m>. The algebraic multiplicity of <m>\lambda_1=0</m> is three and the geometric multiplicity of <m>\lambda_2 = 1</m> is three.
+            </p>
+        </statement>
+    </task>
+    <task workspace="true">
+        <statement>
+            <p>
+                Exactly three eigenvalues, all with geometric multiplicity equal to 1.
+            </p>
+        </statement>
+    </task>
+    </example>
+
+    <p><nbsp/></p>
+
+</page>
+
+<page xml:id="p-5-2-example-eigs-markov">
+    <title>Example: Eigenvalues and a 2-State Markov Chain</title>
+
+    <example xml:id="ex-5-2-markov-eigs" workspace="true">
+      <introduction>
+        <p>
+          Consider the Markov Chain given by
+        </p>
+        <me>
+          \vec x_0=
+          \begin{bmatrix}
+            1\\
+            0
+          \end{bmatrix},
+          \quad \vec x_{k+1}=P\vec x_k
+          =
+          \begin{bmatrix}
+            0.6 \amp 0.4\\
+            0.4 \amp 0.6
+          \end{bmatrix}
+          \vec x_k.
+        </me>
+
+        <image xml:id="img-5-2-markov-graph" width="40%">
+          <latex-image>
+            <latex>
+\begin{tikzpicture}
+\begin{scope}[-&gt;,&gt;=stealth',shorten &gt;=1pt,auto,node distance=3cm,
+  thick,main node/.style = {circle,fill=DarkBlue!10,draw,font=\sffamily\Large\bfseries}]
+  \node[main node] (1) {A};
+  \node[main node] (2) [right of=1] {B};
+  \path[every node/.style={font=\sffamily\small}]
+    (1) edge [bend right] node[below] {0.4} (2)
+        edge [loop above] node {0.6} (1)
+    (2) edge node [above] {0.4} (1)
+        edge [loop above] node {0.6} (2);
+\end{scope}
+\end{tikzpicture}
+            </latex>
+          </latex-image>
+          <shortdescription>Two-state Markov chain with symmetric transition probabilities.</shortdescription>
+          <description>
+            Nodes A and B with transitions 0.6 for staying and 0.4 for switching; matrix
+            <m>P=\begin{bmatrix}0.6 \amp 0.4\\ 0.4 \amp 0.6\end{bmatrix}</m>.
+          </description>
+        </image>
+
+        <p>In the parts below, we will use eigenvalues to describe the long-term behavior of the system.</p>
+    </introduction> 
+    <task workspace="true">
+        <statement>
+            <p>
+                Find the eigenvalues of <m>P</m> and corresponding eigenvectors.
+            </p>
+        </statement>
+    </task>
+    <task workspace="true">
+        <statement>
+            <p>
+                Use the eigenvalues and eigenvectors to determine what <m>\vec x_k</m> tends to as <m>k\to\infty</m>.
+            </p>
+        </statement>
+    </task>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  
+
+  <page xml:id="p-5-2-additional-examples">
+    <title>Additional Examples (if time permits)</title>
+
+    <example xml:id="ex-5-2-true-false" workspace="true">
+      <statement>
+          True or False: A row replacement operation on a matrix does not change its eigenvalues.
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-5-2-parameterized-eig" workspace="true">
+      <statement>
+        <p>
+          For what values of <m>k</m> does the matrix have one real eigenvalue with algebraic multiplicity 2?
+        </p>
+        <me>
+          \begin{bmatrix}
+            -3 \amp k\\
+            2 \amp -6
+          \end{bmatrix}
+        </me>
+      </statement>
+    </example>
+  </page>
+
+</handout>

@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<handout xml:lang="en" xml:id="section-1-1-sol" toc="no" display="inline">
+  <title>1.1 Systems of Linear Equations</title>
+  <!-- Page 1: Section overview, topics and objectives -->
+  <page>
+    <title>Topics and Objectives</title>
+
+    <objectives>
+      <title>Topics</title>
+      <ul>
+        <li>Systems of Linear Equations</li>
+        <li>Matrix Notation</li>
+        <li>Elementary Row Operations</li>
+        <li>Existence and Uniqueness of Solutions</li>
+      </ul>
+    </objectives>
+
+    <objectives workspace="0.5in">
+      <title>Goals</title>
+      <ul>
+        <li>Characterize a linear system by the number of solutions and consistency.</li>
+        <li>Apply elementary row operations to solve linear systems.</li>
+        <li>Express a system as an augmented matrix.</li>
+      </ul>
+    </objectives>
+  
+    <p><nbsp/></p>
+
+    <definition>
+    <title>A Single Linear Equation</title>
+      <statement>A <term>linear equation</term> has the form:
+        <md>a_1 x_1 + a_2 x_2 + \cdots + a_n x_n = b</md>
+      where, <m>a_1,\dots,a_n</m> and <m>b</m> are the <em>coefficients</em>, <m>x_1,\dots,x_n</m> are the
+      <em>variables</em> (unknowns), and <m>n</m> is the <em>dimension</em> (number of variables).
+      </statement>
+      </definition>
+
+      <p workspace="true">Some Examples:
+      <ul>
+        <li><m>2x_1+4x_2=4</m> is a line in two dimensions.</li>
+        <li><m>3x_1+2x_2+x_3=6</m> is a plane in three dimensions.</li>
+        <li><m>x_1 + x_2 + x_3 = x_4 + x_5</m></li>
+        <li><m>x_1 + \sqrt{2}x_2 -\frac{1}{7}  = \pi x_3</m></li>
+      </ul>
+    </p>
+    <p workspace="true">Non Examples:
+    <ul>
+        <li><m>x_1 + x_2^3 = 3</m></li>
+        <li><m>2x_1 - 4x_2 - \sqrt{x_3} = 4</m></li>
+        <li><m>\dfrac{1}{x_1} + x_2 + x_3 = 4</m></li>
+      </ul>
+</p>
+<p><nbsp/></p>
+    
+  </page>
+
+  <!-- Page 2: Systems of linear equations + definition -->
+  <page>
+    <title>Systems of Linear Equations</title>
+
+    <p>
+      When we have more than one linear equation, we have a <em>system of linear equations</em>. For example, a system of two linear equations is:
+    </p>
+
+    <p xml:id="sys-ex">
+      <md>\begin{aligned}
+        x_1 \amp\;+\; 1.5\,x_2 \;+\; \pi x_3 \;=\; 4 \\
+        5x_1 \amp\;+\; \phantom{1.5\,x_2}\;+\; 7x_3 \;=\; 5
+      \end{aligned}</md>
+    </p>
+
+
+    <p workspace="2.5in">
+    <definition>
+      <title>Solution to a Linear System</title>
+      <statement>
+        The set of all possible values of <m>x_1, x_2, \ldots, x_n</m> that satisfy <em>every</em> equation in the system is the <term>solution, or solution set,</term> to the system.
+      </statement>
+    </definition>
+    </p>
+
+    <solution>
+      <p>
+        Consider finding solutions to the system given <xref ref="sys-ex" text="custom">above</xref>. At this point, we don't have a great way of determining the solutions to a system of linear equations. We can try guessing some solutions.
+        <ul>
+          <li> Try <m>(4,0,0)</m>: Note this points makes the first equation true since <m>4 + 1.5(0) + \pi(0) = 4</m>, but it does not make the second equation true since <m> 5(4) + 7(0) \neq 5</m>. Therefore, <m>(4,0,0)</m> is not a solution to the system.</li>
+          <li> Try <m>(1,2,0)</m>: Note plugging this point into the first equation yields <m>1 + 1.5(2) + \pi(0) = 4</m> which is a true statement. Plugging the point into the second equation yields <m>5(1) + 7(0) = 5</m> which is also a true statement. Since the point makes both equations true, it is a solution to the system.</li>
+          <li> Can you find any more solutions?</li>
+        </ul>
+      </p>
+    </solution>
+
+    <p><nbsp/></p>
+    
+    <p workspace="1.5in">
+      How many solutions can a system have?
+    </p>
+  </page>
+
+  <!-- Page 3: Two variables—guided sketches -->
+  <page>
+    <title>Two-Dimensional Case</title>
+    <example> 
+      <introduction>
+        <p>
+          Consider the following systems of two linear equations in two variables and determine how many solutions there are for each.
+        </p>
+      </introduction>
+      <task workspace="2in">
+        <statement>
+      <m>\begin{aligned}
+        x_1 - 2x_2 \amp= -1 \\
+        -x_1 + 3x_2 \amp= \phantom{-}3
+      \end{aligned}</m>
+    </statement>
+    <solution>
+      <p>
+        Graphing the two lines gives the following:
+        <figure >
+          <caption>Two lines in the plane with a single point of intersection.</caption>
+          <image xml:id="sec1-1-img1" width="70%" decorative="no">
+            <shortdescription>
+            Cartesian axes with two lines, showing where they intersect.
+          </shortdescription>
+          <description> The graph of the lines <m>x_1 - 2x_2 = -1</m> (in red) and <m>-x_1 + 3x_2 = 3</m> (in blue), showing their intersection point at <m>(3,2)</m>
+          </description>
+            <latex-image>
+              <preamble>
+              </preamble>
+              <tex>
+\begin{tikzpicture}[scale=0.5, baseline]
+\draw[&lt;-&gt;, thick] (-6.5,0) -- (6.5,0);
+  \foreach \x in {-6,...,6} {
+    \draw[thin] (\x,-.1) -- (\x,0.1) node[anchor=south] {\small$\x$};
+  }
+  \foreach \y in {-6,...,6} {
+    \draw[thin] (-0.1,\y) -- (0.1,\y) node[anchor=west] {\small$\y$};
+  }
+  \draw[-{Stealth[length=4pt]}] (-6,0) -- (6,0);
+  \draw[-{Stealth[length=4pt]}] (0,-6) -- (0,6);
+  \draw[red, very thick] (-6,-5/2) -- (6,7/2);
+  \draw[blue, very thick] (-6,-1) -- (6,3);
+  \node[black, thick] at (3,2) {\LARGE \textbullet};
+\end{tikzpicture}
+              </tex>
+            </latex-image>
+          </image>
+        </figure>
+        We see that the lines only intersect at <m>(3,2)</m>, so this is the only solution to the system.
+      </p>
+    </solution>
+    </task>
+    <task workspace="2in">
+      <statement>
+      <m>\begin{aligned}
+        x_1 - 2x_2 \amp= -1 \\
+        -x_1 + 2x_2 \amp= \phantom{-}3
+      \end{aligned}</m>
+      </statement>
+      <solution>
+      <p>
+        Graphing the two lines gives the following:
+        <figure >
+          <caption>Two parallel lines in the plane.</caption>
+          <image xml:id="sec1-1-img2" width="70%" decorative="no">
+            <shortdescription>
+            Cartesian axes with two parallel lines.
+          </shortdescription>
+          <description> The graph of the lines <m>x_1 - 2x_2 = -1</m> (in red) and <m>-x_1 + 2x_2 = 3</m> (in blue)
+          </description>
+            <latex-image>
+              <preamble>
+              </preamble>
+              <tex>
+\begin{tikzpicture}[scale=0.5, baseline]
+\draw[&lt;-&gt;, thick] (-6.5,0) -- (6.5,0);
+  \foreach \x in {-6,...,6} {
+    \draw[thin] (\x,-.1) -- (\x,0.1) node[anchor=south] {\small$\x$};
+  }
+  \foreach \y in {-6,...,6} {
+    \draw[thin] (-0.1,\y) -- (0.1,\y) node[anchor=west] {\small$\y$};
+  }
+  \draw[-{Stealth[length=4pt]}] (-6,0) -- (6,0);
+  \draw[-{Stealth[length=4pt]}] (0,-6) -- (0,6);
+  \draw[red, very thick] (-6,-5/2) -- (6,7/2);
+  \draw[blue, very thick] (-6,-3/2) -- (6,9/2);
+\end{tikzpicture}
+              </tex>
+            </latex-image>
+          </image>
+        </figure>
+        We see that the lines are parallel, so they never intersect. Therefore, there is no solution to the system.
+      </p>
+    </solution>
+    </task>
+
+    <task workspace="2in">
+      <statement>
+      <m>\begin{aligned}
+        x_1 - 2x_2 \amp= -1 \\
+        -x_1 + 2x_2 \amp= \phantom{-}1
+      \end{aligned}</m>
+      </statement>
+      <solution>
+      <p>
+        Graphing the two lines gives the following:
+        <figure >
+          <caption>Two lines lying on top of one another.</caption>
+          <image xml:id="sec1-1-img3" width="70%" decorative="no">
+            <shortdescription>
+            Cartesian axes with two parallel lines.
+          </shortdescription>
+          <description> The graph of the lines <m>x_1 - 2x_2 = -1</m> (in red) and <m>-x_1 + 2x_2 = 1</m> (in blue)
+          </description>
+            <latex-image>
+              <preamble>
+              </preamble>
+              <tex>
+\begin{tikzpicture}[scale=0.5, baseline]
+\draw[&lt;-&gt;, thick] (-6.5,0) -- (6.5,0);
+  \foreach \x in {-6,...,6} {
+    \draw[thin] (\x,-.1) -- (\x,0.1) node[anchor=south] {\small$\x$};
+  }
+  \foreach \y in {-6,...,6} {
+    \draw[thin] (-0.1,\y) -- (0.1,\y) node[anchor=west] {\small$\y$};
+  }
+  \draw[-{Stealth[length=4pt]}] (-6,0) -- (6,0);
+  \draw[-{Stealth[length=4pt]}] (0,-6) -- (0,6);
+  \draw[red, very thick] (-6,-5/2) -- (6,7/2);
+  \draw[blue, very thick] (-6,-5/2) -- (6,7/2);
+\end{tikzpicture}
+              </tex>
+            </latex-image>
+          </image>
+        </figure>
+        The two linear equations give the same line. Therefore, there are infinitely many points that satisfy both equations, any point that is on the line.
+      </p>
+    </solution>
+      
+    </task>
+
+    <conclusion>
+      <p><em>Conclusion:</em> A system of linear equations in two variables can have <m>\underline{\hspace{4in}}</m> solutions.</p>
+      <answer>
+        <p>
+          zero, one, or infinitely many
+        </p>
+      </answer>
+    </conclusion>
+</example>
+<p><nbsp/></p>
+  </page>
+
+  <!-- Page 4: Three-dimensional case -->
+  <page>
+    <title>Three-Dimensional Case</title>
+
+    <p>
+      A linear equation in three variables, <m>a_1x_1+a_2x_2+a_3x_3=b</m>, defines a plane in <m>\mathbb{R}^3</m>.
+    </p>
+
+    <example workspace = "2in">
+      <statement>
+        <p>
+          How many solutions can a system of <em>two</em> linear equations in three variables have?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Play around with drawing two planes in 3-space and seeing how they intersect. Can they never intersect? What about intersect in a finite number of points? What about intersect in infinitely many points?
+        </p>
+      </hint>
+    </example>
+
+    <example workspace = "3in">
+      <statement>
+        <p>
+          How many solutions can a system of <em>three</em> linear equations in three variables have?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Play around with drawing three planes in 3-space and seeing how they intersect.  Can they never intersect? What about intersect in a finite number of points? What about intersect in infinitely many points?
+        </p>
+      </hint>
+    </example>
+
+    <p>
+      <em>Conclusion:</em> Every system of linear equations, no matter the number of equations and number of variables has <m>\underline{\hspace{4in}}</m> solutions.
+      <answer>
+        <p>
+          zero, one, or infinitely many
+        </p>
+      </answer>
+    </p>
+    <p><nbsp/></p>
+    
+  </page>
+
+  <!-- Page 5: Row operations -->
+  <page>
+    <title>Row Reduction by Elementary Row Operations</title>
+
+    <p>
+      As we saw in the previous examples, one way to solve a system of linear equations is by graphing. This is not practical for most examples, especially if we are working with four or more varialbes.
+      A more useful approach to solving a linear system is to manipulate the equations through the use of <term>row operations</term>.
+    </p>
+    <p>
+      <ol>
+        <li workspace="2in"><term>Replacement/Addition:</term> add a multiple of one row to another.</li>
+        <li workspace="2in"><term>Interchange:</term> swap two rows.</li>
+        <li workspace="2in"><term>Scaling:</term> multiply a row by a nonzero scalar.</li>
+      </ol>
+    </p>
+  </page>
+
+  <!-- Page 6: Example -->
+  <page>
+    <title>Example of Row Reduction</title>
+    <example workspace="4in">
+      <statement> 
+        Apply row operations to systematically simplify the system below to an equivalent (easier to read) form in order to more easily identify the solution(s).
+      <md alignment="alignat">
+        <mrow> x_1  \amp {}-{} \amp 2x_2 \amp {}+{} \amp x_3 \amp {}={} \amp 0 </mrow>
+        <mrow>      \amp       \amp 2x_2 \amp {}-{} \amp 8x_3 \amp {}={} \amp 8 </mrow>
+        <mrow> 5x_1 \amp       \amp      \amp {}-{} \amp 5x_3 \amp {}={} \amp 10 </mrow>
+      </md>
+    </statement>
+    <solution>
+      <p>
+        We will simplify the system using appropriate row operations. I am going to go ahead and use augmented matrices since that is what we will do from here on out.
+      </p>
+      <p>
+        <m> \begin{eqnarray*}\begin{bmatrix} 1 \amp -2 \amp 1 \amp \rvert \amp 0 \\ 0 \amp 2 \amp -8 \amp \rvert \amp 8 \\ 5 \amp 0 \amp -5 \amp \rvert \amp 10 \end{bmatrix} \amp \overset{R_3-5R_1 \rightarrow R_3}{\Huge \sim} \amp \begin{bmatrix} 1 \amp -2 \amp 1 \amp \rvert \amp 0 \\ 0 \amp 2 \amp -8 \amp \rvert \amp 8 \\ 0 \amp 10 \amp -10 \amp \rvert \amp 10 \end{bmatrix} \\
+          \amp \overset{\frac{1}{2}R_2 \rightarrow R_2}{\underset{\frac{1}{10}R_3 \rightarrow R_3}{\Huge \sim}} \amp \begin{bmatrix} 1 \amp -2 \amp 1 \amp \rvert \amp 0 \\ 0 \amp 1 \amp -4 \amp \rvert \amp 4 \\ 0 \amp 1 \amp -1 \amp \rvert \amp 1\end{bmatrix} \\
+          \amp \overset{R_1 + 2R_2 \rightarrow R_1}{\underset{R_3 - R_2 \rightarrow R_3}{\Huge \sim}} \amp \begin{bmatrix}1 \amp 0 \amp -7 \amp \rvert \amp 8 \\ 0 \amp 1 \amp -4 \amp \rvert \amp 4 \\ 0 \amp 0 \amp 3 \amp \rvert \amp -3 \end{bmatrix} \\
+          \amp \overset{\frac{1}{3}R_3 \rightarrow R_3}{\Huge \sim} \amp \begin{bmatrix} 1 \amp 0 \amp -7 \amp \rvert \amp 8 \\ 0 \amp 1 \amp -4 \amp \rvert \amp 4 \\ 0 \amp 0 \amp 1 \amp \rvert \amp -1 \end{bmatrix} \\
+          \amp \overset{R_1 + 7R_3 \rightarrow R_1}{\underset{R_2 + 4R_3 \rightarrow R_2}{\Huge \sim}} \amp \begin{bmatrix} 1 \amp 0 \amp 0 \amp \rvert \amp 1 \\ 0 \amp 1 \amp 0 \amp \rvert \amp 0 \\ 0 \amp 0 \amp 1 \amp \rvert \amp -1 \end{bmatrix}
+        \end{eqnarray*}
+        </m>
+      </p>
+      <p>
+        Therefore, we have that the only solution is <m>(1,0,-1)</m>.
+      </p>
+    </solution>
+    </example>
+    <p><nbsp/></p>
+  </page>
+
+  <!-- Page 7: Augmented matrices -->
+  <page>
+    <title>Augmented Matrices</title>
+
+    <p>
+      It’s redundant to write variables repeatedly, so we use a <term>augmented matrix</term> to simplify the notation for the system. 
+      For example, the previous system
+      
+      <md alignment="alignat">
+        <mrow> x_1  \amp {}-{} \amp 2x_2 \amp {}+{} \amp x_3 \amp {}={} \amp 0 </mrow>
+        <mrow>      \amp       \amp 2x_2 \amp {}-{} \amp 8x_3 \amp {}={} \amp 8 </mrow>
+        <mrow> 5x_1 \amp       \amp      \amp {}-{} \amp 5x_3 \amp {}={} \amp 10 </mrow>
+      </md>
+      
+      Can be writen as the augmented matrix
+        
+      <md>\left[\begin{array}{rrr|r} 
+                          1 \amp -2 \amp 1  \amp 0 \\ 
+                          0 \amp 2 \amp -8  \amp 8 \\ 
+                          5 \amp 0 \amp -5  \amp 10 
+                          \end{array}\right]</md>
+
+      The vertical bar separates the coefficient matrix (for <m>x_1,x_2,x_3</m>) from the constants.
+    </p>
+    <p><nbsp/></p>
+
+    <example>
+      <statement> 
+        Determine if the following system has a solution.
+      <md alignment="alignat">
+        <mrow>      \amp       \amp x_2  \amp {}-{} \amp 4x_3 \amp {}={} \amp 8 </mrow>
+        <mrow> 2x_1 \amp {}-{} \amp 3x_2 \amp {}+{} \amp 2x_3 \amp {}={} \amp 1 </mrow>
+        <mrow> 4x_1 \amp {}-{} \amp 8x_2 \amp {}+{} \amp 12x_3 \amp {}={} \amp 1 </mrow>
+      </md>
+    </statement>
+    <solution>
+      <p>
+        Note the following:
+      </p>
+      <p>
+        <m>
+          \begin{eqnarray*}
+\begin{bmatrix}
+0 \amp 1 \amp -4 \amp \rvert \amp  8 \\
+2 \amp -3 \amp 2 \amp \rvert \amp 1 \\
+4 \amp -8 \amp 12 \amp \rvert \amp 1
+\end{bmatrix} \amp \overset{\frac{1}{4}R_3 \rightarrow R_3}{\Huge \sim} \amp \begin{bmatrix}
+0 \amp 1 \amp -4 \amp \rvert \amp 8 \\
+2 \amp -3 \amp 2 \amp \rvert \amp 1 \\
+1 \amp -2 \amp 3 \amp \rvert \amp \frac{1}{4}
+\end{bmatrix}
+\\[1em]
+\amp \overset{\text{swap } R_1 \text{ and } R_3}{\Huge \sim} \amp \begin{bmatrix}
+1 \amp -2 \amp 3 \amp \rvert \amp \frac{1}{4} \\
+2 \amp -3 \amp 2 \amp \rvert \amp 1 \\
+0 \amp 1 \amp -4 \amp \rvert \amp 8
+\end{bmatrix}
+\\[1em]
+\amp \overset{R_2 - 2R_1 \rightarrow R_2}{\Huge \sim} \amp \begin{bmatrix}
+1 \amp -2 \amp 3 \amp \rvert \amp \frac{1}{4} \\
+0 \amp 1 \amp -4 \amp \rvert \amp \frac{1}{2} \\
+0 \amp 1 \amp -4 \amp \rvert \amp 8
+\end{bmatrix}
+\\[1em]
+\amp \overset{R_3 - R_2 \rightarrow R_3}{\Huge \sim} \amp \begin{bmatrix}
+1 \amp -2 \amp 3 \amp \rvert \amp \frac{1}{4} \\
+0 \amp 1 \amp -4 \amp \rvert \amp \frac{1}{2} \\
+0 \amp 0 \amp 0 \amp \rvert \amp \frac{15}{2}
+\end{bmatrix}
+\end{eqnarray*}
+        </m>  
+      </p>
+      <p>
+        Note that the final row suggests that <m>0 = \frac{15}{2}</m> which is impossible, no matter the choice of <m>x_1, x_2, x_3</m>. Therefore, there is no solution. So the system is inconsistent.
+      </p>
+    </solution>
+    </example>
+    <p><nbsp/></p>
+  </page>
+
+  <!-- Page 8: Consistency + Row equivalence (fill-in definitions) -->
+  <page>
+    <title>Consistent Systems and Row Equivalence</title>
+
+    <definition workspace="1.5in">
+      <title>Consistent</title>
+      <statement>
+        A linear system is <term>consistent</term> if it has at least one <em>solution</em>. Otherwise, it is <term>inconsistent</term>.
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <definition xml:id="def-row-equiv" workspace="1.5in">
+      <title>Row Equivalence</title>
+      <statement>
+        Two matrices are <term>row equivalent</term> if a sequence of <em>row operations</em> transforms one matrix into the other.
+      </statement>
+    </definition>
+
+    <p><nbsp/></p>
+
+    <p workspace="0.5in">
+      <em>Note</em>: If the augmented matrices of two linear systems are row equivalent, they have the same solution set.
+    </p>
+
+    <p><nbsp/></p>
+
+    <p workspace="2in">
+      <term>Fundamental Questions</term>: Two questions that we will revisit many times throughout the course:
+      <ol>
+        <li>Does a given linear system have a solution? In other words, is it consistent?</li>
+        <li>If it is consistent, is the solution unique?</li>
+      </ol>
+    </p>
+  </page>
+
+</handout>

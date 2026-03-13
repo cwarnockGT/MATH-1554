@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<part xml:id="notes" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>MATH 1554 Course Notes - Spring 2026</title>
+    <introduction xml:id="intro" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <p>These are the course notes for Georgia Tech's MATH 1554 Linear Algebra used during the Spring 2026 semester. </p>
+        <p>The notes are organized by chapter and section. Each section is it's own HTML page that can be navigated to by using the links below or by using the Contents panel on the left. To return to this page, click the large "MATH 1554 Course Notes - Spring 2026" link at the top of any page.</p>
+        <p>The notes are written in PreTeXt which is a markup language that will meet the upcoming Title II compliancy requirements for Web Content. The notes are intended to be used as guided notes. You can get a PDF of each section's notes by navigating to the HTML page and clicking the printer icon in the top right. This will generate a PDF containing the same content as the webpage, but with spaces inserted to allow for notetaking.</p>
+        <p><em>Disclaimer:</em> This is the first time I have used PreTeXt, so please bear with me. The notes are in constant development, so please check back often to see updated content. If you have any feedback or suggestions as you use these notes, please feel free to reach out to me at <url href="mailto:cwarnock6@gatech.edu">cwarnock6@gatech.edu</url>.</p>
+    </introduction>
+
+    <xi:include href="./chapter-1.ptx" />
+    <xi:include href="./chapter-2.ptx" />
+    <xi:include href="./chapter-3.ptx" />
+    <xi:include href="./chapter-4.ptx" />
+    <xi:include href="./chapter-5.ptx" />
+    <xi:include href="./chapter-6.ptx" />
+
+</part>

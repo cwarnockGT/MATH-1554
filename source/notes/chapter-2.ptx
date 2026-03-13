@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xml:id="chapter-2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Matrix Algebra</title>
+
+  <section xml:id="Section-2-1">
+    <title>2.1 Matrix Operations</title>
+      <xi:include href="./chapter-2-notes/section-2-1-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-2-2">
+    <title>2.2 Matrix Inverses</title>
+      <xi:include href="./chapter-2-notes/section-2-2-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-2-3">
+    <title>2.3 The Invertible Matrix Theorem</title>
+      <xi:include href="./chapter-2-notes/section-2-3-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-2-5">
+    <title>2.5 <m>LU</m> Factorization</title>
+      <xi:include href="./chapter-2-notes/section-2-5-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-2-8">
+    <title>2.8 Subspaces</title>
+      <xi:include href="./chapter-2-notes/section-2-8-sol.ptx" />
+  </section>
+
+  <section xml:id="Section-2-9">
+    <title>2.9 Dimension and Rank</title>
+      <xi:include href="./chapter-2-notes/section-2-9-sol.ptx" />
+  </section>
+  
+
+</chapter>

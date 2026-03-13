@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<handout xml:id="handout-1-2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>1.2 Row Reduction and Echelon Forms</title>
+  <!-- Topics -->
+    <objectives xml:id="obj-1-2-topics">
+      <title>Topics</title>
+      <ul>
+        <li>Row reduction algorithm</li>
+        <li>Pivots, basic and free variables</li>
+        <li>Echelon forms, existence and uniqueness</li>
+      </ul>
+    </objectives>
+
+  <!-- Learning Objectives -->
+    <objectives workspace="0.2in" xml:id="obj-1-2">
+      <title>Goals</title>
+      <ul>
+        <li>Characterize a linear system in terms of leading entries, free variables, pivots, pivot columns, and pivot positions.</li>
+        <li>Apply the row reduction algorithm to reduce a linear system to echelon form or reduced echelon form.</li>
+        <li>Apply row reduction to compute the coefficients of a polynomial.</li>
+      </ul>
+    </objectives>
+
+  <!-- Definition: Echelon form and RREF -->
+  <definition  xml:id="def-echelon-rref" workspace="0.3in">
+    <title>Echelon Form and Row Row Reduced Echelon Form</title>
+    <statement>
+      <p>A rectangular matrix is in <term>echelon form</term> (REF) if:</p>
+      <ol>
+        <li>All zero rows (if any) are at the bottom.</li>
+        <li>The first nonzero entry (or <term>leading entry</term>) of a row is to the right of any leading entry in the row above it.</li>
+        <li>All entries below a leading entry are zero.</li>
+      </ol>
+      <p>A matrix in echelon form is in <term>row reduced echelon form</term> (RREF) if additionally:</p>
+      <ol>
+        <li>All leading entries equal <m>1</m>.</li>
+        <li>Each leading entry is the only nonzero entry in its column.</li>
+      </ol>
+    </statement>
+  </definition>
+
+  <!-- Example: matrix in echelon form -->
+  <example xml:id="ex-echelon">
+      <statement>
+      <p>Let <m>\blacksquare</m> denote a nonzero number, and <m>\ast</m> denote any number.</p>
+      <p>
+        <m>
+          \begin{bmatrix}
+          0 \amp \blacksquare \amp \ast \amp \ast \amp \ast \amp \ast \amp \ast \amp \ast \amp \ast \amp \ast \\
+          0 \amp 0 \amp 0 \amp \blacksquare \amp \ast \amp \ast \amp \ast \amp \ast \amp \ast \amp \ast \\
+          0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp \blacksquare \amp \ast \amp \ast \\
+          0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp \blacksquare \amp \ast \\
+          0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0
+          \end{bmatrix}
+        </m> is in REF.
+      </p>
+      <p>
+        <m>
+          \begin{bmatrix}
+          0 \amp 1 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+          0 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+          0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 0 \amp 0 \\
+          0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 0 \\
+          0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0
+          \end{bmatrix}
+        </m> is in RREF.
+      </p>
+    </statement>
+  </example>
+
+  <!-- Exercise set: which are in RREF? -->
+  <example xml:id="task-rref-check" >
+    <statement>
+      <p>Determine whether each matrix is in RREF, REF, or neither.</p>
+      <p workspace="0.3in">
+        <m>\text{a)}\quad \begin{bmatrix} 1 \amp 0 \\ 0 \amp 2 \end{bmatrix}
+        \qquad \qquad \qquad
+        \text{b)}\quad \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix}
+        \qquad \qquad \qquad
+        \text{c)}\quad \begin{bmatrix} 0 \\ 1 \\ 0 \\ 0 \end{bmatrix}
+        </m>
+      </p>
+      <p workspace="0.3in">
+        <m>\text{d)}\quad \begin{bmatrix} 0 \amp 6 \amp 3 \amp 0 \end{bmatrix}
+        \qquad \qquad
+        \text{e)}\quad \begin{bmatrix} 1 \amp 17 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}
+        </m>
+      </p>
+    </statement>
+  </example>
+
+  <!-- Definition: pivot position / pivot column -->
+  <definition workspace="0.2in" xml:id="def-pivot">
+    <title>Pivot Position and Pivot Column</title>
+    <statement>
+      <p>
+        A <term>pivot position</term> in a matrix <m>A</m> is a location in <m>A</m> that corresponds to a leading <m>1</m> in the RREF of <m>A</m>.
+        A <term>pivot column</term> is a column of <m>A</m> that contains a pivot position.
+      </p>
+      </statement>
+  </definition>
+
+  <!-- Guided task: compute RREF and identify pivot columns -->
+  <example xml:id="task-pivots" workspace="true">
+    <statement>
+      <p>Express the matrix in row reduced echelon form and identify the pivot columns.</p>
+      <p>
+        <me>
+          \left[
+          \begin{array}{rrrr}
+          0 \amp -3 \amp -6 \amp 4 \\
+          -1 \amp -2 \amp -1 \amp 3 \\
+          -2 \amp -3 \amp 0 \amp 3
+          \end{array}
+          \right]
+        </me>
+      </p>
+    </statement>
+  </example>
+
+  <!-- Algorithm: Row reduction -->
+  <paragraphs xml:id="algo-rref" workspace="0.2in">
+    <title>Row Reduction Algorithm (Steps to RREF)</title>
+    <p>The algorithm below produces a matrix in RREF.</p>
+    <ul>
+      <li><strong>Step 1a:</strong> Swap the first row with a lower one so the leftmost nonzero entry is in the first row.</li>
+      <li><strong>Step 1b:</strong> Scale the first row so that its leading entry equals <m>1</m>.</li>
+      <li><strong>Step 1c:</strong> Use row replacement so all entries above and below this <m>1</m> are <m>0</m>.</li>
+      <li><strong>Step 2a:</strong> Swap the second row with a lower one so the leftmost nonzero entry below the first row is in the second row.</li>
+      <li><strong>Step 2b:</strong> Scale the second row so that its leading entry equals <m>1</m>.</li>
+      <li><strong>Step 2c:</strong> Use row replacement so all entries above and below this <m>1</m> are <m>0</m>.</li>
+      <li><strong>Continue:</strong> Repeat these steps for each subsequent row until the matrix is in RREF.</li>
+    </ul>
+  </paragraphs>
+
+  <example workspace="true">
+    <statement>
+      <p>Use the algorithm above to convert the following matrix into RREF.</p>
+      <p>
+        <me>
+          \left[
+          \begin{array}{rrrr}
+          0 \amp 2 \amp 7 \amp 6 \\
+          3 \amp 6 \amp 0 \amp -3 \\
+          2 \amp 8 \amp 12 \amp 6
+          \end{array}
+          \right]
+        </me>
+      </p>
+    </statement>
+  </example>
+
+  <definition workspace="0.2in">
+    <title>Pivot Variables and Free Variables</title>
+    <statement>
+      <p> Variables in a system that correspond to pivot column in the augmented matrix are called <term>pivot variables</term>. 
+        The other variables in the system are called <term>free variables</term>. 
+        This is because, if the system is consistent, then any choice of the free variables will lead to a valid solution.
+      </p>
+      </statement>
+  </definition>
+
+  <!-- Example: basic and free variables -->
+  <example xml:id="ex-basic-free" workspace="true">
+    <statement>
+      <p>Determine the pivot variables and the free variables for the system represented below.</p>
+      <p>
+        <me>
+          \left[
+          \begin{array}{rrrrr|r}
+          1 \amp 3 \amp 0 \amp 7 \amp 2 \amp 4 \\
+          0 \amp 0 \amp 2 \amp 0 \amp 4 \amp -2 \\
+          0 \amp 0 \amp 0 \amp -3 \amp 0 \amp 0 \\
+          \end{array}
+          \right]
+        </me>
+      </p>
+    </statement>
+  </example>
+
+  <!-- Theorem: existence and uniqueness -->
+  <theorem xml:id="thm-existence-uniqueness">
+    <title>Existence and Uniqueness of Solutions</title>
+    <statement>
+      <p>
+        A linear system is consistent if and only if the last column of the <strong>augmented</strong> matrix does not have a pivot.
+        Equivalently, the RREF of the augmented matrix does <em>not</em> contain a row of the form
+        <me>\begin{bmatrix} 0 \amp 0 \amp 0 \amp \cdots \amp 0 \amp \vert \amp  1\end{bmatrix}</me>.
+      </p>
+      <p>If a linear system is consistent, then:</p>
+      <ol>
+        <li>It has a unique solution if and only if (iff) there are <m>\underline{\phantom{free variable free variables}}</m>.</li>
+        <li>Otherwise, it has <m>\underline{\phantom{infinitely infinitely}}</m> many solutions parameterized by the free variables.</li>
+      </ol>
+    </statement>
+  </theorem>
+
+</handout>

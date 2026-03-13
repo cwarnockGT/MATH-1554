@@ -1,0 +1,184 @@
+<handout xml:id="handout-section-3-2-determinant-properties">
+  <title>3.2 Properties of the Determinant</title>
+
+  <page xml:id="p-3-2-overview">
+    <title>Overview</title>
+
+    <objectives xml:id="obj-3-2-topics-goals">
+      <title>Topics</title>
+      <ul>
+        <li>The relationships between row reductions, invertibility, and determinants.</li>
+      </ul>
+      </objectives>
+
+      <objectives>
+      <title>Goals</title>
+      <ul>
+        <li>
+          Apply determinant properties (related to row reductions, transpose, and matrix products)
+          to compute determinants efficiently.
+        </li>
+        <li>
+          Use determinants to determine whether a square matrix is invertible.
+        </li>
+      </ul>
+    </objectives>
+
+    <p><nbsp/></p>
+
+    <p>
+      We have a method for computing determinants, but without the strategies in this section,
+      the cofactor-expansion algorithm can be very inefficient. Row operations provide a more efficient method.
+    </p>
+
+    <p><nbsp/></p>
+
+    <theorem xml:id="thm-det-row-operations" workspace="true">
+      <title>Row Operations and the Determinant</title>
+      <statement>
+        <p>Let <m>A</m> be a square matrix.</p>
+        <ol>
+          <li>
+            If a multiple of one row of <m>A</m> is added to another to produce <m>B</m>,
+            then <m>\operatorname{det}(B)=\operatorname{det}(A)</m>.
+          </li>
+
+          <li>
+            If two rows of <m>A</m> are interchanged to produce <m>B</m>,
+            then <m>\operatorname{det}(B)=-\operatorname{det}(A)</m>.
+          </li>
+
+          <li>
+            If a row of <m>A</m> is multiplied by a scalar <m>k</m> to produce <m>B</m>,
+            then <m>\operatorname{det}(B)=k\operatorname{det}(A)</m>.
+          </li>
+        </ol>
+      </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-3-2-example1">
+    <title>Example 1</title>
+
+    <example xml:id="ex-3-2-rowops-example1" workspace="1.5in">
+      <statement>
+        <p>Compute:</p>
+        <me>
+          \begin{vmatrix}
+            1 \amp -4 \amp 2\\
+            -2 \amp 8 \amp -9\\
+            -1 \amp 7 \amp 3
+          \end{vmatrix}
+        </me>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-3-2-rowops-example2" workspace="true">
+      <statement>
+        <p>Compute:</p>
+        <me>
+          \begin{vmatrix}
+            2 \amp 6 \amp -5 \amp 2\\
+            2 \amp 5 \amp -7 \amp 3\\
+            4 \amp 15 \amp -4 \amp 6\\
+            -2 \amp -5 \amp 4 \amp 2
+          \end{vmatrix}
+        </me>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+  </page>
+
+
+  <page xml:id="p-3-2-invertibility">
+    <title>Determinants and Invertibility</title>
+
+    <theorem xml:id="thm-det-prod-pivots" workspace="true">
+        <statement>
+            <p>
+                If <m>A</m> is reduced to echelon form using <m>r</m> row interchanges, then
+            </p>
+            <me>
+            |A|=
+            \begin{cases}
+                (-1)^r \times \text{(product of pivots)}, \amp \text{if $A$ is invertible},\\[4pt]
+                0, \amp \text{if $A$ is singular}.
+            \end{cases}
+            </me>
+        </statement>
+    </theorem>
+
+    <p><nbsp/></p>
+    
+    
+    <theorem xml:id="thm-det-props" workspace="true">
+        <statement>
+            <p>
+                For any <m>n \times n</m> matrices <m>A</m> and <m>B</m>, the following properties hold:
+            </p>
+            <ol>
+
+            <li><m>A</m> is invertible if and only if <m>\operatorname{det}(A)\neq 0</m>.</li>
+
+            <li><m>\operatorname{det}(AB)=\operatorname{det}(A)\operatorname{det}(B)</m>.</li>
+            
+            <li><m>\operatorname{det}(A)=\operatorname{det}(A^T)</m>.</li>
+        </ol>
+        </statement>
+    </theorem>
+    <p><nbsp/></p>
+    
+  </page>
+
+
+  <page xml:id="p-3-2-additional-example-lambda">
+    <title>Additional Example</title>
+
+    <example xml:id="ex-3-2-det-power" workspace="1.5in">
+      <statement>
+        <p>Determine the value of:</p>
+        <me>
+          \operatorname{det}(A)
+          =
+          \operatorname{det}
+          \left(
+            \begin{bmatrix}
+              0 \amp 2 \amp 0\\
+              1 \amp 1 \amp 2\\
+              1 \amp 1 \amp 3
+            \end{bmatrix}^8
+          \right).
+        </me>
+      </statement>
+    </example>
+
+    <p><nbsp/></p>
+
+    <example xml:id="ex-3-2-lambda" workspace="true">
+      <statement>
+        <p>
+          Use the determinant to find all values of <m>\lambda</m> for which the matrix <m>C</m> is not invertible.
+        </p>
+        <me>
+          C=
+          \begin{bmatrix}
+            5 \amp 0 \amp 0\\
+            0 \amp 0 \amp 1\\
+            1 \amp 1 \amp 0
+          \end{bmatrix}
+          -
+          \lambda I_3.
+        </me>
+      </statement>
+    </example>
+
+    
+  </page>
+
+</handout>

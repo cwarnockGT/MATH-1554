@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<worksheet>
+  <title>1.7 Linear Independence</title>
+
+  <!-- ===================== PAGE 1 ===================== -->
+  <page>
+    <title>Topics and Objectives</title>
+
+    <objectives>
+      <title>Topics</title>
+      <ul>
+        <li>Linear independence</li>
+        <li>Geometric interpretation of linearly independent vectors</li>
+      </ul>
+    </objectives>
+
+    <objectives workspace="0.5in">
+      <title>Goals</title>
+      <ol>
+        <li>Characterize a set of vectors and linear systems using the concept of linear independence.</li>
+        <li>Construct dependence relations between linearly dependent vectors.</li>
+      </ol>
+    </objectives>
+
+
+    <p>
+      <em>Motivating Question:</em> What is the smallest number of vectors needed in a parametric solution
+      to a linear system?
+    </p>
+
+    <definition>
+      <statement>
+        A set of vectors
+        <m>{\vec v_1, \ldots, \vec v_k}</m>
+        in
+        <m>\mathbb{R}^n</m>
+        is called <term>linearly independent</term> if the vector
+        equation
+        <md>
+          c_1 \vec v_1 + c_2 \vec v_2 + \cdots + c_k \vec v_k = \vec 0
+        </md>
+        has only the <em>trivial solution</em> <m>c_1 = c_2 = \cdots = c_k = 0</m>.
+
+        The set <m>{\vec v_1, \ldots, \vec v_k}</m> is said to be <term> linearly dependent</term> 
+        if there exist weights <m>c_1, c_2, \dots, c_k</m>, <em>not all zero</em>, such that 
+        <md>
+          c_1 \vec v_1 + c_2 \vec v_2 + \cdots + c_k \vec v_k = \vec 0
+        </md>
+      </statement>
+    </definition>
+
+    <p workspace="true"> Let <m>A = \begin{bmatrix} \vec v_1 \amp \cdots \amp \vec v_n \end{bmatrix}</m>. Then some equivalent definitions of linear independence are
+        <ul>
+            <li><m>A\vec x = \vec 0</m> only has the trivial solution.</li>
+            <li><m>A</m> has a pivot in every column.</li>
+        </ul>
+    </p>
+
+  </page>
+
+  <!-- ===================== PAGE 2 ===================== -->
+  <page>
+    <example>
+        <introduction>
+          <p>
+            For each of the following sets, determine if the set is linearly independent or linearly dependent.
+          </p>
+            </introduction>
+        <task workspace="true">
+          <statement >
+            <m>\left\{\begin{bmatrix}1 \\ 0 \\ 1\end{bmatrix}, \begin{bmatrix} 2 \\ 2 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 2 \\ 1 \end{bmatrix} \right\}</m>
+          </statement>
+          </task>
+          <task workspace="true">
+            <statement>
+              <p>
+                <m>\left\{\begin{bmatrix}1 \\ 2 \\ 1\end{bmatrix}, \begin{bmatrix} 2 \\ 4 \\ 2 \end{bmatrix}\right\}</m>
+              </p>
+            </statement>
+          </task>
+          <task workspace="true">
+            <statement >
+              <p>
+                <m>\left\{\begin{bmatrix}1 \\ 0 \\ 1\end{bmatrix}, \begin{bmatrix} 2 \\ 1 \\ 3 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix} \right\}</m>
+              </p>
+            </statement>
+          </task>
+    </example>
+
+  </page>
+
+  <page>
+    <title>Two Important Facts</title>
+
+    <theorem workspace="true">
+      <statement>
+        Any set containing the zero vector <m> \vec 0</m> is linearly dependent.
+      </statement>
+    </theorem>
+
+    <theorem workspace="true">
+      <statement>
+        Suppose <m>\vec v_1, \ldots, \vec v_k</m> are vectors in
+        <m>\mathbb{R}^n</m> with <m>k > n</m>. Then the set
+        <m>\{\vec v_1, \ldots, \vec v_k\}</m>
+        is linearly dependent.
+      </statement>
+    </theorem>
+
+
+    
+  </page>
+
+
+  <!-- ===================== PAGE 4 ===================== -->
+  <page>
+    <title>Example 1</title>
+
+    <example>
+      <statement>
+        For what values of <m>h</m> are the vectors
+        <displaymath>
+          <m>
+            \begin{bmatrix} 1 \\ 1 \\ h \end{bmatrix},
+            \begin{bmatrix} 1 \\ h \\ 1 \end{bmatrix},
+            \begin{bmatrix} h \\ 1 \\ 1 \end{bmatrix}
+          </m>
+        </displaymath>
+        linearly dependent?
+      </statement>
+    </example>
+  </page>
+
+
+  
+</worksheet>
