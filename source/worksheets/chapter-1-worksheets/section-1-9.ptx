@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 1.9, Linear Transforms</title>
+
+  <ul marker="">
+
+    <li workspace="2in">
+      <p>(1) &#160; Indicate whether the statements are true or false.</p>
+      <ol marker="(a)">
+        <li><p>If <m>A</m> is a <m>3 \times 2</m> matrix then the map <m>x \mapsto A x</m> cannot be one‑to‑one.</p></li>
+        <li><p>If <m>A</m> is a <m>2 \times 3</m> matrix then the map <m>x \mapsto A x</m> cannot be onto.</p></li>
+        <li><p><m>T_A : \mathbb{R}^n \to \mathbb{R}^m</m> is one‑to‑one if and only if <m>A\vec{x} = \vec{0}</m> has only the trivial solution.</p></li>
+      </ol>
+    </li>
+
+    <li workspace="2in">
+      <p>(2) &#160; Construct the standard matrix of the linear transformation <m>T</m>.</p>
+
+      <ol marker="(a)">
+        <li>
+          <p>
+            <m>T : \mathbb{R}^2 \to \mathbb{R}^4</m>, where  
+            <m>T\!\left(\begin{bmatrix}1 \\ 0\end{bmatrix}\right)
+            = \begin{bmatrix}3 \\ 1 \\ 4 \\ 1\end{bmatrix}</m> and  
+            <m>T\!\left(\begin{bmatrix}0 \\ 1\end{bmatrix}\right)
+            = \begin{bmatrix}1 \\ 6 \\ 1 \\ 8\end{bmatrix}</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>T</m> is a vertical shear given by  
+            <m>T(\vec{e}_2) = 2\vec{e}_2</m> and  
+            <m>T(\vec{e}_1) = \vec{e}_1 - 2\vec{e}_2</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Construct a matrix <m>A</m> such that <m>T(\vec{x}) = A\vec{x}</m>,  
+            where <m>T</m> first reflects vectors across the line <m>x_1 = x_2</m>,  
+            then rotates them counterclockwise by <m>\pi</m> radians about the origin,  
+            then reflects them across the line <m>x_2 = 0</m>.
+          </p>
+        </li>
+      </ol>
+    </li>
+
+  </ul>
+</handout>

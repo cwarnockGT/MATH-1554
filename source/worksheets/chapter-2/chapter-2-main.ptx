@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="chapter-2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Chapter 2 Worksheets</title>
+  
+  <xi:include href="./section-2-1.ptx"/>
+  <xi:include href="./section-2-2.ptx"/>
+  <xi:include href="./section-2-3.ptx"/>
+  <!-- <xi:include href="./section-2-4.ptx"/> -->
+  <xi:include href="./section-2-5.ptx"/>
+  <xi:include href="./section-2-8.ptx"/>
+  <xi:include href="./section-2-9.ptx"/>
+
+</section>

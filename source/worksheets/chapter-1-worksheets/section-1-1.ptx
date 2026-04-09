@@ -1,40 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <handout>
-<title>Worksheet 1.1, Systems of Linear Equations</title>
+  <title>Worksheet 1.1, Systems of Linear Equations</title>
 
-  <page>   
-    <ol type="1">
-        <li workspace="true">
-          <p>Indicate whether the statements are true or false.</p>
-          <ol label="(a)">
-            <li>
-              <p>If a linear system has more equations than unknowns, then the system cannot have a unique solution.</p>
-            </li>
-            <li>
-              <p>If a linear system has more unknowns than equations, then the system cannot have a unique solution.</p>
-            </li>
-          </ol>
-          <p><em>Before moving on</em> — what strategies does your TA(s) recommend that students can use to approach true/false questions?</p>
-        </li>
+  <ul marker="">
+    <li workspace="2in">
+      <p>(1) &#160; Indicate whether the statements are true or false.</p>
+      <ol marker="(a)">
+        <li><p>If a linear system has more equations than unknowns, then the system cannot have a unique solution.</p></li>
+        <li><p>If a linear system has more unknowns than equations, then the system cannot have a unique solution.</p></li>
+      </ol>
+      <p>Before moving on - what strategies does your TA(s) recommend that students can use to approach true/false questions?</p>
+    </li>
 
-        <li workspace="true">
-          <p>For what values of <m>A</m> and <m>B</m>, if any, does the system have (a) an infinite number of solutions? (b) no solutions? (c) exactly one solution?</p>
-          <p>
-            <me>\begin{aligned}
-            x_{1} + 2x_{2} \amp= 1\\
-            Ax_{1} + Bx_{2} \amp= 2
-            \end{aligned}</me>
-          </p>
-          <p>For the case where there are an infinite number of solutions, sketch the set of solutions. Note that sketches need to have labeled axes. The set of solutions should be a line that does not have arrows.</p>
-        </li>
-        <li workspace="true">
-          <p>From your TA’s perspective, what are some of the strategies that they recommend to ensure that a student is successful in a college‑level linear algebra course? What strategies worked for them?</p>
-          
-        </li>
+    <li workspace="4in">
+      <p>(2) &#160; For what values of <m>A</m> and <m>B</m>, if any, does the system have each behavior below?</p>
+      <ol marker="(a)">
+        <li><p>an infinite number of solutions</p></li>
+        <li><p>no solutions</p></li>
+        <li><p>exactly one solution</p></li>
       </ol>
 
-      <p><em>Note:</em> this worksheet is a bit shorter than most other worksheets to give time to discuss course and studio organization.</p>
+      <p>
+        <me>
+        \begin{aligned}
+          x_1 + 2x_2 \amp= 1 \\
+          A x_1 + B x_2 \amp= 2
+        \end{aligned}
+        </me>
+      </p>
 
-  </page>
+      <p>
+        For the case where there are an infinite number of solutions, sketch the set of solutions.
+        The sketch must have labeled axes, and the solution set should be drawn as a line without arrows.
+      </p>
+    </li>
+
+    <li workspace="1in">
+      <p>(3) &#160; From your TA’s perspective, what strategies do they recommend to ensure success in a college‑level linear algebra course? What strategies worked for them?</p>
+      <p>This worksheet is intentionally shorter to allow time for course and studio organization.</p>
+    </li>
+  </ul>
 </handout>

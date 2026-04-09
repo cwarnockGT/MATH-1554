@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<chapter xml:id="chapter-1-worksheets" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Chapter 1 Worksheets</title>
-  
-  <xi:include href="./chapter-1-worksheets/section-1-1.ptx" />
-  <xi:include href="./chapter-1-worksheets/section-1-2.ptx" />
-
-</chapter>

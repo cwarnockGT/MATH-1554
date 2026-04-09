@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 2.8, Subspaces of <m>\mathbb{R}^n</m></title>
+
+  <ul marker="">
+
+    <li workspace="2in">
+      <p>(1) &#160; <m>A</m> has the reduced echelon form below. Construct a basis for <m>\mathrm{Col}(A)</m> and for <m>\mathrm{Nul}(A)</m>.</p>
+
+      <p>
+        <me>
+        A = \begin{pmatrix} \vec a_1 &amp; \vec a_2 &amp; \vec a_3 &amp; \vec a_4 &amp; \vec a_5 &amp; \vec a_6 \end{pmatrix} \sim 
+        \begin{pmatrix}
+          1 &amp; 4 &amp; 0 &amp; 10 &amp; 0 &amp; 13 \\
+          0 &amp; 0 &amp; 1 &amp; -3 &amp; 0 &amp; -5 \\
+          0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 4 \\
+          0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+        \end{pmatrix}.
+        </me>
+      </p>
+    </li>
+
+    <li workspace="2in">
+      <p>(2) &#160; Which of these are bases for their relevant spaces?</p>
+
+      <ol marker="(a)">
+        <li>
+          <p>
+            <m>\begin{pmatrix} 5 \\ -2 \end{pmatrix},
+               \begin{pmatrix} 10 \\ -2 \end{pmatrix}</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>
+            \begin{pmatrix} 2 \\ * \\ * \\ * \end{pmatrix},\ 
+            \begin{pmatrix} 0 \\ 2 \\ * \\ * \end{pmatrix},\ 
+            \begin{pmatrix} 0 \\ 0 \\ 2 \\ * \end{pmatrix},\ 
+            \begin{pmatrix} 0 \\ 0 \\ 0 \\ 2 \end{pmatrix}
+            </m>,
+            where <m>*</m> is arbitrary
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>
+            \begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix},\ 
+            \begin{pmatrix} -5 \\ -1 \\ 2 \end{pmatrix},\ 
+            \begin{pmatrix} 7 \\ 3 \\ h \end{pmatrix}
+            </m>,
+            where <m>h</m> is arbitrary
+          </p>
+        </li>
+      </ol>
+    </li>
+</ul>
+<ul marker="">
+
+    <li workspace="1in">
+      <p>(3) &#160; Construct a <m>3 \times 3</m> matrix <m>A</m> with two pivotal columns so that <m>\begin{pmatrix}1 \\ 1 \\ 1\end{pmatrix}</m> is in the null space of <m>A</m>.</p>
+    </li>
+
+    <li workspace="2in">
+      <p>(4) &#160; Which of the following, if any, are subspaces of <m>\mathbb{R}^3</m>? For those that are subspaces, what is the dimension of the subspace?</p>
+
+      <ol marker="(a)">
+        <li>
+          <p>
+            <m>
+            \left\{
+              \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+              \in \mathbb{R}^3 \;\middle|\;
+              x_1 + x_2 = 4
+            \right\}
+            </m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>
+            \left\{
+              \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+              \in \mathbb{R}^3 \;\middle|\;
+              x_1 + x_2 + x_3 = 0,\ x_1 + 2x_2 = 0
+            \right\}
+            </m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>
+            \left\{
+              \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+              \in \mathbb{R}^3 \;\middle|\;
+              x_1 \le x_2 \le x_3
+            \right\}
+            </m>
+          </p>
+        </li>
+
+        <li>
+          <p> The null space of
+            <m>
+            A = 
+            \begin{pmatrix}
+              1 &amp; 0 \\ 
+              2 &amp; 0 \\
+              3 &amp; 0
+            \end{pmatrix}
+            </m>
+          </p>
+        </li>
+      </ol>
+
+    </li>
+
+  </ul>
+</handout>

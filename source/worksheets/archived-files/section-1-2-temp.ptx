@@ -3,19 +3,18 @@
   <title>Worksheet 1.2, Row Reduction and Echelon Forms</title>
 
   <ul marker="">
-
     <li workspace="2in">
       <p>(1) &#160; <em>Written Explanation Exercise</em> Answer each of the following in one or two sentences.</p>
       <ol marker="(a)">
-        <li><p>What are some differences between echelon form and row‑reduced echelon form (RREF)? Give at least three.</p></li>
-        <li><p>How can row reduction be used to determine whether an augmented matrix corresponds to a consistent system?</p></li>
+        <p>What are some differences between echelon form and row‑reduced echelon form (RREF)? Give at least three.</p>
+        <p>How can row reduction be used to determine whether an augmented matrix corresponds to a consistent system?</p>
       </ol>
     </li>
 
     <li workspace="2in">
       <p>(2) &#160; Which matrices are in RREF? Which are in echelon form?</p>
       <p>
-        <me>
+        <m>
         A = \begin{pmatrix}0 &amp; 1 &amp; 2 &amp; 3\end{pmatrix},\quad
         B = \begin{pmatrix}
             1 &amp; 0 &amp; 0 &amp; 2 \\
@@ -27,7 +26,7 @@
             1 &amp; 0 &amp; 0 \\
             5 &amp; 5 &amp; 0
         \end{pmatrix}
-        </me>
+        </m>
       </p>
     </li>
 
@@ -35,20 +34,16 @@
       <p>(3) &#160; List all <m>3 \times 2</m> matrices in RREF. Use <m>\ast</m> for arbitrary entries.</p>
     </li>
 
-</ul>
-
-<ul marker="">
-
-    <li workspace="1in">
+    <li workspace="2in">
       <p>(4) &#160; Indicate whether the following statements are true or false.</p>
       <ol marker="(a)">
-        <li><p>A linear system whose <m>3 \times 5</m> coefficient matrix has three pivot columns must be consistent.</p></li>
-        <li><p>The echelon form of a coefficient matrix is unique.</p></li>
+        <p>A linear system whose <m>3 \times 5</m> coefficient matrix has three pivot columns must be consistent.</p>
+        <p>The echelon form of a coefficient matrix is unique.</p>
       </ol>
     </li>
 
     <li workspace="2in">
-      <p>(5) &#160; Construct the quadratic polynomial <m>p(t) = a_0 + a_1 t + a_2 t^2</m> passing through <m>(1,12)</m>, <m>(2,15)</m>, and <m>(3,16)</m>. That is, solve</p>
+      <p>(5) &#160; Construct the quadratic polynomial <m>p(t) = a_0 + a_1 t + a_2 t^2</m> passing through <m>(1,12)</m>, <m>(2,15)</m>, and <m>(3,16)</m>.</p>
 
       <p>
         <me>
@@ -62,6 +57,5 @@
 
       <p>(The coefficient matrix is a Vandermonde matrix.)</p>
     </li>
-
   </ul>
 </handout>

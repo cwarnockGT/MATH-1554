@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 1.4, The Matrix Equation</title>
+
+  <ul marker="">
+    <li workspace="2in">
+      <p>(1) &#160; <m>\operatorname{Span}\{\vec v_1,\vec v_2\}</m> is equal to which of the expressions below?</p>
+      <ol marker="(a)">
+        <p><m>\operatorname{Span}\{\vec v_1,\vec v_2, 3\vec v_1\}</m></p>
+        <p><m>\operatorname{Span}\{\vec v_1, 3\vec v_1\}</m></p>
+        <p><m>\operatorname{Span}\{\vec v_1,\vec v_2, 3\vec v_1 + 2\vec v_2\}</m></p>
+      </ol>
+    </li>
+
+    <li workspace="2in">
+      <p>(2) &#160; For what values of <m>h</m> is <m>\vec b</m> in the plane spanned by <m>\vec a_1</m> and <m>\vec a_2</m>?</p>
+      <p>
+        <me>
+        \vec a_1 = \begin{pmatrix} 1 \\ 4 \\ -1 \end{pmatrix},\quad
+        \vec a_2 = \begin{pmatrix} -6 \\ -17 \\ 2 \end{pmatrix},\quad
+        \vec b = \begin{pmatrix} 4 \\ 2 \\ h \end{pmatrix}
+        </me>
+      </p>
+    </li>
+
+    <li workspace="2in">
+      <p>(3) &#160; Indicate whether the statements are true or false.</p>
+      <ol marker="(a)">
+        <p>
+          If the equation <m>A\vec x = \vec b</m> is inconsistent, then
+          <m>\vec b</m> is not in the set spanned by the columns of <m>A</m>.
+        </p>
+        <p>
+          If the augmented matrix <m>[\,A\ \vec b\,]</m> has a pivot position
+          in every row, then the equation <m>A\vec x = \vec b</m> must be
+          consistent.
+        </p>
+        <p>
+          There are exactly three vectors in
+          <m>\operatorname{Span}\{\vec a_1,\vec a_2,\vec a_3\}</m>.
+        </p>
+      </ol>
+    </li>
+  </ul>
+</handout>

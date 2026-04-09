@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 2.9, Dimension and Rank</title>
+
+  <ul marker="">
+
+    <li workspace="2in">
+      <p>(1) &#160; True or false.</p>
+      <ol marker="(a)">
+        <li><p>All <m>2 \times 4</m> matrices have a non‑trivial null space.</p></li>
+        <li><p>A <m>4 \times 2</m> matrix with two pivot columns can have a non‑trivial null space.</p></li>
+        <li><p>If the columns of a <m>6 \times 6</m> matrix <m>A</m> are a basis for <m>\mathbb{R}^6</m>, the null space of <m>A</m> is the zero vector.</p></li>
+      </ol>
+    </li>
+
+    <li workspace="2in">
+      <p>(2) &#160; <m>A</m> is an <m>n \times n</m> matrix that has elements <m>a_{ij}</m> where</p>
+
+      <p>
+        <me>
+        a_{ij} =
+        \begin{cases}
+          0, &amp; \text{when } i + j \text{ is odd} \\
+          1, &amp; \text{when } i + j \text{ is even}
+        \end{cases}
+        </me>
+      </p>
+
+      <p>Suppose <m>n \ge 2</m>.</p>
+
+      <ol marker="(a)">
+        <li><p>What is the rank of <m>A</m>?</p></li>
+        <li><p>Give a basis for the column space of <m>A</m>.</p></li>
+      </ol>
+    </li>
+
+  </ul>
+</handout>

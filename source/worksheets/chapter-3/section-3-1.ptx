@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 3.1 to 3.3, Determinants</title>
+
+  <ul marker="">
+
+    <li workspace="2in">
+      <p>(1) &#160; <em>Written Explanation Exercise</em> Discuss the computational efficiency of computing <m>\det(A)</m> by cofactor expansion and by row operations. Which method is computationally better if <m>A</m> is <m>n \times n</m> and <m>n</m> is large? (Compare how many arithmetic operations it takes.)</p>
+    </li>
+
+    <li workspace="2in">
+      <p>(2) &#160; Use a determinant to identify all values of <m>t</m> and <m>k</m> such that the matrices are singular. Assume that <m>t</m> and <m>k</m> must be real numbers.</p>
+
+      <ol marker="(a)">
+        <li>
+          <p>
+            <m>
+            A = 
+            \begin{pmatrix}
+              3 &amp; 5 \\
+              5 &amp; 3
+            \end{pmatrix}
+            - t I_2
+            </m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>
+            B =
+            \begin{pmatrix}
+              0 &amp; 1 &amp; t \\
+              -3 &amp; 10 &amp; 0 \\
+              0 &amp; 5 &amp; k
+            \end{pmatrix}
+            </m>
+          </p>
+        </li>
+      </ol>
+    </li>
+
+    <li workspace="2in">
+      <p>(3) &#160; Let <m>\begin{bmatrix} \vec{a} &amp; \vec{b} &amp; \vec{c} &amp; \vec{d} \end{bmatrix}</m> be a <m>4 \times 4</m> matrix whose determinant is equal to <m>2</m>. Compute the value of the determinant
+        <m>
+        \begin{vmatrix}
+          \vec{d} &amp; \vec{b} &amp; 3\vec{c} &amp; \vec{a}
+        \end{vmatrix}.
+        </m>
+      </p>
+    </li>
+  </ul>
+  <ul marker="">
+
+    <li workspace="1in">
+      <p>(4) &#160; <m>R</m> is the parallelogram determined by <m>\vec{p}_1 = \begin{pmatrix}3 \\ 4\end{pmatrix}</m> and <m>\vec{p}_2 = \begin{pmatrix}2 \\ 2\end{pmatrix}</m>. If
+
+        <m>
+        A =
+        \begin{pmatrix}
+          1 &amp; -1 \\
+          1 &amp; 1
+        \end{pmatrix}
+        </m>
+
+      , what is the area of the image of <m>R</m> under the map <m>\vec{x} \mapsto A\vec{x}</m>?</p>
+    </li>
+
+    <li workspace="2in">
+      <p>(5) &#160; <m>T_A(\vec{x}) = A\vec{x}</m>, where <m>A \in \mathbb{R}^{2 \times 2}</m>, is a linear transformation that first rotates vectors in <m>\mathbb{R}^2</m> counterclockwise by <m>\theta</m> radians about the origin, then reflects them through the line <m>x_1 = x_2</m>. By inspection, what is the value of <m>\det(A)</m>? You should compute its value to check your answer.</p>
+    </li>
+
+  </ul>
+
+</handout>

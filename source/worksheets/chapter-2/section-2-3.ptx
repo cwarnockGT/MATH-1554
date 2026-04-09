@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 2.3, Invertible Matrices</title>
+
+  <ul marker="">
+
+    <li workspace="2in">
+      <p>(1) &#160; Indicate whether the statements are true or false. <m>A</m> is an <m>n \times n</m> matrix.</p>
+      <ol marker="(a)">
+        <li>
+          <p>If <m>A\vec{x} = A\vec{y}</m> for some <m>\vec{x} \ne \vec{y}</m> in <m>\mathbb{R}^n</m>,
+          then <m>A</m> cannot be invertible.</p>
+        </li>
+        <li>
+          <p>If for some <m>\vec{b} \in \mathbb{R}^n</m>, the equation <m>A\vec{x} = \vec{b}</m> has more than one solution,
+          then <m>A</m> is invertible.</p>
+        </li>
+        <li>
+          <p>Every elementary matrix is invertible.</p>
+        </li>
+      </ol>
+    </li>
+
+    <li workspace="2in">
+      <p>(2) &#160; Let <m>A</m> be an <m>n \times n</m> matrix. Which statements guarantee that <m>A</m> is invertible?</p>
+      <ol marker="(a)">
+        <li><p>Every vector in <m>\mathbb{R}^n</m> is in the span of the columns of <m>A</m>.</p></li>
+        <li><p><m>A\vec{x} = \vec{b}</m> has a solution for every <m>\vec{b} \in \mathbb{R}^n</m>.</p></li>
+        <li><p>The matrix <m>A</m> can be row‑reduced to the identity matrix.</p></li>
+        <li><p>The range of the linear transformation <m>\vec{x} \mapsto A\vec{x}</m> is <m>\mathbb{R}^n</m>.</p></li>
+      </ol>
+    </li>
+
+    <li workspace="2in">
+      <p>(3) &#160; Two reasons that a matrix is not invertible are:</p>
+      <ol marker="(a)">
+        <li><p>one column is a multiple of another column</p></li>
+        <li><p>one column is the sum of other columns</p></li>
+      </ol>
+      <p>By inspection, identify which of the reasons above apply to the following matrices.</p>
+
+      <p>
+        <me>
+        A =
+        \begin{pmatrix}
+          0 &amp; 1 &amp; 1 \\
+          2 &amp; 0 &amp; 2 \\
+          3 &amp; -1 &amp; 2
+        \end{pmatrix}
+        \quad
+        B =
+        \begin{pmatrix}
+          -7 &amp; 0 &amp; 5 \\
+          3 &amp; 0 &amp; -2 \\
+          10 &amp; 0 &amp; 3
+        \end{pmatrix}
+        </me>
+      </p>
+
+      <p></p> <!-- put in as a separator-->
+
+      <p>
+        <me>
+        C =
+        \begin{pmatrix}
+          1 &amp; 2 &amp; 3 \\
+          7 &amp; 14 &amp; 21 \\
+          5 &amp; 10 &amp; 15
+        \end{pmatrix}
+        \quad 
+        D =
+        \begin{pmatrix}
+          0 &amp; 0 &amp; 0 \\
+          2 &amp; 0 &amp; 2 \\
+          3 &amp; -1 &amp; 2
+        \end{pmatrix}
+        </me>
+      </p>
+    </li>
+
+  </ul>
+</handout>

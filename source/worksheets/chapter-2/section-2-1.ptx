@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 2.1, Matrix Operations</title>
+
+  <ul marker="">
+
+    <li workspace="2in">
+      <p>(1) &#160; <em>Written Explanation Exercise</em> For square matrices <m>A</m>, <m>B</m>, is it always true that <m>(A + B)^2 = A^2 + 2AB + B^2</m>? Explain why or why not.</p>
+    </li>
+
+    <li workspace="2in">
+      <p>(2) &#160; Consider:</p>
+      <p>
+        <me>
+        A = \begin{pmatrix}1 &amp; 1 \\ 0 &amp; 1\end{pmatrix}, \quad
+        B = \begin{pmatrix}1 &amp; h \\ k &amp; 1\end{pmatrix}
+        </me>
+      </p>
+      <p>For what values (if any) of <m>k \in \mathbb{R}</m> and <m>h \in \mathbb{R}</m>:</p>
+
+      <ol marker="(a)">
+        <li><p>do matrices <m>A</m> and <m>B</m> commute?</p></li>
+        <li><p>is the product <m>AB</m> equal to <m>I_2</m>?</p></li>
+        <li><p>is the product <m>AB</m> equal to the <m>2 \times 2</m> zero matrix <m>0_{2\times 2}</m>?</p></li>
+      </ol>
+    </li>
+
+    <li workspace="2in">
+      <p>(3) &#160; <m>A</m> is an <m>n \times n</m> matrix that has elements <m>a_{ij}</m> where</p>
+      <p>
+        <me>
+        a_{ij} =
+        \begin{cases}
+          0, &amp; \text{when } i + j \text{ is odd} \\
+          1, &amp; \text{when } i + j \text{ is even}
+        \end{cases}
+        </me>
+      </p>
+      <p>For <m>n \ge 2</m>, how many pivot columns does <m>A</m> have?</p>
+    </li>
+
+  </ul>
+</handout>

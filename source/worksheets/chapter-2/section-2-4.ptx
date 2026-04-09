@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 2.4, Partitioned Matrices</title>
+
+  <ul marker="">
+
+    <li workspace="2in">
+      <p>(1) &#160; <m>A</m> and <m>B</m> are <m>n \times n</m> invertible matrices, <m>I_n</m> is the <m>n \times n</m> identity matrix, and <m>0</m> is the <m>n \times n</m> zero matrix. Construct an expression for <m>X</m> in terms of <m>A</m> and <m>B</m>.</p>
+
+      <p>
+        <me>
+        \begin{pmatrix}
+          A &amp; B 
+        \end{pmatrix}
+        \begin{pmatrix}
+          0 &amp; X &amp; B \\
+          A &amp; B &amp; 0
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+          X \\
+          I_n \\
+          BA 
+        \end{pmatrix}
+        =
+        B^2 + BAX
+        </me>
+      </p>
+    </li>
+
+  </ul>
+</handout>

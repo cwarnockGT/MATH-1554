@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 2.5, Matrix Factorizations</title>
+
+  <ul marker="">
+
+    <li workspace="1in">
+      <p>(1) &#160; Compute the LU factorization for <m>A = \begin{pmatrix} -1 &amp; 5 &amp; 3 \\ 1 &amp; -10 &amp; -3 \end{pmatrix}</m>.</p>
+    </li>
+
+    <li workspace="2in">
+      <p>(2) &#160; Complete the LU factorization of <m>A</m> and use it to solve <m>A\vec{x} = \vec{b}</m>.</p>
+
+      <p>
+        <me>
+        A =
+        \begin{pmatrix}
+          2 &amp; -1 &amp; 0 \\
+          -1 &amp; 2 &amp; -1 \\
+          0 &amp; -1 &amp; 2
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+          1 &amp; 0 &amp; 0 \\
+          -\tfrac{1}{2} &amp; 1 &amp; 0 \\
+          0 &amp; -\tfrac{2}{3} &amp; 1
+        \end{pmatrix}
+        \begin{pmatrix}
+          2 &amp; * &amp; * \\
+          0 &amp; * &amp; * \\
+          0 &amp; 0 &amp; *
+        \end{pmatrix},
+        \qquad
+        \vec{b} =
+        \begin{pmatrix}
+          0 \\ 4 \\ -4
+        \end{pmatrix}
+        </me>
+      </p>
+    </li>
+
+  </ul>
+</handout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This worksheet was generated manually - I decided to replace this with Copilot's version just to ensure consistency.-->
+
+<handout>
+<title>Worksheet 1.1, Systems of Linear Equations</title>
+
+  <page>   
+    <ol marker="(1)">
+        <li workspace="2in">
+          <p>Indicate whether the statements are true or false.</p>
+          <ol marker="(a)">
+            <li>
+              <p>If a linear system has more equations than unknowns, then the system cannot have a unique solution.</p>
+            </li>
+            <li>
+              <p>If a linear system has more unknowns than equations, then the system cannot have a unique solution.</p>
+            </li>
+          </ol>
+          <p><em>Before moving on</em> — what strategies does your TA(s) recommend that students can use to approach true/false questions?</p>
+        </li>
+
+        <li workspace="2in">
+          <p>For what values of <m>A</m> and <m>B</m>, if any, does the system have (a) an infinite number of solutions? (b) no solutions? (c) exactly one solution?</p>
+          <p>
+            <me>\begin{aligned}
+            x_{1} + 2x_{2} \amp= 1\\
+            Ax_{1} + Bx_{2} \amp= 2
+            \end{aligned}</me>
+          </p>
+          <p>For the case where there are an infinite number of solutions, sketch the set of solutions. Note that sketches need to have labeled axes. The set of solutions should be a line that does not have arrows.</p>
+        </li>
+        <li workspace="2in">
+          <p>From your TA’s perspective, what are some of the strategies that they recommend to ensure that a student is successful in a college‑level linear algebra course? What strategies worked for them?</p>
+          
+        </li>
+      </ol>
+
+      <p><em>Note:</em> this worksheet is a bit shorter than most other worksheets to give time to discuss course and studio organization.</p>
+
+  </page>
+</handout>

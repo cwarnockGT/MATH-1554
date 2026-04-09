@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 1.7, Linear Independence</title>
+
+  <ul marker="">
+
+    <li workspace="2in">
+      <p>(1) &#160; <em>Written Explanation Exercise</em></p>
+      <ol marker="(a)">
+        <li><p>How are span and linear dependence related to each other?</p></li>
+        <li>
+          <p>
+            Suppose <m>T</m> is a linear map.
+          </p>
+          <ol marker="(a)">
+                <li><p>If <m>v_1,\dots,v_k</m> are dependent, why are <m>T(v_1),\dots,T(v_k)</m> dependent?</p></li>
+                <li><p>If <m>v_1,\dots,v_k</m> are independent, need <m>T(v_1),\dots,T(v_k)</m> be independent?</p></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+
+    <li workspace="2in">
+      <p>(2) &#160; In the problems below, <m>\vec v_1,\vec v_2,\vec v_3</m> are three linearly independent vectors in <m>\mathbb{R}^3</m>. Which of the collections of vectors below are linearly independent?</p>
+      <ol marker="(a)">
+        <li><p><m>\{\vec v_1,\ \vec v_2,\ \vec 0\}</m></p></li>
+        <li><p><m>\{\vec v_1,\ \vec v_1 + \vec v_2,\ \vec v_2\}</m></p></li>
+        <li><p><m>\{\vec v_1,\ \vec v_1 + \vec v_2\}</m></p></li>
+      </ol>
+    </li>
+
+    <li workspace="2in">
+      <p>(3) &#160; For what values of <m>h</m> are the columns of <m>A</m> linearly dependent?</p>
+      <p>
+        <m>
+        A =
+        \begin{pmatrix}
+          2 &amp; 4 &amp; -2 \\
+          -2 &amp; -6 &amp; 2 \\
+          4 &amp; 7 &amp; h
+        \end{pmatrix}
+        </m>
+      </p>
+    </li>
+
+</ul>
+
+<ul marker="">
+
+    <li workspace="1in">
+      <p>(4) &#160; A <m>5 \times 3</m> matrix <m>A = \begin{pmatrix}\vec a_1 &amp; \vec a_2 &amp; \vec a_3\end{pmatrix}</m> has all non‑zero columns, and <m>\vec a_3 = 5\vec a_1 + 7\vec a_2</m>. Identify a non‑trivial solution to <m>A\vec x = \vec 0</m>.</p>
+    </li>
+
+    <li workspace="2in">
+      <p>(5) &#160; Short answer questions.</p>
+      <ol marker="(a)">
+        <li><p>The columns of a <m>7 \times 5</m> matrix are linearly independent. How many pivots does the matrix have?</p></li>
+        <li><p>If the columns of a <m>3 \times 7</m> matrix span <m>\mathbb{R}^3</m>, how many pivots does the matrix have?</p></li>
+      </ol>
+    </li>
+
+  </ul>
+</handout>

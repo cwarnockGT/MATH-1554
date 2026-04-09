@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 1.5, Solution Sets of Linear Systems</title>
+
+  <ul marker="">
+
+    <li workspace="2in">
+      <p>(1) &#160; <em>Written Explanation Exercise</em></p>
+      <ol marker="(a)">
+        <li>
+          <p>When a homogeneous system has a nontrivial solution, what properties does that system have? List at least two.</p>
+        </li>
+      </ol>
+    </li>
+
+    <li workspace="2in">
+      <p>(2) &#160; Indicate whether the statements are true or false.</p>
+      <ol marker="(a)">
+        <li>
+          <p>A non‑trivial solution <m>\vec{x}</m> to <m>A\vec{x} = \vec{0}</m> has all non‑zero entries.</p>
+        </li>
+        <li>
+          <p>If <m>A\vec{x} = \vec{b}</m> and <m>A\vec{y} = \vec{b}</m>, then <m>A(\vec{x} - \vec{y}) = \vec{0}</m>.</p>
+        </li>
+        <li>
+          <p>Any <m>3 \times 2</m> matrix <m>A</m> with two pivotal positions has a non‑trivial solution to <m>A\vec{x} = \vec{0}</m>.</p>
+        </li>
+      </ol>
+    </li>
+
+</ul>
+
+<ul marker="">
+
+    <li workspace="2in">
+      <p>(3) &#160; <em> Example Construction </em> </p>
+      <ol marker="(a)">
+        <li>
+          <p>
+            Give an example of a non‑zero <m>2 \times 3</m> matrix <m>A</m> such that
+            <m>\vec{x} = \begin{pmatrix}1 \\ 2 \\ 1\end{pmatrix}</m> is a solution of <m>A\vec{x} = \vec{0}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Give an example of a non‑trivial solution to <m>A\vec{x} = \vec{0}</m>, where
+            <m>A = \begin{pmatrix}2 &amp; 5 \\ 0 &amp; 0 \\ 4 &amp; 10\end{pmatrix}</m>.
+          </p>
+        </li>
+      </ol>
+    </li>
+
+    <li workspace="2in">
+      <p>(4) &#160; Express the solution to <m>A\vec{x} = \vec{0}</m> in parametric vector form, where</p>
+      <p>
+        <m>
+        A =
+        \begin{pmatrix}
+        1 &amp; 3 &amp; 4 &amp; 1 \\
+        0 &amp; 0 &amp; 1 &amp; 1
+        \end{pmatrix}
+        </m>.
+      </p>
+    </li>
+
+  </ul>
+</handout>

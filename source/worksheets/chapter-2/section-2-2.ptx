@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 2.2, Inverse of a Matrix</title>
+
+  <ul marker="">
+
+    <li workspace="2in">
+      <p>(1) &#160; Consider the sequence of row operations that reduce matrix <m>A</m> to the identity.</p>
+
+      <p>
+        <me>
+        A =
+        \underbrace{\begin{pmatrix}
+          0 &amp; 4 &amp; 0 \\
+          1 &amp; 0 &amp; 0 \\
+          0 &amp; 8 &amp; 1
+        \end{pmatrix}}_{A}
+        \sim
+        \underbrace{\begin{pmatrix}
+          1 &amp; 0 &amp; 0 \\
+          0 &amp; 4 &amp; 0 \\
+          0 &amp; 8 &amp; 1
+        \end{pmatrix}}_{E_1 A}
+        \sim
+        \underbrace{\begin{pmatrix}
+          1 &amp; 0 &amp; 0 \\
+          0 &amp; 4 &amp; 0 \\
+          0 &amp; 0 &amp; 1
+        \end{pmatrix}}_{E_2 E_1 A}
+        \sim
+        \underbrace{\begin{pmatrix}
+          1 &amp; 0 &amp; 0 \\
+          0 &amp; 1 &amp; 0 \\
+          0 &amp; 0 &amp; 1
+        \end{pmatrix}}_{E_3 E_2 E_1 A}
+        = I_3
+        </me>
+      </p>
+
+      <p>
+        Construct the elementary matrices <m>E_1</m>, <m>E_2</m>, <m>E_3</m>.
+      </p>
+    </li>
+
+    <li workspace="2in">
+      <p>(2) &#160; Compute the inverse of the matrix <m>A</m>, where <m>c \in \mathbb{R}</m>.  
+      For what values of <m>c</m> does the matrix have an inverse?</p>
+
+      <p>
+        <me>
+        A =
+        \begin{pmatrix}
+          0 &amp; 1 &amp; 1 \\
+          2 &amp; 0 &amp; 4 \\
+          0 &amp; -1 &amp; c
+        \end{pmatrix}
+        </me>
+      </p>
+    </li>
+
+  </ul>
+</handout>
