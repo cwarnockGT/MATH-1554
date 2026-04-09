@@ -101,7 +101,7 @@
     <example xml:id="ex-6-1-length-op" workspace="true">
       <statement>
         <p>Compute <m>\lVert\overrightarrow{OP}\rVert</m> where <m>P=(1,3,2)</m>.</p>
-        <image width="50%" xml:id="6-1-ex-magnitude">
+        <image width="50%" xml:id="fig-6-1-ex-magnitude">
             <shortdescription>Sketch of the point (1,3,2) in 3-space.</shortdescription>
             <latex-image>
                  \begin{tikzpicture}[scale=1.0, axis/.style={->,black}, 
@@ -237,7 +237,7 @@
           Sketch the set of all vectors orthogonal to
           <m>\vec v=\begin{bmatrix}3\\2\end{bmatrix}</m>.
         </p>
-        <image width="50%" xml:id="6-1-ex-vector">
+        <image width="50%" xml:id="fig-6-1-ex-vector">
             <shortdescription>Sketch of the vector v in coordinate plane.</shortdescription>
             <latex-image>
                 \begin{tikzpicture}[yscale=.72,xscale=.75] 
@@ -290,7 +290,7 @@
           Since <m>L</m> is 1-dimensional, its orthogonal complement <m>L^\perp</m> is a plane.
           Find an equation for the plane <m>L^\perp</m>.
         </p>
-        <image width="50%" xml:id="6-1-ex-ortho-subspace">
+        <image width="50%" xml:id="fig-6-1-ex-ortho-subspace">
             <shortdescription>Graph of a line L in 3-space passing through the origin and the point (1,-1,2).</shortdescription>
             <latex-image>
                 \tdplotsetmaincoords{80}{100}
