@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 7.2, Quadratic Forms</title>
+
+  <ul marker="">
+
+    <!-- Problem 1 -->
+    <li workspace="2in">
+      <p>(1) &#160; Indicate whether the statements are true or false.</p>
+
+      <ol marker="(a)">
+        <li>
+          <p>
+            <m>3x^2 - 8xy + 3y^2 \ge 0</m> for all real values of <m>x</m> and <m>y</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The quadratic form
+            <m>Q = -x^2 - 2xy - y^2</m>
+            is negative semidefinite.
+          </p>
+        </li>
+      </ol>
+    </li>
+
+    <!-- Problem 2 -->
+    <li workspace="2in">
+      <p>(2) &#160; Assume <m>\vec{x} \in \mathbb{R}^3</m>.
+      Construct the matrix of the quadratic form, and classify the quadratic form</p>
+
+      <p>
+        <me>
+        Q = 4x_3^2 - 2x_1x_2.
+        </me>
+      </p>
+    </li>
+
+</ul>
+<ul marker="">
+
+    <!-- Problem 3 -->
+    <li workspace="2in">
+      <p>(3) &#160; Make a change of variables that transforms the quadratic form into another quadratic form that has no cross‑product term.</p>
+
+      <p>
+        <me>
+        Q = x_1^2 - 12x_1x_2 - 4x_2^2.
+        </me>
+      </p>
+    </li>
+
+    <!-- Problem 4 -->
+    <li workspace="2in">
+      <p>(4) &#160; <em>Written Explanation Exercise</em>
+      Let <m>Q(\vec{x}) = A\vec{x} \cdot \vec{x}</m>, where <m>A</m> is a symmetric <m>n \times n</m> matrix
+      with eigenvalues <m>\lambda_1,\dots,\lambda_n</m>.
+      Explain how to find a change of variables so that <m>Q</m> becomes</p>
+
+      <p>
+        <m>
+        P(\vec{y}) = \lambda_1 y_1^2 + \cdots + \lambda_n y_n^2.
+        </m>
+      </p>
+    </li>
+
+  </ul>
+</handout>

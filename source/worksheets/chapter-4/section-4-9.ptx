@@ -11,7 +11,7 @@
       <p>(1) &#160; Determine whether <m>P</m> and <m>Q</m> are regular stochastic matrices.</p>
 
       <p>
-        <m>
+        <me>
         P =
         \begin{pmatrix}
           0.8 &amp; 0 \\
@@ -24,7 +24,7 @@
           0 &amp; 1 &amp; 2 \\
           3 &amp; 1 &amp; 2
         \end{pmatrix}
-        </m>
+        </me>
       </p>
     </li>
 
@@ -33,23 +33,22 @@
       <p>(2) &#160; Consider the Markov chain below.</p>
 
       <figure xml:id="fig-tikz">
-        <caption>A figure generated with TikZ in
-        <latex /></caption>
-            <image width="50%" xml:id="markov">
+        <caption>A figure of a Markov chain. </caption>
+            <image width="40%" xml:id="markov">
             <latex-image>
-            \begin{tikzpicture}<!-- [>=Stealth, node distance=34mm, thick] -->
+            \begin{tikzpicture} [node distance=5mm]<!-- [>=Stealth, node distance=34mm, thick] -->
         \tikzstyle{state}=[circle, draw, minimum size=18pt, inner sep=0pt]
         % Nodes at triangle vertices
-        \node[state] (A) at (90:28mm) {A};
-        \node[state] (B) at (210:28mm) {B};
-        \node[state] (C) at (330:28mm) {C};
+        \node[state] (A) at (0,0) {A};
+        \node[state] (B) at (3, 2) {B};
+        \node[state] (C) at (4, 0) {C};
 
         % Edges with probabilities
         \path[->]
             (A) edge[loop left] node[midway, above left]{\small $\tfrac{1}{2}$} (A)
             (A) edge[] node[midway, above right]{\small $\tfrac{1}{2}$} (B)
-            (B) edge[loop left] node[midway, below left]{\small $\tfrac{1}{2}$} (B)
-            (B) edge[] node[midway, below]{\small $\tfrac{1}{2}$} (C)
+            (B) edge[loop right] node[midway, below left]{\small $\tfrac{1}{2}$} (B)
+            (B) edge[] node[midway, above right]{\small $\tfrac{1}{2}$} (C)
             (C) edge[loop right] node[midway, above left]{\small $\tfrac{3}{4}$} (C)
             (C) edge[] node[midway, right]{\small $\tfrac{1}{4}$} (A);
         \end{tikzpicture}
@@ -59,14 +58,19 @@
 
       <p>What is the transition matrix? Calculate the steady‑state vector.</p>
     </li>
+    
+    </ul>
+    <ul marker = "">
 
     <!-- Problem 3 -->
     <li workspace="2in">
-      <p>(3) &#160; Suppose there are two cities, X and Y.</p>
+      <p>(3) &#160; Suppose there are two cities, X and Y. Every year:</p>
 
-      <p>Every year:</p>
-      <p>• 70% of the people from X stay in X, the remaining 30% move to Y.</p>
-      <p>• 40% of the people from Y stay in Y, the remaining 60% move to X.</p>
+      <ul>
+        <li><p>70% of the people from X stay in X, the remaining 30% move to Y.</p></li>
+        <li><p>40% of the people from Y stay in Y, the remaining 60% move to X.</p></li>
+      </ul>
+
       <p>The initial populations of X and Y are 100 and 200, respectively.</p>
 
       <ol marker="(a)">
@@ -76,7 +80,7 @@
     </li>
 
     <!-- Problem 4 -->
-    <li workspace="2in">
+    <li workspace="1in">
       <p>(4) &#160; <em>Written Explanation Exercise</em>  
       Let <m>P</m> be a stochastic <m>n \times n</m> matrix with positive entries.  
       Give two methods of finding the steady‑state solution.</p>
@@ -85,7 +89,7 @@
     <!-- Problem 5 -->
     <li workspace="2in">
       <p>(5) &#160; A mouse lives in a maze that has at least three rooms.  
-      Each room is connected to at least one other room.  
+      Each room is connected to at least one other room (in other words, every room is connected).  
       Every hour the mouse moves to a connected room with equal probability.</p>
 
       <ol marker="(a)">
@@ -94,6 +98,8 @@
         <li><p>In the long run, is there a room the mouse is more likely to be in? If so, which one?</p></li>
       </ol>
     </li>
+    
+    <p><i>Note: this problem is related to the PageRank problem that we explore later in this class.</i></p>
 
   </ul>
 </handout>

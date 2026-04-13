@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 10.2, The Steady‑State Vector and Page Rank</title>
+
+  <ul marker="">
+
+    <!-- Problem 1 -->
+    <li workspace="2in">
+      <p>(1) &#160; A set of web pages link to each other according to the diagram below.</p>
+
+      <p>V, W, X, Y, and Z</p>
+
+      <ol marker="(a)">
+        <li>
+          <p>Create the transition matrix <m>P</m> for this web.</p>
+        </li>
+        <li>
+          <p>
+            Construct the Google matrix <m>G</m> for this web.
+            Use damping factor <m>p = 0.85</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            During an exam, to determine the page ranks of each page in the web
+            you would be given the steady‑state vector of <m>G</m>.
+            Since you are not taking an exam right now, compute the steady‑state
+            vector and page ranks of each page on the web. You may use software.
+          </p>
+        </li>
+      </ol>
+
+      <p>
+        Hint: For a web with only two pages that are linked to each other,
+        the steady state can be computed in MATLAB or Octave using:
+      </p>
+
+      <p>
+        <m>
+        P_\ast = \tfrac{1}{2}
+        \begin{pmatrix}
+          0 &amp; 1 \\
+          1 &amp; 0
+        \end{pmatrix},
+        \quad
+        K = \tfrac{1}{2}\mathbf{1},
+        \quad
+        p = 0.85,
+        \quad
+        G = pP_\ast + (1-p)K,
+        \quad
+        G^{100}
+        </m>
+      </p>
+
+      <p>
+        There are many free online Octave compilers.
+      </p>
+    </li>
+</ul>
+<ul marker = "">
+
+    <!-- Problem 2 -->
+    <li workspace="2in">
+      <p>(2) &#160; Suppose <m>p</m> and <m>q</m> are real numbers in the open interval <m>(0,1)</m>, and</p>
+
+      <p>
+        <me>
+        A =
+        \begin{pmatrix}
+          p &amp; 1-q \\
+          1-p &amp; q
+        \end{pmatrix}.
+        </me>
+      </p>
+
+      <ol marker="(a)">
+        <li><p>Is <m>A</m> stochastic? Is <m>A</m> regular?</p></li>
+        <li><p>By inspection, what is one eigenvalue of <m>A</m>?</p></li>
+        <li><p>Compute the steady‑state vector of <m>A</m>.</p></li>
+        <li><p>Compute <m>\lim_{n \to \infty} A^n</m>.</p></li>
+      </ol>
+    </li>
+
+    <!-- Problem 3 -->
+    <li workspace="2in">
+      <p>(3) &#160; Consider the dynamical system <m>\vec{x}_k = A\vec{x}_{k-1}</m>,
+      for <m>k = 1,2,3,\dots</m>, where</p>
+
+      <p>
+        <me>
+        A =
+        \begin{pmatrix}
+          0.5 &amp; 0.25 &amp; 0.25 \\
+          0.25 &amp; 0.5 &amp; 0.25 \\
+          0.25 &amp; 0.25 &amp; 0.5
+        \end{pmatrix},
+        \quad
+        \vec{x}_0 =
+        \begin{pmatrix}
+          1 \\ 0 \\ 0
+        \end{pmatrix}.
+        </me>
+      </p>
+
+      <p>
+        The eigenvalues of <m>A</m> are <m>1</m> and <m>\tfrac{1}{4}</m>.
+        Analyze the long‑term behavior of the system.
+        In particular, determine what <m>\vec{x}_k</m> tends to as <m>k \to \infty</m>.
+      </p>
+    </li>
+
+  </ul>
+</handout>

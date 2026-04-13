@@ -34,6 +34,11 @@
       <xi:include href="./chapter-2/chapter-2-main.ptx"/>
       <xi:include href="./chapter-3/chapter-3-main.ptx"/>
       <xi:include href="./chapter-4/chapter-4-main.ptx"/>
-
+      <xi:include href="./chapter-5/chapter-5-main.ptx"/>
+      <xi:include href="./chapter-6/chapter-6-main.ptx"/>
+      <xi:include href="./chapter-10-pagerank/chapter-10-pagerank-main.ptx"/>
+      <xi:include href="./chapter-7/chapter-7-main.ptx"/>
+      <xi:include href="./chapter-final-exam-review/chapter-final-exam-review-main.ptx"/>
+      
 
     </part>
