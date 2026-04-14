@@ -113,7 +113,8 @@
           </p>
 
           <p>
-            <me>A = \begin{pmatrix} &amp; &amp; &amp; \\ &amp; &amp; &amp; \\ &amp; &amp; &amp; \end{pmatrix}</me>
+            <me>A = \begin{pmatrix} &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \end{pmatrix}</me>
+            <!-- Manually added in more ampersands because they didn't pad the matrix length enough-->
           </p>
         </li>
 
@@ -131,7 +132,7 @@
           </p>
 
           <p>
-            <me>A = \begin{pmatrix} &amp; \\ &amp; \\ &amp; \end{pmatrix}</me>
+            <me>\vec{w} = \begin{pmatrix} &amp; \\ &amp; \\ &amp; \end{pmatrix}</me>
           </p>
         </li>
       </ol>

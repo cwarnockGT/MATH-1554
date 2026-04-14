@@ -61,13 +61,13 @@
       <p>(4) &#160; Four points in <m>\mathbb{R}^3</m> with coordinates <m>(x,y,z)</m> are given in the table below.</p>
 
       <p>
-        <m>
+        <me>
         \begin{array}{c|cccc}
           x &amp; -1 &amp; 0 &amp; 2 &amp; 1 \\ \hline
           y &amp;  2 &amp; 1 &amp; 0 &amp; 2 \\ \hline
           z &amp;  9 &amp; 1 &amp; 0 &amp; -1
         \end{array}
-        </m>
+        </me>
       </p>
 
       <p>

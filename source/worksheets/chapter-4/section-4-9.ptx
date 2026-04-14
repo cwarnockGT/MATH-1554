@@ -48,7 +48,7 @@
             (A) edge[loop left] node[midway, above left]{\small $\tfrac{1}{2}$} (A)
             (A) edge[] node[midway, above right]{\small $\tfrac{1}{2}$} (B)
             (B) edge[loop right] node[midway, below left]{\small $\tfrac{1}{2}$} (B)
-            (B) edge[] node[midway, above right]{\small $\tfrac{1}{2}$} (C)
+            (B) edge[] node[midway, below right]{\small $\tfrac{1}{2}$} (C)
             (C) edge[loop right] node[midway, above left]{\small $\tfrac{3}{4}$} (C)
             (C) edge[] node[midway, right]{\small $\tfrac{1}{4}$} (A);
         \end{tikzpicture}
