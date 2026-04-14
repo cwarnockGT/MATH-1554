@@ -32,7 +32,7 @@
     <li workspace="2in">
       <p>(2) &#160; Consider the Markov chain below.</p>
 
-      <figure xml:id="fig-tikz">
+      <figure xml:id="fig-tikz-markov">
         <caption>A figure of a Markov chain. </caption>
             <image width="40%" xml:id="markov">
             <latex-image>

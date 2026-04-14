@@ -8,7 +8,32 @@
     <li workspace="2in">
       <p>(1) &#160; A set of web pages link to each other according to the diagram below.</p>
 
-      <p>V, W, X, Y, and Z</p>
+      <figure xml:id="fig-tikz-pagerank">
+        <caption>A figure of a transition diagram representing the connections between 5 web pages. </caption>
+            <image width="40%" xml:id="pagerank">
+            <latex-image>
+            \begin{tikzpicture} [node distance=5mm]<!-- [>=Stealth, node distance=34mm, thick] -->
+        \tikzstyle{state}=[circle, draw, minimum size=18pt, inner sep=0pt]
+        % Nodes at triangle vertices
+        \node[state] (X) at (0, 0) {X};
+        \node[state] (V) at (0, 2) {V};
+        \node[state] (W) at (2, 2) {W};
+        \node[state] (Y) at (4, 2){Y};
+        \node[state] (Z) at (4, 0){Z};
+
+        % Edges with probabilities
+        \path[->]
+            (X) edge[] (V)
+            (V) edge[] (W)
+            (W) edge[] (V)
+            (W) edge[] (X)
+            (X) edge[] (W)
+            (W) edge[] (Y)
+            (Y) edge[] (Z);
+        \end{tikzpicture}
+            </latex-image>
+        </image>
+    </figure>
 
       <ol marker="(a)">
         <li>
@@ -35,23 +60,13 @@
         the steady state can be computed in MATLAB or Octave using:
       </p>
 
-      <p>
-        <m>
-        P_\ast = \tfrac{1}{2}
-        \begin{pmatrix}
-          0 &amp; 1 \\
-          1 &amp; 0
-        \end{pmatrix},
-        \quad
-        K = \tfrac{1}{2}\mathbf{1},
-        \quad
-        p = 0.85,
-        \quad
-        G = pP_\ast + (1-p)K,
-        \quad
-        G^{100}
-        </m>
-      </p>
+      <ul marker = "">
+        <li><p>Pstar=1/2*[0 1;1 0]</p></li>
+        <li><p>K = 1/2*ones(2)</p></li>
+        <li><p>p = 0.85</p></li>
+        <li><p>G = p*Pstar + (1-p)*K</p></li>
+        <li><p>G ∧ (100)</p></li>
+      </ul>
 
       <p>
         There are many free online Octave compilers.
