@@ -84,7 +84,8 @@
           </p>
 
           <p>
-            <me>A = \begin{pmatrix} &amp; &amp; \\ &amp; &amp; \\ &amp; &amp; \end{pmatrix}</me>
+            <me>A = \begin{pmatrix} &amp; &amp; &amp; \\ &amp; &amp; &amp; \\ &amp; &amp; &amp; \end{pmatrix}</me>
+            <!-- manually padded entries -->
           </p>
         </li>
 

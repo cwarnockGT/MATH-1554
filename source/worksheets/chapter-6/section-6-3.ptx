@@ -52,7 +52,7 @@
               </p>
             </li>
           </ul></li>
-        <li><p>Is <m>\vec{y}</m> in <m>\text{Span}\{ \vec{u_{1}}, \vec{u_{2}}</m>?</p></li>
+        <li><p>Is <m>\vec{y}</m> in <m>\text{Span}\{ \vec{u_{1}}, \vec{u_{2} \} }</m>?</p></li>
         <li><p>Compute the vector <m>\hat{y} \in W</m> that most closely approximates <m>\vec{y}</m>.</p></li>
         <li><p>Construct a vector <m>\vec{z}</m> that is in <m>W^\perp</m>.</p></li>
       </ol>
