@@ -5,7 +5,7 @@
   <ul marker="">
 
     <!-- Problem 1 -->
-    <li workspace="2in">
+    <li workspace="3in">
       <p>(1) &#160; Indicate whether the statements are possible (P) or impossible (I).
       For the statements that are possible, give an example.</p>
 
@@ -47,17 +47,41 @@
     </li>
 
     <!-- Problem 2 -->
-    <li workspace="2in">
+    <li workspace="1in">
       <p>(2) &#160; Vectors <m>\vec{v}_1,\vec{v}_2,\vec{v}_3</m>
       are linearly independent and span a subspace <m>S</m>.</p>
 
       <ol marker="(a)">
         <li><p>
           Fill in the circles next to the sets of vectors that span <m>S</m>.
+          <ul marker = "">
+            <li>
+              <p>
+                <m>\bigcirc</m> <m>\{ \vec{v_{1}}, \vec{v_{2}}, \vec{v_{3}}, 2\vec{v_{3}}, 0 \}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\bigcirc</m> <m>\{ \vec{v_{1}}, \vec{v_{1}} - \vec{v_{2}}, \vec{v_{3}} \}</m>
+              </p>
+            </li>
+          </ul>
         </p></li>
 
         <li><p>
           Fill in the circles next to the sets of vectors that form a basis for <m>S</m>.
+          <ul>
+            <li>
+              <p>
+                <m>\bigcirc</m> <m>\{ \vec{v_{1}}, \vec{v_{2}}, 3\vec{v_{3}}, 0 \}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\bigcirc</m> <m>\{ \vec{v_{1}}, \vec{v_{1}} - \vec{v_{2}}, \vec{v_{3}} \}</m>
+              </p>
+            </li>
+          </ul>
         </p></li>
       </ol>
     </li>
@@ -67,6 +91,9 @@
       <p>(3) &#160; Give an example of an <m>N \times N</m> matrix whose null space
       is equal to its column space.</p>
     </li>
+
+  </ul>
+  <ul marker = "">
 
     <!-- Problem 4 -->
     <li workspace="2in">
@@ -78,18 +105,49 @@
           there is at most one <m>\vec{x}</m> such that
           <m>T(\vec{x}) = A\vec{x} = \vec{b}</m>,
           where <m>A \in \mathbb{R}^{M \times N}</m>,
-          how many pivot columns does <m>A</m> have?
+          how many pivot columns does <m>A</m> have? _________
         </p></li>
 
         <li><p>
           Consider the row operations that reduce <m>A</m> to <m>I_3</m>.
           Identify the elementary matrices <m>E_1</m> and <m>E_2</m>.
-        </p></li>
+
+            <me>
+            A =
+            \underbrace{\begin{pmatrix}
+              0 &amp; 1 &amp; 0 \\
+              1 &amp; 0 &amp; 1 \\
+              0 &amp; 5 &amp; 1
+            \end{pmatrix}}_{A}
+            \sim
+            \underbrace{\begin{pmatrix}
+              1 &amp; 0 &amp; 0 \\
+              0 &amp; 1 &amp; 0 \\
+              0 &amp; 5 &amp; 1
+            \end{pmatrix}}_{E_1 A}
+            \sim
+            \underbrace{\begin{pmatrix}
+              1 &amp; 0 &amp; 0 \\
+              0 &amp; 1 &amp; 0 \\
+              0 &amp; 0 &amp; 1
+            \end{pmatrix}}_{E_2 E_1 A}
+            = I_3
+            </me>
+        </p>
+        
+
+        <p>
+          By inspection, <m>E_1 = \begin{pmatrix} &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \end{pmatrix}</m> and <m>E_2 = \begin{pmatrix} &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \end{pmatrix}</m>
+            <!-- Manually added in more ampersands because they didn't pad the matrix length enough-->
+        </p>
+
+      
+      </li>
 
         <li><p>
           For what values of <m>k \in \mathbb{R}</m>, if any,
           is <m>A = \begin{pmatrix}3 &amp; 0 \\ k &amp; 3\end{pmatrix}</m>
-          diagonalizable?
+          diagonalizable? _________
         </p></li>
 
         <li><p>
@@ -105,7 +163,7 @@
           </m>
           is
           <m>\vec{v}_1 = \begin{pmatrix}0 \\ -2 \\ 2 \\ 0\end{pmatrix}</m>.
-          What is the eigenvalue associated with <m>\vec{v}_1</m>?
+          What is the eigenvalue associated with <m>\vec{v}_1</m>? _________
         </p></li>
       </ol>
     </li>
@@ -121,14 +179,14 @@
           <m>\vec{u} = \begin{pmatrix}3 \\ 0 \\ 0\end{pmatrix}</m>
           and
           <m>\vec{v} = \begin{pmatrix}2 \\ 1 \\ 0\end{pmatrix}</m>
-          are a basis for the range of <m>T</m>.
+          are a basis for the range of <m>T</m>. <m>A = \begin{pmatrix} &amp; &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; &amp; \end{pmatrix}</m>
         </p></li>
 
         <li><p>
           A non‑zero matrix <m>A</m> in RREF such that
           <m>\dim((\mathrm{Row}(A))^\perp) = 1</m>
           and
-          <m>\dim((\mathrm{Col}(A))^\perp) = 1</m>.
+          <m>\dim((\mathrm{Col}(A))^\perp) = 1</m>. <m>A = \begin{pmatrix} &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \end{pmatrix}</m>
         </p></li>
       </ol>
     </li>
