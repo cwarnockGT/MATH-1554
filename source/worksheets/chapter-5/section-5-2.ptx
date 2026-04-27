@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 5.2, The Characteristic Equation</title>
+
+  <ul marker="">
+
+    <!-- Problem 1 -->
+    <li workspace="2in">
+      <p>(1) &#160; If possible, give an example of:</p>
+      <ol marker="(a)">
+        <li>
+          <p>
+            a <m>2 \times 2</m> matrix <m>A \in \mathbb{R}^{2 \times 2}</m> whose eigenvalues have non‑zero imaginary components.
+          </p>
+        </li>
+        <li>
+          <p>
+            a non‑zero <m>2 \times 2</m> matrix <m>A \in \mathbb{R}^{2 \times 2}</m> that is not triangular, but has a zero eigenvalue.
+          </p>
+        </li>
+      </ol>
+    </li>
+
+    <!-- Problem 2 -->
+    <li workspace="2in">
+      <p>(2) &#160; For what values of <m>k</m> (if any) does <m>A</m> have one real eigenvalue of algebraic multiplicity <m>2</m>?</p>
+
+      <p>
+        <me>
+        A =
+        \begin{pmatrix}
+          -4 &amp; k \\
+           2 &amp; -2
+        \end{pmatrix}
+        </me>
+      </p>
+    </li>
+
+</ul>
+<ul marker="">
+
+    <!-- Problem 3 -->
+    <li workspace="2in">
+      <p>(3) &#160; The trace of <m>A</m>, denoted <m>\operatorname{tr}(A)</m>, is the sum of the elements on the main diagonal of <m>A</m>.
+      If <m>\operatorname{tr}(A) = 2</m>, <m>\det(A) = 1</m>, and <m>A \in \mathbb{R}^{2 \times 2}</m>, compute the eigenvalues of <m>A</m>.
+        <m>
+        \text{Hint: let }
+        A =
+        \begin{pmatrix}
+          a &amp; b \\
+          c &amp; d
+        \end{pmatrix}.
+        </m>
+      </p>
+    </li>
+
+  </ul>
+</handout>

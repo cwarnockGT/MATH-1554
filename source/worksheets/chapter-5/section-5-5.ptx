@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 5.5, Complex Eigenvalues</title>
+
+  <ul marker="">
+
+    <!-- Problem 1 -->
+    <li workspace="2in">
+      <p>(1) &#160; Indicate whether the statements are true or false.</p>
+      <ol marker="(a)">
+        <li><p>There exists a real <m>2 \times 2</m> matrix with the eigenvalues <m>i</m> and <m>2i</m>.</p></li>
+        <li><p>Every real <m>3 \times 3</m> matrix must have a real eigenvalue.</p></li>
+      </ol>
+    </li>
+
+    <!-- Problem 2 -->
+    <li workspace="2in">
+      <p>(2) &#160; <m>A</m> is a composition of a rotation and a scaling.
+      Give the angle of rotation <m>\varphi</m> and the scale factor <m>r</m>.</p>
+
+      <p>
+        <me>
+        A =
+        \begin{pmatrix}
+          \sqrt{3} &amp; -1 \\
+          1 &amp; \sqrt{3}
+        \end{pmatrix}
+        </me>
+      </p>
+    </li>
+
+    <!-- Problem 3 -->
+    <li workspace="2in">
+      <p>(3) &#160; Matrix <m>A</m> is a <m>2 \times 2</m> matrix that satisfies</p>
+
+      <p>
+        <me>
+        A^2 + 2A = -6I_2
+        </me>
+      </p>
+
+      <p>where <m>I_2</m> is the <m>2 \times 2</m> identity matrix.
+      Compute the eigenvalues of <m>A</m>.</p>
+    </li>
+
+    <!-- Problem 4 -->
+    <li workspace="2in">
+      <p>(4) &#160; <em>Written Explanation Exercise</em>
+      Can a <m>7 \times 7</m> matrix have <m>2</m> real eigenvalues and <m>5</m> non‑real eigenvalues?
+      If <m>A</m> is an <m>n \times n</m> matrix and <m>n</m> is odd, why does <m>A</m> have a real eigenvalue?</p>
+    </li>
+
+  </ul>
+</handout>

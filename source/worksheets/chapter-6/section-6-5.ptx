@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 6.5 and 6.6, Least‑Squares Problems, Applications to Linear Models</title>
+
+  <ul marker="">
+
+    <!-- Problem 1 -->
+    <li workspace="2in">
+      <p>(1) &#160; Fill in the blanks. These questions concern the least‑squares solution <m>\hat{x}</m> to <m>A\vec{x} = \vec{b}</m>.</p>
+
+      <ol marker="(a)">
+        <li><p>If <m>A = QR</m>, then <m>A^T A =</m> __________________.</p></li>
+        <li><p>If the columns of <m>A</m> are linearly independent, then <m>\hat{x} =</m> __________________<m>A^T \vec{b}</m>.</p></li>
+        <li><p>If <m>\vec{b}</m> is in the column space of <m>A</m>, then <m>A\hat{x} =</m> __________________.</p></li>
+        <li><p>If <m>A = QR</m> and <m>R</m> is invertible, then <m>\hat{x} =</m> __________________<m>Q^T \vec{b}</m>.</p></li>
+      </ol>
+    </li>
+
+    <!-- Problem 2 -->
+    <li workspace="2in">
+      <p>(2) &#160; These questions concern the least‑squares solution <m>\hat{x}</m> to <m>A\vec{x} = \vec{b}</m>.
+      Indicate whether the statements are true or false.</p>
+
+      <ol marker="(a)">
+        <li><p>The solution <m>\hat{x}</m> is chosen so that <m>A\hat{x}</m> is as close as possible to <m>\vec{b}</m>.</p></li>
+        <li><p>If <m>\vec{y} \ne \hat{x}</m>, then <m>\|A\hat{x} - \vec{b}\| &lt; \|A\vec{y} - \vec{b}\|</m>.</p></li>
+        <li><p>If the columns of <m>A</m> are linearly independent, then the least‑squares solution is unique.</p></li>
+      </ol>
+    </li>
+  </ul>
+  <ul marker="">
+
+    <!-- Problem 3 -->
+    <li workspace="1.5in">
+      <p>(3) &#160; Use the QR decomposition to calculate the least‑squares solution to <m>A\vec{x} = \vec{b}</m>.</p>
+
+      <p>
+        <me>
+        A = QR =
+        \begin{pmatrix}
+          \tfrac{2}{3} &amp; -\tfrac{1}{3} \\
+          \tfrac{2}{3} &amp;  \tfrac{1}{3} \\
+          \tfrac{1}{3} &amp; -\tfrac{2}{3}
+        \end{pmatrix}
+        \begin{pmatrix}
+          3 &amp; 5 \\
+          0 &amp; 1
+        \end{pmatrix},
+        \quad
+        \vec{b} =
+        \begin{pmatrix}
+          7 \\ 3 \\ 1
+        \end{pmatrix}.
+        </me>
+      </p>
+    </li>
+
+
+<!-- Problem 4 -->
+    <li workspace="2in">
+      <p>(4) &#160; Four points in <m>\mathbb{R}^3</m> with coordinates <m>(x,y,z)</m> are given in the table below.</p>
+
+      <p>
+        <me>
+        \begin{array}{c|cccc}
+          x &amp; -1 &amp; 0 &amp; 2 &amp; 1 \\ \hline
+          y &amp;  2 &amp; 1 &amp; 0 &amp; 2 \\ \hline
+          z &amp;  9 &amp; 1 &amp; 0 &amp; -1
+        \end{array}
+        </me>
+      </p>
+
+      <p>
+        Determine the coefficients <m>c_1</m> and <m>c_2</m> for the plane
+        <m>z = c_1 x + c_2 y</m> that best fits the data.
+        (Hint: normal equations.)
+      </p>
+    </li>
+
+
+  </ul>
+</handout>
