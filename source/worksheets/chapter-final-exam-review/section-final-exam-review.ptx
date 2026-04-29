@@ -70,7 +70,7 @@
 
         <li><p>
           Fill in the circles next to the sets of vectors that form a basis for <m>S</m>.
-          <ul>
+          <ul marker = "">
             <li>
               <p>
                 <m>\bigcirc</m> <m>\{ \vec{v_{1}}, \vec{v_{2}}, 3\vec{v_{3}}, 0 \}</m>
