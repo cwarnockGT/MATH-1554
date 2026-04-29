@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 6.2, Orthogonal Sets</title>
+
+  <ul marker="">
+
+    <!-- Problem 1 -->
+    <li workspace="2in">
+      <p>(1) &#160; Indicate whether the statements are true or false.</p>
+
+      <ol marker="(a)">
+        <li>
+          <p>
+            If the columns of an <m>n \times n</m> matrix <m>A</m> are orthonormal,
+            then the linear mapping <m>\vec{x} \mapsto A\vec{x}</m> preserves lengths.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>P</m> is a stochastic matrix, then the columns of <m>P</m> have unit length.
+          </p>
+        </li>
+      </ol>
+    </li>
+
+    <!-- Problem 2 -->
+    <li workspace="2in">
+      <p>(2) &#160; Write <m>\vec{y}</m> as the sum of a vector parallel to <m>\vec{u}</m>
+      and a vector perpendicular to <m>\vec{u}</m>.</p>
+
+      <p>
+        <me>
+        \vec{y} =
+        \begin{pmatrix}
+          -1 \\ -5 \\ 10
+        \end{pmatrix},
+        \quad
+        \vec{u} =
+        \begin{pmatrix}
+          5 \\ -2 \\ 1
+        \end{pmatrix}
+        </me>
+      </p>
+    </li>
+
+    <!-- Problem 3 -->
+    <li workspace="2in">
+      <p>(3) &#160; Find the coordinates for <m>\vec{v}</m> in the subspace spanned
+      by the orthogonal vectors <m>\vec{u}_1</m> and <m>\vec{u}_2</m>.</p>
+
+      <p>
+        <me>
+        \vec{v} =
+        \begin{pmatrix}
+          0 \\ -5 \\ -3
+        \end{pmatrix},
+        \quad
+        \vec{u}_1 =
+        \begin{pmatrix}
+          1 \\ -2 \\ 2
+        \end{pmatrix},
+        \quad
+        \vec{u}_2 =
+        \begin{pmatrix}
+          6 \\ -7 \\ -10
+        \end{pmatrix}
+        </me>
+      </p>
+    </li>
+  </ul>
+  <ul marker = "">
+
+    <!-- Problem 4 -->
+    <li workspace="2in">
+      <p>(4) &#160; Give examples of the following.</p>
+
+      <ol marker="(a)">
+        <li>
+          <p>
+            A matrix <m>A</m> in RREF such that
+            <m>\dim\!\left((\mathrm{Row}(A))^\perp\right) = 1</m>
+            and
+            <m>\dim\!\left((\mathrm{Col}(A))^\perp\right) = 2</m>.
+          </p>
+
+          <p>
+            <me>A = \begin{pmatrix} &amp; &amp; &amp; \\ &amp; &amp; &amp; \\ &amp; &amp; &amp; \end{pmatrix}</me>
+            <!-- manually padded entries -->
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Two linearly independent vectors <m>\vec{u}</m> and <m>\vec{v}</m> in <m>\mathbb{R}^3</m>
+            such that
+            <m>\vec{u} \cdot \vec{x} = \vec{v} \cdot \vec{x} = 0</m>,
+            where
+            <m>\vec{x} =
+            \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}</m>. <m>\qquad \vec{u} = \begin{pmatrix} &amp; \\  &amp; \\ &amp;
+           \end{pmatrix} \qquad \vec{v} = \begin{pmatrix} &amp; \\ &amp; \\ &amp;
+           \end{pmatrix}</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            A <m>3 \times 3</m> matrix <m>A</m> in RREF such that
+            <m>(\mathrm{Null}(A))^\perp</m> is spanned by
+            <m>
+            \begin{pmatrix}
+              1 \\ 0 \\ -2
+            \end{pmatrix}
+            </m>.
+          </p>
+
+          <p>
+            <me>A = \begin{pmatrix} &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \end{pmatrix}</me>
+            <!-- Manually added in more ampersands because they didn't pad the matrix length enough-->
+          </p>
+        </li>
+
+        <li>
+          <p>
+            A non‑zero vector <m>\vec{w}</m> whose projection onto <m>\mathrm{Col}(A)</m>
+            is <m>\vec{w}</m>, where
+            <m>
+            A =
+            \begin{pmatrix}
+              1 &amp; 0 &amp; 0 \\
+              0 &amp; 0 &amp; 1
+            \end{pmatrix}
+            </m>.
+          </p>
+
+          <p>
+            <me>\vec{w} = \begin{pmatrix} &amp; \\ &amp; \\ &amp; \end{pmatrix}</me>
+          </p>
+        </li>
+      </ol>
+    </li>
+
+  </ul>
+</handout>

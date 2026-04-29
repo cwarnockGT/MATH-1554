@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 5.1, Eigenvectors and Eigenvalues</title>
+
+  <ul marker="">
+
+    <!-- Problem 1 -->
+    <li workspace="2in">
+      <p>(1) &#160; Determine whether <m>\vec u</m> and <m>\vec v</m> are eigenvectors of <m>A</m>. 
+      If so, what are their eigenvalues? Do not find the characteristic polynomial.</p>
+
+      <p>
+        <me>
+        A =
+        \begin{pmatrix}
+          -3 &amp; -3 &amp; 2 \\
+           6 &amp;  4 &amp; 0 \\
+           5 &amp;  3 &amp; 0
+        \end{pmatrix},
+        \quad
+        \vec u =
+        \begin{pmatrix}
+          -1 \\ 1 \\ 1
+        \end{pmatrix},
+        \quad
+        \vec v =
+        \begin{pmatrix}
+          1 \\ 1 \\ 1
+        \end{pmatrix}
+        </me>
+      </p>
+    </li>
+
+    <!-- Problem 2 -->
+    <li workspace="2in">
+      <p>(2) &#160; <m>T</m> is a linear transformation in <m>\mathbb{R}^2</m>. 
+      Without constructing <m>A</m>, identify one eigenvalue of <m>A</m>.</p>
+
+      <ol marker="(a)">
+        <li><p><m>T</m> reflects points across the line <m>x_1 = -x_2</m>.</p></li>
+        <li><p><m>T</m> projects points onto one of the coordinate axes.</p></li>
+      </ol>
+    </li>
+
+    </ul>
+    <ul marker = "">
+
+    <!-- Problem 3 -->
+    <li workspace="2in">
+      <p>(3) &#160; If <m>A\vec v = \lambda \vec v</m> with <m>\vec v \ne \vec 0</m> and <m>A</m> is invertible, 
+      can you find an eigenvalue and eigenvector of <m>A^{-1}</m>? 
+      Can <m>A</m> have a zero eigenvalue?</p>
+    </li>
+
+    <!-- Problem 4 -->
+    <li workspace="2in">
+      <p>(4) &#160; Is <m>\lambda = 2</m> an eigenvalue of <m>A</m>? 
+      Do not compute the characteristic polynomial.</p>
+
+      <p>
+        <me>
+        A =
+        \begin{pmatrix}
+          3 &amp; 2 \\
+          3 &amp; 8
+        \end{pmatrix}
+        </me>
+      </p>
+    </li>
+
+  </ul>
+</handout>
