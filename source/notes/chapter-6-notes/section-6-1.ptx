@@ -101,7 +101,7 @@
     <example xml:id="ex-6-1-length-op" workspace="true">
       <statement>
         <p>Compute <m>\lVert\overrightarrow{OP}\rVert</m> where <m>P=(1,3,2)</m>.</p>
-        <image width="50%" xml:id="6-1-ex-magnitude">
+        <image width="50%" xml:id="fig-6-1-ex-magnitude">
             <shortdescription>Sketch of the point (1,3,2) in 3-space.</shortdescription>
             <latex-image>
                  \begin{tikzpicture}[scale=1.0, axis/.style={->,black}, 
