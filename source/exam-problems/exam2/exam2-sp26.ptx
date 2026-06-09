@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<handout xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Exam 2, Spring 2026</title>
+
+<!-- Include the Exam Instructions file as the first page -->
+<xi:include href="../exam-instructions.ptx" />
+
+<page>
+<title>True / False</title>
+<problem>
+    <introduction>
+        <p>
+            (8 points) Suppose <m>A</m> is an <m>m \times n</m> matrix and <m>\vec b\in \mathbb R ^{m}</m> unless otherwise stated. Select <em>true</em> if the statement is true for all choices of <m>A</m> and <m>\vec b</m>.  Otherwise, select <em>false</em>.
+        </p>
+    </introduction>
+    <task workspace="true">
+    <statement>
+        <p>
+            <em>True &#160;  / &#160;  False</em>: &#160; There are infinity many invertible matrices <m> A </m> satisfying <m> A^2 = A</m>.  
+        </p>
+    </statement>
+    <answer>
+        <p>
+            False.
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Solution text
+        </p>
+        <p>
+            Counterexample: 
+        </p>
+    </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m>A</m> and <m> B </m> are invertible matrices, then <m> A + B </m> is also invertible.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                False.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>    
+            <p>    
+                Counterexample: 
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If the matrix product <m> AB </m> is defined, then <m>BA</m> is also defined.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                False
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m> A </m> is an <m> n \times m </m> matrix and <m> AB </m> is an <m>n \times r </m> matrix, then <m>B</m> has <m>r</m> columns.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                True.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+            <p>
+                Counterexample
+            </p>
+        </solution>
+    </task>
+
+    
+</problem>
+
+
+</page>
+
+
+<page>
+<problem>
+    <introduction>
+        <p>
+           (4 points) Indicate whether the following situations are possible or impossible. 
+        </p>
+    </introduction>
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                <em>Possible &#160;  / &#160;  Impossible</em>: &#160; An invertible matrix with a unique <m> LU </m> factorization.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Possible.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution Text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                <em>Possible &#160;  / &#160;  Impossible</em>: &#160; Two matrices <m>A</m> and <m>B</m> such that <m>(A + B)^2 = A^2 +B^2 + 2AB</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Possible.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution Text. (A=B= zero matrix should work)
+            </p>
+        </solution>
+    </task>
+
+
+</problem>
+
+<p workspace="0.5in">
+    
+</p>
+
+<problem workspace="3in">
+    <statement>
+        <p>        
+            (2 points) Multiple Choice Problem: Select all that apply or Select only one. Let <m>A</m> be an <m>n \times n</m> matrix such that for every <m>\vec{b} \in \mathbb{R}^n</m>, the system <m>A \vec{x} = \vec{b}</m> has a unique solution.
+
+        </p>
+        
+        <ol marker="(a)">
+            <li><m>A</m> has a pivot in each column.</li>
+            <li>dim <m>\{ \vec{x} | A \vec{x} = \vec{0} \} > 0</m>.</li>
+            <li><m>A^T \vec{x} = \vec{b}</m> has a unique solution.</li>
+            <li>The columns of <m>A</m> span <m>\mathbb{R}^n</m>.</li>
+        </ol>
+
+    </statement>
+    <answer>
+        <p>
+            Options (a), (c), and (d) are correct
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Option (a) is correct.
+        </p>
+        <p>
+            Option (b) is incorrect.
+        </p>
+        <p>
+            Option (c) is correct.
+        </p>
+        <p>
+            Option (d) is correct.
+        </p>
+    </solution>
+</problem>
+    
+</page>
+
+<page>
+    <problem workspace="true">
+        <statement>
+            <p>
+                (3 points) Let <m>A</m> be a <m>3 \times 4</m> matrix. Let 
+                <me> D = \begin{pmatrix}A \amp B \\ C \amp I_5 \end{pmatrix}</me>
+
+                Find the dimension of matrices <m>B, C, </m> and <m>D</m>:
+
+                <me>B \text{ has _______}  \text{ rows and _______}  \text{ columns}</me>
+                <me>C \text{ has _______}  \text{ rows and _______}  \text{ columns}</me>
+                <me>D \text{ has _______}  \text{ rows and _______}  \text{ columns}</me>
+
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <m>B</m> has 3 rows and 5 columns. <m>C</m> has 5 rows and 4 columns. <m>D</m> has 8 rows and 9 columns.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text for B
+            </p>
+            <p>
+                Solution text for C
+            </p>
+            <p>
+                Solution text for D
+            </p>
+        </solution>
+    </problem>
+
+    <problem workspace="true">
+        <statement>
+            <p>    
+                Let <m>A = \begin{pmatrix} a \amp 0 \\ b \amp 1 \end{pmatrix}</m> and <m>AA^T = I_2</m>. Find all possible values for <m>a</m> and <m>b</m>.
+
+
+                <me>a = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \end{bmatrix}$}$ } </me>
+                <me>b = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \end{bmatrix}$}$ } </me>
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <m>a = \pm 1</m> and <m>b = 0</m>.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </problem>
+
+    <problem workspace="1.5in">
+        <statement>
+            <p>
+                Let <m>A = \begin{pmatrix}1 \amp 3 \\ 0 \amp 1\end{pmatrix}</m>. Find <m>A^{500}</m>. <m>\textit{Hint: First compute $A^2$, then $A^3$, and continue computing successive powers until you recognize a pattern.}</m>
+            </p>
+            <p>
+                <me>A^{500} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \\ b  \\ c \\d \\ d \\ d \end{bmatrix}$}$ } </me>
+                
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <m>A^{500} = \begin{bmatrix} 1 \amp 1500 \\ 0 \amp 1 \end{bmatrix}</m>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text 
+            </p>
+        </solution>
+    </problem>
+</page>
+
+<page>
+    
+
+    <problem workspace="2in">
+        <introduction>
+            <p>
+                Show your work problem. Part of the grade is based on the justification/ work shown. Can have parts. E.g.
+            </p>
+        </introduction>
+        <statement>
+            <p>
+                (5 points) Show your work in the space below and put your answer in the boxes.
+
+                Let 
+                
+                <me>
+                        A = \begin{pmatrix} 1 \amp 2 \amp 3 \\ 0 \amp 1 \amp 4 \\ 0 \amp 0 \amp 1 \end{pmatrix}, \vec{b} = \begin{pmatrix} 6 \\ 5 \\ 3 \end{pmatrix}
+                    </me>
+            </p>
+            <p>
+                (a) Form the augmented matrix <m>[A | I_3] </m>
+
+            <me>[A|I_3] =  \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \amp a \\ b  \\ c \\d \\ d \\ d \amp d \ amp d \end{bmatrix}$}$ } </me>
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <m>[A | I_3] =     \left[\begin{array}{ccc|ccc}
+    1 \amp 2 \amp 3 \amp 1 \amp 0 \amp 0 \\
+    0 \amp 1 \amp 4 \amp 0 \amp 1 \amp 0 \\
+    0 \amp 0 \amp 1 \amp 0 \amp 0 \amp 1
+    \end{array}\right].</m>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+
+        <statement>
+            (b) Use elementary row operations to reduce <m> [A|I_3]</m> to <m> [I_3|B]</m>
+
+            <me>[I_3|B] = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \amp a \\ b  \\ c \\d \\ d \\ d \amp d \ amp d \end{bmatrix}$}$ }</me>
+        </statement>
+
+        <answer>
+            <p>
+                <m>[A | I_3] =     \left[\begin{array}{ccc|ccc}
+    1 \amp 0 \amp 0 \amp 1 \amp -2 \amp 5 \\
+    0 \amp 1 \amp 0 \amp 0 \amp 1 \amp -4 \\
+    0 \amp 0 \amp 1 \amp 0 \amp 0 \amp 1
+    \end{array}\right].</m>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+
+        <statement>
+            (C) What is the relationship between <m>B</m> and <m>A</m>
+
+            <me>\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \end{bmatrix}$}$ }</me>
+        </statement>
+
+        <answer>
+            <p>
+                <m>B = A^{-1}</m>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+
+
+    </problem>
+
+
+
+
+</page>
+    
+<page>
+    <problem workspace="1.5in">
+        <statement>
+            <p>
+                Use <m>B</m> to solve the system <m>A \vec{x} = \vec{b}</m>
+                <me></me>
+
+                <me>\vec{x} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ b  \\ c \end{bmatrix}$}$ }</me>
+            </p>
+            
+        </statement>
+        <answer>
+            <p>
+                <m>\vec{x} = \begin{pmatrix}11 \\ -7 \\ 3\end{pmatrix}</m>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text 
+            </p>
+        </solution>
+    </problem>
+</page>
+
+<page>
+    <problem workspace="1.5in">
+        <statement>
+            <p>
+                (6 points) Show your work in the space below and put your answer in the boxes.
+
+                Find the <m>LU</m> factorization for the following matrix
+
+                <me>A = \begin{pmatrix}1 \amp 2 \amp 1 \amp 3 \\ 2 \amp 5 \amp 2 \amp 4 \\ 3 \amp 8 \amp 3 \amp 7\end{pmatrix}.</me>
+
+                <me>L = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \amp a \\ b  \\ c \\d \\ d \\ d \amp d \ amp d \end{bmatrix}$}$ }</me>
+
+                <me>U = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \amp a \\ b  \\ c \\d \\ d \\ d \amp d \ amp d \end{bmatrix}$}$ }</me>
+            </p>
+            
+        </statement>
+        <answer>
+            <p>
+                <me>L = \begin{pmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 3 \amp 2 \amp 1\end{pmatrix}</me>
+                <me>U = \begin{pmatrix} 1 \amp 2 \amp 1 \amp 3 \\ 0 \amp 1 \amp 0 \amp -2 \\ 0 \amp 0  \amp 0 \amp 2\end{pmatrix}</me>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text 
+            </p>
+        </solution>
+    </problem>
+</page>
+
+
+</handout>
