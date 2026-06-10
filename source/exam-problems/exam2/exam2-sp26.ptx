@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<handout xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Exam 2, Spring 2026</title>
+
+<!-- Include the Exam Instructions file as the first page -->
+<xi:include href="../exam-instructions.ptx" />
+
+<page>
+<title>True / False</title>
+<problem>
+    <introduction>
+        <p>
+            (8 points) Suppose <m>A</m> is an <m>m \times n</m> matrix and <m>\vec b\in \mathbb R ^{m}</m> unless otherwise stated. Select <em>true</em> if the statement is true for all choices of <m>A</m> and <m>\vec b</m>.  Otherwise, select <em>false</em>.
+        </p>
+    </introduction>
+    <task workspace="true">
+    <statement>
+        <p>
+            <em>True &#160;  / &#160;  False</em>: &#160; If <m>A</m> and <m>B</m> are row equivalent, then <m>\det (A) = \det (B)</m>.
+        </p>
+    </statement>
+    <answer>
+        <p>
+            False.
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Solution text
+        </p>
+        <p>
+            Counterexample: 
+        </p>
+    </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m>\vec{p}</m> and <m> \vec{q} </m> are probability vectors in <m>\mathbb R ^3</m>, then <m>\frac{1}{3} \vec{p}  + \frac{2}{3} \vec{q}</m> is also a probability vector in <m>\mathbb R ^3</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                True.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>    
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If the matrix product <m> AB </m> is defined, then the product <m>BA</m> is also defined.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                False
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m>\det (A) = 0</m>, then <m>A</m> must have a zero row or have two rows which are identical.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                False
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m>A</m> is an <m>n \times n</m> matrix and <m>A = LU</m> is an <m>LU</m> factorization of <m>A</m>, then <m>\det(A) = \det(U)</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                True
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m>A</m> and <m>B</m> are invertible <m>n \times n</m> matrices then <m>A + B</m> is also invertible.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                False
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m> A </m> is an <m> n \times n </m> matrix and <m>c</m> is a scalar such that <m>\det(A - cI_n) = 0</m>, then there exists a nonzero vector <m>\vec{v} \in \mathbb R ^n</m> such that <m>A \vec{v} \in \text{span}\{\vec{v} \}</m>
+            </p>
+        </statement>
+        <answer>
+            <p>
+                True.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m>A</m> and <m>B</m> are both <m>n \times n</m> matrices with pivots in each of their columns, then the product <m>AB</m> has a pivot in each of its columns
+            </p>
+        </statement>
+        <answer>
+            <p>
+                True
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </task>
+    
+</problem>
+
+
+</page>
+
+
+<page>
+<problem>
+    <introduction>
+        <p>
+           (4 points) Indicate whether the following situations are possible or impossible. 
+        </p>
+    </introduction>
+
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                <em>Possible &#160;  / &#160;  Impossible</em>: &#160; A <m>2 \times 2</m> matrix <m>A</m> with <m>\text{dim}(\Nul(A)) = 0</m> such that the system <m>A \vec{x} = \begin{bmatrix}1 \\ 2\end{bmatrix}</m> has no solution.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                impossible.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution Text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                <em>Possible &#160;  / &#160;  Impossible</em>: &#160; A <m>3 \times 5</m> matrix <m>A</m> so that <m>\rank(A) = 4</m>
+            </p>
+        </statement>
+        <answer>
+            <p>
+                impossible.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution Text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                <em>Possible &#160;  / &#160;  Impossible</em>: &#160; Two <m>2 \times 2</m> non-zero matrices A and B, neither of which is <m>I_2</m>, with <m>AB = BA</m>
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Possible.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution Text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                <em>Possible &#160;  / &#160;  Impossible</em>: &#160; A <m>2 \times 2</m> invertible matrix <m>A = \begin{bmatrix}a \amp b \\ c \amp d\end{bmatrix}</m> so that <m>\det (A) = \det\begin{pmatrix}a \amp b \\ 2a + c \amp 2b + d\end{pmatrix}</m>
+            </p>
+        </statement>
+        <answer>
+            <p>
+                Possible.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution Text. 
+            </p>
+        </solution>
+    </task>
+
+
+</problem>
+
+<p workspace="0.5in">
+    
+</p>
+
+<problem workspace="3in">
+    <statement>
+        <p>        
+            (2 points) Let <m>A</m> be an <m>n \times n</m> matrix such that for every <m>\vec{b} \in \mathbb R ^n</m>, the system <m>A \vec{x} = \vec{b}</m> has a unique solution. Which of the following statements is FALSE?
+
+            <m>\textit{Select only one}</m>
+        </p>
+        
+        <ol marker="(a)">
+            <li>The rows of <m>A</m> form a basis for <m>\mathbb R ^n</m></li>
+            <li>dim <m>\{ \vec{x} | A \vec{x} = \vec{0} \} > 0</m>.</li>
+            <li>The system <m>A^T \vec{x} = \vec{b}</m> has a unique solution for every <m>\vec{b} \in \mathbb R^n</m></li>
+            <li>The columns of <m>A</m> are linearly independent.</li>
+        </ol>
+
+    </statement>
+    <answer>
+        <p>
+            Option (b) is correct
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Option (a) is incorrect.
+        </p>
+        <p>
+            Option (b) is correct.
+        </p>
+        <p>
+            Option (c) is incorrect.
+        </p>
+        <p>
+            Option (d) is incorrect.
+        </p>
+    </solution>
+</problem>
+    
+</page>
+
+<page>
+    <problem workspace="3in">
+    <statement>
+        <p>        
+            (2 points) Which of the following subsets of <m>\mathbb R ^3</m> are subspaces?
+
+            <m>\textit{Select all that apply}</m>
+        </p>
+        
+        <ol marker="(a)">
+            <li><m>S_1 = \{ (x,y,z) \in \mathbb R^3 : x-2y+z = 1 \}</m></li>
+            <li><m>S_2 = \{ s(1,0,1) + t(0,1,1) : s,t \in \mathbb R \}</m></li>
+            <li><m>S_3 = \{ (x,y,z) \in \mathbb R^3 : xy=0 \}</m></li>
+            <li><m>S_4 = \{ (x,y,z) \in \mathbb R^3 : x-2y+z = 0 \}</m></li>
+        </ol>
+
+    </statement>
+    <answer>
+        <p>
+            Options (b) and (d) are correct
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Option (a) is incorrect.
+        </p>
+        <p>
+            Option (b) is correct.
+        </p>
+        <p>
+            Option (c) is incorrect.
+        </p>
+        <p>
+            Option (d) is correct.
+        </p>
+    </solution>
+</problem>
+
+
+
+    <problem workspace="true">
+        <statement>
+            <p>
+                (3 points) Suppose that <m>\det \begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix} = 2 </m> and <m>\det \begin{pmatrix} a \amp b \\ e \amp f \end{pmatrix} = 5</m> and <m>\det \begin{pmatrix} c \amp d \\ e \amp f \end{pmatrix} = -2</m>. Find the value of the determinant below:
+                <md>
+                    \det \begin{pmatrix} a \amp 2 \amp b \\ c \amp 0 \amp d \\ e \amp 4 \amp f \end{pmatrix} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b  \end{bmatrix}$}$ }
+                </md>
+
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <md>
+                    \det \begin{pmatrix} a \amp 2 \amp b \\ c \amp 0 \amp d \\ e \amp 4 \amp f \end{pmatrix} = -4
+                </md>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text 
+            </p>
+        </solution>
+    </problem>
+</page>
+
+<page>
+    <problem workspace="true">
+        <statement>
+            <p>    
+                (3 points) Compute the area of the parallelogram <m>\mathcal{S}</m> having vertices <m>(-1,1), (0,4), (1,-4), \text{ and } (2,-1)</m>. Then, let <m>T : \mathbb R^2 \to \mathbb R^2</m> be the transformation with standard matrix <m>\begin{pmatrix}3 \amp 2 \\ 5 \amp 1 \end{pmatrix}</m>. Find the area of <m>T(\mathcal{S})</m>
+                <md>
+                    \text{Area}(\mathcal{S}) = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b  \end{bmatrix}$}$ }
+                </md>
+                <md>
+                    \text{Area}(T(\mathcal{S})) = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b  \end{bmatrix}$}$ }
+                </md>
+                
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <md>
+                    \text{Area}(\mathcal{S}) = 11
+                </md>
+                <md>
+                    \text{Area}((T\mathcal{S})) = 77
+                </md>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </problem>
+
+    <problem workspace="1.5in">
+        <statement>
+            <p>
+                (4 points) Consider the system <m>A \vec{x} = \vec{b}</m>, where
+
+                <md>
+                    A = \begin{bmatrix} 7 \amp 4 \\ 3 \amp 2 \end{bmatrix} \text{ and } \vec{b} = \begin{bmatrix} 2 \\ 0 \end{bmatrix}
+                </md>
+                
+                Let <m>A_1</m> and <m>A_2</m> be as in Cramer's Rule; that is, Let <m>A_i</m> be the matrix <m>A</m> with column <m>i</m> replaced with <m>\vec{b}</m>. Find <m>\det(A), \det(A_1), \det(A_2)</m>, and the solution vector <m>\vec{x}</m> 
+            </p>
+            <p>
+                <md>
+                    \det(A) = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b  \end{bmatrix}$}$ }
+                </md>
+                <md>
+                    \det(A_1) = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b  \end{bmatrix}$}$ }
+                </md>
+                <md>
+                    \det(A_2) = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b  \end{bmatrix}$}$ }
+                </md>
+                <md>
+                    \vec{x} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b \\ c \\ d \\ e  \end{bmatrix}$}$ }
+                </md>
+                
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <md>
+                    \det(A) = 2
+                </md>
+                <md>
+                    \det(A_1) = 4
+                </md>
+                <md>
+                    \det(A_2) = -6
+                </md>
+                <md>
+                    \vec{x} = \begin{bmatrix} 2 \\ -3 \end{bmatrix}
+                </md>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text 
+            </p>
+        </solution>
+    </problem>
+</page>
+
+<page>
+    
+
+    <problem workspace="2in">
+        <introduction>
+            <p>
+                Show your work problem. Part of the grade is based on the justification/ work shown. Can have parts. E.g.
+            </p>
+        </introduction>
+        <statement>
+            <p>
+                (5 points) Find an eigenvector <m>\vec{v}</m> of <m>A</m> corresponding to the eigenvalue <m>\lambda = 3</m>
+
+                <md>
+                    A = \begin{bmatrix} 7 \amp 2 \\ -2 \amp 2 \end{bmatrix}
+                </md>
+                
+                <md>
+                    \vec{v} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b \\ c \\ d \\ e  \end{bmatrix}$}$ }
+                </md>
+                
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <md>
+                    \vec{v} = \begin{bmatrix} 1 \\ -2 \end{bmatrix}
+
+                </md>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+        </problem>
+
+        <problem>
+
+
+        <statement>
+            (3 points) Find the value of <m>h</m> such that the matrix
+
+            <md>
+                A = \begin{bmatrix}7 \amp h \\ 5 \amp -1 \end{bmatrix}
+            </md>
+
+            has eigenvalues <m>\lambda_1 = -3</m> and <m>\lambda_2 = 9</m>
+
+            <md>
+                h = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \end{bmatrix}$}$ }
+            </md>
+            
+            
+        </statement>
+
+        <answer>
+            <p>
+                <md>
+                    h = 4
+                </md>
+                
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </problem>
+
+
+
+
+</page>
+    
+<page>
+    <problem workspace="1.5in">
+        <statement>
+            <p> (6 points) <m> \textbf{Show your work for part (b) on this page.}</m>
+                <md></md>
+            
+                Use the following Markov chain diagram to answer the questions.
+                <md></md>
+                (a) Find the stochastic matrix <m>P</m> of the Markov chain.
+
+                <md></md>
+                (b) Find the unique steady state probability vector <m>\vec{q}</m> of <m>P</m>
+                <md></md>
+
+                (c) If <m>\vec{x} = \begin{pmatrix}10 \\ 18 \end{pmatrix}</m>, find the limit <m>l</m> of the sequence of vectors <m>P^k \vec{x_0}</m> as <m>k</m> tend to infinity.
+                <md></md>
+                
+
+                <figure xml:id="markov-two-state">
+  <image>
+    <latex-image>
+\begin{tikzpicture}
+\begin{scope}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,
+  thick,main node/.style={circle,fill=blue!20,draw,font=\sffamily\Large\bfseries}]
+   \node[main node] (1) {A};
+   \node[main node] (2) [right of=1] {B};
+
+   \path[every node/.style={font=\sffamily\small}]
+      (1) edge [bend right] node[below] {0.3} (2)
+          edge [loop above] node {0.7} (1)
+      (2) edge node [above] {0.4} (1)
+          edge [loop above] node {0.6} (2);
+\end{scope}
+\end{tikzpicture}
+    </latex-image>
+  </image>
+</figure>
+
+                <md>P = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \amp a \\ b  \\ c \end{bmatrix}$}$ }</md>
+                <md>\vec{q} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ b  \\ c \end{bmatrix}$}$ }</md>
+                <md>\vec{l} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ b  \\ c \end{bmatrix}$}$ }</md>
+            </p>
+            
+        </statement>
+        <answer>
+            <p>
+                <md>P = \begin{bmatrix}  0.7 \amp 0.4 \\ 0.3 \amp 0.6 \end{bmatrix}</md>
+
+                <md>\vec{q} = \begin{bmatrix}  \frac{4}{7} \\ \frac{3}{7} \end{bmatrix}</md>
+
+                <md>\vec{l} = \begin{bmatrix}  16 \\ 12 \end{bmatrix}</md>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text 
+            </p>
+        </solution>
+    </problem>
+</page>
+
+<page>
+    <problem workspace="1.5in">
+        <statement>
+            <p>
+                (4 points) Show your work in the space below and put your answer in the boxes.
+
+                Let
+
+                <me>W = \left\{\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} \in \mathbb{R}^4 \ : \ x_1 + 2x_2 - x_3 + 3x_4 = 0 \right\}.</me>
+                Find a basis for <m>W</m> and state <m>\dim(W)</m>
+
+
+                <md>
+                    \text{basis for W} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \amp a \amp a \amp a \\ b  \\ c  \\ d \\ e \\ f \\ g \\ h\end{bmatrix}$}$ }
+
+                </md>
+
+                <md>
+                    \dim(W) = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ b \end{bmatrix}$}$ }
+                </md>
+                
+                
+            </p>
+            
+        </statement>
+        <answer>
+            <p>
+                <me>\text{basis for W} = \left\{ \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ 0 \\ 0 \\ 1 \end{bmatrix} \right\}</me>
+                <me>\dim(W) = 3</me>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text 
+            </p>
+        </solution>
+    </problem>
+</page>
+
+<page>
+    <problem workspace="1.5in">
+        <statement>
+            <p>
+                (6 points) Show your work in the space below and put your answer in the boxes.
+
+                Find the <m>LU</m> factorizations for the following matrix
+
+                <md>
+                    A = \begin{pmatrix} 1 \amp 2 \amp 1 \amp 3 \\ 2 \amp 5 \amp 2 \amp 4 \\ 3 \amp 4 \amp 3 \amp7 \end{pmatrix}
+                </md>
+                
+                <md>
+                    L = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a  \\ b  \\ c  \\ d\end{bmatrix}$}$ }
+                </md>
+                <md>
+                    U = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a  \\ b  \\ c  \\ d\end{bmatrix}$}$ }
+                </md>
+                
+            </p>
+            
+        </statement>
+        <answer>
+            <p>
+                <me>L = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 3 \amp -2 \amp 1 \end{bmatrix}</me>
+                <me>U = \begin{bmatrix} 1 \amp 2 \amp 1 \amp 3 \\ 0 \amp 1 \amp 0 \amp -2 \\ 0 \amp 0 \amp 0 \amp -6 \end{bmatrix}</me>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text 
+            </p>
+        </solution>
+    </problem>
+</page>
+
+
+
+</handout>
