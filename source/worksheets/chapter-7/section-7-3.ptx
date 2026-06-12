@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 7.3, Constrained Optimization</title>
+
+  <ul marker="">
+
+    <!-- Problem 1 -->
+    <li workspace="2in">
+      <p>(1) &#160; Indicate whether the statements are true or false.</p>
+
+      <ol marker="(a)">
+        <li>
+          <p>
+            The largest value of a positive definite quadratic form
+            <m>\vec{x}^T A \vec{x}</m>
+            is the largest eigenvalue of <m>A</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The largest value of a positive definite quadratic form
+            <m>\vec{x}^T A \vec{x}</m>
+            subject to <m>\|\vec{x}\| = 1</m>
+            is the largest value on the diagonal of <m>A</m>.
+          </p>
+        </li>
+      </ol>
+    </li>
+
+    <!-- Problem 2 -->
+    <li workspace="2in">
+      <p>(2) &#160; Calculate the maximum and minimum values of the quadratic form
+      <m>Q</m> subject to the constraint <m>\|\vec{x}\| = 1</m>.
+      Identify where this maximum is obtained.</p>
+
+      <p>
+        <me>
+        Q(\vec{x}) = 4x_1^2 + x_2^2 + 4x_1x_2 + 3x_3^2,
+        \quad
+        \vec{x} \in \mathbb{R}^3.
+        </me>
+      </p>
+    </li>
+</ul>
+<ul marker="">
+
+    <!-- Problem 3 -->
+    <li workspace="2in">
+      <p>(3) &#160; Calculate the maximum and minimum values of the quadratic form
+      <m>Q</m> subject to the constraints <m>\|\vec{x}\| = 1</m> and
+      <m>\vec{x} \cdot \vec{u} = 0</m>.</p>
+
+      <p>
+        <me>
+        Q(\vec{x}) = 4x_1^2 + x_2^2 + 4x_1x_2 + 3x_3^2,
+        \quad
+        \vec{u} =
+        \begin{pmatrix}
+          2 \\ 1 \\ 0
+        \end{pmatrix}.
+        </me>
+      </p>
+    </li>
+
+    <!-- Problem 4 -->
+    <li workspace="2in">
+      <p>(4) &#160; If possible, give examples of the following, or write “not possible”.</p>
+
+      <ol marker="(a)">
+        <li>
+          <p>
+            A quadratic form <m>Q : \mathbb{R}^3 \to \mathbb{R}</m>
+            that has maximum value <m>12</m>, subject to the constraint <m>\|\vec{x}\| = 1</m>.
+          </p>
+        </li>
+
+
+        <li>
+          <p>
+            A quadratic form <m>Q : \mathbb{R}^3 \to \mathbb{R}</m>
+            that has a maximum value <m>4</m> at two distinct locations,
+            subject to the constraint <m>\|\vec{x}\| = 1</m>.
+          </p>
+        </li>
+      </ol>
+    </li>
+
+  </ul>
+</handout>

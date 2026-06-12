@@ -32,14 +32,14 @@
     <li workspace="2in">
       <p>(3) &#160; For what values of <m>h</m> are the columns of <m>A</m> linearly dependent?</p>
       <p>
-        <m>
+        <me>
         A =
         \begin{pmatrix}
           2 &amp; 4 &amp; -2 \\
           -2 &amp; -6 &amp; 2 \\
           4 &amp; 7 &amp; h
         \end{pmatrix}
-        </m>
+        </me>
       </p>
     </li>
 

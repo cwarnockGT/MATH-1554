@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 6.3, Orthogonal Projections</title>
+
+  <ul marker="">
+
+    <!-- Problem 1 -->
+    <li workspace="2in">
+      <p>(1) &#160;
+        <m>
+        \vec{y} =
+        \begin{pmatrix}
+          0 \\ 2 \\ 4
+        \end{pmatrix},
+        \quad
+        \vec{u}_1 =
+        \begin{pmatrix}
+          1 \\ 1 \\ 0
+        \end{pmatrix},
+        \quad
+        \vec{u}_2 =
+        \begin{pmatrix}
+          -1 \\ 1 \\ 0
+        \end{pmatrix}
+        </m>
+      </p>
+
+      <ol marker="(a)">
+        <li><p>Determine whether <m>\vec{u}_1</m> and <m>\vec{u}_2</m> are:</p>
+          <ul>
+            <li>
+              <p>
+                are linearly independent.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                are mutually orthogonal.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                are orthonormal.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                span <m>\mathbb{R}^3</m>.
+              </p>
+            </li>
+          </ul></li>
+        <li><p>Is <m>\vec{y}</m> in <m>\text{Span}\{ \vec{u_{1}}, \vec{u_{2} \} }</m>?</p></li>
+        <li><p>Compute the vector <m>\hat{y} \in W</m> that most closely approximates <m>\vec{y}</m>.</p></li>
+        <li><p>Construct a vector <m>\vec{z}</m> that is in <m>W^\perp</m>.</p></li>
+      </ol>
+    </li>
+
+    <!-- Problem 2 -->
+    <li workspace="2in">
+      <p>(2) &#160; The set <m>\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}</m> is an orthogonal basis for a subspace <m>V</m>.
+      Classify each set as a basis for <m>V</m>, an orthogonal basis for <m>V</m>, or not a basis for <m>V</m>.</p>
+
+      <ol marker="(a)">
+        <li><p><m>\{3\vec{v}_3,\ 2\vec{v}_1,\ \vec{v}_2\}</m></p></li>
+        <li><p><m>\{(\vec{v}_1 + \vec{v}_2),\ (\vec{v}_1 - \vec{v}_2),\ \vec{v}_3\}</m></p></li>
+        <li><p><m>\{(\vec{v}_1 + \vec{v}_2),\ (\vec{v}_1 - \vec{v}_2),\ (\vec{v}_3 - \vec{v}_1)\}</m></p></li>
+      </ol>
+    </li>
+
+    <!-- Problem 3 -->
+    <li workspace="2in">
+      <p>(3) &#160; Indicate whether the statements are true or false.</p>
+
+      <ol marker="(a)">
+        <li><p>If <m>\vec{y}</m> is in a subspace <m>W</m>, the orthogonal projection of <m>\vec{y}</m> onto <m>W</m> is <m>\vec{y}</m>.</p></li>
+        <li><p>If <m>\vec{x}</m> is orthogonal to <m>\vec{v}</m> and <m>\vec{w}</m>, then <m>\vec{x}</m> is also orthogonal to <m>\vec{v} - \vec{w}</m>.</p></li>
+      </ol>
+    </li>
+
+    <!-- Problem 4 -->
+    <li workspace="2in">
+      <p>(4) &#160; If possible, give an example of:</p>
+
+      <ol marker="(a)">
+        <li><p>two linearly independent vectors that are orthogonal to <m>\begin{pmatrix}2 \\ 0 \\ -1\end{pmatrix}</m>.</p></li>
+        <li><p>a subspace <m>S \subset \mathbb{R}^3</m> such that <m>\dim(S^\perp) = 2</m>.</p></li>
+      </ol>
+    </li>
+
+  </ul>
+</handout>

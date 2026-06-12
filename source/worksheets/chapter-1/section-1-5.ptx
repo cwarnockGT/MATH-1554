@@ -53,13 +53,13 @@
     <li workspace="2in">
       <p>(4) &#160; Express the solution to <m>A\vec{x} = \vec{0}</m> in parametric vector form, where</p>
       <p>
-        <m>
+        <me>
         A =
         \begin{pmatrix}
         1 &amp; 3 &amp; 4 &amp; 1 \\
         0 &amp; 0 &amp; 1 &amp; 1
         \end{pmatrix}
-        </m>.
+        </me>.
       </p>
     </li>
 

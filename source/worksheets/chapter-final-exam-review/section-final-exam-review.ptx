@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Final Exam Review</title>
+
+  <ul marker="">
+
+    <!-- Problem 1 -->
+    <li workspace="3in">
+      <p>(1) &#160; Indicate whether the statements are possible (P) or impossible (I).
+      For the statements that are possible, give an example.</p>
+
+      <ol marker="(a)">
+        <li><p>
+          <m>T_A</m> is a linear transformation <m>T_A(\vec{x}) = A\vec{x}</m>,
+          where <m>A \in \mathbb{R}^{N \times N}</m>, <m>N \ge 2</m>,
+          and <m>T_A</m> is one‑to‑one but not onto.
+        </p></li>
+
+        <li><p>
+          <m>Q(\vec{x}) = \vec{x}^T A \vec{x}</m> is a negative semidefinite quadratic form,
+          and <m>Q(\vec{v}) = 0</m>, where <m>\vec{v}</m> is an eigenvector of <m>A</m>.
+        </p></li>
+
+        <li><p>
+          <m>A</m> is a square <m>4 \times 4</m> matrix,
+          <m>\lambda \in \mathbb{R}</m> is an eigenvalue of <m>A</m>,
+          and <m>\dim(\mathrm{Row}(A-\lambda I)^\perp) = 0</m>.
+        </p></li>
+
+        <li><p>
+          <m>A</m> is an <m>n \times n</m> matrix,
+          <m>A\vec{x} = A\vec{y}</m> for some <m>\vec{x} \ne \vec{y}</m>,
+          and <m>\dim(\mathrm{Null}(A)) = 0</m>.
+        </p></li>
+
+        <li><p>
+          The Gram–Schmidt algorithm applied to exactly <m>N</m> vectors in
+          <m>\mathbb{R}^N</m> produces an orthogonal basis with dimension <m>N-1</m>.
+        </p></li>
+
+        <li><p>
+          Matrix <m>A</m> is <m>3 \times 2</m>,
+          has singular values <m>\sigma_1</m> and <m>\sigma_2</m>,
+          and <m>\sigma_1 = \sigma_2</m>.
+        </p></li>
+      </ol>
+    </li>
+
+    <!-- Problem 2 -->
+    <li workspace="1in">
+      <p>(2) &#160; Vectors <m>\vec{v}_1,\vec{v}_2,\vec{v}_3</m>
+      are linearly independent and span a subspace <m>S</m>.</p>
+
+      <ol marker="(a)">
+        <li><p>
+          Fill in the circles next to the sets of vectors that span <m>S</m>.
+          <ul marker = "">
+            <li>
+              <p>
+                <m>\bigcirc</m> <m>\{ \vec{v_{1}}, \vec{v_{2}}, \vec{v_{3}}, 2\vec{v_{3}}, 0 \}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\bigcirc</m> <m>\{ \vec{v_{1}}, \vec{v_{1}} - \vec{v_{2}}, \vec{v_{3}} \}</m>
+              </p>
+            </li>
+          </ul>
+        </p></li>
+
+        <li><p>
+          Fill in the circles next to the sets of vectors that form a basis for <m>S</m>.
+          <ul marker = "">
+            <li>
+              <p>
+                <m>\bigcirc</m> <m>\{ \vec{v_{1}}, \vec{v_{2}}, 3\vec{v_{3}}, 0 \}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\bigcirc</m> <m>\{ \vec{v_{1}}, \vec{v_{1}} - \vec{v_{2}}, \vec{v_{3}} \}</m>
+              </p>
+            </li>
+          </ul>
+        </p></li>
+      </ol>
+    </li>
+
+    <!-- Problem 3 -->
+    <li workspace="2in">
+      <p>(3) &#160; Give an example of an <m>N \times N</m> matrix whose null space
+      is equal to its column space.</p>
+    </li>
+
+  </ul>
+  <ul marker = "">
+
+    <!-- Problem 4 -->
+    <li workspace="2in">
+      <p>(4) &#160; Fill in the blanks.</p>
+
+      <ol marker="(a)">
+        <li><p>
+          If <m>M &gt; N</m> and for all <m>\vec{b} \in \mathbb{R}^N</m>
+          there is at most one <m>\vec{x}</m> such that
+          <m>T(\vec{x}) = A\vec{x} = \vec{b}</m>,
+          where <m>A \in \mathbb{R}^{M \times N}</m>,
+          how many pivot columns does <m>A</m> have? _________
+        </p></li>
+
+        <li><p>
+          Consider the row operations that reduce <m>A</m> to <m>I_3</m>.
+          Identify the elementary matrices <m>E_1</m> and <m>E_2</m>.
+
+            <me>
+            A =
+            \underbrace{\begin{pmatrix}
+              0 &amp; 1 &amp; 0 \\
+              1 &amp; 0 &amp; 1 \\
+              0 &amp; 5 &amp; 1
+            \end{pmatrix}}_{A}
+            \sim
+            \underbrace{\begin{pmatrix}
+              1 &amp; 0 &amp; 0 \\
+              0 &amp; 1 &amp; 0 \\
+              0 &amp; 5 &amp; 1
+            \end{pmatrix}}_{E_1 A}
+            \sim
+            \underbrace{\begin{pmatrix}
+              1 &amp; 0 &amp; 0 \\
+              0 &amp; 1 &amp; 0 \\
+              0 &amp; 0 &amp; 1
+            \end{pmatrix}}_{E_2 E_1 A}
+            = I_3
+            </me>
+        </p>
+        
+
+        <p>
+          By inspection, <m>E_1 = \begin{pmatrix} &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \end{pmatrix}</m> and <m>E_2 = \begin{pmatrix} &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \end{pmatrix}</m>
+            <!-- Manually added in more ampersands because they didn't pad the matrix length enough-->
+        </p>
+
+      
+      </li>
+
+        <li><p>
+          For what values of <m>k \in \mathbb{R}</m>, if any,
+          is <m>A = \begin{pmatrix}3 &amp; 0 \\ k &amp; 3\end{pmatrix}</m>
+          diagonalizable? _________
+        </p></li>
+
+        <li><p>
+          An eigenvector of
+          <m>
+          A =
+          \begin{pmatrix}
+            1 &amp; 1 &amp; 1 &amp; 1 \\
+            1 &amp; -1 &amp; 1 &amp; -1 \\
+            1 &amp; 1 &amp; -1 &amp; -1 \\
+            1 &amp; -1 &amp; -1 &amp; 1
+          \end{pmatrix}
+          </m>
+          is
+          <m>\vec{v}_1 = \begin{pmatrix}0 \\ -2 \\ 2 \\ 0\end{pmatrix}</m>.
+          What is the eigenvalue associated with <m>\vec{v}_1</m>? _________
+        </p></li>
+      </ol>
+    </li>
+
+    <!-- Problem 5 -->
+    <li workspace="2in">
+      <p>(5) &#160; If possible, give an example of the following, or write “not possible”.</p>
+
+      <ol marker="(a)">
+        <li><p>
+          A matrix <m>A</m> in RREF such that <m>T_A : \mathbb{R}^4 \to \mathbb{R}^3</m>.
+          The vectors
+          <m>\vec{u} = \begin{pmatrix}3 \\ 0 \\ 0\end{pmatrix}</m>
+          and
+          <m>\vec{v} = \begin{pmatrix}2 \\ 1 \\ 0\end{pmatrix}</m>
+          are a basis for the range of <m>T</m>. <m>A = \begin{pmatrix} &amp; &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; &amp; \end{pmatrix}</m>
+        </p></li>
+
+        <li><p>
+          A non‑zero matrix <m>A</m> in RREF such that
+          <m>\dim((\mathrm{Row}(A))^\perp) = 1</m>
+          and
+          <m>\dim((\mathrm{Col}(A))^\perp) = 1</m>. <m>A = \begin{pmatrix} &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \end{pmatrix}</m>
+        </p></li>
+      </ol>
+    </li>
+
+  </ul>
+</handout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handout>
+  <title>Worksheet 6.1, Inner Product, Length, and Orthogonality</title>
+
+  <ul marker="">
+
+    <!-- Problem 1 -->
+    <li workspace="2in">
+      <p>(1) &#160; Fill in the blanks.</p>
+
+      <ol marker="(a)">
+        <li>
+          <p>
+            The distance between the vector
+            <m>\vec{u} = \begin{pmatrix}2 \\ 3\end{pmatrix}</m>
+            and the line spanned by
+            <m>\vec{w} = \begin{pmatrix}1 \\ 0\end{pmatrix}</m>
+            is __________________.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>W</m> is the plane spanned by the vectors
+            <m>\vec{u} = \begin{pmatrix}1 \\ 1 \\ 1\end{pmatrix}</m>
+            and
+            <m>\vec{v} = \begin{pmatrix}1 \\ 0 \\ -1\end{pmatrix}</m>,
+            a basis of <m>W^\perp</m> is given by
+            <m>\vec{w} = \begin{pmatrix} &amp; \\ &amp; \\ &amp; \end{pmatrix}</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If
+            <m>
+              V = \left\{\vec{x} \in \mathbb{R}^3 \,\middle|\, x_1 + x_2 = x_3 \right\},
+            </m>
+            then <m>\dim V =</m> _______
+            and <m>\dim V^\perp =</m> _______.
+          </p>
+        </li>
+      </ol>
+    </li>
+
+    <!-- Problem 2 -->
+    <li workspace="2in">
+      <p>(2) &#160; <m>W</m> is the set of all vectors of the form
+        <m>
+        \begin{pmatrix}
+          x \\ y \\ x + y
+        \end{pmatrix}.
+        </m>
+      Which of the vectors below are in <m>W^\perp</m>?</p>
+      <p>
+        <me>
+        \vec{u} =
+        \begin{pmatrix}8 \\ -5 \\ 8\end{pmatrix},
+        \quad
+        \vec{v} =
+        \begin{pmatrix}1 \\ 1 \\ -1\end{pmatrix},
+        \quad
+        \vec{w} =
+        \begin{pmatrix}3 \\ 3 \\ -3\end{pmatrix}
+        </me>
+      </p>
+    </li>
+
+    <!-- Problem 3 -->
+    <li workspace="2in">
+      <p>(3) &#160; Indicate whether the statements are true or false.</p>
+
+      <ol marker="(a)">
+        <li>
+          <p>
+            If <m>\vec{x} \in \mathrm{Null}(A)</m>, then <m>\vec{x}</m> is orthogonal
+            to the rows of matrix <m>A</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>\vec{u}</m> and <m>\vec{v}</m> are non‑zero orthogonal vectors,
+            then they are linearly independent.
+          </p>
+        </li>
+      </ol>
+    </li>
+
+  </ul>
+</handout>
