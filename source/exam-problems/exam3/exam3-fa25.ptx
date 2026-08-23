@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<handout xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Exam 3, Fall 2025</title>
+
+<!-- Include the Exam Instructions file as the first page -->
+<xi:include href="../exam-instructions.ptx" />
+
+<page>
+<title>True / False</title>
+<problem>
+    <introduction>
+        <p>
+            (8 points) Suppose <m>A</m> is an <m>m \times n</m> matrix and <m>\vec b\in \mathbb R ^{m}</m> unless otherwise stated. Select <em>true</em> if the statement is true for all choices of <m>A</m> and <m>\vec b</m>.  Otherwise, select <em>false</em>.
+        </p>
+    </introduction>
+    <task workspace="true">
+    <statement>
+        <p>
+            <em>True &#160;  / &#160;  False</em>: &#160; If <m>U</m> and <m>V</m> are orthogonal <m>n \times n</m> matrices, then <m>UV</m> is also an othogonal <m>n \times n</m> matrix.
+        </p>
+    </statement>
+    <answer>
+        <p>
+            True.
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Solution text
+        </p>
+    </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; Any set of vectors <m>\{ \vec{v_1},\vec{v_2}, \dots , \vec{v_n}\}</m> in <m>\mathbb{R}^n</m> can be transformed into an orthogonal basis for <m>\mathbb{R}^n</m> using the Gram-Schmidt process.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                False.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>    
+        </solution>
+    </task>
+
+    <task workspace="true">`
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m>W</m> is an <m>m</m>-dimensional subspace of <m>\mathbb{R}^n</m>, then <m>\text{dim}(W^{\perp}) = n-m</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                True
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m>A^TA</m> is not invertible, then there is no least-squares solution to <m>A\vec{x} = \vec{b}</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                False
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m>\{ \vec{u_1}, \vec{u_2} \}</m> is a basis of the subspace <m>W</m> of <m>\mathbb{R}^n</m>, and <m>\vec{y_1}, \vec{y_2} \in W^{\perp}</m>, then <m>\vec{u_1} + \vec{y_1} \neq \vec{u_2} + \vec{y_2}</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                True
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m>P</m> is the <m>n \times n</m> matrix of the orthogonal projection onto a subspace of <m>\mathbb{R}^n</m>, then <m>P^2 = P</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                True
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m>\vec{x} = \hat{x}</m> is the vecotr in <m>\mathbb{R}^n</m> which minimizes <m>|| A \vec{x} - \vec{b}|| </m>, then <m>\hat{x}</m> is a least-squares solution of <m>A \vec{x} = \vec{b}</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                True
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="true">
+        <statement>
+            <p>
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m>W</m> is a 1-dimensional subspace of <m>\mathbb{R}^2</m> and <m>\text{proj}_W\vec{u} = \text{proj}_W\vec{v}</m>, then <m>\vec{u} = \vec{v}</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                False
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </task>
+
+    
+    
+</problem>
+
+
+<problem>
+    <introduction>
+        <p>
+           (4 points) Indicate whether the following situations are possible or impossible. 
+        </p>
+    </introduction>
+
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                <em>Possible &#160;  / &#160;  Impossible</em>: &#160; A <m>3 \times 3</m> orthogonal matrix <m>U</m> so that <m>\text{det}(U) = 2</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                impossible.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution Text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                <em>Possible &#160;  / &#160;  Impossible</em>: &#160; A square matrix <m>A</m> that is invertible but not diagonalizable.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                possible.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution Text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                <em>Possible &#160;  / &#160;  Impossible</em>: &#160; A subspace <m>W</m> and a vector <m>\vec{y}</m> so that if <m>\hat{y} = \text{proj}_W(\vec{y})</m>, then <m>||\vec{y}|| = 5, ||\hat{y}|| = 4</m>, and <m>||\vec{y} - \hat{y}|| = 3</m>.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                possible.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution Text
+            </p>
+        </solution>
+    </task>
+
+    <task workspace="0.5in">
+        <statement>
+            <p>
+                <em>Possible &#160;  / &#160;  Impossible</em>: &#160; A <m>5 \times 5</m> matrix with real entries that haas no real eigenvalues.
+            </p>
+        </statement>
+        <answer>
+            <p>
+                impossible.
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution Text
+            </p>
+        </solution>
+    </task>
+
+
+
+
+</problem>
+
+<problem workspace="3in">
+    <statement>
+        <p>        
+            (2 points) Which of the following is true for every <m>m \times n</m> matrix <m>A</m> with <m>m \lt n </m>?
+
+            <m>\textit{Select only one}</m>
+        </p>
+        
+        <ol marker="(a)">
+            <li> <m>(\text{Col}(A))^{\perp} = \text{Nul}(A)</m> </li>
+            <li><m>\text{dim}(\text{Nul}(A)) = \text{dim}(\text{Nul}(A^T))</m></li>
+            <li><m>\text{dim}(\text{Col}(A)) + \text{dim}(\text{Nul}(A^T)) = m</m></li>
+            <li><m>(\text{Nul}(A))^{\perp} \subseteq \mathbb{R}^m</m></li>
+        </ol>
+
+    </statement>
+    <answer>
+        <p>
+            Option (c) is correct
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Solution text
+        </p>
+    </solution>
+
+    </problem>
+
+
+
+</page>
+
+
+<page>
+
+
+<p workspace="0.5in">
+    
+</p>
+
+<problem workspace="3in">
+    <statement>
+        <p>
+            (6 points) Fill in the blanks.
+        </p>
+    </statement>
+    <statement>
+        <p>
+            Suppose <m>\vec{u}</m> and <m>\vec{v}</m> are orthogonal vectors in <m>\mathbb{R}^n</m> and that <m>\vec{u}</m> is a unit vector. If <m>(2 \vec{u} + \vec{v}) \cdot (3 \vec{u} + 2 \vec{v}) = 14</m>, determine the length of <m>\vec{v}</m>.
+        </p>
+        <p>
+            <md>
+                ||\vec{v}|| = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b  \end{bmatrix}$}$ }
+            </md>
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <m>||\vec{v}|| = 2</m>
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Solution text
+        </p>
+    </solution>
+    </problem>
+    <problem workspace="true">
+
+    <statement>
+        <p>
+            Compute the length of the vector <m>\vec{y}</m>.
+        </p>
+        <p>
+            <md>
+                \vec{y} = \begin{pmatrix} \frac{1}{\sqrt{11}} \amp -\frac{1}{\sqrt{2}} \amp \frac{3}{\sqrt{22}} \\ \frac{3}{\sqrt{11}} \amp 0 \amp - \frac{2}{\sqrt{22}} \\ \frac{1}{\sqrt{11}} \amp \frac{1}{\sqrt{2}} \amp \frac{3}{\sqrt{22}} \end{pmatrix} \begin{pmatrix} 2 \\ -1 \\ 2 \end{pmatrix}
+            </md>
+
+            
+        </p>
+
+        <p>
+            <md>
+                ||\vec{y}|| = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b  \end{bmatrix}$}$ }
+            </md>
+        </p>
+    </statement>
+
+     <answer>
+        <p>
+            <m>||\vec{y}|| = 3</m>
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Solution text
+        </p>
+    </solution>
+    </problem>
+
+    <problem workspace="true">
+
+    <statement>
+        <p>
+            Let <m>A = \begin{bmatrix} 3 \amp -2 \\ 4 \amp -1 \end{bmatrix}</m>. The vector <m>\vec{v} = \begin{bmatrix} i \\ 1+1 \end{bmatrix}</m> is an eigenvector of <m>A</m>. Find the associated eigenvalue <m>\lambda</m> for the eigenvector <m>\vec{v}</m> of <m>A</m>.
+        </p>
+        <p>
+            <m>\textit{Note: You may leave your eigenvalue in the form } \frac{a+bi}{c+di}</m>
+        </p>
+        <p>
+            <md>
+                \lambda = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b  \end{bmatrix}$}$ }
+            </md>
+            
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <m>\lambda = 1 + 2i</m>
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Solution text
+        </p>
+    </solution>
+</problem>
+    
+</page>
+
+<page>
+<problem workspace="3in">
+    <statement>
+        <p>        
+            (3 points) Consider the equation <m>A \vec{x} = \vec{b}</m> where <m>A = QR</m> is a <m>QR</m>-decomposition of <m>A</m> with 
+            <md>
+                Q = \frac{1}{2} \begin{bmatrix} 1 \amp 1 \\ 1 \amp -1 \\ 1 \amp 1 \\ 1 \amp -1 \end{bmatrix}, R = \begin{bmatrix} 1 \amp -2 \\ 0 \amp 1 \end{bmatrix}, \vec{b} = \begin{bmatrix} 4 \\ 1 \\ 0 \\ 1 \end{bmatrix}
+            </md>
+            Compute the least squares solution to <m>A \vec{x} = \vec{b}</m>
+
+            <md>
+                \hat{x} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b  \end{bmatrix}$}$ }
+            </md>
+        
+        </p>
+    </statement>
+    <answer>
+        <p>
+            <m> \hat{x} = \begin{bmatrix} 5 \\ 1 \end{bmatrix}</m>
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Solution text.
+        </p>
+    </solution>
+</problem>
+
+<problem workspace="3in">
+
+    <statement>
+        <p>
+            (3 points) Let <m>W = \text{Span} \left\{ \begin{pmatrix}1 \\ 0 \\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix}1 \\ 2 \\ 1 \\ 0\end{pmatrix} \right\}</m>. Find a basis <m>\mathcal{B}</m> for <m>W^{\perp}</m>, the orthogonal complement of <m>W</m>.
+        
+            <md>
+                \mathcal{B} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a  \\ b  \\ c \\ d \\ e \\ f \end{bmatrix}$}$ }
+            </md>
+        </p>
+
+    </statement>
+    <answer>
+        <p>
+            <md>\mathcal{B} = \left\{ \begin{pmatrix} 1 \\ 0 \\ -1 \\ 0 \end{pmatrix},\begin{pmatrix} 0 \\ 0 \\ 0 \\ 1 \end{pmatrix} \right\}</md>
+        </p>
+    </answer>
+    <solution>
+        <p>
+            Solution text.
+        </p>
+    </solution>
+</problem>
+
+</page>
+
+<page>
+    <problem workspace="true">
+        <statement>
+            <p>
+                (5 points) Let <m>A = \begin{bmatrix} 1 \amp -1 \\ -1 \amp 0 \\ 1 \amp 1 \end{bmatrix}</m> and <m>\vec{y} = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}</m>
+                
+            </p>
+            <p>
+                Find the orthogonal projection <m>\hat{y}</m> of <m>\vec{y}</m> to <m>W = \text{Col}(A)</m>.
+
+                <md>
+                    \hat{y} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a  \\ b  \\ c \\ d \\ e \\ f \end{bmatrix}$}$ }
+                </md>
+                
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <md>
+                    \hat{y} = \frac{2}{3} \begin{bmatrix} 1 \\ -1 \\ 1 \end{bmatrix}
+                </md>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text 
+            </p>
+        </solution>
+    </problem>
+
+    <problem workspace="true">
+        <statement>
+            <p>
+                Find the orthogonal projection of <m>y^{\perp}</m> of <m>\vec{y}</m> to <m>W^{\perp}</m>.
+
+                <md>
+                    y^{\perp} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a  \\ b  \\ c \\ d \\ e \\ f \end{bmatrix}$}$ }
+                </md>
+                
+            </p>
+        </statement>
+
+        <answer>
+            <p>
+                <md>
+                    y^{\perp} = \frac{1}{3} \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}
+                </md>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text 
+            </p>
+        </solution>
+        
+    </problem>
+
+    <problem workspace="true">
+        <statement>
+            <p>
+                Find the distance from <m>\vec{y}</m> to <m>W</m>.
+
+                <m>\textit{Hint: The distance between a vector } \vec{v} \textit{ and a subspace } W \textit{ is } ||\vec{v} - \vec{w}|| \textit{ where } \vec{w} \textit{ is the vector in } W \textit{ which is closest to } \vec{v}.</m>
+
+                <md>
+                    \text{distance}(\vec{y}, W) = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a  \\ b  \\ c \\ d \\ e \\ f \end{bmatrix}$}$ }
+                </md>
+                
+            </p>
+        </statement>
+
+        <answer>
+            <p>
+                <md>
+                    \text{distance}(\vec{y}, W) = \frac{\sqrt{6}}{3}
+                </md>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text 
+            </p>
+        </solution>
+        
+    </problem>
+
+</page>
+
+<page>
+    <problem workspace="true">
+        <statement>
+            <p>    
+                (5 points) Show your work for part (a) on this page and put your answers in the boxes.
+                
+            </p>
+
+            <p>
+                Suppose that 
+                <md>
+                    \vec{x_1} = \begin{pmatrix} 1 \\  -1 \\ 0 \\ 1 \end{pmatrix}, \vec{x_2} = \begin{pmatrix} 2 \\ 0 \\ 0 \\ 1 \end{pmatrix}, \vec{x_3} = \begin{pmatrix} 1 \\ 1 \\ 0 \\ -3 \end{pmatrix}.
+                </md>
+                (a) Find an orthogonal basis <m>\mathcal{B}</m> for the subspace <m>W = \text{Span} = \{\vec{x_1},\vec{x_2}, \vec{x_3} \}</m>
+
+                <md>
+                    \mathcal{B} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a  \\ b  \\ c \\ d \\ e \\ f \end{bmatrix}$}$ }
+                </md>
+                
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <md>
+                    \mathcal{B} = \left\{ \begin{bmatrix} 1 \\ -1 \\ 0 \\ 1 \end{bmatrix},\begin{bmatrix} 1 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ -1 \\ 0 \\ -2 \end{bmatrix} \right\}
+                </md>
+                
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </problem>
+
+    <problem workspace="1.5in">
+        <statement>
+            <p>
+                (b) Find the orthonormal basis <m>\mathcal{C}</m> for the subspace <m>W = \{\vec{x_1},\vec{x_2}, \vec{x_3} \}</m>
+
+                <m>\textit{Hint: You may use your answer to part (a)}</m>
+
+                <md>
+                    \mathcal{C} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a  \\ b  \\ c \\ d \\ e \\ f \end{bmatrix}$}$ }
+                </md>
+                
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <md>
+                    \mathcal{C} = \left\{ \frac{1}{\sqrt{3}}\begin{bmatrix} 1 \\ -1 \\ 0 \\ 1 \end{bmatrix}, \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \frac{1}{\sqrt{6}}\begin{bmatrix} 1 \\ -1 \\ 0 \\ -2 \end{bmatrix} \right\}
+                </md>
+                
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text 
+            </p>
+        </solution>
+    </problem>
+</page>
+
+<page>
+    
+
+    <problem workspace="2in">
+        <introduction>
+            <p>
+                Show your work problem. Part of the grade is based on the justification/ work shown. Can have parts. E.g.
+            </p>
+        </introduction>
+        <statement>
+            <p>
+                (4 points) Find a matrix <m>A \in \mathbb{R}^{2 \times 2 }</m> such that <m>\vec{v_1}</m> is an eigenvector of <m>A</m> with eigenvalue <m>\lambda_1 = 2</m>, and <m>\vec{v_2}</m> is an eigenvector of <m>A</m> with eigenvalue <m>\lambda_2 = -1</m>.
+
+                <md>
+                    \vec{v_1} = \begin{pmatrix} 2 \\ 5 \end{pmatrix}, \vec{v_2} = \begin{pmatrix} 1 \\ 3 \end{pmatrix}
+                </md>
+                 
+
+                <md>
+                    A =  \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \\ b \\ c \\ d \\ e \\f  \end{bmatrix}$}$ }
+                </md>
+                
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <md>
+                    A = \begin{bmatrix} 17 \amp -6 \\ 45 \amp -16 \end{bmatrix}
+
+                </md>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+        </problem>
+
+        <problem>
+
+
+        <statement>
+            <p>
+                (3 points) Suppose <m>A</m> is a diagonalizable matrix with <m>A = PDP^{-1}</m> where 
+
+                <md>
+                    A = \begin{bmatrix} -2 \amp 4 \\ a \amp 8 \end{bmatrix},P = \begin{bmatrix} 1 \amp 2 \\ 1 \amp b \end{bmatrix},D = \begin{bmatrix} c \amp 0 \\ 0 \amp 4 \end{bmatrix}
+                </md>
+                
+                Find <m>a, b, </m> and <m>c</m>.
+            <md>
+                a = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ b  \end{bmatrix}$}$ } \text{    } b = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ b  \end{bmatrix}$}$ } \text{    } c = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ b  \end{bmatrix}$}$ } 
+            </md>
+            
+            
+           </p> 
+        </statement>
+
+        <answer>
+            <p>
+                <md>
+                    a = -6
+                </md>
+                <md>
+                    b = 3
+                </md>
+                <md>
+                    c = 2
+                </md> 
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </problem>
+
+
+
+
+</page>
+    
+<page>
+    
+
+    <problem workspace="2in">
+        <introduction>
+            <p>
+                Show your work problem. Part of the grade is based on the justification/ work shown. Can have parts. E.g.
+            </p>
+        </introduction>
+        <statement>
+            <p>
+                (7 points) In this problem, you will use the least-squares method to find the values <m>\alpha</m> and <m>\beta</m> which best fit the curve
+
+                <md>
+                    y = \frac{\alpha}{1 + x} + \beta
+                </md>
+
+                to the data points <m>(-2, 4), (0, 3), (0, 1)</m> using the parameters <m>\alpha</m> and <m>\beta</m>.
+            </p>
+        </statement>
+
+        <statement>
+            <p>
+                What is the augmented matrix <m>\left [ A \ \rvert \ \vec b \right]</m> for this least squares problem?
+
+                <md>
+                    \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \\ b \\ c \\ d \\ e \\f  \end{bmatrix}$}$ }
+                </md>
+                
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <md>
+                     \begin{bmatrix} -1 \amp 1 \amp \rvert \amp  4 \\ 1 \amp 1 \amp \rvert \amp  3 \\ 1 \amp 1 \amp \rvert \amp 1 \end{bmatrix}
+
+                </md>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+        </problem>
+
+        <problem>
+
+
+        <statement>
+            <p>
+                What is the augmented matrix for the normal equations for this least squares problem?
+
+                <md>
+                    \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \\ b \\ c \\ d \\ e \\f  \end{bmatrix}$}$ }
+                </md>
+                
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <md>
+                     \begin{bmatrix} 3 \amp 1 \amp \rvert \amp  0 \\ 1 \amp 3 \amp \rvert \amp  8\end{bmatrix}
+
+                </md>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </problem>
+
+        <problem>
+
+
+        <statement>
+            <p>
+                Find a least-squares solution to the linear system from (a) to determine the parameters of <m>\alpha</m> and <m>\beta</m> of the best fitting curve.
+
+                <md>
+                    \alpha = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ b  \end{bmatrix}$}$ }, \beta = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ b  \end{bmatrix}$}$ }
+                </md>
+                
+            </p>
+        </statement>
+        <answer>
+            <p>
+                <md>
+                     \alpha = -1
+
+                </md>
+                <md>
+                    \beta = 3
+                </md>
+                
+            </p>
+        </answer>
+        <solution>
+            <p>
+                Solution text
+            </p>
+        </solution>
+    </problem>
+
+
+
+
+</page>
+
+
+
+</handout>
