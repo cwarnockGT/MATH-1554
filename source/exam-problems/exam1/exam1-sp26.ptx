@@ -20,11 +20,11 @@
             <em>True &#160;  / &#160;  False</em>: &#160; If <m>\Span\left\{\vec v_1, \vec v_2, \vec v_3\right\} = \R^2</m>, then <m>\vec v_3 \in \Span\left\{\vec v_1, \vec v_2\right\}</m>.  
         </p>
     </statement>
-    <answer>
+    <hint>
         <p>
-            False. TestABABA
+            Think about whether <m>\Span\left\{\vec v_1, \vec v_2, \vec v_3\right\} = \R^2</m> implies that the vectors are linearly dependent. If they are linearly dependent, then one of them is in the span of the other two. But which one?
         </p>
-    </answer>
+    </hint>
     <solution>
         <p>
             It is true that the vectors are linearly dependent, so one of them belongs in the span of the other two, but it doesn't have to be <m>\vec v_3</m>.
