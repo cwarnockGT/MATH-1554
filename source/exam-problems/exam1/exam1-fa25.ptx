@@ -22,12 +22,12 @@
     </statement>
     <hint>
         <p>
-            <m> A\vec{x} = \vec{0} </m> having infinite solutions tells us something about the number of pivots and free variables that <m> A </m> has.
+            <m> A\vec x = \vec 0 </m> having infinite solutions tells us something about the number of pivots and free variables that <m> A </m> has.
         </p>
     </hint>
     <solution>
         <p>
-            True. If the system <m>A\vec{x} = \vec{0}</m> has infinitely many solutions, then <m> A <\m> must be at least one free variable.So the columns of <m> A </m> are linearly dependent.
+            <em>True.</em> If the system <m>A\vec x = \vec 0</m> has infinitely many solutions, then <m> A </m> must be at least one free variable. So the columns of <m> A </m> are linearly dependent.
         </p>
     </solution>
     </task>
@@ -38,14 +38,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; If <m>A</m> has a pivot in every row, then the equation <m>A \vec x = \vec b</m> must have a unique solution.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                False.
+                Consider some non-square matrices <m> A </m>
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <em> False </em>. Consider <m> A = \begin{bmatrix} 1 \amp 1 \end{bmatrix}, \vec b = \begin{bmatrix} 1 \end{bmatrix} </m>. Then we have the distinct solutions <m> \vec x_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix} </m> and <m> \vec x_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix} </m>, among many others.
             </p>    
         </solution>
     </task>
@@ -56,14 +56,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; If <m>T ( \vec x ) = A \vec x </m> is a linear transformation that is both one-to-one and onto, then <m>A</m> must be a square matrix.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                True.
+                A linear transformation being one-to-one tells you something about the number of pivots in the columns of <m>A</m>. A linear transformation being onto tells you something about the number of pivots in the rows of <m>A</m>.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                solution text
+                <em> True </em>. If <m> T </m> is one-to-one, then <m> A </m> has a pivot in every column. And if <m> T </m> is onto, then <m> A </m> has a pivot in every row. The only matrices with pivots in every row and every column are square matrices.
             </p>
         </solution>
     </task>
@@ -74,16 +74,15 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; The set of vectors in <m>\mathbb{R}^3</m> that satisfy <m>10x_1 - 3x_2 + x_3 = 0</m> is a line in <m>\mathbb{R}^3</m>.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                False.
+                Write <m> 10x_1 - 3x_2 + x_3 = 0 </m> as a homogenous matrix equation.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <em> True </em>. The set of vectors that satisfy <m> 10x_1 - 3x_2 + x_3 = 0 </m> is the solution set of the homogeneous system <m> A \vec x = \vec 0 </m> where <m> A = \begin{bmatrix} 10 \amp -3 \amp 1 \end{bmatrix} </m>. Since <m> A </m> has two free variables, the solution set is a plane in <m> \mathbb R^3 </m>. (In particular, it is the plane <m> \vec x = \Span \left\{ \begin{bmatrix} 3 \\ 10 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 10 \end{bmatrix} \right\} </m>.)
             </p>
-            
         </solution>
     </task>
 
@@ -93,14 +92,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; If <m>A, B, </m> and <m>C</m> are <m>n \times n</m> matrices such that <m>AC = BC</m> and <m>C</m> is not the zero matrix, then it must be the case that <m>A = B</m>.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                False.
+                Play around with some <m> 2 \times 2 </m> matrices.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                solution text
+                <em> False </em>. Consider <m> A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}, B = \begin{bmatrix} 0 \amp 0 \\ 1 \amp 0 \end{bmatrix}, C = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix} </m>. Then <m> AC = BC = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix} </m>, but <m> A \neq B </m>.
             </p>
         </solution>
     </task>
@@ -111,14 +110,18 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; If <m>\vec{v_1}</m> and <m>\vec{v_2}</m> are solutions to the inhomogeneous equation <m>A \vec x = \vec b</m>, then the vector <m>\vec{v_1} + \vec{v_2}</m> is not a solution to <m>A \vec x = \vec b</m>.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                True.
+                Compute <m>A(\vec{v_1} + \vec{v_2})</m>
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                solution text
+                <em> True </em>. If <m> \vec v_1 </m> and <m> \vec v_2 </m> are solutions to the inhomogeneous equation <m> A \vec x = \vec b </m>, then <m> A \vec v_1 = \vec b </m> and <m> A \vec v_2 = \vec b </m>. So we have
+                <me>
+                    A(\vec{v_1} + \vec{v_2}) = A\vec{v_1} + A\vec{v_2} = \vec b + \vec b = 2\vec b
+                </me>
+                which is not equal to <m>\vec b</m> since <m>\vec b \neq \vec 0</m>.
             </p>
         </solution>
     </task>
@@ -126,17 +129,17 @@
     <task workspace="true">
         <statement>
             <p>
-                <em>True &#160;  / &#160;  False</em>: &#160; If <m>A</m> is a  <m>3 \times 3</m> matrix such that <m>A \vec x = \vec b</m> is consistent for every <m>\vec b = \mathbb{R}^3</m>, then the columns of <m>A</m> are linearly independent.
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m>A</m> is a  <m>3 \times 3</m> matrix such that <m>A \vec x = \vec b</m> is consistent for every <m>\vec b \in \mathbb{R}^3</m>, then the columns of <m>A</m> are linearly independent.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                True.
+                If <m>A \vec x = \vec b</m> is consistent for every <m>\vec b \in \mathbb{R}^3</m>, then you know something about the pivots of <m>A</m>.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text 
+                <em> True </em>. If <m>A \vec x = \vec b</m> is consistent for every <m>\vec b \in \mathbb{R}^3</m>, then <m>A</m> has a pivot in every row. Since <m>A</m> is a square matrix, it must also have a pivot in every column. So the columns of <m>A</m> are linearly independent.
             </p>
         </solution>
     </task>
@@ -144,17 +147,17 @@
     <task workspace="true">
         <statement>
             <p>
-                <em>True &#160;  / &#160;  False</em>: &#160; If <m>\vec b \in \Span \{ \vec{v_1}, \vec{v_2} \}</m> and <m>b \in \Span \{ \vec{v_2}, \vec{v_3} \}</m>, then <m>b \in \Span \{ \vec{v_1}, \vec{v_3} \}</m>.
+                <em>True &#160;  / &#160;  False</em>: &#160; If <m>\vec b \in \Span \{ \vec{v_1}, \vec{v_2} \}</m> and <m>\vec b \in \Span \{ \vec{v_2}, \vec{v_3} \}</m>, then <m>\vec b \in \Span \{ \vec{v_1}, \vec{v_3} \}</m>.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                False.
+                Draw a picture in <m> \R^3 </m>.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <em> False </em>. Consider <m> \vec v_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \vec v_2 = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \vec v_3 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}, \vec b = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} </m>. Then <m> \vec b \in \Span\{\vec v_1, \vec v_2\} </m> and <m> \vec b \in \Span\{\vec v_2, \vec v_3\} </m>, but <m> \vec b \notin \Span\{\vec v_1, \vec v_3\} </m>.
             </p>
         </solution>
     </task>
@@ -177,14 +180,14 @@
                 <em>Possible &#160;  / &#160;  Impossible</em>: &#160; Four linearly independent vectors in <m>\mathbb{R}^3</m>.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                Impossible.
+                Consider the columns of a <m> 3 \times 4 </m> matrix.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution Text
+                <em> Impossible </em>. Any <m> 3 \times 4 </m> matrix has at most 3 pivots, so the columns of any <m> 3 \times 4 </m> matrix are linearly dependent. So there cannot be four linearly independent vectors in <m> \R^3 </m>.
             </p>
         </solution>
     </task>
@@ -195,14 +198,14 @@
                 <em>Possible &#160;  / &#160;  Impossible</em>: &#160; A linear transformation <m>T</m> such that <m>\vec{v_1}</m> and <m>\vec{v_2}</m> are linearly independent, but <m>T(\vec{v_1})</m> and <m>T(\vec{v_2})</m> are linearly dependent.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                Possible.
+                Linear transformations can be thought of as matrices. Consider some different matrices.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution Text.
+                <em> Possible </em>. One example is the linear transformation <m> T </m> that sends every vector to the zero vector.
             </p>
         </solution>
     </task>
@@ -213,14 +216,14 @@
                 <em>Possible &#160;  / &#160;  Impossible</em>: &#160; A one-to-one linear transformation <m>T(\vec{x}) = A \vec{x}</m> such that the homogeneous system <m>A \vec{x} = \vec{0}</m> has non-trivial solutions.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                Impossible.
+                Play around with some different matrices <m>A</m>.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <em> Impossible </em>. A one-to-one linear transformation sends different vectors to different vectors. So if <m>A \vec{x} = \vec{0}</m> has a non-trivial solution, then there is a non-zero vector <m>\vec{v}</m> such that <m>A \vec{v} = \vec{0}</m>. But since <m>A \vec{0} = \vec{0}</m>, this would imply <m> \vec{v} = \vec{0}</m>, which is a contradiction.
             </p>
         </solution>
     </task>
@@ -232,11 +235,11 @@
 
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
                 Impossible.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution text
@@ -271,11 +274,11 @@
         </ol>
 
     </statement>
-    <answer>
+    <hint>
         <p>
             Options (b), (c), and (d) are correct.
         </p>
-    </answer>
+    </hint>
     <solution>
         <p>
             Option (a) is not correct. 
@@ -311,11 +314,11 @@
 
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
                 Options (b) and (d) are correct.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Option (a) is not correct.
@@ -347,7 +350,7 @@
                 </me>
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
                 The correct equations are:
                 <me>
@@ -360,7 +363,7 @@
                     4x_1 + 2x_3 = 4
                 </me>
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution text.
@@ -392,11 +395,11 @@
             </me>
             
         </statement>
-        <answer>
+        <hint>
             <p>
                 <m> \begin{pmatrix} 7 \\ -6 \\ 11 \end{pmatrix} = 3 \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix} - 1 \begin{pmatrix} 2 \\ -2 \\ 2 \end{pmatrix} + 2 \begin{pmatrix} 3 \\ -4 \\ 5 \end{pmatrix} </m>
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution text 
@@ -415,11 +418,11 @@
                     </me>
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
                 <m>b = 1</m> and <m>d = 2</m>
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution text.
@@ -439,11 +442,11 @@
                 <me> A = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ a \\ a \\ a  \end{bmatrix}$}$ }</me>
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
                 <me> A = \begin{bmatrix} 1 \amp 1 \amp -2 \\ 0 \amp -1 \amp 2 \\ 0 \amp 0 \amp 0 \end{bmatrix}</me>
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution text.
@@ -464,11 +467,11 @@
                 </me>
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
                 <me> \begin{bmatrix} 1 \amp 2 \amp \rvert \amp 1 \\ 2 \amp 5 \amp \rvert \amp  1 \end{bmatrix}</me>
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 solution text.
@@ -482,7 +485,7 @@
     <problem>
         <introduction>
             <p>
-                (7 points) <em>Show your work for part (c) in the space below and put your answer in the boxes.</em> 
+                (7 points) <em>Show your work for part (c) in the space below and put your hint in the boxes.</em> 
             </p>
             <p>
                 Let <m>T</m> be the linear transformation defined by 
@@ -501,14 +504,14 @@
                 <me>\text{Codomain is }\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </me>
                 </p>
             </statement>
-            <answer>
+            <hint>
                 <p>
                     Domain is <m>\mathbb{R^3}</m>
                 </p>
                 <p>
                     Codomain is <m>\mathbb{R^2}</m>
                 </p>
-            </answer>
+            </hint>
             <solution>
                 <p>
                     Solution Text
@@ -524,11 +527,11 @@
                 <me>A = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \\ a \end{bmatrix}$}$ } </me>
             </p>
             </statement>
-            <answer>
+            <hint>
                 <p>
                     <m>A = \begin{bmatrix} 1 \amp 0 \amp -1 \\ 2 \amp 1 \amp 1 \end{bmatrix}</m>
                 </p>
-            </answer>
+            </hint>
             <solution>
                 <p>
                     Solution text 
@@ -547,11 +550,11 @@
                 <me>\vec{x} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \\ a \end{bmatrix}$}$ } </me>
             </p>
             </statement>
-            <answer>
+            <hint>
                 <p>
                     <m>\vec{x} = \begin{bmatrix} 3 \\ -2 \\ 0 \end{bmatrix}</m>
                 </p>
-            </answer>
+            </hint>
             <solution>
                 <p>
                     Solution text 
@@ -567,11 +570,11 @@
                     Is <m>T</m> one-to-one?
                 </p>
             </statement>
-            <answer>
+            <hint>
                 <p>
                     no
                 </p>
-            </answer>
+            </hint>
             <solution>
                 <p>
                     Solution text 
@@ -587,11 +590,11 @@
                     Is <m>T</m> onto?
                 </p>
             </statement>
-            <answer>
+            <hint>
                 <p>
                     yes
                 </p>
-            </answer>
+            </hint>
             <solution>
                 <p>
                     Solution text 
@@ -607,7 +610,7 @@
     <problem>
         <statement>
             <p>
-                (6 points) <em>Show your work in the space below and put your answer in the boxes.</em> 
+                (6 points) <em>Show your work in the space below and put your hint in the boxes.</em> 
             </p>
             <p>
                 Find all <m>h</m> such that the following set of vectors is linearly dependent. For that <m>h</m>, find a non-trivial linear combination of the vectors that adds to zero. 
@@ -622,14 +625,14 @@
                 <m>\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a\amp a \\ a \\ a \end{bmatrix}$}$ }</m>
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
                 <m>h = 3</m>
             </p>
             <p>
                 <m>-2 \begin{bmatrix} 0 \\ 1 \\ 2 \end {bmatrix} + 3 \begin{bmatrix} -1 \\ 1\\ 1 \end{bmatrix} + 1 \begin{bmatrix} 3 \\ -1 \\1 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}</m>
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution text:
@@ -642,7 +645,7 @@
     <problem>
         <introduction>
             <p>
-                (6 points) <em>Show your work for part (a) in the space below and put your answer in the boxes.</em> 
+                (6 points) <em>Show your work for part (a) in the space below and put your hint in the boxes.</em> 
             </p>
             <p>
                 Consider the linear system of equations <m>A \vec{x} = \vec{b}</m> where
@@ -660,11 +663,11 @@
                 <me>\vec{x} =  \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ a \\ a \\ a  \end{bmatrix}$}$ } </me>
                 </p>
             </statement>
-            <answer>
+            <hint>
                 <p>
                     <m>\vec{x} = \begin{bmatrix} 5 \\ 0 \\ 0 \\ 0 \end{bmatrix} + r \begin{bmatrix}-3 \\ -1 \\ 1 \\0 \end{bmatrix} + t \begin{bmatrix} 2 \\ 1 \\ 0 \\ 1 \end{bmatrix}; r,t \in \mathbb{R}</m>
                 </p>
-            </answer>
+            </hint>
             <solution>
                 <p>
                     Solution text.
@@ -680,11 +683,11 @@
                 <me>\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </me>
                 </p>
             </statement>
-            <answer>
+            <hint>
                 <p>
                     <m>Span \left\{ \begin{bmatrix} -3 \\ -1 \\ 1 \\ 0 \end{bmatrix} , \begin{bmatrix} 2 \\ 1 \\ 0 \\ 1 \end{bmatrix} \right\}</m>
                 </p>
-            </answer>
+            </hint>
             <solution>
                 <p>
                     Solution text.
