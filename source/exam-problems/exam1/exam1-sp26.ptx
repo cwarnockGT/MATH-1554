@@ -354,7 +354,7 @@
                 (2 points) Consider the linear system in variables <m>x_1,x_2,x_3</m> with unknown constants below.
                 <me>
                     \begin{array}{llr}
-                    a_1 x_1 + a_2 x_2 + a_3 x_3  \amp=\amp b_1\\
+                    a_1 x_1 + a_2 x_2 + a_3 x_3 \amp=\amp b_1\\
                     a_1 x_1 + a_2 x_2 + a_3 x_3 \amp= \amp -b_1
                     \end{array}
                 </me>

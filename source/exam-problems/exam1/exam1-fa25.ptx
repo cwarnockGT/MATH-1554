@@ -20,14 +20,14 @@
             <em>True &#160;  / &#160;  False</em>: &#160; If the system <m>A \vec x = \vec0</m> has infinitely many solutions, then the columns of <m>A</m> are linearly dependent. 
         </p>
     </statement>
-    <answer>
+    <hint>
         <p>
-            True.
+            <m> A\vec{x} = \vec{0} </m> having infinite solutions tells us something about the number of pivots and free variables that <m> A </m> has.
         </p>
-    </answer>
+    </hint>
     <solution>
         <p>
-            Solution text
+            True. If the system <m>A\vec{x} = \vec{0}</m> has infinitely many solutions, then <m> A <\m> must be at least one free variable.So the columns of <m> A </m> are linearly dependent.
         </p>
     </solution>
     </task>

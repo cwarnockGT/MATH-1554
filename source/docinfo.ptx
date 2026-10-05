@@ -9,6 +9,33 @@
   <!-- to define these semantically, so that the macro relates to what-->
   <!-- it defines. -->
   <macros>
+    \newcommand{\a}{\alpha}
+    \newcommand{\b}{\beta}
+    \newcommand{\g}{\gamma}
+    \newcommand{\d}{\delta}
+    \newcommand{\e}{\epsilon}
+    \newcommand{\z}{\zeta}
+    \newcommand{\h}{\eta}
+    \newcommand{\th}{\theta}
+    \newcommand{\i}{\iota}
+    \newcommand{\k}{\kappa}
+    \newcommand{\l}{\lambda}
+    \newcommand{\m}{\mu}
+    \newcommand{\n}{\nu}
+    \newcommand{\x}{\xi}
+    \newcommand{\p}{\pi}
+    \newcommand{\r}{\rho}
+    \newcommand{\s}{\sigma}
+    \newcommand{\t}{\tau}
+    \newcommand{\u}{\upsilon}
+    \newcommand{\vp}{\varphi}
+    \newcommand{\c}{\chi}
+    \newcommand{\ps}{\psi}
+    \newcommand{\o}{\omega}
+    \newcommand{\G}{\Gamma}
+    \newcommand{\D}{\Delta}
+    \newcommand{\L}{\Lambda}
+    \newcommand{\O}{\Omega}
     \newcommand{\N}{\mathbb N}
     \newcommand{\Z}{\mathbb Z}
     \newcommand{\Q}{\mathbb Q}
@@ -20,6 +47,7 @@
     \newcommand{\Span}{\operatorname{Span}}
     \renewcommand{\det}{\operatorname{det}}
     \newcommand{\rank}{\operatorname{rank}}
+    \newcommand{\fancy}[1]{\mathcal{#1}}
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->
