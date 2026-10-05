@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<part xml:id="notes" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="notes" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>MATH 1554 Course Notes - Spring 2026</title>
     <introduction xml:id="intro" xmlns:xi="http://www.w3.org/2001/XInclude">
         <p>These are the course notes for Georgia Tech's MATH 1554 Linear Algebra used during the Spring 2026 semester. </p>
@@ -8,11 +8,4 @@
         <p><em>Disclaimer:</em> This is the first time I have used PreTeXt, so please bear with me. The notes are in constant development, so please check back often to see updated content. If you have any feedback or suggestions as you use these notes, please feel free to reach out to me at <url href="mailto:cwarnock6@gatech.edu">cwarnock6@gatech.edu</url>.</p>
     </introduction>
 
-    <xi:include href="./chapter-1.ptx" />
-    <xi:include href="./chapter-2.ptx" />
-    <xi:include href="./chapter-3.ptx" />
-    <xi:include href="./chapter-4.ptx" />
-    <xi:include href="./chapter-5.ptx" />
-    <xi:include href="./chapter-6.ptx" />
-
-</part>
+</chapter>
