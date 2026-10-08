@@ -118,9 +118,9 @@
         <solution>
             <p>
                 <em> True </em>. If <m> \vec v_1 </m> and <m> \vec v_2 </m> are solutions to the inhomogeneous equation <m> A \vec x = \vec b </m>, then <m> A \vec v_1 = \vec b </m> and <m> A \vec v_2 = \vec b </m>. So we have
-                <me>
+                <md>
                     A(\vec{v_1} + \vec{v_2}) = A\vec{v_1} + A\vec{v_2} = \vec b + \vec b = 2\vec b
-                </me>
+                </md>
                 which is not equal to <m>\vec b</m> since <m>\vec b \neq \vec 0</m>.
             </p>
         </solution>
@@ -256,13 +256,13 @@
     <statement>
         <p>        
             (2 points) Let <m>A \vec{x} = \vec{b}</m> be a consistent inhomogeneous linear system where 
-                <me>
+                <md>
                         A=\begin{bmatrix}
                         2 \amp 2 \amp 1 \amp 3\\
                         -1 \amp 0 \amp 4 \amp 1\\
                         5 \amp 3 \amp 1 \amp 1
                         \end{bmatrix}
-                </me>
+                </md>
             <m>\textit{Select all that apply}</m>
         </p>
         
@@ -334,39 +334,39 @@
         <statement>
             <p>    
                 (3 points) Fill in the missing entries so that the vector <m>\vec{v} = \begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}</m> is a solution to the system
-                <me>
+                <md>
                     2x_1 + \framebox{$\phantom{$\begin{bmatrix} \amp a \\ a \end{bmatrix}$}$ } x_2 - x_3 = 2
-                </me>
-                <me>
+                </md>
+                <md>
                     \framebox{$\phantom{$\begin{bmatrix} \amp a \\ a \end{bmatrix}$}$ } x_1 - 2x_2 = -1
-                </me>
-                <me> 
+                </md>
+                <md> 
                     4x_1 + 2x_3 = \framebox{$\phantom{$\begin{bmatrix} \amp a \\ a \end{bmatrix}$}$ }
-                </me>
+                </md>
             </p>
         </statement>
         <solution>
             <p>
                 We have the following system of equations:
-                <me>
+                <md>
                     2x_1 + A x_2 - x_3 = 2
-                </me>
-                <me>
+                </md>
+                <md>
                     B x_1 - 2x_2 = -1
-                </me>
-                <me> 
+                </md>
+                <md> 
                     4x_1 + 2x_3 = C
-                </me>
+                </md>
                 And we know that <m>\vec{v} = \begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}</m> is a solution to this system. That is, we have
-                <me>
+                <md>
                     2(1) + A(2) - (0) = 2
-                </me>
-                <me>
+                </md>
+                <md>
                     B(1) - 2(2)  = -1
-                </me>
-                <me> 
+                </md>
+                <md> 
                     4(1) + 2(0) = C
-                </me>
+                </md>
             </p>
             <p>
                 Solving these equations, we find that <m>A = 0</m>, <m>B = 3</m>, and <m>C = 4</m>.
@@ -381,21 +381,21 @@
             <p>
                 (3 points) Consider the following system of linear equations. 
             </p>
-            <me>
+            <md>
             x_1 + 2x_2 + 3x_3 = 7
-            </me>
-            <me>
+            </md>
+            <md>
                 -2x_2 - 4x_3 = -6
-            </me>
-            <me>
+            </md>
+            <md>
             x_1 + 2x_2 + 5x_3 = 11
-            </me>
+            </md>
             <p>
                 Suppose the system is written in matrix form as <m>A\vec{x} = \vec{b}</m>. Express <m>\vec{b}</m> as a linear combination of the columns of <m>A</m>.
             </p>
-            <me>
+            <md>
                 \begin{pmatrix} 7 \\ -6 \\ 11 \end{pmatrix} = \framebox{$\phantom{$\begin{bmatrix} a \end{bmatrix}$}$ } \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix} + \framebox{$\phantom{$\begin{bmatrix} a \end{bmatrix}$}$ } \begin{pmatrix} 2 \\ -2 \\ 2 \end{pmatrix} + \framebox{$\phantom{$\begin{bmatrix} a \end{bmatrix}$}$ } \begin{pmatrix} 3 \\ -4 \\ 5 \end{pmatrix}
-            </me>
+            </md>
             
         </statement>
         <solution>
@@ -421,7 +421,7 @@
             </p>
             <p>
                 and so the solution is <m>\vec{x} = \begin{pmatrix} 3 \\ -1 \\ 2 \end{pmatrix}</m>. Rewriting as a vector equation, we obtain
-                <me> \begin{pmatrix} 7 \\ -6 \\ 11 \end{pmatrix} = 3 \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix} + (-1) \begin{pmatrix} 2 \\ -2 \\ 2 \end{pmatrix} + 2 \begin{pmatrix} 3 \\ -4 \\ 5 \end{pmatrix} </me>
+                <md> \begin{pmatrix} 7 \\ -6 \\ 11 \end{pmatrix} = 3 \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix} + (-1) \begin{pmatrix} 2 \\ -2 \\ 2 \end{pmatrix} + 2 \begin{pmatrix} 3 \\ -4 \\ 5 \end{pmatrix} </md>
             </p>
         </solution>
     </problem>
@@ -449,8 +449,8 @@
         <solution>
             <p>
                 Computing <m>AB</m> and <m>BA</m>, we have
-                <me> AB = \begin{bmatrix} 1 \amp 1 \\ 2 \amp 3 \end{bmatrix} \begin{bmatrix} 0 \amp b \\ 2 \amp d \end{bmatrix} = \begin{bmatrix} 2 \amp b + d \\ 6 \amp 2b + 3d \end{bmatrix}</me>
-                <me> BA = \begin{bmatrix} 0 \amp b \\ 2 \amp d \end{bmatrix} \begin{bmatrix} 1 \amp 1 \\ 2 \amp 3 \end{bmatrix} = \begin{bmatrix} 2b \amp 3b \\ 2 + 2d \amp 2 + 3d \end{bmatrix}</me>
+                <md> AB = \begin{bmatrix} 1 \amp 1 \\ 2 \amp 3 \end{bmatrix} \begin{bmatrix} 0 \amp b \\ 2 \amp d \end{bmatrix} = \begin{bmatrix} 2 \amp b + d \\ 6 \amp 2b + 3d \end{bmatrix}</md>
+                <md> BA = \begin{bmatrix} 0 \amp b \\ 2 \amp d \end{bmatrix} \begin{bmatrix} 1 \amp 1 \\ 2 \amp 3 \end{bmatrix} = \begin{bmatrix} 2b \amp 3b \\ 2 + 2d \amp 2 + 3d \end{bmatrix}</md>
             </p>
             <p>
                 Notice that if we want <m>AB = BA</m>, then we must have <m> 2 = 2b </m> (the matrices must agree in the first row, first column), and <m> 6 = 2 + 2d </m> (the matrices must agree in the second row, second column). Solving these equations, we find that <m>b = 1</m> and <m>d = 2</m>.
@@ -467,7 +467,7 @@
             </p>
 
             <p>
-                <me> A = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ a \\ a \\ a  \end{bmatrix}$}$ }</me>
+                <md> A = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ a \\ a \\ a  \end{bmatrix}$}$ }</md>
             </p>
         </statement>
         <hint>
@@ -478,9 +478,9 @@
         <solution>
             <p>
                 One possible matrix <m> A </m> is
-                <me>
+                <md>
                     A = \begin{bmatrix} 1 \amp 1 \amp -2 \\ 0 \amp -1 \amp 2 \\ 0 \amp 0 \amp 0 \end{bmatrix}
-                </me>
+                </md>
             </p>
         </solution>
     </problem>
@@ -490,12 +490,12 @@
             <p>
                 (2 points) Fill in the blank so that the systems with the two augmented matrices below have the same solution set.
 
-                <me> 
+                <md> 
                 \begin{bmatrix} 1 \amp 2 \amp \rvert \amp 1 \\ -2 \amp -3 \amp \rvert \amp -3 \end{bmatrix}
-                </me> and
-                <me> 
+                </md> and
+                <md> 
                 \begin{bmatrix} 1 \amp 2 \amp \rvert \amp 1 \\ 2 \amp 5 \amp \rvert \amp  \framebox{$\phantom{$\begin{bmatrix} a \end{bmatrix}$}$ }\end{bmatrix}
-                </me>
+                </md>
             </p>
         </statement>
         <solution>
@@ -503,9 +503,9 @@
                 The missing entry is <m> 1 </m>.
             </p>
             <p>
-                <me>
+                <md>
                     \begin{bmatrix} 1 \amp 2 \amp \rvert \amp 1 \\ -2 \amp -3 \amp \rvert \amp -3 \end{bmatrix} \overset{R_2 + 4R_1 \to R_2}{\sim} \begin{bmatrix} 1 \amp 2 \amp \rvert \amp 1 \\ 2 \amp 5 \amp \rvert \amp 1 \end{bmatrix}
-                </me>
+                </md>
             </p>
         </solution>
     </problem>
@@ -520,7 +520,7 @@
             </p>
             <p>
                 Let <m>T</m> be the linear transformation defined by 
-                <me>T \begin{pmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} \end{pmatrix} = \begin{bmatrix} x_1 - x_3 \\ 2x_1 + x_2 + x_3 \end{bmatrix}</me>
+                <md>T \begin{pmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} \end{pmatrix} = \begin{bmatrix} x_1 - x_3 \\ 2x_1 + x_2 + x_3 \end{bmatrix}</md>
             </p>
         </introduction>
         <task workspace="1in">
@@ -528,24 +528,23 @@
                 <p>
                     What are the domain and codomain of <m>T</m>?
                 </p>
+                <sidebyside widths="60% 40%">
+                <p></p>
                 <p>
-                <me>\text{Domain is }\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </me>
+                    <md>
+                        <mrow>
+                            \text{Domain is } \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \amp a \end{bmatrix}$}$ }
+                        </mrow>
+                        <mrow>
+                            \text{Codomain is }\framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \amp a \end{bmatrix}$}$ }
+                        </mrow>
+                    </md>
                 </p>
-                <p>
-                <me>\text{Codomain is }\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </me>
-                </p>
+                </sidebyside>
             </statement>
-            <hint>
-                <p>
-                    Domain is <m>\mathbb{R^3}</m>
-                </p>
-                <p>
-                    Codomain is <m>\mathbb{R^2}</m>
-                </p>
-            </hint>
             <solution>
                 <p>
-                    Solution Text
+                    <m> T </m> takes in vectors with three components and outputs vectors with two components. So the domain is <m>\mathbb{R}^3</m> and the codomain is <m>\mathbb{R}^2</m>.
                 </p>
             </solution>
         </task>
@@ -554,19 +553,37 @@
                 <p>
                     Find the matrix <m>A</m> such that <m>T(\vec{x}) = A \vec{x}</m> for all <m>\vec{x}</m>.
                 </p>
+                <sidebyside widths="60% 40%">
+                <p></p>
                 <p>
-                <me>A = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \\ a \end{bmatrix}$}$ } </me>
-            </p>
-            </statement>
-            <hint>
-                <p>
-                    <m>A = \begin{bmatrix} 1 \amp 0 \amp -1 \\ 2 \amp 1 \amp 1 \end{bmatrix}</m>
+                    <md>A = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \\ a \amp a \amp a \\ a \amp a \amp a \end{bmatrix}$}$ } </md>
                 </p>
-            </hint>
+                </sidebyside>
+            </statement>
             <solution>
                 <p>
-                    Solution text 
+                    Option 1: Notice that
+                    <md>
+                        \begin{bmatrix} x_1 - x_3 \\ 2x_1 + x_2 + x_3 \end{bmatrix} = 
+                        \begin{bmatrix} 1 \amp 0 \amp -1 \\ 2 \amp 1 \amp 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}
+                    </md>
+                    Therefore, the matrix <m>A</m> is
+                    <md>
+                        A = \begin{bmatrix} 1 \amp 0 \amp -1 \\ 2 \amp 1 \amp 1 \end{bmatrix}
+                    </md>
                 </p> 
+                <p>
+                    Option 2: The matrix <m>A</m> can also be found by applying <m>T</m> to the standard basis vectors <m>\vec{e}_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \vec{e}_2 = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \vec{e}_3 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}</m> and using the results as the columns of <m>A</m>.
+                    <md>
+                        <mrow> 
+                        T(\vec{e}_1) = \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \quad T(\vec{e}_2) = \begin{bmatrix} 0 \\ 1 \end{bmatrix}, \quad T(\vec{e}_3) = \begin{bmatrix} -1 \\ 1 \end{bmatrix}
+                        </mrow>
+                    </md>
+                    Therefore, the matrix <m>A</m> is
+                    <md>
+                        A = \begin{bmatrix} 1 \amp 0 \amp -1 \\ 2 \amp 1 \amp 1 \end{bmatrix}
+                    </md>
+                </p>
             </solution>
             
 
@@ -577,19 +594,42 @@
                 <p>
                     Find a vector <m>\vec{x}</m> such that <m>T ( \vec{x}) = \vec{b}</m> where <m>\vec{b} = \begin{bmatrix}3 \\ 4 \end{bmatrix}</m>.
                 </p>
+                <sidebyside widths = "60% 40%">
+                <p></p>
                 <p>
-                <me>\vec{x} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \\ a \end{bmatrix}$}$ } </me>
-            </p>
-            </statement>
-            <hint>
-                <p>
-                    <m>\vec{x} = \begin{bmatrix} 3 \\ -2 \\ 0 \end{bmatrix}</m>
+                    <md>\vec{x} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \amp a \\ a \amp a \\ a \amp a \end{bmatrix}$}$ } </md>
                 </p>
-            </hint>
+                </sidebyside>
+            </statement>
             <solution>
                 <p>
-                    Solution text 
+                    Solving the system of equations given by <m>T(\vec{x}) = \vec{b}</m>, or equivalently <m> [ \, A \mid \vec{b} \, ]</m>, we get
+                    <md>
+                        <mrow> 
+                        \begin{bmatrix}
+                        1 \amp 0 \amp -1 \amp \rvert \amp 3 \\
+                        2 \amp 1 \amp 1 \amp \rvert \amp 4
+                        \end{bmatrix}
+                        \overset{R_2 - 2R_1 \to R_2}{{\large \sim}}
+                        \begin{bmatrix}
+                        1 \amp 0 \amp -1 \amp \rvert \amp 3 \\
+                        0 \amp 1 \amp 3 \amp \rvert \amp -2
+                        \end{bmatrix}
+                        </mrow>
+                    </md>
                 </p> 
+                <p>
+                    which we can now express in parametric vector form as
+                    <md>
+                        \vec{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 3 + x_3 \\ -2 - 3x_3 \\ x_3 \end{bmatrix} = \begin{bmatrix} 3 \\ -2 \\ 0 \end{bmatrix} + x_3 \begin{bmatrix} 1 \\ -3 \\ 1 \end{bmatrix}
+                    </md>
+                </p>
+                <p>
+                    One simple solution is obtained by setting <m>x_3 = 0</m>, which gives
+                    <md>
+                        \vec{x} = \begin{bmatrix} 3 \\ -2 \\ 0 \end{bmatrix}
+                    </md>
+                </p>
             </solution>
             
 
@@ -603,12 +643,12 @@
             </statement>
             <hint>
                 <p>
-                    no
+                    We have proven that a linear transformation is one-to-one if and only if there is a pivot in every column of the standard matrix of the transformation.
                 </p>
             </hint>
             <solution>
                 <p>
-                    Solution text 
+                    No. The standard matrix of <m>T</m> does not have a pivot in every column, so <m>T</m> is not one-to-one. Another way to see this is from the answer from Part (c); there are multiple solutions to the system <m>T(\vec{x}) = \vec{b}</m>, which indicates that <m>T</m> is not one-to-one.
                 </p> 
             </solution>
             
@@ -623,12 +663,12 @@
             </statement>
             <hint>
                 <p>
-                    yes
+                    We have proven that a linear transformation is onto if and only if there is a pivot in every row of the standard matrix of the transformation.
                 </p>
             </hint>
             <solution>
                 <p>
-                    Solution text 
+                    Yes. The standard matrix of <m>T</m> has a pivot in every row, so <m>T</m> is onto. Another way to see this is by solving the system <m>T(\vec{x}) = \vec{b}</m> for an arbitrary <m>\vec{b} = \begin{bmatrix} b_1 \\ b_2 \end{bmatrix}</m> and showing that a solution always exists.
                 </p> 
             </solution>
             
@@ -641,32 +681,63 @@
     <problem>
         <statement>
             <p>
-                (6 points) <em>Show your work in the space below and put your hint in the boxes.</em> 
+                (6 points) <em>Show your work for problems on this page and put your answers in the boxes.</em> 
             </p>
             <p>
                 Find all <m>h</m> such that the following set of vectors is linearly dependent. For that <m>h</m>, find a non-trivial linear combination of the vectors that adds to zero. 
             </p>
             <p>
-                <me>\left\{ \begin{pmatrix}0 \\ 1 \\ 2 \end{pmatrix},\begin{pmatrix}-1 \\ 1 \\ 1\end{pmatrix},\begin{pmatrix}h \\ -1 \\ 1\end{pmatrix} \right\}</me>
+                <md>\left\{ \begin{pmatrix}0 \\ 1 \\ 2 \end{pmatrix},\begin{pmatrix}-1 \\ 1 \\ 1\end{pmatrix},\begin{pmatrix}h \\ -1 \\ 1\end{pmatrix} \right\}</md>
             </p>
+            <sidebyside widths = "35% 65%">
             <p>
                 <m>h = \framebox{$\phantom{$\begin{bmatrix} a \end{bmatrix}$}$ }</m>
             </p>
             <p>
-                <m>\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a\amp a \\ a \\ a \end{bmatrix}$}$ }</m>
+                <m>\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \amp a \amp a \\ a \\ a \\ a \\ a\end{bmatrix}$}$ }</m>
             </p>
+            </sidebyside>
         </statement>
         <hint>
             <p>
-                <m>h = 3</m>
-            </p>
-            <p>
-                <m>-2 \begin{bmatrix} 0 \\ 1 \\ 2 \end {bmatrix} + 3 \begin{bmatrix} -1 \\ 1\\ 1 \end{bmatrix} + 1 \begin{bmatrix} 3 \\ -1 \\1 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}</m>
+                We want the matrix <m> A = \begin{bmatrix} 0 \amp -1 \amp h \\ 1 \amp 1 \amp -1 \\ 2 \amp 1 \amp 1 \end{bmatrix}</m> to be missing a pivot. (Why?) Once it is missing a pivot, we want to find a nontrivial solution to <m> A \vec{x} = \vec{0} </m>. (Why?)
             </p>
         </hint>
         <solution>
             <p>
-                Solution text:
+                Let <m> A = \begin{bmatrix} 0 \amp -1 \amp h \\ 1 \amp 1 \amp -1 \\ 2 \amp 1 \amp 1 \end{bmatrix}</m>. Row reducing, we find that
+                <md>
+                    <mrow> \begin{bmatrix} 0 \amp -1 \amp h \\ 1 \amp 1 \amp -1 \\ 2 \amp 1 \amp 1 \end{bmatrix} 
+                    
+                    \overset{R_2 \leftrightarrow R_1}{{\large \sim}} \begin{bmatrix} 1 \amp 1 \amp -1 \\ 0 \amp -1 \amp h \\ 2 \amp 1 \amp 1 \end{bmatrix} </mrow>
+                    
+                    <mrow> \overset{R_3 - 2R_1 \to R_3}{{\large \sim}} \begin{bmatrix} 1 \amp 1 \amp -1 \\ 0 \amp -1 \amp h \\ 0 \amp -1 \amp 3 \end{bmatrix} </mrow>
+
+                    <mrow> \overset{R_2 - R_3 \to R_2}{\underset{-R_2 \to R_2}{{\large \sim}}} \begin{bmatrix} 1 \amp 1 \amp -1 \\ 0 \amp 1 \amp -h \\ 0 \amp 0 \amp 3-h \end{bmatrix} </mrow>
+                </md>
+            </p>
+            <p>
+                If we want the columns of <m>A</m> to be linearly dependent, we need to be missing a pivot in a column. This occurs when <m>3-h = 0</m>, i.e., <m>h = 3</m>.
+            </p>
+            <p>
+                If <m>h = 3</m>, then we can row reduce further to find
+
+                <md>
+                    <mrow> \begin{bmatrix} 1 \amp 1 \amp -1 \\ 0 \amp 1 \amp -(3) \\ 0 \amp 0 \amp 3 - (3) \end{bmatrix} = \begin{bmatrix} 1 \amp 1 \amp -1 \\ 0 \amp 1 \amp -3 \\ 0 \amp 0 \amp 0 \end{bmatrix} \overset{R_1 - R_2 \to R_1}{{\large \sim}} \begin{bmatrix} 1 \amp 0 \amp 2 \\ 0 \amp 1 \amp -3 \\ 0 \amp 0 \amp 0 \end{bmatrix} </mrow>
+                </md>
+            </p>
+            <p>
+                and writing the general solution in parametric vector form, we get
+                <md>
+                    \vec{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} -2x_3 \\ 3x_3 \\ x_3 \end{bmatrix} = x_3 \begin{bmatrix} -2 \\ 3 \\ 1 \end{bmatrix}, x_3 \in \mathbb{R}
+                </md>
+            </p>
+            <p>
+                We can choose any nonzero value of <m>x_3</m> to get a specific linear combination of the vectors that add to zero. Choosing <m> x_3 = 1 </m> yields one solution of
+
+                <md>
+                    -2 \begin{bmatrix} 0 \\ 1 \\ 2 \end{bmatrix} + 3 \begin{bmatrix} -1 \\ 1 \\ 1 \end{bmatrix} + 1 \begin{bmatrix} (3) \\ -1 \\ 1 \end{bmatrix} = \vec{0}
+                </md>
             </p>
         </solution>
     </problem>
@@ -682,7 +753,7 @@
                 Consider the linear system of equations <m>A \vec{x} = \vec{b}</m> where
             </p>
             <p>
-                <me>A = \begin{bmatrix} 1 \amp -2 \amp 1 \amp 0 \\ -1 \amp 3 \amp 0 \amp -1 \end{bmatrix}</me> and <me>\vec{b} = \begin{bmatrix}5 \\ -5 \end{bmatrix}</me>
+                <md>A = \begin{bmatrix} 1 \amp -2 \amp 1 \amp 0 \\ -1 \amp 3 \amp 0 \amp -1 \end{bmatrix}</md> and <md>\vec{b} = \begin{bmatrix}5 \\ -5 \end{bmatrix}</md>
             </p>
         </introduction>
         <task>
@@ -691,7 +762,7 @@
                     Give the general solution of the system <m>A \vec{x} = \vec{b}</m> in parametric vector form.
                 </p>
                 <p>
-                <me>\vec{x} =  \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ a \\ a \\ a  \end{bmatrix}$}$ } </me>
+                <md>\vec{x} =  \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ a \\ a \\ a  \end{bmatrix}$}$ } </md>
                 </p>
             </statement>
             <hint>
@@ -711,7 +782,7 @@
                     Let <m>A</m> be as defined above. Write down the solution set to the homogeneous system <m>A \vec{x} = \vec{0}</m> as the span of some number of vectors. <m>\textit{(Hint: You may use your solution from (a) above.)}</m>
                 </p>
                 <p>
-                <me>\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </me>
+                <md>\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </md>
                 </p>
             </statement>
             <hint>
