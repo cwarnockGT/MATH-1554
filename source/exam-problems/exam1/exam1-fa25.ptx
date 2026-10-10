@@ -747,7 +747,7 @@
     <problem>
         <introduction>
             <p>
-                (6 points) <em>Show your work for part (a) in the space below and put your hint in the boxes.</em> 
+                (6 points) <em>Show your work for part (a) in the space below and put your answers in the boxes.</em> 
             </p>
             <p>
                 Consider the linear system of equations <m>A \vec{x} = \vec{b}</m> where
@@ -761,18 +761,29 @@
                 <p>
                     Give the general solution of the system <m>A \vec{x} = \vec{b}</m> in parametric vector form.
                 </p>
+                <sidebyside widths = "60% 40%">
+                <p></p>
                 <p>
                 <md>\vec{x} =  \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ a \\ a \\ a  \end{bmatrix}$}$ } </md>
                 </p>
+                </sidebyside>
             </statement>
-            <hint>
-                <p>
-                    <m>\vec{x} = \begin{bmatrix} 5 \\ 0 \\ 0 \\ 0 \end{bmatrix} + r \begin{bmatrix}-3 \\ -1 \\ 1 \\0 \end{bmatrix} + t \begin{bmatrix} 2 \\ 1 \\ 0 \\ 1 \end{bmatrix}; r,t \in \mathbb{R}</m>
-                </p>
-            </hint>
             <solution>
                 <p>
-                    Solution text.
+                    Row reducing the augmented matrix <m>[ \, A \mid \vec{b} \, ]</m> gives 
+                    <md>
+                        <mrow>\begin{bmatrix} 1 \amp -2 \amp 1 \amp 0 \amp \rvert \amp 5 \\ -1 \amp 3 \amp 0 \amp -1 \amp \rvert \amp -5 \end{bmatrix} 
+                        
+                        \overset{R_1 + R_2 \to R_2}{{\large \sim}} \begin{bmatrix} 1 \amp -2 \amp 1 \amp 0 \amp \rvert \amp 5 \\ 0 \amp 1 \amp 1 \amp -1 \amp \rvert \amp 0 \end{bmatrix} </mrow>
+
+                        <mrow>\overset{R_1 + 2R_2 \to R_1}{{\large \sim}} \begin{bmatrix} 1 \amp 0 \amp 3 \amp -2 \amp \rvert \amp 5 \\ 0 \amp 1 \amp 1 \amp -1 \amp \rvert \amp 0 \end{bmatrix}</mrow>
+                    </md>
+                </p>
+                <p>
+                    which yields the solution
+                    <md>
+                        <mrow>\vec{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} 5 - 3x_3 + 2x_4 \\ -x_3 + x_4 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} 5 \\ 0 \\ 0 \\ 0 \end{bmatrix} + x_3 \begin{bmatrix} -3 \\ -1 \\ 1 \\ 0 \end{bmatrix} + x_4 \begin{bmatrix} 2 \\ 1 \\ 0 \\ 1 \end{bmatrix}, \; x_3,x_4 \in \R </mrow>
+                    </md>
                 </p>
             </solution>
         </task>
@@ -787,12 +798,19 @@
             </statement>
             <hint>
                 <p>
-                    <m>Span \left\{ \begin{bmatrix} -3 \\ -1 \\ 1 \\ 0 \end{bmatrix} , \begin{bmatrix} 2 \\ 1 \\ 0 \\ 1 \end{bmatrix} \right\}</m>
+                    If <m> A\vec{x} = \vec{b} </m> is consistent with a solution of <m>\vec{x}_p</m>, then the solution set of <m> A\vec{x} = \vec{b} </m> is given by <m> \vec{x}_p + \vec{v}_h </m> where <m> \vec{v}_h </m> is the solution set of the corresponding homogeneous system <m> A\vec{x} = \vec{0} </m>.
                 </p>
             </hint>
             <solution>
                 <p>
-                    Solution text.
+                    Since the solution set to <m> A\vec{x} = \vec{b} </m> is 
+                    
+                    <md> \vec{x} = \begin{bmatrix} 5 \\ 0 \\ 0 \\ 0 \end{bmatrix} + x_3 \begin{bmatrix} -3 \\ -1 \\ 1 \\ 0 \end{bmatrix} + x_4 \begin{bmatrix} 2 \\ 1 \\ 0 \\ 1 \end{bmatrix}, \; x_3,x_4 \in \R </md>
+                    
+                    the solution set to <m> A\vec{x} = \vec{0} </m> must be
+                    <md>
+                        <mrow>\vec{x} = x_3 \begin{bmatrix} -3 \\ -1 \\ 1 \\ 0 \end{bmatrix} + x_4 \begin{bmatrix} 2 \\ 1 \\ 0 \\ 1 \end{bmatrix}, \; x_3,x_4 \in \R </mrow>
+                    </md>
                 </p>
             </solution>
         </task>
