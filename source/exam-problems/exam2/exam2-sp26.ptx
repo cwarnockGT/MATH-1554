@@ -20,17 +20,14 @@
             <em>True &#160;  / &#160;  False</em>: &#160; If <m>A</m> and <m>B</m> are row equivalent, then <m>\det (A) = \det (B)</m>.
         </p>
     </statement>
-    <answer>
+    <hint>
         <p>
-            False.
+            Do row operations change the determinant?
         </p>
-    </answer>
+    </hint>
     <solution>
         <p>
-            Solution text
-        </p>
-        <p>
-            Counterexample: 
+            <em> False </em>. Let <m> A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}</m> and <m> B = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 2 \end{bmatrix}</m>. Then <m>A</m> and <m>B</m> are row equivalent, but <m>\det(A) = 1</m> and <m>\det(B) = 2</m>.
         </p>
     </solution>
     </task>
@@ -41,14 +38,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; If <m>\vec{p}</m> and <m> \vec{q} </m> are probability vectors in <m>\mathbb R ^3</m>, then <m>\frac{1}{3} \vec{p}  + \frac{2}{3} \vec{q}</m> is also a probability vector in <m>\mathbb R ^3</m>.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                True.
+                Recall that a probability vector in <m>\mathbb R ^3</m> is a vector with nonnegative entries that sum to 1.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <em> True </em>. Since <m>\vec{p}</m> and <m> \vec{q} </m> are probability vectors, their entries are nonnegative and sum to 1. The linear combination <m>\frac{1}{3} \vec{p}  + \frac{2}{3} \vec{q}</m> will also have nonnegative entries and the sum of its entries will be <m>\frac{1}{3} + \frac{2}{3} = 1</m>, making it a probability vector.
             </p>    
         </solution>
     </task>
@@ -59,14 +56,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; If the matrix product <m> AB </m> is defined, then the product <m>BA</m> is also defined.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                False
+                For a matrix product to be defined, the number of columns of the first matrix must equal the number of rows of the second matrix.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <em> False </em>. Consider <m> A = \begin{bmatrix} 1 \amp 0 \end{bmatrix} </m> and <m> B = \begin{bmatrix} 1 \\ 0 \end{bmatrix} </m>. Then <m> AB = [1] </m> is defined, but <m> BA </m> is not defined (The number of columns of <m> A </m> does not equal the number of rows of <m> B </m>).
             </p>
         </solution>
     </task>
@@ -77,14 +74,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; If <m>\det (A) = 0</m>, then <m>A</m> must have a zero row or have two rows which are identical.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                False
+                <m> \det (A) = 0 </m> when <m> A </m> is not invertible.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <em> False </em>. Consider <m> A = \begin{bmatrix} 1 \amp 2 \\ 3 \amp 6 \end{bmatrix} </m>. Then <m> \det(A) = 0 </m>, but <m> A </m> does not have a zero row and does not have two identical rows.
             </p>
         </solution>
     </task>
@@ -95,14 +92,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; If <m>A</m> is an <m>n \times n</m> matrix and <m>A = LU</m> is an <m>LU</m> factorization of <m>A</m>, then <m>\det(A) = \det(U)</m>.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                True
+                Use the multiplicity of the determinant.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <em> True </em>. Since <m> A = LU </m>, we have <m> \det(A) = \det(LU) </m>. By the multiplicity of the determinant, this becomes <m> \det(A) = \det(L) \det(U) </m>. The matrix <m> L </m> is lower triangular with ones on the diagonal, so <m> \det(L) = 1 </m>. Therefore, <m> \det(A) = \det(U) </m>.
             </p>
         </solution>
     </task>
@@ -113,14 +110,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; If <m>A</m> and <m>B</m> are invertible <m>n \times n</m> matrices then <m>A + B</m> is also invertible.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                False
+                Play around with some <m> 2 \times 2 </m> examples.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <em> False </em>. Consider <m> A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} </m> and <m> B = \begin{bmatrix} -1 \amp 0 \\ 0 \amp -1 \end{bmatrix} </m>. Then <m> A </m> and <m> B </m> are both invertible, but <m> A + B = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix} </m> is not invertible.
             </p>
         </solution>
     </task>
@@ -131,14 +128,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; If <m> A </m> is an <m> n \times n </m> matrix and <m>c</m> is a scalar such that <m>\det(A - cI_n) = 0</m>, then there exists a nonzero vector <m>\vec{v} \in \mathbb R ^n</m> such that <m>A \vec{v} \in \text{span}\{\vec{v} \}</m>
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                True.
+                Relate everything to eigenvectors.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <em> True </em>. The condition <m> \det(A - cI_n) = 0 </m> means that <m> c </m> is an eigenvalue of <m> A </m>. By the definition of eigenvectors, there exists a nonzero vector <m> \vec{v} \in \mathbb R^n </m> such that <m> A \vec{v} = c \vec{v} </m>. Therefore, <m> A \vec{v} \in \text{span}\{\vec{v} \} </m>.
             </p>
         </solution>
     </task>
@@ -149,14 +146,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; If <m>A</m> and <m>B</m> are both <m>n \times n</m> matrices with pivots in each of their columns, then the product <m>AB</m> has a pivot in each of its columns
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                True
+                Use the Invertible Matrix Theorem
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <em> True </em>. By the Invertible Matrix Theorem, if <m> A </m> and <m> B </m> have pivots in each of their columns, then both <m> A </m> and <m> B </m> are invertible (<m> A,B </m> are squre, so IMT applies). The product of two invertible matrices is also invertible, and therefore <m> AB </m> has a pivot in each of its columns.
             </p>
         </solution>
     </task>
@@ -181,14 +178,14 @@
                 <em>Possible &#160;  / &#160;  Impossible</em>: &#160; A <m>2 \times 2</m> matrix <m>A</m> with <m>\text{dim}(\Nul(A)) = 0</m> such that the system <m>A \vec{x} = \begin{bmatrix}1 \\ 2\end{bmatrix}</m> has no solution.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                impossible.
+                Use the Rank-Nullity Theorem
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution Text
+                <em> Impossible </em>. By the Rank-Nullity Theorem, if <m> \text{dim}(\Nul(A)) = 0 </m>, then <m> \rank(A) = 2 </m>. Since <m> A </m> is <m> 2 \times 2 </m>, <m> A </m> is invertible, and thus <m> A </m> is both onto and one-to-one. Equivalently, system <m> A \vec{x} = \begin{bmatrix} 1 \\ 2 \end{bmatrix} </m> must have a solution, and such a solution must be unique.
             </p>
         </solution>
     </task>
@@ -199,14 +196,14 @@
                 <em>Possible &#160;  / &#160;  Impossible</em>: &#160; A <m>3 \times 5</m> matrix <m>A</m> so that <m>\rank(A) = 4</m>
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                impossible.
+                Play around with some examples of <m> 3 \times 5 </m> matrices and their ranks.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution Text
+                <em> Impossible </em>. The maximum rank of a <m> 3 \times 5 </m> matrix is <m> 3 </m> (the minimum of the number of rows and columns), so it cannot have rank <m> 4 </m>.
             </p>
         </solution>
     </task>
@@ -217,14 +214,14 @@
                 <em>Possible &#160;  / &#160;  Impossible</em>: &#160; Two <m>2 \times 2</m> non-zero matrices A and B, neither of which is <m>I_2</m>, with <m>AB = BA</m>
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                Possible.
+                Try some diagonal matrices.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution Text
+                <em> Possible </em>. For example, let <m> A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 2 \end{bmatrix} </m> and <m> B = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 3 \end{bmatrix} </m>. Then <m> AB = BA </m>, and neither <m> A </m> nor <m> B </m> is <m> I_2 </m>.
             </p>
         </solution>
     </task>
@@ -235,14 +232,14 @@
                 <em>Possible &#160;  / &#160;  Impossible</em>: &#160; A <m>2 \times 2</m> invertible matrix <m>A = \begin{bmatrix}a \amp b \\ c \amp d\end{bmatrix}</m> so that <m>\det (A) = \det\begin{pmatrix}a \amp b \\ 2a + c \amp 2b + d\end{pmatrix}</m>
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                Possible.
+                Consider the effect of row operations on the determinant.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution Text. 
+                <em> Possible </em>. For example, let <m> A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} </m>. Then <m> \det(A) = 1 </m> and <m> \det\begin{pmatrix}1 \amp 0 \\ 2 \amp 1\end{pmatrix} = 1 </m>, so the condition is satisfied. In fact, any invertible matrix will work, since row replacement operations do not change the determinant.
             </p>
         </solution>
     </task>
@@ -264,29 +261,32 @@
         
         <ol marker="(a)">
             <li>The rows of <m>A</m> form a basis for <m>\mathbb R ^n</m></li>
-            <li>dim <m>\{ \vec{x} | A \vec{x} = \vec{0} \} > 0</m>.</li>
+            <li>dim <m>\{ \vec{x} \mid A \vec{x} = \vec{0} \} > 0</m>.</li>
             <li>The system <m>A^T \vec{x} = \vec{b}</m> has a unique solution for every <m>\vec{b} \in \mathbb R^n</m></li>
             <li>The columns of <m>A</m> are linearly independent.</li>
         </ol>
 
     </statement>
-    <answer>
+    <hint>
         <p>
-            Option (b) is correct
+            Notice that <m> A </m> is square, so use the Invertible Matrix Theorem.
         </p>
-    </answer>
+    </hint>
     <solution>
         <p>
-            Option (a) is incorrect.
+            Option (b) is the only correct answer.
         </p>
         <p>
-            Option (b) is correct.
+            Option (a) is a true statement. Since <m> A </m> is square and <m> A\vec{x} = \vec{b} </m> has a unique solution for every <m> \vec{b} \in \mathbb R^n </m>, <m> A </m> is one-to-one (unique) and onto (always has a solution). Equivalently, <m> A </m> is invertible. So <m> A </m> has a pivot in every row, and thus the rows of <m> A </m> are linearly independent. Any <m> n </m> linearly independent vectors in <m> \R^n </m> form a basis for <m> \R^n </m>, so the rows of <m> A </m> form a basis for <m> \R^n </m>.
         </p>
         <p>
-            Option (c) is incorrect.
+            Option (b) is a false statement. Since <m> A </m> is invertible, the only solution to <m> A \vec{x} = \vec{0} </m> is <m> \vec{x} = \vec{0} </m>, so the dimension of the solution space to <m> A \vec{x} = \vec{0} </m> is 0.
         </p>
         <p>
-            Option (d) is incorrect.
+            Option (c) is a true statement. Since <m> A </m> is invertible, <m> A^T </m> is also invertible, and thus the system <m> A^T \vec{x} = \vec{b} </m> has a unique solution for every <m> \vec{b} \in \mathbb R^n </m>.
+        </p>
+        <p>
+            Option (d) is a true statement. Since <m> A </m> is invertible, the columns of <m> A </m> are linearly independent.
         </p>
     </solution>
 </problem>
@@ -310,23 +310,26 @@
         </ol>
 
     </statement>
-    <answer>
+    <hint>
         <p>
-            Options (b) and (d) are correct
+            Every subspace can be written as the span of a collection of vectors, and vice versa. A set of vectors that is not a span will not be closed under addition and/or scalar multiplication.
         </p>
-    </answer>
+    </hint>
     <solution>
         <p>
-            Option (a) is incorrect.
+            Options (b) and (d) are correct.
         </p>
         <p>
-            Option (b) is correct.
+            Option (a) is incorrect because <m> \vec{0} \notin S_1 </m>.
         </p>
         <p>
-            Option (c) is incorrect.
+            Option (b) is correct because <m> S_2 </m> is the span of the vectors <m> (1,0,1) </m> and <m> (0,1,1) </m>.
         </p>
         <p>
-            Option (d) is correct.
+            Option (c) is incorrect because <m> S_3 </m> is not closed under addition. For example, <m> (1,0,0) \in S_3 </m> and <m> (0,1,0) \in S_3 </m>, but <m> (1,1,0) \notin S_3 </m>.
+        </p>
+        <p>
+            Option (d) is correct because <m> S_4 = \Nul(\begin{bmatrix} 1 \amp -2 \amp 1 \end{bmatrix}) </m>, and the null space of a matrix is always a subspace.
         </p>
     </solution>
 </problem>
@@ -343,16 +346,18 @@
 
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                <md>
-                    \det \begin{pmatrix} a \amp 2 \amp b \\ c \amp 0 \amp d \\ e \amp 4 \amp f \end{pmatrix} = -4
-                </md>
+                Use cofactor expansion across the 2nd column.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text 
+                Using cofactor expansion across the 2nd column, we get:
+                <md>
+                    <mrow>\det \begin{pmatrix} a \amp 2 \amp b \\ c \amp 0 \amp d \\ e \amp 4 \amp f \end{pmatrix} = -2 \det \begin{pmatrix} c \amp d \\ e \amp f \end{pmatrix} + 0 - 4 \det \begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix}</mrow>
+                    <mrow> = -2(-2) + 0 - 4(2) = -4</mrow>
+                </md>
             </p>
         </solution>
     </problem>
@@ -363,28 +368,30 @@
         <statement>
             <p>    
                 (3 points) Compute the area of the parallelogram <m>\mathcal{S}</m> having vertices <m>(-1,1), (0,4), (1,-4), \text{ and } (2,-1)</m>. Then, let <m>T : \mathbb R^2 \to \mathbb R^2</m> be the transformation with standard matrix <m>\begin{pmatrix}3 \amp 2 \\ 5 \amp 1 \end{pmatrix}</m>. Find the area of <m>T(\mathcal{S})</m>
+                <sidebyside widths = "50% 50%">
+                <p></p>
+                <p>
                 <md>
                     \text{Area}(\mathcal{S}) = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b  \end{bmatrix}$}$ }
                 </md>
                 <md>
                     \text{Area}(T(\mathcal{S})) = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b  \end{bmatrix}$}$ }
                 </md>
-                
+                </p>
+                </sidebyside>
             </p>
         </statement>
-        <answer>
-            <p>
-                <md>
-                    \text{Area}(\mathcal{S}) = 11
-                </md>
-                <md>
-                    \text{Area}((T\mathcal{S})) = 77
-                </md>
-            </p>
-        </answer>
         <solution>
             <p>
-                Solution text
+                Pick an arbitrary vertex of the parallelogram, say <m>(-1,1)</m>. Let us shift the whole parallogram such that this vertex is at the origin. The new vertices are then <m>(0,0), (1,3), (2,-5), \text{ and } (3,-2)</m>.
+                The area of the parallelogram is then given by the absolute value of the determinant of the matrix formed by the two adjacent edge vectors from the origin:
+                <md>
+                    \text{Area}(\mathcal{S}) = \left| \det \begin{pmatrix} 1 \amp 2 \\ 3 \amp -5 \end{pmatrix} \right| = 11
+                </md>
+                The transformation <m>T</m> has standard matrix <m>\begin{pmatrix}3 \amp 2 \\ 5 \amp 1 \end{pmatrix}</m>, so the area of the transformed parallelogram is:
+                <md>
+                    \text{Area}(T(\mathcal{S})) = \left| \det \begin{pmatrix}3 \amp 2 \\ 5 \amp 1 \end{pmatrix} \right| \cdot \text{Area}(\mathcal{S}) = 7 \cdot 11 = 77
+                </md>
             </p>
         </solution>
     </problem>
@@ -400,6 +407,8 @@
                 
                 Let <m>A_1</m> and <m>A_2</m> be as in Cramer's Rule; that is, Let <m>A_i</m> be the matrix <m>A</m> with column <m>i</m> replaced with <m>\vec{b}</m>. Find <m>\det(A), \det(A_1), \det(A_2)</m>, and the solution vector <m>\vec{x}</m> 
             </p>
+            <sidebyside widths = "50% 50%">
+            <p></p>
             <p>
                 <md>
                     \det(A) = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b  \end{bmatrix}$}$ }
@@ -413,28 +422,31 @@
                 <md>
                     \vec{x} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b \\ c \\ d \\ e  \end{bmatrix}$}$ }
                 </md>
-                
             </p>
+            </sidebyside>
         </statement>
-        <answer>
+        <hint>
             <p>
+                Cramer's Rule states that for a system <m>A \vec{x} = \vec{b}</m> with <m>A</m> invertible, the solution vector <m>\vec{x}</m> can be found using determinants:
                 <md>
-                    \det(A) = 2
-                </md>
-                <md>
-                    \det(A_1) = 4
-                </md>
-                <md>
-                    \det(A_2) = -6
-                </md>
-                <md>
-                    \vec{x} = \begin{bmatrix} 2 \\ -3 \end{bmatrix}
+                    x_i = \frac{\det(A_i)}{\det(A)}
                 </md>
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text 
+                <md>
+                    \det(A) = \begin{vmatrix} 7 \amp 4 \\ 3 \amp 2 \end{vmatrix} = 2
+                </md>
+                <md>
+                    \det(A_1) = \begin{vmatrix} 2 \amp 4 \\ 0 \amp 2 \end{vmatrix} = 4
+                </md>
+                <md>
+                    \det(A_2) = \begin{vmatrix} 7 \amp 2 \\ 3 \amp 0 \end{vmatrix} = -6
+                </md>
+                <md>
+                    \vec{x} = \begin{bmatrix} \frac{\det(A_1)}{\det(A)} \\ \frac{\det(A_2)}{\det(A)} \end{bmatrix} = \begin{bmatrix} 2 \\ -3 \end{bmatrix}
+                </md>
             </p>
         </solution>
     </problem>
@@ -456,24 +468,27 @@
                 <md>
                     A = \begin{bmatrix} 7 \amp 2 \\ -2 \amp 2 \end{bmatrix}
                 </md>
-                
+            </p>
+            <sidebyside widths = "60% 40%">
+            <p></p>
+            <p>
                 <md>
                     \vec{v} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b \\ c \\ d \\ e  \end{bmatrix}$}$ }
                 </md>
                 
             </p>
+            </sidebyside>
         </statement>
-        <answer>
-            <p>
-                <md>
-                    \vec{v} = \begin{bmatrix} 1 \\ -2 \end{bmatrix}
-
-                </md>
-            </p>
-        </answer>
         <solution>
             <p>
-                Solution text
+                An eigenvector <m>\vec{v}</m> corresponding to the eigenvalue <m>\lambda = 3</m> satisfies <m>(A - 3I)\vec{v} = \vec{0}</m>. Solving this system gives:
+            </p>
+            <p>
+                <md>
+                    (A - 3I) = \begin{bmatrix} 4 \amp 2 \\ -2 \amp -1 \end{bmatrix} \sim \begin{bmatrix} 2 \amp 1 \\ 0 \amp 0 \end{bmatrix}
+                </md>
+                
+                and it is clear one nonzero vector in the null space of <m>\begin{bmatrix} 2 \amp 1 \\ 0 \amp 0 \end{bmatrix}</m> is <m>\vec{v} = \begin{bmatrix} 1 \\ -2 \end{bmatrix}</m>.
             </p>
         </solution>
         </problem>
@@ -497,17 +512,24 @@
             
         </statement>
 
-        <answer>
+        <hint>
             <p>
-                <md>
-                    h = 4
-                </md>
-                
+                We want <m> \det(A - \lambda I) = 0</m> for the given eigenvalues.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                For <m> A </m> to have eigenvalues <m>\lambda_1 = -3</m> and <m>\lambda_2 = 9</m>, we must have:
+                <md>
+                    \det(A - \lambda_1 I) = 0 \quad \text{and} \quad \det(A - \lambda_2 I) = 0
+                </md>
+                Solving these equations gives:
+                <md>
+                    \det(A - (-3)I) = \det\begin{bmatrix} 10 \amp h \\ 5 \amp 2 \end{bmatrix} = 20 - 5h = 0 \quad \Rightarrow \quad h = 4
+                </md>
+                <md>
+                    \det(A - 9I) = \det\begin{bmatrix} -2 \amp h \\ 5 \amp -10 \end{bmatrix} = 20 - 5h = 0 \quad \Rightarrow \quad h = 4
+                </md>
             </p>
         </solution>
     </problem>
@@ -531,7 +553,7 @@
                 (b) Find the unique steady state probability vector <m>\vec{q}</m> of <m>P</m>
                 <md></md>
 
-                (c) If <m>\vec{x} = \begin{pmatrix}10 \\ 18 \end{pmatrix}</m>, find the limit <m>l</m> of the sequence of vectors <m>P^k \vec{x_0}</m> as <m>k</m> tend to infinity.
+                (c) If <m>\vec{x}_0 = \begin{pmatrix}10 \\ 18 \end{pmatrix}</m>, find the limit <m>l</m> of the sequence of vectors <m>P^k \vec{x}_0</m> as <m>k</m> tend to infinity.
                 <md></md>
                 
 
@@ -554,25 +576,44 @@
     </latex-image>
   </image>
 </figure>
-
-                <md>P = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \amp a \\ b  \\ c \end{bmatrix}$}$ }</md>
-                <md>\vec{q} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ b  \\ c \end{bmatrix}$}$ }</md>
-                <md>\vec{l} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ b  \\ c \end{bmatrix}$}$ }</md>
             </p>
+            <sidebyside widths="50% 50%">
+            <p></p>
+            <p>
+
+                <md>P = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ b \\ c \\ d \end{bmatrix}$}$ }</md>
+                <md>\vec{q} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ b  \\ c \\ d \\ e \end{bmatrix}$}$ }</md>
+                <md>\vec{l} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ b  \\ c \\ d \\ e \end{bmatrix}$}$ }</md>
+            </p>
+            </sidebyside>
             
         </statement>
-        <answer>
-            <p>
-                <md>P = \begin{bmatrix}  0.7 \amp 0.4 \\ 0.3 \amp 0.6 \end{bmatrix}</md>
-
-                <md>\vec{q} = \begin{bmatrix}  \frac{4}{7} \\ \frac{3}{7} \end{bmatrix}</md>
-
-                <md>\vec{l} = \begin{bmatrix}  16 \\ 12 \end{bmatrix}</md>
-            </p>
-        </answer>
         <solution>
             <p>
-                Solution text 
+                By convention, the entry <m>P_{ij}</m> represents the probability of transitioning from state <m>j</m> to state <m>i</m>.
+            </p>
+            <p>
+                <md>
+                    P = \begin{bmatrix} 0.7 \amp 0.4 \\ 0.3 \amp 0.6 \end{bmatrix}
+                </md>
+                
+            </p>
+            <p>
+                The unique steady state vector <m> \vec{q} </m> satisfies <m>P \vec{q} = \vec{q}</m>. Equivalently, <m>(P - I) \vec{q} = \vec{0}</m>.
+
+                <md>
+                    P - I = \begin{bmatrix} -0.3 \amp 0.4 \\ 0.3 \amp -0.4 \end{bmatrix} \sim \begin{bmatrix} 3 \amp -4 \\ 0 \amp 0 \end{bmatrix}
+                </md>
+                
+                so one nonzero vector in <m>\Nul(P - I)</m> is <m>\vec{v} = \begin{bmatrix} 4 \\ 3 \end{bmatrix}</m>. But <m> \vec{q} </m> must be a probability vector, so we adjust <m>\vec{v}</m> to get
+            </p>
+            <p>
+                <md>\vec{q} = \frac{1}{7} \begin{bmatrix} 4 \\ 3 \end{bmatrix}</md>
+
+                Finally, to find <m> \vec{l} = \displaystyle \lim_{k \to \infty} P^k \vec{x}_o </m>, we use the steady state vector <m> \vec{q} </m> and get
+                <md>
+                    \vec{l} = \displaystyle \left( \sum_{i} x_i \right) \vec{q} = (10 + 18) \vec{q} = \begin{bmatrix} 16 \\ 12 \end{bmatrix}
+                </md>
             </p>
         </solution>
     </problem>
@@ -586,7 +627,7 @@
 
                 Let
 
-                <me>W = \left\{\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} \in \mathbb{R}^4 \ : \ x_1 + 2x_2 - x_3 + 3x_4 = 0 \right\}.</me>
+                <md>W = \left\{\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} \in \mathbb{R}^4 \ : \ x_1 + 2x_2 - x_3 + 3x_4 = 0 \right\}.</md>
                 Find a basis for <m>W</m> and state <m>\dim(W)</m>
 
 
@@ -594,24 +635,38 @@
                     \text{basis for $W$} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \amp a \amp a \amp a \\ b  \\ c  \\ d \\ e \\ f \\ g \\ h\end{bmatrix}$}$ }
 
                 </md>
-
-                <md>
-                    \dim(W) = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ b \end{bmatrix}$}$ }
-                </md>
-                
-                
             </p>
-            
-        </statement>
-        <answer>
+            <sidebyside widths = "60% 40%">
+            <p></p>
             <p>
-                <me>\text{basis for W} = \left\{ \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ 0 \\ 0 \\ 1 \end{bmatrix} \right\}</me>
-                <me>\dim(W) = 3</me>
+                <md>
+                    \dim(W) = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ b \end{bmatrix}$}$ }
+                </md>
             </p>
-        </answer>
+            </sidebyside>
+        </statement>
+        <hint>
+            <p>
+                Write <m> W </m> as the span of some vectors.
+            </p>
+        </hint>
         <solution>
             <p>
-                Solution text 
+                 <m> W </m> consists of all vectors <m> \vec{x} </m> satisfying the linear equation
+                <md>
+                    x_1 + 2x_2 - x_3 + 3x_4 = 0
+                </md>
+                In other words, for any vector <m> \vec{x} \in W </m>, we get
+                <md>
+                    <mrow>\vec{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} -2x_2 + x_3 - 3x_4 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix}</mrow>
+
+                    <mrow> = x_2 \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix} + x_3 \begin{bmatrix} 1 \\ 0 \\ 1 \\ 0 \end{bmatrix} + x_4 \begin{bmatrix} -3 \\ 0 \\ 0 \\ 1 \end{bmatrix} </mrow>
+                </md>
+                Therefore, a basis for <m> W </m> is
+                <md>
+                    \left\{ \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ 0 \\ 0 \\ 1 \end{bmatrix} \right\}
+                </md>
+                and <m> \dim(W) = 3 </m>.
             </p>
         </solution>
     </problem>
@@ -628,7 +683,10 @@
                 <md>
                     A = \begin{pmatrix} 1 \amp 2 \amp 1 \amp 3 \\ 2 \amp 5 \amp 2 \amp 4 \\ 3 \amp 4 \amp 3 \amp7 \end{pmatrix}
                 </md>
-                
+            </p>
+            <sidebyside widths = "50% 50%">
+            <p></p>
+            <p>
                 <md>
                     L = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a  \\ b  \\ c  \\ d\end{bmatrix}$}$ }
                 </md>
@@ -637,17 +695,31 @@
                 </md>
                 
             </p>
-            
+            </sidebyside>
         </statement>
-        <answer>
-            <p>
-                <me>L = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 3 \amp -2 \amp 1 \end{bmatrix}</me>
-                <me>U = \begin{bmatrix} 1 \amp 2 \amp 1 \amp 3 \\ 0 \amp 1 \amp 0 \amp -2 \\ 0 \amp 0 \amp 0 \amp -6 \end{bmatrix}</me>
-            </p>
-        </answer>
         <solution>
             <p>
-                Solution text 
+                We build the LU factorization step by step.
+            </p>
+            <p>
+                <md>
+                    A = \begin{pmatrix} 1 \amp 2 \amp 1 \amp 3 \\ 2 \amp 5 \amp 2 \amp 4 \\ 3 \amp 4 \amp 3 \amp7 \end{pmatrix} = \begin{pmatrix} 1 \amp 0 \amp 0 \\  \amp 1 \amp 0 \\  \amp  \amp 1 \end{pmatrix} \begin{pmatrix} 1 \amp 2 \amp 1 \amp 3 \\ 2 \amp 5 \amp 2 \amp 4 \\ 3 \amp 4 \amp 3 \amp7 \end{pmatrix}
+                </md>
+                <md>
+                    \overset{R_2 - 2R_1 \to R_2}{{\large \sim}} \begin{pmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\  \amp  \amp 1 \end{pmatrix} \begin{pmatrix} 1 \amp 2 \amp 1 \amp 3 \\ 0 \amp 1 \amp 0 \amp -2 \\ 3 \amp 4 \amp 3 \amp7 \end{pmatrix}
+                </md>
+                <md>
+                    \overset{R_3 - 3R_1 \to R_3}{{\large \sim}} \begin{pmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 3 \amp  \amp 1 \end{pmatrix} \begin{pmatrix} 1 \amp 2 \amp 1 \amp 3 \\ 0 \amp 1 \amp 0 \amp -2 \\ 0 \amp -2 \amp 0 \amp -2 \end{pmatrix}
+                </md>
+                <md>
+                    \overset{R_3 + 2R_2 \to R_3}{{\large \sim}} \begin{pmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 3 \amp -2 \amp 1 \end{pmatrix} \begin{pmatrix} 1 \amp 2 \amp 1 \amp 3 \\ 0 \amp 1 \amp 0 \amp -2 \\ 0 \amp 0 \amp 0 \amp -6 \end{pmatrix}
+                </md>
+            </p>
+            <p>
+                So the LU factorization of <m> A </m> is
+                <md>
+                    L = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 3 \amp -2 \amp 1 \end{bmatrix}, \quad U = \begin{bmatrix} 1 \amp 2 \amp 1 \amp 3 \\ 0 \amp 1 \amp 0 \amp -2 \\ 0 \amp 0 \amp 0 \amp -6 \end{bmatrix}
+                </md>
             </p>
         </solution>
     </problem>
