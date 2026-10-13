@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para">Determine a steady-state vector for the stochastic matrix:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-4-9-steady-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P = \begin{bmatrix}
+0.8 \amp 0.3\\
+0.2 \amp 0.7
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">We want to find a probability vector <span class="process-math">\(\vec q\)</span> so that <span class="process-math">\(P\vec q = \vec q\text{.}\)</span> We can rearrage this equation by subtracting <span class="process-math">\(\vec q\)</span> from both sides and factoring to obtain the following equation:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P\vec q = \vec q \quad \implies \quad P\vec q - I\vec q = \vec 0 \quad \implies \quad (P - I)\vec q = \vec 0\text{,}
+\end{equation*}
+</div>
+<div class="para">where we rewrote <span class="process-math">\(\vec q\)</span> as <span class="process-math">\(I\vec q\)</span> to make clear what is left over after factoring out <span class="process-math">\(\vec q\text{.}\)</span> It follows that <span class="process-math">\(\vec q\)</span> should be a probability vector that lives in <span class="process-math">\(\Nul(P - I)\text{.}\)</span> Note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P - I = \begin{bmatrix} 0.8 - 1 \amp 0.3 \\ 0.2 \amp 0.7-1 \end{bmatrix} = \begin{bmatrix} -0.2 \amp 0.3 \\ 0.2 \amp -0.3 \end{bmatrix} \sim \begin{bmatrix} -2 \amp 3 \\ 0 \amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(P - I\)</span> has only <em class="emphasis">one</em> free variable, we know that <span class="process-math">\(\dim(\Nul(P-I)) = 1\text{.}\)</span> Therefore, <span class="process-math">\(\Nul(P-I)\)</span> is spanned by a single nonzero vector. By inspecting the REF of <span class="process-math">\(P-I\)</span> given above, we see that <span class="process-math">\(\vec v = \begin{bmatrix} 3 \\ 2 \end{bmatrix}\)</span> is a nonzero vector in <span class="process-math">\(\Nul(P-I)\text{.}\)</span> Therefore, we have that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Nul(P-I) = \Span\left\{\begin{bmatrix} 3 \\ 2 \end{bmatrix}\right\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Note that <span class="process-math">\(\vec v\)</span> is not a probability vector since its entries add to 5. We can modify <span class="process-math">\(\vec v\)</span> by scaling it by a factor of <span class="process-math">\(\frac{1}{5}\)</span> which will result in a probability vector living in <span class="process-math">\(\Nul(P - I)\text{.}\)</span> Since this is the only way to create a probability vector in <span class="process-math">\(\Nul(P-I)\text{,}\)</span> we see that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec q = \frac{1}{5}\vec v = \begin{bmatrix} \frac{3}{5} \\ \frac{2}{5} \end{bmatrix} = \begin{bmatrix} 0.6 \\ 0.4 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">is the unique steady-state vector for <span class="process-math">\(P\text{.}\)</span> We can check that <span class="process-math">\(\vec q\)</span> is a steady-state vector. Note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P\vec q = \begin{bmatrix} 0.8 \amp 0.3 \\ 0.2 \amp 0.7 \end{bmatrix} \begin{bmatrix} 0.6 \\ 0.4 \end{bmatrix} = \begin{bmatrix} 0.8(0.6) + 0.3(0.4) \\ 0.2(0.6) + (0.7)(0.4) \end{bmatrix} = \begin{bmatrix} 0.6 \\ 0.4 \end{bmatrix} = \vec q\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-4-9-steady-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">What does the steady-state vector <span class="process-math">\(\vec q\)</span> tells us about the libraries in <a href="Section-4-9.html#ex-4-9-libraries" class="xref" data-knowl="./knowl/xref/ex-4-9-libraries.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.1">Example 4.1</a>? It tells us the proportional distribution of the books between the two libraries. Since the two libraries had a total of 2000 books between them, we see that the limit vector of the Markov chain is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-4-9-libraries.html">
+\begin{equation*}
+\vec \ell = 2000 \vec q = 2000\begin{bmatrix} 0.6 \\ 0.4 \end{bmatrix} = \begin{bmatrix} 1200 \\ 800 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus, after many months, we should expect Library <span class="process-math">\(A\)</span> to have 1200 books and Library <span class="process-math">\(B\)</span> to have 800 books.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-4-9-steady-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.4.1"><a tabindex="-1" href="#ex-4-9-steady-2" title="Copy heading and permalink for Solution 4.4.1" aria-label="Copy heading and permalink for Solution 4.4.1">🔗</a></div>
+</div></details>
+</div>
+<div class="workspace" data-space="2in"></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.4"><a tabindex="-1" href="#ex-4-9-steady" title="Copy heading and permalink for Example 4.4" aria-label="Copy heading and permalink for Example 4.4">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="Section-4-9.html#ex-4-9-steady">In Context</a></span>
+</body>
+</html>

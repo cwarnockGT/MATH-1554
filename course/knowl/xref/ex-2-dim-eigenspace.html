@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \begin{bmatrix} 4 \amp -1 \amp 6 \\ 2 \amp 1 \amp 6 \\ 2 \amp -1 \amp 8 \end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">One of the eigenvalues of <span class="process-math">\(A\)</span> is <span class="process-math">\(\lambda = 2\text{.}\)</span> Find a basis for the <span class="process-math">\(2\)</span>-eigenspace of <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-2-dim-eigenspace-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">Note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A - 2I = \begin{bmatrix} 2 \amp -1 \amp 6 \\ 2 \amp -1 \amp 6 \\ 2 \amp -1 \amp 6 \end{bmatrix} \sim \begin{bmatrix} 2 \amp -1 \amp 6 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(A - 2I\)</span> has two free variables, we have that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dim(\Nul(A - 2I)) = 2\text{.}
+\end{equation*}
+</div>
+<div class="para">Therefore, <span class="process-math">\(2\text{-eigenspace}(A)\)</span> is two-dimensional, so we need to find two linearly independent vectors in <span class="process-math">\(\Nul(A - 2I)\)</span> in order to find a basis for the eigenspace. You could find two such vectors by guessing, which isn’t necessarily easy but does become easier with time. Or, you could find two vectors by using our typical process of setting <span class="process-math">\(x_3 = t \in \mathbb{R}\)</span> and <span class="process-math">\(x_2 = r \in \mathbb{R}\)</span> which yield <span class="process-math">\(x_1 = \frac{1}{2}r - 3t\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec x = \begin{bmatrix} \frac{1}{2}r - 3t \\ r \\ t \end{bmatrix} = r\begin{bmatrix} \frac{1}{2} \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} -3 \\ 0 \\ 1 \end{bmatrix} = \frac{r}{2} \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix} + t\begin{bmatrix} -3 \\ 0 \\ 1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Either way, we find that a basis for <span class="process-math">\(2\text{-eigenspace}(A)\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{B} = \left\{\begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ 0 \\ 1\end{bmatrix}\right\}\text{.}
+\end{equation*}
+</div>
+<div class="para">You should double-check that these two vectors are linearly independent and belong to <span class="process-math">\(2\text{-eigenspace}(A) = \Nul(A - 2I)\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2\text{-eigenspace}(A) = \Nul(A - 2I) = \Span\left\{\begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}, \begin{bmatrix} -3 \\ 0 \\ 1\end{bmatrix}\right\}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-2-dim-eigenspace-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.13.1"><a tabindex="-1" href="#ex-2-dim-eigenspace-2" title="Copy heading and permalink for Solution 5.13.1" aria-label="Copy heading and permalink for Solution 5.13.1">🔗</a></div>
+</div></details>
+</div>
+<div class="workspace" data-space="2in"></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.13"><a tabindex="-1" href="#ex-2-dim-eigenspace" title="Copy heading and permalink for Example 5.13" aria-label="Copy heading and permalink for Example 5.13">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="Section-5-1.html#ex-2-dim-eigenspace">In Context</a></span>
+</body>
+</html>

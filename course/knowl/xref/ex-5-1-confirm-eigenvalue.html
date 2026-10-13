@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para">Confirm that <span class="process-math">\(\lambda=3\)</span> is an eigenvalue of<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-5-1-confirm-eigenvalue-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}
+2 \amp -4\\
+-1 \amp -1
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">To show that <span class="process-math">\(\lambda = 3\)</span> is an eigenvalue of <span class="process-math">\(A\text{,}\)</span> we need to find a <em class="emphasis">nonzero</em> vector <span class="process-math">\(\vec v\)</span> so that <span class="process-math">\(A\vec v = 3\vec v\text{.}\)</span> Subtracting <span class="process-math">\(3\vec v \)</span> from both sides and factoring yields</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A\vec v = 3\vec v \quad \implies \quad A\vec v - 3I\vec v = \vec 0 \quad \implies \quad (A - 3I)\vec v = \vec 0\text{.}
+\end{equation*}
+</div>
+<div class="para">Therefore, every <span class="process-math">\(\vec v\)</span> which satisfies <span class="process-math">\(A\vec v = 3\vec v\)</span> must live in <span class="process-math">\(\Nul(A - 3I)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-5-1-confirm-eigenvalue-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Note: This should look very similar to the process for finding steady-state vectors for stochastic matrices. See <a href="Section-4-9.html#ex-4-9-steady" class="xref" data-knowl="./knowl/xref/ex-4-9-steady.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4">Example 4.4</a>. This is because steady-state vectors of a stochastic matrix <span class="process-math">\(P\)</span> are actually just probability eigenvectors of <span class="process-math">\(P\)</span> which correspond to an eigenvalue of <span class="process-math">\(\lambda = 1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-5-1-confirm-eigenvalue-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A - 3I = \begin{bmatrix} 2 \amp -4 \\ -1 \amp -1 \end{bmatrix} - \begin{bmatrix} 3 \amp 0 \\ 0 \amp 3 \end{bmatrix} = \begin{bmatrix} -1 \amp -4 \\ -1 \amp -4 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 4 \\ 0 \amp 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">By observation, we see that <span class="process-math">\(\vec v = \begin{bmatrix} -4 \\ 1 \end{bmatrix}\)</span> is a nonzero vector in <span class="process-math">\(\Nul(A - 3I).\)</span> Since <span class="process-math">\(A - 3I\)</span> only had a single free varible, we know that <span class="process-math">\(\Nul(A - 3I)\)</span> is 1-dimensional. Thus, we have that the eigenvectors of <span class="process-math">\(A\)</span> which correspond to an eigenvalue of <span class="process-math">\(\lambda = 3\)</span> are the nonzero vectors in</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Nul(A - 3I) = \Span\left\{\begin{bmatrix} -4 \\ 1 \end{bmatrix}\right\}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-5-1-confirm-eigenvalue-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Let’s check this for a particular nonzero vector in</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Nul(A - 3I) = \Span\left\{\begin{bmatrix} -4 \\ 1 \end{bmatrix}\right\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(\vec w = \begin{bmatrix} -8 \\ 2 \end{bmatrix} \in \Nul(A - 3I).\)</span> Note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A\vec w = \begin{bmatrix}2 \amp -4 \\ -1 \amp -1 \end{bmatrix}\begin{bmatrix} -8 \\ 2 \end{bmatrix} = \begin{bmatrix} -24 \\ 6 \end{bmatrix} = 3\begin{bmatrix} -8 \\ 2 \end{bmatrix} = 3 \vec w\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus, <span class="process-math">\(\vec w\)</span> is an eigenvector of <span class="process-math">\(A\)</span> corresponding to an eigenvalue of <span class="process-math">\(\lambda = 3\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-5-1-confirm-eigenvalue-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.3.1"><a tabindex="-1" href="#ex-5-1-confirm-eigenvalue-2" title="Copy heading and permalink for Solution 5.3.1" aria-label="Copy heading and permalink for Solution 5.3.1">🔗</a></div>
+</div></details>
+</div>
+<div class="workspace" data-space="2in"></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.3"><a tabindex="-1" href="#ex-5-1-confirm-eigenvalue" title="Copy heading and permalink for Example 5.3" aria-label="Copy heading and permalink for Example 5.3">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="Section-5-1.html#ex-5-1-confirm-eigenvalue">In Context</a></span>
+</body>
+</html>
