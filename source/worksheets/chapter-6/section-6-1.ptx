@@ -53,7 +53,7 @@
         </m>
       Which of the vectors below are in <m>W^\perp</m>?</p>
       <p>
-        <me>
+        <md>
         \vec{u} =
         \begin{pmatrix}8 \\ -5 \\ 8\end{pmatrix},
         \quad
@@ -62,7 +62,7 @@
         \quad
         \vec{w} =
         \begin{pmatrix}3 \\ 3 \\ -3\end{pmatrix}
-        </me>
+        </md>
       </p>
     </li>
 

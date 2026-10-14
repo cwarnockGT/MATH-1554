@@ -117,7 +117,7 @@
             <shortdescription>A drawing of the parallelogram in the plane.</shortdescription>
         </image>
         <p>
-                Notice that the vector <me>\vec v_1 = \begin{bmatrix} 1 - (-2) \\ 7 - 3 \end{bmatrix} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}</me> connects the point <m>(-2,3)</m> to the point <m>(1,7)</m>. Also, the vector <me>\vec v_2 = \begin{bmatrix} 6 - (-2) \\ -3 - 3 \end{bmatrix} = \begin{bmatrix} 8 \\ -6 \end{bmatrix}</me> connects the point <m>(-2,3)</m> to the point <m>(6,-3)</m>. Using <xref ref="thm-area-abs-det"/>, we have that the area of the parallelogram is <me>\left|\det\left(\begin{bmatrix} \vec v_1 \amp \vec v_2 \end{bmatrix}\right)\right| = \left|\det\left(\begin{bmatrix} 3 \amp 8 \\ 4 \amp -6 \end{bmatrix}\right)\right| = |-18 - 32| = 50.</me>
+                Notice that the vector <md>\vec v_1 = \begin{bmatrix} 1 - (-2) \\ 7 - 3 \end{bmatrix} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}</md> connects the point <m>(-2,3)</m> to the point <m>(1,7)</m>. Also, the vector <md>\vec v_2 = \begin{bmatrix} 6 - (-2) \\ -3 - 3 \end{bmatrix} = \begin{bmatrix} 8 \\ -6 \end{bmatrix}</md> connects the point <m>(-2,3)</m> to the point <m>(6,-3)</m>. Using <xref ref="thm-area-abs-det"/>, we have that the area of the parallelogram is <md>\left|\det\left(\begin{bmatrix} \vec v_1 \amp \vec v_2 \end{bmatrix}\right)\right| = \left|\det\left(\begin{bmatrix} 3 \amp 8 \\ 4 \amp -6 \end{bmatrix}\right)\right| = |-18 - 32| = 50.</md>
             </p>
       </solution>
     </example>
@@ -175,7 +175,7 @@
             <shortdescription>A drawing of the described triangle in the plane, adjoined with a copy of the triange with points (0,3), (4,-1), and (7,4), forming a parallelogram.</shortdescription>
         </image>
         <p>
-            It follows that the area of the triangle is half the area of the parallelogram. We see that vectors <me>\vec v_1 = \begin{bmatrix} 3 \\ 5 \end{bmatrix} \quad \text{and} \quad \vec v_2 = \begin{bmatrix} 7 \\ 1 \end{bmatrix}</me> describe adjacent sides of the parallelogram. Therefore, we have that the area of the triangle is <me>\dfrac{1}{2}\left|\det\left(\begin{bmatrix}3 \amp 7 \\ 5 \amp 1 \end{bmatrix}\right)\right| = \dfrac{1}{2}|3 - 35| = 16</me>.
+            It follows that the area of the triangle is half the area of the parallelogram. We see that vectors <md>\vec v_1 = \begin{bmatrix} 3 \\ 5 \end{bmatrix} \quad \text{and} \quad \vec v_2 = \begin{bmatrix} 7 \\ 1 \end{bmatrix}</md> describe adjacent sides of the parallelogram. Therefore, we have that the area of the triangle is <md>\dfrac{1}{2}\left|\det\left(\begin{bmatrix}3 \amp 7 \\ 5 \amp 1 \end{bmatrix}\right)\right| = \dfrac{1}{2}|3 - 35| = 16</md>.
         </p>
       </solution>
     </example>
@@ -196,9 +196,9 @@
           <m>T_A(\vec x)=A\vec x</m>, and <m>S</m> is any closed shape in
           <m>\mathbb{R}^n</m>, then
         </p>
-        <me>
+        <md>
           \operatorname{volume}(T_A(S)) \;=\; \lvert \det(A)\rvert \cdot \operatorname{volume}(S).
-        </me>
+        </md>
       </statement>
     </theorem>
 
@@ -215,7 +215,7 @@
     <example workspace="4in">
         <statement>
             <p>
-                Find the area of the interior <m>E</m> of the ellipse defined by the equation <me>\left(\dfrac{2x - y}{2}\right)^2 + \left(\dfrac{y + 3x}{3}\right)^2 = 1</me>.
+                Find the area of the interior <m>E</m> of the ellipse defined by the equation <md>\left(\dfrac{2x - y}{2}\right)^2 + \left(\dfrac{y + 3x}{3}\right)^2 = 1</md>.
             </p>
         </statement>
         <solution>
@@ -248,15 +248,15 @@
             <shortdescription>A drawing of the described ellipse in the standard coordinate system.</shortdescription>
         </image>
         <p>
-            It is difficult to find the area of this tilted ellipse using geometry. Instead, we will use <xref ref="thm-linear-transform-volume-scale"/>. We start with a change of variables. Let <m>u = \frac{2x - y}{2}</m> and <m>v = \frac{y + 3x}{3}</m>. Then, the equation for <m>E</m> in terms of <m>u</m> and <m>v</m> becomes <me>E: \left(\frac{2x - y}{2}\right)^2 + \left(\frac{y + 3x}{3}\right)^2 = 1 \quad \rightarrow \quad C: u^2 + v^2 = 1</me>. Note that <m>C</m> is the equation for the unit circle which has area <m>\pi</m>. 
+            It is difficult to find the area of this tilted ellipse using geometry. Instead, we will use <xref ref="thm-linear-transform-volume-scale"/>. We start with a change of variables. Let <m>u = \frac{2x - y}{2}</m> and <m>v = \frac{y + 3x}{3}</m>. Then, the equation for <m>E</m> in terms of <m>u</m> and <m>v</m> becomes <md>E: \left(\frac{2x - y}{2}\right)^2 + \left(\frac{y + 3x}{3}\right)^2 = 1 \quad \rightarrow \quad C: u^2 + v^2 = 1</md>. Note that <m>C</m> is the equation for the unit circle which has area <m>\pi</m>. 
         </p>
         <p><nbsp/></p>
         <p>
-            In order to use <xref ref="thm-linear-transform-volume-scale"/>, we need to identify a linear transformation which maps the ellipse <m>E</m> in the <m>xy</m>-plane to the unit circle <m>C</m> in the <m>uv</m>-plane. Therefore, we need to find a linear transformation <m>T</m> which accepts a point <m>(x,y)</m> on <m>E</m> and returns a point <m>(u,v)</m> on <m>C</m>. Recalling the definition of <m>u</m> and <m>v</m> in terms of <m>x</m> and <m>y</m>, we see that <m>T</m> needs to do the following: <me>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} u \\ v \end{bmatrix} \quad \implies \quad T\left(\begin{bmatrix}x \\ y \end{bmatrix}\right) = \begin{bmatrix} \frac{2x - y}{2} \\ \frac{y + 3x}{3} \end{bmatrix}</me>. It follows that <me>T\left(\begin{bmatrix}x \\ y \end{bmatrix}\right) = \begin{bmatrix} \frac{2x - y}{2} \\ \frac{y + 3x}{3} \end{bmatrix} = \begin{bmatrix} x - \frac{1}{2}y \\ x + \frac{1}{3}y \end{bmatrix} = \begin{bmatrix} 1 \amp -\frac{1}{2} \\ 1 \amp \frac{1}{3}\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}</me>. Therefore, <me>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} 1 \amp -\frac{1}{2} \\ 1 \amp \frac{1}{3}\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}</me> is the linear transformation that maps <m>E</m> to <m>C = T(E)</m>.
+            In order to use <xref ref="thm-linear-transform-volume-scale"/>, we need to identify a linear transformation which maps the ellipse <m>E</m> in the <m>xy</m>-plane to the unit circle <m>C</m> in the <m>uv</m>-plane. Therefore, we need to find a linear transformation <m>T</m> which accepts a point <m>(x,y)</m> on <m>E</m> and returns a point <m>(u,v)</m> on <m>C</m>. Recalling the definition of <m>u</m> and <m>v</m> in terms of <m>x</m> and <m>y</m>, we see that <m>T</m> needs to do the following: <md>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} u \\ v \end{bmatrix} \quad \implies \quad T\left(\begin{bmatrix}x \\ y \end{bmatrix}\right) = \begin{bmatrix} \frac{2x - y}{2} \\ \frac{y + 3x}{3} \end{bmatrix}</md>. It follows that <md>T\left(\begin{bmatrix}x \\ y \end{bmatrix}\right) = \begin{bmatrix} \frac{2x - y}{2} \\ \frac{y + 3x}{3} \end{bmatrix} = \begin{bmatrix} x - \frac{1}{2}y \\ x + \frac{1}{3}y \end{bmatrix} = \begin{bmatrix} 1 \amp -\frac{1}{2} \\ 1 \amp \frac{1}{3}\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}</md>. Therefore, <md>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} 1 \amp -\frac{1}{2} \\ 1 \amp \frac{1}{3}\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}</md> is the linear transformation that maps <m>E</m> to <m>C = T(E)</m>.
         </p>
         <p><nbsp/></p>
         <p>
-            By <xref ref="thm-linear-transform-volume-scale"/>, we have that <me>\operatorname{area}(T(E)) = \left|\det\left(\begin{bmatrix}1 \amp -\frac{1}{2} \\ 1 \amp \frac{1}{3}\end{bmatrix}\right)\right|\operatorname{area}(E)</me>. Since we know <m>T(E) = C</m> has area <m>\pi</m>, we find that <me>\operatorname{area}(E) = \dfrac{\pi}{1\left(\frac{1}{3}\right) - 1\left(-\frac{1}{2}\right)} = \frac{\pi}{\frac{5}{6}} = \frac{6\pi}{5}</me>. Thus, the area of the ellipse <m>E</m> is <m>\frac{6\pi}{5}</m>.
+            By <xref ref="thm-linear-transform-volume-scale"/>, we have that <md>\operatorname{area}(T(E)) = \left|\det\left(\begin{bmatrix}1 \amp -\frac{1}{2} \\ 1 \amp \frac{1}{3}\end{bmatrix}\right)\right|\operatorname{area}(E)</md>. Since we know <m>T(E) = C</m> has area <m>\pi</m>, we find that <md>\operatorname{area}(E) = \dfrac{\pi}{1\left(\frac{1}{3}\right) - 1\left(-\frac{1}{2}\right)} = \frac{\pi}{\frac{5}{6}} = \frac{6\pi}{5}</md>. Thus, the area of the ellipse <m>E</m> is <m>\frac{6\pi}{5}</m>.
         </p>
         </solution>
     </example>
@@ -269,7 +269,7 @@
         <title>Cramer's Rule</title> 
         <statement>
             <p>
-                Let <m>A </m> be an invertible <m>n \times n</m> matrix and let <m>\vec b \in \mathbb{R}^n</m>. Then the system <m>A\vec x = \vec b</m> has the unique solution <m>\vec x</m> whose entires are given by <me>x_i = \dfrac{\det(A_i)}{\det(A)}</me>, where <m>A_i</m> is the matrix formed by replacing the <m>i^\text{th}</m> column of <m>A</m> by <m>\vec b</m>.
+                Let <m>A </m> be an invertible <m>n \times n</m> matrix and let <m>\vec b \in \mathbb{R}^n</m>. Then the system <m>A\vec x = \vec b</m> has the unique solution <m>\vec x</m> whose entires are given by <md>x_i = \dfrac{\det(A_i)}{\det(A)}</md>, where <m>A_i</m> is the matrix formed by replacing the <m>i^\text{th}</m> column of <m>A</m> by <m>\vec b</m>.
             </p>
         </statement>
     </theorem>
@@ -279,28 +279,28 @@
     <example>
         <statement>
             <p>
-                Use <xref ref="thm-cramers-rule" text="custom"> Cramer's Rule</xref> to solve the system <me>\begin{bmatrix} 1 \amp 3 \amp 2 \\ -2 \amp 1 \amp 4 \\ 0 \amp 4 \amp 3 \end{bmatrix}\vec x = \begin{bmatrix} 1 \\ 9 \\ 0 \end{bmatrix}</me>.
+                Use <xref ref="thm-cramers-rule" text="custom"> Cramer's Rule</xref> to solve the system <md>\begin{bmatrix} 1 \amp 3 \amp 2 \\ -2 \amp 1 \amp 4 \\ 0 \amp 4 \amp 3 \end{bmatrix}\vec x = \begin{bmatrix} 1 \\ 9 \\ 0 \end{bmatrix}</md>.
             </p>
         </statement>
         <solution>
             <p>
-                Let <me>A = \begin{bmatrix} \vec a_1 \amp \vec a_2 \amp \vec a_3 \end{bmatrix} = \begin{bmatrix} 1 \amp 3 \amp 2 \\ -2 \amp 1 \amp 4 \\ 0 \amp 4 \amp 3 \end{bmatrix} \quad \text{and} \quad \vec b = \begin{bmatrix} 1 \\ 9 \\ 0 \end{bmatrix}</me>. Expanding down the first column of <m>A</m>, we see that <me>\det(A) = 1\begin{vmatrix} 1 \amp 4 \\ 4 \amp 3 \end{vmatrix} - (-2)\begin{vmatrix} 3 \amp 2 \\ 4 \amp 3 \end{vmatrix} = (3-16) + 2(9-8) = -11 \neq 0</me>. Therefore, <m>A</m> is invertible matrix, so the system has a unique solution and we can use Cramer's Rule.
+                Let <md>A = \begin{bmatrix} \vec a_1 \amp \vec a_2 \amp \vec a_3 \end{bmatrix} = \begin{bmatrix} 1 \amp 3 \amp 2 \\ -2 \amp 1 \amp 4 \\ 0 \amp 4 \amp 3 \end{bmatrix} \quad \text{and} \quad \vec b = \begin{bmatrix} 1 \\ 9 \\ 0 \end{bmatrix}</md>. Expanding down the first column of <m>A</m>, we see that <md>\det(A) = 1\begin{vmatrix} 1 \amp 4 \\ 4 \amp 3 \end{vmatrix} - (-2)\begin{vmatrix} 3 \amp 2 \\ 4 \amp 3 \end{vmatrix} = (3-16) + 2(9-8) = -11 \neq 0</md>. Therefore, <m>A</m> is invertible matrix, so the system has a unique solution and we can use Cramer's Rule.
             </p>
             <p><nbsp/></p>
             <p>
-                We find <m>A_1</m> by replacing the <em>first</em> column of <m>A</m> with <m>\vec b</m>: <me>A_1 = \begin{bmatrix} \vec b \amp \vec a_2 \amp \vec a_3 \end{bmatrix} = \begin{bmatrix} 1 \amp 3 \amp 2 \\ 9 \amp 1 \amp 4 \\ 0 \amp 4 \amp 3 \end{bmatrix}</me>. By expanding down the first column of <m>A_1</m>, we see that <me>\det(A_1) = 1\begin{vmatrix} 1 \amp 4 \\ 4 \amp 3 \end{vmatrix} - 9\begin{vmatrix} 3 \amp 2 \\ 4 \amp 3 \end{vmatrix} = (3 - 16) - 9(9-8) = -22</me>. It follows that <me>x_1 = \dfrac{\det(A_1)}{\det(A)} = \dfrac{-22}{-11} = 2</me>.
+                We find <m>A_1</m> by replacing the <em>first</em> column of <m>A</m> with <m>\vec b</m>: <md>A_1 = \begin{bmatrix} \vec b \amp \vec a_2 \amp \vec a_3 \end{bmatrix} = \begin{bmatrix} 1 \amp 3 \amp 2 \\ 9 \amp 1 \amp 4 \\ 0 \amp 4 \amp 3 \end{bmatrix}</md>. By expanding down the first column of <m>A_1</m>, we see that <md>\det(A_1) = 1\begin{vmatrix} 1 \amp 4 \\ 4 \amp 3 \end{vmatrix} - 9\begin{vmatrix} 3 \amp 2 \\ 4 \amp 3 \end{vmatrix} = (3 - 16) - 9(9-8) = -22</md>. It follows that <md>x_1 = \dfrac{\det(A_1)}{\det(A)} = \dfrac{-22}{-11} = 2</md>.
             </p>
             <p><nbsp/></p>
             <p>
-                We find <m>A_2</m> by replacing the <em>second</em> column of <m>A</m> with <m>\vec b</m>: <me>A_2 = \begin{bmatrix} \vec a_1 \amp \vec b \amp \vec a_3 \end{bmatrix} = \begin{bmatrix} 1 \amp 1 \amp 2 \\ -2 \amp 9 \amp 4 \\ 0 \amp 0 \amp 3 \end{bmatrix}</me>. Expanding across the third row yields <me>\det(A_2) = 3\begin{vmatrix} 1 \amp 1 \\ -2 \amp 9 \end{vmatrix} = 3(9+2) = 33</me>. It follows that <me>x_2 = \dfrac{\det(A_2)}{\det(A)} = \dfrac{33}{-11} = -3</me>.
+                We find <m>A_2</m> by replacing the <em>second</em> column of <m>A</m> with <m>\vec b</m>: <md>A_2 = \begin{bmatrix} \vec a_1 \amp \vec b \amp \vec a_3 \end{bmatrix} = \begin{bmatrix} 1 \amp 1 \amp 2 \\ -2 \amp 9 \amp 4 \\ 0 \amp 0 \amp 3 \end{bmatrix}</md>. Expanding across the third row yields <md>\det(A_2) = 3\begin{vmatrix} 1 \amp 1 \\ -2 \amp 9 \end{vmatrix} = 3(9+2) = 33</md>. It follows that <md>x_2 = \dfrac{\det(A_2)}{\det(A)} = \dfrac{33}{-11} = -3</md>.
             </p>
             <p><nbsp/></p>
             <p>
-                We find <m>A_3</m> by replacing the <em>third</em> column of <m>A</m> with <m>\vec b</m>: <me>A_3 = \begin{bmatrix} \vec a_1 \amp \vec a_2 \amp \vec b \end{bmatrix} = \begin{bmatrix} 1 \amp 3 \amp 1 \\ -2 \amp 1 \amp 9 \\ 0 \amp 4 \amp 0 \end{bmatrix}</me>. Expanding across the third row yields <me>\det(A_2) = -(4)\begin{vmatrix} 1 \amp 1 \\ -2 \amp 9 \end{vmatrix} = -4(9+2) = -44</me>. It follows that <me>x_3 = \dfrac{\det(A_3)}{\det(A)} = \dfrac{-44}{-11} = 4</me>.
+                We find <m>A_3</m> by replacing the <em>third</em> column of <m>A</m> with <m>\vec b</m>: <md>A_3 = \begin{bmatrix} \vec a_1 \amp \vec a_2 \amp \vec b \end{bmatrix} = \begin{bmatrix} 1 \amp 3 \amp 1 \\ -2 \amp 1 \amp 9 \\ 0 \amp 4 \amp 0 \end{bmatrix}</md>. Expanding across the third row yields <md>\det(A_2) = -(4)\begin{vmatrix} 1 \amp 1 \\ -2 \amp 9 \end{vmatrix} = -4(9+2) = -44</md>. It follows that <md>x_3 = \dfrac{\det(A_3)}{\det(A)} = \dfrac{-44}{-11} = 4</md>.
             </p>
             <p><nbsp/></p>
             <p>
-                Therefore, we have that the solution vector is <me>\vec x = \begin{bmatrix} 2 \\ -3 \\ 4 \end{bmatrix}</me>.
+                Therefore, we have that the solution vector is <md>\vec x = \begin{bmatrix} 2 \\ -3 \\ 4 \end{bmatrix}</md>.
             </p>
         </solution>
     </example>

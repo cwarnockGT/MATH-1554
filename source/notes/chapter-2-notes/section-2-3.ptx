@@ -115,9 +115,9 @@
     </image>
 
     <p workspace="0.5in">
-      The matrix inverse <m>A^{-1}</m> transforms <m>A\vec x</m> back to <m>\vec x</m>, because <me>
+      The matrix inverse <m>A^{-1}</m> transforms <m>A\vec x</m> back to <m>\vec x</m>, because <md>
       A^{-1}(A\vec x)=(A^{-1}A)\vec x=\vec x.
-    </me>
+    </md>
     </p>
 
     
@@ -155,13 +155,13 @@
     <example xml:id="ex-check-invertible" workspace="true">
       <statement>
         <p> Is <m>A</m> invertible?</p>
-        <me>
+        <md>
           A = \begin{bmatrix}
             1 \amp 0 \amp -2\\
             3 \amp 1 \amp -2\\
             -5 \amp -1 \amp 9
           \end{bmatrix}
-        </me>
+        </md>
       </statement>
     </example>
  

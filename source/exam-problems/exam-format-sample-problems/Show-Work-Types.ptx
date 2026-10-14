@@ -5,7 +5,7 @@
                 (7 points) <em>Show your work in the space below and put your answer in the boxes.</em> 
             </p>
             <p>
-                Let <m>T</m> be the linear tranformation defined by <me>T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\right) = \begin{bmatrix} x_1 - 2x_2 + x_3 \\ x_1 - x_2 \\ -x_2 + x_3 \end{bmatrix}</me>.
+                Let <m>T</m> be the linear tranformation defined by <md>T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\right) = \begin{bmatrix} x_1 - 2x_2 + x_3 \\ x_1 - x_2 \\ -x_2 + x_3 \end{bmatrix}</md>.
             </p>
         </introduction>
         <task>
@@ -14,7 +14,7 @@
                     What are the domain and codomain of <m>T</m>?
                 </p>
                 <p>
-                <me>\text{domain is } \framebox{$\phantom{$\begin{bmatrix} a \amp a  \end{bmatrix}$}$ } \quad \quad \text{codomain is } \framebox{$\phantom{$\begin{bmatrix} a \amp a  \end{bmatrix}$}$ } </me>
+                <md>\text{domain is } \framebox{$\phantom{$\begin{bmatrix} a \amp a  \end{bmatrix}$}$ } \quad \quad \text{codomain is } \framebox{$\phantom{$\begin{bmatrix} a \amp a  \end{bmatrix}$}$ } </md>
                 </p>
             </statement>
             <answer>
@@ -29,7 +29,7 @@
                     What is the standard matrix of <m>T</m>?
                 </p>
                 <p>
-                <me>\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </me>
+                <md>\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </md>
                 </p>
             </statement>
             <answer>
@@ -39,7 +39,7 @@
             </answer>
             <solution>
                 <p>
-                    Note that <me>T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\right) = \begin{bmatrix} x_1 - 2x_2 + x_3 \\ x_1 - x_2 \\ -x_2 + x_3 \end{bmatrix} = \begin{bmatrix} 1 \amp -2 \amp 1 \\ 1 \amp -1 \amp 0 \\ 0 \amp -1 \amp 1 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}</me>.
+                    Note that <md>T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\right) = \begin{bmatrix} x_1 - 2x_2 + x_3 \\ x_1 - x_2 \\ -x_2 + x_3 \end{bmatrix} = \begin{bmatrix} 1 \amp -2 \amp 1 \\ 1 \amp -1 \amp 0 \\ 0 \amp -1 \amp 1 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}</md>.
                 </p>
             </solution>
         </task>
@@ -49,7 +49,7 @@
                     Find a vector <m>\vec x</m> such that <m>T(\vec x) = \vec b</m>, where <m>\vec b = \begin{bmatrix} 4 \\ 2 \\ 2 \end{bmatrix}</m>.
                 </p>
                 <p>
-                <me>\vec b = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </me>
+                <md>\vec b = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </md>
                 </p>
             </statement>
             <answer>
@@ -59,7 +59,7 @@
             </answer>
             <solution>
                 <p>
-                    Since <m>T(\vec x) = A\vec x</m>, we use row operations on the augmented matrix <m>\begin{bmatrix} A \amp \rvert \amp \vec b \end{bmatrix}</m> to solve the system. Note that <me> \begin{bmatrix} 1 \amp -2 \amp 1 \amp \rvert \amp 4 \\ 1 \amp -1 \amp 0 \amp \rvert \amp 2 \\ 0 \amp -1 \amp 1 \amp \rvert \amp 2 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp -1 \amp \rvert \amp 0 \\ 0 \amp 1 \amp -1 \amp \rvert \amp -2 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</me>. We have that <m>x_3 = t \in \mathbb{R}</m> is a free variable and <m>x_2 = -2 + t</m> and <m>x_1 = t</m>. Thus, all solutions to <m>T(\vec x) = \vec b</m> are <me>\vec x = \begin{bmatrix} t \\ -2 + t \\ t \end{bmatrix} = \begin{bmatrix} 0 \\ -2 \\ 0 \end{bmatrix} + t\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}</me>. Letting <m>t = 0</m>, we have that a particular solution is <m>\vec x = \begin{bmatrix} 0 \\ -2 \\ 0 \end{bmatrix}</m>.
+                    Since <m>T(\vec x) = A\vec x</m>, we use row operations on the augmented matrix <m>\begin{bmatrix} A \amp \rvert \amp \vec b \end{bmatrix}</m> to solve the system. Note that <md> \begin{bmatrix} 1 \amp -2 \amp 1 \amp \rvert \amp 4 \\ 1 \amp -1 \amp 0 \amp \rvert \amp 2 \\ 0 \amp -1 \amp 1 \amp \rvert \amp 2 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp -1 \amp \rvert \amp 0 \\ 0 \amp 1 \amp -1 \amp \rvert \amp -2 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</md>. We have that <m>x_3 = t \in \mathbb{R}</m> is a free variable and <m>x_2 = -2 + t</m> and <m>x_1 = t</m>. Thus, all solutions to <m>T(\vec x) = \vec b</m> are <md>\vec x = \begin{bmatrix} t \\ -2 + t \\ t \end{bmatrix} = \begin{bmatrix} 0 \\ -2 \\ 0 \end{bmatrix} + t\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}</md>. Letting <m>t = 0</m>, we have that a particular solution is <m>\vec x = \begin{bmatrix} 0 \\ -2 \\ 0 \end{bmatrix}</m>.
                 </p>
             </solution>
         </task>

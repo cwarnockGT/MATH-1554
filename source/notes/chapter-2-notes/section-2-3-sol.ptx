@@ -121,9 +121,9 @@
     </image>
 
     <p workspace="0.5in">
-      The matrix inverse <m>A^{-1}</m> transforms <m>A\vec x</m> back to <m>\vec x</m>, because <me>
+      The matrix inverse <m>A^{-1}</m> transforms <m>A\vec x</m> back to <m>\vec x</m>, because <md>
       A^{-1}(A\vec x)=(A^{-1}A)\vec x=\vec x.
-    </me>
+    </md>
     </p>
 
     <p><nbsp/></p>
@@ -167,17 +167,17 @@
     <example xml:id="ex-check-invertible" workspace="1in">
       <statement>
         <p> Is <m>A</m> invertible?</p>
-        <me>
+        <md>
           A = \begin{bmatrix}
             1 \amp 0 \amp -2\\
             3 \amp 1 \amp -2\\
             -5 \amp -1 \amp 9
           \end{bmatrix}
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
-            We can use IMT to determine if <m>A</m> is invertible by showing that <m>A</m> either makes at least one statement in the list true or makes at least one statement in the list false. Note that <me>A = \begin{bmatrix} 1 \amp 0 \amp -2 \\ 3 \amp 1 \amp -2 \\ -5 \amp -1 \amp 9 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp -2 \\ 0 \amp 1 \amp 4 \\ 0 \amp -1 \amp -1 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp -2 \\ 0 \amp 1 \amp 4 \\ 0 \amp 0 \amp 3 \end{bmatrix}</me>. We see that <m>A </m> has a pivot in every column. Therefore, by IMT, <m>A </m> must make every statment on the list true. In particular, we learn that <m>A </m> is invertible.
+            We can use IMT to determine if <m>A</m> is invertible by showing that <m>A</m> either makes at least one statement in the list true or makes at least one statement in the list false. Note that <md>A = \begin{bmatrix} 1 \amp 0 \amp -2 \\ 3 \amp 1 \amp -2 \\ -5 \amp -1 \amp 9 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp -2 \\ 0 \amp 1 \amp 4 \\ 0 \amp -1 \amp -1 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp -2 \\ 0 \amp 1 \amp 4 \\ 0 \amp 0 \amp 3 \end{bmatrix}</md>. We see that <m>A </m> has a pivot in every column. Therefore, by IMT, <m>A </m> must make every statment on the list true. In particular, we learn that <m>A </m> is invertible.
         </p>
       </solution>
     </example>
@@ -204,7 +204,7 @@
         </statement>
         <solution>
             <p>
-                Note that <me>\begin{bmatrix} 1 \amp 0 \amp 1 \\ 1 \amp h \amp 1 \\ 0 \amp 0 \amp 1 \end{bmatrix} \sim \begin{bmatrix} 1\amp 0 \amp 1 \\ 0 \amp h \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}</me>. Thus, <m>A </m>is missing a pivot if and only if <m>h = 0</m>. Therefore, <m>h = 0</m> is the only value of <m>h </m> which makes <m>A </m> singular.
+                Note that <md>\begin{bmatrix} 1 \amp 0 \amp 1 \\ 1 \amp h \amp 1 \\ 0 \amp 0 \amp 1 \end{bmatrix} \sim \begin{bmatrix} 1\amp 0 \amp 1 \\ 0 \amp h \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix}</md>. Thus, <m>A </m>is missing a pivot if and only if <m>h = 0</m>. Therefore, <m>h = 0</m> is the only value of <m>h </m> which makes <m>A </m> singular.
             </p>
         </solution>
     </task>
@@ -236,7 +236,7 @@
         </statement>
         <solution>
             <p>
-                Note that <me>\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 1 \\ 0 \amp h \amp 1 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 1 \\ 0 \amp h-1 \amp 0\end{bmatrix}</me>. Thus, <m>C </m> is missing a pivot in the third row if and only if <m>h = 1</m>. Therefore, <m>h = 1</m> is the only value of <m>h</m> which makes <m>C </m> singular.
+                Note that <md>\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 1 \\ 0 \amp h \amp 1 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 1 \\ 0 \amp h-1 \amp 0\end{bmatrix}</md>. Thus, <m>C </m> is missing a pivot in the third row if and only if <m>h = 1</m>. Therefore, <m>h = 1</m> is the only value of <m>h</m> which makes <m>C </m> singular.
             </p>
         </solution>
     </task>

@@ -33,9 +33,9 @@
     <definition workspace="true">
     <statement>
         <p>Let <m>A</m> be an <m>m\times n</m> matrix. Define a function</p>
-    <me>
+    <md>
       T:\mathbb{R}^n \to \mathbb{R}^m, \qquad T(\vec v) = A\vec v .
-    </me>
+    </md>
     
       <p>A function of this form is called a <term>matrix transformation</term>.</p>
     <ul workspace="true">
@@ -65,9 +65,9 @@
     <title>Functions from Calculus (and their graphs)</title>
 
     <p>Many familiar functions have domain and codomain <m>\mathbb{R}</m>. For example, the sine function can be described by the rule</p>
-    <me>
+    <md>
       f\colon \mathbb{R}\to\mathbb{R}, \qquad f(x)=\sin(x).
-    </me>
+    </md>
 
     <p>In calculus we often visualize a function via its graph: the horizontal axis represents the domain and the vertical axis the codomain.</p>
 
@@ -145,7 +145,7 @@
           <statement><p>Compute <m>T(\vec u)</m>.</p></statement>
           <solution>
             <p>
-                Note <me>T(\vec u) = A\vec u = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \\ 1 \amp 1 \end{bmatrix}\begin{bmatrix} 3 \\ 4 \end{bmatrix} = 3\begin{bmatrix} 1 \\ 0 \\ 1\end{bmatrix} + 4\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 7 \\ 4 \\ 7 \end{bmatrix}</me> So, <m>T(\vec u) = \begin{bmatrix} 7 \\ 4 \\ 7 \end{bmatrix}</m>. Another way of saying this is <m>\begin{bmatrix} 7 \\ 4 \\ 7 \end{bmatrix}</m> is the image of <m>\begin{bmatrix} 3 \\ 4 \end{bmatrix}</m> under <m>T</m>.
+                Note <md>T(\vec u) = A\vec u = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \\ 1 \amp 1 \end{bmatrix}\begin{bmatrix} 3 \\ 4 \end{bmatrix} = 3\begin{bmatrix} 1 \\ 0 \\ 1\end{bmatrix} + 4\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 7 \\ 4 \\ 7 \end{bmatrix}</md> So, <m>T(\vec u) = \begin{bmatrix} 7 \\ 4 \\ 7 \end{bmatrix}</m>. Another way of saying this is <m>\begin{bmatrix} 7 \\ 4 \\ 7 \end{bmatrix}</m> is the image of <m>\begin{bmatrix} 3 \\ 4 \end{bmatrix}</m> under <m>T</m>.
             </p>
         </solution>
         </task>
@@ -154,9 +154,9 @@
           <statement><p>Find <m>\vec v\in\mathbb{R}^2</m> so that <m>T(\vec v)=\vec b</m>.</p></statement>
           <solution>
             <p>
-                Note <me>T(\vec v) = \begin{bmatrix} 7 \\ 5 \\ 7 \end{bmatrix} \quad \implies \quad \begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \\ 1 \amp 1 \end{bmatrix}\vec v = \begin{bmatrix} 7 \\ 5 \\ 7 \end{bmatrix}</me> We have that <me>\begin{bmatrix} 1 \amp 1 \amp \rvert \amp 7 \\ 0 \amp 1 \amp \rvert \amp 5 \\ 1 \amp 1 \amp \rvert \amp 7 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 1 \amp \rvert \amp 7 \\ 0 \amp 1 \amp \rvert \amp 5 \\ 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp \rvert \amp 2 \\ 0 \amp 1 \amp \rvert \amp 5 \\ 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</me> Therefore, <m>\vec v = \begin{bmatrix} 2 \\ 5 \end{bmatrix}</m> is a vector in <m>\mathbb{R}^2</m> so that <m>T(\vec v) = \begin{bmatrix} 7 \\ 5 \\ 7\end{bmatrix}</m>.
+                Note <md>T(\vec v) = \begin{bmatrix} 7 \\ 5 \\ 7 \end{bmatrix} \quad \implies \quad \begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \\ 1 \amp 1 \end{bmatrix}\vec v = \begin{bmatrix} 7 \\ 5 \\ 7 \end{bmatrix}</md> We have that <md>\begin{bmatrix} 1 \amp 1 \amp \rvert \amp 7 \\ 0 \amp 1 \amp \rvert \amp 5 \\ 1 \amp 1 \amp \rvert \amp 7 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 1 \amp \rvert \amp 7 \\ 0 \amp 1 \amp \rvert \amp 5 \\ 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp \rvert \amp 2 \\ 0 \amp 1 \amp \rvert \amp 5 \\ 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</md> Therefore, <m>\vec v = \begin{bmatrix} 2 \\ 5 \end{bmatrix}</m> is a vector in <m>\mathbb{R}^2</m> so that <m>T(\vec v) = \begin{bmatrix} 7 \\ 5 \\ 7\end{bmatrix}</m>.
             </p>
-            <p> We can check this: <me>T(\vec v) = A\vec v = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \\ 1 \amp 1 \end{bmatrix}\begin{bmatrix} 2 \\ 5 \end{bmatrix} = 2\begin{bmatrix} 1 \\ 0 \\ 1\end{bmatrix} + 5\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 7 \\ 5 \\ 7 \end{bmatrix}</me>
+            <p> We can check this: <md>T(\vec v) = A\vec v = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \\ 1 \amp 1 \end{bmatrix}\begin{bmatrix} 2 \\ 5 \end{bmatrix} = 2\begin{bmatrix} 1 \\ 0 \\ 1\end{bmatrix} + 5\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 7 \\ 5 \\ 7 \end{bmatrix}</md>
             </p>
         </solution>
         </task>
@@ -169,7 +169,7 @@
           </statement>
           <solution>
             <p>
-                In order for there to be no <m>\vec v</m> so that <m>T(\vec v) = \vec c</m>, we need for the matrix equation <m>A\vec v = \vec c</m> to have no solution, or equivalenty, for the underlying linear system to be inconsistent. Let <m>\vec c = \begin{bmatrix} c_1 \\ c_2 \\ c_3 \end{bmatrix}</m> and note that <me>\begin{bmatrix} A \amp \rvert \amp \vec c\end{bmatrix} = \begin{bmatrix} 1 \amp 1 \amp \rvert \amp c_1 \\ 0 \amp 1 \amp \rvert \amp c_2 \\ 1 \amp 1 \amp \rvert \amp c_3 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 1 \amp \rvert \amp c_1 \\ 0 \amp 1 \amp \rvert \amp c_2 \\ 0 \amp 0 \amp \rvert \amp c_3 - c_1\end{bmatrix}</me> Therefore, by <xref ref="thm-inconsistent-system"/>, the system is inconsistent if and only if <m>c_3 - c_1 \neq 0</m>, or equivalently, if and only if <m>c_1 \neq c_3</m>. Thus, letting <m>\vec c = \begin{bmatrix} 1 \\ 0 \\ 2\end{bmatrix}</m> will result in there being no vectors <m>\vec v \in \mathbb{R}^2</m> with <m>T(\vec v) = \vec c</m>.
+                In order for there to be no <m>\vec v</m> so that <m>T(\vec v) = \vec c</m>, we need for the matrix equation <m>A\vec v = \vec c</m> to have no solution, or equivalenty, for the underlying linear system to be inconsistent. Let <m>\vec c = \begin{bmatrix} c_1 \\ c_2 \\ c_3 \end{bmatrix}</m> and note that <md>\begin{bmatrix} A \amp \rvert \amp \vec c\end{bmatrix} = \begin{bmatrix} 1 \amp 1 \amp \rvert \amp c_1 \\ 0 \amp 1 \amp \rvert \amp c_2 \\ 1 \amp 1 \amp \rvert \amp c_3 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 1 \amp \rvert \amp c_1 \\ 0 \amp 1 \amp \rvert \amp c_2 \\ 0 \amp 0 \amp \rvert \amp c_3 - c_1\end{bmatrix}</md> Therefore, by <xref ref="thm-inconsistent-system"/>, the system is inconsistent if and only if <m>c_3 - c_1 \neq 0</m>, or equivalently, if and only if <m>c_1 \neq c_3</m>. Thus, letting <m>\vec c = \begin{bmatrix} 1 \\ 0 \\ 2\end{bmatrix}</m> will result in there being no vectors <m>\vec v \in \mathbb{R}^2</m> with <m>T(\vec v) = \vec c</m>.
             </p>
           </solution>
         </task>
@@ -194,11 +194,11 @@
     <p><nbsp/></p>
 
     <p workspace="1in"> By linearity, for any scalars <m>c_1,\dots,c_k</m> and vectors <m>\vec v_1,\dots,\vec v_k</m>,
-    <me>
+    <md>
       T\!\big(c_1\vec v_1+\cdots+c_k\vec v_k\big)
       \;=\;
       c_1\,T(\vec v_1)+\cdots+c_k\,T(\vec v_k).
-    </me>
+    </md>
     </p>
 
     <p workspace="0.5in">This is the <term>principle of superposition</term>. In particular, once we know <m>T(\vec e_1),\dots,T(\vec e_n)</m>, we can compute <m>T(\vec v)</m> for any <m>\vec v \in \mathbb{R}^n</m>.</p>
@@ -226,7 +226,7 @@
             </statement>
             <solution>
                 <p>
-                    First, we can see what <m>T</m> does to specific vectors. Note that <me>T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right) = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix}1 \\ 0 \end{bmatrix} = 1\begin{bmatrix} 0 \\ 1 \end{bmatrix} + 0\begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</me>. Graphing the input vector <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> and the output vector <m>\begin{bmatrix}0 \\ 1 \end{bmatrix}</m> and comparing, we see that the linear transformation <m>T</m> might have rotated the vector <m>90^\circ</m> counterclockwise OR it may have reflected the vector about the line <m>y = x</m> (this swaps the <m>x</m> and <m>y</m> entries) OR it may have done something else. Let's try another vector and see if it narrows down the possibilities. Note that <me>T\left(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right) = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix} 0 \\ 1 \end{bmatrix} = 0\begin{bmatrix} 0 \\ 1 \end{bmatrix} + 1\begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</me>. Again, graphing the input and output vectors and comparing, we see that rotation by <m>90^\circ</m> counterclockwise is no longer a valid option. It does still seem that reflection about the line <m>x = x</m> is possible. Let's now see how the linear transformation changes an arbitrary input. Note that <me>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix} = x\begin{bmatrix} 0 \\ 1 \end{bmatrix} + y\begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} y \\ x \end{bmatrix}</me>. Therefore, we see that <m>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} y \\ x \end{bmatrix}</m> for any input vector <m>\vec x = \begin{bmatrix} x \\ y \end{bmatrix}</m>. Thus, the linear transformation <m>T</m> reflects vectors about the line <m>y = x</m>.
+                    First, we can see what <m>T</m> does to specific vectors. Note that <md>T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right) = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix}1 \\ 0 \end{bmatrix} = 1\begin{bmatrix} 0 \\ 1 \end{bmatrix} + 0\begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</md>. Graphing the input vector <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> and the output vector <m>\begin{bmatrix}0 \\ 1 \end{bmatrix}</m> and comparing, we see that the linear transformation <m>T</m> might have rotated the vector <m>90^\circ</m> counterclockwise OR it may have reflected the vector about the line <m>y = x</m> (this swaps the <m>x</m> and <m>y</m> entries) OR it may have done something else. Let's try another vector and see if it narrows down the possibilities. Note that <md>T\left(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right) = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix} 0 \\ 1 \end{bmatrix} = 0\begin{bmatrix} 0 \\ 1 \end{bmatrix} + 1\begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</md>. Again, graphing the input and output vectors and comparing, we see that rotation by <m>90^\circ</m> counterclockwise is no longer a valid option. It does still seem that reflection about the line <m>x = x</m> is possible. Let's now see how the linear transformation changes an arbitrary input. Note that <md>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix} = x\begin{bmatrix} 0 \\ 1 \end{bmatrix} + y\begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} y \\ x \end{bmatrix}</md>. Therefore, we see that <m>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} y \\ x \end{bmatrix}</m> for any input vector <m>\vec x = \begin{bmatrix} x \\ y \end{bmatrix}</m>. Thus, the linear transformation <m>T</m> reflects vectors about the line <m>y = x</m>.
                 </p>
             </solution>
         </task>
@@ -236,7 +236,7 @@
             </statement>
             <solution>
                 <p>
-                    Again, we can start to get an idea of how this transformation affects vectors geometrically by seeing how it acts on particular vectors. Note that <me>T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right) = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}\begin{bmatrix}1 \\ 0 \end{bmatrix} = 1\begin{bmatrix} 1 \\ 0 \end{bmatrix} + 0\begin{bmatrix} 0 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</me>. So, <m>T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right) = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> which makes it look like <m>T</m> doesn't do anything. Let's try another input vector: <me>T\left(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right) = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}\begin{bmatrix} 0 \\ 1 \end{bmatrix} = 0\begin{bmatrix} 1 \\ 0 \end{bmatrix} + 1\begin{bmatrix} 0 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}</me>. This time, <m>T</m> sent our input vector to the origin. Maybe you can see what kind of geometric operation can act on the previous two vectors in such a way. If not, let's see what <m>T</m> does to an arbitrary vector. Note that <me>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix} = x\begin{bmatrix} 1 \\ 0 \end{bmatrix} + y\begin{bmatrix} 0 \\ 0 \end{bmatrix} = \begin{bmatrix} x \\ 0 \end{bmatrix}</me>. Now, we see that <m>T</m> is projecting vectors onto the <m>x</m>-axis. (If you don't know what projection is, we will discuss it Chapter 6.)                    
+                    Again, we can start to get an idea of how this transformation affects vectors geometrically by seeing how it acts on particular vectors. Note that <md>T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right) = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}\begin{bmatrix}1 \\ 0 \end{bmatrix} = 1\begin{bmatrix} 1 \\ 0 \end{bmatrix} + 0\begin{bmatrix} 0 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</md>. So, <m>T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right) = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> which makes it look like <m>T</m> doesn't do anything. Let's try another input vector: <md>T\left(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right) = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}\begin{bmatrix} 0 \\ 1 \end{bmatrix} = 0\begin{bmatrix} 1 \\ 0 \end{bmatrix} + 1\begin{bmatrix} 0 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}</md>. This time, <m>T</m> sent our input vector to the origin. Maybe you can see what kind of geometric operation can act on the previous two vectors in such a way. If not, let's see what <m>T</m> does to an arbitrary vector. Note that <md>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix} = x\begin{bmatrix} 1 \\ 0 \end{bmatrix} + y\begin{bmatrix} 0 \\ 0 \end{bmatrix} = \begin{bmatrix} x \\ 0 \end{bmatrix}</md>. Now, we see that <m>T</m> is projecting vectors onto the <m>x</m>-axis. (If you don't know what projection is, we will discuss it Chapter 6.)                    
                 </p>
             </solution>
         </task>
@@ -246,7 +246,7 @@
           </statement>
           <solution>
             <p>
-                Let's go ahead and see what <m>T</m> does to an arbitrary vector: <me>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} k \amp 0 \\ 0 \amp k \end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix} = x\begin{bmatrix} k \\ 0 \end{bmatrix} + y\begin{bmatrix} 0 \\ k \end{bmatrix} = \begin{bmatrix} xk \\ yk \end{bmatrix} = k\begin{bmatrix} x \\ y \end{bmatrix}</me>. Therefore, <m>T</m> simply multiplies the input vector by <m>k</m>. Geometrically, this results in the input vector being scaled by <m>|k|</m> and rotated by <m>180^\circ</m> if <m>k &lt; 0</m>.
+                Let's go ahead and see what <m>T</m> does to an arbitrary vector: <md>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = \begin{bmatrix} k \amp 0 \\ 0 \amp k \end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix} = x\begin{bmatrix} k \\ 0 \end{bmatrix} + y\begin{bmatrix} 0 \\ k \end{bmatrix} = \begin{bmatrix} xk \\ yk \end{bmatrix} = k\begin{bmatrix} x \\ y \end{bmatrix}</md>. Therefore, <m>T</m> simply multiplies the input vector by <m>k</m>. Geometrically, this results in the input vector being scaled by <m>|k|</m> and rotated by <m>180^\circ</m> if <m>k &lt; 0</m>.
             </p>
           </solution>
         </task>
@@ -266,7 +266,7 @@
           </statement>
           <solution>
             <p>
-                Feel free to start by seeing what <m>T</m> does to particular inputs. We will go ahead and see how <m>T</m> acts on an arbitrary vector. Note that <me>T\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\right) = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1\amp  0 \\ 0 \amp 0 \amp 0 \end{bmatrix}\begin{bmatrix} x \\ y \\ z \end{bmatrix} = x\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + y\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} + z\begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix} = \begin{bmatrix} x \\ y \\ 0 \end{bmatrix}</me>. Note that <m>T</m> sets the <m>z</m>-compenent of any input vector to <m>0</m>. Geometrically, this result in the input vector getting projected onto the <m>xy</m>-plane.
+                Feel free to start by seeing what <m>T</m> does to particular inputs. We will go ahead and see how <m>T</m> acts on an arbitrary vector. Note that <md>T\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\right) = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1\amp  0 \\ 0 \amp 0 \amp 0 \end{bmatrix}\begin{bmatrix} x \\ y \\ z \end{bmatrix} = x\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + y\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} + z\begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix} = \begin{bmatrix} x \\ y \\ 0 \end{bmatrix}</md>. Note that <m>T</m> sets the <m>z</m>-compenent of any input vector to <m>0</m>. Geometrically, this result in the input vector getting projected onto the <m>xy</m>-plane.
             </p>
           </solution>
         </task>
@@ -276,7 +276,7 @@
             </statement>
             <solution>
                 <p>
-                    Note that <me>T\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\right) = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp -1 \amp  0 \\ 0 \amp 0 \amp 1 \end{bmatrix}\begin{bmatrix} x \\ y \\ z \end{bmatrix} = x\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + y\begin{bmatrix} 0 \\ -1 \\ 0 \end{bmatrix} + z\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} x \\ -y \\ z \end{bmatrix}</me>. Note that <m>T</m> negates the <m>y</m>-compenent of any input vector. Geometrically, this result in the input vector getting reflected about the <m>xz</m>-plane.
+                    Note that <md>T\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\right) = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp -1 \amp  0 \\ 0 \amp 0 \amp 1 \end{bmatrix}\begin{bmatrix} x \\ y \\ z \end{bmatrix} = x\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + y\begin{bmatrix} 0 \\ -1 \\ 0 \end{bmatrix} + z\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} x \\ -y \\ z \end{bmatrix}</md>. Note that <m>T</m> negates the <m>y</m>-compenent of any input vector. Geometrically, this result in the input vector getting reflected about the <m>xz</m>-plane.
                 </p>
             </solution>
         </task>
@@ -292,7 +292,7 @@
     <example xml:id="ex-4">
       <statement>
         <p>A linear transformation <m>T:\mathbb{R}^2\to\mathbb{R}^3</m> satisfies</p>
-        <me>
+        <md>
           T\!\left(\begin{bmatrix}1\\[2pt]0\end{bmatrix}\right)
           =
           \begin{bmatrix}5\\[2pt]-7\\[2pt]2\end{bmatrix},
@@ -300,12 +300,12 @@
           T\!\left(\begin{bmatrix}0\\[2pt]1\end{bmatrix}\right)
           =
           \begin{bmatrix}-3\\[2pt]8\\[2pt]0\end{bmatrix}.
-        </me>
+        </md>
         <p>What is the matrix that represents <m>T</m>?</p>
       </statement>
       <solution>
         <p>
-            We want to find <m>A</m> so that <m>T(\vec x) = A\vec x </m>. Let's use the given data points and the fact the <m>T</m> is a linear transformation to determine how <m>T</m> acts on an arbitrary vector. First, note that we can represent an arbitrary vector <m>\begin{bmatrix} x \\ y \end{bmatrix}</m> as a linear combination of <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> and <m>\begin{bmatrix} 0 \\ 1 \end{bmatrix}</m> in the following way. <me>\begin{bmatrix} x \\ y \end{bmatrix} = x\begin{bmatrix} 1 \\ 0 \end{bmatrix} + y\begin{bmatrix} 0 \\ 1 \end{bmatrix}</me>. Applying the linear transformation <m>T</m> to both sides yields <me>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = T\left(x\begin{bmatrix} 1 \\ 0 \end{bmatrix} + y\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right)</me>. Since <m>T</m> is a linear transfomration, we know that <m>T(\vec u + \vec v) = T(\vec u) + T(\vec v)</m>. Therefore, we have that <me>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = T\left(x\begin{bmatrix}1 \\ 0 \end{bmatrix}\right) + T\left(y\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right)</me> Another property of linear transformations we can use is that <m>T(c\vec v) = cT(\vec v)</m>. Thus, we have that <me>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = x \ T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right) + y \ T\left(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right)</me>. Subbing in the given information, we have that <me>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = x\begin{bmatrix} 5 \\ -7 \\ 2 \end{bmatrix} + y\begin{bmatrix} -3 \\ 8 \\ 0 \end{bmatrix} = \begin{bmatrix} 5 \amp -3 \\ -7 \amp 8 \\ 2 \amp 0 \end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}</me>. Therefore, we have that <m>A = \begin{bmatrix} 5 \amp -3 \\ -7 \amp 8 \\ 2 \amp 0 \end{bmatrix}</m> is the matrix that represents <m>T</m>.</p>
+            We want to find <m>A</m> so that <m>T(\vec x) = A\vec x </m>. Let's use the given data points and the fact the <m>T</m> is a linear transformation to determine how <m>T</m> acts on an arbitrary vector. First, note that we can represent an arbitrary vector <m>\begin{bmatrix} x \\ y \end{bmatrix}</m> as a linear combination of <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> and <m>\begin{bmatrix} 0 \\ 1 \end{bmatrix}</m> in the following way. <md>\begin{bmatrix} x \\ y \end{bmatrix} = x\begin{bmatrix} 1 \\ 0 \end{bmatrix} + y\begin{bmatrix} 0 \\ 1 \end{bmatrix}</md>. Applying the linear transformation <m>T</m> to both sides yields <md>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = T\left(x\begin{bmatrix} 1 \\ 0 \end{bmatrix} + y\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right)</md>. Since <m>T</m> is a linear transfomration, we know that <m>T(\vec u + \vec v) = T(\vec u) + T(\vec v)</m>. Therefore, we have that <md>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = T\left(x\begin{bmatrix}1 \\ 0 \end{bmatrix}\right) + T\left(y\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right)</md> Another property of linear transformations we can use is that <m>T(c\vec v) = cT(\vec v)</m>. Thus, we have that <md>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = x \ T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right) + y \ T\left(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right)</md>. Subbing in the given information, we have that <md>T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = x\begin{bmatrix} 5 \\ -7 \\ 2 \end{bmatrix} + y\begin{bmatrix} -3 \\ 8 \\ 0 \end{bmatrix} = \begin{bmatrix} 5 \amp -3 \\ -7 \amp 8 \\ 2 \amp 0 \end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}</md>. Therefore, we have that <m>A = \begin{bmatrix} 5 \amp -3 \\ -7 \amp 8 \\ 2 \amp 0 \end{bmatrix}</m> is the matrix that represents <m>T</m>.</p>
             <p>
                 Note: The matrix representing a linear transformation is usually not formed by simply putting the given vectors as the columns. It was in this example since we were told what <m>T</m> did to the <term>standard vectors</term>. We will learn more about standard vectors and the matrix of a linear transformation in the next section.
             </p>

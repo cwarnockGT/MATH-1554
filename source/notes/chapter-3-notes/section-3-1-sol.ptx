@@ -35,14 +35,14 @@
             If <m>n&gt;1</m>, then
           </li>
         </ul>
-        <me>
+        <md>
           \operatorname{det}(A)
           =
           a_{11}\operatorname{det}(A_{11})
           - a_{12}\operatorname{det}(A_{12})
           + \cdots
           + (-1)^{1+n} a_{1n}\operatorname{det}(A_{1n}),
-        </me>
+        </md>
         <p>
           where <m>A_{ij}</m> is the submatrix obtained by deleting row <m>i</m> and column <m>j</m> of <m>A</m>.
         </p>
@@ -57,7 +57,7 @@
       </statement>
       <solution>
         <p>
-            Using <xref ref="def-determinant"/>, we have that <me>\det\left(\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}\right) = \begin{vmatrix} a \amp b \\ c \amp d \end{vmatrix} = a\det\left(\begin{bmatrix} d \end{bmatrix}\right) - b\det\left(\begin{bmatrix} c \end{bmatrix}\right) = ad - bc</me>.
+            Using <xref ref="def-determinant"/>, we have that <md>\det\left(\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}\right) = \begin{vmatrix} a \amp b \\ c \amp d \end{vmatrix} = a\det\left(\begin{bmatrix} d \end{bmatrix}\right) - b\det\left(\begin{bmatrix} c \end{bmatrix}\right) = ad - bc</md>.
         </p>
       </solution>
     </example>
@@ -73,14 +73,14 @@
     <example xml:id="ex-det-3x3" workspace="true">
       <statement>
         <p>Use the <xref ref="def-determinant" text="custom">definition</xref> to compute</p>
-        <me>
+        <md>
           \operatorname{det}
           \begin{bmatrix}
             1 \amp -5 \amp 2\\
             2 \amp 4 \amp -1\\
             0 \amp 3 \amp 0
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -95,14 +95,14 @@
     <example xml:id="ex-det-3x3-2" workspace="true">
       <statement>
         <p>Use the <xref ref="def-determinant" text="custom">definition</xref> to compute</p>
-        <me>
+        <md>
           \operatorname{det}
           \begin{bmatrix}
             0 \amp 3 \amp 0\\
             2 \amp 4 \amp -1\\
             1 \amp -5 \amp 2
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -125,13 +125,13 @@
         <p>
           For an <m>n\times n</m> matrix <m>A</m>, the <m>(i,j)</m> cofactor is
         </p>
-        <me>
+        <md>
           C_{ij} = (-1)^{i+j}\operatorname{det}(A_{ij}).
-        </me>
+        </md>
         <p>
           The sign pattern alternates in a checkerboard:
         </p>
-        <me>
+        <md>
           \begin{bmatrix}
             + \amp - \amp + \amp - \amp \cdots\\
             - \amp + \amp - \amp + \amp \cdots\\
@@ -139,7 +139,7 @@
             - \amp + \amp - \amp + \amp \cdots\\
             \vdots \amp \vdots \amp \vdots \amp \vdots \amp \ddots
           \end{bmatrix}
-        </me>
+        </md>
       </statement>
     </definition>
 
@@ -151,9 +151,9 @@
           The determinant of <m>A</m> can be computed by expanding along any row or any column.
           For example, expanding down the <m>j</m>-th column:
         </p>
-        <me>
+        <md>
           \operatorname{det}(A) = a_{1j}C_{1j} + a_{2j}C_{2j} + \cdots + a_{nj}C_{nj}.
-        </me>
+        </md>
       </statement>
     </theorem>
 
@@ -169,19 +169,19 @@
     <example xml:id="ex-det-4x4" workspace="true">
       <statement>
         <p>Use <xref ref="thm-cofactor-expansion-any-row-col"/> to compute the determinant of <m>A</m> in an efficient manner.
-        <me>
+        <md>
           A = \begin{bmatrix}
             5 \amp 4 \amp 3 \amp 2\\
             0 \amp 1 \amp 2 \amp 0\\
             0 \amp -1 \amp 1 \amp 0\\
             0 \amp 1 \amp 1 \amp 3
           \end{bmatrix}.
-        </me>
+        </md>
     </p>
       </statement>
       <solution>
         <p>
-            We will calculate the determinant by expanding along the first column. Note that <me>\left| A \right| = 5\begin{vmatrix} 1 \amp 2 \amp 0 \\ -1 \amp 1 \amp 0 \\ 1 \amp 1 \amp 3 \end{vmatrix} - 0 + 0 - 0</me>. To calculate the determinant of the remaining <m>3 \times 3</m> matrix, we can expand over any row or column we choose. How about expanding over Column 3 since there are several 0's. Note that <me>\left| A \right| = 5\begin{vmatrix} 1 \amp 2 \amp 0 \\ -1 \amp 1 \amp 0 \\ 1 \amp 1 \amp 3 \end{vmatrix} = 5\left(0 - 0 + 3\begin{vmatrix} 1 \amp 2 \\ -1 \amp 1 \end{vmatrix}\right) = 5(3)(3) = 45.</me>
+            We will calculate the determinant by expanding along the first column. Note that <md>\left| A \right| = 5\begin{vmatrix} 1 \amp 2 \amp 0 \\ -1 \amp 1 \amp 0 \\ 1 \amp 1 \amp 3 \end{vmatrix} - 0 + 0 - 0</md>. To calculate the determinant of the remaining <m>3 \times 3</m> matrix, we can expand over any row or column we choose. How about expanding over Column 3 since there are several 0's. Note that <md>\left| A \right| = 5\begin{vmatrix} 1 \amp 2 \amp 0 \\ -1 \amp 1 \amp 0 \\ 1 \amp 1 \amp 3 \end{vmatrix} = 5\left(0 - 0 + 3\begin{vmatrix} 1 \amp 2 \\ -1 \amp 1 \end{vmatrix}\right) = 5(3)(3) = 45.</md>
         </p>
       </solution>
     </example>
@@ -199,9 +199,9 @@
         <p>
           If <m>A</m> is triangular (upper or lower), then
         </p>
-        <me>
+        <md>
           \operatorname{det}(A) = a_{11}a_{22}a_{33}\cdots a_{nn},
-        </me>
+        </md>
         <p>
           the product of its diagonal entries.
         </p>
@@ -214,7 +214,7 @@
         <p>
           Compute the determinant of the following triangular matrix.
         </p>
-        <me>
+        <md>
           A = \begin{bmatrix}
             7 \amp \pi \amp \pi^2 \amp \pi^3 \amp \pi^4 \amp \pi^5 \amp \pi^6 \\
             0 \amp 6 \amp \pi \amp \pi^2 \amp \pi^3  \amp \pi^4 \amp \pi^5 \\
@@ -224,7 +224,7 @@
             0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 2 \amp \pi\\
             0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 1
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
       <solution>
         <p>

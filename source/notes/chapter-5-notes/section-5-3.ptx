@@ -87,7 +87,7 @@
       <ul>
         <li>Similar matrices have exactly the same eigenvalues with exactly the same algebraic multiplicity for each eigenvalue and exactly the same geometric multiplicity for each eigenvalue.</li>
         <li>The converse of <xref ref="thm-similar-same-charpoly"/> is not true; that is, just because two matrices have the same characterisitc polynomial, that does not mean that they are similar. For example,
-        <me>
+        <md>
           \begin{bmatrix}
             0 \amp 1\\
             0 \amp 0
@@ -97,7 +97,7 @@
             0 \amp 0\\
             0 \amp 0
           \end{bmatrix}
-        </me>
+        </md>
         have the same characteristic polynomial, but are not similar because the eigenvalue <m>\lambda = 0</m> does not have the same geometric multiplicty for each matrix.</li>
       </ul>
     </p>
@@ -132,12 +132,12 @@
     </definition>
 
     <p>Examples of diagonal matrices:</p>
-    <me>
+    <md>
       \begin{bmatrix}2 \amp 0\\ 0 \amp 2\end{bmatrix},\quad
       \begin{bmatrix}2\end{bmatrix},\quad
       I_n,\quad
       \begin{bmatrix}0 \amp 0\\ 0 \amp 0\end{bmatrix}.
-    </me>
+    </md>
 
     <p><nbsp/></p>
 
@@ -150,7 +150,7 @@
     <example xml:id="ex-5-3-powers-diagonal" workspace="true">
       <title>Example: Powers of a Diagonal Matrix</title>
       <statement>
-        <p>Let <me> A=\begin{bmatrix} 3 \amp 0\\ 0 \amp 0.5 \end{bmatrix}</me>. Compute <m>A^2</m> and <m>A^k</m>.</p>
+        <p>Let <md> A=\begin{bmatrix} 3 \amp 0\\ 0 \amp 0.5 \end{bmatrix}</md>. Compute <m>A^2</m> and <m>A^k</m>.</p>
       </statement>
     </example>
 
@@ -175,9 +175,9 @@
           A matrix <m>A\in\mathbb{R}^{n\times n}</m> is <term>diagonalizable</term> if it is similar to a diagonal matrix
           <m>D</m>; that is, there exists an invertible matrix <m>P</m> such that
         </p>
-        <me>
+        <md>
           A=PDP^{-1}.
-        </me>
+        </md>
       </statement>
     </definition>
 
@@ -195,7 +195,7 @@
           A matrix <m>A</m> is diagonalizable if and only if <m>A</m> has <m>n</m> linearly independent eigenvectors.
           Equivalently,
         </p>
-        <me>
+        <md>
           A = \bigl[\vec v_1\ \vec v_2\ \cdots\ \vec v_n\bigr]\,
           \begin{bmatrix}
             \lambda_1 \amp  \amp  \amp \\
@@ -204,7 +204,7 @@
              \amp  \amp  \amp \lambda_n
           \end{bmatrix}
           \bigl[\vec v_1\ \vec v_2\ \cdots\ \vec v_n\bigr]^{-1},
-        </me>
+        </md>
         <p>
           where <m>\vec v_1,\dots,\vec v_n</m> are linearly independent eigenvectors and
           <m>\lambda_1,\dots,\lambda_n</m> are the corresponding eigenvalues (in order).
@@ -260,12 +260,12 @@
         <example xml:id="ex-5-3-diagonalize-1" workspace="true">
       <statement>
         <p>Diagonalize if possible:</p>
-        <me>
+        <md>
           \begin{bmatrix}
             3 \amp 1\\
             0 \amp 3
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
 
@@ -280,12 +280,12 @@
     <example xml:id="ex-5-3-diagonalize-2" workspace="true">
       <statement>
         <p>Diagonalize if possible:</p>
-        <me>
+        <md>
           \begin{bmatrix}
             2 \amp 6\\
             0 \amp -1
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
 
@@ -304,13 +304,13 @@
           The eigenvalues of <m>A</m> are <m>\lambda=3,1</m>. If possible, construct <m>P</m> and <m>D</m> such that
           <m>A=PDP^{-1}</m>. Verify by checking that <m>AP = PD</m>.
         </p>
-        <me>
+        <md>
           A=\begin{bmatrix}
             7 \amp 4 \amp 16\\
             2 \amp 5 \amp 8\\
             -2 \amp -2 \amp -5
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
 
@@ -326,13 +326,13 @@
         <p>
           Diagonalize the following matrix, if possible.
         </p>
-        <me>
+        <md>
           A=\begin{bmatrix}
             2 \amp 4 \amp 3\\
             -4 \amp -6 \amp -3\\
             3 \amp 3 \amp 1
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
 
@@ -350,7 +350,7 @@
         <p>
           Note that
         </p>
-        <me>
+        <md>
           \vec x_k=
           \begin{bmatrix}
             0 \amp 1\\
@@ -362,7 +362,7 @@
             1
           \end{bmatrix},\quad
           k=1,2,3,\ldots
-        </me>
+        </md>
         <p>
           generates a well-known sequence of numbers. Use diagonalization to find a matrix expression that gives the
           <m>n</m>-th number in this sequence.

@@ -69,7 +69,7 @@
       <statement>
         <p>Let <m>A</m> be an <m>m \times n</m> matrix with columns <m>\vec{a}_1,\dotsc,\vec{a}_n</m> and let <m>\vec{x} \in \mathbb{R}^{n}</m>. The <term>matrix vector product</term> <m>A\vec{x}</m> is the following linear combination of the columns of <m>A</m>:
         </p>
-        <me>
+        <md>
           A \vec{x}
           =
           \begin{bmatrix}
@@ -82,7 +82,7 @@
           \end{bmatrix}
           =
           x_1 \vec{a}_1 + x_2 \vec{a}_2 + \cdots + x_n \vec{a}_n.
-        </me>
+        </md>
         <p>In particular, <m>A\vec{x}</m> lies in the span of the columns of <m>A</m>.</p>
       </statement>
     </definition>
@@ -152,16 +152,16 @@
       <statement>
         <p>Let <m>A</m> be an <m>m \times n</m> matrix with columns <m>\vec{a}_1,\dotsc,\vec{a}_n</m>, let <m>\vec{x} \in \mathbb{R}^{n}</m>, and let <m>\vec{b} \in \mathbb{R}^{m}</m>. The solutions to
         </p>
-        <me>A \vec{x} = \vec{b}</me>
+        <md>A \vec{x} = \vec{b}</md>
         <p>are the same as the solutions to the vector equation
         </p>
-        <me>x_1 \vec{a}_1 + \cdots + x_n \vec{a}_n \;=\; \vec{b},</me>
+        <md>x_1 \vec{a}_1 + \cdots + x_n \vec{a}_n \;=\; \vec{b},</md>
         <p>which are the same as the solutions to the linear system with augmented matrix</p>
-        <me>
+        <md>
           \begin{bmatrix}
           \vec{a}_1 \ \amp \ \vec{a}_2 \ \amp \ \cdots \ \amp \ \vec{a}_n \ \amp \vert \amp \ \vec{b}
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </theorem>
 
@@ -190,18 +190,18 @@
     <example workspace="5in">
       <statement>
         <p>For what vectors <m>\vec{b} = \begin{bmatrix} b_1 \\[2pt] b_2 \\[2pt] b_3 \end{bmatrix}</m> does the equation have a solution?</p>
-        <me>
+        <md>
           \begin{bmatrix}
           1 \ \amp \ 3 \ \amp \ 4 \\
           2 \ \amp \ 8 \ \amp \ 4 \\
           0 \ \amp \ 1 \ \amp \ -2
           \end{bmatrix}
           \vec{x} \;=\; \vec{b}
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
-            By <xref ref="thm-existence-span"/>, the system <m>A\vec x = \vec b</m> if and only if <m>\vec b</m> is a linear combination of the columns of <m>A</m>. Therefore, we have that <me>\vec b \in \operatorname{Span}\left\{\begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 8 \\ 1 \end{bmatrix}, \begin{bmatrix} 4 \\ 4 \\ -2 \end{bmatrix}\right\}</me> Unfortunately, this description of <m>\vec b</m> is not too informative as we do not know exactly how "big" that span is. (We will understand more about how "big" a span is when we learn about dimension in Chapter 2.)
+            By <xref ref="thm-existence-span"/>, the system <m>A\vec x = \vec b</m> if and only if <m>\vec b</m> is a linear combination of the columns of <m>A</m>. Therefore, we have that <md>\vec b \in \operatorname{Span}\left\{\begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 8 \\ 1 \end{bmatrix}, \begin{bmatrix} 4 \\ 4 \\ -2 \end{bmatrix}\right\}</md> Unfortunately, this description of <m>\vec b</m> is not too informative as we do not know exactly how "big" that span is. (We will understand more about how "big" a span is when we learn about dimension in Chapter 2.)
         </p>
         <p> Let's augment <m>A</m> with <m>\vec b</m> and row reduce to determine if we encounter any problems. Note the following:</p>
         <p>    
@@ -213,10 +213,10 @@
             <p> We could stop now, as we have answered the question, but notice we can work with the equation <m>b_2 - 2b_1 - 2b_3 = 0</m> to get a more explicit description for <m>\vec b</m>. Solving for <m>b_1</m>, we see that <m>b_1 = \frac{1}{2}b_2 - b_3</m>. We can think of this single equation in three variables as a system of linear equations. With this view, we see that variable <m>b_1</m> is a pivot variable (which is why we solved for it), and variables <m>b_2</m> and <m>b_3</m> are free variables. By free variables, we literally mean that <m>b_2</m> and <m>b_3</m> can take on any values in <m>\mathbb{R}</m>. To emphasize this, I usually set my free variables equal to other variables, typically <m>t, r, p, q, \dots</m>. So, we have <m>b_2 = r \in \mathbb{R}</m> and <m>b_3 = t \in \mathbb{R}</m>. (Again, the renaming of the free variables is not necessary, but I like to do it. You are free to keep the free variables named <m>b_2</m> and <m>b_3</m>.)</p>
                 <p>
                     Now, we can solve for our pivot variable in terms of the free variables. So we get <m>b_1 = \frac{1}{2}r - 2t</m>. Putting this all together, we see that the vectors <m>\vec b \in \mathbb{R}^3</m> which make the system <m>A\vec x = \vec b</m> consistent are precisely the following:
-                    <me>\vec b = \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix} = \begin{bmatrix} \frac{1}{2}r - t \\ r \\ t \end{bmatrix} = \begin{bmatrix} \frac{1}{2}r \\ r \\ 0 \end{bmatrix} + \begin{bmatrix} -t \\ 0 \\ t \end{bmatrix} = r\begin{bmatrix} \frac{1}{2} \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}</me> This form of our answer is called the <term>parametric vector form</term> which will be covered in the next section.
+                    <md>\vec b = \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix} = \begin{bmatrix} \frac{1}{2}r - t \\ r \\ t \end{bmatrix} = \begin{bmatrix} \frac{1}{2}r \\ r \\ 0 \end{bmatrix} + \begin{bmatrix} -t \\ 0 \\ t \end{bmatrix} = r\begin{bmatrix} \frac{1}{2} \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}</md> This form of our answer is called the <term>parametric vector form</term> which will be covered in the next section.
             </p>
             <p>
-                Note that at the beginning, we saw that <m>\vec b</m> had to live in the span of the columns of <m>A</m>. Now, we have learned a more descriptive way of describing <m>\vec b</m> in terms of span; that is, we have that <me>\vec b \in \operatorname{Span}\left\{\begin{bmatrix} \frac{1}{2} \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}\right\}</me> In fact, we have that  <me>\operatorname{Span}\left\{\begin{bmatrix} \frac{1}{2} \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}\right\} = \operatorname{Span}\left\{\begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 8 \\ 1 \end{bmatrix}, \begin{bmatrix} 4 \\ 4 \\ -2 \end{bmatrix}\right\}</me> This means that the original span was actually only 2-dimensional and not 3-dimensional as it at first appeared.
+                Note that at the beginning, we saw that <m>\vec b</m> had to live in the span of the columns of <m>A</m>. Now, we have learned a more descriptive way of describing <m>\vec b</m> in terms of span; that is, we have that <md>\vec b \in \operatorname{Span}\left\{\begin{bmatrix} \frac{1}{2} \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}\right\}</md> In fact, we have that  <md>\operatorname{Span}\left\{\begin{bmatrix} \frac{1}{2} \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}\right\} = \operatorname{Span}\left\{\begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ 8 \\ 1 \end{bmatrix}, \begin{bmatrix} 4 \\ 4 \\ -2 \end{bmatrix}\right\}</md> This means that the original span was actually only 2-dimensional and not 3-dimensional as it at first appeared.
             </p>
       </solution>
     </example>
@@ -229,13 +229,13 @@
     <example>
       <statement>
         <p>For what values of <m>h</m> is the system <m>A\vec{x} = \vec{b}</m> consistent for every possible choice of vector <m>\vec{b}</m>?</p>
-        <me>
+        <md>
           A \;=\; \begin{bmatrix}
           1 \ \amp \ h \ \amp \ 2 \\
           0 \ \amp \ 6 \ \amp \ 2 \\
           -3 \ \amp \ 0 \ \amp \ -4
           \end{bmatrix}
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -263,40 +263,40 @@
     <olist>
       <item>
         <p>A system of equations:</p>
-        <me>
+        <md>
           \begin{aligned}
           2x_1 + 3x_2 \ \amp=\ 7 \\
           x_1 - x_2 \ \amp=\ 5
           \end{aligned}
-        </me>
+        </md>
       </item>
 
       <item>
         <p>An augmented matrix:</p>
-        <me>
+        <md>
           \left[
           \begin{array}{rr|r}
           2 \ \amp \ 3 \ \amp \ 7 \\
           1 \ \amp \ -1 \ \amp \ 5
           \end{array}
           \right]
-        </me>
+        </md>
       </item>
 
       <item>
         <p>A vector equation:</p>
-        <me>
+        <md>
           x_1 \begin{bmatrix} 2 \\[2pt] 1 \end{bmatrix}
           \;+\;
           x_2 \begin{bmatrix} 3 \\[2pt] -1 \end{bmatrix}
           \;=\;
           \begin{bmatrix} 7 \\[2pt] 5 \end{bmatrix}
-        </me>
+        </md>
       </item>
 
       <item>
         <p>A matrix equation:</p>
-        <me>
+        <md>
           \begin{bmatrix}
           2 \ \amp \ 3 \\
           1 \ \amp \ -1
@@ -308,7 +308,7 @@
           \begin{bmatrix}
           7 \\ 5
           \end{bmatrix}
-        </me>
+        </md>
       </item>
     </olist>
 

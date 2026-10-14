@@ -32,7 +32,7 @@
         <p>
           A <term>zero matrix</term> is any matrix whose every entry is zero.
         </p>
-        <me>
+        <md>
           0_{2\times 3}=
           \begin{bmatrix}
             0 \amp 0 \amp 0\\
@@ -44,7 +44,7 @@
             0\\
             0
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </definition>
 
@@ -55,7 +55,7 @@
         <p>
           The <m>n\times n</m> <term>identity matrix</term> has ones on the main diagonal and zeros elsewhere.
         </p>
-        <me>
+        <md>
           I_2=
           \begin{bmatrix}
             1 \amp 0\\
@@ -68,7 +68,7 @@
             0 \amp 1 \amp 0\\
             0 \amp 0 \amp 1
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </definition>
 
@@ -110,7 +110,7 @@
         <p>
           If
         </p>
-        <me>
+        <md>
           \begin{bmatrix}
             1 \amp 2 \amp 3\\
             4 \amp 5 \amp 6
@@ -125,14 +125,14 @@
             15 \amp 10 \amp 17\\
             4 \amp 5 \amp 16
           \end{bmatrix},
-        </me>
+        </md>
         <p>
           what are the values of <m>c</m> and <m>k</m>?
         </p>
       </statement>
       <solution>
         <p>
-            Note that we can use rules (a) and (b) above to combine the left expression and get the following equation: <me>\begin{bmatrix} 1 + 7c \amp 2 + 4c \amp 3 + 7c \\ 4 \amp 5 \amp 6 + kc \end{bmatrix} = \begin{bmatrix} 15 \amp 10 \amp 17 \\ 4 \amp 5 \amp 16 \end{bmatrix}</me> Setting corresponding entries equal to one another, we see that <m>c = 2</m> and <m>k = 5</m>.
+            Note that we can use rules (a) and (b) above to combine the left expression and get the following equation: <md>\begin{bmatrix} 1 + 7c \amp 2 + 4c \amp 3 + 7c \\ 4 \amp 5 \amp 6 + kc \end{bmatrix} = \begin{bmatrix} 15 \amp 10 \amp 17 \\ 4 \amp 5 \amp 16 \end{bmatrix}</md> Setting corresponding entries equal to one another, we see that <m>c = 2</m> and <m>k = 5</m>.
         </p>
       </solution>
     </example>
@@ -167,7 +167,7 @@
           Let <m>A</m> be an <m>m\times n</m> matrix and <m>B</m> be an <m>n\times p</m> matrix.
           The product <m>AB</m> is an <m>m\times p</m> matrix, given by
         </p>
-        <me>
+        <md>
           AB
           =
           A
@@ -178,7 +178,7 @@
           \begin{bmatrix}
             A\vec b_1 \amp \cdots \amp A\vec b_p
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </definition>
 
@@ -209,9 +209,9 @@
           <m>B\in\mathbb{R}^{n\times p}</m> has columns <m>\vec b_j</m>, then each element of
           <m>C=AB</m> is
         </p>
-        <me>
+        <md>
           c_{ij}=\vec a_i\cdot \vec b_j.
-        </me>
+        </md>
       </statement>
     </theorem>
 
@@ -220,7 +220,7 @@
     <example xml:id="ex-row-column-compute" workspace="true">
       <statement>
         <p>Compute the following using the row-column method.</p>
-        <me>
+        <md>
           C=AB=
           \begin{bmatrix}
             2 \amp 0\\
@@ -230,14 +230,14 @@
             3 \amp 0 \amp 1\\
             4 \amp 5 \amp 6
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
             Note that 
         </p>
             <m> \begin{eqnarray*} AB \amp = \amp \begin{bmatrix} 2 \amp 0 \\ 1 \amp -1 \end{bmatrix}\begin{bmatrix} 3 \amp 0 \amp 1 \\ 4 \amp 5 \amp 6 \end{bmatrix}\\ \amp = \amp \begin{bmatrix} 2 \cdot 3 + 0 \cdot 4 \amp 2 \cdot 0 + 0 \cdot 5 \amp 2 \cdot 1 + 0 \cdot 6 \\ 1 \cdot 3 + (-1) \cdot 4 \amp 1 \cdot 0 + (-1) \cdot 5 \amp 1 \cdot 1 + (-1) \cdot 6 \end{bmatrix}\\ \amp = \amp \begin{bmatrix} 6 \amp 0 \amp 2 \\ -1 \amp -5 \amp -5 \end{bmatrix}\end{eqnarray*}</m> 
-            <p>Note that this method is faster than using the original definition of matrix multiplication given in <xref ref="def-matrix-multiplication-columns"/>. For example, to compute the first column of <m>AB </m> using the original definition, we would compute the following: <me>\begin{bmatrix}2 \amp 0 \\ 1 \amp -1 \end{bmatrix}\begin{bmatrix} 3 \\ 4 \end{bmatrix} = 3\begin{bmatrix} 2 \\ 1\end{bmatrix} + 4 \begin{bmatrix} 0 \\ -1 \end{bmatrix} = \begin{bmatrix} 6 \\ -1 \end{bmatrix}</me>
+            <p>Note that this method is faster than using the original definition of matrix multiplication given in <xref ref="def-matrix-multiplication-columns"/>. For example, to compute the first column of <m>AB </m> using the original definition, we would compute the following: <md>\begin{bmatrix}2 \amp 0 \\ 1 \amp -1 \end{bmatrix}\begin{bmatrix} 3 \\ 4 \end{bmatrix} = 3\begin{bmatrix} 2 \\ 1\end{bmatrix} + 4 \begin{bmatrix} 0 \\ -1 \end{bmatrix} = \begin{bmatrix} 6 \\ -1 \end{bmatrix}</md>
         </p>
       </solution>
     </example>
@@ -282,7 +282,7 @@
       The associative property is <m>(AB)C = A(BC)</m>. If <m>C=\vec x</m>, then:
     </p>
 
-    <me>(AB)\vec x = A(B\vec x).</me>
+    <md>(AB)\vec x = A(B\vec x).</md>
 
     <p>Schematically:</p>
 
@@ -332,20 +332,20 @@
     <example xml:id="ex-noncomm-with-A" workspace="true">
       <statement>
         <p>Let</p>
-        <me>
+        <md>
           A=
           \begin{bmatrix}
             1 \amp 1\\
             0 \amp 0
           \end{bmatrix}.
-        </me>
+        </md>
         <p>
           Give an example of a <m>2\times 2</m> matrix <m>B</m> such that <m>AB\neq BA</m>.
         </p>
       </statement>
       <solution>
         <p>
-            Honestly, pretty much any matrix you choose at random will work. For example, let <m>B = \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix}</m> and note that <me>AB = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix}\begin{bmatrix}1 \amp 2 \\ 3 \amp 4 \end{bmatrix} = \begin{bmatrix} 1 \cdot 1 + 1 \cdot 3 \amp 1 \cdot 2 + 1 \cdot 4 \\ 0 \cdot 1 + 0 \cdot 3 \amp 0 \cdot 2 + 0 \cdot 4 \end{bmatrix} = \begin{bmatrix} 4 \amp 6 \\ 0 \amp 0 \end{bmatrix}</me>, while <me>BA = \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix}\begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix} = \begin{bmatrix} 1 \cdot 1 + 2 \cdot 0 \amp 1 \cdot 1 + 2 \cdot 0 \\ 3 \cdot 1 + 4 \cdot 0 \amp 3 \cdot 1 + 4 \cdot 0 \end{bmatrix} = \begin{bmatrix} 1 \amp 1 \\ 3 \amp 3 \end{bmatrix}</me>. Therefore, <m>AB \neq BA </m>.
+            Honestly, pretty much any matrix you choose at random will work. For example, let <m>B = \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix}</m> and note that <md>AB = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix}\begin{bmatrix}1 \amp 2 \\ 3 \amp 4 \end{bmatrix} = \begin{bmatrix} 1 \cdot 1 + 1 \cdot 3 \amp 1 \cdot 2 + 1 \cdot 4 \\ 0 \cdot 1 + 0 \cdot 3 \amp 0 \cdot 2 + 0 \cdot 4 \end{bmatrix} = \begin{bmatrix} 4 \amp 6 \\ 0 \amp 0 \end{bmatrix}</md>, while <md>BA = \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix}\begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix} = \begin{bmatrix} 1 \cdot 1 + 2 \cdot 0 \amp 1 \cdot 1 + 2 \cdot 0 \\ 3 \cdot 1 + 4 \cdot 0 \amp 3 \cdot 1 + 4 \cdot 0 \end{bmatrix} = \begin{bmatrix} 1 \amp 1 \\ 3 \amp 3 \end{bmatrix}</md>. Therefore, <m>AB \neq BA </m>.
         </p>
       </solution>
     </example>
@@ -371,12 +371,12 @@
     <example xml:id="ex-transpose-compute" workspace="true">
       <statement>
         <p>Compute:</p>
-        <me>
+        <md>
           A = \begin{bmatrix}
             1 \amp 2 \amp 3 \amp 4 \amp 5\\
             0 \amp 1 \amp 0 \amp 2 \amp 0
           \end{bmatrix}^T
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -408,7 +408,7 @@
     <example xml:id="ex-which-operations-defined" workspace="true">
       <introduction>
         <p>Define</p>
-        <me>
+        <md>
           A=
           \begin{bmatrix}
             1 \amp 0\\
@@ -427,7 +427,7 @@
             0 \amp 2 \amp 0\\
             0 \amp 0 \amp 2
           \end{bmatrix}.
-        </me>
+        </md>
 
         <p>
           Which of these operations are defined, and what are the dimensions of the result?
@@ -448,7 +448,7 @@
                 First, we can use Property (d) from <xref ref="thm-transpose-properties"/> to write <m>C(AB)^T = CB^TA^T</m>. Since <m>B </m> is a <m>2 \times 3</m> matrix, we have that <m>B^T </m> is a <m>3 \times 2</m> matrix. Since <m>A </m> is a <m>2 \times 2</m> matrix, we have that <m>A^T </m> is also a <m>2 \times 2</m> matrix. Thus, the product <m>CB^TA^T</m> is the product of a <m>3 \times 3</m> matrix with a <m>3 \times 2 </m> matrix with a <m>2 \times 2</m> matrix. Since all inner dimensions match, this product is defined.
             </p>
             <p>
-                Let's calculate the product. One thing to note, even though matrix multiplication is not commutative, it is associative (see <xref ref="thm-properties-multiplication"/>), so we can either simplify the product by either computing <m>(CB^T)A</m> (mutliplying <m>C</m> and <m>B^T</m> first) or by computing <m>C(B^TA^T)</m> (multiplying <m>B^T</m> and <m>A^T</m> first). I choose whichever looks easier. It follows that <me>CB^TA^T = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 2 \amp 0 \\ 0 \amp 0 \amp 2 \end{bmatrix}\begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \\ 0 \amp 8 \end{bmatrix}\begin{bmatrix}1 \amp 0 \\ 0 \amp 0 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \\ 0 \amp 16 \end{bmatrix}\begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \\ 0 \amp 0 \end{bmatrix}</me>
+                Let's calculate the product. One thing to note, even though matrix multiplication is not commutative, it is associative (see <xref ref="thm-properties-multiplication"/>), so we can either simplify the product by either computing <m>(CB^T)A</m> (mutliplying <m>C</m> and <m>B^T</m> first) or by computing <m>C(B^TA^T)</m> (multiplying <m>B^T</m> and <m>A^T</m> first). I choose whichever looks easier. It follows that <md>CB^TA^T = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 2 \amp 0 \\ 0 \amp 0 \amp 2 \end{bmatrix}\begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \\ 0 \amp 8 \end{bmatrix}\begin{bmatrix}1 \amp 0 \\ 0 \amp 0 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \\ 0 \amp 16 \end{bmatrix}\begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 0 \\ 0 \amp 0 \end{bmatrix}</md>
             </p>
           </solution>
           </task>
@@ -476,17 +476,17 @@
       <m>A^k</m> is the product of <m>k</m> copies of <m>A</m>.
     </p>
 
-    <me>A^k = AA\cdots A.</me>
+    <md>A^k = AA\cdots A.</md>
 
     <example xml:id="ex-compute-a-power" workspace="true">
         <statement>
             <p>
-                Compute <m>A^2</m> for <me>A = \begin{bmatrix} 3 \amp -2 \\ 5 \amp 1 \end{bmatrix}</me>
+                Compute <m>A^2</m> for <md>A = \begin{bmatrix} 3 \amp -2 \\ 5 \amp 1 \end{bmatrix}</md>
             </p>
         </statement>
         <solution>
             <p>
-                <me>A^2 = \begin{bmatrix} 3 \amp -2 \\ 5 \amp 1 \end{bmatrix}\begin{bmatrix}3 \amp -2 \\ 5 \amp 1 \end{bmatrix} = \begin{bmatrix} -1 \amp -8 \\ 20 \amp -9 \end{bmatrix}</me>
+                <md>A^2 = \begin{bmatrix} 3 \amp -2 \\ 5 \amp 1 \end{bmatrix}\begin{bmatrix}3 \amp -2 \\ 5 \amp 1 \end{bmatrix} = \begin{bmatrix} -1 \amp -8 \\ 20 \amp -9 \end{bmatrix}</md>
             </p>
         </solution>
     </example>
@@ -496,18 +496,18 @@
     <example xml:id="ex-compute-c-power" workspace="true">
       <statement>
         <p>Compute <m>B^8</m> for</p>
-        <me>
+        <md>
           B=
           \begin{bmatrix}
             1 \amp 0 \amp 0\\
             0 \amp 2 \amp 0\\
             0 \amp 0 \amp 2
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
-            As we saw in <xref ref="ex-compute-a-power"/>, you cannot distribute the exponent to the individual entries in the matrix. For <em>diagonal</em> matrices, you actually can. Note that <me>B^2 = \begin{bmatrix}1 \amp 0 \amp 0 \\ 0 \amp 2 \amp 0 \\ 0 \amp 0 \amp 2 \end{bmatrix}\begin{bmatrix}1 \amp 0 \amp 0 \\ 0 \amp 2 \amp 0 \\ 0 \amp 0 \amp 2 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 4 \amp 0 \\ 0 \amp 0 \amp 4 \end{bmatrix} = \begin{bmatrix} 1^2 \amp 0 \amp 0 \\ 0 \amp 2^2 \amp 0 \\ 0 \amp 0 \amp 2^2 \end{bmatrix}</me>. Therefore, we have that <me>B^8 = \begin{bmatrix} 1^8 \amp 0 \amp 0 \\ 0 \amp 2^8 \amp 0 \\ 0 \amp 0 \amp 2^8 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 256 \amp 0 \\ 0 \amp 0 \amp 256 \end{bmatrix}</me>. We will see an application of this to <em>diagonalizable</em> matrices in Section 5.3.
+            As we saw in <xref ref="ex-compute-a-power"/>, you cannot distribute the exponent to the individual entries in the matrix. For <em>diagonal</em> matrices, you actually can. Note that <md>B^2 = \begin{bmatrix}1 \amp 0 \amp 0 \\ 0 \amp 2 \amp 0 \\ 0 \amp 0 \amp 2 \end{bmatrix}\begin{bmatrix}1 \amp 0 \amp 0 \\ 0 \amp 2 \amp 0 \\ 0 \amp 0 \amp 2 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 4 \amp 0 \\ 0 \amp 0 \amp 4 \end{bmatrix} = \begin{bmatrix} 1^2 \amp 0 \amp 0 \\ 0 \amp 2^2 \amp 0 \\ 0 \amp 0 \amp 2^2 \end{bmatrix}</md>. Therefore, we have that <md>B^8 = \begin{bmatrix} 1^8 \amp 0 \amp 0 \\ 0 \amp 2^8 \amp 0 \\ 0 \amp 0 \amp 2^8 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 256 \amp 0 \\ 0 \amp 0 \amp 256 \end{bmatrix}</md>. We will see an application of this to <em>diagonalizable</em> matrices in Section 5.3.
         </p>
       </solution>
     </example>
@@ -535,7 +535,7 @@
         </statement>
         <solution>
             <p>
-                Recall from <xref ref="thm-properties-multiplication"/> that the Distributive Property applies to matrix mutliplication and addition. Therefore, we start with the distributive property to simply the product. <me>(I_n + A)(I_n - A) = I_nI_n + I_n(-A) + AI_n + A(-A)</me> By the multiplicative property of the identity matrix, we have that <m>I_nI_n = I_n</m> and <m>I_n(-A) = -A</m> and <m>AI_n = A</m>. Recall from our properties of matrix multipliation that we are allowed to commute scalars with matrix multiplication, just not matrices with matrix multiplication. Therefore, we can factor out the <m>-1</m> and rewrite <m>A(-A) = -AA = -A^2</m>. It follows that <me>(I_n + A)(I_n - A) = I_n - A + A - A^2 = I_n - A^2</me> since <m>-A + A</m> is the zero matrix, which doesn't change anything when you add it to a term. Therefore, we see that this statement is TRUE.
+                Recall from <xref ref="thm-properties-multiplication"/> that the Distributive Property applies to matrix mutliplication and addition. Therefore, we start with the distributive property to simply the product. <md>(I_n + A)(I_n - A) = I_nI_n + I_n(-A) + AI_n + A(-A)</md> By the multiplicative property of the identity matrix, we have that <m>I_nI_n = I_n</m> and <m>I_n(-A) = -A</m> and <m>AI_n = A</m>. Recall from our properties of matrix multipliation that we are allowed to commute scalars with matrix multiplication, just not matrices with matrix multiplication. Therefore, we can factor out the <m>-1</m> and rewrite <m>A(-A) = -AA = -A^2</m>. It follows that <md>(I_n + A)(I_n - A) = I_n - A + A - A^2 = I_n - A^2</md> since <m>-A + A</m> is the zero matrix, which doesn't change anything when you add it to a term. Therefore, we see that this statement is TRUE.
             </p>
         </solution>
         </task>
@@ -547,7 +547,7 @@
             </statement>
             <solution>
                 <p>
-                    Proceeding in a similar manner to the problem above, we see that <me>(A+B)^2 = (A+B)(A+B) = AA + AB + BA + BB</me>. We can rewrite <m>AA = A^2</m> and <m>BB = B^2</m>. Also, since matrix addition is commutative, we can move the terms <m>AB</m> and <m>BA</m> to the end. This leaves us with <me>(A+B)^2 = A^2 + B^2 + AB + BA</me>. Note that if <m>AB = BA</m>, then we could combine the middle terms into <m>2AB</m>. However, from the warning in <xref ref="thm-properties-multiplication"/>, we see that matrix multiplication is often not commutative. Therefore, we <em>cannot</em> replace <m>AB + BA</m> with <m>2AB</m>. This leads us to believe the statement is false.
+                    Proceeding in a similar manner to the problem above, we see that <md>(A+B)^2 = (A+B)(A+B) = AA + AB + BA + BB</md>. We can rewrite <m>AA = A^2</m> and <m>BB = B^2</m>. Also, since matrix addition is commutative, we can move the terms <m>AB</m> and <m>BA</m> to the end. This leaves us with <md>(A+B)^2 = A^2 + B^2 + AB + BA</md>. Note that if <m>AB = BA</m>, then we could combine the middle terms into <m>2AB</m>. However, from the warning in <xref ref="thm-properties-multiplication"/>, we see that matrix multiplication is often not commutative. Therefore, we <em>cannot</em> replace <m>AB + BA</m> with <m>2AB</m>. This leads us to believe the statement is false.
                 </p>
                 <p>
                     We can prove it is false by giving a counterexample. Probably, pretty much anything we try will work since matrix commutation is very rare. Let 

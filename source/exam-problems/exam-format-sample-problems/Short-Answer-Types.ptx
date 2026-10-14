@@ -5,7 +5,7 @@
             (3 points) Statement
         </p>
         <p>
-            <me>a = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \end{bmatrix}$}$ } \qquad b = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \end{bmatrix}$}$ } \qquad c = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \end{bmatrix}$}$ } </me>
+            <md>a = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \end{bmatrix}$}$ } \qquad b = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \end{bmatrix}$}$ } \qquad c = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \end{bmatrix}$}$ } </md>
         </p>
     </statement>
     <answer>
@@ -28,7 +28,7 @@
             (3 points) Statement 
         </p>
         <p>
-            <me>A = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \\ b  \\ c \\d \\ d \\ d \end{bmatrix}$}$ } </me>
+            <md>A = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \\ b  \\ c \\d \\ d \\ d \end{bmatrix}$}$ } </md>
         </p>
     </statement>
     <answer>

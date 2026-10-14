@@ -11,7 +11,7 @@
       <p>(1) &#160; Determine whether <m>P</m> and <m>Q</m> are regular stochastic matrices.</p>
 
       <p>
-        <me>
+        <md>
         P =
         \begin{pmatrix}
           0.8 &amp; 0 \\
@@ -24,7 +24,7 @@
           0 &amp; 1 &amp; 2 \\
           3 &amp; 1 &amp; 2
         \end{pmatrix}
-        </me>
+        </md>
       </p>
     </li>
 

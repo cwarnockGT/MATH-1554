@@ -31,9 +31,9 @@
     <p>
       Therefore, to calculate the eigenvalues of <m>A</m>, we can need to find all <m>\lambda</m> so that
     </p>
-    <me>
+    <md>
       \det(A-\lambda I)=0.
-    </me>
+    </md>
     <definition xml:id="def-characteristic">
         <p>
         The quantity <m>\det(A-\lambda I)</m> is the <term>characteristic polynomial</term> of <m>A</m>.
@@ -57,12 +57,12 @@
         <p>
           Find the characteristic polynomial of
         </p>
-        <me>
+        <md>
           A=\begin{bmatrix}
             5 \amp 2\\
             2 \amp 1
           \end{bmatrix}.
-        </me>
+        </md>
         <p>Then determine the eigenvalues of <m>A</m>.</p>
       </statement>
     </example>
@@ -74,12 +74,12 @@
         <p>
           Let
         </p>
-        <me>
+        <md>
           M=\begin{bmatrix}
             a \amp b\\
             c \amp d
           \end{bmatrix}.
-        </me>
+        </md>
         <p>
           Express the characteristic equation of <m>M</m> in terms of <m>\det(M)</m>.
           What is the equation when <m>M</m> is singular?
@@ -105,14 +105,14 @@
     <example xml:id="ex-5-2-alg-mult-compute" workspace="true">
       <statement>
         <p>Compute the algebraic multiplicities of the eigenvalues for</p>
-        <me>
+        <md>
           A = \begin{bmatrix}
             1 \amp 0 \amp 0 \amp 0\\
             0 \amp 2 \amp 0 \amp 0\\
             0 \amp 0 \amp -1 \amp 1\\
             0 \amp 0 \amp 0 \amp -1
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
     <p><nbsp/></p>
@@ -136,12 +136,12 @@
         <li>The geometric multiplicity of an eigenvalue <m>\lambda</m> is always between 1 and the algebraic multiplicity of <m>\lambda</m>. It can <em>never</em> be 0 nor be greater than the algebraic mutliplicy.</li>
         <li>
           Basic example:
-          <me>
+          <md>
             \begin{bmatrix}
               0 \amp 1\\
               0 \amp 0
             \end{bmatrix}
-          </me>
+          </md>
           has only eigenvalue <m>\lambda=0</m>. Its algebraic multiplicity is 2, but its geometric multiplicity is 1.
         </li>
       </ol>
@@ -151,14 +151,14 @@
     <example xml:id="ex-5-2-geom-mult-compute" workspace="true">
       <statement>
         <p>Compute the geometric multiplicities of the eigenvalues for</p>
-        <me>
+        <md>
           A = \begin{bmatrix}
             1 \amp 0 \amp 0 \amp 0\\
             0 \amp 2 \amp 0 \amp 0\\
             0 \amp 0 \amp -1 \amp 1\\
             0 \amp 0 \amp 0 \amp -1
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
 
@@ -210,7 +210,7 @@
         <p>
           Consider the Markov Chain given by
         </p>
-        <me>
+        <md>
           \vec x_0=
           \begin{bmatrix}
             1\\
@@ -223,7 +223,7 @@
             0.4 \amp 0.6
           \end{bmatrix}
           \vec x_k.
-        </me>
+        </md>
 
         <image xml:id="img-5-2-markov-graph" width="40%">
           <latex-image>
@@ -289,12 +289,12 @@
         <p>
           For what values of <m>k</m> does the matrix have one real eigenvalue with algebraic multiplicity 2?
         </p>
-        <me>
+        <md>
           \begin{bmatrix}
             -3 \amp k\\
             2 \amp -6
           \end{bmatrix}
-        </me>
+        </md>
       </statement>
     </example>
   </page>

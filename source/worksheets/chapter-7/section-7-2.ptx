@@ -31,9 +31,9 @@
       Construct the matrix of the quadratic form, and classify the quadratic form</p>
 
       <p>
-        <me>
+        <md>
         Q = 4x_3^2 - 2x_1x_2.
-        </me>
+        </md>
       </p>
     </li>
 
@@ -45,9 +45,9 @@
       <p>(3) &#160; Make a change of variables that transforms the quadratic form into another quadratic form that has no cross‑product term.</p>
 
       <p>
-        <me>
+        <md>
         Q = x_1^2 - 12x_1x_2 - 4x_2^2.
-        </me>
+        </md>
       </p>
     </li>
 

@@ -65,7 +65,7 @@
       <statement>
         <p>Let <m>A</m> be an <m>m \times n</m> matrix with columns <m>\vec{a}_1,\dotsc,\vec{a}_n</m> and let <m>\vec{x} \in \mathbb{R}^{n}</m>. The <term>matrix vector product</term> <m>A\vec{x}</m> is the following linear combination of the columns of <m>A</m>:
         </p>
-        <me>
+        <md>
           A \vec{x}
           =
           \begin{bmatrix}
@@ -78,7 +78,7 @@
           \end{bmatrix}
           =
           x_1 \vec{a}_1 + x_2 \vec{a}_2 + \cdots + x_n \vec{a}_n.
-        </me>
+        </md>
         <p>In particular, <m>A\vec{x}</m> lies in the span of the columns of <m>A</m>.</p>
       </statement>
     </definition>
@@ -132,16 +132,16 @@
       <statement>
         <p>Let <m>A</m> be an <m>m \times n</m> matrix with columns <m>\vec{a}_1,\dotsc,\vec{a}_n</m>, let <m>\vec{x} \in \mathbb{R}^{n}</m>, and let <m>\vec{b} \in \mathbb{R}^{m}</m>. The solutions to
         </p>
-        <me>A \vec{x} = \vec{b}</me>
+        <md>A \vec{x} = \vec{b}</md>
         <p>are the same as the solutions to the vector equation
         </p>
-        <me>x_1 \vec{a}_1 + \cdots + x_n \vec{a}_n \;=\; \vec{b},</me>
+        <md>x_1 \vec{a}_1 + \cdots + x_n \vec{a}_n \;=\; \vec{b},</md>
         <p>which are the same as the solutions to the linear system with augmented matrix</p>
-        <me>
+        <md>
           \begin{bmatrix}
           \vec{a}_1 \ \amp \ \vec{a}_2 \ \amp \ \cdots \ \amp \ \vec{a}_n \ \amp \vert \amp \ \vec{b}
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </theorem>
 
@@ -164,14 +164,14 @@
     <example workspace="5in">
       <statement>
         <p>For what vectors <m>\vec{b} = \begin{bmatrix} b_1 \\[2pt] b_2 \\[2pt] b_3 \end{bmatrix}</m> does the equation have a solution?</p>
-        <me>
+        <md>
           \begin{bmatrix}
           1 \ \amp \ 3 \ \amp \ 4 \\
           2 \ \amp \ 8 \ \amp \ 4 \\
           0 \ \amp \ 1 \ \amp \ -2
           \end{bmatrix}
           \vec{x} \;=\; \vec{b}
-        </me>
+        </md>
       </statement>
     </example>
   </page>
@@ -181,13 +181,13 @@
     <example>
       <statement>
         <p>For what values of <m>h</m> is the system <m>A\vec{x} = \vec{b}</m> consistent for every possible choice of vector <m>\vec{b}</m>?</p>
-        <me>
+        <md>
           A \;=\; \begin{bmatrix}
           1 \ \amp \ h \ \amp \ 2 \\
           0 \ \amp \ 6 \ \amp \ 2 \\
           -3 \ \amp \ 0 \ \amp \ -4
           \end{bmatrix}
-        </me>
+        </md>
       </statement>
       <workspace lines="10"/>
     </example>
@@ -202,40 +202,40 @@
     <olist>
       <item>
         <p>A system of equations:</p>
-        <me>
+        <md>
           \begin{aligned}
           2x_1 + 3x_2 \ \amp=\ 7 \\
           x_1 - x_2 \ \amp=\ 5
           \end{aligned}
-        </me>
+        </md>
       </item>
 
       <item>
         <p>An augmented matrix:</p>
-        <me>
+        <md>
           \left[
           \begin{array}{rr|r}
           2 \ \amp \ 3 \ \amp \ 7 \\
           1 \ \amp \ -1 \ \amp \ 5
           \end{array}
           \right]
-        </me>
+        </md>
       </item>
 
       <item>
         <p>A vector equation:</p>
-        <me>
+        <md>
           x_1 \begin{bmatrix} 2 \\[2pt] 1 \end{bmatrix}
           \;+\;
           x_2 \begin{bmatrix} 3 \\[2pt] -1 \end{bmatrix}
           \;=\;
           \begin{bmatrix} 7 \\[2pt] 5 \end{bmatrix}
-        </me>
+        </md>
       </item>
 
       <item>
         <p>A matrix equation:</p>
-        <me>
+        <md>
           \begin{bmatrix}
           2 \ \amp \ 3 \\
           1 \ \amp \ -1
@@ -247,7 +247,7 @@
           \begin{bmatrix}
           7 \\ 5
           \end{bmatrix}
-        </me>
+        </md>
       </item>
     </olist>
 

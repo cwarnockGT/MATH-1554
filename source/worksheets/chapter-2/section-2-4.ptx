@@ -8,7 +8,7 @@
       <p>(1) &#160; <m>A</m> and <m>B</m> are <m>n \times n</m> invertible matrices, <m>I_n</m> is the <m>n \times n</m> identity matrix, and <m>0</m> is the <m>n \times n</m> zero matrix. Construct an expression for <m>X</m> in terms of <m>A</m> and <m>B</m>.</p>
 
       <p>
-        <me>
+        <md>
         \begin{pmatrix}
           A &amp; B 
         \end{pmatrix}
@@ -24,7 +24,7 @@
         \end{pmatrix}
         =
         B^2 + BAX
-        </me>
+        </md>
       </p>
     </li>
 

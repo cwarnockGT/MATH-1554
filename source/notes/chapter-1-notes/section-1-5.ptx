@@ -52,13 +52,13 @@
       <title>Identify free variables and solution set</title>
       <statement>
         <p>Identify the free variables and the solution set of the homogeneous system:</p>
-        <me>
+        <md>
           \begin{aligned}
           x_1 + 3x_2 + x_3 \amp= 0 \\
           2x_1 - x_2 - 5x_3 \amp= 0 \\
           x_1 \phantom{+3x_2} - 2x_3 \amp= 0
           \end{aligned}
-        </me>
+        </md>
       </statement>
       <workspace lines="12"/>
     </example>
@@ -79,9 +79,9 @@
       <m>x_k, \ldots, x_n</m>. Then all solutions can be written in the form
     </p>
 
-    <me>
+    <md>
       \vec{x} = x_k \vec{v}_k + x_{k+1} \vec{v}_{k+1} + \cdots + x_n \vec{v}_n,
-    </me>
+    </md>
 
     <p workspace="2in">
       for some vectors <m>\vec{v}_k, \ldots, \vec{v}_n</m>.
@@ -100,13 +100,13 @@
         <p>
           Write the parametric vector form of the solution and give a geometric interpretation.
         </p>
-        <me>
+        <md>
           \begin{aligned}
           x_1 + 3x_2 + x_3 \amp= 9 \\
           2x_1 - x_2 - 5x_3 \amp= 11 \\
           x_1 \phantom{+3x_2} - 2x_3 \amp= 6
           \end{aligned}
-        </me>
+        </md>
         <p>(Note: the left-hand side is the same as in the homogeneous system example.)</p>
       </statement>
       <workspace lines="14"/>

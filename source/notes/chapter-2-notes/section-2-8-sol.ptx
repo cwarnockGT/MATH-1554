@@ -262,7 +262,7 @@
       <statement>
         <p>Is <m>\vec b</m> in the column space of <m>A</m>?</p>
 
-        <me>
+        <md>
           A=
           \begin{bmatrix}
             1 \amp -3 \amp -4\\
@@ -280,11 +280,11 @@
           \begin{bmatrix}
             3\\3\\-4
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
-            By <xref ref="thm-existence-span"/>, asking whether <m>\vec b \in \operatorname{Col}(A)</m> is equivalent to asking whether the matrix equation <m>A\vec x = \vec b</m> has a solution. By <xref ref="thm-nul-same-col-dif"/>, we must augment with the matrix <m>A </m> and cannot augment with <m>B</m>. Note that <me>\begin{bmatrix} A \amp \rvert \amp \vec b \end{bmatrix} = \begin{bmatrix} 1 \amp -3 \amp -4 \amp \rvert \amp 3 \\ -4 \amp 6 \amp -2 \amp \rvert \amp 3 \\ -3 \amp 7 \amp 6 \amp \rvert \amp -4 \end{bmatrix}  \sim \cdots \sim \begin{bmatrix} 1 \amp -3 \amp 4 \amp \rvert \amp 3 \\ 0 \amp 2 \amp 6 \amp \rvert \amp -5 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</me>. Since we do not have a pivot in the augmented column, the system <m>A\vec x = \vec b</m> is consistent. Hence, <m>\vec b \in \operatorname{Col}(A)</m>.
+            By <xref ref="thm-existence-span"/>, asking whether <m>\vec b \in \operatorname{Col}(A)</m> is equivalent to asking whether the matrix equation <m>A\vec x = \vec b</m> has a solution. By <xref ref="thm-nul-same-col-dif"/>, we must augment with the matrix <m>A </m> and cannot augment with <m>B</m>. Note that <md>\begin{bmatrix} A \amp \rvert \amp \vec b \end{bmatrix} = \begin{bmatrix} 1 \amp -3 \amp -4 \amp \rvert \amp 3 \\ -4 \amp 6 \amp -2 \amp \rvert \amp 3 \\ -3 \amp 7 \amp 6 \amp \rvert \amp -4 \end{bmatrix}  \sim \cdots \sim \begin{bmatrix} 1 \amp -3 \amp 4 \amp \rvert \amp 3 \\ 0 \amp 2 \amp 6 \amp \rvert \amp -5 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</md>. Since we do not have a pivot in the augmented column, the system <m>A\vec x = \vec b</m> is consistent. Hence, <m>\vec b \in \operatorname{Col}(A)</m>.
         </p>
         <p>
             You can find a particular linear combination of the columns of <m>A</m> which produce <m>\vec b</m> by continuing to solve the system.
@@ -304,7 +304,7 @@
         <p>
           Determine whether
           <m>\vec v</m> is in <m>\operatorname{Nul}(A)</m>. 
-          <me>A = \begin{bmatrix}
+          <md>A = \begin{bmatrix}
             1 \amp -3 \amp -4\\
             -4 \amp 6 \amp -2\\
             -3 \amp 7 \amp 6
@@ -322,16 +322,16 @@
             t
           \end{bmatrix},
           \quad t\in\mathbb{R}.
-        </me>
+        </md>
     </p>
       </statement>
       <solution>
         <p>
-            By <xref ref="thm-nul-same-col-dif"/>, we are free to check whether <m>A\vec v = \vec 0</m> or <m>B\vec v = \vec 0</m> since <m>\operatorname{Nul}(A) = \operatorname{Nul}(B)</m>. Note that <me>A\vec v = \begin{bmatrix}
-            1 \amp -3 \amp -4 \\ -4 \amp 6 \amp -2\\ -3 \amp 7 \amp 6 \end{bmatrix} \begin{bmatrix} -5t \\ -3t \\ t \end{bmatrix} = \begin{bmatrix} -5t + 9t - 4t \\ 20t - 18t - 2t \\ 15t - 21t + 6t \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}</me>. Thus, <m>\vec v \in \operatorname{Nul}(A)</m> for any value of <m>t</m>.
+            By <xref ref="thm-nul-same-col-dif"/>, we are free to check whether <m>A\vec v = \vec 0</m> or <m>B\vec v = \vec 0</m> since <m>\operatorname{Nul}(A) = \operatorname{Nul}(B)</m>. Note that <md>A\vec v = \begin{bmatrix}
+            1 \amp -3 \amp -4 \\ -4 \amp 6 \amp -2\\ -3 \amp 7 \amp 6 \end{bmatrix} \begin{bmatrix} -5t \\ -3t \\ t \end{bmatrix} = \begin{bmatrix} -5t + 9t - 4t \\ 20t - 18t - 2t \\ 15t - 21t + 6t \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}</md>. Thus, <m>\vec v \in \operatorname{Nul}(A)</m> for any value of <m>t</m>.
         </p>
         <p>
-            Let's determine if there are any other vectors in <m>\Nul(A)</m>. Since <m>\Nul(A) = \Nul(B),</m> we determine all solutions to <m>B\vec x = \vec 0</m>. Since <m>B</m> is already in RREF, we see that <m>x_3 = t \in \mathbb{R}</m> is a free variable and <m>x_2 = -3t</m> and <m>x_1 = -5t</m> are pivot variables. It follows that <me>\Nul(A) = \Nul(B) = \left\{\begin{bmatrix} -5t \\ 3t \\ t \end{bmatrix} \ \Big \rvert \ t \in \mathbb{R}\right\} = \Span\left\{\begin{bmatrix} -5 \\ -2 \\ 1 \end{bmatrix}\right\}.</me>
+            Let's determine if there are any other vectors in <m>\Nul(A)</m>. Since <m>\Nul(A) = \Nul(B),</m> we determine all solutions to <m>B\vec x = \vec 0</m>. Since <m>B</m> is already in RREF, we see that <m>x_3 = t \in \mathbb{R}</m> is a free variable and <m>x_2 = -3t</m> and <m>x_1 = -5t</m> are pivot variables. It follows that <md>\Nul(A) = \Nul(B) = \left\{\begin{bmatrix} -5t \\ 3t \\ t \end{bmatrix} \ \Big \rvert \ t \in \mathbb{R}\right\} = \Span\left\{\begin{bmatrix} -5 \\ -2 \\ 1 \end{bmatrix}\right\}.</md>
         </p>
       </solution>
     </example>
@@ -363,7 +363,7 @@
             Let
             </p>
 
-            <me>
+            <md>
             H=\left\{
             \begin{bmatrix}
                 x_1\\x_2\\x_3\\x_4
@@ -371,7 +371,7 @@
             \in\mathbb{R}^4\;\middle|\;
             x_1+2x_2+x_3+5x_4=0
             \right\}.
-            </me>
+            </md>
         </introduction>
         <task workspace="true">
             <statement>
@@ -398,7 +398,7 @@
             </statement>
             <solution>
                 <p>
-                    Note that if <m>A = \begin{bmatrix} 1 \amp 2 \amp 1 \amp 5 \end{bmatrix} </m>, then <me>A\vec x = \vec 0  \implies  \begin{bmatrix} 1 \amp 2 \amp 1 \amp 5 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \vec 0  \implies  \begin{bmatrix}x_1 + 2x_2 + x_3 + 5x_4\end{bmatrix} = \begin{bmatrix} 0 \end{bmatrix}</me>, which is the defining characteristic of the vectors in <m>H</m>. Therefore, <m>H = \Nul(A)</m>.
+                    Note that if <m>A = \begin{bmatrix} 1 \amp 2 \amp 1 \amp 5 \end{bmatrix} </m>, then <md>A\vec x = \vec 0  \implies  \begin{bmatrix} 1 \amp 2 \amp 1 \amp 5 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \vec 0  \implies  \begin{bmatrix}x_1 + 2x_2 + x_3 + 5x_4\end{bmatrix} = \begin{bmatrix} 0 \end{bmatrix}</md>, which is the defining characteristic of the vectors in <m>H</m>. Therefore, <m>H = \Nul(A)</m>.
                 </p>
             </solution>
         </task>  
@@ -413,7 +413,7 @@
                     Note that the second, third, and fourth columns of <m>A </m> correspond to free variables. Therefore, <m>x_4 = t \in \mathbb{R}, x_3 = r \in \mathbb{R},</m> and <m>x_2 = p\in\mathbb{R}</m> are the free variables and <m>x_1 = -2p - r - 5t</m> is the pivot variables. It follows that </p>
                     <p><m>\begin{eqnarray*} \Nul(A) \amp = \amp \left\{\begin{bmatrix} -2p - r - 5t \\ p \\ r \\ t \end{bmatrix} \ \Big \rvert \ p,r,t\in\mathbb{R}\right\}\\ \amp = \amp \left\{p\begin{bmatrix}-2 \\ 1 \\ 0 \\ 0 \end{bmatrix} + r\begin{bmatrix} -1 \\ 0 \\ 1 \\ 0 \end{bmatrix} + t \begin{bmatrix} -5 \\ 0 \\ 0 \\ 1\end{bmatrix} \ \Big \rvert \ p,r,t\in\mathbb{R}\right\}\\ \amp = \amp \Span\left\{\begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -5 \\ 0 \\ 0 \\ 1 \end{bmatrix}\right\}\end{eqnarray*}</m></p> 
                     <p>
-                         Therefore, we see that the three vectors <m>\begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -5 \\ 0 \\ 0 \\ 1 \end{bmatrix}</m> span <m>\Nul(A)</m>. Since they are linearly independent, they form a basis for <m>\Nul(A)</m>. Thus, a basis for <m>\Nul(A)</m> is the set of vectors <me>\left\{\begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -5 \\ 0 \\ 0 \\ 1 \end{bmatrix}\right\}</me>. This basis is NOT unique. Note you can replace any of the three vectors with a nonzero multiple of itself. Also, you could replace one of them with suitable linear combination. For example, you could replace the middle vector with the first place the second and that would still yield a valid basis since the resulting three vectors would be linearly independent and span the space.
+                         Therefore, we see that the three vectors <m>\begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -5 \\ 0 \\ 0 \\ 1 \end{bmatrix}</m> span <m>\Nul(A)</m>. Since they are linearly independent, they form a basis for <m>\Nul(A)</m>. Thus, a basis for <m>\Nul(A)</m> is the set of vectors <md>\left\{\begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -5 \\ 0 \\ 0 \\ 1 \end{bmatrix}\right\}</md>. This basis is NOT unique. Note you can replace any of the three vectors with a nonzero multiple of itself. Also, you could replace one of them with suitable linear combination. For example, you could replace the middle vector with the first place the second and that would still yield a valid basis since the resulting three vectors would be linearly independent and span the space.
                 </p>
             </solution>
         </task>  
@@ -429,7 +429,7 @@
       <statement>
         <p>Construct a basis for <m>\operatorname{Nul}(A)</m> and <m>\operatorname{Col}(A)</m>.</p>
 
-        <me>
+        <md>
           A=
           \begin{bmatrix}
             -3 \amp 6 \amp -1 \amp 0\\
@@ -442,14 +442,14 @@
             0 \amp 0 \amp 1 \amp 0\\
             0 \amp 0 \amp 0 \amp 0
           \end{bmatrix} = B.
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
-            First, note that we can express <m>\Nul(A)</m> as the span of some vectors by finding all solutions to <m>A\vec x = \vec 0</m>. It follows that <me>\Nul(A) = \Nul(B) = \Span\left\{\begin{bmatrix} 2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}\right\}.</me> Thus, a basis for <m>\Nul(A)</m> is <me>\mathcal{B} = \left\{\begin{bmatrix} 2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}\right\}.</me>
+            First, note that we can express <m>\Nul(A)</m> as the span of some vectors by finding all solutions to <m>A\vec x = \vec 0</m>. It follows that <md>\Nul(A) = \Nul(B) = \Span\left\{\begin{bmatrix} 2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}\right\}.</md> Thus, a basis for <m>\Nul(A)</m> is <md>\mathcal{B} = \left\{\begin{bmatrix} 2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}\right\}.</md>
         </p>
         <p>
-            By the definition of <m>\Col(A)</m>, we see that <me>\Col(A) = \Span\left\{\begin{bmatrix} -3 \\ 1 \\ 2 \end{bmatrix}, \begin{bmatrix} 6 \\ -2 \\ -4 \end{bmatrix}, \begin{bmatrix} -1 \\ 2 \\ 5 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}\right\}.</me> Note that the set containing the four column vectors of <m>A </m> is NOT a basis since those vectors are NOT linearly independent. From <m>B</m>, we see that Column 2 and Column 4 of <m>A</m> are NOT pivot columns. Therefore, they are linearly dependent on the other columns of <m>A</m>. It follows that the following set containing Column 1 and Column 2 of <m>A</m> spans <m>\Col(A)</m> and is linearly independent, so it is a basis for <m>\Col(A)</m>. <me>\mathcal{C} = \left\{\begin{bmatrix} -3 \\ 1 \\ 2 \end{bmatrix}, \begin{bmatrix} -1 \\ 2 \\ 5 \end{bmatrix}\right\}</me>
+            By the definition of <m>\Col(A)</m>, we see that <md>\Col(A) = \Span\left\{\begin{bmatrix} -3 \\ 1 \\ 2 \end{bmatrix}, \begin{bmatrix} 6 \\ -2 \\ -4 \end{bmatrix}, \begin{bmatrix} -1 \\ 2 \\ 5 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}\right\}.</md> Note that the set containing the four column vectors of <m>A </m> is NOT a basis since those vectors are NOT linearly independent. From <m>B</m>, we see that Column 2 and Column 4 of <m>A</m> are NOT pivot columns. Therefore, they are linearly dependent on the other columns of <m>A</m>. It follows that the following set containing Column 1 and Column 2 of <m>A</m> spans <m>\Col(A)</m> and is linearly independent, so it is a basis for <m>\Col(A)</m>. <md>\mathcal{C} = \left\{\begin{bmatrix} -3 \\ 1 \\ 2 \end{bmatrix}, \begin{bmatrix} -1 \\ 2 \\ 5 \end{bmatrix}\right\}</md>
         </p>
       </solution>
     </example>
@@ -466,14 +466,14 @@
           Let
         </p>
 
-        <me>
+        <md>
           V=\left\{
           \begin{bmatrix}
             a\\b
           \end{bmatrix}
           \in\mathbb{R}^2\;\middle|\;ab=0
           \right\}.
-        </me>
+        </md>
         </introduction>
         <task workspace="1in">
             <statement>

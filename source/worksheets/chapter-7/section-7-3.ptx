@@ -35,11 +35,11 @@
       Identify where this maximum is obtained.</p>
 
       <p>
-        <me>
+        <md>
         Q(\vec{x}) = 4x_1^2 + x_2^2 + 4x_1x_2 + 3x_3^2,
         \quad
         \vec{x} \in \mathbb{R}^3.
-        </me>
+        </md>
       </p>
     </li>
 </ul>
@@ -52,14 +52,14 @@
       <m>\vec{x} \cdot \vec{u} = 0</m>.</p>
 
       <p>
-        <me>
+        <md>
         Q(\vec{x}) = 4x_1^2 + x_2^2 + 4x_1x_2 + 3x_3^2,
         \quad
         \vec{u} =
         \begin{pmatrix}
           2 \\ 1 \\ 0
         \end{pmatrix}.
-        </me>
+        </md>
       </p>
     </li>
 

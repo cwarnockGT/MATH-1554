@@ -58,13 +58,13 @@
       <title>Identify free variables and solution set</title>
       <statement>
         <p>Identify the free variables and the solution set of the homogeneous system:</p>
-        <me>
+        <md>
           \begin{aligned}
           x_1 + 3x_2 + x_3 \amp= 0 \\
           2x_1 - x_2 - 5x_3 \amp= 0 \\
           x_1 \phantom{+3x_2} - 2x_3 \amp= 0
           \end{aligned}
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -74,14 +74,14 @@
              Note: you do not have to form the augmented matrix and can instead row reduce <m>A</m> since this is a homogeneous system and row operations will not affected the augmented <m>\vec 0</m>.
         </p>
         <p>
-            <me>\begin{bmatrix} 1 \amp 3 \amp 1 \amp \rvert \amp 0 \\ 2 \amp -1 \amp -5 \amp \rvert \amp 0 \\ 1 \amp 0 \amp -2 \amp \rvert \amp 0 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 3 \amp 1 \amp \rvert \amp 0 \\ 0 \amp -7 \amp -7 \amp \rvert \amp 0 \\ 0 \amp -3 \amp -3 \amp \rvert \amp 0 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp -2 \amp \rvert \amp 0 \\ 0 \amp 1 \amp 1 \amp \rvert \amp 0 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</me>
+            <md>\begin{bmatrix} 1 \amp 3 \amp 1 \amp \rvert \amp 0 \\ 2 \amp -1 \amp -5 \amp \rvert \amp 0 \\ 1 \amp 0 \amp -2 \amp \rvert \amp 0 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 3 \amp 1 \amp \rvert \amp 0 \\ 0 \amp -7 \amp -7 \amp \rvert \amp 0 \\ 0 \amp -3 \amp -3 \amp \rvert \amp 0 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp -2 \amp \rvert \amp 0 \\ 0 \amp 1 \amp 1 \amp \rvert \amp 0 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</md>
         </p>
         <p>
             Since the third column does not contain a pivot, we have that <m>x_3</m> is a free variable, so we can set <m>x_3 = t \in \mathbb{R}</m>. Converting the second row of the RREF above into an equation and solving for <m>x_2</m> yields <md>x_2 + x_3 = 0 \quad \implies \quad x_2 = -x_3 \quad \implies \quad x_2 = -t</md> Similarly, we can use the first row of the RREF and solve for <m>x_1</m> to get <md>x_1 - 2x_3 = 0 \quad \implies \quad x_1 = 2x_3 \quad \implies \quad x_1 = 2t</md>
         </p>
             <p>Therefore, the solutions to the system are</p>
             <p>
-                <me> \vec x = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 2t \\ -t \\ t \end{bmatrix} = t\begin{bmatrix} 2 \\ -1 \\ 1 \end{bmatrix}, t \in \mathbb{R}</me> 
+                <md> \vec x = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 2t \\ -t \\ t \end{bmatrix} = t\begin{bmatrix} 2 \\ -1 \\ 1 \end{bmatrix}, t \in \mathbb{R}</md> 
             </p>
             <p> Writing the solution set in terms of the parameter <m>t</m> is what is known as <term>parametric vector form</term>. This form gives an explicit and convenient way of writing down the solution set. It also gives insight into what is happening geometrically. Note that the vectors which satisfy the system are precisely <md>\vec x \in \operatorname{Span}\left\{\begin{bmatrix} 2 \\ -1 \\ 1 \end{bmatrix}\right\}</md>. Since the solution set contains <m>\vec 0</m>, we see that the solution set is a line in <m>\mathbb{R}^3</m> which passes through the origin.
             </p> 
@@ -106,9 +106,9 @@
       <m>x_k, \ldots, x_n</m>. Then all solutions can be written in the form
     </p>
 
-    <me>
+    <md>
       \vec{x} = x_k \vec{v}_k + x_{k+1} \vec{v}_{k+1} + \cdots + x_n \vec{v}_n,
-    </me>
+    </md>
 
     <p workspace="2in">
       for some vectors <m>\vec{v}_k, \ldots, \vec{v}_n</m>.
@@ -129,13 +129,13 @@
         <p>
           Write the parametric vector form of the solution and give a geometric interpretation.
         </p>
-        <me>
+        <md>
           \begin{aligned}
           x_1 + 3x_2 + x_3 \amp= 9 \\
           2x_1 - x_2 - 5x_3 \amp= 11 \\
           x_1 \phantom{+3x_2} - 2x_3 \amp= 6
           \end{aligned}
-        </me>
+        </md>
         <p>(Note: the left-hand side is the same as in the homogeneous system example.)</p>
       </statement>
       <solution>
@@ -150,7 +150,7 @@
         </p>
             <p>Therefore, the solutions to the system are</p>
             <p>
-                <me> \vec x = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 6 + 2t \\ 1 - t \\ t \end{bmatrix} = \begin{bmatrix} 6 \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} 2 \\ -1 \\ 1 \end{bmatrix}, t \in \mathbb{R}</me> 
+                <md> \vec x = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 6 + 2t \\ 1 - t \\ t \end{bmatrix} = \begin{bmatrix} 6 \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} 2 \\ -1 \\ 1 \end{bmatrix}, t \in \mathbb{R}</md> 
             </p>
             <p> Again we have writen the solution set in parametric vector form. Note that the free part of the solution set, the part being scaled by <m>t</m>, is exactly the same as for the homogeneous system <m>A\vec x = \vec 0</m>. This is no coincidence. When you are working with a <em>consistent inhomogeneous</em> system <m>A\vec x = \vec b</m>, the solution set is exactly that of the homogenous system <m>A\vec x = \vec 0</m>, except translated by a vector which is a particular solution to <m>A\vec x = \vec b</m>. So, geometrically, this solution set is the same line as in <xref ref="ex-homogeneous-1"/>, except now the line passes through the point <m>(6,1,0)</m> instead of the origin.</p> 
             <p> 
