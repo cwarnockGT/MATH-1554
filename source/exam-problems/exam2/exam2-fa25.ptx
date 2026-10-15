@@ -20,14 +20,14 @@
             <em>True &#160;  / &#160;  False</em>: &#160; If <m>P</m> is a stochastic <m>n \times n</m> matrix with all positive entries and <m>\vec{u}, \vec{v}</m> are probability vectors in <m>\mathbb{R}^n</m>, then the sequences <m>P^k \vec{u}, P^k \vec{v}</m> converge to the same limit as <m>k</m> tends to infinity.
         </p>
     </statement>
-    <answer>
+    <hint>
         <p>
-            True.
+            <m> P </m> is regular (Why?)
         </p>
-    </answer>
+    </hint>
     <solution>
         <p>
-            Solution text
+            <emph> True </emph>. Since <m> P </m> is regular, it has a unique steady state vector.
         </p>
     </solution>
     </task>
@@ -38,14 +38,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; The <m>LU</m>-factorization of a matrix is unique.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                False.
+                Play around with some <m> 2 \times 2 </m> matrices.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <emph> False </emph>. Consider the zero matrix. Two different <m>LU</m>-factorizations are <m> \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix} </m> and <m>\begin{bmatrix} 1 \amp 0 \\ 1 \amp 1 \end{bmatrix} \begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix} </m>
             </p>    
         </solution>
     </task>
@@ -56,14 +56,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; If <m>\vec{v_1}, \vec{v_2},\vec{v_3}</m> spans <m>\mathbb{R}^3</m>, then the subspace <m>\Span \{ \vec{v_1}, \vec{v_2} \}</m> is 2-dimensional.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                True
+                <m> \vec{v}_1, \vec{v}_2, \vec{v}_3 </m> are linearly independent.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <emph> True </emph>. Since <m> \vec{v}_1, \vec{v}_2, \vec{v}_3 </m> span <m> \R^3 </m>, they form a basis for <m> \R^3 </m>. Therefore they are linearly independent, the thus the subspace spanned by any two of them is 2-dimensional.
             </p>
         </solution>
     </task>
@@ -74,14 +74,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; If <m>A_1, A_2, B_1, B_2</m> are <m>n \times n</m> matrices and <m>A = \begin{bmatrix} A_1 \amp A_ 2 \end{bmatrix}</m>, and <m>B = \begin{bmatrix} B_1 \amp B_ 2 \end{bmatrix}^T</m> are partitioned matrices, then <m>AB</m> is defined and is a <m>2n \times 2n</m> matrix. 
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                False
+                Play around with some examples of <m>2 \times 2</m> matrices.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <emph> False </emph>. Consider the case where <m>A_1, A_2, B_1, B_2</m> are all <m>2 \times 2</m> matrices. Then <m>A</m> is a <m>2 \times 4</m> matrix and <m>B</m> is a <m>4 \times 2</m> matrix, so <m>AB</m> is a <m>2 \times 2</m> matrix, not a <m>2n \times 2n</m> matrix.
             </p>
         </solution>
     </task>
@@ -92,14 +92,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; If <m>A</m> is a square matrix that is row equivalent to an upper triangular matrix, then <m>A</m> is invertible.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                False
+                Play around with some <m> 2 \times 2 </m> matrices.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <emph> False </emph>. Consider the matrix <m>A = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 1 \end{bmatrix}</m>. It is row equivalent to the upper triangular matrix <m>\begin{bmatrix} 1 \amp 1 \\ 0 \amp 0 \end{bmatrix}</m>, but <m>A</m> is not invertible.
             </p>
         </solution>
     </task>
@@ -110,14 +110,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; For any <m>m \times n</m> matrix <m>A</m>, we have <m>\text{rank}(A) \leq \text{min} (m,n)</m>.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                True
+                The rank of a matrix relates to the number of pivots of the matrix, as does the number of rows and columns.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <emph> True </emph>. The rank of a matrix is the number of pivotal columns. Since the number of pivots cannot exceed the number of rows or columns, we have <m>\text{rank}(A) \leq \text{min} (m,n)</m>.
             </p>
         </solution>
     </task>
@@ -128,14 +128,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; The determinant of a square matrix <m>A</m> is the product of the diagonal entries of <m>A</m>.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                False.
+                Play around with some <m> 2 \times 2 </m> matrices.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <emph> False </emph>. Consider the matrix <m>A = \begin{bmatrix} 1 \amp 1 \\ 1 \amp 1 \end{bmatrix}</m>. The product of the diagonal entries is <m>1 \cdot 1 = 1</m>, but <m> \det{A} = 0 </m>.
             </p>
         </solution>
     </task>
@@ -146,14 +146,14 @@
                 <em>True &#160;  / &#160;  False</em>: &#160; If <m>\vec{v}</m> and <m>\vec{u}</m> are probability vectors, then <m>2 \vec{v} - \vec{u}</m> is also a probability vector.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
-                False
+                Play around with some probability vectors.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
-                Solution text
+                <emph> False </emph>. Consider the probability vectors <m>\vec{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m> and <m>\vec{u} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>. Then <m>2 \vec{v} - \vec{u} = \begin{bmatrix} 2 \\ -1 \end{bmatrix}</m>, which is not a probability vector because there are negative entries.
             </p>
         </solution>
     </task>
@@ -178,11 +178,11 @@
                 <em>Possible &#160;  / &#160;  Impossible</em>: &#160; A square matrix <m>A</m> with a column of zeros and <m>\text{det}(A) = 3</m>.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
                 impossible.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution Text
@@ -196,11 +196,11 @@
                 <em>Possible &#160;  / &#160;  Impossible</em>: &#160; A non-invertible matrix <m>A</m> with <m>LU</m>-factorization <m>A = LU</m> such that <m>U</m> is invertible. 
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
                 impossible.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution Text
@@ -214,11 +214,11 @@
                 <em>Possible &#160;  / &#160;  Impossible</em>: &#160; Matrices <m>A, B</m> such that <m>AB</m> is invertible and <m>A</m> is not a square matrix.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
                 Possible.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution Text
@@ -232,11 +232,11 @@
                 <em>Possible &#160;  / &#160;  Impossible</em>: &#160; A <m>3 \times 3</m> matrix <m>A</m> so that <m>\text{Col}(A) = \text{Nul}(A)</m>.
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
                 Impossible.
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution Text. 
@@ -267,11 +267,11 @@
         </ol>
 
     </statement>
-    <answer>
+    <hint>
         <p>
             Options (a) and (d) are correct
         </p>
-    </answer>
+    </hint>
     <solution>
         <p>
             Option (a) is correct.
@@ -315,11 +315,11 @@
         </ol>
 
     </statement>
-    <answer>
+    <hint>
         <p>
             Options (a), (c) and (f) are correct
         </p>
-    </answer>
+    </hint>
     <solution>
         <p>
             Option (a) is correct.
@@ -357,13 +357,13 @@
                 
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
                 <md>
                     \mathcal{B} = \left\{ \begin{bmatrix} -4 \\ 3 \\ 1 \\0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 0 \\ 1 \end{bmatrix} \right\}
                 </md>
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution text 
@@ -384,11 +384,11 @@
                 
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
                 <m>\text{det}(A) =0</m>, <m>\text{det}(B) =3</m>, <m>\text{det}(C) =9</m>
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution text
@@ -406,13 +406,13 @@
                 
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
                 <m>
                     X = BA^{-1} + C^{-1}
                 </m>
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution text 
@@ -441,13 +441,13 @@
                 
             </p>
         </statement>
-        <answer>
+        <hint>
             <p>
                 <md>
                     p(\lambda) = -\lambda ( 1 - \lambda)(4 - \lambda)
                 </md>
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution text
@@ -470,14 +470,14 @@
             
         </statement>
 
-        <answer>
+        <hint>
             <p>
                 <md>
                     \text{Area}(S) = 3, \text{Area}(T^{-1}(\mathcal{S})) = \frac{3}{2}
                 </md>
                 
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution text
@@ -532,7 +532,7 @@
             </p>
             
         </statement>
-        <answer>
+        <hint>
             <p>
                 <md>P = \begin{bmatrix}  0.6 \amp 0.1 \\ 0.4 \amp 0.9 \end{bmatrix}</md>
 
@@ -540,7 +540,7 @@
 
                 <md>\vec{l} = \begin{bmatrix}  2 \\ 8 \end{bmatrix}</md>
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution text 
@@ -574,13 +574,13 @@
             </p>
             
         </statement>
-        <answer>
+        <hint>
             <p>
                 <md>L = \begin{bmatrix}1 \amp 0 \amp 0 \\ 3 \amp 1 \amp 0 \\ 2 \amp -1 \amp 1</md> \end{bmatrix}
                 <md>U = \begin{bmatrix}1 \amp 2 \amp 4 \\ 0 \amp 2 \amp 2 \\ 0 \amp 0 \amp -3</md> \end{bmatrix}
 
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution text 
@@ -631,7 +631,7 @@
         </p>
             
         </statement>
-        <answer>
+        <hint>
             <p>
                 <md>
                     \text{(a) dim Null} (A-I_3) = 1
@@ -653,7 +653,7 @@
                 
                 
             </p>
-        </answer>
+        </hint>
         <solution>
             <p>
                 Solution text 
