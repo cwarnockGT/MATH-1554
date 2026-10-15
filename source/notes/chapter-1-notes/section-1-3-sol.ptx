@@ -29,12 +29,12 @@
 
       Consider the following system.
 
-        <me>
+        <md>
           \begin{aligned}
           x - 3y \amp = -3\\
           2x + y \amp = 8
           \end{aligned}
-        </me>
+        </md>
 
         We could solve this system by graphing the lines represented by each equation and determining where they interesect.
       </p>
@@ -81,7 +81,7 @@
         <p>
           Recall that <m>\mathbb{R}</m> denotes the collection of all real numbers. For a positive integer <m>n</m>, define
 
-    <me>\mathbb{R}^n = \{\text{all ordered } n\text{-tuples of real numbers } (x_1,\,x_2,\,\ldots,\,x_n)\}.</me>
+    <md>\mathbb{R}^n = \{\text{all ordered } n\text{-tuples of real numbers } (x_1,\,x_2,\,\ldots,\,x_n)\}.</md>
         </p>
       </statement>
         </definition>
@@ -161,29 +161,29 @@
     <p>
       When we think of an element of <m>\mathbb{R}^n</m> as a vector, we commonly write it as a column:
     </p>
-    <me>
+    <md>
       \vec v \;=\; \begin{bmatrix} 1\\ 2\\ 3 \end{bmatrix} \in \mathbb{R}^3.
-    </me>
+    </md>
     <p><nbsp/></p>
     <p>Suppose <m>c</m> is an arbitrary real number, written <m>c \in \mathbb{R}</m>, and let </p>
-    <me>
+    <md>
       \vec u \;=\; \begin{bmatrix} u_1\\ u_2 \end{bmatrix} \in \mathbb{R}^2, 
       \qquad
       \vec v \;=\; \begin{bmatrix} v_1\\ v_2 \end{bmatrix} \in \mathbb{R}^2.
-    </me>
+    </md>
     <p>Vectors have the following properties.</p>
     <ol>
       <li>
         <term>Scalar Multiple:</term>
-        <me>c\,\vec u \;=\; \begin{bmatrix} c\,u_1\\ c\,u_2 \end{bmatrix}.</me>
+        <md>c\,\vec u \;=\; \begin{bmatrix} c\,u_1\\ c\,u_2 \end{bmatrix}.</md>
       </li>
       <li>
         <term>Vector Addition:</term>
-        <me>
+        <md>
           \vec u + \vec v 
           \;=\; \begin{bmatrix} u_1\\ u_2 \end{bmatrix} + \begin{bmatrix} v_1\\ v_2 \end{bmatrix}
           \;=\; \begin{bmatrix} u_1 + v_1\\ u_2 + v_2 \end{bmatrix}.
-        </me>
+        </md>
       </li>
     </ol>
     <p >
@@ -243,9 +243,9 @@
           <li>
             Given vectors <m>\vec v_1,\vec v_2,\dotsc,\vec v_p \in \mathbb{R}^n</m> and scalars <m>c_1,c_2,\dotsc,c_p</m>, 
             the vector
-            <me>
+            <md>
               \vec y \;=\; c_1 \vec v_1 + c_2 \vec v_2 + \cdots + c_p \vec v_p
-            </me>
+            </md>
             is called a <term>linear combination</term> of <m>\vec v_1,\dotsc,\vec v_p</m> with weights <m>c_1,\dotsc,c_p</m>.
           </li>
           <li>
@@ -349,7 +349,7 @@
       </statement>
       <solution>
         <p>
-            Note that <m>\vec w \in\operatorname{Span}\{\vec u, \vec v\}</m> if and only if <m>\vec w</m> can be written as a linear combination of the vectors <m>\vec u</m> and <m>\vec v</m>; that is, if and only if there exist <m>c_1, c_2 \in \mathbb{R}</m> so that <me>c_1\vec u + c_2 \vec v = \vec w \iff \begin{bmatrix}-c_1 + 5c_2 \\ 4c_1 \\ 2c_1 - 3c_2 \end{bmatrix} = \begin{bmatrix} 2 \\ 12 \\ 3 \end{bmatrix}</me> Note that this leads to the following system of linear equations: <md>
+            Note that <m>\vec w \in\operatorname{Span}\{\vec u, \vec v\}</m> if and only if <m>\vec w</m> can be written as a linear combination of the vectors <m>\vec u</m> and <m>\vec v</m>; that is, if and only if there exist <m>c_1, c_2 \in \mathbb{R}</m> so that <md>c_1\vec u + c_2 \vec v = \vec w \iff \begin{bmatrix}-c_1 + 5c_2 \\ 4c_1 \\ 2c_1 - 3c_2 \end{bmatrix} = \begin{bmatrix} 2 \\ 12 \\ 3 \end{bmatrix}</md> Note that this leads to the following system of linear equations: <md>
                 \left\{\begin{array}{rrrrr}
                 -c_1 \amp + \amp 5c_2 \amp = \amp 2 \\ 4c_1 \amp \amp \amp = \amp 12 \\ 2c_1 \amp - \amp 3c_2 \amp = \amp 3 \end{array}\right.
             </md>
@@ -427,11 +427,11 @@
     <example xml:id="ex-span-membership">
       <statement>
         <p>Is <m>\vec y</m> in the span of <m>\vec v_1</m> and <m>\vec v_2</m>?</p>
-        <me>
+        <md>
           \vec v_1 \;=\; \begin{bmatrix} 1\\ -2\\ -3 \end{bmatrix},\qquad
           \vec v_2 \;=\; \begin{bmatrix} 2\\ 5\\ 6 \end{bmatrix},\qquad
           \vec y   \;=\; \begin{bmatrix} 7\\ 4\\ 15 \end{bmatrix}.
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -442,7 +442,7 @@
             \amp \sim \amp \begin{bmatrix} 1 \amp 2 \amp \rvert \amp 7 \\ 0 \amp 1 \amp \rvert \amp 2 \\ 0 \amp 0 \amp \rvert \amp 1 \end{bmatrix} \end{eqnarray*}</m>
             </p>
             <p>
-                It follows that the system is <em>inconsistent</em>. Therefore, it is impossible to express <m>\vec y</m> as a linear combination of <m>\vec v_1</m> and <m> \vec v_2</m>. Thus, <me>\vec y \not\in \operatorname{Span}\{\vec v_1,\vec v_2\}</me>.
+                It follows that the system is <em>inconsistent</em>. Therefore, it is impossible to express <m>\vec y</m> as a linear combination of <m>\vec v_1</m> and <m> \vec v_2</m>. Thus, <md>\vec y \not\in \operatorname{Span}\{\vec v_1,\vec v_2\}</md>.
         </p>
       </solution>
     </example>

@@ -52,13 +52,13 @@
 
       <p><em>Motivating Question</em>: Is there a matrix <m>A</m> such that
       </p>
-      <me>
+      <md>
         \begin{bmatrix}
           2 \amp -1 \amp 0\\
           -1 \amp 2 \amp -1\\
           0 \amp -1 \amp 2
         \end{bmatrix}A = I_3\; ?
-      </me>
+      </md>
   </page>
 
 
@@ -72,7 +72,7 @@
           A matrix <m>A\in\mathbb{R}^{n\times n}</m> is <term>invertible</term> (or <term>non-singular</term>)
           if there exists a matrix <m>C\in\mathbb{R}^{n\times n}</m> such that
         </p>
-        <me>AC = CA = I_n.</me>
+        <md>AC = CA = I_n.</md>
         <p>
           If such a matrix exists, we write <m>C=A^{-1}</m>.
         </p>
@@ -87,7 +87,7 @@
           <m>\begin{bmatrix} a \amp b\\ c \amp d \end{bmatrix}</m>
           is invertible if and only if <m>ad-bc\neq 0</m>. In that case,
         </p>
-        <me>
+        <md>
           \begin{bmatrix}
             a \amp b\\
             c \amp d
@@ -98,7 +98,7 @@
             d \amp -b\\
             -c \amp a
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </theorem>
 
@@ -106,12 +106,12 @@
     <example xml:id="ex-inverse-2x2" workspace="true">
       <statement>
         <p>Find the inverse of the matrix below. Check that it truly is the inverse.</p>
-        <me>
+        <md>
           \begin{bmatrix}
             2 \amp 5\\
             -3 \amp -7
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
   </page>
@@ -128,7 +128,7 @@
           <m>\vec b\in\mathbb{R}^n</m>, the system <m>A\vec x=\vec b</m> has a <em>unique</em> solution.
           In this case,
         </p>
-        <me>\vec x = A^{-1}\vec b.</me>
+        <md>\vec x = A^{-1}\vec b.</md>
       </statement>
     </theorem>
 
@@ -136,12 +136,12 @@
     <example xml:id="ex-solve-system-with-inverse" workspace="true">
       <statement>
         <p>Solve the linear system.
-        <me>
+        <md>
           \begin{array}{ccc}
           3x_1 + 4x_2 \amp= \amp 7 \\
           5x_1 + 6x_2 \amp = \amp 7
           \end{array}
-        </me>
+        </md>
         </p>
       </statement>
     </example>
@@ -193,14 +193,14 @@
       <title>Example</title>
       <statement>
         <p>Compute the inverse of</p>
-        <me>
+        <md>
           A=
           \begin{bmatrix}
             0 \amp 1 \amp 2\\
             1 \amp 0 \amp 3\\
             0 \amp 0 \amp 1
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
   </page>
@@ -261,7 +261,7 @@
         <p>
           Suppose
         </p>
-        <me>
+        <md>
           E
           \begin{bmatrix}
             1 \amp 1 \amp 1\\
@@ -274,7 +274,7 @@
             0 \amp 3 \amp 2\\
             0 \amp 0 \amp 1
           \end{bmatrix}.
-        </me>
+        </md>
         <p>
           By inspection, what is <m>E</m>? How does it compare to <m>I_3</m>?
         </p>
@@ -285,9 +285,9 @@
       Returning to why the algorithm works, applying a sequence of row operations to <m>A</m> to obtain <m>I_n</m> can be written as:
     </p>
 
-    <me>
+    <md>
       (E_k \cdots E_3E_2E_1)A = I_n.
-    </me>
+    </md>
 
     <p workspace="0.5in">
       Thus, <m>E_k \cdots E_3E_2E_1</m> is the inverse matrix we seek.

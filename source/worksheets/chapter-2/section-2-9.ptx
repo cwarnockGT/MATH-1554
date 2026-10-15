@@ -17,13 +17,13 @@
       <p>(2) &#160; <m>A</m> is an <m>n \times n</m> matrix that has elements <m>a_{ij}</m> where</p>
 
       <p>
-        <me>
+        <md>
         a_{ij} =
         \begin{cases}
           0, &amp; \text{when } i + j \text{ is odd} \\
           1, &amp; \text{when } i + j \text{ is even}
         \end{cases}
-        </me>
+        </md>
       </p>
 
       <p>Suppose <m>n \ge 2</m>.</p>

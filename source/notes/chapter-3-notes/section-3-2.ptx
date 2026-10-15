@@ -66,13 +66,13 @@
     <example xml:id="ex-3-2-rowops-example1" workspace="1.5in">
       <statement>
         <p>Compute:</p>
-        <me>
+        <md>
           \begin{vmatrix}
             1 \amp -4 \amp 2\\
             -2 \amp 8 \amp -9\\
             -1 \amp 7 \amp 3
           \end{vmatrix}
-        </me>
+        </md>
       </statement>
     </example>
 
@@ -81,14 +81,14 @@
     <example xml:id="ex-3-2-rowops-example2" workspace="true">
       <statement>
         <p>Compute:</p>
-        <me>
+        <md>
           \begin{vmatrix}
             2 \amp 6 \amp -5 \amp 2\\
             2 \amp 5 \amp -7 \amp 3\\
             4 \amp 15 \amp -4 \amp 6\\
             -2 \amp -5 \amp 4 \amp 2
           \end{vmatrix}
-        </me>
+        </md>
       </statement>
     </example>
 
@@ -104,13 +104,13 @@
             <p>
                 If <m>A</m> is reduced to echelon form using <m>r</m> row interchanges, then
             </p>
-            <me>
+            <md>
             |A|=
             \begin{cases}
                 (-1)^r \times \text{(product of pivots)}, \amp \text{if $A$ is invertible},\\[4pt]
                 0, \amp \text{if $A$ is singular}.
             \end{cases}
-            </me>
+            </md>
         </statement>
     </theorem>
 
@@ -143,7 +143,7 @@
     <example xml:id="ex-3-2-det-power" workspace="1.5in">
       <statement>
         <p>Determine the value of:</p>
-        <me>
+        <md>
           \operatorname{det}(A)
           =
           \operatorname{det}
@@ -154,7 +154,7 @@
               1 \amp 1 \amp 3
             \end{bmatrix}^8
           \right).
-        </me>
+        </md>
       </statement>
     </example>
 
@@ -165,7 +165,7 @@
         <p>
           Use the determinant to find all values of <m>\lambda</m> for which the matrix <m>C</m> is not invertible.
         </p>
-        <me>
+        <md>
           C=
           \begin{bmatrix}
             5 \amp 0 \amp 0\\
@@ -174,7 +174,7 @@
           \end{bmatrix}
           -
           \lambda I_3.
-        </me>
+        </md>
       </statement>
     </example>
 

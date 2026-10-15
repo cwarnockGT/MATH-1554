@@ -29,7 +29,7 @@
       and a vector perpendicular to <m>\vec{u}</m>.</p>
 
       <p>
-        <me>
+        <md>
         \vec{y} =
         \begin{pmatrix}
           -1 \\ -5 \\ 10
@@ -39,7 +39,7 @@
         \begin{pmatrix}
           5 \\ -2 \\ 1
         \end{pmatrix}
-        </me>
+        </md>
       </p>
     </li>
 
@@ -49,7 +49,7 @@
       by the orthogonal vectors <m>\vec{u}_1</m> and <m>\vec{u}_2</m>.</p>
 
       <p>
-        <me>
+        <md>
         \vec{v} =
         \begin{pmatrix}
           0 \\ -5 \\ -3
@@ -64,7 +64,7 @@
         \begin{pmatrix}
           6 \\ -7 \\ -10
         \end{pmatrix}
-        </me>
+        </md>
       </p>
     </li>
   </ul>
@@ -84,7 +84,7 @@
           </p>
 
           <p>
-            <me>A = \begin{pmatrix} &amp; &amp; &amp; \\ &amp; &amp; &amp; \\ &amp; &amp; &amp; \end{pmatrix}</me>
+            <md>A = \begin{pmatrix} &amp; &amp; &amp; \\ &amp; &amp; &amp; \\ &amp; &amp; &amp; \end{pmatrix}</md>
             <!-- manually padded entries -->
           </p>
         </li>
@@ -114,7 +114,7 @@
           </p>
 
           <p>
-            <me>A = \begin{pmatrix} &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \end{pmatrix}</me>
+            <md>A = \begin{pmatrix} &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \end{pmatrix}</md>
             <!-- Manually added in more ampersands because they didn't pad the matrix length enough-->
           </p>
         </li>
@@ -133,7 +133,7 @@
           </p>
 
           <p>
-            <me>\vec{w} = \begin{pmatrix} &amp; \\ &amp; \\ &amp; \end{pmatrix}</me>
+            <md>\vec{w} = \begin{pmatrix} &amp; \\ &amp; \\ &amp; \end{pmatrix}</md>
           </p>
         </li>
       </ol>

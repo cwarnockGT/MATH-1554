@@ -46,13 +46,13 @@
       <p>(5) &#160; Construct the quadratic polynomial <m>p(t) = a_0 + a_1 t + a_2 t^2</m> passing through <m>(1,12)</m>, <m>(2,15)</m>, and <m>(3,16)</m>.</p>
 
       <p>
-        <me>
+        <md>
         \begin{aligned}
           p(1) \amp= 12 = a_0 + a_1 + a_2 \\
           p(2) \amp= 15 = a_0 + 2a_1 + 4a_2 \\
           p(3) \amp= 16 = a_0 + 3a_1 + 9a_2
         \end{aligned}
-        </me>
+        </md>
       </p>
 
       <p>(The coefficient matrix is a Vandermonde matrix.)</p>

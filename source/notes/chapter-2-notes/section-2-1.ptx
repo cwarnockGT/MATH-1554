@@ -31,7 +31,7 @@
         <p>
           A <term>zero matrix</term> is any matrix whose every entry is zero.
         </p>
-        <me>
+        <md>
           0_{2\times 3}=
           \begin{bmatrix}
             0 \amp 0 \amp 0\\
@@ -43,7 +43,7 @@
             0\\
             0
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </definition>
 
@@ -54,7 +54,7 @@
         <p>
           The <m>n\times n</m> <term>identity matrix</term> has ones on the main diagonal and zeros elsewhere.
         </p>
-        <me>
+        <md>
           I_2=
           \begin{bmatrix}
             1 \amp 0\\
@@ -67,7 +67,7 @@
             0 \amp 1 \amp 0\\
             0 \amp 0 \amp 1
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </definition>
 
@@ -107,7 +107,7 @@
         <p>
           If
         </p>
-        <me>
+        <md>
           \begin{bmatrix}
             1 \amp 2 \amp 3\\
             4 \amp 5 \amp 6
@@ -122,7 +122,7 @@
             15 \amp 10 \amp 17\\
             4 \amp 5 \amp 16
           \end{bmatrix},
-        </me>
+        </md>
         <p>
           what are the values of <m>c</m> and <m>k</m>?
         </p>
@@ -155,7 +155,7 @@
           Let <m>A</m> be an <m>m\times n</m> matrix and <m>B</m> be an <m>n\times p</m> matrix.
           The product <m>AB</m> is an <m>m\times p</m> matrix, given by
         </p>
-        <me>
+        <md>
           AB
           =
           A
@@ -166,7 +166,7 @@
           \begin{bmatrix}
             A\vec b_1 \amp \cdots \amp A\vec b_p
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </definition>
 
@@ -195,9 +195,9 @@
           <m>B\in\mathbb{R}^{n\times p}</m> has columns <m>\vec b_j</m>, then each element of
           <m>C=AB</m> is
         </p>
-        <me>
+        <md>
           c_{ij}=\vec a_i\cdot \vec b_j.
-        </me>
+        </md>
       </statement>
     </theorem>
 
@@ -206,7 +206,7 @@
     <example xml:id="ex-row-column-compute" workspace="true">
       <statement>
         <p>Compute the following using the row-column method.</p>
-        <me>
+        <md>
           C=AB=
           \begin{bmatrix}
             2 \amp 0\\
@@ -216,7 +216,7 @@
             3 \amp 0 \amp 1\\
             4 \amp 5 \amp 6
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
   </page>
@@ -256,7 +256,7 @@
       The associative property is <m>(AB)C = A(BC)</m>. If <m>C=\vec x</m>, then:
     </p>
 
-    <me>(AB)\vec x = A(B\vec x).</me>
+    <md>(AB)\vec x = A(B\vec x).</md>
 
     <p>Schematically:</p>
 
@@ -304,13 +304,13 @@
     <example xml:id="ex-noncomm-with-A" workspace="true">
       <statement>
         <p>Let</p>
-        <me>
+        <md>
           A=
           \begin{bmatrix}
             1 \amp 1\\
             0 \amp 0
           \end{bmatrix}.
-        </me>
+        </md>
         <p>
           Give an example of a <m>2\times 2</m> matrix <m>B</m> such that <m>AB\neq BA</m>.
         </p>
@@ -336,12 +336,12 @@
     <example xml:id="ex-transpose-compute" workspace="true">
       <statement>
         <p>Compute:</p>
-        <me>
+        <md>
           \begin{bmatrix}
             1 \amp 2 \amp 3 \amp 4 \amp 5\\
             0 \amp 1 \amp 0 \amp 2 \amp 0
           \end{bmatrix}^T
-        </me>
+        </md>
       </statement>
     </example>
 
@@ -364,7 +364,7 @@
     <example xml:id="ex-which-operations-defined" workspace="true">
       <introduction>
         <p>Define</p>
-        <me>
+        <md>
           A=
           \begin{bmatrix}
             1 \amp 0\\
@@ -383,7 +383,7 @@
             0 \amp 2 \amp 0\\
             0 \amp 0 \amp 2
           \end{bmatrix}.
-        </me>
+        </md>
 
         <p>
           Which of these operations are defined, and what are the dimensions of the result?
@@ -409,12 +409,12 @@
       <m>A^k</m> is the product of <m>k</m> copies of <m>A</m>.
     </p>
 
-    <me>A^k = AA\cdots A.</me>
+    <md>A^k = AA\cdots A.</md>
 
     <example workspace="true">
         <statement>
             <p>
-                Compute <m>A^2</m> for <me>A = \begin{bmatrix} 3 \amp -2 \\ 5 \amp 1 \end{bmatrix}</me>
+                Compute <m>A^2</m> for <md>A = \begin{bmatrix} 3 \amp -2 \\ 5 \amp 1 \end{bmatrix}</md>
             </p>
         </statement>
     </example>
@@ -422,14 +422,14 @@
     <example xml:id="ex-compute-c-power" workspace="true">
       <statement>
         <p>Compute <m>B^8</m> for</p>
-        <me>
+        <md>
           B=
           \begin{bmatrix}
             1 \amp 0 \amp 0\\
             0 \amp 2 \amp 0\\
             0 \amp 0 \amp 2
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
   </page>

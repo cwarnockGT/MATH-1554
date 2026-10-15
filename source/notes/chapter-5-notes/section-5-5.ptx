@@ -66,9 +66,9 @@
       <statement>
         <p>
            The <term>complex numbers</term> are denoted by <m>\mathbb{C}</m>, where
-        <me>
+        <md>
           \mathbb{C}=\{\,a+bi \mid a,b\in\mathbb{R}\,\}.
-        </me>
+        </md>
         </p>
       </statement>
     </definition>
@@ -208,10 +208,10 @@
     <title>Euler’s Formula and Products in Polar Form</title>
 
     <p>
-      Suppose <m>z_1</m> has angle <m>\phi_1</m> and <m>z_2</m> has angle <m>\phi_2</m>; that is, let <m>z_1 = |z_1|e^{i\phi_1}</m> and <m>z_2 = |z_2|e^{i\phi_2}</m>. Note that <me>
+      Suppose <m>z_1</m> has angle <m>\phi_1</m> and <m>z_2</m> has angle <m>\phi_2</m>; that is, let <m>z_1 = |z_1|e^{i\phi_1}</m> and <m>z_2 = |z_2|e^{i\phi_2}</m>. Note that <md>
       z_3=z_1z_2=(\lvert z_1\rvert e^{i\phi_1})(\lvert z_2\rvert e^{i\phi_2})
       = \lvert z_1\rvert \lvert z_2\rvert e^{i(\phi_1+\phi_2)}.
-    </me>
+    </md>
     Therefore, the product <m>z_1z_2</m> has modulus <m>|z_1||z_2|</m> and has angle <m>\phi_1 + \phi_2</m>.
     </p>
 
@@ -297,7 +297,7 @@
         <p>
           The matrix that rotates vectors by <m>\phi=\pi/4</m> about the origin and then scales by <m>r=\sqrt{2}</m> is
         </p>
-        <me>
+        <md>
           A=
           \begin{bmatrix}
             r \amp 0\\
@@ -312,7 +312,7 @@
             1 \amp -1\\
             1 \amp 1
           \end{bmatrix}.
-        </me>
+        </md>
         <p>Find the eigenvalues of <m>A</m> and one eigenvector for each eigenvalue.</p>
       </statement>
     </example>
@@ -332,9 +332,9 @@
     <example xml:id="ex-5-5-C-eigs-polar-1" workspace="true">
       <statement>
         <p>Compute the eigenvalues of</p>
-        <me>
+        <md>
           C=\begin{bmatrix} a \amp -b\\ b \amp a \end{bmatrix}
-        </me>
+        </md>
         <p>and express them in the polar form <m>re^{i\phi}</m>.</p>
       </statement>
     </example>
@@ -349,12 +349,12 @@
     <example xml:id="ex-5-5-complex-eigs" workspace="true">
       <statement>
         <p>Find the complex eigenvalues and an associated complex eigenvector for each eigenvalue of</p>
-        <me>
+        <md>
           A=\begin{bmatrix}
             1 \amp -2\\
             1 \amp 3
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
   </page>

@@ -15,11 +15,11 @@
     <li workspace="2in">
       <p>(2) &#160; For what values of <m>h</m> is <m>\vec b</m> in the plane spanned by <m>\vec a_1</m> and <m>\vec a_2</m>?</p>
       <p>
-        <me>
+        <md>
         \vec a_1 = \begin{pmatrix} 1 \\ 4 \\ -1 \end{pmatrix},\quad
         \vec a_2 = \begin{pmatrix} -6 \\ -17 \\ 2 \end{pmatrix},\quad
         \vec b = \begin{pmatrix} 4 \\ 2 \\ h \end{pmatrix}
-        </me>
+        </md>
       </p>
     </li>
 

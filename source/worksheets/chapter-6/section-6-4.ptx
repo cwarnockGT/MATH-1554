@@ -23,7 +23,7 @@
       <p>(2) &#160; Consider the three vectors below.</p>
 
       <p>
-        <me>
+        <md>
         \vec{x}_1 =
         \begin{pmatrix}
           1 \\ 1 \\ 1 \\ 1 \\ 1
@@ -38,7 +38,7 @@
         \begin{pmatrix}
           4 \\ 1 \\ 1 \\ 1 \\ 4
         \end{pmatrix}
-        </me>
+        </md>
       </p>
 
       <ol marker="(a)">

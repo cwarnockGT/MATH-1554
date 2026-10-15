@@ -21,12 +21,12 @@
       </ol>
 
       <p>
-        <me>
+        <md>
         \begin{aligned}
           x_1 + 2x_2 \amp= 1 \\
           A x_1 + B x_2 \amp= 2
         \end{aligned}
-        </me>
+        </md>
       </p>
 
       <p>

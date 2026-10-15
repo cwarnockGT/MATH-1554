@@ -8,7 +8,7 @@
       <p>(1) &#160; <m>A</m> has the reduced echelon form below. Construct a basis for <m>\mathrm{Col}(A)</m> and for <m>\mathrm{Nul}(A)</m>.</p>
 
       <p>
-        <me>
+        <md>
         A = \begin{pmatrix} \vec a_1 &amp; \vec a_2 &amp; \vec a_3 &amp; \vec a_4 &amp; \vec a_5 &amp; \vec a_6 \end{pmatrix} \sim 
         \begin{pmatrix}
           1 &amp; 4 &amp; 0 &amp; 10 &amp; 0 &amp; 13 \\
@@ -16,7 +16,7 @@
           0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 4 \\
           0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
         \end{pmatrix}.
-        </me>
+        </md>
       </p>
     </li>
 

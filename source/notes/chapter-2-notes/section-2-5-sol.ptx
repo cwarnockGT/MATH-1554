@@ -33,7 +33,7 @@
     <p>A rectangular matrix <m>A</m> is <term>upper triangular</term> if <m>a_{i,j}=0</m> whenever <m>i&gt;j</m>.
     </p>
 
-    <me>
+    <md>
       \begin{bmatrix}
         1 \amp 5 \amp 0\\
         0 \amp 2 \amp 4
@@ -49,13 +49,13 @@
       \begin{bmatrix}
         2\\0\\0\\0
       \end{bmatrix}
-    </me>
+    </md>
 
     <p>
         A rectangular matrix <m>A</m> is <term>lower triangular</term> if <m>a_{i,j}=0</m> whenever <m>i&lt;j</m>.
     </p>
 
-    <me>
+    <md>
       \begin{bmatrix}
         1 \amp 0 \amp 0\\
         3 \amp 2 \amp 0
@@ -71,12 +71,12 @@
       \begin{bmatrix}
         1\\2\\1\\2
       \end{bmatrix}
-    </me>
+    </md>
 
     <p workspace="0.2in">Can you have a matrix that is both upper and lower triangular?</p>
     <solution>
         <p>
-            There are many matrices which are both, such as <me>\begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix} \quad \text{and} \quad  \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 2 \amp 0 \end{bmatrix}</me>
+            There are many matrices which are both, such as <md>\begin{bmatrix} 0 \amp 0 \\ 0 \amp 0 \end{bmatrix} \quad \text{and} \quad  \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 2 \amp 0 \end{bmatrix}</md>
         </p>
     </solution>
 
@@ -106,7 +106,7 @@
         <p>
           If <m>A</m> is a <m>3 \times 2</m> matrix, then its LU factorization has the form:
         </p>
-        <me>
+        <md>
           A=LU=
           \begin{bmatrix}
             1 \amp 0 \amp 0\\
@@ -118,7 +118,7 @@
             0 \amp \ast\\
             0 \amp 0
           \end{bmatrix}
-        </me>
+        </md>
       </statement>
     </example>
 
@@ -128,15 +128,15 @@
       How do we find <m>L </m> and <m>U</m>? Suppose <m>A</m> can be row reduced to echelon form <m>U</m> without interchanging rows. Then
     </p>
 
-    <me>
+    <md>
       E_p\cdots E_1A=U,
-    </me>
+    </md>
 
     <p>
       where the <m>E_j</m> are elementary row-operation matrices. These matrices are lower triangular and invertible. For example, 
     </p>
 
-    <me>
+    <md>
       \begin{bmatrix}
         1 \amp 0 \amp 0\\
         0 \amp 1 \amp 0\\
@@ -148,14 +148,14 @@
         0 \amp 1 \amp 0\\
         -2 \amp 0 \amp 1
       \end{bmatrix}.
-    </me>
+    </md>
 
     <p workspace="true">
       Therefore:
 
-    <me>
+    <md>
       A = E_1^{-1}\cdots E_p^{-1}U = LU.
-    </me>
+    </md>
     </p>
 
     <p><nbsp/></p>
@@ -191,14 +191,14 @@
     <example xml:id="ex-compute-lu" workspace="true">
       <statement>
         <p>Compute the LU factorization of:</p>
-        <me>
+        <md>
           A=
           \begin{bmatrix}
             4 \amp -3 \amp -1 \amp 5\\
             -16 \amp 12 \amp 2 \amp -17\\
             8 \amp -6 \amp -12 \amp 22
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -208,7 +208,7 @@
             Now, we determine <m>U</m> by row reducing <m>A</m> to echelon form only using row replacements of the form <m>R_i - kR_j \rightarrow R_i</m>. Each time we make one of these row replacements, we are finding an entry of <m>L</m>, specifically we are finding that <m>\ell_{i,j} = k</m>. 
         </p> 
         <p>
-            I tend to write down the form of <m>L</m> with blanks in the lower portion and fill them in after each row replacement. So, I start the problem with the following written towards the bottom of the page: <me>L = \begin{bmatrix} 1 \amp 0 \amp 0 \\ \amp 1 \amp 0 \\ \amp \amp 1 \end{bmatrix}</me>
+            I tend to write down the form of <m>L</m> with blanks in the lower portion and fill them in after each row replacement. So, I start the problem with the following written towards the bottom of the page: <md>L = \begin{bmatrix} 1 \amp 0 \amp 0 \\ \amp 1 \amp 0 \\ \amp \amp 1 \end{bmatrix}</md>
         </p>
         <p><nbsp/></p>
         <p>
@@ -216,25 +216,25 @@
             <ul>
                 <li>
                     <p>
-                        <m>R_2 + 4R_1 \rightarrow R_2</m>: <me>A = \begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ -16 \amp 12 \amp 2 \amp -17 \\ 8 \amp -6 \amp -12 \amp 22 \end{bmatrix} \sim \begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 8 \amp -6 \amp -12 \amp 22 \end{bmatrix}</me> Note that the row replacement could be written as <m>R_2 - (-4)R_1 \rightarrow R_2</m>, so we have that <m>\ell_{2,1} = -4</m>.
+                        <m>R_2 + 4R_1 \rightarrow R_2</m>: <md>A = \begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ -16 \amp 12 \amp 2 \amp -17 \\ 8 \amp -6 \amp -12 \amp 22 \end{bmatrix} \sim \begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 8 \amp -6 \amp -12 \amp 22 \end{bmatrix}</md> Note that the row replacement could be written as <m>R_2 - (-4)R_1 \rightarrow R_2</m>, so we have that <m>\ell_{2,1} = -4</m>.
                     </p>
                     <p><nbsp/></p>
                 </li>
                 <li>
                     <p>
-                        <m>R_3 - 2R_1 \rightarrow R_3</m>: <me>\begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 8 \amp -6 \amp -12 \amp 22 \end{bmatrix}\sim \begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 0 \amp 0 \amp -10 \amp 12 \end{bmatrix}</me> Since we used the row operation <m>R_3 - 2R_1 \rightarrow R_3</m>, we have that <m>\ell_{3,1} = 2</m>.
+                        <m>R_3 - 2R_1 \rightarrow R_3</m>: <md>\begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 8 \amp -6 \amp -12 \amp 22 \end{bmatrix}\sim \begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 0 \amp 0 \amp -10 \amp 12 \end{bmatrix}</md> Since we used the row operation <m>R_3 - 2R_1 \rightarrow R_3</m>, we have that <m>\ell_{3,1} = 2</m>.
                     </p>
                     <p><nbsp/></p>
                 </li>
                 <li>
                     <p>
-                        <m>R_3 - 5R_2 \rightarrow R_3</m>: <me>\begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 0 \amp 0 \amp -10 \amp 12 \end{bmatrix} \sim \begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 0 \amp 0 \amp 0 \amp -3\end{bmatrix}</me> Since we used the row operation <m>R_3 - 5R_2 \rightarrow R_3</m>, we have that <m>\ell_{3,2} = 5</m>. Since the matrix is in echelon form, we have found <m>U</m>.
+                        <m>R_3 - 5R_2 \rightarrow R_3</m>: <md>\begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 0 \amp 0 \amp -10 \amp 12 \end{bmatrix} \sim \begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 0 \amp 0 \amp 0 \amp -3\end{bmatrix}</md> Since we used the row operation <m>R_3 - 5R_2 \rightarrow R_3</m>, we have that <m>\ell_{3,2} = 5</m>. Since the matrix is in echelon form, we have found <m>U</m>.
                     </p>
                 </li>
             </ul>
         </p>
         <p><nbsp/></p>
-        <p> Therefore, we have that <me>L = \begin{bmatrix} 1 \amp 0 \amp 0 \\ -4 \amp 1 \amp 0 \\ 2 \amp 5 \amp 1 \end{bmatrix} \quad \text{and} \quad U = \begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 0 \amp 0 \amp 0 \amp -3\end{bmatrix}</me>. We can check by verifying that <m>A = LU</m>.
+        <p> Therefore, we have that <md>L = \begin{bmatrix} 1 \amp 0 \amp 0 \\ -4 \amp 1 \amp 0 \\ 2 \amp 5 \amp 1 \end{bmatrix} \quad \text{and} \quad U = \begin{bmatrix} 4 \amp -3 \amp -1 \amp 5 \\ 0 \amp 0 \amp -2 \amp 3 \\ 0 \amp 0 \amp 0 \amp -3\end{bmatrix}</md>. We can check by verifying that <m>A = LU</m>.
         </p>
       </solution>
     </example>
@@ -246,7 +246,7 @@
     <example xml:id="ex-compute-lu2" workspace="true">
       <statement>
         <p>Compute the LU factorization of:</p>
-        <me>
+        <md>
           A=
           \begin{bmatrix}
             3 \amp -1 \amp 4 \amp 5\\
@@ -255,16 +255,16 @@
             6 \amp 2 \amp 12 \amp 15\\
             3 \amp 3 \amp 8 \amp 9
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
-            Note <m>U</m> will be a <m>5 \times 4</m> matrix and <m>L</m> will be a <m>5 \times 5</m> matrix. I start by writing the following near the bottom of the page: <me>L = \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \amp 0 \\ \amp 1 \amp 0 \amp 0 \amp 0 \\ \amp \amp 1 \amp 0 \amp 0 \\ \amp \amp \amp 1 \amp 0 \\ \amp \amp \amp \amp 1 \end{bmatrix}</me>
+            Note <m>U</m> will be a <m>5 \times 4</m> matrix and <m>L</m> will be a <m>5 \times 5</m> matrix. I start by writing the following near the bottom of the page: <md>L = \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \amp 0 \\ \amp 1 \amp 0 \amp 0 \amp 0 \\ \amp \amp 1 \amp 0 \amp 0 \\ \amp \amp \amp 1 \amp 0 \\ \amp \amp \amp \amp 1 \end{bmatrix}</md>
         </p>
         <p><nbsp/></p>
         <p>
             Note the following row operations:
-            <me>A = 
+            <md>A = 
                         \begin{bmatrix}
                             3 \amp -1 \amp 4 \amp 5\\
                             6 \amp 0 \amp 10 \amp 12\\
@@ -279,12 +279,12 @@
                             0 \amp 4 \amp 4 \amp 5\\
                             0 \amp 4 \amp 4 \amp 5\\
                             0 \amp 4 \amp 4 \amp 4
-                        \end{bmatrix} </me> Therefore, we have that <m>\ell_{2,1} = 2, \ell_{3,1} = 1, \ell_{4,1} = 2,</m> and <m>\ell_{5,1} = 1</m>.
+                        \end{bmatrix} </md> Therefore, we have that <m>\ell_{2,1} = 2, \ell_{3,1} = 1, \ell_{4,1} = 2,</m> and <m>\ell_{5,1} = 1</m>.
         </p>
         <p><nbsp/></p>
         <p>
             Note that if we were only interested getting to echelon form, then we could do <m>R_4 - R_3 \rightarrow R_4</m>; however, since we are interested in <m>LU</m>-factorization we must pay attention to <xref ref="caution-row-replacement" text="custom">Caution 2</xref>. Therefore, we must use Row 2 next since it is the next pivot column. Note the following:
-            <me>
+            <md>
                 \begin{bmatrix}
                             3 \amp -1 \amp 4 \amp 5\\
                             0 \amp 2 \amp 2 \amp 2\\
@@ -300,13 +300,13 @@
                             0 \amp 0 \amp 0 \amp 1\\
                             0 \amp 0 \amp 0 \amp 0
                         \end{bmatrix}
-            </me>
+            </md>
             Thus, we have that <m>\ell_{3,2} = 2, \ell_{4,2} = 2,</m> and <m>\ell_{5,2} = 2</m>.
         </p>
         <p><nbsp/></p>
         <p>
             We are still not in echelon form, so we must do one more row operation. 
-            <me>
+            <md>
                 \begin{bmatrix}
                             3 \amp -1 \amp 4 \amp 5\\
                             0 \amp 2 \amp 2 \amp 2\\
@@ -322,18 +322,18 @@
                             0 \amp 0 \amp 0 \amp 0\\
                             0 \amp 0 \amp 0 \amp 0
                         \end{bmatrix}
-            </me>
+            </md>
             Therefore, <m>\ell_{4,3} = 1</m>. What about <m>\ell_{5,3}</m>? Well, we didn't need to do anything to Row 5, so can we put anything in that position? NO. Notice, that if you put a non-zero number in that position, say <m>\ell_{5,3} = 1</m>, then we are saying that we need to do the row replacement <m>R_5 - R_3 \rightarrow R_5</m> which would mess up our row of zeros at the bottom of the matrix, thus undoing our work in getting to echelon form. Therefore, we need to make NO change to Row 5, which is doing the row replacement <m>R_5 - 0R_3 \rightarrow R_5</m>, so <m>\ell_{5,3}</m> must be <m>0</m>. 
         </p>
         <p><nbsp/></p>
-        <p>Since the final matrix is in echelon form, we have found <m>U</m>. However, there is still one more entry of <m>L</m> to determine, <m>\ell_{5,4}</m>. Do we have to put a zero there? NO. Note that whatever number is in that position, say <m>\ell_{5,4} = 5</m>, would result in the row replacement <m>R_5 - 5R_4 \rightarrow R_5</m> which actually doesn't change anything since Row 4 is a row consisting entirely of <m>0</m>'s. Therefore, <m>\ell_{5,4} = t</m>, where <m>t \in \mathbb{R}</m> can be anything you wish. Thus, we have that <me>L = \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \amp 0 \amp 0 \\ 1 \amp 2 \amp 1 \amp 0 \amp 0 \\ 2 \amp 2 \amp 1 \amp 1 \amp 0 \\ 1 \amp 2 \amp 0 \amp t \amp 1 \end{bmatrix} \quad \text{and} \quad U = \begin{bmatrix}
+        <p>Since the final matrix is in echelon form, we have found <m>U</m>. However, there is still one more entry of <m>L</m> to determine, <m>\ell_{5,4}</m>. Do we have to put a zero there? NO. Note that whatever number is in that position, say <m>\ell_{5,4} = 5</m>, would result in the row replacement <m>R_5 - 5R_4 \rightarrow R_5</m> which actually doesn't change anything since Row 4 is a row consisting entirely of <m>0</m>'s. Therefore, <m>\ell_{5,4} = t</m>, where <m>t \in \mathbb{R}</m> can be anything you wish. Thus, we have that <md>L = \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \amp 0 \amp 0 \\ 1 \amp 2 \amp 1 \amp 0 \amp 0 \\ 2 \amp 2 \amp 1 \amp 1 \amp 0 \\ 1 \amp 2 \amp 0 \amp t \amp 1 \end{bmatrix} \quad \text{and} \quad U = \begin{bmatrix}
                             3 \amp -1 \amp 4 \amp 5\\
                             0 \amp 2 \amp 2 \amp 2\\
                             0 \amp 0 \amp 0 \amp 1\\
                             0 \amp 0 \amp 0 \amp 0\\
                             0 \amp 0 \amp 0 \amp 0
                         \end{bmatrix}
-        </me>
+        </md>
         One consequence of this is that the <m>LU</m> factorization of a matrix might not be unique. It is true that <m>U</m> is unique; however, there <em>could</em> be many possible <m>L</m>'s that work.
     </p>
       </solution>
@@ -360,7 +360,7 @@
     <example xml:id="ex-solve-with-lu" workspace="true">
       <statement>
         <p>Solve the linear system with:</p>
-        <me>
+        <md>
           A=LU=
           \begin{bmatrix}
             1 \amp 0 \amp 0 \amp 0\\
@@ -379,14 +379,14 @@
           \begin{bmatrix}
             2\\5\\8\\2
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
-            We start with determining a vector <m>\vec y</m> so that <m>L\vec y = \vec b</m>. Note that <me>\begin{bmatrix} L \amp \rvert \amp \vec b \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \amp \rvert \amp 2 \\ 1 \amp 1 \amp 0 \amp 0 \amp \rvert \amp 5 \\ 0 \amp 2 \amp 1 \amp 0 \amp \rvert \amp 8 \\ 0 \amp 0 \amp 1 \amp 1 \amp \rvert \amp 2 \end{bmatrix} \sim \cdots \sim \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \amp \rvert \amp 2 \\ 0 \amp 1 \amp 0 \amp 0 \amp \rvert \amp 3 \\ 0 \amp 0 \amp 1 \amp 0 \amp \rvert \amp 2 \\ 0 \amp 0 \amp 0 \amp 1 \amp \rvert \amp 0 \end{bmatrix}</me> Therefore, we have that <m>\vec y = \begin{bmatrix} 2 \\ 3 \\ 2 \\ 0 \end{bmatrix}</m>. 
+            We start with determining a vector <m>\vec y</m> so that <m>L\vec y = \vec b</m>. Note that <md>\begin{bmatrix} L \amp \rvert \amp \vec b \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \amp \rvert \amp 2 \\ 1 \amp 1 \amp 0 \amp 0 \amp \rvert \amp 5 \\ 0 \amp 2 \amp 1 \amp 0 \amp \rvert \amp 8 \\ 0 \amp 0 \amp 1 \amp 1 \amp \rvert \amp 2 \end{bmatrix} \sim \cdots \sim \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \amp \rvert \amp 2 \\ 0 \amp 1 \amp 0 \amp 0 \amp \rvert \amp 3 \\ 0 \amp 0 \amp 1 \amp 0 \amp \rvert \amp 2 \\ 0 \amp 0 \amp 0 \amp 1 \amp \rvert \amp 0 \end{bmatrix}</md> Therefore, we have that <m>\vec y = \begin{bmatrix} 2 \\ 3 \\ 2 \\ 0 \end{bmatrix}</m>. 
         </p>
         <p><nbsp/></p>
-        <p> Next, we determine <m>\vec x</m> so that <m>U\vec x = \vec y</m>. Note that <me>\begin{bmatrix} U \amp \rvert \amp \vec y \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \amp \rvert \amp 2 \\ 0 \amp 2 \amp 1 \amp \rvert \amp 3 \\ 0 \amp 0 \amp 2 \amp \rvert \amp 2 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix} \sim \cdots \sim  \begin{bmatrix} 1 \amp 0 \amp 0 \amp \rvert \amp 2 \\ 0 \amp 1 \amp 0 \amp \rvert \amp 1\\ 0 \amp 0 \amp 1 \amp \rvert \amp 1 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</me> Therefore, we have that <m>\vec x = \begin{bmatrix} 2 \\ 1 \\ 1 \end{bmatrix}</m> is the solution to the system <m>A \vec x = \vec b</m>.
+        <p> Next, we determine <m>\vec x</m> so that <m>U\vec x = \vec y</m>. Note that <md>\begin{bmatrix} U \amp \rvert \amp \vec y \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \amp \rvert \amp 2 \\ 0 \amp 2 \amp 1 \amp \rvert \amp 3 \\ 0 \amp 0 \amp 2 \amp \rvert \amp 2 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix} \sim \cdots \sim  \begin{bmatrix} 1 \amp 0 \amp 0 \amp \rvert \amp 2 \\ 0 \amp 1 \amp 0 \amp \rvert \amp 1\\ 0 \amp 0 \amp 1 \amp \rvert \amp 1 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</md> Therefore, we have that <m>\vec x = \begin{bmatrix} 2 \\ 1 \\ 1 \end{bmatrix}</m> is the solution to the system <m>A \vec x = \vec b</m>.
         </p>
       </solution>
     </example>

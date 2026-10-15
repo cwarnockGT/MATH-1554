@@ -47,7 +47,7 @@
         </p>
 
         <p>They are:</p>
-        <me>
+        <md>
           \vec e_1 =
           \begin{bmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{bmatrix},
           \qquad
@@ -58,18 +58,18 @@
           \qquad
           \vec e_n =
           \begin{bmatrix} 0 \\ 0 \\ \vdots \\ 1 \end{bmatrix}.
-        </me>
+        </md>
 
         <p>
           For example, in <m>\mathbb{R}^3</m>:
         </p>
-        <me>
+        <md>
           \vec e_1=\begin{bmatrix}1\\0\\0\end{bmatrix},
           \qquad
           \vec e_2=\begin{bmatrix}0\\1\\0\end{bmatrix},
           \qquad
           \vec e_3=\begin{bmatrix}0\\0\\1\end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </definition>
 
@@ -84,9 +84,9 @@
         <m>\vec v_1,\vec v_2,\ldots,\vec v_n</m>, then
       </p>
 
-      <me>
+      <md>
         A\vec e_i = \vec v_i, \text{ for } i=1,2,\ldots,n.
-      </me>
+      </md>
 
       <p>
         So multiplying a matrix by <m>\vec e_i</m> gives column <m>i</m> of <m>A</m>.
@@ -96,17 +96,17 @@
         <title>Example</title>
         <statement>
           <p>Compute:</p>
-          <me>
+          <md>
             \begin{bmatrix}
               1 \amp 2 \amp 3\\
               4 \amp 5 \amp 6\\
               7 \amp 8 \amp 9
             \end{bmatrix}\vec e_2.
-          </me>
+          </md>
         </statement>
         <solution>
             <p>
-                Note that <me>\begin{bmatrix}1 \amp 2 \amp 3 \\ 4 \amp 5 \amp 6 \\ 7 \amp 8 \amp 9 \end{bmatrix}\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} = 0\begin{bmatrix} 1 \\ 4 \\ 7 \end{bmatrix} + 1\begin{bmatrix} 2 \\ 5 \\ 8 \end{bmatrix} + 0\begin{bmatrix} 3 \\ 6 \\ 9 \end{bmatrix} = \begin{bmatrix} 2 \\ 5 \\ 8 \end{bmatrix}</me> which is the second column of <m>A</m>.
+                Note that <md>\begin{bmatrix}1 \amp 2 \amp 3 \\ 4 \amp 5 \amp 6 \\ 7 \amp 8 \amp 9 \end{bmatrix}\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} = 0\begin{bmatrix} 1 \\ 4 \\ 7 \end{bmatrix} + 1\begin{bmatrix} 2 \\ 5 \\ 8 \end{bmatrix} + 0\begin{bmatrix} 3 \\ 6 \\ 9 \end{bmatrix} = \begin{bmatrix} 2 \\ 5 \\ 8 \end{bmatrix}</md> which is the second column of <m>A</m>.
             </p>
         </solution>
       </example>
@@ -121,23 +121,23 @@
           Then there is a unique matrix <m>A</m> such that
         </p>
 
-        <me>
+        <md>
           T(\vec x)=A\vec x,
           \qquad
           \vec x\in \mathbb{R}^n.
-        </me>
+        </md>
 
         <p>
           In fact, <m>A</m> is an <m>m\times n</m> matrix, and its <m>j</m>th column is
           <m>T(\vec e_j)</m>. That is,
         </p>
 
-        <me>
+        <md>
           A=
           \begin{bmatrix}
             T(\vec e_1) \amp T(\vec e_2) \amp \cdots \amp T(\vec e_n)
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </theorem>
 
@@ -164,42 +164,42 @@
             Let us determine <m>A</m> such that <m>T(\vec x) = A\vec x </m> is rotation by <m>\theta</m> degrees counterclockwise. By <xref ref="thm-standard-matrix"/>, we need to determine <m>T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right)</m> and <m>T\left(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right)</m>.  
         </p>
         <p>
-            First, note that <m>T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right)</m> is the vector in <m>\mathbb{R}^2</m> obtained by rotating the vector <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m>, which points in the direction of <m>0^\circ</m>, by <m>\theta</m> degrees counterclockwise. The resulting vector would have terminal end at the point on the unit circle whose angle is <m>\theta</m>. Using trigonometry, this point is <m>(\cos(\theta), \sin(\theta))</m>. Therefore, we have that <me>T\left(\begin{bmatrix}1 \\ 0 \end{bmatrix}\right) = \begin{bmatrix} \cos(\theta) \\ \sin(\theta) \end{bmatrix}</me>.
+            First, note that <m>T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right)</m> is the vector in <m>\mathbb{R}^2</m> obtained by rotating the vector <m>\begin{bmatrix} 1 \\ 0 \end{bmatrix}</m>, which points in the direction of <m>0^\circ</m>, by <m>\theta</m> degrees counterclockwise. The resulting vector would have terminal end at the point on the unit circle whose angle is <m>\theta</m>. Using trigonometry, this point is <m>(\cos(\theta), \sin(\theta))</m>. Therefore, we have that <md>T\left(\begin{bmatrix}1 \\ 0 \end{bmatrix}\right) = \begin{bmatrix} \cos(\theta) \\ \sin(\theta) \end{bmatrix}</md>.
         </p>
         <p>
-            Next, note that <m>T\left(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right)</m> is the vector in <m>\mathbb{R}^2</m> obtained by rotating the vector <m>\begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>, which points in the direction of <m>90^\circ</m>, by <m>\theta</m> degrees counterclockwise. The resulting vector would have terminal end at the point on the unit circle whose angle is <m>90^\circ + \theta</m>. It follows that this terminal point is <m>(\cos(90^\circ + \theta), \sin(90^\circ + \theta))</m>. Using the sum rule for sine and cosine, we see that this terminal point can be expressed as <m>(-\sin(\theta), \cos(\theta))</m>. Therefore, we have that <me>T\left(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right) = \begin{bmatrix} -\sin(\theta) \\ \cos(\theta) \end{bmatrix}</me>.
+            Next, note that <m>T\left(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right)</m> is the vector in <m>\mathbb{R}^2</m> obtained by rotating the vector <m>\begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>, which points in the direction of <m>90^\circ</m>, by <m>\theta</m> degrees counterclockwise. The resulting vector would have terminal end at the point on the unit circle whose angle is <m>90^\circ + \theta</m>. It follows that this terminal point is <m>(\cos(90^\circ + \theta), \sin(90^\circ + \theta))</m>. Using the sum rule for sine and cosine, we see that this terminal point can be expressed as <m>(-\sin(\theta), \cos(\theta))</m>. Therefore, we have that <md>T\left(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right) = \begin{bmatrix} -\sin(\theta) \\ \cos(\theta) \end{bmatrix}</md>.
         </p> 
         <p>
-            Thus, we have that the matrix <m>A </m> so that <m>T(\vec x) = A\vec x </m> results in rotating the vector <m>\vec x</m> by <m>\theta</m> degrees counterclockwise is <me>A = \begin{bmatrix} \cos(\theta) \amp -\sin(\theta) \\ \sin(\theta) \amp \cos(\theta) \end{bmatrix}</me>.
+            Thus, we have that the matrix <m>A </m> so that <m>T(\vec x) = A\vec x </m> results in rotating the vector <m>\vec x</m> by <m>\theta</m> degrees counterclockwise is <md>A = \begin{bmatrix} \cos(\theta) \amp -\sin(\theta) \\ \sin(\theta) \amp \cos(\theta) \end{bmatrix}</md>.
         </p>
         <p>
             Let's choose "nice" values of <m>\theta</m> to test out our matrix <m>A</m>.
             <ul>
                 <li>
                     <p>
-                        If <m>\theta = 0^\circ</m>, then <me>A = \begin{bmatrix} \cos(0^\circ) \amp -\sin(0^\circ) \\ \sin(0^\circ) \amp \cos(0^\circ) \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}</me>. Note that <m>T(\vec x) = A\vec x = \vec x</m> for all <m>\vec x \in \mathbb{R}^2</m>, so <m>T</m> does not change any input vector <m>\vec x</m>. This makes sense since rotating a vector by <m>0^\circ</m> doesn't change the vector.
+                        If <m>\theta = 0^\circ</m>, then <md>A = \begin{bmatrix} \cos(0^\circ) \amp -\sin(0^\circ) \\ \sin(0^\circ) \amp \cos(0^\circ) \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix}</md>. Note that <m>T(\vec x) = A\vec x = \vec x</m> for all <m>\vec x \in \mathbb{R}^2</m>, so <m>T</m> does not change any input vector <m>\vec x</m>. This makes sense since rotating a vector by <m>0^\circ</m> doesn't change the vector.
                     </p>
                 </li>
                 <li>
                     <p>
-                        If <m>\theta = 180^\circ</m>, then <me>A = \begin{bmatrix} \cos(180^\circ) \amp -\sin(180^\circ) \\ \sin(180^\circ) \amp \cos(180^\circ) \end{bmatrix} = \begin{bmatrix} -1 \amp 0 \\ 0 \amp -1 \end{bmatrix}</me>. Note that <m>T(\vec x) = A\vec x = -\vec x</m> for all <m>\vec x \in \mathbb{R}^2</m>, so <m>T</m> makes each vector <m>\vec x</m> point in the opposite direction. This makes sense since rotating a vector by <m>180^\circ</m> also makes vectors point in the opposite direction.
+                        If <m>\theta = 180^\circ</m>, then <md>A = \begin{bmatrix} \cos(180^\circ) \amp -\sin(180^\circ) \\ \sin(180^\circ) \amp \cos(180^\circ) \end{bmatrix} = \begin{bmatrix} -1 \amp 0 \\ 0 \amp -1 \end{bmatrix}</md>. Note that <m>T(\vec x) = A\vec x = -\vec x</m> for all <m>\vec x \in \mathbb{R}^2</m>, so <m>T</m> makes each vector <m>\vec x</m> point in the opposite direction. This makes sense since rotating a vector by <m>180^\circ</m> also makes vectors point in the opposite direction.
                     </p>
                 </li>
                 <li>
                     <p>
-                        If <m>\theta = 90^\circ</m>, then <me>A = \begin{bmatrix} \cos(90^\circ) \amp -\sin(90^\circ) \\ \sin(90^\circ) \amp \cos(90^\circ) \end{bmatrix} = \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix}</me>. To see if <m>T(\vec x) = A\vec x</m> actually does rotate vectors counterclockwise by <m>90^\circ</m>, let's calculate <m>T(\vec x)</m> for some special <m>\vec x \in \mathbb{R}^2</m>.
+                        If <m>\theta = 90^\circ</m>, then <md>A = \begin{bmatrix} \cos(90^\circ) \amp -\sin(90^\circ) \\ \sin(90^\circ) \amp \cos(90^\circ) \end{bmatrix} = \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix}</md>. To see if <m>T(\vec x) = A\vec x</m> actually does rotate vectors counterclockwise by <m>90^\circ</m>, let's calculate <m>T(\vec x)</m> for some special <m>\vec x \in \mathbb{R}^2</m>.
                         <ul>
                             <li>
-                                <m>\vec x</m> pointing in the direction of <m>0^\circ</m>: <me>T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right) = \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</me> which points in the direction of <m>90^\circ</m>
+                                <m>\vec x</m> pointing in the direction of <m>0^\circ</m>: <md>T\left(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\right) = \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</md> which points in the direction of <m>90^\circ</m>
                             </li>
                             <li>
-                                <m>\vec x</m> pointing in the direction of <m>90^\circ</m>: <me>T\left(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right) = \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} -1 \\ 0 \end{bmatrix}</me> which points in the direction of <m>180^\circ</m>
+                                <m>\vec x</m> pointing in the direction of <m>90^\circ</m>: <md>T\left(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\right) = \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} -1 \\ 0 \end{bmatrix}</md> which points in the direction of <m>180^\circ</m>
                             </li>
                             <li>
-                                <m>\vec x</m> pointing in the direction of <m>30^\circ</m>: <me>T\left(\begin{bmatrix} \frac{\sqrt{3}}{2} \\ \frac{1}{2} \end{bmatrix}\right) = \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix} \frac{\sqrt{3}}{2} \\ \frac{1}{2} \end{bmatrix} = \begin{bmatrix} -\frac{1}{2} \\ \frac{\sqrt{3}}{2} \end{bmatrix}</me> which points in the direction of <m>120^\circ</m>
+                                <m>\vec x</m> pointing in the direction of <m>30^\circ</m>: <md>T\left(\begin{bmatrix} \frac{\sqrt{3}}{2} \\ \frac{1}{2} \end{bmatrix}\right) = \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix} \frac{\sqrt{3}}{2} \\ \frac{1}{2} \end{bmatrix} = \begin{bmatrix} -\frac{1}{2} \\ \frac{\sqrt{3}}{2} \end{bmatrix}</md> which points in the direction of <m>120^\circ</m>
                             </li>
                             <li>
-                                <m>\vec x</m> pointing in the direction of <m>45^\circ</m>: <me>T\left(\begin{bmatrix} \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \end{bmatrix}\right) = \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix} \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \end{bmatrix} = \begin{bmatrix} -\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \end{bmatrix}</me> which points in the direction of <m>135^\circ</m>
+                                <m>\vec x</m> pointing in the direction of <m>45^\circ</m>: <md>T\left(\begin{bmatrix} \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \end{bmatrix}\right) = \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix} \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \end{bmatrix} = \begin{bmatrix} -\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \end{bmatrix}</md> which points in the direction of <m>135^\circ</m>
                             </li>
                         </ul>
                         These four examples provide evidence supporting that <m>T(\vec x) = A\vec x</m> is rotating vectors counterclockwise by <m>90^\circ</m>.
@@ -322,13 +322,13 @@
         <task workspace="0.1in">
             <statement>
               <m>A</m> is a <m>2\times 3</m> standard matrix for a one-to-one linear transformation.
-            <me>
+            <md>
               A=
               \begin{bmatrix}
                 1 \amp 0 \amp \\
                 0 \amp  \amp 1
               \end{bmatrix}.
-            </me>
+            </md>
             </statement>
             <solution>
                 <p>
@@ -343,14 +343,14 @@
           <task workspace="0.1in">
             <statement>
               <m>B</m> is a <m>3\times 2</m> standard matrix for an onto linear transformation.
-            <me>
+            <md>
               B=
               \begin{bmatrix}
                 1 \amp \\
                  \amp \\
                  \amp 
               \end{bmatrix}.
-            </me>
+            </md>
             </statement>
             <solution>
                 <p>
@@ -365,18 +365,18 @@
           <task workspace="0.1in">
             <statement>
               <m>C</m> is a <m>3\times 3</m> standard matrix of a linear transformation that is one-to-one and onto.
-            <me>
+            <md>
               C=
               \begin{bmatrix}
                 1 \amp 1 \amp 1\\
                  \amp  \amp \\
                  \amp  \amp 
               \end{bmatrix}.
-            </me>
+            </md>
             </statement>
             <solution>
                 <p>
-                    Note that in order for <m>C</m> to represent a one-to-one linear transformation, we need <m>C</m> to have a pivot in every column. The matrix <me>C = \begin{bmatrix} 1 \amp 1 \amp 1 \\ 0 \amp 1 \amp 1 \\ 0 \amp 0 \amp 1 \end{bmatrix}</me> has a pivot in every columns. Note that <m>C</m> also has a pivot in every row, so it also represents an onto linear transformation. In fact, every square matrix that has a pivot in every column <em>must</em> also have a pivot in every row. Therefore, for square matrices, the matrix will either represent a linaer transformation which is both one-to-one and onto OR will represent a linear transformation that is neither one-to-one nor onto.
+                    Note that in order for <m>C</m> to represent a one-to-one linear transformation, we need <m>C</m> to have a pivot in every column. The matrix <md>C = \begin{bmatrix} 1 \amp 1 \amp 1 \\ 0 \amp 1 \amp 1 \\ 0 \amp 0 \amp 1 \end{bmatrix}</md> has a pivot in every columns. Note that <m>C</m> also has a pivot in every row, so it also represents an onto linear transformation. In fact, every square matrix that has a pivot in every column <em>must</em> also have a pivot in every row. Therefore, for square matrices, the matrix will either represent a linaer transformation which is both one-to-one and onto OR will represent a linear transformation that is neither one-to-one nor onto.
                 </p>
             </solution>
           </task>
@@ -387,16 +387,16 @@
     <example xml:id="ex-linear-transform-3d-onto-oto" workspace="true">
       <statement>
         <p>Define a linear transformation by</p>
-        <me>
+        <md>
           T(x_1,x_2)=(3x_1+x_2,\; 5x_1+7x_2,\; x_1+3x_2).
-        </me>
+        </md>
         <p>
           Is <m>T</m> one-to-one? Is <m>T</m> onto?
         </p>
       </statement>
       <solution>
         <p>
-            Note that <me>T\left(\begin{bmatrix}x_1 \\ x_2 \end{bmatrix}\right) = \begin{bmatrix} 3x_1 + x_2 \\ 5x_1 + 7x_2 \\ x_1 + 3x_2 \end{bmatrix} = \begin{bmatrix} 3 \amp 1 \\ 5 \amp 7 \\ 1 \amp 3 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}</me>. Thus, the matrix that represent <m>T</m> is <me>A = \begin{bmatrix} 3 \amp 1 \\ 5 \amp 7 \\ 1 \amp 3 \end{bmatrix}</me>. Note that <me>\begin{bmatrix} 3 \amp 1 \\ 5 \amp 7 \\ 1 \amp 3 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 3 \\ 5 \amp 7 \\ 3 \amp 1 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 3 \\ 0 \amp -8 \\ 0 \amp -8 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 3 \\ 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}</me> has a pivot in each column, but not a pivot in each row. Therefore, <m>T</m> is a linear transformation which is one-to-one, but not onto. 
+            Note that <md>T\left(\begin{bmatrix}x_1 \\ x_2 \end{bmatrix}\right) = \begin{bmatrix} 3x_1 + x_2 \\ 5x_1 + 7x_2 \\ x_1 + 3x_2 \end{bmatrix} = \begin{bmatrix} 3 \amp 1 \\ 5 \amp 7 \\ 1 \amp 3 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}</md>. Thus, the matrix that represent <m>T</m> is <md>A = \begin{bmatrix} 3 \amp 1 \\ 5 \amp 7 \\ 1 \amp 3 \end{bmatrix}</md>. Note that <md>\begin{bmatrix} 3 \amp 1 \\ 5 \amp 7 \\ 1 \amp 3 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 3 \\ 5 \amp 7 \\ 3 \amp 1 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 3 \\ 0 \amp -8 \\ 0 \amp -8 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 3 \\ 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}</md> has a pivot in each column, but not a pivot in each row. Therefore, <m>T</m> is a linear transformation which is one-to-one, but not onto. 
         </p>
       </solution>
     </example>

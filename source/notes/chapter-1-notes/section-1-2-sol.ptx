@@ -143,7 +143,7 @@
     <statement>
       <p>Express the matrix in row reduced echelon form and identify the pivot columns.</p>
       <p>
-        <me>
+        <md>
           \left[
           \begin{array}{rrrr}
           0 \amp -3 \amp -6 \amp 4 \\
@@ -151,7 +151,7 @@
           -2 \amp -3 \amp 0 \amp 3
           \end{array}
           \right]
-        </me>
+        </md>
       </p>
     </statement>
     <solution>
@@ -199,7 +199,7 @@
     <statement>
       <p>Use the algorithm above to convert the following matrix into RREF.</p>
       <p>
-        <me>
+        <md>
           \left[
           \begin{array}{rrrr}
           0 \amp 2 \amp 7 \amp 6 \\
@@ -207,7 +207,7 @@
           2 \amp 8 \amp 12 \amp 6
           \end{array}
           \right]
-        </me>
+        </md>
       </p>
     </statement>
     <solution>
@@ -246,7 +246,7 @@
     <statement>
       <p>Determine the pivot variables and the free variables for the system represented below.</p>
       <p>
-        <me>
+        <md>
           \left[
           \begin{array}{rrrrr|r}
           1 \amp 3 \amp 0 \amp 7 \amp 2 \amp 4 \\
@@ -254,7 +254,7 @@
           0 \amp 0 \amp 0 \amp -3 \amp 0 \amp 0 \\
           \end{array}
           \right]
-        </me>
+        </md>
       </p>
     </statement>
     <solution>
@@ -272,7 +272,7 @@
       <p>
         A linear system is consistent if and only if the last column of the <strong>augmented</strong> matrix does not have a pivot.
         Equivalently, the RREF of the augmented matrix does <em>not</em> contain a row of the form
-        <me>\begin{bmatrix} 0 \amp 0 \amp 0 \amp \cdots \amp 0 \amp \vert \amp  1\end{bmatrix}</me>.
+        <md>\begin{bmatrix} 0 \amp 0 \amp 0 \amp \cdots \amp 0 \amp \vert \amp  1\end{bmatrix}</md>.
       </p>
       <p>If a linear system is consistent, then:</p>
       <ol>

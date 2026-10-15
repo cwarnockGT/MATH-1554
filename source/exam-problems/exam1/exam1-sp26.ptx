@@ -111,7 +111,7 @@
                 Since <m>A\vec x = \vec b</m> has more than one solution, it must have infinitely many. Therefore, <m>A</m> has a free variable. So, there must be a nontrivial solution to <m>A\vec x = \vec 0</m>.
             </p>
             <p>
-                You can see this directly by letting <m>\vec v_1</m> and <m>\vec v_2</m> be two <em>distinct</em> solutions to <m>A\vec x = \vec b</m>. Then we have that <m>\vec v_1 - \vec v_2 \neq \vec 0</m> and <me>A(\vec v_1 - \vec v_2) = A\vec v_1 - A\vec v_2 = \vec b - \vec b = \vec 0</me>. Thus, <m>\vec v_1 - \vec v_2</m> is a nontrivial solution to <m>A\vec x = \vec 0</m>.
+                You can see this directly by letting <m>\vec v_1</m> and <m>\vec v_2</m> be two <em>distinct</em> solutions to <m>A\vec x = \vec b</m>. Then we have that <m>\vec v_1 - \vec v_2 \neq \vec 0</m> and <md>A(\vec v_1 - \vec v_2) = A\vec v_1 - A\vec v_2 = \vec b - \vec b = \vec 0</md>. Thus, <m>\vec v_1 - \vec v_2</m> is a nontrivial solution to <m>A\vec x = \vec 0</m>.
             </p>
         </solution>
     </task>
@@ -201,7 +201,7 @@
         </answer>
         <solution>
             <p>
-                A system of linear equation can only have 0, 1, or infinitely many solutions, never exactly two. Suppose <m>\vec v_1</m> and <m>\vec v_2</m> are two distinct solutions to the system <m>A \vec x = \vec b</m>. Let <m>\vec w = r\vec v_1 + (1-r)\vec v_2</m> for <m>r\in\R</m> and note that <me>A\vec w = A(r\vec v_1 + (1-r)\vec v_2) = rA\vec v_1 + (1-r)A\vec v_2 = r\vec b + (1-r)\vec b = \vec b</me>. So, <m>\vec w</m> is a solution to <m>A\vec x = \vec b</m>, regardless of the choice of <m>r \in \R</m>. Hence, having more than one solution forces infinitely many solutions.
+                A system of linear equation can only have 0, 1, or infinitely many solutions, never exactly two. Suppose <m>\vec v_1</m> and <m>\vec v_2</m> are two distinct solutions to the system <m>A \vec x = \vec b</m>. Let <m>\vec w = r\vec v_1 + (1-r)\vec v_2</m> for <m>r\in\R</m> and note that <md>A\vec w = A(r\vec v_1 + (1-r)\vec v_2) = rA\vec v_1 + (1-r)A\vec v_2 = r\vec b + (1-r)\vec b = \vec b</md>. So, <m>\vec w</m> is a solution to <m>A\vec x = \vec b</m>, regardless of the choice of <m>r \in \R</m>. Hence, having more than one solution forces infinitely many solutions.
             </p>
         </solution>
     </task>
@@ -256,7 +256,7 @@
         </answer>
         <solution>
             <p>
-                Let <m>\vec v</m> be a solution to <m>A\vec x = \vec b</m> and let <m>\vec u</m> be a solution to <m>A\vec x = \vec v</m>. Then we have that <me>A(\vec v + u) = A\vec v + A\vec u = \vec b + \vec c</me>. Thus, the equation <m>A\vec x = \vec b + \vec c</m> must have a solution.
+                Let <m>\vec v</m> be a solution to <m>A\vec x = \vec b</m> and let <m>\vec u</m> be a solution to <m>A\vec x = \vec v</m>. Then we have that <md>A(\vec v + u) = A\vec v + A\vec u = \vec b + \vec c</md>. Thus, the equation <m>A\vec x = \vec b + \vec c</m> must have a solution.
             </p>
         </solution>
     </task>
@@ -308,13 +308,13 @@
         <statement>
             <p>
                 (4 points) Let
-                    <me>
+                    <md>
                         A=\begin{bmatrix}
                         1 \amp 0 \amp 2 \amp \rvert \amp 1\\
                         0 \amp 2 \amp 4 \amp \rvert \amp 0\\
                         0 \amp 0 \amp 2 \amp \rvert \amp 1
                         \end{bmatrix}
-                    </me>
+                    </md>
 
                     Which of the following statements are true? <em>Select all that apply.</em>
 
@@ -352,12 +352,12 @@
         <statement>
             <p>    
                 (2 points) Consider the linear system in variables <m>x_1,x_2,x_3</m> with unknown constants below.
-                <me>
+                <md>
                     \begin{array}{llr}
                     a_1 x_1 + a_2 x_2 + a_3 x_3 \amp=\amp b_1\\
                     a_1 x_1 + a_2 x_2 + a_3 x_3 \amp= \amp -b_1
                     \end{array}
-                </me>
+                </md>
                 Which of the following statements about the solution set are possible? <em>Select all that apply.</em>
 
                 <ol marker="(a)">
@@ -378,7 +378,7 @@
                 Option (a) is possible. Let <m>a_1 = a_2 = a_3 = 0</m> and let <m>b_1 = 1</m>.
             </p>
             <p>
-                Option (b) is not possible. Notice that <me>\begin{bmatrix} a_1 \amp a_2 \amp a_3 \amp \rvert \amp b_1 \\ a_1 \amp a_2 \amp a_3 \amp \rvert \amp -b_1 \end{bmatrix} \sim \begin{bmatrix} a_1 \amp a_2 \amp a_3 \amp \rvert \amp b_1 \\ 0 \amp 0 \amp 0 \amp \rvert \amp -2b_1 \end{bmatrix}</me>. Thus, the system has at least two free variables. Therefore, there is no way to get a unique solution.
+                Option (b) is not possible. Notice that <md>\begin{bmatrix} a_1 \amp a_2 \amp a_3 \amp \rvert \amp b_1 \\ a_1 \amp a_2 \amp a_3 \amp \rvert \amp -b_1 \end{bmatrix} \sim \begin{bmatrix} a_1 \amp a_2 \amp a_3 \amp \rvert \amp b_1 \\ 0 \amp 0 \amp 0 \amp \rvert \amp -2b_1 \end{bmatrix}</md>. Thus, the system has at least two free variables. Therefore, there is no way to get a unique solution.
             </p>
             <p>
                 Option (c) is not possible. Notice that the system has at least two free variables. Therefore, there is no way to get a line's worth of solutions, which requires exactly one free variable.
@@ -397,7 +397,7 @@
                 (3 points) Let <m>T: \mathbb{R}^2 \rightarrow \mathbb{R}^2</m> be the linear transformation which first reflects vectors about <m>x_1 = x_2</m>, and then rotates vectors 90<m>^\circ</m> clockwise about the origin. Determine the matrix <m>A</m> so that <m>T(\vec x)=A\vec x</m> for all <m>\vec x \in \mathbb{R}^2</m>.
             </p>
             <p>
-                <me>A = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \\ b  \\ c \\d \\ d \\ d \end{bmatrix}$}$ } </me>
+                <md>A = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \\ b  \\ c \\d \\ d \\ d \end{bmatrix}$}$ } </md>
             </p>
         </statement>
         <answer>
@@ -425,14 +425,14 @@
         <statement>
             <p>
                 (3 points) List the values of <m>h</m> that make the vectors below linearly dependent. If no value of <m>h</m> makes the vectors linearly dependent, write DNE in the blank. If every value of <m>h</m> makes the vectors linearly dependent, write <m>\R</m> in the blank.
-                    <me>
+                    <md>
                         \vec v_1=\begin{bmatrix}1\\-2\\1\end{bmatrix},\quad
                         \vec v_2=\begin{bmatrix}3\\h\\-1\end{bmatrix},\quad
                         \vec v_3=\begin{bmatrix}2\\-4\\2\end{bmatrix}
-                    </me>
+                    </md>
             </p>
             <p>
-                <me>h = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \\ a \end{bmatrix}$}$ } </me>
+                <md>h = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \\ a \end{bmatrix}$}$ } </md>
             </p>
         </statement>
         <answer>
@@ -442,7 +442,7 @@
         </answer>
         <solution>
             <p>
-                Note that <me>A = \begin{bmatrix} \vec v_1 \amp \vec v_2 \amp \vec v_3 \end{bmatrix} = \begin{bmatrix} 1 \amp 3 \amp 2 \\ -2 \amp h \amp -4 \\ 1 \amp -1 \amp 2 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 3 \amp 2 \\ 0 \amp h+6 \amp 0 \\ 0 \amp -4 \amp 0 \end{bmatrix}</me>. It follows that the third column of <m>A</m> corresponds to a free variable regardless of the choice of <m>h</m>. This is because <m>\vec v_3 = 2\vec v_1</m>. Therefore, every value of <m>h</m> would make the three vectors linearly dependent. Hence, <m>h = \R</m>.
+                Note that <md>A = \begin{bmatrix} \vec v_1 \amp \vec v_2 \amp \vec v_3 \end{bmatrix} = \begin{bmatrix} 1 \amp 3 \amp 2 \\ -2 \amp h \amp -4 \\ 1 \amp -1 \amp 2 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 3 \amp 2 \\ 0 \amp h+6 \amp 0 \\ 0 \amp -4 \amp 0 \end{bmatrix}</md>. It follows that the third column of <m>A</m> corresponds to a free variable regardless of the choice of <m>h</m>. This is because <m>\vec v_3 = 2\vec v_1</m>. Therefore, every value of <m>h</m> would make the three vectors linearly dependent. Hence, <m>h = \R</m>.
             </p>
         </solution>
     </problem>
@@ -456,7 +456,7 @@
                     <m>\vec x=\begin{pmatrix}1\\-1\\2\end{pmatrix}</m>
                     is a solution to <m>A\vec x = \vec b</m>.
 
-                    <me>
+                    <md>
                     A=\begin{pmatrix}
                     2 \amp 0 \amp a \\
                     4 \amp b \amp 1 \\
@@ -466,10 +466,10 @@
                     \vec b = \begin{pmatrix}
                     4 \\ 3 \\ c
                     \end{pmatrix}
-                    </me>
+                    </md>
             </p>
             <p>
-                <me>a = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \end{bmatrix}$}$ } \qquad b = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \end{bmatrix}$}$ } \qquad c = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \end{bmatrix}$}$ } </me>
+                <md>a = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \end{bmatrix}$}$ } \qquad b = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \end{bmatrix}$}$ } \qquad c = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \end{bmatrix}$}$ } </md>
             </p>
         </statement>
         <answer>
@@ -479,7 +479,7 @@
         </answer>
         <solution>
             <p>
-                Note that <me>A\vec x = \vec b  \implies  \begin{bmatrix} 2 \amp 0 \amp a \\ 4 \amp c \amp 1 \\ -2 \amp 5 \amp 4 \end{bmatrix}\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} = \begin{bmatrix} 4 \\ 3 \\ c \end{bmatrix}  \implies  \begin{bmatrix}2 + 2a \\ 6 - b \\ 1 \end{bmatrix} = \begin{bmatrix} 4 \\ 3 \\ c \end{bmatrix}.</me> Setting corresponding entries equal, we find that <m>a = 1, b = 3</m> and <m>c = 1</m>.
+                Note that <md>A\vec x = \vec b  \implies  \begin{bmatrix} 2 \amp 0 \amp a \\ 4 \amp c \amp 1 \\ -2 \amp 5 \amp 4 \end{bmatrix}\begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix} = \begin{bmatrix} 4 \\ 3 \\ c \end{bmatrix}  \implies  \begin{bmatrix}2 + 2a \\ 6 - b \\ 1 \end{bmatrix} = \begin{bmatrix} 4 \\ 3 \\ c \end{bmatrix}.</md> Setting corresponding entries equal, we find that <m>a = 1, b = 3</m> and <m>c = 1</m>.
             </p>
         </solution>
     </problem>
@@ -526,10 +526,10 @@
         </answer>
         <solution>
             <p>
-                For (a), if <m>A\vec x = \vec b</m> has a solution, then <m>\vec b</m> must be a linear combination of the columns of <m>A</m>. Therefore, <me>\vec b \in \Span\left\{\begin{bmatrix} 2 \\ -4 \end{bmatrix}, \begin{bmatrix} -1 \\ 2 \end{bmatrix}\right\} = \Span\left\{\begin{bmatrix} 1 \\ -2 \end{bmatrix}\right\}</me>. Make sure you draw a single vector, and not the entire line.
+                For (a), if <m>A\vec x = \vec b</m> has a solution, then <m>\vec b</m> must be a linear combination of the columns of <m>A</m>. Therefore, <md>\vec b \in \Span\left\{\begin{bmatrix} 2 \\ -4 \end{bmatrix}, \begin{bmatrix} -1 \\ 2 \end{bmatrix}\right\} = \Span\left\{\begin{bmatrix} 1 \\ -2 \end{bmatrix}\right\}</md>. Make sure you draw a single vector, and not the entire line.
             </p>
             <p>
-                For (b), note that <me>\begin{bmatrix} A \amp \rvert \amp \vec 0 \end{bmatrix} = \begin{bmatrix} 2 \amp -1 \amp \rvert \amp 0 \\ -4 \amp 2 \amp \rvert \amp 0 \end{bmatrix} \sim \begin{bmatrix} 2 \amp -1 \amp \rvert \amp 0 \\ 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</me>. It follows that <m>x_2 = t\in \R</m> is a free variable and that <m>x_1 = \frac{1}{2}t</m>. Therefore, we have that the solutions to <m>A\vec x = \vec 0</m> are <me>\vec x = \begin{bmatrix} \frac{1}{2}t \\ t\end{bmatrix} = \frac{t}{2}\begin{bmatrix} 1 \\ 2 \end{bmatrix} \in \Span\left\{\begin{bmatrix} 1 \\ 2 \end{bmatrix}\right\}.</me> Be sure to draw the entire line.
+                For (b), note that <md>\begin{bmatrix} A \amp \rvert \amp \vec 0 \end{bmatrix} = \begin{bmatrix} 2 \amp -1 \amp \rvert \amp 0 \\ -4 \amp 2 \amp \rvert \amp 0 \end{bmatrix} \sim \begin{bmatrix} 2 \amp -1 \amp \rvert \amp 0 \\ 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</md>. It follows that <m>x_2 = t\in \R</m> is a free variable and that <m>x_1 = \frac{1}{2}t</m>. Therefore, we have that the solutions to <m>A\vec x = \vec 0</m> are <md>\vec x = \begin{bmatrix} \frac{1}{2}t \\ t\end{bmatrix} = \frac{t}{2}\begin{bmatrix} 1 \\ 2 \end{bmatrix} \in \Span\left\{\begin{bmatrix} 1 \\ 2 \end{bmatrix}\right\}.</md> Be sure to draw the entire line.
             </p>
         </solution>
     </problem>
@@ -543,7 +543,7 @@
                 (5 points) <em>Show your work in the space below and put your answer in the boxes.</em> 
             </p>
             <p>
-                Consider the following system of linear equations: <me>\left\{\begin{array}{l} \phantom{1}x_1 + 2x_2 + \phantom{1}x_3 = 4, \\ 2x_1 + 5x_2 + 3x_3 = 11, \\ 3x_1 + 7x_2 + 4x_3 = k.\end{array}\right .</me>
+                Consider the following system of linear equations: <md>\left\{\begin{array}{l} \phantom{1}x_1 + 2x_2 + \phantom{1}x_3 = 4, \\ 2x_1 + 5x_2 + 3x_3 = 11, \\ 3x_1 + 7x_2 + 4x_3 = k.\end{array}\right .</md>
             </p>
         </introduction>
         <task workspace="1in">
@@ -552,7 +552,7 @@
                     Find the augmented matrix that corresponds to the above linear system.
                 </p>
                 <p>
-                <me>\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </me>
+                <md>\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </md>
                 </p>
             </statement>
             <answer>
@@ -567,7 +567,7 @@
                     Find the value(s) of <m>k</m> for which the system is consistent.
                 </p>
                 <p>
-                <me>k = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \\ a \end{bmatrix}$}$ } </me>
+                <md>k = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \\ a \end{bmatrix}$}$ } </md>
             </p>
             </statement>
             <answer>
@@ -597,10 +597,10 @@
                 (5 points) <em>Show your work in the space below and put your answer in the boxes.</em> 
             </p>
             <p>
-                Find all vectors <m>\vec b</m> so that the system <m>A\vec x = \vec b</m> is consistent, where <me>A = \begin{bmatrix} 0 \amp 1 \amp 3 \amp -1 \\ 1 \amp 2 \amp -1 \amp 0 \\ 2 \amp 5 \amp 1 \amp -1 \end{bmatrix} \quad \text{and} \quad \vec b = \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix}</me>. Write the vectors <m>\vec b</m> in parametric vector form.
+                Find all vectors <m>\vec b</m> so that the system <m>A\vec x = \vec b</m> is consistent, where <md>A = \begin{bmatrix} 0 \amp 1 \amp 3 \amp -1 \\ 1 \amp 2 \amp -1 \amp 0 \\ 2 \amp 5 \amp 1 \amp -1 \end{bmatrix} \quad \text{and} \quad \vec b = \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix}</md>. Write the vectors <m>\vec b</m> in parametric vector form.
             </p>
             <p>
-                <me>\vec b = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \amp a \amp a \amp a \amp a \amp a \\ a \\ a \\ a \\ a \\ a  \end{bmatrix}$}$ } </me>
+                <md>\vec b = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \amp a \amp a \amp a \amp a \amp a \amp a \amp a \\ a \\ a \\ a \\ a \\ a  \end{bmatrix}$}$ } </md>
             </p>
         </statement>
         <answer>
@@ -616,7 +616,7 @@
                 <m>\begin{eqnarray*} \begin{bmatrix} 0 \amp 1 \amp 3 \amp -1 \amp \rvert \amp b_1 \\ 1 \amp 2 \amp -1 \amp 0 \amp \rvert \amp b_2 \\ 2 \amp 5 \amp 1 \amp -1 \amp \rvert \amp b_3 \end{bmatrix} \amp  \sim \amp \begin{bmatrix} 1 \amp 2 \amp -1 \amp 0 \amp \rvert \amp b_2 \\ 0 \amp 1 \amp 3 \amp -1 \amp \rvert \amp b_1 \\ 2 \amp 5 \amp 1 \amp -1 \amp \rvert \amp b_3 \end{bmatrix} \\ \amp \sim \amp \begin{bmatrix} 1 \amp 2 \amp -1 \amp 0 \amp \rvert \amp b_2 \\ 0 \amp 1 \amp 3 \amp -1 \amp \rvert \amp b_1 \\ 0 \amp 1 \amp 3 \amp -1 \amp \rvert \amp b_3 - 2b_2 \end{bmatrix} \\ \amp \sim \amp \begin{bmatrix} 1 \amp 2 \amp -1 \amp 0 \amp \rvert \amp b_2 \\ 0 \amp 1 \amp 3 \amp -1 \amp \rvert \amp b_1 \\ 0 \amp \ 0 \amp 0 \amp 0 \amp \rvert \amp b_3 - 2b_2 - b_1 \end{bmatrix}\end{eqnarray*}</m>
             </p>
             <p>
-                By <em>xref</em>, the system is consistent if and only if <me> b_3 - 2b_2 - b_1 = 0 \quad \implies \quad b_1 = -2b_2 + b_3</me>. We can think of this equation as a system of 1 equation in 3 variables. It follows that <m>b_2</m> and <m>b_3</m> are free variables. Let <m>b_3 = t \in \mathbb{R}</m> and <m>b_2 = r \in \mathbb{R}</m>. Then, we have that <m>b_1 = -2r + t</m>, so <me>\vec b = \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix} = \begin{bmatrix} -2r + t \\ r \\ t \end{bmatrix} = r\begin{bmatrix} -2 \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}</me>. <!-- Add <xref ref="thm-inconsistent-system"/>-->
+                By <em>xref</em>, the system is consistent if and only if <md> b_3 - 2b_2 - b_1 = 0 \quad \implies \quad b_1 = -2b_2 + b_3</md>. We can think of this equation as a system of 1 equation in 3 variables. It follows that <m>b_2</m> and <m>b_3</m> are free variables. Let <m>b_3 = t \in \mathbb{R}</m> and <m>b_2 = r \in \mathbb{R}</m>. Then, we have that <m>b_1 = -2r + t</m>, so <md>\vec b = \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix} = \begin{bmatrix} -2r + t \\ r \\ t \end{bmatrix} = r\begin{bmatrix} -2 \\ 1 \\ 0 \end{bmatrix} + t\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}</md>. <!-- Add <xref ref="thm-inconsistent-system"/>-->
             </p>
         </solution>
     </problem>
@@ -629,7 +629,7 @@
                 (7 points) <em>Show your work in the space below and put your answer in the boxes.</em> 
             </p>
             <p>
-                Let <m>T</m> be the linear tranformation defined by <me>T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\right) = \begin{bmatrix} x_1 - 2x_2 + x_3 \\ x_1 - x_2 \\ -x_2 + x_3 \end{bmatrix}</me>.
+                Let <m>T</m> be the linear tranformation defined by <md>T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\right) = \begin{bmatrix} x_1 - 2x_2 + x_3 \\ x_1 - x_2 \\ -x_2 + x_3 \end{bmatrix}</md>.
             </p>
         </introduction>
         <task>
@@ -638,7 +638,7 @@
                     What are the domain and codomain of <m>T</m>?
                 </p>
                 <p>
-                <me>\text{domain is } \framebox{$\phantom{$\begin{bmatrix} a \amp a  \end{bmatrix}$}$ } \quad \quad \text{codomain is } \framebox{$\phantom{$\begin{bmatrix} a \amp a  \end{bmatrix}$}$ } </me>
+                <md>\text{domain is } \framebox{$\phantom{$\begin{bmatrix} a \amp a  \end{bmatrix}$}$ } \quad \quad \text{codomain is } \framebox{$\phantom{$\begin{bmatrix} a \amp a  \end{bmatrix}$}$ } </md>
                 </p>
             </statement>
             <answer>
@@ -653,7 +653,7 @@
                     What is the standard matrix of <m>T</m>?
                 </p>
                 <p>
-                <me>\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </me>
+                <md>\framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </md>
                 </p>
             </statement>
             <answer>
@@ -663,7 +663,7 @@
             </answer>
             <solution>
                 <p>
-                    Note that <me>T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\right) = \begin{bmatrix} x_1 - 2x_2 + x_3 \\ x_1 - x_2 \\ -x_2 + x_3 \end{bmatrix} = \begin{bmatrix} 1 \amp -2 \amp 1 \\ 1 \amp -1 \amp 0 \\ 0 \amp -1 \amp 1 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}</me>.
+                    Note that <md>T\left(\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\right) = \begin{bmatrix} x_1 - 2x_2 + x_3 \\ x_1 - x_2 \\ -x_2 + x_3 \end{bmatrix} = \begin{bmatrix} 1 \amp -2 \amp 1 \\ 1 \amp -1 \amp 0 \\ 0 \amp -1 \amp 1 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}</md>.
                 </p>
             </solution>
         </task>
@@ -673,7 +673,7 @@
                     Find a vector <m>\vec x</m> such that <m>T(\vec x) = \vec b</m>, where <m>\vec b = \begin{bmatrix} 4 \\ 2 \\ 2 \end{bmatrix}</m>.
                 </p>
                 <p>
-                <me>\vec b = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </me>
+                <md>\vec b = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ a \\ a \\ a \\ a \end{bmatrix}$}$ } </md>
                 </p>
             </statement>
             <answer>
@@ -683,7 +683,7 @@
             </answer>
             <solution>
                 <p>
-                    Since <m>T(\vec x) = A\vec x</m>, we use row operations on the augmented matrix <m>\begin{bmatrix} A \amp \rvert \amp \vec b \end{bmatrix}</m> to solve the system. Note that <me> \begin{bmatrix} 1 \amp -2 \amp 1 \amp \rvert \amp 4 \\ 1 \amp -1 \amp 0 \amp \rvert \amp 2 \\ 0 \amp -1 \amp 1 \amp \rvert \amp 2 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp -1 \amp \rvert \amp 0 \\ 0 \amp 1 \amp -1 \amp \rvert \amp -2 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</me>. We have that <m>x_3 = t \in \mathbb{R}</m> is a free variable and <m>x_2 = -2 + t</m> and <m>x_1 = t</m>. Thus, all solutions to <m>T(\vec x) = \vec b</m> are <me>\vec x = \begin{bmatrix} t \\ -2 + t \\ t \end{bmatrix} = \begin{bmatrix} 0 \\ -2 \\ 0 \end{bmatrix} + t\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}</me>. Letting <m>t = 0</m>, we have that a particular solution is <m>\vec x = \begin{bmatrix} 0 \\ -2 \\ 0 \end{bmatrix}</m>.
+                    Since <m>T(\vec x) = A\vec x</m>, we use row operations on the augmented matrix <m>\begin{bmatrix} A \amp \rvert \amp \vec b \end{bmatrix}</m> to solve the system. Note that <md> \begin{bmatrix} 1 \amp -2 \amp 1 \amp \rvert \amp 4 \\ 1 \amp -1 \amp 0 \amp \rvert \amp 2 \\ 0 \amp -1 \amp 1 \amp \rvert \amp 2 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \amp -1 \amp \rvert \amp 0 \\ 0 \amp 1 \amp -1 \amp \rvert \amp -2 \\ 0 \amp 0 \amp 0 \amp \rvert \amp 0 \end{bmatrix}</md>. We have that <m>x_3 = t \in \mathbb{R}</m> is a free variable and <m>x_2 = -2 + t</m> and <m>x_1 = t</m>. Thus, all solutions to <m>T(\vec x) = \vec b</m> are <md>\vec x = \begin{bmatrix} t \\ -2 + t \\ t \end{bmatrix} = \begin{bmatrix} 0 \\ -2 \\ 0 \end{bmatrix} + t\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}</md>. Letting <m>t = 0</m>, we have that a particular solution is <m>\vec x = \begin{bmatrix} 0 \\ -2 \\ 0 \end{bmatrix}</m>.
                 </p>
             </solution>
         </task>

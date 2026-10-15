@@ -145,14 +145,14 @@
           For any <m>\vec x\in H</m>, the <term>coordinates of <m>\vec x</m> relative to <m>\mathcal B</m></term>
           are the scalars <m>c_1,\dots,c_p</m> such that
         </p>
-        <me>\vec x = c_1\vec b_1 + \cdots + c_p\vec b_p.</me>
+        <md>\vec x = c_1\vec b_1 + \cdots + c_p\vec b_p.</md>
         <p>The <term>coordinate vector of <m>\vec x</m> relative to <m>\mathcal B</m></term> is:</p>
-        <me>
+        <md>
           [\vec x]_{\mathcal B} =
           \begin{bmatrix}
             c_1\\ \vdots\\ c_p
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </definition>
 
@@ -161,11 +161,11 @@
     <example xml:id="ex-coordinates" workspace="true">
       <statement>
         <p>Let:</p>
-        <me>
+        <md>
           \vec v_1=\begin{bmatrix}1\\0\\1\end{bmatrix},\qquad
           \vec v_2=\begin{bmatrix}1\\1\\1\end{bmatrix},\qquad
           \vec x=\begin{bmatrix}5\\3\\5\end{bmatrix}.
-        </me>
+        </md>
         <p>
           Verify that <m>\vec x</m> is in the span of <m>\mathcal B=\{\vec v_1,\vec v_2\}</m>,
           and compute <m>[\vec x]_{\mathcal B}</m>.
@@ -181,12 +181,12 @@
     <example xml:id="ex-coordinates2">
       <introduction>
         <p>Let</p>
-        <me>
+        <md>
           \vec v_1=\begin{bmatrix}-1\\0\\1\\0\end{bmatrix},\qquad
           \vec v_2=\begin{bmatrix}0\\1\\3\\2\end{bmatrix},\qquad
           \vec v_3=\begin{bmatrix}3\\6\\2\\-1\end{bmatrix},\qquad
           \vec x=\begin{bmatrix}3\\11\\4\\-4\end{bmatrix},
-        </me>
+        </md>
         <p>
           and <m>H = \textrm{Span}\{\vec v_1, \vec v_2, \vec v_3\}</m>. 
         </p>
@@ -278,7 +278,7 @@
     <example xml:id="ex-rank-computation" workspace="true">
       <statement>
         <p>Compute <m>\operatorname{rank}(A)</m> and <m>\operatorname{dim}(\operatorname{Nul}A)</m>, where</p>
-        <me>
+        <md>
           A = \begin{bmatrix}
             2 \amp -3 \amp -12 \amp 4 \amp -7\\
             4 \amp -5 \amp -22 \amp 3 \amp 1\\
@@ -292,7 +292,7 @@
             0 \amp 0 \amp 0 \amp 1 \amp -2\\
             0 \amp 0 \amp 0 \amp 0 \amp 0
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
 
@@ -309,7 +309,7 @@
         <p>
           If a matrix <m>A</m> has <m>n</m> columns, then
         </p>
-        <me>\operatorname{rank}(A)+\operatorname{dim}(\operatorname{Null}A)=n.</me>
+        <md>\operatorname{rank}(A)+\operatorname{dim}(\operatorname{Null}A)=n.</md>
       </statement>
     </theorem>
 

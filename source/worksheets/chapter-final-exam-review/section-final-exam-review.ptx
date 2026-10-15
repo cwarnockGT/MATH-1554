@@ -112,7 +112,7 @@
           Consider the row operations that reduce <m>A</m> to <m>I_3</m>.
           Identify the elementary matrices <m>E_1</m> and <m>E_2</m>.
 
-            <me>
+            <md>
             A =
             \underbrace{\begin{pmatrix}
               0 &amp; 1 &amp; 0 \\
@@ -132,7 +132,7 @@
               0 &amp; 0 &amp; 1
             \end{pmatrix}}_{E_2 E_1 A}
             = I_3
-            </me>
+            </md>
         </p>
         
 

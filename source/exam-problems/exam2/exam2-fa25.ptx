@@ -349,11 +349,11 @@
         <statement>
             <p>
                 (3 points) Find a basis <m>\mathcal{B}</m> for the subspace <m>S</m> consisting of all vectors <m>\vec{x} = \begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix}</m> which satisfy the conditions that
-                <me>x_1 + x_2 + x_3 + x_4 = 0</me>
-                <me>x_1 + 2x_2 - 2x_3 + x_4 = 0</me>
-                <me>2x_1 + 3x_2 - x_3 + x_4 = 0</me>
+                <md>x_1 + x_2 + x_3 + x_4 = 0</md>
+                <md>x_1 + 2x_2 - 2x_3 + x_4 = 0</md>
+                <md>2x_1 + 3x_2 - x_3 + x_4 = 0</md>
 
-                <me>\mathcal{B} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b \\ b \\ b \end{bmatrix}$}$ }</me>
+                <md>\mathcal{B} = \framebox{$\phantom{$\begin{bmatrix} a \amp a \amp a  \\ b \\ b \\ b \end{bmatrix}$}$ }</md>
                 
             </p>
         </statement>
@@ -378,7 +378,7 @@
             <p>    
                 (4 points) Suppose <m>\text{det} \begin{pmatrix} a \amp b \amp c \\ d \amp e \amp f \\ g \amp h \amp i \end{pmatrix} = 3.</m> Find the determinant of the matrices below.
 
-                <me> A = \begin{pmatrix} a \amp b \amp a + 2b \\ d \amp e \amp d + 2 e \\ g \amp h \amp g+2h \end{pmatrix}, B = \begin{pmatrix} d \amp e \amp f \\ g \amp h \amp i \\ a \amp b \amp c \end{pmatrix}, C = \begin{pmatrix} a \amp b \amp c \\ 3d + g \amp 3e + h \amp 3f + i \\ g \amp h \amp i \end{pmatrix} </me>
+                <md> A = \begin{pmatrix} a \amp b \amp a + 2b \\ d \amp e \amp d + 2 e \\ g \amp h \amp g+2h \end{pmatrix}, B = \begin{pmatrix} d \amp e \amp f \\ g \amp h \amp i \\ a \amp b \amp c \end{pmatrix}, C = \begin{pmatrix} a \amp b \amp c \\ 3d + g \amp 3e + h \amp 3f + i \\ g \amp h \amp i \end{pmatrix} </md>
 
                 <m>\text{det}(A) = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ b \end{bmatrix}$}$ }</m>     <m>\text{det}(B) = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ b \end{bmatrix}$}$ }</m>     <m>\text{det}(C) = \framebox{$\phantom{$\begin{bmatrix} a \amp a \\ b \end{bmatrix}$}$ }</m>
                 

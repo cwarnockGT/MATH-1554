@@ -23,10 +23,10 @@
         <li workspace="2in">
           <p>For what values of <m>A</m> and <m>B</m>, if any, does the system have (a) an infinite number of solutions? (b) no solutions? (c) exactly one solution?</p>
           <p>
-            <me>\begin{aligned}
+            <md>\begin{aligned}
             x_{1} + 2x_{2} \amp= 1\\
             Ax_{1} + Bx_{2} \amp= 2
-            \end{aligned}</me>
+            \end{aligned}</md>
           </p>
           <p>For the case where there are an infinite number of solutions, sketch the set of solutions. Note that sketches need to have labeled axes. The set of solutions should be a line that does not have arrows.</p>
         </li>

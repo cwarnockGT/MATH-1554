@@ -53,13 +53,13 @@
 
       <p><em>Motivating Question</em>: Is there a matrix <m>A</m> such that
       </p>
-      <me>
+      <md>
         \begin{bmatrix}
           2 \amp -1 \amp 0\\
           -1 \amp 2 \amp -1\\
           0 \amp -1 \amp 2
         \end{bmatrix}A = I_3\; ?
-      </me>
+      </md>
 
       <p><nbsp/></p>
   </page>
@@ -75,7 +75,7 @@
           An <m>n \times n</m> matrix <m>A</m> is <term>invertible</term> (or <term>non-singular</term>)
           if there exists a matrix <m>C\in\mathbb{R}^{n\times n}</m> such that
         </p>
-        <me>AC = CA = I_n.</me>
+        <md>AC = CA = I_n.</md>
         <p>
           If such a matrix exists, we write <m>C=A^{-1}</m>.
         </p>
@@ -92,7 +92,7 @@
           <m>\begin{bmatrix} a \amp b\\ c \amp d \end{bmatrix}</m>
           is invertible if and only if <m>ad-bc\neq 0</m>. In that case,
         </p>
-        <me>
+        <md>
           \begin{bmatrix}
             a \amp b\\
             c \amp d
@@ -103,7 +103,7 @@
             d \amp -b\\
             -c \amp a
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
       <hint>
         <p>
@@ -115,7 +115,7 @@
             Here is a proof of the above formula. (Before reading, you may want to try it yourself. Look at the hint above.)
         </p>
         <p>
-            Let <m>A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}</m> for fixed <m>a,b,c,d \in \mathbb{R}</m> with <m>ad - bc \neq 0</m>. We are looking for a <m>2 \times 2</m> matrix <m>A^{-1}</m> so that <m>AA^{-1} = I_2</m>, if such a matrix exists. Since <m>A^{-1}</m> is a <m>2 \times 2</m> matrix, it has four unknown entries. Let's call them <m>x_1, x_2, x_3, x_4 \in \mathbb{R}</m>, so we have <m>A^{-1} = \begin{bmatrix} x_1 \amp x_2 \\ x_3 \amp x_4 \end{bmatrix}</m>. It follows that <me>AA^{-1} = \begin{bmatrix}a \amp b \\ c \amp d \end{bmatrix}\begin{bmatrix} x_1 \amp x_2 \\ x_3 \amp x_4 \end{bmatrix} = \begin{bmatrix} ax_1 + bx_3 \amp ax_2 + bx_4 \\ cx_1 + dx_3 \amp cx_2 + dx_4\end{bmatrix}</me>. Since we want <m>AA^{-1} = I_2</m>, we can set the corresponding entries equal to arrive at the following system of linear equation: <me>\left\{\begin{array}{ccccccccc} ax_1 \amp \amp \amp + \amp bx_3 \amp \amp \amp  = \amp 1 \\ \amp \amp ax_2 \amp \amp \amp + \amp bx_4 \amp = \amp 0 \\ cx_1 \amp \amp \amp + \amp dx_3 \amp \amp \amp = \amp 0 \\ \amp \amp cx_2 \amp \amp \amp + \amp dx_4 \amp = \amp 1 \end{array}\right .</me> Note that we cannot have both <m>a</m> and <m>c</m> be zero, or else <m>ad - bc = 0</m>. Therefore, we can assume that at least one of them is nonzero, so let's suppose <m>a \neq 0</m>. Converting this into an augmented matrix and performing some row operations, we obtain <me>\begin{bmatrix}a \amp 0 \amp b \amp 0 \amp \rvert \amp 1 \\ 0 \amp a \amp 0 \amp b \amp \rvert \amp 0 \\ c \amp 0 \amp d \amp 0 \amp \rvert \amp 0 \\ 0 \amp c \amp 0 \amp d \amp \rvert \amp 1 \end{bmatrix} \underset{R_4 - \frac{c}{a}R_2 \rightarrow R_4}{\overset{R_3 - \frac{c}{a}R_1 \rightarrow R_1}{\Huge \sim}} \begin{bmatrix} a \amp 0 \amp b \amp 0 \amp \rvert \amp 1 \\ 0 \amp a \amp 0 \amp b \amp \rvert \amp 0 \\ 0 \amp 0 \amp d - \frac{bc}{a} \amp 0 \amp \rvert \amp -\frac{c}{a} \\ 0 \amp 0 \amp 0 \amp d - \frac{bc}{a} \amp \rvert \amp 1 \end{bmatrix}</me> Solving for <m>x_4</m>, we see that <me>x_4 = \frac{1}{d-\frac{bc}{a}} = \frac{1}{\frac{ad - bc}{a}} = \frac{a}{ad - bc}</me>. Solving for <m>x_3</m>, we see that <me>x_3 = \frac{-\frac{c}{a}}{d - \frac{bc}{a}} = \frac{-\frac{c}{a}}{\frac{ad-bc}{a}} = -\frac{c}{a}\left(\frac{a}{ad-bc}\right) = \frac{-c}{ad-bc}</me> Solving for <m>x_2</m>, we see that <me>x_2 = \frac{-bx_4}{a} = \frac{-b\left(\frac{a}{ad-bc}\right)}{a} = \frac{-b}{ad-bc}</me> Lastly, solving for <m>x_1</m>, we see that <me>x_1 = \frac{1 - bx_3}{a} = \frac{1 - b\left(\frac{-c}{ad-bc}\right)}{a} = \frac{\frac{ad-bc}{ad-bc} + \frac{bc}{ad-bc}}{a} = \frac{\frac{ad}{ad-bc}}{a} = \frac{d}{ad-bc}</me>. It follows that <me>A^{-1} = \begin{bmatrix} x_1 \amp x_2 \\ x_3 \amp x_4 \end{bmatrix} = \begin{bmatrix} \frac{d}{ad-bc} \amp \frac{-b}{ad-bc} \\ \frac{-c}{ad-bc} \amp \frac{a}{ad-bc} \end{bmatrix} = \frac{1}{ad-bc}\begin{bmatrix} d \amp -b \\ -c \amp a \end{bmatrix}</me>.
+            Let <m>A = \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}</m> for fixed <m>a,b,c,d \in \mathbb{R}</m> with <m>ad - bc \neq 0</m>. We are looking for a <m>2 \times 2</m> matrix <m>A^{-1}</m> so that <m>AA^{-1} = I_2</m>, if such a matrix exists. Since <m>A^{-1}</m> is a <m>2 \times 2</m> matrix, it has four unknown entries. Let's call them <m>x_1, x_2, x_3, x_4 \in \mathbb{R}</m>, so we have <m>A^{-1} = \begin{bmatrix} x_1 \amp x_2 \\ x_3 \amp x_4 \end{bmatrix}</m>. It follows that <md>AA^{-1} = \begin{bmatrix}a \amp b \\ c \amp d \end{bmatrix}\begin{bmatrix} x_1 \amp x_2 \\ x_3 \amp x_4 \end{bmatrix} = \begin{bmatrix} ax_1 + bx_3 \amp ax_2 + bx_4 \\ cx_1 + dx_3 \amp cx_2 + dx_4\end{bmatrix}</md>. Since we want <m>AA^{-1} = I_2</m>, we can set the corresponding entries equal to arrive at the following system of linear equation: <md>\left\{\begin{array}{ccccccccc} ax_1 \amp \amp \amp + \amp bx_3 \amp \amp \amp  = \amp 1 \\ \amp \amp ax_2 \amp \amp \amp + \amp bx_4 \amp = \amp 0 \\ cx_1 \amp \amp \amp + \amp dx_3 \amp \amp \amp = \amp 0 \\ \amp \amp cx_2 \amp \amp \amp + \amp dx_4 \amp = \amp 1 \end{array}\right .</md> Note that we cannot have both <m>a</m> and <m>c</m> be zero, or else <m>ad - bc = 0</m>. Therefore, we can assume that at least one of them is nonzero, so let's suppose <m>a \neq 0</m>. Converting this into an augmented matrix and performing some row operations, we obtain <md>\begin{bmatrix}a \amp 0 \amp b \amp 0 \amp \rvert \amp 1 \\ 0 \amp a \amp 0 \amp b \amp \rvert \amp 0 \\ c \amp 0 \amp d \amp 0 \amp \rvert \amp 0 \\ 0 \amp c \amp 0 \amp d \amp \rvert \amp 1 \end{bmatrix} \underset{R_4 - \frac{c}{a}R_2 \rightarrow R_4}{\overset{R_3 - \frac{c}{a}R_1 \rightarrow R_1}{\Huge \sim}} \begin{bmatrix} a \amp 0 \amp b \amp 0 \amp \rvert \amp 1 \\ 0 \amp a \amp 0 \amp b \amp \rvert \amp 0 \\ 0 \amp 0 \amp d - \frac{bc}{a} \amp 0 \amp \rvert \amp -\frac{c}{a} \\ 0 \amp 0 \amp 0 \amp d - \frac{bc}{a} \amp \rvert \amp 1 \end{bmatrix}</md> Solving for <m>x_4</m>, we see that <md>x_4 = \frac{1}{d-\frac{bc}{a}} = \frac{1}{\frac{ad - bc}{a}} = \frac{a}{ad - bc}</md>. Solving for <m>x_3</m>, we see that <md>x_3 = \frac{-\frac{c}{a}}{d - \frac{bc}{a}} = \frac{-\frac{c}{a}}{\frac{ad-bc}{a}} = -\frac{c}{a}\left(\frac{a}{ad-bc}\right) = \frac{-c}{ad-bc}</md> Solving for <m>x_2</m>, we see that <md>x_2 = \frac{-bx_4}{a} = \frac{-b\left(\frac{a}{ad-bc}\right)}{a} = \frac{-b}{ad-bc}</md> Lastly, solving for <m>x_1</m>, we see that <md>x_1 = \frac{1 - bx_3}{a} = \frac{1 - b\left(\frac{-c}{ad-bc}\right)}{a} = \frac{\frac{ad-bc}{ad-bc} + \frac{bc}{ad-bc}}{a} = \frac{\frac{ad}{ad-bc}}{a} = \frac{d}{ad-bc}</md>. It follows that <md>A^{-1} = \begin{bmatrix} x_1 \amp x_2 \\ x_3 \amp x_4 \end{bmatrix} = \begin{bmatrix} \frac{d}{ad-bc} \amp \frac{-b}{ad-bc} \\ \frac{-c}{ad-bc} \amp \frac{a}{ad-bc} \end{bmatrix} = \frac{1}{ad-bc}\begin{bmatrix} d \amp -b \\ -c \amp a \end{bmatrix}</md>.
         </p>
       </solution>
     </theorem>
@@ -126,16 +126,16 @@
     <example xml:id="ex-inverse-2x2" workspace="true">
       <statement>
         <p>Find the inverse of the matrix below. Check that it truly is the inverse.</p>
-        <me>
+        <md>
           A = \begin{bmatrix}
             2 \amp 5\\
             -3 \amp -7
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
-            First, note that <m>ad - bc = 2(-7) - (5)(-3) = -14 + 15 = 1 \neq 0</m>, so <m>A</m> is invertible. Using the formula, we have that <me>A^{-1} = \frac{1}{ad - bc}\begin{bmatrix}d \amp -b \\ -c \amp a \end{bmatrix} = \begin{bmatrix} -7 \amp -5 \\ 3 \amp 2 \end{bmatrix}</me>. We can check this by verifying that <m>AA^{-1} = I_2</m> or by verifying <m>A^{-1}A = I_2</m>. Note that <me>AA^{-1} = \begin{bmatrix} 2 \amp 5 \\ -3 \amp -7 \end{bmatrix}\begin{bmatrix} -7 \amp -5 \\ 3 \amp 2 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} = I_2</me>
+            First, note that <m>ad - bc = 2(-7) - (5)(-3) = -14 + 15 = 1 \neq 0</m>, so <m>A</m> is invertible. Using the formula, we have that <md>A^{-1} = \frac{1}{ad - bc}\begin{bmatrix}d \amp -b \\ -c \amp a \end{bmatrix} = \begin{bmatrix} -7 \amp -5 \\ 3 \amp 2 \end{bmatrix}</md>. We can check this by verifying that <m>AA^{-1} = I_2</m> or by verifying <m>A^{-1}A = I_2</m>. Note that <md>AA^{-1} = \begin{bmatrix} 2 \amp 5 \\ -3 \amp -7 \end{bmatrix}\begin{bmatrix} -7 \amp -5 \\ 3 \amp 2 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} = I_2</md>
         </p>
       </solution>
     </example>
@@ -155,7 +155,7 @@
           <m>\vec b\in\mathbb{R}^n</m>, the system <m>A\vec x=\vec b</m> has a <em>unique</em> solution.
           In this case,
         </p>
-        <me>\vec x = A^{-1}\vec b.</me>
+        <md>\vec x = A^{-1}\vec b.</md>
       </statement>
       <solution>
         <p>
@@ -170,17 +170,17 @@
     <example xml:id="ex-solve-system-with-inverse" workspace="true">
       <statement>
         <p>Solve the linear system.
-        <me>
+        <md>
           \begin{array}{ccc}
           3x_1 + 4x_2 \amp= \amp 7 \\
           5x_1 + 6x_2 \amp = \amp 7
           \end{array}
-        </me>
+        </md>
         </p>
       </statement>
       <solution>
         <p>
-            We can write the system as the following matrix equation <me>\begin{bmatrix} 3 \amp 4 \\ 5 \amp 6 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 7 \\ 7 \end{bmatrix}</me>. Since <m>3(6) - 4(5) = 18 - 20 = -2 \neq 0</m>, the matrix is invertible. Using <xref ref="thm-inverse-2x2-formula"/>, we have <me>\begin{bmatrix} 3 \amp 4 \\ 5 \amp 6 \end{bmatrix}^{-1} = \frac{1}{-2}\begin{bmatrix} 6 \amp -4 \\ -5 \amp 3 \end{bmatrix}</me> Therefore, we find that the solution to the system is <me>\vec x = \frac{1}{-2}\begin{bmatrix}6 \amp -4 \\ -5 \amp 3 \end{bmatrix}\begin{bmatrix} 7 \\ 7 \end{bmatrix} = \frac{1}{-2}\begin{bmatrix} 42 - 35 \\ -28 + 21 \end{bmatrix} = \begin{bmatrix} -7 \\ 7 \end{bmatrix}</me>. Like always, it's a good idea to check that <m>\vec x</m> is a solution to the system.
+            We can write the system as the following matrix equation <md>\begin{bmatrix} 3 \amp 4 \\ 5 \amp 6 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 7 \\ 7 \end{bmatrix}</md>. Since <m>3(6) - 4(5) = 18 - 20 = -2 \neq 0</m>, the matrix is invertible. Using <xref ref="thm-inverse-2x2-formula"/>, we have <md>\begin{bmatrix} 3 \amp 4 \\ 5 \amp 6 \end{bmatrix}^{-1} = \frac{1}{-2}\begin{bmatrix} 6 \amp -4 \\ -5 \amp 3 \end{bmatrix}</md> Therefore, we find that the solution to the system is <md>\vec x = \frac{1}{-2}\begin{bmatrix}6 \amp -4 \\ -5 \amp 3 \end{bmatrix}\begin{bmatrix} 7 \\ 7 \end{bmatrix} = \frac{1}{-2}\begin{bmatrix} 42 - 35 \\ -28 + 21 \end{bmatrix} = \begin{bmatrix} -7 \\ 7 \end{bmatrix}</md>. Like always, it's a good idea to check that <m>\vec x</m> is a solution to the system.
         </p>
       </solution>
     </example>
@@ -213,7 +213,7 @@
       </statement>
       <solution>
         <p>
-            Note that <me>(ABC)^{-1} = (A (BC))^{-1} = (BC)^{-1}A^{-1} = (C^{-1}B^{-1})A^{-1} = C^{-1}B^{-1}A^{-1}</me>. Therefore, the statement is true.
+            Note that <md>(ABC)^{-1} = (A (BC))^{-1} = (BC)^{-1}A^{-1} = (C^{-1}B^{-1})A^{-1} = C^{-1}B^{-1}A^{-1}</md>. Therefore, the statement is true.
         </p>
       </solution>
     </example>
@@ -241,14 +241,14 @@
     <example xml:id="ex-compute-inverse-3x3" workspace="true">
       <statement>
         <p>Compute the inverse of</p>
-        <me>
+        <md>
           A=
           \begin{bmatrix}
             0 \amp 1 \amp 2\\
             1 \amp 0 \amp 3\\
             0 \amp 0 \amp 1
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -257,7 +257,7 @@
                 \amp \sim \amp \begin{bmatrix} 1 \amp 0 \amp 3 \amp \rvert \amp 0 \amp 1 \amp 0 \\ 0 \amp 1 \amp 2 \amp \rvert \amp 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \amp \rvert \amp 0 \amp 0 \amp 1 \end{bmatrix} \\
                 \amp \sim \amp \begin{bmatrix} 1 \amp 0 \amp 0 \amp \rvert \amp 0 \amp 1 \amp -3 \\ 0 \amp 1 \amp 0 \amp \rvert \amp 1 \amp 0 \amp -2 \\ 0 \amp 0 \amp 1 \amp \rvert \amp 0 \amp 0 \amp 1 \end{bmatrix} \\
                 \amp = \amp \begin{bmatrix} I_3 \amp \rvert \amp A^{-1}\end{bmatrix}\end{eqnarray*}</m></p> 
-            <p> Therefore, we have <m>A^{-1} = \begin{bmatrix} 0 \amp 1 \amp -3 \\ 1 \amp 0 \amp -2 \\ 0 \amp 0 \amp 1 \end{bmatrix}</m>. Let's check: <me>AA^{-1} = \begin{bmatrix}0 \amp 1 \amp 2 \\ 1 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \end{bmatrix}\begin{bmatrix}0 \amp 1 \amp -3 \\ 1 \amp 0 \amp -2 \\ 0 \amp 0 \amp 1 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} = I_3</me>.    
+            <p> Therefore, we have <m>A^{-1} = \begin{bmatrix} 0 \amp 1 \amp -3 \\ 1 \amp 0 \amp -2 \\ 0 \amp 0 \amp 1 \end{bmatrix}</m>. Let's check: <md>AA^{-1} = \begin{bmatrix}0 \amp 1 \amp 2 \\ 1 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \end{bmatrix}\begin{bmatrix}0 \amp 1 \amp -3 \\ 1 \amp 0 \amp -2 \\ 0 \amp 0 \amp 1 \end{bmatrix} = \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} = I_3</md>.    
 
         </p>
       </solution>
@@ -314,7 +314,7 @@
     </p>
     <solution>
         <p>
-            Let <m>A = \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix}</m>. For (a), note that multiplication by <m>E_1 = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m> on the left swaps the rows of <m>A</m>: <me>E_1A = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} = \begin{bmatrix} 3 \amp 4 \\ 1 \amp 2 \end{bmatrix}</me>. For (b), consider the matrix <m>E_2 = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -2 \end{bmatrix}</m> which was chosen by performing the row operation <m>-2R_2 \rightarrow R_2</m> to the <m>2 \times 2</m> identity matrix. Note that multiplication by <m>E_2</m> to the left of <m>A</m> will accomplish the same row operation to <m>A</m>: <me>E_2A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -2 \end{bmatrix}\begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} = \begin{bmatrix} 1 \amp 2 \\ -6 \amp -8 \end{bmatrix}</me>. For (c), consider the matrix <m>E_3 = \begin{bmatrix} 1 \amp 0 \\ 3 \amp 1 \end{bmatrix}</m> which was chosen by performing the row operation <m>R_2 + 3R_1 \rightarrow R_2</m> to the <m>2 \times 2</m> identity matrix. Note that multiplication by <m>E_3</m> to the left of <m>A</m> will accomplish the same row operation to <m>A</m>: <me>E_3A = \begin{bmatrix} 1 \amp 0 \\ 3 \amp 1 \end{bmatrix}\begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} = \begin{bmatrix} 1 \amp 2 \\ 6 \amp 10 \end{bmatrix}</me>.
+            Let <m>A = \begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix}</m>. For (a), note that multiplication by <m>E_1 = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}</m> on the left swaps the rows of <m>A</m>: <md>E_1A = \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}\begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} = \begin{bmatrix} 3 \amp 4 \\ 1 \amp 2 \end{bmatrix}</md>. For (b), consider the matrix <m>E_2 = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -2 \end{bmatrix}</m> which was chosen by performing the row operation <m>-2R_2 \rightarrow R_2</m> to the <m>2 \times 2</m> identity matrix. Note that multiplication by <m>E_2</m> to the left of <m>A</m> will accomplish the same row operation to <m>A</m>: <md>E_2A = \begin{bmatrix} 1 \amp 0 \\ 0 \amp -2 \end{bmatrix}\begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} = \begin{bmatrix} 1 \amp 2 \\ -6 \amp -8 \end{bmatrix}</md>. For (c), consider the matrix <m>E_3 = \begin{bmatrix} 1 \amp 0 \\ 3 \amp 1 \end{bmatrix}</m> which was chosen by performing the row operation <m>R_2 + 3R_1 \rightarrow R_2</m> to the <m>2 \times 2</m> identity matrix. Note that multiplication by <m>E_3</m> to the left of <m>A</m> will accomplish the same row operation to <m>A</m>: <md>E_3A = \begin{bmatrix} 1 \amp 0 \\ 3 \amp 1 \end{bmatrix}\begin{bmatrix} 1 \amp 2 \\ 3 \amp 4 \end{bmatrix} = \begin{bmatrix} 1 \amp 2 \\ 6 \amp 10 \end{bmatrix}</md>.
         </p>
     </solution>
 
@@ -330,7 +330,7 @@
         <p>
           Suppose
         </p>
-        <me>
+        <md>
           E
           \begin{bmatrix}
             1 \amp 1 \amp 1\\
@@ -343,14 +343,14 @@
             0 \amp 3 \amp 2\\
             0 \amp 0 \amp 1
           \end{bmatrix}.
-        </me>
+        </md>
         <p>
           By inspection, what is <m>E</m>? How does it compare to <m>I_3</m>?
         </p>
       </statement>
       <solution>
         <p>
-            Note that <me> \begin{bmatrix} 1 \amp 1 \amp 1 \\ -2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \overset{R_2 + 2R_1 \rightarrow R_2}{\Huge \sim} \begin{bmatrix} 1 \amp 1 \amp 1 \\ 0 \amp 3 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix}</me>. Therefore, we have that <me>\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \overset{R_2 + 2R_1 \rightarrow R_2}{\Huge \sim} \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} = E</me>.
+            Note that <md> \begin{bmatrix} 1 \amp 1 \amp 1 \\ -2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \overset{R_2 + 2R_1 \rightarrow R_2}{\Huge \sim} \begin{bmatrix} 1 \amp 1 \amp 1 \\ 0 \amp 3 \amp 2 \\ 0 \amp 0 \amp 1 \end{bmatrix}</md>. Therefore, we have that <md>\begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \overset{R_2 + 2R_1 \rightarrow R_2}{\Huge \sim} \begin{bmatrix} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} = E</md>.
         </p>
       </solution>
     </example>
@@ -361,9 +361,9 @@
       Returning to why the algorithm works, applying a sequence of row operations to <m>A</m> to obtain <m>I_n</m> can be written as:
     </p>
 
-    <me>
+    <md>
       (E_k \cdots E_3E_2E_1)A = I_n.
-    </me>
+    </md>
 
     <p workspace="0.5in">
       Thus, <m>E_k \cdots E_3E_2E_1</m> is the inverse matrix we seek.

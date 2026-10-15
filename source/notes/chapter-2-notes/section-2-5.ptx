@@ -31,7 +31,7 @@
     <p>A rectangular matrix <m>A</m> is <term>upper triangular</term> if <m>a_{i,j}=0</m> whenever <m>i&gt;j</m>.
     </p>
 
-    <me>
+    <md>
       \begin{bmatrix}
         1 \amp 5 \amp 0\\
         0 \amp 2 \amp 4
@@ -47,13 +47,13 @@
       \begin{bmatrix}
         2\\0\\0\\0
       \end{bmatrix}
-    </me>
+    </md>
 
     <p>
         A rectangular matrix <m>A</m> is <term>lower triangular</term> if <m>a_{i,j}=0</m> whenever <m>i&lt;j</m>.
     </p>
 
-    <me>
+    <md>
       \begin{bmatrix}
         1 \amp 0 \amp 0\\
         3 \amp 2 \amp 0
@@ -69,7 +69,7 @@
       \begin{bmatrix}
         1\\2\\1\\2
       \end{bmatrix}
-    </me>
+    </md>
 
     <p workspace="0.2in">Can you have a matrix that is both upper and lower triangular?</p>
   </page>
@@ -97,7 +97,7 @@
         <p>
           If <m>A</m> is a <m>3 \times 2</m> matrix, then its LU factorization has the form:
         </p>
-        <me>
+        <md>
           A=LU=
           \begin{bmatrix}
             1 \amp 0 \amp 0\\
@@ -109,7 +109,7 @@
             0 \amp \ast\\
             0 \amp 0
           \end{bmatrix}
-        </me>
+        </md>
       </statement>
     </example>
 
@@ -117,15 +117,15 @@
       How do we find <m>L </m> and <m>U</m>? Suppose <m>A</m> can be row reduced to echelon form <m>U</m> without interchanging rows. Then
     </p>
 
-    <me>
+    <md>
       E_p\cdots E_1A=U,
-    </me>
+    </md>
 
     <p>
       where the <m>E_j</m> are elementary row-operation matrices. These matrices are lower triangular and invertible. For example, 
     </p>
 
-    <me>
+    <md>
       \begin{bmatrix}
         1 \amp 0 \amp 0\\
         0 \amp 1 \amp 0\\
@@ -137,14 +137,14 @@
         0 \amp 1 \amp 0\\
         -2 \amp 0 \amp 1
       \end{bmatrix}.
-    </me>
+    </md>
 
     <p workspace="true">
       Therefore:
 
-    <me>
+    <md>
       A = E_1^{-1}\cdots E_p^{-1}U = LU.
-    </me>
+    </md>
     </p>
   </page>
 
@@ -168,14 +168,14 @@
     <example xml:id="ex-compute-lu" workspace="true">
       <statement>
         <p>Compute the LU factorization of:</p>
-        <me>
+        <md>
           A=
           \begin{bmatrix}
             4 \amp -3 \amp -1 \amp 5\\
             -16 \amp 12 \amp 2 \amp -17\\
             8 \amp -6 \amp -12 \amp 22
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
   </page>
@@ -184,7 +184,7 @@
     <example xml:id="ex-compute-lu2" workspace="true">
       <statement>
         <p>Compute the LU factorization of:</p>
-        <me>
+        <md>
           A=
           \begin{bmatrix}
             3 \amp -1 \amp 4 \amp 5\\
@@ -193,7 +193,7 @@
             6 \amp 2 \amp 12 \amp 15\\
             3 \amp 3 \amp 8 \amp 9
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
   </page>
@@ -215,7 +215,7 @@
     <example xml:id="ex-solve-with-lu" workspace="true">
       <statement>
         <p>Solve the linear system with:</p>
-        <me>
+        <md>
           A=LU=
           \begin{bmatrix}
             1 \amp 0 \amp 0 \amp 0\\
@@ -234,7 +234,7 @@
           \begin{bmatrix}
             2\\3\\2\\0
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
   </page>

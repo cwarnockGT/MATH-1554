@@ -31,9 +31,9 @@
     <definition workspace="true">
     <statement>
         <p>Let <m>A</m> be an <m>m\times n</m> matrix. Define a function</p>
-    <me>
+    <md>
       T:\mathbb{R}^n \to \mathbb{R}^m, \qquad T(\vec v) = A\vec v .
-    </me>
+    </md>
     
       <p>A function of this form is called a <term>matrix transformation</term>.</p>
     <ul workspace="true">
@@ -60,9 +60,9 @@
     <title>Functions from Calculus (and their graphs)</title>
 
     <p>Many familiar functions have domain and codomain <m>\mathbb{R}</m>. For example, the sine function can be described by the rule</p>
-    <me>
+    <md>
       f\colon \mathbb{R}\to\mathbb{R}, \qquad f(x)=\sin(x).
-    </me>
+    </md>
 
     <p>In calculus we often visualize a function via its graph: the horizontal axis represents the domain and the vertical axis the codomain.</p>
 
@@ -157,11 +157,11 @@
     </definition>
 
     <p workspace="1in"> By linearity, for any scalars <m>c_1,\dots,c_k</m> and vectors <m>\vec v_1,\dots,\vec v_k</m>,
-    <me>
+    <md>
       T\!\big(c_1\vec v_1+\cdots+c_k\vec v_k\big)
       \;=\;
       c_1\,T(\vec v_1)+\cdots+c_k\,T(\vec v_k).
-    </me>
+    </md>
     </p>
 
     <p workspace="0.5in">This is the <term>principle of superposition</term>. In particular, once we know <m>T(\vec e_1),\dots,T(\vec e_n)</m>, we can compute <m>T(\vec v)</m> for any <m>\vec v \in \mathbb{R}^n</m>.</p>
@@ -222,7 +222,7 @@
     <example xml:id="ex-4">
       <statement>
         <p>A linear transformation <m>T:\mathbb{R}^2\to\mathbb{R}^3</m> satisfies</p>
-        <me>
+        <md>
           T\!\left(\begin{bmatrix}1\\[2pt]0\end{bmatrix}\right)
           =
           \begin{bmatrix}5\\[2pt]-7\\[2pt]2\end{bmatrix},
@@ -230,7 +230,7 @@
           T\!\left(\begin{bmatrix}0\\[2pt]1\end{bmatrix}\right)
           =
           \begin{bmatrix}-3\\[2pt]8\\[2pt]0\end{bmatrix}.
-        </me>
+        </md>
         <p>What is the matrix that represents <m>T</m>?</p>
       </statement>
     </example>

@@ -30,9 +30,9 @@
         <p>
           Let <m>A\in\mathbb{R}^{n\times n}</m>. If there exists a <em>nonzero</em> vector <m>\vec v\in\mathbb{R}^n</m> and a scalar <m>\lambda\in\mathbb{C}</m> such that
         </p>
-        <me>
+        <md>
           A\vec v = \lambda \vec v,
-        </me>
+        </md>
         <p>
           then <m>\vec v</m> is an <term>eigenvector</term> of <m>A</m> and <m>\lambda</m> is the corresponding <term>eigenvalue</term>.
         </p>
@@ -70,12 +70,12 @@
         <p>
           Which of the following are eigenvectors of
         </p>
-        <me>
+        <md>
           A=\begin{bmatrix}
             1 \amp 1\\
             1 \amp 1
           \end{bmatrix}?
-        </me>
+        </md>
         <p>What are the corresponding eigenvalues?</p>
       </introduction>
       <task workspace="2in">
@@ -113,12 +113,12 @@
         <p>
           Confirm that <m>\lambda=3</m> is an eigenvalue of
         </p>
-        <me>
+        <md>
           A=\begin{bmatrix}
             2 \amp -4\\
             -1 \amp -1
           \end{bmatrix}.
-        </me>
+        </md>
       </statement>
     </example>
 
@@ -149,13 +149,13 @@
         <p>
           Construct a basis for the eigenspaces of
         </p>
-        <me>
+        <md>
           A=\begin{bmatrix}
             5 \amp -6\\
             3 \amp -4
           \end{bmatrix},
           \qquad \lambda=-1,\;2.
-        </me>
+        </md>
       </statement>
     </example>
 
@@ -229,12 +229,12 @@
         <introduction>
             <p>
                 Let
-                    <me>
+                    <md>
                     A=\begin{bmatrix}
                         1 \amp 1\\
                         1 \amp 1
                     \end{bmatrix},
-                    </me>
+                    </md>
                 which has eigenvalues <m>\lambda=2</m> and <m>\lambda=0</m>.
             </p>
         </introduction> 
@@ -262,7 +262,7 @@
     <example workspace="true">
       <statement> 
         <p>
-        Let <me>A = \begin{bmatrix} 4 \amp -1 \amp 6 \\ 2 \amp 1 \amp 5 \\ 2 \amp -1 \amp 8 \end{bmatrix}.</me> One of the eigenvalues of <m>A</m> is <m>\lambda = 2</m>. Find a basis for the <m>2</m>-eigenspace of <m>A</m>.
+        Let <md>A = \begin{bmatrix} 4 \amp -1 \amp 6 \\ 2 \amp 1 \amp 5 \\ 2 \amp -1 \amp 8 \end{bmatrix}.</md> One of the eigenvalues of <m>A</m> is <m>\lambda = 2</m>. Find a basis for the <m>2</m>-eigenspace of <m>A</m>.
         </p>
         </statement>
       </example>

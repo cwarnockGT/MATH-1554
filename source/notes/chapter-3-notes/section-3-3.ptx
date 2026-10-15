@@ -103,9 +103,9 @@
           <m>T_A(\vec x)=A\vec x</m>, and <m>S</m> is any closed shape in
           <m>\mathbb{R}^n</m>, then
         </p>
-        <me>
+        <md>
           \operatorname{volume}(T_A(S)) \;=\; \lvert \det(A)\rvert \cdot \operatorname{volume}(S).
-        </me>
+        </md>
       </statement>
     </theorem>
 
@@ -122,7 +122,7 @@
     <example workspace="4in">
         <statement>
             <p>
-                Find the area of the interior <m>E</m> of the ellipse defined by the equation <me>\left(\dfrac{2x - y}{2}\right)^2 + \left(\dfrac{y + 3x}{3}\right)^2 = 1</me>.
+                Find the area of the interior <m>E</m> of the ellipse defined by the equation <md>\left(\dfrac{2x - y}{2}\right)^2 + \left(\dfrac{y + 3x}{3}\right)^2 = 1</md>.
             </p>
         </statement>
     </example>
@@ -135,7 +135,7 @@
         <title>Cramer's Rule</title> 
         <statement>
             <p>
-                Let <m>A </m> be an invertible <m>n \times n</m> matrix and let <m>\vec b \in \mathbb{R}^n</m>. Then the system <m>A\vec x = \vec b</m> has the unique solution <m>\vec x</m> whose entires are given by <me>x_i = \dfrac{\det(A_i)}{\det(A)}</me>, where <m>A_i</m> is the matrix formed by replacing the <m>i^\text{th}</m> column of <m>A</m> by <m>\vec b</m>.
+                Let <m>A </m> be an invertible <m>n \times n</m> matrix and let <m>\vec b \in \mathbb{R}^n</m>. Then the system <m>A\vec x = \vec b</m> has the unique solution <m>\vec x</m> whose entires are given by <md>x_i = \dfrac{\det(A_i)}{\det(A)}</md>, where <m>A_i</m> is the matrix formed by replacing the <m>i^\text{th}</m> column of <m>A</m> by <m>\vec b</m>.
             </p>
         </statement>
     </theorem>
@@ -145,7 +145,7 @@
     <example>
         <statement>
             <p>
-                Use <xref ref="thm-cramers-rule" text="custom"> Cramer's Rule</xref> to solve the system <me>\begin{bmatrix} 1 \amp 3 \amp 2 \\ -2 \amp 1 \amp 4 \\ 0 \amp 4 \amp 3 \end{bmatrix}\vec x = \begin{bmatrix} 1 \\ 9 \\ 0 \end{bmatrix}</me>.
+                Use <xref ref="thm-cramers-rule" text="custom"> Cramer's Rule</xref> to solve the system <md>\begin{bmatrix} 1 \amp 3 \amp 2 \\ -2 \amp 1 \amp 4 \\ 0 \amp 4 \amp 3 \end{bmatrix}\vec x = \begin{bmatrix} 1 \\ 9 \\ 0 \end{bmatrix}</md>.
             </p>
         </statement>
     </example>

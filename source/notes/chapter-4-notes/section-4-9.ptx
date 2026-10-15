@@ -156,12 +156,12 @@
     <example xml:id="ex-4-9-steady" workspace="true">
       <statement>
         <p>Determine a steady-state vector for the stochastic matrix:</p>
-        <me>
+        <md>
           P = \begin{bmatrix}
             0.8 \amp 0.3\\
             0.2 \amp 0.7
           \end{bmatrix}
-        </me>
+        </md>
       </statement>
     </example>
 
